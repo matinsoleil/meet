@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
+import AppFrame from '../components/AppFrame';
 
 class LoginContainer extends Component {
+
+    renderBody = () => {
+        return (
+            <div >
+                <div className="login-header">cabecera</div>
+                <div className="login-instructions">leyendas</div>
+                <div className="login-qr-code">imagenes</div>
+            </div>
+        );
+    }
     render() {
         return (
             <div>
-                ContenedorLogin 
+                <AppFrame
+                    header=''
+                    body={this.renderBody()}>
+                </AppFrame>
             </div>
         );
     }

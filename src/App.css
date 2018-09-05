@@ -26,3 +26,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.app-frame {
+  margin: 5%;
+  padding: 30px;
+  width: calc(80vw);
+  background-color: rgb(175, 175, 175);
+}
+
+.login-header{
+  background-color: rgb(0, 255, 234);
+}
+.login-instructions{
+  background-color: rgb(253, 4, 4);
+}
+.login-qr-code{
+  background-color: rgb(0, 255, 55);
+}
