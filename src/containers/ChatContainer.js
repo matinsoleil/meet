@@ -5,19 +5,44 @@ class ChatContainer extends Component {
     renderBody = () => {
         return (
             <div >
-                <div>
-                    <div>datos generales usuario</div>
-                    <div>Usuario con que chatea</div>
+                <div className="main-chat-header">
+                    <div className="main-chat-general-data-user">datos generales usuario</div>
+                    <div className="main-chat-user-connect-conversation-user">Usuario con que chatea</div>
                 </div>
-                <div>
-                    <div>
-                        Lista de contactos
-                    </div>
-                    <div>
-                        <div>
-                            historial de la conversacion
+                <div className="main-chat-body">
+                    <div className="main-chat-general-list-contact">
+                        <div className="contact-chat">
+                            Contacto
                         </div>
-                        <div>
+                        <div className="contact-chat">
+                            Contacto
+                        </div>
+                        <div className="contact-chat">
+                            Contacto
+                        </div>
+                        <div className="contact-chat">
+                            Contacto
+                        </div>
+                        <div className="contact-chat">
+                            Contacto
+                        </div>
+                        <div className="contact-chat">
+                            Contacto
+                        </div>
+                        <div className="contact-chat">
+                            Contacto
+                        </div>
+                    </div>
+                    <div className="main-chat-general-conversation-contact">
+                        <div className="main-chat-history-conversation-contact">
+                            <div className="main-chat-transmitter">
+                                Emisor 
+                            </div>
+                            <div className="main-chat-receiver">
+                                Receptor
+                            </div>
+                        </div>
+                        <div className="main-chat-area-send-conversation">
                             Envio de mensajes
                         </div>
                     </div>

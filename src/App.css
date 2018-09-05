@@ -27,6 +27,7 @@
   width: calc(80vw);
   background-color: rgb(175, 175, 175);
 }
+/* Esta es la parte del login */
 .login-body{
   display: flex;
   position: relative;
@@ -53,13 +54,79 @@
   height: 100%;
   float: left;
 }
-
-
-
-.login-chat{
-  border: 3px solid rgb(0, 0, 0);
+/* Esta es la parte del chat */
+.main-chat-body{
+  /* border: 3px solid rgb(0, 0, 0); */
   display: flex;
   position: relative;
-  height: 400px;
+}
+.main-chat-header{
+  display: flex;
+  /* border: 3px solid rgb(33, 152, 173); */
+  position: relative;
+  height: 100px;
   width: 100%;
 }
+.main-chat-general-data-user{
+  border: 3px solid rgb(56, 173, 33);
+  position: relative;
+  height: 100px;
+  width: 30%;
+}
+.main-chat-user-connect-conversation-user{
+  border: 3px solid rgb(173, 33, 150);
+  position: relative;
+  height: 100px;
+  width: 70%;
+}
+.main-chat-general-list-contact{
+  overflow: scroll;
+  border: 3px solid rgb(171, 173, 33);
+  position: relative;
+  height: 600px;
+  width: 30%;
+}
+.main-chat-general-conversation-contact{
+  /* border: 3px solid rgb(173, 33, 33); */
+  position: relative;
+  height: 600px;
+  width: 70%;
+}
+.main-chat-history-conversation-contact{
+  border: 3px solid rgb(33, 47, 173);
+  position: relative;
+  height: 500px;
+  width: 100%;
+}
+.main-chat-area-send-conversation{
+  border: 3px solid rgb(173, 33, 75);
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+.contact-chat{
+  border: 3px solid rgb(0, 0, 0);
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+
+.main-chat-transmitter{
+  border: 3px solid rgb(56, 173, 33);
+  /* position: relative; */
+  height: 100px;
+  width: 30%;
+  float: right;
+}
+
+
+.main-chat-receiver{
+  border: 3px solid rgb(56, 173, 33);
+  /* position: relative; */
+  height: 100px;
+  width: 30%;
+  float: left;
+}
+
+
+
