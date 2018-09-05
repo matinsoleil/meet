@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AppFrame from '../components/AppFrame';
 import GeneralDataUser from '../components/chat/GeneralDataUser';
 import ActionsContactConversation from '../components/chat/ActionsContactConversation';
+import ListGeneralContacts from '../components/chat/ListGeneralContacts';
 
 class ChatContainer extends Component {
     renderBody = () => {
@@ -12,29 +13,7 @@ class ChatContainer extends Component {
                     <ActionsContactConversation />
                 </div>
                 <div className="main-chat-body">
-                    <div className="main-chat-general-list-contact">
-                        <div className="contact-chat">
-                            Contacto
-                        </div>
-                        <div className="contact-chat">
-                            Contacto
-                        </div>
-                        <div className="contact-chat">
-                            Contacto
-                        </div>
-                        <div className="contact-chat">
-                            Contacto
-                        </div>
-                        <div className="contact-chat">
-                            Contacto
-                        </div>
-                        <div className="contact-chat">
-                            Contacto
-                        </div>
-                        <div className="contact-chat">
-                            Contacto
-                        </div>
-                    </div>
+                    <ListGeneralContacts />
                     <div className="main-chat-general-conversation-contact">
                         <div className="main-chat-history-conversation-contact">
                             <div className="main-chat-transmitter">
