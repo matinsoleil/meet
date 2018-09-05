@@ -5,10 +5,10 @@ class LoginContainer extends Component {
     renderBody = () => {
         return (
             <div>
-                <div className="login-header">cabecera</div>
+                <div className="login-header">Cabecera</div>
                 <div className="login-body">
-                    <div className="login-instructions">leyendas</div>
-                    <div className="login-qr-code">imagenes</div>
+                    <div className="login-instructions">Instrucciones</div>
+                    <div className="login-qr-code"> QR code</div>
                 </div>
             </div>
         );
@@ -18,7 +18,8 @@ class LoginContainer extends Component {
             <div>
                 <AppFrame
                     header=''
-                    body={this.renderBody()}>
+                    body={this.renderBody()}
+                    footer=''>
                 </AppFrame>
             </div>
         );
