@@ -4,6 +4,7 @@ import GeneralDataUser from '../components/chat/GeneralDataUser';
 import ActionsContactConversation from '../components/chat/ActionsContactConversation';
 import ListGeneralContacts from '../components/chat/ListGeneralContacts';
 import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact';
+import AreaSendMessage from '../components/chat/AreaSendMessage';
 
 class ChatContainer extends Component {
     renderBody = () => {
@@ -17,9 +18,7 @@ class ChatContainer extends Component {
                     <ListGeneralContacts />
                     <div className="main-chat-general-conversation-contact">
                         <ChatGeneralConversationContact />
-                        <div className="main-chat-area-send-conversation">
-                            Envio de mensajes
-                        </div>
+                        <AreaSendMessage />
                     </div>
                 </div>
             </div>
