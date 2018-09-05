@@ -131,14 +131,14 @@
 
 .icon-user{
   background-color: #222;
-  float: left;
-  
+  float: left;  
   height: 50px;
   width: 50px;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 }
+
 .boton-action-user{
   float: right;
   background-color: rgb(94, 94, 94);
