@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import AppFrame from '../components/AppFrame';
+import GeneralDataUser from '../components/chat/GeneralDataUser';
 
 class ChatContainer extends Component {
     renderBody = () => {
         return (
             <div >
                 <div className="main-chat-header">
-                    <div className="main-chat-general-data-user">datos generales usuario</div>
+                    <GeneralDataUser />
                     <div className="main-chat-user-connect-conversation-user">Usuario con que chatea</div>
                 </div>
                 <div className="main-chat-body">

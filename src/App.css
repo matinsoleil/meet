@@ -68,6 +68,7 @@
   width: 100%;
 }
 .main-chat-general-data-user{
+  display: flex;
   border: 3px solid rgb(56, 173, 33);
   position: relative;
   height: 100px;
@@ -128,5 +129,22 @@
   float: left;
 }
 
-
-
+.icon-user{
+  background-color: #222;
+  float: left;
+  
+  height: 50px;
+  width: 50px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+.boton-action-user{
+  float: right;
+  background-color: rgb(94, 94, 94);
+  height: 50px;
+  width: 50px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
