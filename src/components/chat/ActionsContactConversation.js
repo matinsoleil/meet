@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ActionsContactConversation extends Component {
-    render() {
+const ActionsContactConversation = () => {
         return (
             <div className="main-chat-user-connect-conversation-user">
                 <div className="icon-user">
@@ -14,7 +13,6 @@ class ActionsContactConversation extends Component {
                 </div>
             </div>
         );
-    }
 }
 
 export default ActionsContactConversation;

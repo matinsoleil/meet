@@ -29,7 +29,9 @@ class ChatContainer extends Component {
             <div>
                 <AppFrame
                     header=''
-                    body={this.renderBody()}>
+                    body={this.renderBody()}
+                    footer=''
+                    >
                 </AppFrame>
             </div>
         );

@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ChatGeneralConversationContact extends Component {
-    render() {
+const ChatGeneralConversationContact = () => {
         return (
             <div className="main-chat-history-conversation-contact">
                 <div className="main-chat-transmitter">
@@ -12,7 +11,6 @@ class ChatGeneralConversationContact extends Component {
                 </div>
             </div>
         );
-    }
 }
 
 export default ChatGeneralConversationContact;

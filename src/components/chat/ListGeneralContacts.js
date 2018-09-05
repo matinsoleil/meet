@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ListGeneralContacts extends Component {
-    render() {
+const ListGeneralContacts = () => {
+
         return (
             <div className="main-chat-general-list-contact">
                 <div className="contact-chat">
@@ -98,7 +98,6 @@ class ListGeneralContacts extends Component {
 
             </div>
         );
-    }
 }
 
 export default ListGeneralContacts;
