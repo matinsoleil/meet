@@ -4,7 +4,7 @@ class ChatContainer extends Component {
     render() {
         return (
             <div>
-                Contenedor Chat
+                (Contenedor Chat)
             </div>
         );
     }
