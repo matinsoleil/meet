@@ -11,7 +11,7 @@ class ListGeneralContacts extends Component {
                         Name Contact
                     </div>
                     <div >
-                       Day Last message
+                        Day Last message
                     </div>
                     <div >
                         Last message
@@ -24,7 +24,7 @@ class ListGeneralContacts extends Component {
                         Name Contact
                     </div>
                     <div >
-                       Day Last message
+                        Day Last message
                     </div>
                     <div >
                         Last message
@@ -37,7 +37,7 @@ class ListGeneralContacts extends Component {
                         Name Contact
                     </div>
                     <div >
-                       Day Last message
+                        Day Last message
                     </div>
                     <div >
                         Last message
@@ -50,7 +50,7 @@ class ListGeneralContacts extends Component {
                         Name Contact
                     </div>
                     <div >
-                       Day Last message
+                        Day Last message
                     </div>
                     <div >
                         Last message
@@ -63,7 +63,7 @@ class ListGeneralContacts extends Component {
                         Name Contact
                     </div>
                     <div >
-                       Day Last message
+                        Day Last message
                     </div>
                     <div >
                         Last message
@@ -76,7 +76,7 @@ class ListGeneralContacts extends Component {
                         Name Contact
                     </div>
                     <div >
-                       Day Last message
+                        Day Last message
                     </div>
                     <div >
                         Last message
@@ -89,7 +89,7 @@ class ListGeneralContacts extends Component {
                         Name Contact
                     </div>
                     <div >
-                       Day Last message
+                        Day Last message
                     </div>
                     <div >
                         Last message
