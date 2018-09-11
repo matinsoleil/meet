@@ -94,6 +94,7 @@
   width: 70%;
 }
 .main-chat-history-conversation-contact{
+  overflow: scroll;
   border: 3px solid rgb(33, 47, 173);
   position: relative;
   height: 500px;
@@ -113,20 +114,17 @@
 }
 
 .main-chat-transmitter{
-  border: 3px solid rgb(56, 173, 33);
-  /* position: relative; */
+  border: 3px solid rgb(173, 147, 33);
+  position: static;
   height: 100px;
-  width: 30%;
-  float: right;
+  width: 100%;
 }
 
 
 .main-chat-receiver{
-  border: 3px solid rgb(56, 173, 33);
-  /* position: relative; */
+  border: 3px solid rgb(33, 173, 173);
   height: 100px;
-  width: 30%;
-  float: left;
+  width: 100%;
 }
 
 .icon-user{
@@ -168,7 +166,6 @@
   -webkit-border-radius: 10px 10px 10px 10px;
 }
 
-
 .input-send {
   width: 60%;
   padding: 12px 20px;
@@ -185,4 +182,11 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
 }

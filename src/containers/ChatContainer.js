@@ -213,7 +213,7 @@ class ChatContainer extends Component {
                 <div className="main-chat-header">
                     <GeneralDataUser imgUser={user[0].imgUser}
                         nameUser={user[0].name}
-                        status={user[0].status}  />
+                        status={user[0].status} />
                     <ActionsContactConversation imgContact={contactConnect[0].imgContact}
                         nameContact={contactConnect[0].name}
                         status={contactConnect[0].status} />
@@ -221,7 +221,7 @@ class ChatContainer extends Component {
                 <div className="main-chat-body">
                     <ListGeneralContacts contacts={contacts} />
                     <div className="main-chat-general-conversation-contact">
-                        <ChatGeneralConversationContact />
+                        <ChatGeneralConversationContact chat={conversationOfContact}  />
                         <AreaSendMessage />
                     </div>
                 </div>
