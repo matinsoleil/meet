@@ -6,6 +6,7 @@ const ListGeneralContacts = ({ contacts }) => {
         <div className="main-chat-general-list-contact">
             {contacts.map(c =>
                 <GeneralContactData
+                    key={c.id}
                     nameContact={c.name}
                     dayLastMessage={c.dayLastMessage}
                     lastMessage={c.lastMessage}

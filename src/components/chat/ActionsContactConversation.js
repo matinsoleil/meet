@@ -4,7 +4,7 @@ const ActionsContactConversation = ({ imgContact, status, nameContact }) => {
     return (
         <div className="main-chat-user-connect-conversation-user">
             <div className="icon-user">
-                <img src={imgContact} height="42" width="42" />
+                <img src={imgContact} height="42" width="42" alt="description of image" />
             </div>
             <div>
                 {nameContact}

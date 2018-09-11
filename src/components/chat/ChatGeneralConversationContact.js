@@ -7,9 +7,13 @@ const ChatGeneralConversationContact = ({ chat }) => {
         <div className="main-chat-history-conversation-contact">
             {chat.map(c => {
                 if (c.userSend === "1") {
-                    return (<MessageReceiver message={c.message} hour={c.hour}/>)
+                    return (<MessageReceiver key={c.id} 
+                                             message={c.message} 
+                                             hour={c.hour}/>)
                 } else {
-                    return (<MessageTransmitter message={c.message} hour={c.hour} />)
+                    return (<MessageTransmitter key={c.id}
+                                                message={c.message} 
+                                                hour={c.hour} />)
                 }
             })}
         </div>

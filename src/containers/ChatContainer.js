@@ -7,13 +7,13 @@ import ListGeneralContacts from '../components/chat/ListGeneralContacts'
 import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
 import AreaSendMessage from '../components/chat/AreaSendMessage'
 import fetchContacts from './../actions/contacts/fetchContacts'
+import { getContacts } from './../selectors/contacts'
 
 const user = [
     {
         "id": "1",
         "name": "TEST USER CLARO CONNECT ",
         "photo": "ruta",
-        "status": "Status test",
         "status": "Status test",
         "dayLastMessage": "05/09/2018",
         "lastMessage": "Last Message",
@@ -219,21 +219,26 @@ const conversationOfContact = [{
 }]
 
 class ChatContainer extends Component {
+    componentDidMount() {
+        this.props.fetchContacts();
+    }
     renderBody = () => {
         return (
             <div >
                 <div className="main-chat-header">
-                    <GeneralDataUser imgUser={user[0].imgUser}
+                    <GeneralDataUser
+                        imgUser={user[0].imgUser}
                         nameUser={user[0].name}
                         status={user[0].status} />
-                    <ActionsContactConversation imgContact={contactConnect[0].imgContact}
+                    <ActionsContactConversation 
+                        imgContact={contactConnect[0].imgContact}
                         nameContact={contactConnect[0].name}
                         status={contactConnect[0].status} />
                 </div>
                 <div className="main-chat-body">
                     <ListGeneralContacts contacts={contacts} />
                     <div className="main-chat-general-conversation-contact">
-                        <ChatGeneralConversationContact chat={conversationOfContact}  />
+                        <ChatGeneralConversationContact chat={conversationOfContact} />
                         <AreaSendMessage />
                     </div>
                 </div>
@@ -253,17 +258,11 @@ class ChatContainer extends Component {
         );
     }
 }
-
-
 ChatContainer.defaultProps = {
     contacts: []
 }
-
-
-
 const mapStateToProps = state => ({
-    //customers: getCustomers(state)
+    contacts: getContacts(state)
 })
-
-
-export default connect(mapStateToProps, null)(ChatContainer);
+const mapDispatchProps = { fetchContacts };
+export default connect(mapStateToProps, mapDispatchProps)(ChatContainer);

@@ -4,7 +4,7 @@ const GeneralDataUser = ({ imgUser, nameUser, status }) => {
     return (
         <div className="main-chat-general-data-user">
             <div className="icon-user">
-                <img src={imgUser} height="42" width="42" />
+                <img src={imgUser} height="42" width="42" alt="description of image" />
             </div>
             <div>
                 {nameUser}
