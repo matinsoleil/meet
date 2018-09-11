@@ -176,3 +176,7 @@
 .alignright {
 	float: right;
 }
+.imgIcoUser {
+  height: 42px;
+  width: 42px;
+}

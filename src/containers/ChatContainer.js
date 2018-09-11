@@ -121,9 +121,6 @@ class ChatContainer extends Component {
         this.props.fetchContacts();
     }
     renderBody = () => {
-
-        console.log(this.props.contacts);
-
         return (
             <div >
                 <div className="main-chat-header">

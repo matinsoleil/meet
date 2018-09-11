@@ -4,7 +4,7 @@ const GeneralContactData = ({nameContact, dayLastMessage, lastMessage, imgContac
         return (
             <div className="contact-chat">
                 <div className="icon-user">
-                <img src={imgContact} height="42" width="42" alt="description of image" />
+                <img className="imgIcoUser" src={imgContact} alt="test" />
                 </div>
                 <div >
                     {nameContact}
