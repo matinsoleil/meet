@@ -9,7 +9,8 @@ const ListGeneralContacts = ({ contacts }) => {
                     nameContact={c.name}
                     dayLastMessage={c.dayLastMessage}
                     lastMessage={c.lastMessage}
-                    imgContact={c.imgContact}>
+                    imgContact={c.imgContact}
+                    status={c.status}>
                 </GeneralContactData>
             )}
         </div>

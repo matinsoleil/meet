@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GeneralContactData = ({nameContact, dayLastMessage, lastMessage, imgContact}) => {
+const GeneralContactData = ({nameContact, dayLastMessage, lastMessage, imgContact, status}) => {
         return (
             <div className="contact-chat">
                 <div className="icon-user">
@@ -8,6 +8,9 @@ const GeneralContactData = ({nameContact, dayLastMessage, lastMessage, imgContac
                 </div>
                 <div >
                     {nameContact}
+                </div>
+                <div >
+                    {status}
                 </div>
                 <div >
                     {dayLastMessage}
