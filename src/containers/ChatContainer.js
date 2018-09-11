@@ -120,7 +120,7 @@ class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts();
     }
-    renderBody = () => {
+    renderBody = (contacts) => {
         return (
             <div >
                 <div className="main-chat-header">
@@ -134,7 +134,7 @@ class ChatContainer extends Component {
                         status={contactConnect[0].status} />
                 </div>
                 <div className="main-chat-body">
-                    <ListGeneralContacts contacts={this.props.contacts} />
+                    <ListGeneralContacts contacts={contacts} />
                     <div className="main-chat-general-conversation-contact">
                         <ChatGeneralConversationContact chat={conversationOfContact} />
                         <AreaSendMessage />
@@ -148,7 +148,7 @@ class ChatContainer extends Component {
             <div>
                 <AppFrame
                     header=''
-                    body={this.renderBody()}
+                    body={this.renderBody(this.props.contacts)}
                     footer=''
                 >
                 </AppFrame>
