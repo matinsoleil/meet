@@ -1,9 +1,9 @@
 import React from 'react';
 
-const MessageTransmitter = ({ message }) => {
+const MessageTransmitter = ({ message, hour }) => {
     return (
         <div className="main-chat-transmitter">
-            <p class="alignleft">{message}</p>
+            <p class="alignleft">{message} <br /> {hour}</p>
         </div>
     )
 }

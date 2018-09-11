@@ -126,6 +126,7 @@ const conversationOfContact = [{
     "userSend": "1",
     "userGet": "2",
     "message": "message",
+    "hour": "10:01",
     "status": "1"
 },
 {
@@ -133,6 +134,7 @@ const conversationOfContact = [{
     "userSend": "2",
     "userGet": "1",
     "message": "message",
+    "hour": "10:02",
     "status": "1"
 },
 {
@@ -140,6 +142,7 @@ const conversationOfContact = [{
     "userSend": "1",
     "userGet": "2",
     "message": "message",
+    "hour": "10:03",
     "status": "1"
 },
 {
@@ -147,6 +150,7 @@ const conversationOfContact = [{
     "userSend": "2",
     "userGet": "1",
     "message": "message",
+    "hour": "10:04",
     "status": "1"
 },
 {
@@ -154,6 +158,7 @@ const conversationOfContact = [{
     "userSend": "1",
     "userGet": "2",
     "message": "message",
+    "hour": "10:05",
     "status": "1"
 },
 {
@@ -161,6 +166,7 @@ const conversationOfContact = [{
     "userSend": "2",
     "userGet": "1",
     "message": "message",
+    "hour": "10:06",
     "status": "1"
 },
 {
@@ -168,6 +174,7 @@ const conversationOfContact = [{
     "userSend": "1",
     "userGet": "2",
     "message": "message",
+    "hour": "10:07",
     "status": "1"
 },
 {
@@ -175,6 +182,7 @@ const conversationOfContact = [{
     "userSend": "2",
     "userGet": "1",
     "message": "message",
+    "hour": "10:08",
     "status": "1"
 },
 {
@@ -182,6 +190,7 @@ const conversationOfContact = [{
     "userSend": "1",
     "userGet": "2",
     "message": "message",
+    "hour": "10:09",
     "status": "1"
 },
 {
@@ -189,6 +198,7 @@ const conversationOfContact = [{
     "userSend": "2",
     "userGet": "1",
     "message": "message",
+    "hour": "10:10",
     "status": "1"
 },
 {
@@ -196,6 +206,7 @@ const conversationOfContact = [{
     "userSend": "1",
     "userGet": "2",
     "message": "message",
+    "hour": "10:11",
     "status": "1"
 },
 {
@@ -203,6 +214,7 @@ const conversationOfContact = [{
     "userSend": "2",
     "userGet": "1",
     "message": "message",
+    "hour": "10:12",
     "status": "1"
 }]
 

@@ -27,7 +27,6 @@
   width: calc(80vw);
   background-color: rgb(175, 175, 175);
 }
-/* Esta es la parte del login */
 .login-body{
   display: flex;
   position: relative;
@@ -54,15 +53,12 @@
   height: 100%;
   float: left;
 }
-/* Esta es la parte del chat */
 .main-chat-body{
-  /* border: 3px solid rgb(0, 0, 0); */
   display: flex;
   position: relative;
 }
 .main-chat-header{
   display: flex;
-  /* border: 3px solid rgb(33, 152, 173); */
   position: relative;
   height: 100px;
   width: 100%;
@@ -88,7 +84,6 @@
   width: 30%;
 }
 .main-chat-general-conversation-contact{
-  /* border: 3px solid rgb(173, 33, 33); */
   position: relative;
   height: 600px;
   width: 70%;
@@ -112,21 +107,17 @@
   height: 100px;
   width: 100%;
 }
-
 .main-chat-transmitter{
   border: 3px solid rgb(173, 147, 33);
   position: static;
   height: 100px;
   width: 100%;
 }
-
-
 .main-chat-receiver{
   border: 3px solid rgb(33, 173, 173);
   height: 100px;
   width: 100%;
 }
-
 .icon-user{
   background-color: #222;
   float: left;  
@@ -136,7 +127,6 @@
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 }
-
 .boton-action-user{
   float: right;
   background-color: rgb(94, 94, 94);
@@ -155,7 +145,6 @@
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 }
-
 .boton-action-more-file{
   float: left;
   background-color: rgb(94, 94, 94);
@@ -165,16 +154,14 @@
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 }
-
 .input-send {
   width: 60%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
-
 .button-send-chat {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -183,7 +170,6 @@
   display: inline-block;
   font-size: 16px;
 }
-
 .alignleft {
 	float: left;
 }
