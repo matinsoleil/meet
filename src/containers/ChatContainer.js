@@ -13,15 +13,6 @@ import { getContacts } from './../selectors/contacts'
 import { getContact } from './../selectors/contact'
 import { getUser } from './../selectors/user'
 
-const contactConnect = [{
-    "id": "1",
-    "name": "TEST CONTACT 1 ",
-    "photo": "ruta",
-    "status": "Status test",
-    "dayLastMessage": "05/09/2018",
-    "lastMessage": "Last Message",
-    "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp"
-}]
 const conversationOfContact = [{
     "id": "1",
     "userSend": "1",
@@ -115,7 +106,7 @@ class ChatContainer extends Component {
         this.props.fetchUser();
         this.props.fetchContact();
     }
-    renderBody = (contacts, user) => {
+    renderBody = (contacts, user, contact) => {
         return (
             <div >
                 <div className="main-chat-header">
@@ -123,10 +114,10 @@ class ChatContainer extends Component {
                         name={obj.name}
                         status={obj.status}
                         imgUser={obj.imgUser} />)}
-                    <ActionsContactConversation
-                        imgContact={contactConnect[0].imgContact}
-                        nameContact={contactConnect[0].name}
-                        status={contactConnect[0].status} />
+                    {contact.map(obj => <ActionsContactConversation key={obj.id}
+                        nameContact={obj.name}
+                        status={obj.status}
+                        imgContact={obj.imgContact} />)}
                 </div>
                 <div className="main-chat-body">
                     <ListGeneralContacts contacts={contacts} />
@@ -143,7 +134,7 @@ class ChatContainer extends Component {
             <div>
                 <AppFrame
                     header=''
-                    body={this.renderBody(this.props.contacts, this.props.user)}
+                    body={this.renderBody(this.props.contacts, this.props.user, this.props.contact)}
                     footer=''>
                 </AppFrame>
             </div>
@@ -159,10 +150,12 @@ const mapStateToProps = (state, props) => {
     return {
         contacts: getContacts(state, props),
         user: getUser(state, props),
-        contact: getContact(state, props),  
+        contact: getContact(state, props),
     }
 }
-const mapDispatchProps = ({ fetchContacts, 
-                            fetchUser, 
-                            fetchContact });
+const mapDispatchProps = ({
+    fetchContacts,
+    fetchUser,
+    fetchContact
+});
 export default connect(mapStateToProps, mapDispatchProps)(ChatContainer);
