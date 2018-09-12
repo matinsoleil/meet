@@ -100,33 +100,48 @@
     "users": [
         {
             "id": "1",
-            "name": "TEST USER 1 ",
+            "name": "TEST USER CLARO CONNECT 1",
             "photo": "ruta",
-            "status": "evil"
+            "status": "Status test",
+            "dayLastMessage": "05/09/2018",
+            "lastMessage": "Last Message",
+            "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
         },
         {
             "id": "2",
-            "name": "TEST USER 2",
+            "name": "TEST USER CLARO CONNECT 2",
             "photo": "ruta",
-            "status": "evil"
+            "status": "Status test",
+            "dayLastMessage": "05/09/2018",
+            "lastMessage": "Last Message",
+            "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
         },
         {
             "id": "3",
-            "name": "TEST USER 3",
+            "name": "TEST USER CLARO CONNECT 3",
             "photo": "ruta",
-            "status": "evil"
+            "status": "Status test",
+            "dayLastMessage": "05/09/2018",
+            "lastMessage": "Last Message",
+            "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
         },
         {
             "id": "4",
-            "name": "TEST USER 4",
+            "name": "TEST USER CLARO CONNECT 4",
             "photo": "ruta",
-            "status": "evil"
+            "status": "Status test",
+            "dayLastMessage": "05/09/2018",
+            "lastMessage": "Last Message",
+            "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
         },
         {
             "id": "5",
-            "name": "TEST USER 5",
+            "name": "TEST USER CLARO CONNECT 5",
             "photo": "ruta",
-            "status": "evil"
+            "status": "Status test",
+            "dayLastMessage": "05/09/2018",
+            "lastMessage": "Last Message",
+            "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
         }
     ],
     "contacts": [
