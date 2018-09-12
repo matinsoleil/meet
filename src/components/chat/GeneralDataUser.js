@@ -1,16 +1,16 @@
 import React from 'react';
 
-const GeneralDataUser = ({ imgUser, nameUser, status }) => {
+const GeneralDataUser = user => {
     return (
         <div className="main-chat-general-data-user">
             <div className="icon-user">
-                <img className="imgIcoUser" src={imgUser} alt="test" />
+                <img className="imgIcoUser" src={null} alt="test" />
             </div>
             <div>
-                {nameUser}
+                {null}
             </div>
             <div>
-                {status}
+                {null}
             </div>
 
             <div className="boton-action-user">

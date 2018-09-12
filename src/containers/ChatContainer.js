@@ -112,14 +112,11 @@ class ChatContainer extends Component {
         this.props.fetchContacts();
         this.props.fetchUser();
     }
-    renderBody = (contacts, users) => {
+    renderBody = (contacts, user) => {
         return (
             <div >
                 <div className="main-chat-header">
-                    <GeneralDataUser
-                        imgUser={null}
-                        nameUser={null}
-                        status={null} />
+                    <GeneralDataUser user={user} />
                     <ActionsContactConversation
                         imgContact={contactConnect[0].imgContact}
                         nameContact={contactConnect[0].name}
@@ -140,7 +137,7 @@ class ChatContainer extends Component {
             <div>
                 <AppFrame
                     header=''
-                    body={this.renderBody(this.props.contacts, this.props.users)}
+                    body={this.renderBody(this.props.contacts, this.props.user)}
                     footer=''>
                 </AppFrame>
             </div>
@@ -149,7 +146,7 @@ class ChatContainer extends Component {
 }
 ChatContainer.defaultProps = {
     contacts: [],
-    user: []
+    user: {}
 }
 const mapStateToProps = (state, props) => {
     return {
