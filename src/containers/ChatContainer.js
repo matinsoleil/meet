@@ -107,8 +107,9 @@ class ChatContainer extends Component {
         this.props.fetchContacts();
         this.props.fetchUser();
         this.props.fetchContact();
+        this.props.fetchConversation();
     }
-    renderBody = (contacts, user, contact) => {
+    renderBody = (contacts, user, contact, conversation) => {
         return (
             <div >
                 <div className="main-chat-header">
@@ -136,7 +137,7 @@ class ChatContainer extends Component {
             <div>
                 <AppFrame
                     header=''
-                    body={this.renderBody(this.props.contacts, this.props.user, this.props.contact)}
+                    body={this.renderBody(this.props.contacts, this.props.user, this.props.contact, this.props.conversation )}
                     footer=''>
                 </AppFrame>
             </div>
