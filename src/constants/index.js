@@ -1,2 +1,3 @@
 export const FETCH_CONTACTS = 'FETCH_CONTACTS';
+export const FETCH_CONTACT = 'FETCH_CONTACT';
 export const FETCH_USER = 'FETCH_USER';

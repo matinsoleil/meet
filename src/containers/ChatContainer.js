@@ -6,9 +6,11 @@ import ActionsContactConversation from '../components/chat/ActionsContactConvers
 import ListGeneralContacts from '../components/chat/ListGeneralContacts'
 import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
 import AreaSendMessage from '../components/chat/AreaSendMessage'
-import fetchContacts from './../actions/contacts/fetchContacts'
+import fetchContacts from '../actions/contacts/fetchContacts'
+import fetchContact from '../actions/contact/fetchContact'
 import fetchUser from '../actions/users/fetchUser'
 import { getContacts } from './../selectors/contacts'
+import { getContact } from './../selectors/contact'
 import { getUser } from './../selectors/user'
 
 const contactConnect = [{
@@ -111,6 +113,7 @@ class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts();
         this.props.fetchUser();
+        this.props.fetchContact();
     }
     renderBody = (contacts, user) => {
         return (
@@ -149,13 +152,17 @@ class ChatContainer extends Component {
 }
 ChatContainer.defaultProps = {
     contacts: [],
-    user: {}
+    user: [],
+    contact: []
 }
 const mapStateToProps = (state, props) => {
     return {
         contacts: getContacts(state, props),
-        user: getUser(state, props)
+        user: getUser(state, props),
+        contact: getContact(state, props),  
     }
 }
-const mapDispatchProps = ({ fetchContacts, fetchUser });
+const mapDispatchProps = ({ fetchContacts, 
+                            fetchUser, 
+                            fetchContact });
 export default connect(mapStateToProps, mapDispatchProps)(ChatContainer);
