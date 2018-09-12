@@ -8,10 +8,12 @@ import ChatGeneralConversationContact from '../components/chat/ChatGeneralConver
 import AreaSendMessage from '../components/chat/AreaSendMessage'
 import fetchContacts from '../actions/contacts/fetchContacts'
 import fetchContact from '../actions/contact/fetchContact'
+import fetchConversation from '../actions/conversation/fetchConversation'
 import fetchUser from '../actions/users/fetchUser'
 import { getContacts } from './../selectors/contacts'
 import { getContact } from './../selectors/contact'
 import { getUser } from './../selectors/user'
+import { getConversation } from '../selectors/conversation';
 
 const conversationOfContact = [{
     "id": "1",
@@ -151,11 +153,13 @@ const mapStateToProps = (state, props) => {
         contacts: getContacts(state, props),
         user: getUser(state, props),
         contact: getContact(state, props),
+        conversation: getConversation(state, props)
     }
 }
 const mapDispatchProps = ({
     fetchContacts,
     fetchUser,
-    fetchContact
+    fetchContact,
+    fetchConversation
 });
 export default connect(mapStateToProps, mapDispatchProps)(ChatContainer);
