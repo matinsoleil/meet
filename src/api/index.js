@@ -1,1 +1,5 @@
-export const apiGet = (url) => () => fetch(url).then(v => v.json());
+import axios from 'axios'
+export const apiGet = (url) => () => axios.get(url)
+.then(res => {
+    return (res.data);
+})

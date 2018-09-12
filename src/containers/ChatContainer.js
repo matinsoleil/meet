@@ -116,7 +116,10 @@ class ChatContainer extends Component {
         return (
             <div >
                 <div className="main-chat-header">
-                    <GeneralDataUser user={user} />
+                    {user.map(obj => <GeneralDataUser key={obj.id}
+                        name={obj.name}
+                        status={obj.status}
+                        imgUser={obj.imgUser} />)}
                     <ActionsContactConversation
                         imgContact={contactConnect[0].imgContact}
                         nameContact={contactConnect[0].name}
