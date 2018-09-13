@@ -15,93 +15,6 @@ import { getContact } from './../selectors/contact'
 import { getUser } from './../selectors/user'
 import { getConversation } from '../selectors/conversation';
 
-const conversationOfContact = [{
-    "id": "1",
-    "userSend": "1",
-    "userGet": "2",
-    "message": "message",
-    "hour": "10:01",
-    "status": "1"
-}, {
-    "id": "2",
-    "userSend": "2",
-    "userGet": "1",
-    "message": "message",
-    "hour": "10:02",
-    "status": "1"
-}, {
-    "id": "3",
-    "userSend": "1",
-    "userGet": "2",
-    "message": "message",
-    "hour": "10:03",
-    "status": "1"
-}, {
-    "id": "4",
-    "userSend": "2",
-    "userGet": "1",
-    "message": "message",
-    "hour": "10:04",
-    "status": "1"
-}, {
-    "id": "5",
-    "userSend": "1",
-    "userGet": "2",
-    "message": "message",
-    "hour": "10:05",
-    "status": "1"
-}, {
-    "id": "6",
-    "userSend": "2",
-    "userGet": "1",
-    "message": "message",
-    "hour": "10:06",
-    "status": "1"
-}, {
-    "id": "7",
-    "userSend": "1",
-    "userGet": "2",
-    "message": "message",
-    "hour": "10:07",
-    "status": "1"
-}, {
-    "id": "8",
-    "userSend": "2",
-    "userGet": "1",
-    "message": "message",
-    "hour": "10:08",
-    "status": "1"
-}, {
-    "id": "9",
-    "userSend": "1",
-    "userGet": "2",
-    "message": "message",
-    "hour": "10:09",
-    "status": "1"
-}, {
-    "id": "10",
-    "userSend": "2",
-    "userGet": "1",
-    "message": "message",
-    "hour": "10:10",
-    "status": "1"
-}, {
-    "id": "11",
-    "userSend": "1",
-    "userGet": "2",
-    "message": "message",
-    "hour": "10:11",
-    "status": "1"
-},
-{
-    "id": "12",
-    "userSend": "2",
-    "userGet": "1",
-    "message": "message",
-    "hour": "10:12",
-    "status": "1"
-}]
-
 class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts();
@@ -125,7 +38,7 @@ class ChatContainer extends Component {
                 <div className="main-chat-body">
                     <ListGeneralContacts contacts={contacts} />
                     <div className="main-chat-general-conversation-contact">
-                        <ChatGeneralConversationContact chat={conversationOfContact} />
+                        <ChatGeneralConversationContact chat={conversation} />
                         <AreaSendMessage />
                     </div>
                 </div>
@@ -147,7 +60,8 @@ class ChatContainer extends Component {
 ChatContainer.defaultProps = {
     contacts: [],
     user: [],
-    contact: []
+    contact: [],
+    conversation:[]
 }
 const mapStateToProps = (state, props) => {
     return {
