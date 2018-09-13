@@ -1,16 +1,15 @@
 import React from 'react';
 import MessageReceiver from './MessageReceiver';
-// import MessageTransmitter from './MessageTransmitter';
+import MessageTransmitter from './MessageTransmitter';
 
 const ChatGeneralConversationContact = ({ chat }) => {
-    console.log(chat);
-    
     return (
         <div className="main-chat-history-conversation-contact">
             {chat.map(c => {
-                return (<MessageReceiver key={c.id}
+                const TypeMessageControl = c.userSend === "1" ? MessageReceiver : MessageTransmitter;
+                return <TypeMessageControl key={c.id}
                     message={c.message}
-                    hour={c.hour} />)
+                    hour={c.hour} />
             })}
         </div>
     );
