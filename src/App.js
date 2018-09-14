@@ -3,7 +3,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
+import { addNotificationError } from './redux/actions/logger'
+
 class App extends Component {
+  
+  componentDidMount() {
+    addNotificationError();
+  }
+  
   render() {
     return (
       <Router>
