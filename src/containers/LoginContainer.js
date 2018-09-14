@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import AppFrame from '../components/AppFrame';
 import LoginMain from '../components/login/LoginMain';
-
 class LoginContainer extends Component {
     renderBody = () => {
         return (

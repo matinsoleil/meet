@@ -1,4 +1,4 @@
-import { FETCH_CONVERSATION } from '../../../constants/index'
+import { FETCH_CONVERSATION } from '../../actionstypes'
 import { createAction } from 'redux-actions'
 import { apiGet } from '../../../api/index'
 import { urlConversation } from '../../../api/urls'

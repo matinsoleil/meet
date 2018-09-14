@@ -1,4 +1,4 @@
-import { FETCH_CONTACT } from '../../../constants/index'
+import { FETCH_CONTACT } from '../../actionstypes'
 import { createAction } from 'redux-actions'
 import { apiGet } from '../../../api/index'
 import { urlContact } from '../../../api/urls'
