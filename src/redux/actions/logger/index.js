@@ -1,4 +1,3 @@
-
 import log4javascript from 'log4javascript';
 import { urlBaseLoggerError } from './../../../api/urls';
 export const addNotificationError = () => {

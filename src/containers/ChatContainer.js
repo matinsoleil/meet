@@ -13,13 +13,16 @@ import fetchUser from '../redux/actions/users/fetchUser'
 import { getContacts } from '../redux/selectors/contacts'
 import { getContact } from '../redux/selectors/contact'
 import { getUser } from '../redux/selectors/user'
-import { getConversation } from '../redux/selectors/conversation';
+import { getConversation } from '../redux/selectors/conversation'
 class ChatContainer extends Component {
     componentDidMount() {
-        this.props.fetchContacts();
+        this.props.fetchContactsssss();
         this.props.fetchUser();
         this.props.fetchContact();
         this.props.fetchConversation();
+    }
+    componentDidCatch(){
+        debugger
     }
     renderBody = (contacts, user, contact, conversation) => {
         return (
