@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { FETCH_USER } from '../constants';
+import { FETCH_USER } from '../../constants/index';
 
 export const users = handleActions({
     [FETCH_USER]: (state, action) => [...state, action.payload],

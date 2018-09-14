@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { FETCH_CONVERSATION } from '../constants';
+import { FETCH_CONVERSATION } from '../../constants/index';
 
 export const conversation = handleActions({
     [FETCH_CONVERSATION]: (state, action) => [...action.payload],

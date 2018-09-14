@@ -6,14 +6,14 @@ import ActionsContactConversation from '../components/chat/ActionsContactConvers
 import ListGeneralContacts from '../components/chat/ListGeneralContacts'
 import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
 import AreaSendMessage from '../components/chat/AreaSendMessage'
-import fetchContacts from '../actions/contacts/fetchContacts'
-import fetchContact from '../actions/contact/fetchContact'
-import fetchConversation from '../actions/conversation/fetchConversation'
-import fetchUser from '../actions/users/fetchUser'
-import { getContacts } from './../selectors/contacts'
-import { getContact } from './../selectors/contact'
-import { getUser } from './../selectors/user'
-import { getConversation } from '../selectors/conversation';
+import fetchContacts from '../redux/actions/contacts/fetchContacts'
+import fetchContact from '../redux/actions/contact/fetchContact'
+import fetchConversation from '../redux/actions/conversation/fetchConversation'
+import fetchUser from '../redux/actions/users/fetchUser'
+import { getContacts } from '../redux/selectors/contacts'
+import { getContact } from '../redux/selectors/contact'
+import { getUser } from '../redux/selectors/user'
+import { getConversation } from '../redux/selectors/conversation';
 
 class ChatContainer extends Component {
     componentDidMount() {
