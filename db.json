@@ -422,6 +422,76 @@
       "timestamp": 1537206243,
       "message": "TypeError: this.props.fetchContactsssss is not a function",
       "id": 44
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206339,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "id": 45
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206342,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "id": 46
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206356,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "id": 47
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206373,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "id": 48
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206376,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "id": 49
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206386,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "id": 50
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206391,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "id": 51
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206408,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:32)\n    in div (at App.js:30)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:29)\n    in App (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 52
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206434,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:32)\n    in div (at App.js:30)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:29)\n    in App (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 53
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206437,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:32)\n    in div (at App.js:30)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:29)\n    in App (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 54
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537206439,
+      "message": "TypeError: this.props.fetchContactsssss is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:32)\n    in div (at App.js:30)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:29)\n    in App (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 55
     }
   ],
   "contacts": [
