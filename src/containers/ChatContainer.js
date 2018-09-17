@@ -16,12 +16,12 @@ import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 class ChatContainer extends Component {
     componentDidMount() {
-        this.props.fetchContactsssss();
+        this.props.fetchContacts();
         this.props.fetchUser();
         this.props.fetchContact();
         this.props.fetchConversation();
     }
-    componentDidCatch(){
+    componentDidCatch() {
         debugger
     }
     renderBody = (contacts, user, contact, conversation) => {
@@ -52,7 +52,7 @@ class ChatContainer extends Component {
             <div>
                 <AppFrame
                     header=''
-                    body={this.renderBody(this.props.contacts, this.props.user, this.props.contact, this.props.conversation )}
+                    body={this.renderBody(this.props.contacts, this.props.user, this.props.contact, this.props.conversation)}
                     footer=''>
                 </AppFrame>
             </div>
@@ -63,7 +63,7 @@ ChatContainer.defaultProps = {
     contacts: [],
     user: [],
     contact: [],
-    conversation:[]
+    conversation: []
 }
 const mapStateToProps = (state, props) => {
     return {
