@@ -3,21 +3,27 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
-import { addNotificationError } from './redux/actions/logger'
+import { addNotificationError } from './redux/actions/logerror'
+import MessageError from './components/logerror/MessageError';
+
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false };
+    this.state = {
+      error: null,
+      errorInfo: null
+    };
   }
-  componentDidCatch(error, info) {
-    this.setState({ hasError: true });
-  }
-  componentDidMount() {
-    addNotificationError();
+  componentDidCatch(error, errorInfo) {
+    this.setState({
+      error: error,
+      errorInfo: errorInfo
+    });
   }
   render() {
-    if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>
+    if (this.state.error) {
+      return (<MessageError message={this.state.error.toString()}  detail={this.state.errorInfo.componentStack}/>)
     } else {
       return (
         <Router>
