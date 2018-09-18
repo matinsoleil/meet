@@ -1,5 +1,7 @@
-import Translate from '@lib/translation/translate';
-import {ActionTypes} from '@flux/actionTypes';
+// import Translate from '@lib/translation/translate';
+// import {ActionTypes} from '@flux/actionTypes';
+import Translate from './../../../lib/translation/translate';
+import {ActionTypes} from './../../../flux/actionTypes';
 
 
 export const setCurrentCountry = (country) => dispatch => {

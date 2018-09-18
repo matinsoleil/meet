@@ -1,4 +1,5 @@
-import {ActionTypes} from '@flux/actionTypes';
+// import {ActionTypes} from '@flux/actionTypes';
+import {ActionTypes} from './../../../flux/actionTypes';
 
 export const setHeaderHeight = (height) => {
     return {

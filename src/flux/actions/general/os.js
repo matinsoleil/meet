@@ -1,5 +1,7 @@
-import {ActionTypes} from '@flux/actionTypes.js';
-import {osInstance} from '@lib/os';
+// import {ActionTypes} from '@flux/actionTypes.js';
+// import {osInstance} from '@lib/os';
+import {ActionTypes} from './../../../flux/actionTypes';
+import {osInstance} from './../../../lib/os';
 
 export const setOs = () => {
     return({
