@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './App.css';
-import {connect} from 'react-redux';
-import {actions} from './../src/flux/actions';
-
-
-
+import { setCountryConfig } from './../src/redux/actions/general/country'
 import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
 import MessageError from './components/logerror/MessageError';
@@ -16,6 +13,11 @@ class App extends Component {
       error: null,
       errorInfo: null
     };
+  }
+  componentDidMount() {
+    console.log(this.props.countries[0]);
+    // console.log(this.props);
+    this.props.setCountryConfig(this.props.countries[0]);
   }
   componentDidCatch(error, errorInfo) {
     this.setState({
@@ -37,32 +39,25 @@ class App extends Component {
     }
   }
 }
-
-
 const mapStateToProps = state => {
   return {
-      region: state.general.country.region,
-      dialect: state.general.country.dialect,
-      languages: state.general.country.languages,
-      os: state.general.os,
-      countries: state.general.countries,
+    region: state.country.region,
+    dialect: state.country.dialect,
+    languages: state.country.languages,
+    os: state.os,
+    countries: state.countries,
   }
 }
-
 const mapDispatchToProps = dispatch => {
   return {
-      setOs: () => {
-          dispatch(actions.setOs());
-      },
-      setTranslator: dialect => {
-          dispatch(actions.setTranslator(dialect));
-      },
-      setCountryConfig: country => {
-          dispatch(actions.setCountryConfig(country));
-      }
+    setOs: null,
+    setTranslator: null,
+    setCountryConfig: country => {
+      dispatch(setCountryConfig(country));
+    }
   }
 }
-
-
-
-export default App;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

@@ -1,4 +1,4 @@
-import {ActionTypes} from '@flux/actionTypes';
+import {ActionTypes} from './../../redux/actionstypes';
 
 const portalCountryConfig = {
     name: null,

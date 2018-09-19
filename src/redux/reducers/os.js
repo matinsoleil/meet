@@ -1,4 +1,4 @@
-import { ActionTypes } from '@flux/actionTypes.js';
+import { ActionTypes } from './../actionstypes';
 
 export const osReducer = (state = null, action) => {
     switch (action.type) {
