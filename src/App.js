@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.css';
-import { setCountryConfig } from './../src/redux/actions/general/country'
+import { setCountryConfig, setTranslator } from './../src/redux/actions/general/country'
+import { setOs } from './../src/redux/actions/general/os'
 import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
 import MessageError from './components/logerror/MessageError';
@@ -14,10 +15,8 @@ class App extends Component {
       errorInfo: null
     };
   }
-  componentDidMount() {
-    console.log(this.props.countries[0]);
-    // console.log(this.props);
-    this.props.setCountryConfig(this.props.countries[0]);
+  componentWillMount() {
+    this.props.setCountryConfig(this.props.countries[2]);
   }
   componentDidCatch(error, errorInfo) {
     this.setState({
@@ -50,8 +49,12 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    setOs: null,
-    setTranslator: null,
+    setOs: () => {
+      dispatch(setOs());
+    },
+    setTranslator: dialect => {
+      dispatch(setTranslator(dialect));
+    },
     setCountryConfig: country => {
       dispatch(setCountryConfig(country));
     }

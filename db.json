@@ -144,7 +144,99 @@
       "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
     }
   ],
-  "logerror": [],
+  "logerror": [
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537395340,
+      "message": "TypeError: Cannot read property 't' of undefined",
+      "detail": "\n    in LoginMain (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 1
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537395735,
+      "message": "TypeError: Cannot read property 'country' of undefined",
+      "detail": "\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 2
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537395742,
+      "message": "TypeError: Cannot read property 'country' of undefined",
+      "detail": "\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 3
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537395782,
+      "message": "TypeError: Cannot read property 't' of null",
+      "detail": "\n    in LoginMain (created by Connect(LoginMain))\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 4
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537395796,
+      "message": "TypeError: this.props.Translator is not a function",
+      "detail": "\n    in LoginMain (created by Connect(LoginMain))\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 5
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537395800,
+      "message": "TypeError: Cannot read property 't' of null",
+      "detail": "\n    in LoginMain (created by Connect(LoginMain))\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 6
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537395892,
+      "message": "TypeError: Cannot read property 't' of null",
+      "detail": "\n    in LoginMain (created by Connect(LoginMain))\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 7
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537395939,
+      "message": "TypeError: Cannot read property 'country' of undefined",
+      "detail": "\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 8
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537396015,
+      "message": "TypeError: Cannot read property 'country' of undefined",
+      "detail": "\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 9
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537396027,
+      "message": "TypeError: Cannot read property 'country' of undefined",
+      "detail": "\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 10
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537396050,
+      "message": "TypeError: Cannot read property 't' of null",
+      "detail": "\n    in LoginMain (created by Connect(LoginMain))\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 11
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537396091,
+      "message": "TypeError: Cannot read property 't' of null",
+      "detail": "\n    in LoginMain (created by Connect(LoginMain))\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 12
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537396099,
+      "message": "TypeError: this.props.Translator is not a function",
+      "detail": "\n    in LoginMain (created by Connect(LoginMain))\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 13
+    }
+  ],
   "contacts": [
     {
       "id": "1",

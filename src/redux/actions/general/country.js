@@ -1,6 +1,5 @@
 import Translate from './../../../lib/translation/translate'
 import { ActionTypes } from './../../actionstypes/index'
-
 export const setCurrentCountry = (country) => dispatch => {
     dispatch({
         type: ActionTypes.GENERAL_SET_COUNTRY,
@@ -8,7 +7,6 @@ export const setCurrentCountry = (country) => dispatch => {
     });
     return Promise.resolve;
 }
-
 export const setTranslator = (dialect) => dispatch => {
     let t = new Translate(dialect)
     dispatch({
@@ -17,13 +15,10 @@ export const setTranslator = (dialect) => dispatch => {
     });
     return Promise.resolve;
 }
-
-export const setCountryConfig = (country)=> dispatch => {
-    
-    console.log("Aqui ando");
+export const setCountryConfig = (country) => dispatch => {
     dispatch(setCurrentCountry(country));
     dispatch(setTranslator(country.dialect));
-    return{
+    return {
         type: 'invalid',
         payload: null
     }
