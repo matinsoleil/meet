@@ -1,4 +1,4 @@
-import countries from '@flux/states/countries';
+import countries from './../actionstypes/countries';
 
 export const countriesReducer = (state = countries, actions) => {
     switch(actions.type){
