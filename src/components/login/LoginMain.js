@@ -4,15 +4,16 @@ class LoginMain extends Component {
     render() {
         return (
             <div>
-                <div className="login-header">Cabecera</div>
+                <div className="login-header">
+                    {this.props.Translator.t('header_login')}
+                </div>
                 <div className="login-body">
                     <div className="login-instructions">
-                        Instrucciones (1)
-                        <h1>
-                            {this.props.Translator.t('FAQ_SEARCH_BOX_PLACEHOLDER')}
-                        </h1>
+                        {this.props.Translator.t('instructions_login')}
                     </div>
-                    <div className="login-qr-code"> QR code</div>
+                    <div className="login-qr-code">
+                        {this.props.Translator.t('QR_Code_login')}
+                    </div>
                 </div>
             </div>
         );

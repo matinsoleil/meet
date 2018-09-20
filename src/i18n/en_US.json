@@ -1,6 +1,10 @@
 {
   "Oh_no_Something_Went_Wrong": "Oh no something went wrong",
   "Component_Stack_Error_Details": "Component stack error details:",
+
+  "header_login": "Header login",
+  "instructions_login": "Instructions login",
+  "QR_Code_login": "QR Code login",
   
   "An internal server error occured - please try again by reloading the page and enter the credentials again.": "Ocurrió un error interno. Intente cargar la página nuevamente y ingrese las credenciales una vez más.",
   "An internal server error occured - please try again.": "Ocurrió un error interno. Intente nuevamente más tarde.",
