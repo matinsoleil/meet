@@ -100,5 +100,12 @@ module.exports =  [
         // flag: require('@/img/flagCountries/PY_round.png'),
         dialect: 'es_PY',
         region: 'paraguay'
+    },
+    {
+        name: 'ESTADOS UNIDOS',
+        // flag: require('@/img/flagCountries/PY_round.png'),
+        dialect: 'en_US',
+        region: 'estadosunidos'
     }
+    
 ];

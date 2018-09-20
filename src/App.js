@@ -16,7 +16,9 @@ class App extends Component {
     };
   }
   componentWillMount() {
-    this.props.setCountryConfig(this.props.countries[2]);
+    // 17 Estados unidos
+    // 0 México
+    this.props.setCountryConfig(this.props.countries[0]);
   }
   componentDidCatch(error, errorInfo) {
     this.setState({
