@@ -18,7 +18,7 @@ class App extends Component {
   componentWillMount() {
     // 17 Estados unidos
     // 0 México
-    this.props.setCountryConfig(this.props.countries[0]);
+    this.props.setCountryConfig(this.props.countries[17]);
   }
   componentDidCatch(error, errorInfo) {
     this.setState({

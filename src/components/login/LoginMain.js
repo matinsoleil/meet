@@ -19,7 +19,6 @@ class LoginMain extends Component {
     }
 }
 const stateToProps = (state) => {
-    console.log(state);
     return {
         Translator: state.country.translator,
         region: state.country.region,

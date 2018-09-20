@@ -1,4 +1,7 @@
 {
+  "Oh_no_Something_Went_Wrong": "¡Oh no! Algo salió mal",
+  "Component_Stack_Error_Details": "Detalles del error de la pila de componentes:",
+  
   "An internal server error occured - please try again by reloading the page and enter the credentials again.": "Ocurrió un error interno. Intente cargar la página nuevamente y ingrese las credenciales una vez más.",
   "An internal server error occured - please try again.": "Ocurrió un error interno. Intente nuevamente más tarde.",
   "An server error occured - please try again.": "Ocurrió un error en el servidor. Intente nuevamente más tarde.",

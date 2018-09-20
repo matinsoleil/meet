@@ -16,7 +16,7 @@ import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 class ChatContainer extends Component {
     componentDidMount() {
-        this.props.fetchContacts();
+        this.props.fetchContactssss();
         this.props.fetchUser();
         this.props.fetchContact();
         this.props.fetchConversation();
