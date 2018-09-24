@@ -7,7 +7,7 @@ const tokenRefresh = {
     _success: (data) => {
         return {
             type: ZTE_GETTOKEN + '_REFRESH',
-            payload: 'Token Refresh'+ data
+            payload: 'Token Refresh' + data
         }
     },
     _fail: (data) => {
@@ -22,13 +22,13 @@ const pushLink = {
     _connected: (data) => {
         return {
             type: ZTE_CBPUSHLINKCONNECTED,
-            payload: 'API Connected' + data
+            payload: data
         }
     },
     _disconnected: (data) => {
         return {
             type: ZTE_CBPUSHLINKDISCONNECTED,
-            payload: 'API Disconected: ' + JSON.stringify(data)
+            payload: data
         }
     }
 }
@@ -77,19 +77,30 @@ const receivingEvents = {
         }
     },
     multimediaMsg: (data) => {
-        return{
+        return {
             type: ZTE_CBSINGLEMULTMSGRECVBASE,
             payload: data
         }
     },
     statusMsgs: (data) => {
-        return{
+        return {
             type: ZTE_CBSINGLERECVREPORT,
             payload: data
         }
     }
 }
 
+/**
+ * 
+ * @param {Object} [params]
+ *      @param {string} params.loginSeverurl
+ *      @param {string} params.sdkapiVersion
+ *      @param {string} params.appid
+ *      @param {string} params.refreshRegister
+ *      @param {string} params.iamServerurl
+ *      @param {string} params.iamapiVersion
+ *      @param {string} params.fileServerurl
+ */
 export const initApi = (params) => {
     messageCenter = new MessageCenter(null, null, params);
     return {
@@ -98,7 +109,14 @@ export const initApi = (params) => {
     }
 }
 
-
+/**
+ * 
+ * @param {Object} params*    
+ *      @param {string} params.granttype - like 'personal'
+ *      @param {string} params.username - phone Numbre
+ *      @param {string} params.password - user password
+ *      @param {string} params.terminaltype - 'WEB'
+ */
 export const getToken = (params) => dispatch => {
     dispatch({
         type: ZTE_GETTOKEN,
@@ -115,22 +133,22 @@ export const getToken = (params) => dispatch => {
 export const login = () => dispatch => {
 
     messageCenter.login(
-        (data)=>{
+        (data) => {
             dispatch(pushLink._connected(data));
         },
-        (data)=>{
+        (data) => {
             dispatch(pushLink._disconnected(data));
         },
-        (data)=>{
+        (data) => {
             dispatch(register._success(data));
         },
-        (data)=>{
+        (data) => {
             dispatch(register._fail(data));
         },
-        (data)=>{
+        (data) => {
             dispatch(registerRefresh._success(data));
-        } ,
-        (data)=>{
+        },
+        (data) => {
             dispatch(registerRefresh._fail(data));
         },
         {
@@ -152,29 +170,52 @@ export const login = () => dispatch => {
 }
 
 export const logout = () => {
-    return{
+    return {
         type: ZTE_LOGOUT,
         payload: messageCenter.logout()
     }
 }
 
+/**
+ * 
+ * @param {Object} params
+ *      @param {string} params.destaddress
+ *      @param {string} params.textmsg
+ */
 export const sendSingleTextMsg = (params) => {
-    return{
+    return {
         type: ZTE_SENDSINGLETXTMSG,
-        payload: messageCenter.sendSingleTextMsg(null,null,params)
+        payload: messageCenter.sendSingleTextMsg(null, null, params)
     }
 }
 
+/**
+ * 
+ * @param {Object} params
+ *      @param {string} params.destaddress
+ *      @param {string} params.locationdesc
+ *      @param {string} params.longitude
+ *      @param {string} params.latitude
+ *      @param {string} params.radius
+ */
 export const sendSingleLocationMsg = (params) => {
-    return{
+    return {
         type: ZTE_SENDSINGLELOCATIONMSG,
-        payload: messageCenter.sendSingleLocationMsg(null,null,params)
+        payload: messageCenter.sendSingleLocationMsg(null, null, params)
     }
-} 
+}
 
-export const sendSingleFile = (file,params) => {
-    return{
+/**
+ * 
+ * @param {File} file 
+ * @param {Object} params
+ *      @param {string} params.destaddress
+ *      @param {string} params.thumbfilename
+ *      @param {string} params.thumdata 
+ */
+export const sendSingleFile = (file, params) => {
+    return {
         type: ZTE_SENDSINGLEFILE,
-        payload: messageCenter.sendSingleFile(null,null,file,params)
+        payload: messageCenter.sendSingleFile(null, null, file, params)
     }
 }
