@@ -14,12 +14,18 @@ import { getContacts } from '../redux/selectors/contacts'
 import { getContact } from '../redux/selectors/contact'
 import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
+import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
+
 class ChatContainer extends Component {
     componentDidMount() {
-        this.props.fetchContacts();
-        this.props.fetchUser();
-        this.props.fetchContact();
-        this.props.fetchConversation();
+        // this.props.fetchContacts();
+        // this.props.fetchUser();
+        // this.props.fetchContact();
+        // this.props.fetchConversation();
+        this.props.initApi();
+        this.props.getToken({});
+        this.props.login();
+        //this.props.logout();
     }
     componentDidCatch() {
         debugger
@@ -73,10 +79,21 @@ const mapStateToProps = (state, props) => {
         conversation: getConversation(state, props)
     }
 }
-const mapDispatchProps = ({
-    fetchContacts,
-    fetchUser,
-    fetchContact,
-    fetchConversation
-});
-export default connect(mapStateToProps, mapDispatchProps)(ChatContainer);
+const mapDispatchToProps = dispatch => {
+    return{
+        initApi: params => {
+            dispatch(initApi(params));
+        },
+        getToken: params => {
+            dispatch(getToken(params));
+        },
+        login: params => {
+            dispatch(login());
+        },
+        logout: () => {
+            dispatch(logout());
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer);
