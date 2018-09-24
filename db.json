@@ -249,6 +249,34 @@
       "message": "TypeError: this.props.fetchUser is not a function",
       "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
       "id": 15
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537826543,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 16
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537831063,
+      "message": "TypeError: Cannot read property 'payload' of undefined",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 17
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537831073,
+      "message": "TypeError: Cannot read property 'payload' of undefined",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 18
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537831534,
+      "message": "TypeError: Cannot read property 'payload' of undefined",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 19
     }
   ],
   "contacts": [

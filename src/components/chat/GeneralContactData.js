@@ -1,25 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const GeneralContactData = ({nameContact, dayLastMessage, lastMessage, imgContact, status}) => {
+class GeneralContactData extends Component {
+    constructor(...props) {
+        super(...props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
+        this.props.onClick(this.props.id)
+    }
+    render() {
         return (
-            <div className="contact-chat">
+            <div className="contact-chat" onClick={this.handleClick} >
                 <div className="icon-user">
-                <img className="imgIcoUser" src={imgContact} alt="test" />
+                    <img className="imgIcoUser" src={this.props.imgContact} alt="test" />
                 </div>
                 <div >
-                    {nameContact}
+                    {this.props.nameContact}
                 </div>
                 <div >
-                    {status}
+                    {this.props.status}
                 </div>
                 <div >
-                    {dayLastMessage}
+                    {this.props.dayLastMessage}
                 </div>
                 <div >
-                    {lastMessage}
+                    {this.props.lastMessage}
                 </div>
             </div>
-        );
+        )
+    }
 }
 
 export default GeneralContactData;
