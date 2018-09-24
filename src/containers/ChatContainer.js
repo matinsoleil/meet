@@ -81,10 +81,18 @@ const mapStateToProps = (state, props) => {
 }
 const mapDispatchToProps = dispatch => {
     return{
-        fetchContacts,
-        fetchContact,
-        fetchConversation,
-        fetchUser,
+        fetchContacts: ()=>{
+            dispatch(fetchContacts());
+        },
+        fetchContact: ()=>{
+            dispatch(fetchContact());
+        },
+        fetchConversation: ()=>{
+            dispatch(fetchConversation());
+        },
+        fetchUser:()=>{
+            dispatch(fetchUser());
+        },
         initApi: params => {
             dispatch(initApi(params));
         },
