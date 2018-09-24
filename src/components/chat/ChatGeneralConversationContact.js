@@ -1,6 +1,7 @@
 import React from 'react';
 import MessageReceiver from './MessageReceiver';
 import MessageTransmitter from './MessageTransmitter';
+import './ChatGeneralConversationContact.scss';
 
 const ChatGeneralConversationContact = ({ chat }) => {
     return (

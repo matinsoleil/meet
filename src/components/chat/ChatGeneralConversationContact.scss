@@ -1,0 +1,20 @@
+@media screen{
+  .main-chat-history-conversation-contact{
+    overflow: scroll;
+    border: 3px solid rgb(33, 47, 173);
+    position: relative;
+    height: 500px;
+    width: 100%;
+    .main-chat-receiver{
+      border: 3px solid rgb(33, 173, 173);
+      height: 100px;
+      width: 100%;
+    }
+    .main-chat-transmitter{
+      border: 3px solid rgb(173, 147, 33);
+      position: static;
+      height: 100px;
+      width: 100%;
+    }
+  }
+}
