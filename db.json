@@ -235,6 +235,20 @@
       "message": "TypeError: this.props.Translator is not a function",
       "detail": "\n    in LoginMain (created by Connect(LoginMain))\n    in Connect(LoginMain) (at LoginContainer.js:7)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at LoginContainer.js:13)\n    in div (at LoginContainer.js:12)\n    in LoginContainer (created by Route)\n    in Route (at App.js:35)\n    in div (at App.js:34)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:33)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
       "id": 13
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537819458,
+      "message": "TypeError: this.props.fetchUser is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 14
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537819459,
+      "message": "TypeError: this.props.fetchUser is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 15
     }
   ],
   "contacts": [

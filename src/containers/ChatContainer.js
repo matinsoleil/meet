@@ -18,13 +18,13 @@ import { initApi, getToken, login, logout } from '../redux/actions/messageCenter
 
 class ChatContainer extends Component {
     componentDidMount() {
-        // this.props.fetchContacts();
-        // this.props.fetchUser();
-        // this.props.fetchContact();
-        // this.props.fetchConversation();
-        this.props.initApi();
-        this.props.getToken({});
-        this.props.login();
+        this.props.fetchContacts();
+        this.props.fetchUser();
+        this.props.fetchContact();
+        this.props.fetchConversation();
+        // this.props.initApi();
+        // this.props.getToken({});
+        // this.props.login();
         //this.props.logout();
     }
     componentDidCatch() {
@@ -81,6 +81,10 @@ const mapStateToProps = (state, props) => {
 }
 const mapDispatchToProps = dispatch => {
     return{
+        fetchContacts,
+        fetchContact,
+        fetchConversation,
+        fetchUser,
         initApi: params => {
             dispatch(initApi(params));
         },
