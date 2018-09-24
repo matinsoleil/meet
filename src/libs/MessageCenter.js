@@ -20,13 +20,13 @@ export default class MessageCenter {
      *      @param {string} params.fileServerurl
      */
     constructor(initHandleSuccess, initHandleFail, params = {
-        loginSeverurl: Config.loginSeverurl,
-        sdkapiVersion: Config.sdkapiVersion,
-        appid: Config.appid,
-        refreshRegister: Config.refreshRegister,
-        iamServerurl: Config.iamServerurl,
-        iamapiVersion: Config.iamapiVersion,
-        fileServerurl: Config.fileServerurl
+        loginSeverurl: Config.ICenterSDK.loginServerurl,
+        sdkapiVersion: Config.ICenterSDK.sdkapiVersion,
+        appid: Config.ICenterSDK.appid,
+        refreshRegister: Config.ICenterSDK.refreshRegister,
+        iamServerurl: Config.ICenterSDK.iamServerurl,
+        iamapiVersion: Config.ICenterSDK.iamapiVersion,
+        fileServerurl: Config.ICenterSDK.fileServerurl
     }) {
         this.icenter = new ICenterSDK();
         this.clientInit = this.icenter.zte_ClientInit(params);
