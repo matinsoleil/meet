@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import GeneralContactData from './GeneralContactData'
-import { getContact } from '../../redux/selectors/contact'
+// import { getContact } from '../../redux/selectors/contact'
 import fetchContact from '../../redux/actions/contact/fetchContact'
 import { connect } from 'react-redux'
-
 class ListGeneralContacts extends Component {
-    constructor(...props) {
-        super(...props);
+    constructor(props) {
+        super(props);
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(idContact) {
@@ -32,17 +31,6 @@ class ListGeneralContacts extends Component {
         )
     }
 }
-
-
-
-
-const mapStateToProps = (state, props) => {
-    return {
-        contact: getContact(state, props),
-    }
-}
-
-
 const mapDispatchToProps = dispatch => {
     return{
         fetchContact: ( id )=>{
@@ -50,4 +38,4 @@ const mapDispatchToProps = dispatch => {
         },
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ListGeneralContacts);
+export default connect(null, mapDispatchToProps)(ListGeneralContacts);

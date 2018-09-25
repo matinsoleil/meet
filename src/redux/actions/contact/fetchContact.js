@@ -4,9 +4,8 @@ import { apiGet } from '../../../api/index'
 import { urlContact } from '../../../api/urls'
 
 export const fetchContact = ( id ) => dispatch => {
-    console.log( id );
-    const fetchContactActionUUU = createAction(FETCH_CONTACT, apiGet(urlContact + '/' +id));
-    dispatch(fetchContactActionUUU());
+    const fetchContactAction = createAction(FETCH_CONTACT, apiGet(urlContact + '/' +id));
+    dispatch(fetchContactAction());
 }
 export default fetchContact;
 
