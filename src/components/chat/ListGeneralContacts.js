@@ -9,9 +9,8 @@ class ListGeneralContacts extends Component {
         super(...props);
         this.handleClick = this.handleClick.bind(this);
     }
-    handleClick(v) {
-        const ress = this.props.fetchContact();
-        console.log(ress);
+    handleClick(idContact) {
+        this.props.fetchContact(idContact);
     }
     render() {
         return (
@@ -46,8 +45,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        fetchContact: ()=>{
-            dispatch(fetchContact());
+        fetchContact: ( id )=>{
+            dispatch(fetchContact( id ));
         },
     }
 }

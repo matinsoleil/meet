@@ -85,7 +85,7 @@ const mapDispatchToProps = dispatch => {
             dispatch(fetchContacts());
         },
         fetchContact: ()=>{
-            dispatch(fetchContact());
+            dispatch(fetchContact(1));
         },
         fetchConversation: ()=>{
             dispatch(fetchConversation());
