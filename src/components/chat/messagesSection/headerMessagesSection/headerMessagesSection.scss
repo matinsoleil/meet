@@ -1,0 +1,19 @@
+@media screen{
+    .header-messages-section{
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        height: 39px;
+        padding: 16px;
+        border-style: none none solid none;
+        border-width: 1.2px;
+        border-color: #e0e0e0;
+        box-sizing: content-box;
+        span.title{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+    }
+}

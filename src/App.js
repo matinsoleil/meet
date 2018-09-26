@@ -7,6 +7,7 @@ import { setOs } from './../src/redux/actions/general/os'
 import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
 import MessageError from './components/logerror/MessageError';
+import './components/claro-connect.scss';
 class App extends Component {
   constructor(props) {
     super(props);

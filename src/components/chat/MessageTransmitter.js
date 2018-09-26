@@ -3,7 +3,9 @@ import React from 'react';
 const MessageTransmitter = ({ message, hour }) => {
     return (
         <div className="main-chat-transmitter">
-            <p className="alignleft">{message} <br /> {hour}</p>
+            <p style={{
+                float:"right"
+            }}>{message} <br /> {hour}</p>
         </div>
     )
 }

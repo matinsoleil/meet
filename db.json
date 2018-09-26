@@ -4,7 +4,7 @@
       "id": "1",
       "userSend": "1",
       "userGet": "2",
-      "message": "message",
+      "message": "Hi Jack. What are you doing?",
       "hour": "10:01",
       "status": "1"
     },
@@ -12,7 +12,7 @@
       "id": "2",
       "userSend": "2",
       "userGet": "1",
-      "message": "message",
+      "message": "Hi Mary. I'm filling out a job application.",
       "hour": "10:02",
       "status": "1"
     },
@@ -20,7 +20,7 @@
       "id": "3",
       "userSend": "1",
       "userGet": "2",
-      "message": "message",
+      "message": "Are you finished with school already?",
       "hour": "10:03",
       "status": "1"
     },
@@ -28,7 +28,7 @@
       "id": "4",
       "userSend": "2",
       "userGet": "1",
-      "message": "message",
+      "message": "No. I have one more semester, but it would be great to have a job lined up.",
       "hour": "10:04",
       "status": "1"
     },
@@ -36,7 +36,7 @@
       "id": "5",
       "userSend": "1",
       "userGet": "2",
-      "message": "message",
+      "message": "How is your day going?",
       "hour": "10:05",
       "status": "1"
     },
@@ -44,7 +44,7 @@
       "id": "6",
       "userSend": "2",
       "userGet": "1",
-      "message": "message",
+      "message": "Quite busy. I'm preparing for my presentation tomorrow on our marketing strategy. I'm not even half done yet.",
       "hour": "10:06",
       "status": "1"
     },
@@ -52,7 +52,7 @@
       "id": "7",
       "userSend": "1",
       "userGet": "2",
-      "message": "message",
+      "message": "You must feel stressed out now.",
       "hour": "10:07",
       "status": "1"
     },
@@ -60,7 +60,7 @@
       "id": "8",
       "userSend": "2",
       "userGet": "1",
-      "message": "message",
+      "message": "That's an understatement.",
       "hour": "10:08",
       "status": "1"
     },
@@ -68,7 +68,7 @@
       "id": "9",
       "userSend": "1",
       "userGet": "2",
-      "message": "message",
+      "message": "What are you doing now?",
       "hour": "10:09",
       "status": "1"
     },
@@ -76,7 +76,7 @@
       "id": "10",
       "userSend": "2",
       "userGet": "1",
-      "message": "message",
+      "message": "I'm playing pool with my friends at a pool hall.",
       "hour": "10:10",
       "status": "1"
     },
@@ -84,7 +84,7 @@
       "id": "11",
       "userSend": "1",
       "userGet": "2",
-      "message": "message",
+      "message": "I didn't know you play pool. Are you having fun?",
       "hour": "10:11",
       "status": "1"
     },
@@ -92,7 +92,7 @@
       "id": "12",
       "userSend": "2",
       "userGet": "1",
-      "message": "message",
+      "message": "I'm having a great time. How about you? What are you doing?",
       "hour": "10:12",
       "status": "1"
     }
@@ -249,6 +249,13 @@
       "message": "TypeError: this.props.fetchUser is not a function",
       "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
       "id": 15
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1537902823,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (at messagesSectionContainer.js:28)\n    in div (at messagesSectionContainer.js:26)\n    in ActiveChat (at messagesSectionContainer.js:11)\n    in div (at messagesSectionContainer.js:9)\n    in MessagesSectionContainer (at ChatContainer.js:46)\n    in div (at ChatContainer.js:45)\n    in div (at ChatContainer.js:44)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:55)\n    in div (at ChatContainer.js:54)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 16
     }
   ],
   "contacts": [

@@ -53,10 +53,6 @@
   height: 100%;
   float: left;
 }
-.main-chat-body{
-  display: flex;
-  position: relative;
-}
 .main-chat-header{
   display: flex;
   position: relative;
@@ -151,12 +147,6 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
-.alignleft {
-	float: left;
-}
-.alignright {
-	float: right;
 }
 .imgIcoUser {
   height: 42px;

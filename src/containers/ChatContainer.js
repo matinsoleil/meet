@@ -4,7 +4,8 @@ import GeneralDataUser from '../components/chat/GeneralDataUser'
 import { connect } from 'react-redux'
 import ActionsContactConversation from '../components/chat/ActionsContactConversation'
 import ListGeneralContacts from '../components/chat/ListGeneralContacts'
-import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
+//import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
+import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer';
 import AreaSendMessage from '../components/chat/AreaSendMessage'
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
@@ -38,18 +39,9 @@ class ChatContainer extends Component {
                         name={obj.name}
                         status={obj.status}
                         imgUser={obj.imgUser} />)}
-                    {contact.map(obj => <ActionsContactConversation key={obj.id}
-                        nameContact={obj.name}
-                        status={obj.status}
-                        imgContact={obj.imgContact} />)}
                 </div>
-                <div className="main-chat-body">
-                    <ListGeneralContacts contacts={contacts} />
-                    <div className="main-chat-general-conversation-contact">
-                        <ChatGeneralConversationContact chat={conversation} />
-                        <AreaSendMessage />
-                    </div>
-                </div>
+                <ListGeneralContacts contacts={contacts} />
+                <MessageSectionContainer activeChat={true} chatName='User001' subTitle='Have a nice day' chat={conversation} />
             </div>
         );
     }
@@ -80,17 +72,17 @@ const mapStateToProps = (state, props) => {
     }
 }
 const mapDispatchToProps = dispatch => {
-    return{
-        fetchContacts: ()=>{
+    return {
+        fetchContacts: () => {
             dispatch(fetchContacts());
         },
-        fetchContact: ()=>{
+        fetchContact: () => {
             dispatch(fetchContact());
         },
-        fetchConversation: ()=>{
+        fetchConversation: () => {
             dispatch(fetchConversation());
         },
-        fetchUser:()=>{
+        fetchUser: () => {
             dispatch(fetchUser());
         },
         initApi: params => {

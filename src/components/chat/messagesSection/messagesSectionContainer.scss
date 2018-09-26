@@ -1,0 +1,11 @@
+@media screen{
+    .messages-section-container{
+        display: flex;
+        max-width: 980px;
+        min-width: 500px;
+        height: 100%;
+        flex-flow: column;
+        background-color: #FFFFFF;
+        border-radius: 10px 10px 10px 10px;
+    }
+}
