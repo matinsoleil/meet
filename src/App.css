@@ -6,7 +6,7 @@
   height: 80px;
 }
 .App-header {
-  background-color: #222;
+  background-color: rgb(34, 34, 34);
   height: 150px;
   padding: 20px;
   color: white;
@@ -25,7 +25,7 @@
   margin: 5%;
   padding: 30px;
   width: calc(80vw);
-  background-color: rgb(175, 175, 175);
+  background-color: #f2f2f2;
 }
 .login-body{
   display: flex;
@@ -65,20 +65,24 @@
 }
 .main-chat-general-data-user{
   display: flex;
-  border: 3px solid rgb(56, 173, 33);
+  border-radius: 15px;
+  background-color: #fefefe;
   position: relative;
   height: 100px;
   width: 30%;
 }
 .main-chat-user-connect-conversation-user{
-  border: 3px solid rgb(173, 33, 150);
+  background-color: #fefefe;
   position: relative;
   height: 100px;
   width: 70%;
+  margin-left: 10px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
 }
 .main-chat-general-list-contact{
   overflow: scroll;
-  border: 3px solid rgb(171, 173, 33);
   position: relative;
   height: 600px;
   width: 30%;
@@ -89,43 +93,63 @@
   width: 70%;
 }
 .main-chat-history-conversation-contact{
+  margin-left: 10px;
+  margin: 10px;
   overflow: scroll;
-  border: 3px solid rgb(33, 47, 173);
+  background-color: #f3f8fd;
   position: relative;
   height: 500px;
   width: 100%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
 }
 .main-chat-area-send-conversation{
-  border: 3px solid rgb(173, 33, 75);
+  margin-left: 10px;
+  background-color: #fefefe;
+  align-items: center;
   position: relative;
   height: 100px;
   width: 100%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
 }
 .contact-chat{
-  border: 3px solid rgb(0, 0, 0);
+  margin: 10px; 
+  border-radius: 15px;
+  background-color: #fefefe;
   position: relative;
   height: 100px;
   width: 100%;
 }
 .main-chat-transmitter{
-  border: 3px solid rgb(173, 147, 33);
+  background-color: #e7e7e7;
+  margin: 10px; 
   position: static;
   height: 100px;
-  width: 100%;
-}
-.main-chat-receiver{
-  border: 3px solid rgb(33, 173, 173);
-  height: 100px;
-  width: 100%;
-}
-.icon-user{
-  background-color: #222;
-  float: left;  
-  height: 50px;
-  width: 50px;
+  width: 90%;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
+}
+.main-chat-receiver{
+  background-color: #7198c9;
+  margin: 10px; 
+  height: 100px;
+  width: 90%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.icon-user{
+  float: left;  
+  height: 50px;
+  width: 50px;
+  -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
 }
 .boton-action-user{
   float: right;
@@ -169,6 +193,9 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
 }
 .alignleft {
 	float: left;
@@ -179,4 +206,7 @@
 .imgIcoUser {
   height: 42px;
   width: 42px;
+  -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
 }
