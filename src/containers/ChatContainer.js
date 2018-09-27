@@ -40,7 +40,7 @@ class ChatContainer extends Component {
                         imgUser={obj.imgUser} />)}
                     <ActionsContactConversation key={contact.id}
                         nameContact={contact.name}
-                        status={contact.name}
+                        status={contact.status}
                         imgContact={contact.imgContact} />
                 </div>
                 <div className="main-chat-body">

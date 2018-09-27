@@ -10,6 +10,8 @@ export const fetchContact = ( id ) => dispatch => {
             id: response.data.id,
             name: response.data.name,
             photo: response.data.photo,
+            status: response.data.status,
+            label: response.data.label,
             dayLastMessage: response.data.dayLastMessage,
             lastMessage: response.data.lastMessage,
             imgContact: response.data.imgContact,
