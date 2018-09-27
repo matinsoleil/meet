@@ -1,11 +1,20 @@
 import { FETCH_CONTACT } from '../../actionstypes'
-import { createAction } from 'redux-actions'
-import { apiGet } from '../../../api/index'
 import { urlContact } from '../../../api/urls'
+import axios from 'axios'
 
 export const fetchContact = ( id ) => dispatch => {
-    const fetchContactAction = createAction(FETCH_CONTACT, apiGet(urlContact + '/' +id));
-    dispatch(fetchContactAction());
+    axios.get(urlContact + '/' +id)
+    .then(response => {
+        dispatch({
+            type: FETCH_CONTACT,
+            id: response.data.id,
+            name: response.data.name,
+            photo: response.data.photo,
+            dayLastMessage: response.data.dayLastMessage,
+            lastMessage: response.data.lastMessage,
+            imgContact: response.data.imgContact,
+        })
+    })
 }
 export default fetchContact;
 

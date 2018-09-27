@@ -31,17 +31,17 @@ class ChatContainer extends Component {
         debugger
     }
     renderBody = (contacts, user, contact, conversation) => {
-        return (
+                return (
             <div >
                 <div className="main-chat-header">
                     {user.map(obj => <GeneralDataUser key={obj.id}
                         name={obj.name}
                         status={obj.status}
                         imgUser={obj.imgUser} />)}
-                    {contact.map(obj => <ActionsContactConversation key={obj.id}
-                        nameContact={obj.name}
-                        status={obj.status}
-                        imgContact={obj.imgContact} />)}
+                    <ActionsContactConversation key={contact.id}
+                        nameContact={contact.name}
+                        status={contact.name}
+                        imgContact={contact.imgContact} />
                 </div>
                 <div className="main-chat-body">
                     <ListGeneralContacts contacts={contacts} />

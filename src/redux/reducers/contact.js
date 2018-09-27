@@ -1,5 +1,24 @@
-import { handleActions } from 'redux-actions';
-import { FETCH_CONTACT } from '../actionstypes';
-export const contact = handleActions({
-    [FETCH_CONTACT+'_FULFILLED']: (state, action) => [...state, action.payload],
-}, []);
+const estado = {
+    id: "",
+    name: "",
+    photo: "",
+    dayLastMessage: "",
+    lastMessage: "",
+    imgContact: ""
+}
+export const contact = (state = estado, action) => {
+    switch (action.type) {
+        case 'FETCH_CONTACT':
+            return {
+                ...state,
+                id: action.id,
+                name: action.name,
+                photo: action.photo,
+                dayLastMessage: action.dayLastMessage,
+                lastMessage: action.lastMessage,
+                imgContact: action.imgContact,
+            }
+        default:
+            return state
+    }
+}
