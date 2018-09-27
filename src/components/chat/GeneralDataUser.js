@@ -6,11 +6,11 @@ const GeneralDataUser = ({ name, status, imgUser }) => {
             <div className="icon-user">
                 <img className="imgIcoUser" src={imgUser} alt="test" />
             </div>
-            <div>
-                {name}
+            <div class="circleActive circleBase">
             </div>
             <div>
-                {status}
+                <h1 className="descriptionUser">{name}</h1>
+                <h1 className="descriptionUser">{status}</h1>
             </div>
             <div className="boton-action-user">
             </div>

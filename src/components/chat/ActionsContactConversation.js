@@ -4,15 +4,13 @@ const ActionsContactConversation = ({ imgContact, status, nameContact }) => {
     return (
         <div className="main-chat-user-connect-conversation-user">
             <div className="icon-user">
-                <img className="imgIcoUser" src={imgContact} alt="test" />
+                <img className="imgIcoUser " src={imgContact} alt="test" />
+            </div>
+            <div class="circleActive circleBase right">
             </div>
             <div>
-                {nameContact}
-            </div>
-            <div>
-                {status}
-            </div>
-            <div className="boton-action-user">
+                <h1 className="descriptionUser">{nameContact}</h1>
+                <h1 className="descriptionUser">{status}</h1>
             </div>
         </div>
     );

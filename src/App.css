@@ -210,3 +210,16 @@
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
 }
+
+.circleBase {
+  border-radius: 50%;
+}
+.circleActive{
+  width: 10px;
+  height: 10px;
+  background:#78c469;
+}
+.descriptionUser{
+  font-size: 10px;
+  text-align: left;
+}
