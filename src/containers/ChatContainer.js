@@ -25,19 +25,19 @@ class ChatContainer extends Component {
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();
-        //this.props.logout();
+        // this.props.logout();
     }
     componentDidCatch() {
         debugger
     }
     renderBody = (contacts, user, contact, conversation) => {
-                return (
+        return (
             <div >
                 <div className="main-chat-header">
-                    {user.map(obj => <GeneralDataUser key={obj.id}
-                        name={obj.name}
-                        status={obj.status}
-                        imgUser={obj.imgUser} />)}
+                     <GeneralDataUser 
+                        name={user.name}
+                        status={user.status}
+                        imgUser={user.imgUser} /> 
                     <ActionsContactConversation key={contact.id}
                         nameContact={contact.name}
                         status={contact.status}
@@ -80,18 +80,18 @@ const mapStateToProps = (state, props) => {
     }
 }
 const mapDispatchToProps = dispatch => {
-    return{
-        fetchContacts: ()=>{
+    return {
+        fetchContacts: () => {
             dispatch(fetchContacts());
         },
-        fetchContact: ()=>{
+        fetchContact: () => {
             dispatch(fetchContact(1));
         },
-        fetchConversation: ()=>{
+        fetchConversation: () => {
             dispatch(fetchConversation());
         },
-        fetchUser:()=>{
-            dispatch(fetchUser());
+        fetchUser: () => {
+            dispatch(fetchUser(1));
         },
         initApi: params => {
             dispatch(initApi(params));

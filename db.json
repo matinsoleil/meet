@@ -143,7 +143,7 @@
       "name": "TEST USER CLARO CONNECT 5",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label",      
+      "label": "label",
       "dayLastMessage": "05/09/2018",
       "lastMessage": "Last Message",
       "imgUser": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5dPFPkiansPhZUUBaZgwkcA3fVUoAUTwrdECR3yEmL7piGGisg"
@@ -282,6 +282,13 @@
       "message": "TypeError: Cannot read property 'payload' of undefined",
       "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
       "id": 19
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1538068655,
+      "message": "TypeError: user.map is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 20
     }
   ],
   "contacts": [
@@ -290,7 +297,7 @@
       "name": "TEST CONTACT 1 ",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label", 
+      "label": "label",
       "dayLastMessage": "05/09/2018",
       "lastMessage": "Last Message",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp"
@@ -300,7 +307,7 @@
       "name": "TEST CONTACT 2",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label",      
+      "label": "label",
       "dayLastMessage": "06/09/2018",
       "lastMessage": "Last Message",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
@@ -321,7 +328,7 @@
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
-       "dayLastMessage": "08/09/2018",
+      "dayLastMessage": "08/09/2018",
       "lastMessage": "Last Message",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AMknsVJTTstO5ex2h7DdYmiA-rmqzmXcsRwDm7nCc-mbQgv3"
     },
@@ -380,7 +387,7 @@
       "name": "TEST CONTACT 10",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label",      
+      "label": "label",
       "dayLastMessage": "09/09/2018",
       "lastMessage": "Last Message",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3qmREi6Bag9BxxTvSCdXKqL8G2mBNjSFMi1nBZ1r92jNniSwnw"

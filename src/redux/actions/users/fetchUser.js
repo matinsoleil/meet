@@ -1,9 +1,20 @@
 import { FETCH_USER } from '../../actionstypes'
-import { createAction } from 'redux-actions'
-import { apiGet } from '../../../api/index'
 import { urlUser } from '../../../api/urls'
-const fetchUserAction = createAction(FETCH_USER, apiGet(urlUser));
-export const fetchUser = () => dispatch => {
-    dispatch(fetchUserAction());
+import axios from 'axios'
+export const fetchUser = (id) => dispatch => {
+    axios.get(urlUser + '/' + id)
+        .then(response => {
+            dispatch({
+                type: FETCH_USER,
+                id: response.data.id,
+                name: response.data.name,
+                photo: response.data.photo,
+                status: response.data.status,
+                lastMessage: response.data.lastMessage,
+                label: response.data.label,
+                dayLastMessage: response.data.dayLastMessage,
+                imgUser: response.data.imgUser,
+            })
+        })
 }
 export default fetchUser;
