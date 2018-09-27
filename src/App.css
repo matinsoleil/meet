@@ -219,7 +219,16 @@
   height: 10px;
   background:#78c469;
 }
-.descriptionUser{
+/* .descriptionUser{
   font-size: 10px;
   text-align: left;
+}
+
+.right {
+  float: right;
+} */
+
+
+.nameUser{
+  font-size: 10px;
 }

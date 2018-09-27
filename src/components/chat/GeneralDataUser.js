@@ -9,8 +9,8 @@ const GeneralDataUser = ({ name, status, imgUser }) => {
             <div class="circleActive circleBase">
             </div>
             <div>
-                <h1 className="descriptionUser">{name}</h1>
-                <h1 className="descriptionUser">{status}</h1>
+                {name}
+                {status}
             </div>
             <div className="boton-action-user">
             </div>
