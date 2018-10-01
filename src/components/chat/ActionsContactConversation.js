@@ -9,8 +9,10 @@ const ActionsContactConversation = ({ imgContact, status, nameContact }) => {
             <div class="circleActive circleBase right">
             </div>
             <div>
-                {nameContact}
-                {status}
+                <h5>
+                    {nameContact}
+                    <p>{status}</p>
+                </h5>
             </div>
         </div>
     );

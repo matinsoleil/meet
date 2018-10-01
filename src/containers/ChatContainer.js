@@ -34,10 +34,10 @@ class ChatContainer extends Component {
         return (
             <div >
                 <div className="main-chat-header">
-                     <GeneralDataUser 
+                    <GeneralDataUser
                         name={user.name}
                         status={user.status}
-                        imgUser={user.imgUser} /> 
+                        imgUser={user.imgUser} />
                     <ActionsContactConversation key={contact.id}
                         nameContact={contact.name}
                         status={contact.status}

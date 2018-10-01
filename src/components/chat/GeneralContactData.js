@@ -15,10 +15,9 @@ class GeneralContactData extends Component {
                     <img className="imgIcoUser" src={this.props.imgContact} alt="test" />
                     <div class="circleActive circleBase"></div>
                 </div>
-                <h5 className="nameUser">{this.props.nameContact}</h5>
-                {this.props.status}
-                {this.props.dayLastMessage}
-                {this.props.lastMessage}
+                <h5>{this.props.nameContact}</h5>
+                <span>{this.props.dayLastMessage}</span>
+                <p>{this.props.lastMessage}</p>
             </div>
         )
     }
