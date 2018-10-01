@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import AppFrame from '../components/AppFrame'
 import GeneralDataUser from '../components/chat/GeneralDataUser'
 import { connect } from 'react-redux'
-import ActionsContactConversation from '../components/chat/ActionsContactConversation'
+// import ActionsContactConversation from '../components/chat/ActionsContactConversation'
 import ListGeneralContacts from '../components/chat/ListGeneralContacts'
 //import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer';
-import AreaSendMessage from '../components/chat/AreaSendMessage'
+// import AreaSendMessage from '../components/chat/AreaSendMessage'
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
 import fetchConversation from '../redux/actions/conversation/fetchConversation'
@@ -28,21 +28,17 @@ class ChatContainer extends Component {
         // this.props.login();
         // this.props.logout();
     }
-    componentDidCatch() {
-        debugger
-    }
+    // componentDidCatch() {
+    //     debugger
+    // }
     renderBody = (contacts, user, contact, conversation) => {
-        console.log(user);
-        debugger
         return (
             <div className="main-chat">
-                <div>
-                    {/* <div className="main-chat-header">
-                        {user.map(obj => <GeneralDataUser key={obj.id}
-                            name={obj.name}
-                            status={obj.status}
-                            imgUser={obj.imgUser} />)}
-                    </div> */}
+                <div className="contacts-section-container">
+                <GeneralDataUser
+                        name={user.name}
+                        status={user.status}
+                        imgUser={user.imgUser} />
                     <ListGeneralContacts contacts={contacts} />
                 </div>
                 <MessageSectionContainer activeChat={true} chatName='Bety' subTitle='Have a nice day' chat={conversation} />

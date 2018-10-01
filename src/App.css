@@ -50,28 +50,43 @@
   /* height: 100px; */
   width: 100%;
 }
+
 .main-chat-general-data-user{
-  display: flex;
-  border-radius: 15px;
+  /* background-color: #00b1c9; */
   background-color: #fefefe;
   position: relative;
   height: 100px;
-  width: 100%;
+  width: 90%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  margin: 10px;
 }
+.contact-chat{
+  background-color: #fefefe;
+  /* background-color: #bd06ce; */
+  position: relative;
+  height: 100px;
+  width: 90%;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  margin: 10px;
+}
+
+
+
 .main-chat-user-connect-conversation-user{
   background-color: #fefefe;
   position: relative;
   height: 100px;
   width: 70%;
-  margin-left: 10px;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
+
 }
 .main-chat-general-list-contact{
   overflow: scroll;
   position: relative;
-  height: 600px;
+  height: 100%;
   width: 100%;
 }
 .main-chat-general-conversation-contact{
@@ -91,31 +106,6 @@
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 }
-.contact-chat{
-  position: relative;
-  height: 100px;
-  width: 95%;
-}
-.main-chat-transmitter{
-  background-color: #e7e7e7;
-  margin: 10px; 
-  position: static;
-  height: 100px;
-  width: 90%;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
-.main-chat-receiver{
-  background-color: #7198c9;
-  margin: 10px; 
-  height: 100px;
-  width: 90%;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
-
 .icon-user{
   float: left;  
   height: 50px;
@@ -123,15 +113,6 @@
   -moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
-}
-.boton-action-user{
-  float: right;
-  background-color: rgb(94, 94, 94);
-  height: 50px;
-  width: 50px;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
 }
 .boton-action-send-file{
   float: left;
@@ -200,3 +181,9 @@
 .nameUser{
   font-size: 10px;
 }
+
+
+/* .contacts-section-container{
+  background-color: #fefefe;
+  margin: 10px;
+} */
