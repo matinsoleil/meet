@@ -3,6 +3,9 @@ import './ChatGeneralConversationContact.scss';
 import { connect } from 'react-redux';
 
 class ChatGeneralConversationContact extends Component {
+    componentDidMount(){
+        
+    }
     render() {
         return (
             <div className="main-chat-history-conversation-contact">
@@ -20,8 +23,7 @@ class ChatGeneralConversationContact extends Component {
                         tail={tail}
                         type={TypeMessageControl}
                         tailType={tailType}
-                        user_icon=''
-                        // user_icon={this.props.user.imgUser}
+                        user_icon={this.props.user.imgUser}
                     />
                 })}
             </div>
@@ -32,7 +34,7 @@ class ChatGeneralConversationContact extends Component {
 const Message = ({ message, hour, type, tail, tailType, user_icon }) => {
     return (
         <div className="message-row">
-            {(type === "message-out")&&<img className="imgIcoUser chat-icon" src={user_icon} alt="" />}
+            {(type === "message-out")&&<img className="imgIcoUser chat-icon" /*src={user_icon}*/ alt="" />}
             <div className={`message-bubble ${type}`}>
                 <div className="message-wrapper">
                     <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>
@@ -49,7 +51,7 @@ const mapStateToProps = state => {
         background: state.customizing.Images.chat_background,
         in_tail: state.customizing.Images.in_tail,
         out_tail: state.customizing.Images.out_tail,
-        user: state.users[0]
+        user: state.users
     }
 }
 

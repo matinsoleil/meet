@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import $ from 'jquery'
 import './footerMessagesSection.scss';
 
 class FooterMessagesSection extends Component {
+
+    selectFiles = (e) => {
+    }
+
+    recordAudio = () => {
+        if (!navigator.getUserMedia)
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                navigator.mozGetUserMedia || navigator.msGetUserMedia;
+        console.log("GET_USER_MEDIA",navigator.mediaDevices.getUserMedia);
+    }
+
     render() {
         return (
             <footer className='footer-messages-section'>
@@ -10,8 +22,9 @@ class FooterMessagesSection extends Component {
                     <div role="button" className="icon">
                         <img src={this.props.plus} alt="" />
                     </div>
-                    <div role="button" className="icon">
+                    <div role="button" onClick={() => { $(this.fileChooser).trigger('click'); }} className="icon">
                         <img src={this.props.clip} alt="" />
+                        <input onChange={this.selectFiles} ref={(input) => { this.fileChooser = input }} type="file" style={{ display: "none" }} multiple />
                     </div>
                     <div className="text-message">
                         <input type="text" placeholder="chat" name="" id="" />
@@ -19,7 +32,7 @@ class FooterMessagesSection extends Component {
                             <img src={this.props.emoji} alt="" />
                         </div>
                     </div>
-                    <div className="icon">
+                    <div onClick={this.recordAudio} className="icon">
                         <img src={this.props.mic} alt="" />
                     </div>
                 </div>
