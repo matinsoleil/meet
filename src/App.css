@@ -55,7 +55,7 @@
   border: 3px solid rgb(56, 173, 33);
   position: relative;
   height: 100px;
-  width: 30%;
+  width: 100%;
 }
 .main-chat-user-connect-conversation-user{
   border: 3px solid rgb(173, 33, 150);
@@ -68,7 +68,7 @@
   border: 3px solid rgb(171, 173, 33);
   position: relative;
   height: 600px;
-  width: 30%;
+  width: 100%;
 }
 .main-chat-general-conversation-contact{
   position: relative;
