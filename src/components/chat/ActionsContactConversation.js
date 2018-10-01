@@ -6,7 +6,7 @@ const ActionsContactConversation = ({ imgContact, status, nameContact }) => {
             <div className="icon-user">
                 <img className="imgIcoUser " src={imgContact} alt="test" />
             </div>
-            <div class="circleActive circleBase right">
+            <div className="circleActive circleBase right">
             </div>
             <div>
                 <h5>

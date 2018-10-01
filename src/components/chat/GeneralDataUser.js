@@ -6,16 +6,17 @@ const GeneralDataUser = ({ name, status, imgUser }) => {
             <div className="icon-user">
                 <img className="imgIcoUser" src={imgUser} alt="test" />
             </div>
-            <div class="circleActive circleBase">
-            </div>
             <div>
                 <h5>
+                    <div className="circleActive circleBase">
+                    </div>
                     {name}
                     <p>{status}</p>
                 </h5>
             </div>
-            <div className="boton-action-user">
-            </div>
+            <img className="imgIcoUser" src="https://cdn3.iconfinder.com/data/icons/web-basics-vol-03/512/menu_options_three_points_selection_select-512.png" />
+            <img className="imgIcoUser" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvd2q7aXYYT1nqoFwD5F6KXJ2mJmTysH5jdRyGegOkaiSgV8Vk" />
+            <input type="text" className="input-send"></input>
         </div>
     );
 }

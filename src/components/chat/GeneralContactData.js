@@ -13,7 +13,7 @@ class GeneralContactData extends Component {
             <div className="contact-chat" onClick={this.handleClick} >
                 <div className="icon-user">
                     <img className="imgIcoUser" src={this.props.imgContact} alt="test" />
-                    <div class="circleActive circleBase"></div>
+                    <div className="circleActive circleBase"></div>
                 </div>
                 <h5>{this.props.nameContact}</h5>
                 <span>{this.props.dayLastMessage}</span>
