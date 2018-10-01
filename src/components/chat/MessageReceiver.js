@@ -3,7 +3,11 @@ import React from 'react';
 const MessageReceiver = ({ message, hour }) => {
     return (
         <div className="main-chat-receiver">
-            <p className="alignright">{message} <br /> {hour}</p>
+            <img src="" alt="" />
+            <div>
+                <p>{message}</p>
+                <span>{hour}</span>
+            </div>
         </div>
     )
 }

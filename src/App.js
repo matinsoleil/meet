@@ -7,6 +7,7 @@ import { setOs } from './../src/redux/actions/general/os'
 import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
 import MessageError from './components/logerror/MessageError';
+import './components/claro-connect.scss';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,10 +33,10 @@ class App extends Component {
     } else {
       return (
         <Router>
-          <div>
+          <React.Fragment>
             <Route exact path="/" component={LoginContainer} />
             <Route exact path="/chat" component={ChatContainer} />
-          </div>
+          </React.Fragment>
         </Router>);
     }
   }

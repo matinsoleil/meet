@@ -1,16 +1,6 @@
 .App {
   text-align: center;
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-.App-header {
-  background-color: rgb(34, 34, 34);
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 .App-title {
   font-size: 1.5em;
 }
@@ -21,22 +11,23 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.app-frame {
+/* .app-frame {
   margin: 5%;
   padding: 30px;
   width: calc(80vw);
-  background-color: #f2f2f2;
-}
+  background-color: rgb(175, 175, 175);
+} */
+
 .login-body{
   display: flex;
   position: relative;
-  height: 400px;
+  /* height: 400px; */
   width: 100%;
 }
 .login-header{
   border: 3px solid rgb(33, 152, 173);
   position: relative;
-  height: 100px;
+  /* height: 100px; */
   width: 100%;
 }
 .login-instructions{
@@ -53,14 +44,10 @@
   height: 100%;
   float: left;
 }
-.main-chat-body{
-  display: flex;
-  position: relative;
-}
 .main-chat-header{
   display: flex;
   position: relative;
-  height: 100px;
+  /* height: 100px; */
   width: 100%;
 }
 .main-chat-general-data-user{
@@ -69,7 +56,7 @@
   background-color: #fefefe;
   position: relative;
   height: 100px;
-  width: 30%;
+  width: 100%;
 }
 .main-chat-user-connect-conversation-user{
   background-color: #fefefe;
@@ -85,25 +72,14 @@
   overflow: scroll;
   position: relative;
   height: 600px;
-  width: 30%;
+  width: 100%;
 }
 .main-chat-general-conversation-contact{
   position: relative;
   height: 600px;
   width: 70%;
 }
-.main-chat-history-conversation-contact{
-  margin-left: 10px;
-  margin: 10px;
-  overflow: scroll;
-  background-color: #f3f8fd;
-  position: relative;
-  height: 500px;
-  width: 100%;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
+
 .main-chat-area-send-conversation{
   margin-left: 10px;
   background-color: #fefefe;
@@ -116,9 +92,6 @@
   -webkit-border-radius: 10px 10px 10px 10px;
 }
 .contact-chat{
-  margin: 10px; 
-  border-radius: 15px;
-  background-color: #fefefe;
   position: relative;
   height: 100px;
   width: 95%;
@@ -197,13 +170,8 @@
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 }
-.alignleft {
-	float: left;
-}
-.alignright {
-	float: right;
-}
 .imgIcoUser {
+  border-radius: 50%;
   height: 42px;
   width: 42px;
   -moz-border-radius: 50px;

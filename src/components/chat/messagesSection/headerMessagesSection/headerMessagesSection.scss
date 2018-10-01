@@ -1,0 +1,27 @@
+@media screen{
+    .header-messages-section{
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        height: 39px;
+        padding: 24px 16px 16px 16px;
+        border-style: none none solid none;
+        border-width: 1.2px;
+        border-color: #e0e0e0;
+        box-sizing: content-box;
+        span.title{
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 20px;
+        }
+        span.subtitle{
+            font-size: 14px;
+            margin-left: 10px;
+            line-height: 15px;
+            font-weight: 200;
+            color: #353535;
+        }
+    }
+}

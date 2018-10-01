@@ -247,6 +247,20 @@
       "message": "TypeError: user.map is not a function",
       "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
       "id": 20
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1538421303,
+      "message": "TypeError: user.map is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 21
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1538422632,
+      "message": "TypeError: user.map is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 22
     }
   ],
   "contacts": [
