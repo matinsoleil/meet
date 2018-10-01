@@ -39,6 +39,12 @@ class ChatContainer extends Component {
                         name={user.name}
                         status={user.status}
                         imgUser={user.imgUser} />
+                <div>
+                <h2 className="title">Chats</h2> 
+                <button className="buttonNew">Nuevo</button>
+                </div>
+                
+                       
                     <ListGeneralContacts contacts={contacts} />
                 </div>
                 <MessageSectionContainer activeChat={true} chatName='Bety' subTitle='Have a nice day' chat={conversation} />
