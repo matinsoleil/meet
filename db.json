@@ -256,6 +256,20 @@
       "message": "TypeError: Cannot read property 'map' of undefined",
       "detail": "\n    in ChatGeneralConversationContact (at messagesSectionContainer.js:28)\n    in div (at messagesSectionContainer.js:26)\n    in ActiveChat (at messagesSectionContainer.js:11)\n    in div (at messagesSectionContainer.js:9)\n    in MessagesSectionContainer (at ChatContainer.js:46)\n    in div (at ChatContainer.js:45)\n    in div (at ChatContainer.js:44)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:10)\n    in div (at AppFrame.js:8)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:55)\n    in div (at ChatContainer.js:54)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:37)\n    in div (at App.js:35)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:34)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
       "id": 16
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1538064181,
+      "message": "Invariant Violation: A <Router> may have only one child element",
+      "detail": "\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 17
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1538064184,
+      "message": "Invariant Violation: A <Router> may have only one child element",
+      "detail": "\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at index.js:10)\n    in Provider (at index.js:9)",
+      "id": 18
     }
   ],
   "contacts": [

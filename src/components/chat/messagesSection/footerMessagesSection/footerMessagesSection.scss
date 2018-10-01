@@ -1,7 +1,7 @@
 @media screen {
     .footer-messages-section{
         padding: 0px;
-        height: 60px;
+        max-height: 60px;
         flex: none;
         display: flex;
         border-style: solid none none none;
@@ -18,13 +18,18 @@
             min-height: 60px;
             position: relative;
         }
-        button.icon{
+        div.icon{
             flex: 1;
-            margin: 5px;
+            width: 36px;
+            cursor: pointer;
+            img{
+                width: 36px;
+                height: 36px;
+            }
         }
         div.text-message{
             display: grid;
-            grid-template-columns: auto 25px;
+            grid-template-columns: auto 36px;
             flex: 15;
             width: 100%;
             border-width: 1.5px;
@@ -36,6 +41,7 @@
                 min-height: 40px;
                 padding-left: 8px;
                 white-space: nowrap;
+                font-size: 16px;
                 text-overflow: ellipsis;
                 &:focus{
                     outline: none;
@@ -44,8 +50,9 @@
                     color: rgb(170, 170, 170);
                 }
             }
-            button{
-                border-style: none;
+            .emoji{
+                margin-top: 3.5px;
+                cursor: pointer;
             }
         }
     }

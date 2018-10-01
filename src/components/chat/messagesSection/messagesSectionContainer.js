@@ -26,6 +26,7 @@ const ActiveChat = (props) => {
         <React.Fragment>
             <HeaderMessagesSection chatName={props.chatName} subTitle={props.subTitle} />
             <ChatGeneralConversationContact chat={props.chat} />
+            <div></div>
             <FooterMessagesSection />
         </React.Fragment>
     );

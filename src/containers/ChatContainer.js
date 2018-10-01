@@ -33,27 +33,27 @@ class ChatContainer extends Component {
     }
     renderBody = (contacts, user, contact, conversation) => {
         return (
-            <div >
-                <div className="main-chat-header">
-                    {user.map(obj => <GeneralDataUser key={obj.id}
-                        name={obj.name}
-                        status={obj.status}
-                        imgUser={obj.imgUser} />)}
+            <div className="main-chat">
+                <div>
+                    <div className="main-chat-header">
+                        {user.map(obj => <GeneralDataUser key={obj.id}
+                            name={obj.name}
+                            status={obj.status}
+                            imgUser={obj.imgUser} />)}
+                    </div>
+                    <ListGeneralContacts contacts={contacts} />
                 </div>
-                <ListGeneralContacts contacts={contacts} />
-                <MessageSectionContainer activeChat={true} chatName='User001' subTitle='Have a nice day' chat={conversation} />
+                <MessageSectionContainer activeChat={true} chatName='Bety' subTitle='Have a nice day' chat={conversation} />
             </div>
         );
     }
     render() {
         return (
-            <div>
                 <AppFrame
                     header=''
                     body={this.renderBody(this.props.contacts, this.props.user, this.props.contact, this.props.conversation)}
                     footer=''>
                 </AppFrame>
-            </div>
         );
     }
 }

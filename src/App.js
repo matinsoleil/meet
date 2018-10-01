@@ -33,10 +33,10 @@ class App extends Component {
     } else {
       return (
         <Router>
-          <div>
+          <React.Fragment>
             <Route exact path="/" component={LoginContainer} />
             <Route exact path="/chat" component={ChatContainer} />
-          </div>
+          </React.Fragment>
         </Router>);
     }
   }

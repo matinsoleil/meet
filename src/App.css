@@ -1,16 +1,7 @@
 .App {
   text-align: center;
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -21,22 +12,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.app-frame {
+/* .app-frame {
   margin: 5%;
   padding: 30px;
   width: calc(80vw);
   background-color: rgb(175, 175, 175);
-}
+} */
 .login-body{
   display: flex;
   position: relative;
-  height: 400px;
+  /* height: 400px; */
   width: 100%;
 }
 .login-header{
   border: 3px solid rgb(33, 152, 173);
   position: relative;
-  height: 100px;
+  /* height: 100px; */
   width: 100%;
 }
 .login-instructions{
@@ -56,7 +47,7 @@
 .main-chat-header{
   display: flex;
   position: relative;
-  height: 100px;
+  /* height: 100px; */
   width: 100%;
 }
 .main-chat-general-data-user{
@@ -91,12 +82,15 @@
   width: 100%;
 }
 .contact-chat{
-  border: 3px solid rgb(0, 0, 0);
+  /* border: 3px solid rgb(0, 0, 0); */
   position: relative;
   height: 100px;
   width: 100%;
 }
 .icon-user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #222;
   float: left;  
   height: 50px;
@@ -149,6 +143,7 @@
   font-size: 16px;
 }
 .imgIcoUser {
+  border-radius: 50%;
   height: 42px;
   width: 42px;
 }
