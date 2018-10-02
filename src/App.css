@@ -17,7 +17,6 @@
   width: calc(80vw);
   background-color: rgb(175, 175, 175);
 } */
-
 .login-body{
   display: flex;
   position: relative;
@@ -50,18 +49,25 @@
   /* height: 100px; */
   width: 100%;
 }
-
 .main-chat-general-data-user{
   /* background-color: #00b1c9; */
   background-color: #fefefe;
   position: relative;
-  height: 100px;
+  height: 120px;
   width: 90%;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   margin: 10px;
 }
+.input-search {
+  width: 60%;
+  padding: 6px ;  
+  border-radius: 1px 1px 1px 1px;
+  -moz-border-radius: 1px 1px 1px 1px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
 .contact-chat{
   background-color: #fefefe;
   /* background-color: #bd06ce; */
@@ -73,15 +79,11 @@
   -webkit-border-radius: 10px 10px 10px 10px;
   margin: 10px;
 }
-
-
-
 .main-chat-user-connect-conversation-user{
   background-color: #fefefe;
   position: relative;
   height: 100px;
   width: 70%;
-
 }
 .main-chat-general-list-contact{
   overflow: scroll;
@@ -94,7 +96,6 @@
   height: 600px;
   width: 70%;
 }
-
 .main-chat-area-send-conversation{
   margin-left: 10px;
   background-color: #fefefe;
@@ -159,7 +160,14 @@
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
 }
-
+.imgSearch {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
 .circleBase {
   border-radius: 50%;
 }
@@ -172,18 +180,44 @@
   font-size: 10px;
   text-align: left;
 }
-
 .right {
   float: right;
 } */
-
-
 .nameUser{
   font-size: 10px;
 }
-
-
 /* .contacts-section-container{
   background-color: #fefefe;
   margin: 10px;
 } */
+hr{
+  border-top: 1px solid #f2f2f2;
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #d0d0d0;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #d0d0d0;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #d0d0d0;
+}
+
+.buttonNew {
+  float: right;
+  background-color: #5886c0;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 15px;
+  cursor: pointer;
+}
