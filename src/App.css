@@ -72,7 +72,7 @@
   background-color: #fefefe;
   /* background-color: #bd06ce; */
   position: relative;
-  height: 100px;
+  height: 70px;
   width: 90%;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
@@ -107,13 +107,21 @@
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 }
-.icon-user{
-  float: left;  
-  height: 50px;
-  width: 50px;
-  -moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
+.shapeborder { border:1px solid black; }
+.circle { border-radius: 50%; }
+.outer-circle {
+            /* background-color:blue; */
+            width:42px;
+            height:42px;
+            position:relative;
+}
+.inner-circle {
+            background-color:#74c365;
+            border-color: #ffffff;
+            top: -15px; left:70%;
+            width:20%;
+            height:20%;
+            position: relative;
 }
 .boton-action-send-file{
   float: left;
@@ -168,13 +176,21 @@
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
 }
-.circleBase {
+
+.circleCountMessage{
+  width: 20px;
+  height: 20px;
+  /* background:#f5cd5d; */
+  background:#f5cd5d;
+  color: #fdfdfd;
   border-radius: 50%;
-}
-.circleActive{
-  width: 10px;
-  height: 10px;
-  background:#78c469;
+  font-size: 12px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 /* .descriptionUser{
   font-size: 10px;
@@ -193,31 +209,68 @@
 hr{
   border-top: 1px solid #f2f2f2;
 }
-
-
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #d0d0d0;
   opacity: 1; /* Firefox */
 }
-
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #d0d0d0;
 }
-
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: #d0d0d0;
 }
-
 .buttonNew {
   float: right;
   background-color: #5886c0;
   border: none;
   color: white;
-  padding: 8px 15px;
+  padding: 4px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   margin: 4px 15px;
   cursor: pointer;
 }
+.icon-add{
+  float: right;  
+  height: 20px;
+  width: 20px;
+}
+.titleChat{
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Area de los datos de los contactos */
+.iconContact { grid-area: iconContact; }
+.nameContact { 
+  grid-area: nameContact;
+  font-weight: bold;
+  font-size: 12px;
+}
+.dayLastMessage { 
+  grid-area: dayLastMessage; 
+  font-size: 12px;
+  color: #cccccc;
+}
+.lastMessage { 
+  grid-area: lastMessage;
+  font-size: 12px;
+  color: #cccccc;
+}
+.countMessage { grid-area: countMessage; text-align: center }
+.grid-container-contact-chat {
+  display: grid;
+  grid-template-areas:
+    'iconContact nameContact dayLastMessage'
+    'iconContact lastMessage countMessage';
+  grid-gap: 1px;
+  padding: 1px;
+}
+.grid-container-contact-chat > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  /* text-align: center; */
+  padding: 10px 0;
+  /* font-size: 30px; */
+}
+/* prueba */

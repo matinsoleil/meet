@@ -24,6 +24,7 @@ class ListGeneralContacts extends Component {
                         imgContact={c.imgContact}
                         status={c.status}
                         onClick={this.handleClick}
+                        countMessage={c.countMessage}
                     >
                     </GeneralContactData>
                 )}

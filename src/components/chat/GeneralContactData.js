@@ -11,13 +11,19 @@ class GeneralContactData extends Component {
     render() {
         return (
             <div className="contact-chat" onClick={this.handleClick} >
-                <div className="icon-user">
-                    <img className="imgIcoUser" src={this.props.imgContact} alt="test" />
-                    <div className="circleActive circleBase"></div>
+                <div class="grid-container-contact-chat">
+                    <div class="iconContact">                <div class="outer-circle" >
+                        <img className="imgIcoUser" src={this.props.imgContact} alt="test" />
+                        <div class="inner-circle circle">&nbsp;</div>
+                    </div></div>
+                    <div class="nameContact">{this.props.nameContact}</div>
+                    <div class="dayLastMessage">{this.props.dayLastMessage}</div>
+                    <div class="lastMessage">{this.props.lastMessage}</div>
+                    <div class="countMessage">
+                        <div className="circleCountMessage"><p>{this.props.countMessage}</p>
+                        </div>
+                    </div>
                 </div>
-                <h5>{this.props.nameContact}</h5>
-                <span>{this.props.dayLastMessage}</span>
-                <p>{this.props.lastMessage}</p>
             </div>
         )
     }

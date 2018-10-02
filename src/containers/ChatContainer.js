@@ -35,16 +35,14 @@ class ChatContainer extends Component {
         return (
             <div className="main-chat">
                 <div className="contacts-section-container">
-                <GeneralDataUser
+                    <GeneralDataUser
                         name={user.name}
                         status={user.status}
                         imgUser={user.imgUser} />
-                <div>
-                <h2 className="title">Chats</h2> 
-                <button className="buttonNew">Nuevo</button>
-                </div>
-                
-                       
+                    <div>
+                        <h2 className="titleChat">Chats</h2>
+                        <button className="buttonNew">Nuevo <img className="icon-add" src="https://cdn2.iconfinder.com/data/icons/transparent-round-icons/512/add.png" ></img></button>
+                    </div>
                     <ListGeneralContacts contacts={contacts} />
                 </div>
                 <MessageSectionContainer activeChat={true} chatName='Bety' subTitle='Have a nice day' chat={conversation} />

@@ -8,4 +8,5 @@ export const Images = {
     "green_tail":require('./../../img/green-tail.png'),
     "white_tail":require('./../../img/white-tail.png'),
     "chat_background": require('./../../img/chat-background.png'),
+    "add": require('./../../img/add.png'),
 }

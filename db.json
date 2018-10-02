@@ -100,46 +100,46 @@
   "users": [
     {
       "id": "1",
-      "name": "TEST USER CLARO CONNECT 1",
+      "name": "Test User Claro Connect 1",
       "photo": "ruta",
       "status": "Status test",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
     },
     {
       "id": "2",
-      "name": "TEST USER CLARO CONNECT 2",
+      "name": "Test User Claro Connect 2",
       "photo": "ruta",
       "status": "Status test",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
     },
     {
       "id": "3",
-      "name": "TEST USER CLARO CONNECT 3",
+      "name": "Test User Claro Connect 3",
       "photo": "ruta",
       "status": "Status test",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 minutos",
       "lastMessage": "Last Message",
       "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
     },
     {
       "id": "4",
-      "name": "TEST USER CLARO CONNECT 4",
+      "name": "Test User Claro Connect 4",
       "photo": "ruta",
       "status": "Status test",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 minutos",
       "lastMessage": "Last Message",
       "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
     },
     {
       "id": "5",
-      "name": "TEST USER CLARO CONNECT 5",
+      "name": "Test User Claro Connect 5",
       "photo": "ruta",
       "status": "Status test",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
     }
@@ -310,180 +310,180 @@
   "contacts": [
     {
       "id": "1",
-      "name": "TEST CONTACT 1 ",
+      "name": "Test Contact 1 ",
       "photo": "ruta",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "4",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp"
     },
     {
       "id": "2",
-      "name": "TEST CONTACT 2",
+      "name": "Test Contact 2",
       "photo": "ruta",
-      "dayLastMessage": "06/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "24",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "3",
-      "name": "TEST CONTACT 3",
+      "name": "Test Contact 3",
       "photo": "ruta",
-      "dayLastMessage": "07/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "14",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "4",
-      "name": "TEST CONTACT 4",
+      "name": "Test Contact 4",
       "photo": "ruta",
-      "dayLastMessage": "08/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "5",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "5",
-      "name": "TEST CONTACT 5",
+      "name": "Test Contact 5",
       "photo": "ruta",
-      "dayLastMessage": "09/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "3",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "6",
-      "name": "TEST CONTACT 6 ",
+      "name": "Test Contact 6 ",
       "photo": "ruta",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "8",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "7",
-      "name": "TEST CONTACT 7",
+      "name": "Test Contact 7",
       "photo": "ruta",
-      "dayLastMessage": "06/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "9",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "8",
-      "name": "TEST CONTACT 8",
+      "name": "Test Contact 8",
       "photo": "ruta",
-      "dayLastMessage": "07/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "10",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "9",
-      "name": "TEST CONTACT 9",
+      "name": "Test Contact 9",
       "photo": "ruta",
-      "dayLastMessage": "08/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "10",
-      "name": "TEST CONTACT 10",
+      "name": "Test Contact 10",
       "photo": "ruta",
-      "dayLastMessage": "09/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "11",
-      "name": "TEST CONTACT 11",
+      "name": "Test Contact 11",
       "photo": "ruta",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "4",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "12",
-      "name": "TEST CONTACT 12",
+      "name": "Test Contact 12",
       "photo": "ruta",
-      "dayLastMessage": "06/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "7",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "13",
-      "name": "TEST CONTACT 13",
+      "name": "Test Contact 13",
       "photo": "ruta",
-      "dayLastMessage": "07/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "4",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "14",
-      "name": "TEST CONTACT 14",
+      "name": "Test Contact 14",
       "photo": "ruta",
-      "dayLastMessage": "08/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "76",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "15",
-      "name": "TEST CONTACT 15",
+      "name": "Test Contact 15",
       "photo": "ruta",
-      "dayLastMessage": "09/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "16",
-      "name": "TEST CONTACT 16",
+      "name": "Test Contact 16",
       "photo": "ruta",
-      "dayLastMessage": "05/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "17",
-      "name": "TEST CONTACT 17",
+      "name": "Test Contact 17",
       "photo": "ruta",
-      "dayLastMessage": "06/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "9",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "18",
-      "name": "TEST CONTACT 18",
+      "name": "Test Contact 18",
       "photo": "ruta",
-      "dayLastMessage": "07/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "3",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "19",
-      "name": "TEST CONTACT 19",
+      "name": "Test Contact 19",
       "photo": "ruta",
-      "dayLastMessage": "08/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
       "id": "20",
-      "name": "TEST CONTACT 20",
+      "name": "Test Contact 20",
       "photo": "ruta",
-      "dayLastMessage": "09/09/2018",
+      "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
