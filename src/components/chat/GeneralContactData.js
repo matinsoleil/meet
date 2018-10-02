@@ -17,7 +17,7 @@ class GeneralContactData extends Component {
                         <div className="inner-circle circle">&nbsp;</div>
                     </div></div>
                     <div className="nameContact">{this.props.nameContact}</div>
-                    <div className="dayLastMessage">{this.props.dayLastMessage}</div>
+                    <div className="dayLastMessage"><p>{this.props.dayLastMessage}</p></div>
                     <div className="lastMessage">{this.props.lastMessage}</div>
                     <div className="countMessage">
                         <div className="circleCountMessage"><p>{this.props.countMessage}</p>
