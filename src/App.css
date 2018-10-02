@@ -53,7 +53,7 @@
   /* background-color: #00b1c9; */
   background-color: #fefefe;
   position: relative;
-  height: 120px;
+  height: 140px;
   width: 90%;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
@@ -115,6 +115,16 @@
             height:42px;
             position:relative;
 }
+
+.status-user-circle {
+  background-color:#74c365;
+  border-color: #ffffff;
+  /* position: fixed; */
+  /* position: static; */
+  position: absolute;
+  left: auto;
+}
+
 .inner-circle {
             background-color:#74c365;
             border-color: #ffffff;
@@ -226,11 +236,13 @@ hr{
   color: white;
   padding: 4px 10px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 14px;
   margin: 4px 15px;
-  cursor: pointer;
+  
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  
 }
 .icon-add{
   float: right;  
@@ -268,9 +280,31 @@ hr{
   padding: 1px;
 }
 .grid-container-contact-chat > div {
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  /* text-align: center; */
   padding: 10px 0;
-  /* font-size: 30px; */
 }
-/* prueba */
+/* Area de los datos de los Usuarios */
+.nameUser { 
+  grid-area: nameUser; 
+  font-weight: bold;
+  font-size: 12px;
+}
+.iconUser { grid-area: iconUser; }
+.statusUser { 
+  grid-area: statusUser; 
+  font-size: 12px;
+}
+.searchContact { grid-area: searchContact; }
+
+.grid-container-user-chat {
+  display: grid;
+  grid-template-areas:
+    'iconUser nameUser nameUser'
+    'iconUser statusUser statusUser'
+    'searchContact searchContact searchContact';
+  /* background-color: #2196F3; */
+  
+}
+.grid-container-user-chat > div {
+
+  padding: 10px 0;
+}
