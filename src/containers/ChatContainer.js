@@ -45,7 +45,7 @@ class ChatContainer extends Component {
                     </div>
                     <ListGeneralContacts contacts={contacts} />
                 </div>
-                <MessageSectionContainer activeChat={true} chatName='Bety' subTitle='Have a nice day' chat={conversation} />
+                <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
             </div>
         );
     }
