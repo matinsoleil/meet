@@ -84,7 +84,7 @@
   width: 70%;
 }
 .main-chat-general-list-contact{
-  overflow: scroll;
+  overflow: scroll; 
   position: relative;
   height: 100%;
   width: 100%;
@@ -256,14 +256,12 @@ hr{
 }
 .dayLastMessage { 
   grid-area: dayLastMessage; 
-
+  justify-self: end;
 }
 
 .dayLastMessage > p{ 
   font-size: 12px;
   color: #cccccc;
-  align-self: center;
-  justify-self: center;
 }
 
 .lastMessage { 
@@ -272,20 +270,20 @@ hr{
   color: #cccccc;
 }
 .countMessage {
-  grid-area: countMessage; 
-  float: left;
+  grid-area: countMessage;
+  justify-self: end;
 }
 .grid-container-contact-chat {
   display: grid;
   grid-template-areas:
-    'iconContact nameContact dayLastMessage'
-    'iconContact lastMessage countMessage';
+    'iconContact nameContact nameContact nameContact nameContact nameContact nameContact dayLastMessage '
+    'iconContact lastMessage lastMessage lastMessage lastMessage lastMessage lastMessage countMessage ';
   grid-gap: 1px;
   padding: 1px;
   /* background-color: #2196F3; */
 }
 .grid-container-contact-chat > div {
-  /* background-color: rgba(255, 255, 255, 0.8); */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
 }
 /* Area de los datos de los Usuarios */
@@ -304,9 +302,9 @@ hr{
 .grid-container-user-chat {
   display: grid;
   grid-template-areas:
-    'iconUser nameUser nameUser'
-    'iconUser statusUser statusUser'
-    'searchContact searchContact searchContact';
+    'iconUser nameUser nameUser nameUser nameUser nameUser nameUser'
+    'iconUser statusUser statusUser statusUser statusUser statusUser statusUser'
+    'searchContact searchContact searchContact searchContact searchContact searchContact searchContact';
   /* background-color: #2196F3; */
   
 }
