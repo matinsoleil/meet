@@ -28,22 +28,27 @@ class ChatContainer extends Component {
         // this.props.login();
         // this.props.logout();
     }
-    // componentDidCatch() {
-    //     debugger
-    // }
-    renderBody = (contacts, user, contact, conversation) => {
+    componentDidCatch() {
+        debugger
+    }
+
+    renderBody = (contacts, user, contact, conversation, searchContacts) => {
+
+        const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
         return (
             <div className="main-chat">
                 <div className="contacts-section-container">
                     <GeneralDataUser
                         name={user.name}
                         status={user.status}
-                        imgUser={user.imgUser} />
+                        imgUser={user.imgUser}
+                        contacts={contacts}
+                    />
                     <div>
                         <h2 className="titleChat">Chats</h2>
                         <button className="buttonNew">Nuevo <img className="icon-add" src="https://cdn2.iconfinder.com/data/icons/transparent-round-icons/512/add.png" ></img></button>
                     </div>
-                    <ListGeneralContacts contacts={contacts} />
+                    <ListGeneralContacts contacts={listContact} />
                 </div>
                 <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
             </div>
@@ -53,7 +58,7 @@ class ChatContainer extends Component {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(this.props.contacts, this.props.user, this.props.contact, this.props.conversation)}
+                body={this.renderBody(this.props.contacts, this.props.user, this.props.contact, this.props.conversation, this.props.searchContacts)}
                 footer=''>
             </AppFrame>
         );
@@ -61,16 +66,37 @@ class ChatContainer extends Component {
 }
 ChatContainer.defaultProps = {
     contacts: [],
+    // searchContacts: [
+    //     {
+    //         "id": "2",
+    //         "name": "test Contact 2",
+    //         "photo": "ruta",
+    //         "dayLastMessage": "3 min",
+    //         "lastMessage": "Last Message",
+    //         "countMessage": "24",
+    //         "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
+    //     },
+    //     {
+    //         "id": "5",
+    //         "name": "test Contact 5",
+    //         "photo": "ruta",
+    //         "dayLastMessage": "3 min",
+    //         "lastMessage": "Last Message",
+    //         "countMessage": "3",
+    //         "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4gRO_bIr2YLXI4-0_NmlZQw55vKYXLCppLfMtq10bmZ-TsiD"
+    //     }
+    // ],
+    searchContacts: [],
     user: [],
     contact: [],
     conversation: []
 }
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state) => {
     return {
-        contacts: getContacts(state, props),
-        user: getUser(state, props),
-        contact: getContact(state, props),
-        conversation: getConversation(state, props)
+        contacts: getContacts(state),
+        user: getUser(state),
+        contact: getContact(state),
+        conversation: getConversation(state)
     }
 }
 const mapDispatchToProps = dispatch => {

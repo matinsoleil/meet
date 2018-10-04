@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import GeneralContactData from './GeneralContactData'
-// import { getContact } from '../../redux/selectors/contact'
 import fetchContact from '../../redux/actions/contact/fetchContact'
 import { connect } from 'react-redux'
 class ListGeneralContacts extends Component {
@@ -33,9 +32,9 @@ class ListGeneralContacts extends Component {
     }
 }
 const mapDispatchToProps = dispatch => {
-    return{
-        fetchContact: ( id )=>{
-            dispatch(fetchContact( id ));
+    return {
+        fetchContact: (id) => {
+            dispatch(fetchContact(id));
         },
     }
 }
