@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { getContacts } from '../../redux/selectors/contacts'
-import searchContactsAction from '../../redux/actions/contacts/searchContacts'
-import { getSearchContacts } from '../../redux/actions/'
+import searchContacts from '../../redux/actions/contacts/searchContacts'
+// import { getSearchContacts } from '../../redux/actions/'
 import { connect } from 'react-redux'
 
 class GeneralDataUser extends Component {
@@ -12,6 +12,7 @@ class GeneralDataUser extends Component {
         let val = event.target.value.toLowerCase();
         let matchesContacts = contacts.filter(v => v.name.toLowerCase().includes(val));
         console.log(matchesContacts);
+        // this.props.searchContacts();
     };
     render() {
         return (
@@ -37,13 +38,13 @@ class GeneralDataUser extends Component {
 const mapStateToProps = (state) => {
     return {
         contacts: getContacts(state),
-        searchContacts: [],
+        // searchContacts: [],
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        searchContactsAction: () => {
-            dispatch(searchContactsAction());
+        searchContacts: () => {
+            dispatch(searchContacts());
         }
     }
 }

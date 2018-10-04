@@ -1,7 +1,7 @@
 import { SEARCH_CONTACTS } from '../../actionstypes'
 import { createAction } from 'redux-actions'
 
-const searchContacts = [
+const searchContactsList = [
     {
         "id": "22",
         "name": "test Contact 22",
@@ -31,5 +31,5 @@ const searchContacts = [
     }
 ];
 
-const searchContactsAction = createAction(SEARCH_CONTACTS, null);
-export default searchContactsAction;
+const searchContacts = createAction(SEARCH_CONTACTS, null);
+export default searchContacts;
