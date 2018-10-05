@@ -5,14 +5,10 @@ import { getSearchContacts } from '../../redux/selectors/searchContacts'
 import { connect } from 'react-redux'
 
 class GeneralDataUser extends Component {
-    constructor(props) {
-        super(props);
-    }
     filterList = contacts => event => {
-        let val = event.target.value.toLowerCase();
-        let matchesContacts = contacts.filter(v => v.name.toLowerCase().includes(val));
-        console.log(matchesContacts);
-        this.props.searchContacts(21);
+        const val = event.target.value.toLowerCase();
+        const matchesContacts = contacts.filter(v => v.name.toLowerCase().includes(val));
+        this.props.searchContacts(matchesContacts);
     };
     render() {
         return (
@@ -35,7 +31,12 @@ class GeneralDataUser extends Component {
         )
     }
 }
-const mapStateToProps = (state) => {
+
+GeneralDataUser.defaultProps = {
+    searchContacts: [],
+}
+
+const mapStateToProps = (state) => {    
     return {
         contacts: getContacts(state),
         searchContacts: getSearchContacts(state),
@@ -43,8 +44,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        searchContacts: () => {
-            dispatch(searchContacts());
+        searchContacts: (id) => {
+            dispatch(searchContacts(id));
         }
     }
 }

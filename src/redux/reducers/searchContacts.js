@@ -4,7 +4,7 @@ const estado = {
 }
 export const searchContacts = (state = estado, action) => {
     switch (action.type) {
-        case 'SEARCH_CONTACTS':
+        case SEARCH_CONTACTS:
             return {
                 ...state,
                 searchContacts: action.searchContacts,

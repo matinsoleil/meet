@@ -31,9 +31,7 @@ class ChatContainer extends Component {
     componentDidCatch() {
         debugger
     }
-
     renderBody = (contacts, user, contact, conversation, searchContacts) => {
-
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
         return (
             <div className="main-chat">
@@ -46,7 +44,7 @@ class ChatContainer extends Component {
                     />
                     <div>
                         <h2 className="titleChat">Chats</h2>
-                        <button className="buttonNew">Nuevo <img className="icon-add" src="https://cdn2.iconfinder.com/data/icons/transparent-round-icons/512/add.png" ></img></button>
+                        <button className="buttonNew">Nuevo</button>
                     </div>
                     <ListGeneralContacts contacts={listContact} />
                 </div>
@@ -66,33 +64,13 @@ class ChatContainer extends Component {
 }
 ChatContainer.defaultProps = {
     contacts: [],
-    // searchContacts: [
-    //     {
-    //         "id": "2",
-    //         "name": "test Contact 2",
-    //         "photo": "ruta",
-    //         "dayLastMessage": "3 min",
-    //         "lastMessage": "Last Message",
-    //         "countMessage": "24",
-    //         "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
-    //     },
-    //     {
-    //         "id": "5",
-    //         "name": "test Contact 5",
-    //         "photo": "ruta",
-    //         "dayLastMessage": "3 min",
-    //         "lastMessage": "Last Message",
-    //         "countMessage": "3",
-    //         "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4gRO_bIr2YLXI4-0_NmlZQw55vKYXLCppLfMtq10bmZ-TsiD"
-    //     }
-    // ],
     searchContacts: [],
     user: [],
     contact: [],
     conversation: []
 }
 const mapStateToProps = (state) => {
-    return {
+return {
         contacts: getContacts(state),
         user: getUser(state),
         contact: getContact(state),
