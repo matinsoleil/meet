@@ -1,6 +1,4 @@
 import { SEARCH_CONTACTS } from '../../actionstypes'
-import { createAction } from 'redux-actions'
-
 const searchContactsList = [
     {
         "id": "22",
@@ -30,6 +28,12 @@ const searchContactsList = [
         "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMybaKtUQwGjyL2fXA7ZNY7J_vM_LSi3ToZnJ6aa6viL9FUDEf"
     }
 ];
-
-const searchContacts = createAction(SEARCH_CONTACTS, null);
+export const searchContacts = (id) => dispatch => {
+    console.log(" * * * * ");
+ 
+    dispatch({
+        type: SEARCH_CONTACTS,
+        searchContacts: searchContactsList,
+    })
+}
 export default searchContacts;
