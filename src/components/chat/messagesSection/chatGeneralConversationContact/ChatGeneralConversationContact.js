@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './ChatGeneralConversationContact.scss';
 import { connect } from 'react-redux';
+import Message from './Message';
 
 class ChatGeneralConversationContact extends Component {
-    componentDidMount(){
-        
-    }
     render() {
         return (
             <div className="main-chat-history-conversation-contact">
@@ -18,6 +16,7 @@ class ChatGeneralConversationContact extends Component {
                     const tailType = c.userSend === "1" ? 'tail-out' : 'tail-in';
                     const tail = (c.userSend === "1") ? this.props.out_tail : this.props.in_tail;
                     return <Message key={c.id}
+                        id = {c.id}
                         message={c.message}
                         hour={c.hour}
                         tail={tail}
@@ -31,20 +30,6 @@ class ChatGeneralConversationContact extends Component {
     }
 }
 
-const Message = ({ message, hour, type, tail, tailType, user_icon }) => {
-    return (
-        <div className="message-row">
-            {(type === "message-out")&&<img className="imgIcoUser chat-icon" src={user_icon} alt="" />}
-            <div className={`message-bubble ${type}`}>
-                <div className="message-wrapper">
-                    <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>
-                    <div className="message">{message}</div>
-                    <span className="time">{hour}</span>
-                </div>
-            </div>
-        </div>
-    )
-}
 
 const mapStateToProps = state => {
     return {
