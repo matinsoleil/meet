@@ -50,6 +50,14 @@
         div.message{
           line-height: 22px;
           font-size: 15px;
+          img.map{
+            width: 320px;
+            border-radius: 5px;
+          }
+          video{
+            width: 224px;
+            height: auto;
+          }
         }
         span.tail{
           background-size: contain;
