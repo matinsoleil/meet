@@ -16,6 +16,7 @@ import { getContact } from '../redux/selectors/contact'
 import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
+import { getSearchContacts } from '../redux/selectors/searchContacts';
 
 class ChatContainer extends Component {
     componentDidMount() {
@@ -70,11 +71,12 @@ ChatContainer.defaultProps = {
     conversation: []
 }
 const mapStateToProps = (state) => {
-return {
+    return {
         contacts: getContacts(state),
         user: getUser(state),
         contact: getContact(state),
-        conversation: getConversation(state)
+        conversation: getConversation(state),
+        searchContacts: getSearchContacts(state)
     }
 }
 const mapDispatchToProps = dispatch => {

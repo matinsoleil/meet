@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import { getContacts } from '../../redux/selectors/contacts'
 import searchContacts from '../../redux/actions/contacts/searchContacts'
-import { getSearchContacts } from '../../redux/selectors/searchContacts'
 import { connect } from 'react-redux'
-
 class GeneralDataUser extends Component {
     filterList = contacts => event => {
         const val = event.target.value.toLowerCase();
-        const matchesContacts = contacts.filter(v => v.name.toLowerCase().includes(val));
-        this.props.searchContacts(matchesContacts);
+        const listContactsFecth = contacts.filter(v => v.name.toLowerCase().includes(val));
+        this.props.searchContacts(listContactsFecth);
     };
     render() {
         return (
@@ -32,22 +30,16 @@ class GeneralDataUser extends Component {
     }
 }
 
-GeneralDataUser.defaultProps = {
-    searchContacts: [],
-}
-
-const mapStateToProps = (state) => {    
+const mapStateToProps = (state) => {
     return {
         contacts: getContacts(state),
-        searchContacts: getSearchContacts(state),
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        searchContacts: (id) => {
-            dispatch(searchContacts(id));
+        searchContacts: (listContactsFecth) => {
+            dispatch(searchContacts(listContactsFecth));
         }
     }
 }
-// export default GeneralDataUser
 export default connect(mapStateToProps, mapDispatchToProps)(GeneralDataUser);

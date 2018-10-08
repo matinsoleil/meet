@@ -1,3 +1,3 @@
 export const getSearchContacts = state => {
-    return state.searchContacts.searchContacts;
+    return state.searchContacts;
 }
