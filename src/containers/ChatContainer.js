@@ -41,10 +41,16 @@ class ChatContainer extends Component {
                         name={user.name}
                         status={user.status}
                         imgUser={user.imgUser}
-                        contacts={contacts}/>
+                        contacts={contacts} />
                     <div>
                         <h2 className="titleChat">Chats</h2>
-                        <button className="buttonNew">Nuevo</button>
+                        <div class="dropdown">
+                            <button className="dropbtn">Nuevo</button>
+                            <div class="dropdown-content">
+                                <a href="#">Nuevo chat</a>
+                                <a href="#">Nuevo chat grupal</a>
+                            </div>
+                        </div>
                     </div>
                     <ListGeneralContacts contacts={listContact} />
                 </div>
