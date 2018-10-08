@@ -61,7 +61,7 @@
 }
 .input-search {
   width: 90%;
-  padding: 6px ;  
+  padding: 12px;  
   border-radius: 1px 1px 1px 1px;
   -moz-border-radius: 1px 1px 1px 1px;
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -309,13 +309,11 @@ hr{
   
 }
 .grid-container-user-chat > div {
-
   padding: 10px 0;
 }
 
 .contacts-section-container{
   width: 600px;
-  
   display: table-cell; vertical-align: middle;
   margin-right: 10px;
 }

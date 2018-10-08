@@ -41,8 +41,7 @@ class ChatContainer extends Component {
                         name={user.name}
                         status={user.status}
                         imgUser={user.imgUser}
-                        contacts={contacts}
-                    />
+                        contacts={contacts}/>
                     <div>
                         <h2 className="titleChat">Chats</h2>
                         <button className="buttonNew">Nuevo</button>
