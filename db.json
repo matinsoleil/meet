@@ -135,7 +135,7 @@
   "users": [
     {
       "id": "1",
-      "name": "TEST USER CLARO CONNECT 1",
+      "name": "AGUSTIN",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -145,7 +145,7 @@
     },
     {
       "id": "2",
-      "name": "TEST USER CLARO CONNECT 2",
+      "name": "FERNANDO",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -155,7 +155,7 @@
     },
     {
       "id": "3",
-      "name": "TEST USER CLARO CONNECT 3",
+      "name": "RAMIRO",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -165,7 +165,7 @@
     },
     {
       "id": "4",
-      "name": "TEST USER CLARO CONNECT 4",
+      "name": "IVONNE",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -175,7 +175,7 @@
     },
     {
       "id": "5",
-      "name": "TEST USER CLARO CONNECT 5",
+      "name": "DANIEL",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -483,7 +483,7 @@
   "contacts": [
     {
       "id": "1",
-      "name": "TEST CONTACT 1 ",
+      "name": "ZAPATA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -494,7 +494,7 @@
     },
     {
       "id": "2",
-      "name": "TEST CONTACT 2",
+      "name": "GILSELA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -505,7 +505,7 @@
     },
     {
       "id": "3",
-      "name": "TEST CONTACT 3",
+      "name": "JAVO",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -516,7 +516,7 @@
     },
     {
       "id": "4",
-      "name": "TEST CONTACT 4",
+      "name": "ANTONIO",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -527,7 +527,7 @@
     },
     {
       "id": "5",
-      "name": "TEST CONTACT 5",
+      "name": "ROSA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -538,7 +538,7 @@
     },
     {
       "id": "6",
-      "name": "TEST CONTACT 6 ",
+      "name": "IRVING",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -549,7 +549,7 @@
     },
     {
       "id": "7",
-      "name": "TEST CONTACT 7",
+      "name": "CESAR",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -560,7 +560,7 @@
     },
     {
       "id": "8",
-      "name": "TEST CONTACT 8",
+      "name": "AMILCAR",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -571,7 +571,7 @@
     },
     {
       "id": "9",
-      "name": "TEST CONTACT 9",
+      "name": "ANTONIO",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -582,7 +582,7 @@
     },
     {
       "id": "10",
-      "name": "TEST CONTACT 10",
+      "name": "FERNANDA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -593,7 +593,7 @@
     },
     {
       "id": "11",
-      "name": "TEST CONTACT 11",
+      "name": "MARIA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -604,7 +604,7 @@
     },
     {
       "id": "12",
-      "name": "TEST CONTACT 12",
+      "name": "TERESA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -615,7 +615,7 @@
     },
     {
       "id": "13",
-      "name": "TEST CONTACT 13",
+      "name": "JUANA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -626,7 +626,7 @@
     },
     {
       "id": "14",
-      "name": "TEST CONTACT 14",
+      "name": "TANIA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -637,7 +637,7 @@
     },
     {
       "id": "15",
-      "name": "TEST CONTACT 15",
+      "name": "MARGARITA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -648,7 +648,7 @@
     },
     {
       "id": "16",
-      "name": "TEST CONTACT 16",
+      "name": "ELVIA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -659,7 +659,7 @@
     },
     {
       "id": "17",
-      "name": "TEST CONTACT 17",
+      "name": "YURIDIA",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
