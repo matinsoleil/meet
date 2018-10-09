@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 class GeneralDataUser extends Component {
     filterList = contacts => event => {
         const val = event.target.value.toLowerCase();
-        const listContactsFecth = contacts.filter(v => v.name.toLowerCase().includes(val));
+        const listContactsFecth = this.props.contacts.filter(v => v.name.toLowerCase().includes(val));
         this.props.searchContacts(listContactsFecth);
     };
     render() {
@@ -28,7 +28,6 @@ class GeneralDataUser extends Component {
         )
     }
 }
-
 const mapStateToProps = (state) => {
     return {
         contacts: getContacts(state),

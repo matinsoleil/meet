@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import AppFrame from '../components/AppFrame'
-import GeneralDataUser from '../components/chat/GeneralDataUser'
+// import GeneralDataUser from '../components/chat/GeneralDataUser'
 import { connect } from 'react-redux'
 // import ActionsContactConversation from '../components/chat/ActionsContactConversation'
-import ListGeneralContacts from '../components/chat/ListGeneralContacts'
+// import ListGeneralContacts from '../components/chat/ListGeneralContacts'
 //import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer';
 // import AreaSendMessage from '../components/chat/AreaSendMessage'
@@ -17,7 +17,7 @@ import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts';
-import GeneralContactDataCreateGroup from '../components/chat/GeneralContactDataCreateGroup'
+// import GeneralContactDataCreateGroup from '../components/chat/GeneralContactDataCreateGroup'
 import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
 
 
@@ -39,7 +39,7 @@ class ChatContainer extends Component {
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
         return (
             <div className="main-chat">
-                <ContactSectionContainer user={user} contacts={contacts} />
+                <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />
                 <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
             </div>
         );
