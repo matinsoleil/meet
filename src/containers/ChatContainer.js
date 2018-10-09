@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import AppFrame from '../components/AppFrame'
-// import GeneralDataUser from '../components/chat/GeneralDataUser'
 import { connect } from 'react-redux'
-// import ActionsContactConversation from '../components/chat/ActionsContactConversation'
-// import ListGeneralContacts from '../components/chat/ListGeneralContacts'
-//import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer';
-// import AreaSendMessage from '../components/chat/AreaSendMessage'
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
 import fetchConversation from '../redux/actions/conversation/fetchConversation'
@@ -17,10 +12,7 @@ import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts';
-// import GeneralContactDataCreateGroup from '../components/chat/GeneralContactDataCreateGroup'
 import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
-
-
 class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts();

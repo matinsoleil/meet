@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { getContacts } from '../../redux/selectors/contacts'
-import searchContacts from '../../redux/actions/contacts/searchContacts'
+import { getContacts } from '../../../redux/selectors/contacts'
+import searchContacts from '../../../redux/actions/contacts/searchContacts'
 import { connect } from 'react-redux'
 class GeneralDataUser extends Component {
     filterList = contacts => event => {

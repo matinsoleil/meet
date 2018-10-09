@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import GeneralContactData from './GeneralContactData'
-import fetchContact from '../../redux/actions/contact/fetchContact'
+import fetchContact from '../../../redux/actions/contact/fetchContact'
 import { connect } from 'react-redux'
 class ListGeneralContacts extends Component {
     constructor(props) {
