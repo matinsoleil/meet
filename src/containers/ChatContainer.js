@@ -17,10 +17,8 @@ import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts';
-
-
 import GeneralContactDataCreateGroup from '../components/chat/GeneralContactDataCreateGroup'
-
+import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
 
 
 class ChatContainer extends Component {
@@ -41,30 +39,7 @@ class ChatContainer extends Component {
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
         return (
             <div className="main-chat">
-                <div className="contacts-section-container">
-                    <GeneralDataUser
-                        name={user.name}
-                        status={user.status}
-                        imgUser={user.imgUser}
-                        contacts={contacts} />
-                    <div>
-                        <h2 className="title-chat">Chats</h2>
-                        <div class="dropdown">
-                            <button className="dropbtn">Nuevo</button>
-                            <div class="dropdown-content">
-                                <a href="#">Nuevo chat</a>
-                                <a href="#">Nuevo chat grupal</a>
-                            </div>
-                        </div>
-
-                        <div>
-                            <GeneralContactDataCreateGroup>
-                                
-                            </GeneralContactDataCreateGroup>
-                        </div>
-                    </div>
-                    <ListGeneralContacts contacts={listContact} />
-                </div>
+                <ContactSectionContainer user={user} contacts={contacts} />
                 <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
             </div>
         );
