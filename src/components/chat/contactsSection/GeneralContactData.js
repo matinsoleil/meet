@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './GeneralContactData.scss'
 class GeneralContactData extends Component {
     constructor(...props) {
         super(...props);

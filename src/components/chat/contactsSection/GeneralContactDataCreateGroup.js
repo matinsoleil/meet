@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './GeneralContactDataCreateGroup.scss'
 class GeneralContactDataCreateGroup extends Component {
     constructor(...props) {
         super(...props);
@@ -10,17 +10,17 @@ class GeneralContactDataCreateGroup extends Component {
     }
     render() {
         return (
-            <div className="contact-chat" onClick={this.handleClick} >
-                <div className="grid-container-contact-chat">
-                    <div className="icon-contact">
-                        <div className="outer-circle" >
-                            <img className="img-icon-user" src={this.props.imgContact} alt="test" />
-                            <div className="inner-circle circle">&nbsp;</div>
+            <div className="contact-chat-group" onClick={this.handleClick} >
+                <div className="grid-container-contact-chat-group">
+                    <div className="icon-contact-group">
+                        <div className="outer-circle-group" >
+                            <img className="img-icon-user-group" src={this.props.imgContact} alt="test" />
+                            <div className="inner-circle-group circle-group">&nbsp;</div>
                         </div>
                     </div>
-                    <div className="name-contact">{this.props.nameContact}</div>
-                    <div className="count-message">
-                        <div className="circle-count-message"><p>{this.props.countMessage}</p>
+                    <div className="name-contact-group">{this.props.nameContact}</div>
+                    <div className="count-message-group">
+                        <div className="circle-count-message-group"><p>{this.props.countMessage}</p>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import GeneralDataUser from '../../../components/chat/contactsSection/GeneralDat
 // import GeneralContactDataCreateGroup from '../../../components/chat/GeneralContactDataCreateGroup'
 import ListGeneralContacts from '../../../components/chat/contactsSection/ListGeneralContacts'
 import React, { Component } from 'react';
+import './ContactSectionContainer.scss'
 class ContactSectionContainer extends Component {
     render() {
         return (
