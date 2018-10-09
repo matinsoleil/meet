@@ -124,12 +124,12 @@
 }
 
 .inner-circle {
-            background-color:#74c365;
-            border-color: #ffffff;
-            top: -15px; left:70%;
-            width:20%;
-            height:20%;
-            position: relative;
+  background-color:#74c365;
+  border-color: #ffffff;
+  top: -15px; left:70%;
+  width:20%;
+  height:20%;
+  position: relative;
 }
 .boton-action-send-file{
   float: left;
@@ -168,7 +168,7 @@
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
 }
-.imgIcoUser {
+.img-icon-user {
   border-radius: 50%;
   height: 42px;
   width: 42px;
@@ -176,16 +176,8 @@
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
 }
-.imgSearch {
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  -moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
 
-.circleCountMessage{
+.circle-count-message{
   width: 20px;
   height: 20px;
   /* background:#f5cd5d; */
@@ -199,16 +191,6 @@
   display: flex;
   justify-content: center;
   align-items: center; 
-}
-/* .descriptionUser{
-  font-size: 10px;
-  text-align: left;
-}
-.right {
-  float: right;
-} */
-.nameUser{
-  font-size: 10px;
 }
 hr{
   border-top: 1px solid #f2f2f2;
@@ -228,43 +210,41 @@ hr{
   height: 20px;
   width: 20px;
 }
-.titleChat{
+.title-chat{
   font-size: 18px;
   font-weight: bold;
 }
 /* Area de los datos de los contactos */
-.iconContact { 
-  grid-area: iconContact;
+.icon-contact { 
+  grid-area: icon-contact;
 }
-.nameContact { 
-  grid-area: nameContact;
+.name-contact { 
+  grid-area: name-contact;
   font-weight: bold;
   font-size: 12px;
 }
-.dayLastMessage { 
-  grid-area: dayLastMessage; 
+.day-last-message { 
+  grid-area: day-last-message; 
   justify-self: end;
 }
-
-.dayLastMessage > p{ 
+.day-last-message > p{ 
   font-size: 12px;
   color: #cccccc;
 }
-
-.lastMessage { 
-  grid-area: lastMessage;
+.last-message { 
+  grid-area: last-message;
   font-size: 12px;
   color: #cccccc;
 }
-.countMessage {
-  grid-area: countMessage;
+.count-message {
+  grid-area: count-message;
   justify-self: end;
 }
 .grid-container-contact-chat {
   display: grid;
   grid-template-areas:
-    'iconContact nameContact nameContact nameContact nameContact nameContact nameContact dayLastMessage '
-    'iconContact lastMessage lastMessage lastMessage lastMessage lastMessage lastMessage countMessage ';
+    'icon-contact name-contact name-contact name-contact name-contact name-contact name-contact day-last-message '
+    'icon-contact last-message last-message last-message last-message last-message last-message count-message ';
   grid-gap: 1px;
   padding: 1px;
   /* background-color: #2196F3; */
@@ -273,38 +253,33 @@ hr{
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
 }
-/* Area de los datos de los Usuarios */
-.nameUser { 
-  grid-area: nameUser; 
+.name-user { 
+  grid-area: name-user; 
   font-weight: bold;
   font-size: 12px;
 }
-.iconUser { grid-area: iconUser; }
-.statusUser { 
-  grid-area: statusUser; 
+.icon-user { grid-area: icon-user; }
+.status-user { 
+  grid-area: status-user; 
   font-size: 12px;
 }
-.searchContact { grid-area: searchContact; }
-
+.search-contact { grid-area: search-contact; }
 .grid-container-user-chat {
   display: grid;
   grid-template-areas:
-    'iconUser nameUser nameUser nameUser nameUser nameUser nameUser'
-    'iconUser statusUser statusUser statusUser statusUser statusUser statusUser'
-    'searchContact searchContact searchContact searchContact searchContact searchContact searchContact';
-  /* background-color: #2196F3; */
-  
+    'icon-user name-user name-user name-user name-user name-user name-user'
+    'icon-user status-user status-user status-user status-user status-user status-user'
+    'search-contact search-contact search-contact search-contact search-contact search-contact search-contact';
+  /* background-color: #2196F3; */ 
 }
 .grid-container-user-chat > div {
   padding: 10px 0;
 }
-
 .contacts-section-container{
   width: 600px;
   display: table-cell; vertical-align: middle;
   margin-right: 10px;
 }
-
 .dropbtn {
   background-color: #5886c0;
   border-radius: 3px 3px 3px 3px;
@@ -314,38 +289,30 @@ hr{
   padding: 10px;
   font-size: 16px;
 }
-
 .dropdown {
   float: right;
   position: relative;
   display: inline-block;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
   /* background-color: #f9f9f9; */
-
   background-color: #f9f9f9;
-
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
 .dropdown-content a:hover {background-color: #f1f1f1}
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .dropdown:hover .dropbtn {
   background-color: #285996;
   border-radius: 3px 3px 3px 3px;

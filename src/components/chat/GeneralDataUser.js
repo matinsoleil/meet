@@ -12,15 +12,15 @@ class GeneralDataUser extends Component {
         return (
             <div className="main-chat-general-data-user">
                 <div className="grid-container-user-chat">
-                    <div className="nameUser">{this.props.name}</div>
-                    <div className="iconUser">
+                    <div className="name-user">{this.props.name}</div>
+                    <div className="icon-user">
                         <div className="outer-circle" >
-                            <img className="imgIcoUser" src={this.props.imgUser} alt="test" />
+                            <img className="img-icon-user" src={this.props.imgUser} alt="test" />
                             <div className="inner-circle circle">&nbsp;</div>
                         </div>
                     </div>
-                    <div className="statusUser">{this.props.status}</div>
-                    <div className="searchContact">
+                    <div className="status-user">{this.props.status}</div>
+                    <div className="search-contact">
                         <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList(this.props.contacts)}></input>
                     </div>
                 </div>

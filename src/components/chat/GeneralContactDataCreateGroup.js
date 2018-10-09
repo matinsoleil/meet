@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class GeneralContactData extends Component {
+class GeneralContactDataCreateGroup extends Component {
     constructor(...props) {
         super(...props);
         this.handleClick = this.handleClick.bind(this);
@@ -19,8 +19,6 @@ class GeneralContactData extends Component {
                         </div>
                     </div>
                     <div className="name-contact">{this.props.nameContact}</div>
-                    <div className="day-last-message"><p>{this.props.dayLastMessage}</p></div>
-                    <div className="last-message">{this.props.lastMessage}</div>
                     <div className="count-message">
                         <div className="circle-count-message"><p>{this.props.countMessage}</p>
                         </div>
@@ -31,4 +29,4 @@ class GeneralContactData extends Component {
     }
 }
 
-export default GeneralContactData;
+export default GeneralContactDataCreateGroup;

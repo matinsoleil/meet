@@ -5,7 +5,7 @@ export default class Message extends Component {
         let { message, hour, type, tail, tailType, user_icon,id} = this.props;
         return (
             <div className="message-row">
-                {(type === "message-out") && <img className="imgIcoUser chat-icon" src={user_icon} alt="" />}
+                {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div className={`message-bubble ${type}`}>
                     <div className="message-wrapper">
                         <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>

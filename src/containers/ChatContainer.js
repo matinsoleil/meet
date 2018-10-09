@@ -18,6 +18,11 @@ import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts';
 
+
+import GeneralContactDataCreateGroup from '../components/chat/GeneralContactDataCreateGroup'
+
+
+
 class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts();
@@ -43,13 +48,19 @@ class ChatContainer extends Component {
                         imgUser={user.imgUser}
                         contacts={contacts} />
                     <div>
-                        <h2 className="titleChat">Chats</h2>
+                        <h2 className="title-chat">Chats</h2>
                         <div class="dropdown">
                             <button className="dropbtn">Nuevo</button>
                             <div class="dropdown-content">
                                 <a href="#">Nuevo chat</a>
                                 <a href="#">Nuevo chat grupal</a>
                             </div>
+                        </div>
+
+                        <div>
+                            <GeneralContactDataCreateGroup>
+                                
+                            </GeneralContactDataCreateGroup>
                         </div>
                     </div>
                     <ListGeneralContacts contacts={listContact} />
