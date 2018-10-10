@@ -51,7 +51,8 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
 // The development configuration is different and lives in a separate file.
 module.exports = {
   externals: {
-    'ICenterSDK':'ICenterSDK'
+    'ICenterSDK':'ICenterSDK',
+    'Recorder':'Recorder'
   },
   // Don't attempt to continue if there are any errors.
   bail: true,

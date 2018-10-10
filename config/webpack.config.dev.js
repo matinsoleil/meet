@@ -27,7 +27,8 @@ const env = getClientEnvironment(publicUrl);
 // The production configuration is different and lives in a separate file.
 module.exports = {
   externals:{
-    'ICenterSDK':'ICenterSDK'
+    'ICenterSDK':'ICenterSDK',
+    'Recorder':'Recorder'
   },
   // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
   // See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.
