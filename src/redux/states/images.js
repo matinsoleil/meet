@@ -9,4 +9,6 @@ export const Images = {
     "white_tail":require('./../../img/white-tail.png'),
     "chat_background": require('./../../img/chat-background.png'),
     "add": require('./../../img/add.png'),
+    "ok_icon": require('./../../img/ok-icon.png'),
+    "cancel_icon": require('./../../img/cancel-icon.png')
 }

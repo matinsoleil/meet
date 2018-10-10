@@ -1,0 +1,16 @@
+@media screen{
+    div.record-content{
+        flex: 12;
+        cursor: auto;
+        div.controls{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            img{
+                width: 28px;
+                height: auto;
+                cursor: pointer;
+            }
+        }
+    }
+}

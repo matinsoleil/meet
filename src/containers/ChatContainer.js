@@ -27,7 +27,7 @@ class ChatContainer extends Component {
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();
-        // this.props.logout();
+        //this.props.logout();
     }
     componentDidCatch() {
         debugger
