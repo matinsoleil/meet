@@ -6,7 +6,7 @@
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 .grid-container-contact-chat-group {
@@ -86,4 +86,9 @@
   display: flex;
   justify-content: center;
   align-items: center; 
+}
+
+.markerListContactGroup {
+  color: rgb(78, 78, 78);
+  font-weight: bold;
 }

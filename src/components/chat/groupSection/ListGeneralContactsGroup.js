@@ -14,6 +14,9 @@ class ListGeneralContactsGroup extends Component {
     render() {
         return (
             <div className="main-chat-general-list-contact-group">
+                <div className="main-chat-general-list-contact-group-title"> 
+                    Contactos
+                </div>
                 {this.props.contacts.map(c =>
                     <GeneralContactDataGroup
                         id={c.id}
