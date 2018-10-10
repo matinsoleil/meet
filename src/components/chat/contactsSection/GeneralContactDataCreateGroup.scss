@@ -1,0 +1,96 @@
+.contact-chat-group {
+    background-color: #fefefe;
+    position: relative;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+  }
+
+  .grid-container-contact-chat-group {
+    display: grid;
+    grid-template-areas:
+      'icon-contact name-contact name-contact name-contact name-contact name-contact name-contact day-last-message '
+      'icon-contact last-message last-message last-message last-message last-message last-message count-message ';
+    grid-gap: 1px;
+    padding: 1px;
+  }
+  .grid-container-contact-chat-group > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+  }
+
+  .icon-contact-group {
+    grid-area: icon-contact;
+  }
+
+  .outer-circle-group {
+    width:42px;
+    height:42px;
+    position:relative;
+  }
+
+  .img-icon-user-group {
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+    -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
+      border-radius: 50px;
+  }
+
+  .inner-circle-group {
+    background-color:#74c365;
+    border-color: #ffffff;
+    top: -15px; left:70%;
+    width:20%;
+    height:20%;
+    position: relative;
+  }
+
+  .circle-group { 
+    border-radius: 50%; 
+  }
+
+  .name-contact-group { 
+    grid-area: name-contact;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+
+  .day-last-message-group { 
+    grid-area: day-last-message; 
+    justify-self: end;
+  }
+  .day-last-message-group > p {
+    font-size: 12px;
+    color: #cccccc;
+  }
+
+  .last-message-group { 
+    grid-area: last-message;
+    font-size: 12px;
+    color: #cccccc;
+  }
+
+  .count-message-group {
+    grid-area: count-message;
+    justify-self: end;
+  }
+
+  .circle-count-message-group {
+    width: 20px;
+    height: 20px;
+    background:#f5cd5d;
+    color: #fdfdfd;
+    border-radius: 50%;
+    font-size: 12px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }

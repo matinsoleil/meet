@@ -1,0 +1,67 @@
+.main-chat-general-data-user {
+    background-color: #fefefe;
+    position: relative;
+    height: 140px;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+.grid-container-user-chat {
+    display: grid;
+    grid-template-areas:
+      'icon-user name-user name-user name-user name-user name-user name-user'
+      'icon-user status-user status-user status-user status-user status-user status-user'
+      'search-contact search-contact search-contact search-contact search-contact search-contact search-contact';
+}
+.grid-container-user-chat > div {
+    padding: 10px 0;
+}
+.name-user {
+    grid-area: name-user; 
+    font-weight: bold;
+    font-size: 12px;
+}
+.icon-user { 
+    grid-area: icon-user; 
+}
+.outer-circle-user {
+  width:42px;
+  height:42px;
+  position:relative;
+}
+.img-icon-user {
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+.inner-circle-user {
+    background-color:#74c365;
+    border-color: #ffffff;
+    top: -15px; left:70%;
+    width:20%;
+    height:20%;
+    position: relative;
+}
+.circle-user { 
+    border-radius: 50%; 
+} 
+
+.status-user { 
+    grid-area: status-user; 
+    font-size: 12px;
+}
+
+.search-contact { 
+    grid-area: search-contact; 
+}
+.input-search {
+    width: 90%;
+    padding: 12px;  
+    border-radius: 1px 1px 1px 1px;
+    -moz-border-radius: 1px 1px 1px 1px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}

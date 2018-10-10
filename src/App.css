@@ -11,206 +11,33 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-/* .app-frame {
-  margin: 5%;
-  padding: 30px;
-  width: calc(80vw);
-  background-color: rgb(175, 175, 175);
-} */
-.login-body{
+.login-body {
   display: flex;
   position: relative;
   /* height: 400px; */
   width: 100%;
 }
-.login-header{
+.login-header {
   border: 3px solid rgb(33, 152, 173);
   position: relative;
   /* height: 100px; */
   width: 100%;
 }
-.login-instructions{
+.login-instructions {
   border: 3px solid rgb(173, 38, 33);
   position: relative;
   width: 50%;
   height: 100%;
   float: left;
 }
-.login-qr-code{
+.login-qr-code {
   border: 3px solid #73AD21;
   position: relative;
   width: 50%;
   height: 100%;
   float: left;
 }
-.main-chat-header{
-  display: flex;
-  position: relative;
-  /* height: 100px; */
-  width: 100%;
-}
-.main-chat-general-data-user{
-  /* background-color: #8900c9; */
-  background-color: #fefefe;
-  position: relative;
-  height: 140px;
-  width: 100%;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
-.input-search {
-  width: 90%;
-  padding: 6px ;  
-  border-radius: 1px 1px 1px 1px;
-  -moz-border-radius: 1px 1px 1px 1px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
-
-.contact-chat{
-  background-color: #fefefe;
-  
-  position: relative;
-  width: 100%;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  margin-top: 10px;
-}
-.main-chat-user-connect-conversation-user{
-  background-color: #fefefe;
-  position: relative;
-  height: 100px;
-  width: 70%;
-}
-.main-chat-general-list-contact{
-  overflow: scroll; 
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-.main-chat-general-conversation-contact{
-  position: relative;
-  height: 600px;
-  width: 70%;
-}
-.main-chat-area-send-conversation{
-  margin-left: 10px;
-  background-color: #fefefe;
-  align-items: center;
-  position: relative;
-  height: 100px;
-  width: 100%;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
-.shapeborder { border:1px solid black; }
-.circle { border-radius: 50%; }
-.outer-circle {
-            /* background-color:blue; */
-            width:42px;
-            height:42px;
-            position:relative;
-}
-
-.status-user-circle {
-  background-color:#74c365;
-  border-color: #ffffff;
-  /* position: fixed; */
-  /* position: static; */
-  position: absolute;
-  left: auto;
-}
-
-.inner-circle {
-            background-color:#74c365;
-            border-color: #ffffff;
-            top: -15px; left:70%;
-            width:20%;
-            height:20%;
-            position: relative;
-}
-.boton-action-send-file{
-  float: left;
-  background-color: rgb(94, 94, 94);
-  height: 50px;
-  width: 50px;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
-.boton-action-more-file{
-  float: left;
-  background-color: rgb(94, 94, 94);
-  height: 50px;
-  width: 50px;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
-.input-send {
-  width: 60%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-.button-send-chat {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-}
-.imgIcoUser {
-  border-radius: 50%;
-  height: 42px;
-  width: 42px;
-  -moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
-.imgSearch {
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  -moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
-
-.circleCountMessage{
-  width: 20px;
-  height: 20px;
-  /* background:#f5cd5d; */
-  background:#f5cd5d;
-  color: #fdfdfd;
-  border-radius: 50%;
-  font-size: 12px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
-/* .descriptionUser{
-  font-size: 10px;
-  text-align: left;
-}
-.right {
-  float: right;
-} */
-.nameUser{
-  font-size: 10px;
-}
-hr{
+hr {
   border-top: 1px solid #f2f2f2;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -223,99 +50,12 @@ hr{
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: #d0d0d0;
 }
-.buttonNew {
-  float: right;
+.dropbtn {
   background-color: #5886c0;
-  border: none;
-  color: white;
-  padding: 4px 10px;
-  text-align: center;
-  font-size: 14px;
   border-radius: 3px 3px 3px 3px;
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
-  
-}
-.icon-add{
-  float: right;  
-  height: 20px;
-  width: 20px;
-}
-.titleChat{
-  font-size: 18px;
-  font-weight: bold;
-}
-/* Area de los datos de los contactos */
-.iconContact { 
-  grid-area: iconContact;
-}
-.nameContact { 
-  grid-area: nameContact;
-  font-weight: bold;
-  font-size: 12px;
-}
-.dayLastMessage { 
-  grid-area: dayLastMessage; 
-  justify-self: end;
-}
-
-.dayLastMessage > p{ 
-  font-size: 12px;
-  color: #cccccc;
-}
-
-.lastMessage { 
-  grid-area: lastMessage;
-  font-size: 12px;
-  color: #cccccc;
-}
-.countMessage {
-  grid-area: countMessage;
-  justify-self: end;
-}
-.grid-container-contact-chat {
-  display: grid;
-  grid-template-areas:
-    'iconContact nameContact nameContact nameContact nameContact nameContact nameContact dayLastMessage '
-    'iconContact lastMessage lastMessage lastMessage lastMessage lastMessage lastMessage countMessage ';
-  grid-gap: 1px;
-  padding: 1px;
-  /* background-color: #2196F3; */
-}
-.grid-container-contact-chat > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px 0;
-}
-/* Area de los datos de los Usuarios */
-.nameUser { 
-  grid-area: nameUser; 
-  font-weight: bold;
-  font-size: 12px;
-}
-.iconUser { grid-area: iconUser; }
-.statusUser { 
-  grid-area: statusUser; 
-  font-size: 12px;
-}
-.searchContact { grid-area: searchContact; }
-
-.grid-container-user-chat {
-  display: grid;
-  grid-template-areas:
-    'iconUser nameUser nameUser nameUser nameUser nameUser nameUser'
-    'iconUser statusUser statusUser statusUser statusUser statusUser statusUser'
-    'searchContact searchContact searchContact searchContact searchContact searchContact searchContact';
-  /* background-color: #2196F3; */
-  
-}
-.grid-container-user-chat > div {
-
-  padding: 10px 0;
-}
-
-.contacts-section-container{
-  width: 600px;
-  
-  display: table-cell; vertical-align: middle;
-  margin-right: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
 }

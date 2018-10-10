@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import AppFrame from '../components/AppFrame'
-import GeneralDataUser from '../components/chat/GeneralDataUser'
 import { connect } from 'react-redux'
-// import ActionsContactConversation from '../components/chat/ActionsContactConversation'
-import ListGeneralContacts from '../components/chat/ListGeneralContacts'
-//import ChatGeneralConversationContact from '../components/chat/ChatGeneralConversationContact'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer';
-// import AreaSendMessage from '../components/chat/AreaSendMessage'
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
 import fetchConversation from '../redux/actions/conversation/fetchConversation'
@@ -17,6 +12,8 @@ import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts';
+import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
+import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 
 class ChatContainer extends Component {
     componentDidMount() {
@@ -36,19 +33,8 @@ class ChatContainer extends Component {
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
         return (
             <div className="main-chat">
-                <div className="contacts-section-container">
-                    <GeneralDataUser
-                        name={user.name}
-                        status={user.status}
-                        imgUser={user.imgUser}
-                        contacts={contacts}
-                    />
-                    <div>
-                        <h2 className="titleChat">Chats</h2>
-                        <button className="buttonNew">Nuevo</button>
-                    </div>
-                    <ListGeneralContacts contacts={listContact} />
-                </div>
+                {/* <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} /> */}
+                <GroupSectionContainer user={user} contacts={contacts} listContact={listContact} />
                 <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
             </div>
         );
