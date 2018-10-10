@@ -1,9 +1,7 @@
 .main-header-group-section {
-    background-color: #fefefe;
+    background-color: #7198C9;
     color: #fefefe;
-    // background-color: #b3cdfd;
     position: relative;
-    height: 140px;
     width: 100%;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
@@ -17,16 +15,21 @@
 }
 
 .header-group {
-    background-color: #7198C9;
+    height: 200px;
     grid-area: header-group; 
     font-weight: bold;
     font-size: 12px;
     padding: 35px ;
+    overflow: scroll;
 }
-.search-contact { 
-    // background-color: fuchsia;
+.search-contact {
+    background-color: #b3cdfd;
     grid-area: search-contact; 
     padding: 10px ;
+    border-radius: 1px 1px 1px 1px;
+    -moz-border-radius: 1px 1px 1px 1px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+
 }
 .input-search {
     width: 90%;

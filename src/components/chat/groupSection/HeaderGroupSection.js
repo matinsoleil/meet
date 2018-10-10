@@ -46,10 +46,33 @@ const tesContact = [
         "lastMessage": "Last Message",
         "countMessage": "2",
         "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4e-0MFbXTwq4C_tb8NoWvmiTOyigeoBMDqd7uXhwcAjXDViN-"
+    }, {
+        "id": "9",
+        "name": "ANTONIO",
+        "photo": "ruta",
+        "status": "Status test",
+        "label": "label",
+        "dayLastMessage": "08/09/2018",
+        "lastMessage": "Last Message",
+        "countMessage": "2",
+        "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
     }
 ]
 
-
+// const tesContact = [
+//     {
+//         "id": "9",
+//         "name": "ANTONIO",
+//         "photo": "ruta",
+//         "status": "Status test",
+//         "label": "label",
+//         "dayLastMessage": "08/09/2018",
+//         "lastMessage": "Last Message",
+//         "countMessage": "2",
+//         "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
+//     }
+// ]
+// const tesContact = [];
 class HeaderGroupSection extends Component {
     filterList = contacts => event => {
         const val = event.target.value.toLowerCase();
@@ -61,6 +84,7 @@ class HeaderGroupSection extends Component {
             <div className="main-header-group-section">
                 <div className="grid-container-header-section">
                     <div className="header-group">
+                        Nuevo grupo
                         <div>
                             {tesContact.map(contact =>
                                 <ContactAddGroup key={contact.id} contact={contact} onClick={this.handleClick} />
