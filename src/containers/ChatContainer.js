@@ -12,8 +12,8 @@ import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts';
-import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
-// import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
+// import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
+import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 
 class ChatContainer extends Component {
     componentDidMount() {
@@ -33,8 +33,8 @@ class ChatContainer extends Component {
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
         return (
             <div className="main-chat">
-                <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />
-                {/* <GroupSectionContainer user={user} contacts={contacts} listContact={listContact} /> */}
+                {/* <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} /> */}
+                <GroupSectionContainer user={user} contacts={contacts} listContact={listContact} />
                 <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
             </div>
         );
@@ -54,7 +54,8 @@ ChatContainer.defaultProps = {
     searchContacts: [],
     user: [],
     contact: [],
-    conversation: []
+    conversation: [],
+    contactsAddGroup: []
 }
 const mapStateToProps = (state) => {
     return {
