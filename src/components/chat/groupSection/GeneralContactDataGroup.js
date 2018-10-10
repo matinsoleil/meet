@@ -6,14 +6,14 @@ class GeneralContactData extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        this.props.onClick(this.props.id)
+        // this.props.onClick(this.props.id)
+        alert("Add contact and new group " + this.props.id);
     }
     render() {
         return (
-
             <div>
                 <div className="markerListContactGroup">
-                A
+                {this.props.nameContact[0]}
                 </div>
                 <div className="contact-chat-group" onClick={this.handleClick} >
                     <div className="grid-container-contact-chat-group">

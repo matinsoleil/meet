@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getContacts } from '../../../redux/selectors/contacts'
 import searchContacts from '../../../redux/actions/contacts/searchContacts'
+import ContactAddGroup from './ContactAddGroup'
 import { connect } from 'react-redux'
 import './HeaderGroupSection.scss'
 class HeaderGroupSection extends Component {
@@ -14,7 +15,19 @@ class HeaderGroupSection extends Component {
             <div className="main-header-group-section">
                 <div className="grid-container-header-section">
                     <div className="header-group">
-                        Añadir participantes
+                        <div>
+                            <ContactAddGroup
+                                id="1"
+                                key="1"
+                                nameContact="name"
+                                dayLastMessage="dayLastMessage"
+                                lastMessage="lastMessage"
+                                imgContact="https://cdn3.iconfinder.com/data/icons/misc-file-formats/512/20-512.png"
+                                status="status"
+                                onClick="null"
+                                countMessage="s" >
+                            </ContactAddGroup>
+                        </div>
                     </div>
                     <div className="search-contact">
                         <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList(this.props.user.contacts)}></input>

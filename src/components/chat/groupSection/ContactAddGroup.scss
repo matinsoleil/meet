@@ -1,0 +1,82 @@
+.contact-add-group {
+    background-color: #fefefe;  
+    position: relative;
+    border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+    margin-top: 5px;
+}
+.grid-container-contact-add-group {
+    display: grid;
+    grid-template-areas:
+    'icon-contact-add-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group count-message-contact-add-group';
+    padding: 1px;
+}
+.grid-container-contact-add-group > div {
+   padding: 0px 0;
+}
+
+.icon-contact-add-group {
+    grid-area: icon-contact-add-group;
+}
+.outer-circle-contact-add-group {
+    // background-color: red;
+    width:30px;
+    height:30px;
+    position:relative;
+}
+.img-icon-contact-add-group {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+.circle-contact-add-group { 
+    border-radius: 50%;
+}
+.name-contact-add-group { 
+    grid-area: name-contact-group;
+    color: #030303;
+    font-weight: bold;
+    font-size: 12px;
+    justify-self: flex-start;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.day-last-message-group { 
+    grid-area: day-last-message-group; 
+    justify-self: end;
+}
+.day-last-message-group > p {
+    font-size: 12px;
+    color: #cccccc;
+}
+.last-message-group { 
+    grid-area: last-message-group;
+    font-size: 12px;
+    color: #cccccc;
+}
+.count-message-contact-add-group {
+    grid-area: count-message-contact-add-group;
+}
+.circle-count-message-contact-add-group {
+    width: 30px;
+    height: 30px;
+    background:#7198C9;
+    color: #fdfdfd;
+    border-radius: 50%;
+    font-size: 12px;
+    text-align: center;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.markerListContactGroup {
+    color: rgb(78, 78, 78);
+    font-weight: bold;
+}
