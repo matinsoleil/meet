@@ -1,4 +1,6 @@
 .main-chat-general-list-contact-group {
+    display: flex;
+    flex-direction: column;
     overflow: scroll; 
     position: relative;
     height: 100%;
