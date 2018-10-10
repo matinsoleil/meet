@@ -14,19 +14,8 @@ class ListGeneralContacts extends Component {
     render() {
         return (
             <div className="main-chat-general-list-contact">
-                {this.props.contacts.map(c =>
-                    <GeneralContactData
-                        id={c.id}
-                        key={c.id}
-                        nameContact={c.name}
-                        dayLastMessage={c.dayLastMessage}
-                        lastMessage={c.lastMessage}
-                        imgContact={c.imgContact}
-                        status={c.status}
-                        onClick={this.handleClick}
-                        countMessage={c.countMessage}
-                    >
-                    </GeneralContactData>
+                {this.props.contacts.map(contact =>
+                    <GeneralContactData contact={contact} onClick={this.handleClick} key={contact.id} />
                 )}
             </div>
         )
