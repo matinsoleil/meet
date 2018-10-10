@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import GeneralContactData from './GeneralContactData'
+import GeneralContactDataGroup from './GeneralContactDataGroup'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import { connect } from 'react-redux'
-import './ListGeneralContacts.scss'
-class ListGeneralContacts extends Component {
+import './ListGeneralContactsGroup.scss'
+class ListGeneralContactsGroup extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -13,9 +13,9 @@ class ListGeneralContacts extends Component {
     }
     render() {
         return (
-            <div className="main-chat-general-list-contact">
+            <div className="main-chat-general-list-contact-group">
                 {this.props.contacts.map(c =>
-                    <GeneralContactData
+                    <GeneralContactDataGroup
                         id={c.id}
                         key={c.id}
                         nameContact={c.name}
@@ -24,9 +24,8 @@ class ListGeneralContacts extends Component {
                         imgContact={c.imgContact}
                         status={c.status}
                         onClick={this.handleClick}
-                        countMessage={c.countMessage}
-                    >
-                    </GeneralContactData>
+                        countMessage={c.countMessage} >
+                    </GeneralContactDataGroup>
                 )}
             </div>
         )
@@ -39,4 +38,4 @@ const mapDispatchToProps = dispatch => {
         },
     }
 }
-export default connect(null, mapDispatchToProps)(ListGeneralContacts);
+export default connect(null, mapDispatchToProps)(ListGeneralContactsGroup);

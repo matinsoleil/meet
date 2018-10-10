@@ -1,5 +1,6 @@
-.contact-chat {
+.contact-chat-group {
   background-color: #fefefe;
+  // background-color: #f5cd5d;
   position: relative;
   width: 100%;
   border-radius: 10px 10px 10px 10px;
@@ -8,30 +9,29 @@
   margin-top: 10px;
 }
 
-.grid-container-contact-chat {
+.grid-container-contact-chat-group {
   display: grid;
   grid-template-areas:
-    'icon-contact name-contact name-contact name-contact name-contact name-contact name-contact day-last-message '
-    'icon-contact last-message last-message last-message last-message last-message last-message count-message ';
+  'icon-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group count-message-group';
   grid-gap: 1px;
   padding: 1px;
 }
-.grid-container-contact-chat > div {
+.grid-container-contact-chat-group > div {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
 }
 
-.icon-contact {
-    grid-area: icon-contact;
+.icon-contact-group {
+    grid-area: icon-contact-group;
 }
 
-.outer-circle {
+.outer-circle-group {
   width:42px;
   height:42px;
   position:relative;
 }
 
-.img-icon-user {
+.img-icon-user-group {
   border-radius: 50%;
   height: 42px;
   width: 42px;
@@ -39,7 +39,7 @@
     -webkit-border-radius: 50px;
     border-radius: 50px;
 }
-.inner-circle {
+.inner-circle-group {
   background-color:#74c365;
   border-color: #ffffff;
   top: -15px; left:70%;
@@ -47,35 +47,36 @@
   height:20%;
   position: relative;
 }
-.circle { 
+.circle-group { 
   border-radius: 50%; 
 }
-.name-contact { 
-  grid-area: name-contact;
+.name-contact-group { 
+  grid-area: name-contact-group;
   font-weight: bold;
   font-size: 12px;
+  justify-self: flex-start;
 }
-.day-last-message { 
-  grid-area: day-last-message; 
+.day-last-message-group { 
+  grid-area: day-last-message-group; 
   justify-self: end;
 }
-.day-last-message > p {
+.day-last-message-group > p {
   font-size: 12px;
   color: #cccccc;
 }
-.last-message { 
-  grid-area: last-message;
+.last-message-group { 
+  grid-area: last-message-group;
   font-size: 12px;
   color: #cccccc;
 }
-.count-message {
-  grid-area: count-message;
-  justify-self: end;
+.count-message-group {
+  grid-area: count-message-group;
+  // justify-self: end;
 }
-.circle-count-message {
+.circle-count-message-group {
   width: 20px;
   height: 20px;
-  background:#f5cd5d;
+  background:#7198C9;
   color: #fdfdfd;
   border-radius: 50%;
   font-size: 12px;

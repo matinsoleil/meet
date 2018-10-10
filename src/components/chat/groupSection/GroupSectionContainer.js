@@ -1,5 +1,5 @@
 import HeaderGroupSection from './HeaderGroupSection'
-import ListGeneralContacts from '../groupSection/ListGeneralContacts'
+import ListGeneralContactsGroup from './ListGeneralContactsGroup'
 import React, { Component } from 'react'
 import './GroupSectionContainer.scss'
 class GroupSectionContainer extends Component {
@@ -7,7 +7,7 @@ class GroupSectionContainer extends Component {
         return (
             <div className="group-section-container">
                <HeaderGroupSection user={this.props.user} contacts={this.props.contacts} />
-                <ListGeneralContacts contacts={this.props.listContact} />
+                <ListGeneralContactsGroup contacts={this.props.listContact} />
             </div>
         );
     }
