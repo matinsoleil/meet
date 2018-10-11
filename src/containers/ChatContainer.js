@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer';
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
-import fetchConversation from '../redux/actions/conversation/fetchConversation'
+import {fetchConversation} from '../redux/actions/conversation/fetchConversation'
 import fetchUser from '../redux/actions/users/fetchUser'
 import { getContacts } from '../redux/selectors/contacts'
 import { getContact } from '../redux/selectors/contact'

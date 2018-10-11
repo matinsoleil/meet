@@ -2,10 +2,14 @@
     div.record-content{
         flex: 12;
         cursor: auto;
+        display: flex;
+        justify-content: center;
+        max-width: 200px;
         div.controls{
             display: flex;
             justify-content: space-around;
             align-items: center;
+            width: 100%;
             img{
                 width: 28px;
                 height: auto;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {addMessage} from './../../../../../redux/actions/conversation/fetchConversation';
 import AudioRecorder from './../../../../../lib/helper/audioRecorder';
 import './recorderContent.scss';
 
@@ -52,7 +53,19 @@ class RecorderContent extends Component {
         });
         this.audioRecorder.stop((url) => {
             console.log(url);
-            alert(url);
+            //alert(url);
+            let date = new Date();
+            this.props.addMessage({
+                "id": "15",
+                "userSend": "1",
+                "userGet": "2",
+                "message": {
+                  "type": "2",
+                  "src": url
+                },
+                hour:`${date.getHours()}:${date.getMinutes()}`,
+                status:"1"
+              });
         }, save);
         this.audioRecorder = null;
     }
@@ -83,4 +96,12 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(RecorderContent);
+const mapDispatchToProps = dispatch => {
+    return{
+        addMessage: message => {
+            dispatch(addMessage(message));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecorderContent);
