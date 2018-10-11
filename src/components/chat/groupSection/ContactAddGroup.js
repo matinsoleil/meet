@@ -1,28 +1,6 @@
 import React, { Component } from 'react';
 import './ContactAddGroup.scss'
-const tesContactTwo = [
-    {
-        "id": "9",
-        "name": "ANTONIO TWO",
-        "photo": "ruta",
-        "status": "Status test",
-        "label": "label",
-        "dayLastMessage": "08/09/2018",
-        "lastMessage": "Last Message",
-        "countMessage": "2",
-        "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
-    }, {
-        "id": "4",
-        "name": "ANTONIO",
-        "photo": "ruta",
-        "status": "Status test",
-        "label": "label",
-        "dayLastMessage": "08/09/2018",
-        "lastMessage": "Last Message",
-        "countMessage": "2",
-        "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AMknsVJTTstO5ex2h7DdYmiA-rmqzmXcsRwDm7nCc-mbQgv3"
-    }
-]
+
 
 class ContactAddGroup extends Component {
     constructor(...props) {
@@ -31,10 +9,10 @@ class ContactAddGroup extends Component {
         // this.addClick = this.addClick.bind(this);
     }
     deleteClick() {
-        const resultado = tesContactTwo.find(tesContact => tesContact.id == this.props.contact.id);
-        var index = tesContactTwo.findIndex(item => item.id === resultado.id)
-        tesContactTwo.splice(index, 1)
-        console.log(tesContactTwo);
+        // const resultado = tesContactTwo.find(tesContact => tesContact.id === this.props.contact.id);
+        // var index = tesContactTwo.findIndex(item => item.id === resultado.id)
+        // tesContactTwo.splice(index, 1)
+        // console.log(tesContactTwo);
     }
     // addClick() {
     //     tesContactTwo.push(
