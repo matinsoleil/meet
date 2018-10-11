@@ -6,7 +6,6 @@ const estado = {
 }
 export const groups = (state = estado, action) => {
     switch (action.type) {
-        
         case 'FETCH_GROUPS':
             return {
                 ...state,

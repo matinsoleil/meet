@@ -9,7 +9,6 @@ class ContactSectionContainer extends Component {
         super( props );
     }
     render() {
-
         return (
             <div className="contacts-section-container">
                 <GeneralDataUser user={this.props.user} contacts={this.props.contacts} />
@@ -17,7 +16,6 @@ class ContactSectionContainer extends Component {
                 <div className="dropdown">
                     <button className="dropbtn">Nuevo</button>
                     <div className="dropdown-content">
-                        <a>Nuevo chat</a>
                         <a onClick={this.props.showSectionGroups} >Nuevo chat grupal</a>
                     </div>
                 </div>
