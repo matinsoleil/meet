@@ -5,8 +5,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './ContactSectionContainer.scss'
 class ContactSectionContainer extends Component {
-    constructor( props ) {
-        super( props );
+    constructor(props) {
+        super(props);
+        this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
+    }
+    showSectionGroupsClick(listContact) {
+        this.props.showSectionGroups(this.props.contacts)
     }
     render() {
         return (
@@ -16,10 +20,9 @@ class ContactSectionContainer extends Component {
                 <div className="dropdown">
                     <button className="dropbtn">Nuevo</button>
                     <div className="dropdown-content">
-                        <a onClick={this.props.showSectionGroups} >Nuevo chat grupal</a>
+                        <a onClick={this.showSectionGroupsClick} >Nuevo chat grupal</a>
                     </div>
                 </div>
-                {/* <GeneralContactDataCreateGroup /> */}
                 <ListGeneralContacts contacts={this.props.listContact} />
             </div>
         );
@@ -27,8 +30,8 @@ class ContactSectionContainer extends Component {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        showSectionGroups: () => {
-            dispatch(showSectionGroups());
+        showSectionGroups: (listaContact) => {
+            dispatch(showSectionGroups(listaContact));
         },
     }
 }

@@ -1,8 +1,8 @@
 import { FETCH_GROUPS } from '../../actionstypes'
-export const fetchGroups = (statusInitGroup) => dispatch => {
+export const fetchGroups = (listContacts) => dispatch => {
     dispatch({
         type: FETCH_GROUPS,
-        payload: statusInitGroup,
+        payload: listContacts,
     })
 }
 export default fetchGroups;
