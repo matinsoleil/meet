@@ -12,5 +12,6 @@ export const Images = {
     "ok_icon": require('./../../img/ok-icon.png'),
     "cancel_icon": require('./../../img/cancel-icon.png'),
     "file_icon":require('./../../img/file-icon.png'),
-    "claro_connect_logo": require('./../../img/logo/claro-connect-logo.svg')
+    "claro_connect_logo": require('./../../img/logo/claro-connect-logo.svg'),
+    "dots_menu":require('./../../img/dots-menu.svg'),
 }
