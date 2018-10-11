@@ -11,10 +11,21 @@ class ListGeneralContacts extends Component {
     handleClick(idContact) {
         this.props.fetchContact(idContact);
     }
+    orderByName(listContacts) {
+        const byName = listContacts.slice(0);
+        return byName.sort(function (a, b) {
+            var x = a.name.toLowerCase();
+            var y = b.name.toLowerCase();
+            return x < y ? -1 : x > y ? 1 : 0;
+        });
+    }
     render() {
+
+        const listContactsOrderByName = this.orderByName(this.props.contacts);
+
         return (
             <div className="main-chat-general-list-contact">
-                {this.props.contacts.map(contact =>
+                {listContactsOrderByName.map(contact =>
                     <GeneralContactData contact={contact} onClick={this.handleClick} key={contact.id} />
                 )}
             </div>

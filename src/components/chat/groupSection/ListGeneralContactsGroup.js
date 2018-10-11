@@ -27,8 +27,7 @@ class ListGeneralContactsGroup extends Component {
                     Contactos
                 </div>
                 {listContactsOrderByName.map(contact =>
-                    <GeneralContactDataGroup
-key={contact.id} contact={contact} onClick={this.handleClick} />
+                    <GeneralContactDataGroup key={contact.id} contact={contact} onClick={this.handleClick} />
                 )}
             </div>
         )

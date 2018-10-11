@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer';
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
-import {fetchConversation} from '../redux/actions/conversation/fetchConversation'
+import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
 import fetchUser from '../redux/actions/users/fetchUser'
 import fetchGroups from '../redux/actions/groups/fetchGroups'
 import { getContacts } from '../redux/selectors/contacts'
@@ -28,16 +28,13 @@ class ChatContainer extends Component {
         // this.props.login();
         //this.props.logout();
     }
-    // componentDidCatch() {
-    //     debugger
-    // }
     renderBody = (contacts, user, conversation, searchContacts, groups) => {
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
         return (
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />
                 <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
-                {groups.view ? <GroupSectionContainer user={user} listContact={listContact}  groups={groups}   /> : null}
+                {groups.view ? <GroupSectionContainer user={user} listContact={listContact} groups={groups} /> : null}
             </div>
         );
     }
@@ -58,7 +55,7 @@ ChatContainer.defaultProps = {
     contact: [],
     conversation: [],
     contactsAddGroup: [],
-    groups: []
+    groups: []
 }
 const mapStateToProps = (state) => {
     return {
@@ -67,7 +64,7 @@ const mapStateToProps = (state) => {
         contact: getContact(state),
         conversation: getConversation(state),
         searchContacts: getSearchContacts(state),
-        groups: getGroups(state)
+        groups: getGroups(state)
     }
 }
 const mapDispatchToProps = dispatch => {
@@ -83,7 +80,7 @@ const mapDispatchToProps = dispatch => {
         },
         fetchGroups: () => {
             dispatch(fetchGroups());
-        },        
+        },
         fetchUser: () => {
             dispatch(fetchUser(1));
         },
@@ -101,5 +98,4 @@ const mapDispatchToProps = dispatch => {
         }
     }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer);
