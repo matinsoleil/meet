@@ -4,6 +4,14 @@ export const FETCH_USER = 'FETCH_USER';
 export const FETCH_CONVERSATION = 'FETCH_CONVERSATION';
 export const SEARCH_CONTACTS = 'SEARCH_CONTACTS';
 
+
+
+export const SHOW_SECTION_GROUPS = 'SHOW_SECTION_GROUPS';
+export const FETCH_GROUPS = 'FETCH_GROUPS';
+
+
+
+
 export const ZTE_CLIENTINIT = 'ZTE_CLIENTINIT';
 export const ZTE_GETTOKEN = 'ZTE_GETTOKEN';
 export const ZTE_LOGOUT = 'ZTE_LOGOUT';

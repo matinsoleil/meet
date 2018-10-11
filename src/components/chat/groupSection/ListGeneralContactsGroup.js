@@ -26,18 +26,9 @@ class ListGeneralContactsGroup extends Component {
                 <div className="main-chat-general-list-contact-group-title">
                     Contactos
                 </div>
-                {listContactsOrderByName.map(c =>
+                {listContactsOrderByName.map(contact =>
                     <GeneralContactDataGroup
-                        id={c.id}
-                        key={c.id}
-                        nameContact={c.name}
-                        dayLastMessage={c.dayLastMessage}
-                        lastMessage={c.lastMessage}
-                        imgContact={c.imgContact}
-                        status={c.status}
-                        onClick={this.handleClick}
-                        countMessage={c.countMessage} >
-                    </GeneralContactDataGroup>
+key={contact.id} contact={contact} onClick={this.handleClick} />
                 )}
             </div>
         )
