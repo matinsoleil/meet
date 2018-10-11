@@ -23,8 +23,8 @@
             width: 36px;
             cursor: pointer;
             img{
-                width: 36px;
-                height: 36px;
+                width: 24px;
+                height: 24px;
             }
         }
         div.text-message{
@@ -51,7 +51,8 @@
                 }
             }
             .emoji{
-                margin-top: 3.5px;
+                text-align: center;
+                margin-top: 8px;
                 cursor: pointer;
             }
         }

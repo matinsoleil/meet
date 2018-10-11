@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HeaderMessagesSection from './headerMessagesSection/headerMessagesSection';
 import FooterMessagesSection from './footerMessagesSection/footerMessagesSection';
 import ChatGeneralConversationContact from './chatGeneralConversationContact/ChatGeneralConversationContact';
+import InactiveChat from './inactiveChat/inactiveChat';
 import './messagesSectionContainer.scss'
 class MessagesSectionContainer extends Component {
     render() {
@@ -14,7 +15,7 @@ class MessagesSectionContainer extends Component {
                         chat={this.props.chat}
                     />
                 ) : (
-                        <div></div>
+                        <InactiveChat/>
                     )}
             </div>
         );

@@ -6,4 +6,9 @@ const fetchConversationAction = createAction(FETCH_CONVERSATION, apiGet(urlConve
 export const fetchConversation = () => dispatch => {
     dispatch(fetchConversationAction());
 }
-export default fetchConversation;
+export const addMessage = (message) => {
+    return{
+        type: FETCH_CONVERSATION+'_ADD',
+        payload:message
+    }
+}

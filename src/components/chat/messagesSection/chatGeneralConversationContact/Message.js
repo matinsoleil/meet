@@ -1,44 +1,66 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import FileHelper from './../../../../lib/helper/fileHelper';
 import MapPosition from './../../../../lib/helper/mapPosition';
-export default class Message extends Component {
+class Message extends Component {
     render() {
-        let { message, hour, type, tail, tailType, user_icon,id} = this.props;
+        let { message, hour, type, tail, tailType, user_icon, id } = this.props;
         return (
             <div className="message-row">
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div className={`message-bubble ${type}`}>
-                    <div className="message-wrapper">
+                    <div className={`message-wrapper ${(message.type)&& 'no-text'}`}>
                         <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>
                         <div className="message">{
-                            !(message instanceof Object) ? message : this.MessageContent(message,id)
+                            !(message instanceof Object) ? message : this.MessageContent(message, id)
                         }</div>
-                        <span className="time">{hour}</span>
+                        <div className="time-content">
+                            <span className="time">{hour}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         );
     }
 
-    MessageContent = (message,id ) => {
+    MessageContent = (message, id) => {
         switch (message.type) {
             case "0":
                 return (
-                    <img id={`map${id}`} className="map" src={MapPosition.getMapURL(message.lat,message.lon,message.zoom)} alt="" />
+                    <img id={`map${id}`} className="map" src={MapPosition.getMapURL(message.lat, message.lon, message.zoom)} alt="" />
                 );
             case "1":
-                return(
+                return (
                     <video controls>
-                        <source src={message.src}/>
+                        <source src={message.src} />
                     </video>
                 );
             case "2":
-                return(
+                return (
                     <audio controls>
-                        <source src={message.src}/>
+                        <source src={message.src} />
                     </audio>
+                );
+            case "3":
+                return (
+                    <div className="file">
+                        <img src={this.props.file_icon} alt="file-icon" />
+                        <div className="file-info">
+                            <span>{FileHelper.humanFileSize(message.size, true)}</span>
+                            <span>{message.fileName}</span>
+                        </div>
+                    </div>
                 );
             default:
                 return <div></div>;
         }
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        file_icon: state.customizing.Images.file_icon,
+    }
+}
+
+export default connect(mapStateToProps, null)(Message);

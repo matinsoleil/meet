@@ -6,10 +6,7 @@ import Message from './Message';
 class ChatGeneralConversationContact extends Component {
     render() {
         return (
-            <div className="main-chat-history-conversation-contact">
-                <div className="chat-background" style={{
-                    backgroundImage: `url(${this.props.background})`,
-                }} ></div>
+            <div style={{backgroundImage:`url(${this.props.background})`}} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
                 {this.props.chat.map(c => {
                     const TypeMessageControl = c.userSend === "1" ? 'message-in' : 'message-out';
