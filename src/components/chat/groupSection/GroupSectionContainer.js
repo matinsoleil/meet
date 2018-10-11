@@ -6,8 +6,11 @@ class GroupSectionContainer extends Component {
     render() {
         return (
             <div className="group-section-container">
-                <HeaderGroupSection user={this.props.user} contacts={this.props.contacts} />
-                <ListGeneralContactsGroup contacts={this.props.listContact} />
+                <HeaderGroupSection user={null} contacts={this.props.groups.contacts} select_contacts={this.props.groups.select_contacts} />
+
+
+
+                <ListGeneralContactsGroup contacts={this.props.groups.contacts} />
             </div>
         );
     }
