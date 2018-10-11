@@ -4,8 +4,7 @@ import { users } from './users'
 import { contact } from './contact'
 import { conversation } from './conversation'
 import { searchContacts } from './searchContacts'
-
-
+import { groups } from './groups'
 
 import { countryReducer } from './country';
 import { osReducer } from './os';
@@ -20,6 +19,7 @@ import { customizingReducer } from './customizing';
   contact,
   conversation,
   searchContacts,
+  groups,
   customizing: customizingReducer,
   country: countryReducer,
   countries: countriesReducer,

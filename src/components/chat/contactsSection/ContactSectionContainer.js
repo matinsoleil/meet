@@ -1,21 +1,15 @@
 import GeneralDataUser from '../../../components/chat/contactsSection/GeneralDataUser'
-// import GeneralContactDataCreateGroup from '../../../components/chat/GeneralContactDataCreateGroup'
 import ListGeneralContacts from '../../../components/chat/contactsSection/ListGeneralContacts'
+import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import './ContactSectionContainer.scss'
 class ContactSectionContainer extends Component {
-    constructor(...props) {
-        super(...props);
-        this.state = {
-            showGroup: this.props.showGroup
-        }
-    }
-
-    showSectionGroupClick() {
-        console.log("Mostrar ");
-        // this.setState({ showGroup: true });
+    constructor( props ) {
+        super( props );
     }
     render() {
+
         return (
             <div className="contacts-section-container">
                 <GeneralDataUser user={this.props.user} contacts={this.props.contacts} />
@@ -24,7 +18,7 @@ class ContactSectionContainer extends Component {
                     <button className="dropbtn">Nuevo</button>
                     <div className="dropdown-content">
                         <a>Nuevo chat</a>
-                        <a onClick={this.showSectionGroupClick} >Nuevo chat grupal</a>
+                        <a onClick={this.props.showSectionGroups} >Nuevo chat grupal</a>
                     </div>
                 </div>
                 {/* <GeneralContactDataCreateGroup /> */}
@@ -33,9 +27,11 @@ class ContactSectionContainer extends Component {
         );
     }
 }
-
-ContactSectionContainer.defaultProps = {
-    showGroup: false
+const mapDispatchToProps = dispatch => {
+    return {
+        showSectionGroups: () => {
+            dispatch(showSectionGroups());
+        },
+    }
 }
-
-export default ContactSectionContainer;
+export default connect(null, mapDispatchToProps)(ContactSectionContainer);
