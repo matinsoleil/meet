@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import searchContacts from '../../../redux/actions/contacts/searchContacts'
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
+import { getGroups } from '../../../redux/selectors/groups';
 import ContactAddGroup from './ContactAddGroup'
 import { connect } from 'react-redux'
 import './HeaderGroupSection.scss'
@@ -48,4 +49,9 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(null, mapDispatchToProps)(HeaderGroupSection);
+const mapStateToProps = (state) => {
+  return {
+      groups: getGroups(state)
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection);

@@ -30,11 +30,6 @@ class ChatContainer extends Component {
     }
     renderBody = (contacts, user, conversation, searchContacts, groups) => {
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
-        
-        console.log(" * * * ");
-        console.log(groups);
-        console.log(" + + + ");
-        
         return (
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />

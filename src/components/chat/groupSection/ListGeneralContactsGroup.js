@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import GeneralContactDataGroup from './GeneralContactDataGroup'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
+import { getGroups } from '../../../redux/selectors/groups';
 import { connect } from 'react-redux'
 import './ListGeneralContactsGroup.scss'
 class ListGeneralContactsGroup extends Component {
@@ -29,6 +30,13 @@ class ListGeneralContactsGroup extends Component {
     }
     render() {
         const listContactsOrderByName = this.orderByName(this.props.contacts);
+
+
+        console.log(" * * * * * * * ");
+        console.log(listContactsOrderByName);
+        console.log(" * * * * * * * ");
+
+
         return (
             <div className="main-chat-general-list-contact-group">
                 <div className="main-chat-general-list-contact-group-title">
@@ -51,4 +59,9 @@ const mapDispatchToProps = dispatch => {
         }
     }
 }
-export default connect(null, mapDispatchToProps)(ListGeneralContactsGroup);
+const mapStateToProps = (state) => {
+    return {
+        groups: getGroups(state)
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ListGeneralContactsGroup);
