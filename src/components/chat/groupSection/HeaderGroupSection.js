@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import searchContacts from '../../../redux/actions/contacts/searchContacts'
+import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
@@ -13,28 +13,28 @@ class HeaderGroupSection extends Component {
   constructor(props) {
     super(props);
     this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
+    this.filterList = this.filterList.bind(this);
   }
 
-  filterList = contacts => event => {
+  filterList(event) {
     const val = event.target.value.toLowerCase();
     const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
-    this.props.searchContacts(listContactsFecth);
+    this.props.updateFilterContactsAddGroup(listContactsFecth);
   };
 
   deleteContactListCreateGroup(idContact) {
-    // console.log("id ("+idContact+") ");
-    var listContacts = this.props.list_contacts;
-    var listAddContactsGroup = this.props.list_contacts_add_group;
+    var listContacts = this.props.list_contacts
+    var listAddContactsGroup = this.props.list_contacts_add_group
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     var infoContact = listAddContactsGroup.find(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
-    listContacts.push(infoContact);
-    this.props.updateListContactsGroup(listContacts);
-    this.props.updateListContactsAddGroup(listAddContactsGroup);
+    listContacts.push(infoContact)
+    this.props.updateListContactsGroup(listContacts)
+    this.props.updateListContactsAddGroup(listAddContactsGroup)
   }
 
   render() {
-    const list_contacts_add_group = this.props.list_contacts_add_group;
+    const list_contacts_add_group = this.props.list_contacts_add_group
     return (
       <div className="main-header-group-section">
         <div className="grid-container-header-section">
@@ -51,34 +51,34 @@ class HeaderGroupSection extends Component {
             </div>
           </div>
           <div className="search-contact">
-            <input type="text" className="input-search" placeholder="Buscar"
-            // onChange={this.filterList(this.props.user.contacts)}
-            ></input>
+            <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList} ></input>
           </div>
         </div>
       </div>
     )
   }
 }
+
 const mapDispatchToProps = dispatch => {
   return {
-    searchContacts: (listContactsFecth) => {
-      dispatch(searchContacts(listContactsFecth));
+    updateFilterContactsAddGroup: (listContactsFecth) => {
+      dispatch(updateFilterContactsAddGroup(listContactsFecth))
     },
     hideSectionGroups: () => {
-      dispatch(hideSectionGroups());
+      dispatch(hideSectionGroups())
     },
     updateListContactsGroup: (listContacts) => {
-      dispatch(updateListContactsGroup(listContacts));
+      dispatch(updateListContactsGroup(listContacts))
     },
     updateListContactsAddGroup: (listContacts) => {
-      dispatch(updateListContactsAddGroup(listContacts));
+      dispatch(updateListContactsAddGroup(listContacts))
     }
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     groups: getGroups(state)
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection);
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection)
