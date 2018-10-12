@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './ContactAddGroup.scss'
 class ContactAddGroup extends Component {
+    constructor(props) {
+        super(props);
+        this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
+    }
+    deleteContactListCreateGroup() {
+        this.props.onClick(this.props.contact.id)
+    }
     render() {
         return (
             <div>
@@ -14,7 +21,7 @@ class ContactAddGroup extends Component {
                         <div className="name-contact-add-group">
                             {this.props.contact.name}
                         </div>
-                        <div className="count-message-contact-add-group" >
+                        <div className="count-message-contact-add-group" onClick={this.deleteContactListCreateGroup}>
                             <div className="circle-count-message-contact-add-group">
                                 <p>X</p>
                             </div>

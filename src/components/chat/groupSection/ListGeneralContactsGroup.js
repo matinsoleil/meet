@@ -18,11 +18,11 @@ class ListGeneralContactsGroup extends Component {
             return x < y ? -1 : x > y ? 1 : 0;
         });
     }
-    addContactGroupClick(idContac) {
+    addContactGroupClick(idContact) {
         var listContacts = this.props.contacts;
         var listAddContactsGroup = this.props.list_contacts_add_group;
-        var indexContact = listContacts.findIndex(item => item.id === idContac)
-        var infoContact = listContacts.find(item => item.id === idContac)
+        var indexContact = listContacts.findIndex(item => item.id === idContact)
+        var infoContact = listContacts.find(item => item.id === idContact)
         listContacts.splice(indexContact, 1)
         listAddContactsGroup.push(infoContact);
         this.props.updateListContactsGroup(listContacts);
@@ -30,13 +30,6 @@ class ListGeneralContactsGroup extends Component {
     }
     render() {
         const listContactsOrderByName = this.orderByName(this.props.contacts);
-
-
-        console.log(" * * * * * * * ");
-        console.log(listContactsOrderByName);
-        console.log(" * * * * * * * ");
-
-
         return (
             <div className="main-chat-general-list-contact-group">
                 <div className="main-chat-general-list-contact-group-title">
