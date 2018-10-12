@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import './ContactAddGroup.scss'
-
-
 class ContactAddGroup extends Component {
-    constructor(...props) {
-        super(...props);
-        
-    }
     render() {
         return (
             <div>

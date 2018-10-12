@@ -20,9 +20,7 @@ class ListGeneralContacts extends Component {
         });
     }
     render() {
-
         const listContactsOrderByName = this.orderByName(this.props.contacts);
-
         return (
             <div className="main-chat-general-list-contact">
                 {listContactsOrderByName.map(contact =>

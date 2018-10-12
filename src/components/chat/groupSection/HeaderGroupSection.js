@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
-import { getContacts } from '../../../redux/selectors/contacts'
 import searchContacts from '../../../redux/actions/contacts/searchContacts'
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
 import ContactAddGroup from './ContactAddGroup'
 import { connect } from 'react-redux'
 import './HeaderGroupSection.scss'
 
-const tesContact = [];
 class HeaderGroupSection extends Component {
   filterList = contacts => event => {
     const val = event.target.value.toLowerCase();
-    const listContactsFecth = this.props.contacts.filter(v => v.name.toLowerCase().includes(val));
+    const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
     this.props.searchContacts(listContactsFecth);
   };
-
   render() {
     const list_contacts_add_group = this.props.list_contacts_add_group;
     return (
@@ -41,11 +38,6 @@ class HeaderGroupSection extends Component {
     )
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    contacts: getContacts(state),
-  }
-}
 const mapDispatchToProps = dispatch => {
   return {
     searchContacts: (listContactsFecth) => {
@@ -56,4 +48,4 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection);
+export default connect(null, mapDispatchToProps)(HeaderGroupSection);

@@ -1,9 +1,9 @@
-import {Images} from './../states/images';
+import { Images } from './../states/images';
 
 const customizingConfig = {
     Images,
 }
 
-export const customizingReducer = (state={...customizingConfig},action) => {
+export const customizingReducer = (state = { ...customizingConfig }, action) => {
     return state;
 }

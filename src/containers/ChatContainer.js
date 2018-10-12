@@ -30,11 +30,16 @@ class ChatContainer extends Component {
     }
     renderBody = (contacts, user, conversation, searchContacts, groups) => {
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
+        
+        console.log(" * * * ");
+        console.log(groups);
+        console.log(" + + + ");
+        
         return (
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />
                 <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
-                {groups.view ? <GroupSectionContainer user={user} groups={groups} /> : null}
+                {groups.view ? <GroupSectionContainer groups={groups} /> : null}
             </div>
         );
     }

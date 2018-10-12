@@ -20,7 +20,7 @@ export const groups = (state = estado, action) => {
                 ...state,
                 id: null,
                 list_contacts: action.payload,
-                list_contacts_add_group:[], 
+                list_contacts_add_group: [],
                 select_contacts: [],
                 filter_contacts: [],
                 view: true
@@ -36,18 +36,18 @@ export const groups = (state = estado, action) => {
                 view: false
             }
         case 'UPDATE_LIST_CONTACTS_GROUP':
-        return {
-            ...state,
-            list_contacts: action.payload,
-            view: true
-        }
+            return {
+                ...state,
+                list_contacts: action.payload,
+                view: true
+            }
 
         case 'UPDATE_LIST_CONTACTS_ADD_GROUP':
-        return {
-            ...state,
-            list_contacts_add_group: action.payload,
-            view: true
-        }
+            return {
+                ...state,
+                list_contacts_add_group: action.payload,
+                view: true
+            }
         default:
             return state
     }
