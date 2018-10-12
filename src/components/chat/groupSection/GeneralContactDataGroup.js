@@ -3,11 +3,10 @@ import './GeneralContactDataGroup.scss'
 class GeneralContactData extends Component {
     constructor(...props) {
         super(...props);
-        this.handleClick = this.handleClick.bind(this);
+        this.addContactGroupClick = this.addContactGroupClick.bind(this);
     }
-    handleClick() {
-        // this.props.onClick(this.props.id)
-        alert("Add contact and new group " + this.props.contact.id);
+    addContactGroupClick() {
+        this.props.onClick(this.props.contact.id)
     }
     render() {
         return (
@@ -15,7 +14,7 @@ class GeneralContactData extends Component {
                 <div className="markerListContactGroup">
                     {this.props.contact.name[0]}
                 </div>
-                <div className="contact-chat-group" onClick={this.handleClick} >
+                <div className="contact-chat-group" onClick={this.addContactGroupClick} >
                     <div className="grid-container-contact-chat-group">
                         <div className="icon-contact-group">
                             <div className="outer-circle-group" >
@@ -23,7 +22,7 @@ class GeneralContactData extends Component {
                                 <div className="inner-circle-group circle-group">&nbsp;</div>
                             </div>
                         </div>
-                        <div className="name-contact-group">{this.props.contact.name}</div>
+                        <div className="name-contact-group">{this.props.contact.name} </div>
                         <div className="count-message-group">
                             <div className="circle-count-message-group"><p>+</p>
                             </div>

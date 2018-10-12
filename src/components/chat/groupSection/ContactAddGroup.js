@@ -5,31 +5,8 @@ import './ContactAddGroup.scss'
 class ContactAddGroup extends Component {
     constructor(...props) {
         super(...props);
-        this.deleteClick = this.deleteClick.bind(this);
-        // this.addClick = this.addClick.bind(this);
+        
     }
-    deleteClick() {
-        // const resultado = tesContactTwo.find(tesContact => tesContact.id === this.props.contact.id);
-        // var index = tesContactTwo.findIndex(item => item.id === resultado.id)
-        // tesContactTwo.splice(index, 1)
-        // console.log(tesContactTwo);
-    }
-    // addClick() {
-    //     tesContactTwo.push(
-    //         {
-    //             "id": "7",
-    //             "name": "CESAR",
-    //             "photo": "ruta",
-    //             "status": "Status test",
-    //             "label": "label",
-    //             "dayLastMessage": "06/09/2018",
-    //             "lastMessage": "Last Message",
-    //             "countMessage": "2",
-    //             "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMybaKtUQwGjyL2fXA7ZNY7J_vM_LSi3ToZnJ6aa6viL9FUDEf"
-    //         }
-    //     );
-    //     console.log(tesContactTwo);
-    // }
     render() {
         return (
             <div>
@@ -43,7 +20,7 @@ class ContactAddGroup extends Component {
                         <div className="name-contact-add-group">
                             {this.props.contact.name}
                         </div>
-                        <div className="count-message-contact-add-group" onClick={this.deleteClick}>
+                        <div className="count-message-contact-add-group" >
                             <div className="circle-count-message-contact-add-group">
                                 <p>X</p>
                             </div>

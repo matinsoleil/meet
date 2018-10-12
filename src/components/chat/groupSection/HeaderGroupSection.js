@@ -15,7 +15,7 @@ class HeaderGroupSection extends Component {
   };
 
   render() {
-    const select_contacts = this.props.select_contacts;
+    const list_contacts_add_group = this.props.list_contacts_add_group;
     return (
       <div className="main-header-group-section">
         <div className="grid-container-header-section">
@@ -25,7 +25,7 @@ class HeaderGroupSection extends Component {
               Cerrar
             </div>
             <div>
-              {select_contacts.map(contact =>
+              {list_contacts_add_group.map(contact =>
                 <ContactAddGroup key={contact.id} contact={contact} onClick={this.handleClick} />
               )
               }

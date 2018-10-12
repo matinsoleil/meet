@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import GeneralContactDataGroup from './GeneralContactDataGroup'
-import fetchContact from '../../../redux/actions/contact/fetchContact'
+import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
+import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
 import { connect } from 'react-redux'
 import './ListGeneralContactsGroup.scss'
 class ListGeneralContactsGroup extends Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-    handleClick(idContact) {
-        this.props.fetchContact(idContact);
+        this.addContactGroupClick = this.addContactGroupClick.bind(this);
     }
     orderByName(listContacts) {
         const byName = listContacts.slice(0);
@@ -19,6 +17,16 @@ class ListGeneralContactsGroup extends Component {
             return x < y ? -1 : x > y ? 1 : 0;
         });
     }
+    addContactGroupClick(idContac) {
+        var listContacts = this.props.contacts;
+        var listAddContactsGroup = this.props.list_contacts_add_group;
+        var indexContact = listContacts.findIndex(item => item.id === idContac)
+        var infoContact = listContacts.find(item => item.id === idContac)
+        listContacts.splice(indexContact, 1)
+        listAddContactsGroup.push(infoContact);
+        this.props.updateListContactsGroup(listContacts);
+        this.props.updateListContactsAddGroup(listAddContactsGroup);
+    }
     render() {
         const listContactsOrderByName = this.orderByName(this.props.contacts);
         return (
@@ -27,7 +35,7 @@ class ListGeneralContactsGroup extends Component {
                     Contactos
                 </div>
                 {listContactsOrderByName.map(contact =>
-                    <GeneralContactDataGroup key={contact.id} contact={contact} onClick={this.handleClick} />
+                    <GeneralContactDataGroup key={contact.id} contact={contact} onClick={this.addContactGroupClick} />
                 )}
             </div>
         )
@@ -35,9 +43,12 @@ class ListGeneralContactsGroup extends Component {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        fetchContact: (id) => {
-            dispatch(fetchContact(id));
+        updateListContactsGroup: (listContacts) => {
+            dispatch(updateListContactsGroup(listContacts));
         },
+        updateListContactsAddGroup: (listContacts) => {
+            dispatch(updateListContactsAddGroup(listContacts));
+        }
     }
 }
 export default connect(null, mapDispatchToProps)(ListGeneralContactsGroup);

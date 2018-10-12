@@ -34,7 +34,7 @@ class ChatContainer extends Component {
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />
                 <MessageSectionContainer activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
-                {groups.view ? <GroupSectionContainer user={user} listContact={listContact} groups={groups} /> : null}
+                {groups.view ? <GroupSectionContainer user={user} groups={groups} /> : null}
             </div>
         );
     }
