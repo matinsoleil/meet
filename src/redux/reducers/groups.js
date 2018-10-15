@@ -30,10 +30,10 @@ export const groups = (state = estado, action) => {
             return {
                 ...state,
                 id: null,
-                list_contacts: null,
-                list_contacts_add_group: null,
-                filter_contacts: null,
-                select_contacts: null,
+                list_contacts: [],
+                list_contacts_add_group: [],
+                filter_contacts: [],
+                select_contacts: [],
                 view: false
             }
         case 'UPDATE_LIST_CONTACTS_GROUP':
