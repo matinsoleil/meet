@@ -467,6 +467,153 @@
       "message": "TypeError: Cannot read property 'length' of undefined",
       "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
       "id": 42
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539637227,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 43
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539637309,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 44
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539637535,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 45
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539637737,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 46
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539637879,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 47
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539637900,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 48
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539637941,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 49
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539637997,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 50
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638022,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 51
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638065,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 52
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638092,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 53
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638249,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 54
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638366,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 55
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638506,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 56
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638588,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 57
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638638,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 58
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539638848,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 59
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539639026,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 60
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539639328,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:15)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 61
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539640455,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in ListGeneralContactsGroup (created by Connect(ListGeneralContactsGroup))\n    in Connect(ListGeneralContactsGroup) (at GroupSectionContainer.js:16)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 62
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539640754,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in ListGeneralContactsGroup (created by Connect(ListGeneralContactsGroup))\n    in Connect(ListGeneralContactsGroup) (at GroupSectionContainer.js:16)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:37)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 63
     }
   ],
   "contacts": [
@@ -505,7 +652,7 @@
     },
     {
       "id": "4",
-      "name": "ANTONIO",
+      "name": "ANTONIO 4",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -560,7 +707,40 @@
     },
     {
       "id": "9",
-      "name": "ANTONIO",
+      "name": "ANTONIO 9",
+      "photo": "ruta",
+      "status": "Status test",
+      "label": "label",
+      "dayLastMessage": "08/09/2018",
+      "lastMessage": "Last Message",
+      "countMessage": "2",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
+    },
+    {
+      "id": "50",
+      "name": "ANTONIO 50",
+      "photo": "ruta",
+      "status": "Status test",
+      "label": "label",
+      "dayLastMessage": "08/09/2018",
+      "lastMessage": "Last Message",
+      "countMessage": "2",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
+    },
+    {
+      "id": "59",
+      "name": "ANTONIO 59",
+      "photo": "ruta",
+      "status": "Status test",
+      "label": "label",
+      "dayLastMessage": "08/09/2018",
+      "lastMessage": "Last Message",
+      "countMessage": "2",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
+    },
+    {
+      "id": "69",
+      "name": "ANTONIO 69",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",

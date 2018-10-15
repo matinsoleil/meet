@@ -1,6 +1,5 @@
 const estado = {
     id: null,
-    contacts: null,
     list_contacts: null,
     list_contacts_add_group: null,
     filter_contacts: null,

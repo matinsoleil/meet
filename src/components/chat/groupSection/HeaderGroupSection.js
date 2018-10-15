@@ -21,18 +21,23 @@ class HeaderGroupSection extends Component {
     const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
     this.props.updateFilterContactsAddGroup(listContactsFecth);
   };
-
+  ƒ
   deleteContactListCreateGroup(idContact) {
-    // var listContacts = (this.props.filter_contacts.length === 0 ? this.props.contacts : this.props.filter_contacts);
     var listContacts = this.props.list_contacts
+    var filter_contacts = this.props.filter_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     var infoContact = listAddContactsGroup.find(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
     listContacts.push(infoContact)
     this.props.updateListContactsGroup(listContacts)
-    this.props.updateListContactsAddGroup(listAddContactsGroup)
+    this.props.updateListContactsAddGroup(listAddContactsGroup)    
+    if (filter_contacts.length !== 0) {
+      filter_contacts.push(infoContact)
+      this.props.updateFilterContactsAddGroup(filter_contacts);
+    }
   }
+
 
   render() {
     const list_contacts_add_group = this.props.list_contacts_add_group

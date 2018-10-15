@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import GeneralContactDataGroup from './GeneralContactDataGroup'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
+import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
+
 import fetchGroups from '../../../redux/actions/groups/fetchGroups'
 import { getGroups } from '../../../redux/selectors/groups';
 import { connect } from 'react-redux'
@@ -20,14 +22,21 @@ class ListGeneralContactsGroup extends Component {
         });
     }
     addContactGroupClick(idContact) {
-        var listContacts = this.props.contacts;
-        var listAddContactsGroup = this.props.list_contacts_add_group;
+        var listContacts = this.props.contacts
+        var filter_contacts = this.props.filter_contacts
+        var listAddContactsGroup = this.props.list_contacts_add_group
         var indexContact = listContacts.findIndex(item => item.id === idContact)
         var infoContact = listContacts.find(item => item.id === idContact)
         listContacts.splice(indexContact, 1)
-        listAddContactsGroup.push(infoContact);
-        this.props.updateListContactsGroup(listContacts);
-        this.props.updateListContactsAddGroup(listAddContactsGroup);
+        listAddContactsGroup.push(infoContact)
+        if (filter_contacts.length !== 0) {
+            var listAddContactsGroupFilter = filter_contacts
+            var indexContactFilter = listAddContactsGroupFilter.findIndex(item => item.id === idContact)
+            filter_contacts.splice(indexContactFilter, 1)
+            this.props.updateFilterContactsAddGroup(filter_contacts)
+        }
+        this.props.updateListContactsGroup(listContacts)
+        this.props.updateListContactsAddGroup(listAddContactsGroup)
     }
     render() {
         const listContactsOrderByName = this.orderByName((this.props.filter_contacts.length === 0 ? this.props.contacts : this.props.filter_contacts));
@@ -49,9 +58,12 @@ const mapDispatchToProps = dispatch => {
         updateListContactsAddGroup: (listContacts) => {
             dispatch(updateListContactsAddGroup(listContacts));
         },
+        updateFilterContactsAddGroup: (listContacts) => {
+            dispatch(updateFilterContactsAddGroup(listContacts));
+        },       
         fetchGroups: () => {
             dispatch(fetchGroups());
-        },        
+        },
     }
 }
 const mapStateToProps = (state) => {
