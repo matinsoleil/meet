@@ -1,19 +1,33 @@
 import HeaderGroupSection from './HeaderGroupSection'
 import ListGeneralContactsGroup from './ListGeneralContactsGroup'
 import React, { Component } from 'react'
+import { getGroups } from '../../../redux/selectors/groups';
+import fetchGroups from '../../../redux/actions/groups/fetchGroups'
+import { connect } from 'react-redux'
 import './GroupSectionContainer.scss'
 class GroupSectionContainer extends Component {
     render() {
         const list_contacts = this.props.groups.list_contacts;
         const list_contacts_add_group = this.props.groups.list_contacts_add_group;
+        const filter_contacts = this.props.groups.filter_contacts;
         return (
             <div className="group-section-container">
-                <HeaderGroupSection list_contacts={list_contacts} list_contacts_add_group={list_contacts_add_group} >
-                </HeaderGroupSection>
-                <ListGeneralContactsGroup contacts={list_contacts} list_contacts_add_group={list_contacts_add_group}>
-                </ListGeneralContactsGroup>
+                <HeaderGroupSection list_contacts={list_contacts} list_contacts_add_group={list_contacts_add_group} filter_contacts={filter_contacts}  />
+                <ListGeneralContactsGroup contacts={list_contacts} list_contacts_add_group={list_contacts_add_group} filter_contacts={filter_contacts} />
             </div>
         );
     }
 }
-export default GroupSectionContainer;
+const mapStateToProps = (state) => {
+    return {
+        groups: getGroups(state)
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchGroups: () => {
+            dispatch(fetchGroups());
+        },
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(GroupSectionContainer);

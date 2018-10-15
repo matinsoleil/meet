@@ -23,6 +23,7 @@ class HeaderGroupSection extends Component {
   };
 
   deleteContactListCreateGroup(idContact) {
+    // var listContacts = (this.props.filter_contacts.length === 0 ? this.props.contacts : this.props.filter_contacts);
     var listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
