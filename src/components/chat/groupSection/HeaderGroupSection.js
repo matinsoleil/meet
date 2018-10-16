@@ -5,26 +5,23 @@ import updateListContactsGroup from '../../../redux/actions/groups/updateListCon
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
 import { getGroups } from '../../../redux/selectors/groups'
 import ContactAddGroup from './ContactAddGroup'
-
 import ModalBoxChat from '../../modals/ModalBox'
-
 import { connect } from 'react-redux'
 import './HeaderGroupSection.scss'
 
 class HeaderGroupSection extends Component {
-
   constructor(props) {
     super(props);
+    this.state = { showModalCreateGroup: false };
     this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
     this.filterList = this.filterList.bind(this);
+    this.createGroup = this.createGroup.bind(this);
   }
-
   filterList(event) {
     const val = event.target.value.toLowerCase();
     const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
     this.props.updateFilterContactsAddGroup(listContactsFecth);
   };
-
   deleteContactListCreateGroup(idContact) {
     var listContacts = this.props.list_contacts
     var filter_contacts = this.props.filter_contacts
@@ -40,11 +37,11 @@ class HeaderGroupSection extends Component {
       this.props.updateFilterContactsAddGroup(filter_contacts);
     }
   }
-
   createGroup() {
-    alert("Crear grupo");
+    this.setState({
+      showModalCreateGroup: true
+    });
   }
-
   render() {
     const list_contacts_add_group = this.props.list_contacts_add_group
     return (
@@ -62,7 +59,7 @@ class HeaderGroupSection extends Component {
               }
             </div>
             <button className="dropbtn" onClick={this.createGroup}>Agregar</button>
-            <ModalBoxChat content="content"/>
+            {this.state.showModalCreateGroup ? <ModalBoxChat content="contentcontentcontentcontentcontentcontentcontentcontent " /> : null}
           </div>
           <div className="search-contact">
             <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList} ></input>
@@ -72,7 +69,6 @@ class HeaderGroupSection extends Component {
     )
   }
 }
-
 const mapDispatchToProps = dispatch => {
   return {
     updateFilterContactsAddGroup: (listContactsFecth) => {
@@ -89,11 +85,9 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-
 const mapStateToProps = (state) => {
   return {
     groups: getGroups(state)
   }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection)

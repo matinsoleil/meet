@@ -14,7 +14,6 @@ class modalBox extends Component {
         });
     }
     render() {
-        console.log(this.state.showMenu);
         const showWind = this.state.showMenu ? 'modalShow' : 'modalHide';
         return (
             // <div className="modal {menuVis}">
