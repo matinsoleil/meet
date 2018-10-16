@@ -5,14 +5,20 @@
   }
 
   .title-chat {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 500;
+    color:#333333;
+    margin:8px;
+    width:30%;
+    float:left;
   }
 
   .dropdown {
     float: right;
-    position: relative;
-    display: inline-block;
+    height: 30px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
   .dropdown-content {
     display: none;
@@ -33,9 +39,17 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+ 
+
   .dropdown:hover .dropbtn {
     background-color: #285996;
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
+  }
+
+  .plus-a{
+    width:25px;
+    height: 25px;
   }

@@ -16,18 +16,28 @@ class ContactSectionContainer extends Component {
         return (
             <div className="contacts-section-container">
                 <GeneralDataUser user={this.props.user} contacts={this.props.contacts} />
+                <div className="chat-state">
                 <h2 className="title-chat">Chats</h2>
                 <div className="dropdown">
-                    <button className="dropbtn">Nuevo</button>
+                    <button className="dropbtn">Nuevo<img className="plus-a" src={this.props.add_icon} /></button>
                     <div className="dropdown-content">
                         <a onClick={this.showSectionGroupsClick} >Nuevo chat grupal</a>
                     </div>
+                </div>
                 </div>
                 <ListGeneralContacts contacts={this.props.listContact} />
             </div>
         );
     }
 }
+
+const mapStateToProps = state =>{
+    return{
+        add_icon: state.customizing.Images.add_icon,
+       
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         showSectionGroups: (listaContact) => {
@@ -35,4 +45,4 @@ const mapDispatchToProps = dispatch => {
         },
     }
 }
-export default connect(null, mapDispatchToProps)(ContactSectionContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactSectionContainer);

@@ -6,6 +6,7 @@
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
+    margin-bottom: 15px;
 }
 .grid-container-user-chat {
     display: grid;
@@ -16,20 +17,47 @@
 }
 .grid-container-user-chat > div {
     padding: 10px 0;
+ 
 }
+
+
+
 .name-user {
     grid-area: name-user; 
     font-weight: bold;
-    font-size: 12px;
+    font-size: 16px;
+    margin-top:16px;
+    margin-left:9px;
 }
 .icon-user { 
     grid-area: icon-user; 
 }
+
+.outer-circle-user-main{
+    width:52px;
+    height:52px;
+    position:relative;
+
+}
+
 .outer-circle-user {
   width:42px;
   height:42px;
   position:relative;
 }
+
+.img-icon-user-main {
+    border-radius: 50%;
+    height: 59px;
+    width: 59px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin: 8px;
+
+}
+
+
 .img-icon-user {
     border-radius: 50%;
     height: 42px;
@@ -38,10 +66,18 @@
     -webkit-border-radius: 50px;
     border-radius: 50px;
 }
+
+.img-icon-search{
+    width:18px;
+    height:18px;
+    float:left;
+    margin-right:8px;
+    margin-left: 15px;
+}
 .inner-circle-user {
     background-color:#74c365;
     border-color: #ffffff;
-    top: -15px; left:70%;
+    top: -60px; left:73px;
     width:20%;
     height:20%;
     position: relative;
@@ -52,16 +88,50 @@
 
 .status-user { 
     grid-area: status-user; 
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 260;
+    color:#4C4C4C;
+    margin-left:-6px;
 }
 
 .search-contact { 
+    margin-top:13px;
+    margin-bottom: 10px;
+    border-top: 1px solid #E5E5E5;
     grid-area: search-contact; 
 }
+
+.input-search-main {
+    width: 65%;
+    float:left;
+    padding-top: 5px;
+    padding-bottom: 5px;  
+    margin-top:-5px;
+    border-width: 0px;
+    font-size: 16px;
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0x 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    outline: none;
+}
+
+
 .input-search {
     width: 90%;
-    padding: 12px;  
-    border-radius: 1px 1px 1px 1px;
-    -moz-border-radius: 1px 1px 1px 1px;
-    -webkit-border-radius: 10px 10px 10px 10px;
+    padding-top: 10px;  
+    border-width: 0px;
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0x 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+}
+
+.input-user-config {
+    float:right;
+    margin-right: 10px;
+
+}
+
+.dots-main{
+     width:20px;
+     height:90%;
 }
