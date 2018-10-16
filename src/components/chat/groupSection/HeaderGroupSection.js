@@ -3,25 +3,25 @@ import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFi
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-import { getGroups } from '../../../redux/selectors/groups';
+import { getGroups } from '../../../redux/selectors/groups'
 import ContactAddGroup from './ContactAddGroup'
+import ModalBoxChat from '../../modals/ModalBox'
 import { connect } from 'react-redux'
 import './HeaderGroupSection.scss'
 
 class HeaderGroupSection extends Component {
-
   constructor(props) {
     super(props);
+    this.state = { showModalCreateGroup: false };
     this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
     this.filterList = this.filterList.bind(this);
+    this.createGroup = this.createGroup.bind(this);
   }
-
   filterList(event) {
     const val = event.target.value.toLowerCase();
     const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
     this.props.updateFilterContactsAddGroup(listContactsFecth);
   };
-  ƒ
   deleteContactListCreateGroup(idContact) {
     var listContacts = this.props.list_contacts
     var filter_contacts = this.props.filter_contacts
@@ -31,14 +31,17 @@ class HeaderGroupSection extends Component {
     listAddContactsGroup.splice(indexContact, 1)
     listContacts.push(infoContact)
     this.props.updateListContactsGroup(listContacts)
-    this.props.updateListContactsAddGroup(listAddContactsGroup)    
+    this.props.updateListContactsAddGroup(listAddContactsGroup)
     if (filter_contacts.length !== 0) {
       filter_contacts.push(infoContact)
       this.props.updateFilterContactsAddGroup(filter_contacts);
     }
   }
-
-
+  createGroup() {
+    this.setState({
+      showModalCreateGroup: true
+    });
+  }
   render() {
     const list_contacts_add_group = this.props.list_contacts_add_group
     return (
@@ -55,6 +58,8 @@ class HeaderGroupSection extends Component {
               )
               }
             </div>
+            <button className="dropbtn" onClick={this.createGroup}>Agregar</button>
+            {this.state.showModalCreateGroup ? <ModalBoxChat content="contentcontentcontentcontentcontentcontentcontentcontent " /> : null}
           </div>
           <div className="search-contact">
             <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList} ></input>
@@ -64,7 +69,6 @@ class HeaderGroupSection extends Component {
     )
   }
 }
-
 const mapDispatchToProps = dispatch => {
   return {
     updateFilterContactsAddGroup: (listContactsFecth) => {
@@ -81,7 +85,6 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-
 const mapStateToProps = (state) => {
   return {
     groups: getGroups(state)
