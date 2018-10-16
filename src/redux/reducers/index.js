@@ -11,6 +11,7 @@ import { osReducer } from './os';
 import { countriesReducer } from './countries';
 import { messageCenterReducer } from './messageCenter'
 import { customizingReducer } from './customizing';
+import { messagesOptionsReducer } from './messagesOptions';
 
 // export const reducers = combineReducers({
   export const reducers = combineReducers({
@@ -24,5 +25,6 @@ import { customizingReducer } from './customizing';
   country: countryReducer,
   countries: countriesReducer,
   os: osReducer,
+  messagesOptions: messagesOptionsReducer,
   messageCenterReducer
 })

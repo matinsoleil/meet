@@ -6,16 +6,15 @@ import Message from './Message';
 class ChatGeneralConversationContact extends Component {
     render() {
         return (
-            <div style={{backgroundImage:`url(${this.props.background})`}} className="main-chat-history-conversation-contact">
+            <div id='#main-chat-feed' style={{ backgroundImage: `url(${this.props.background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
                 {this.props.chat.map(c => {
                     const TypeMessageControl = c.userSend === "1" ? 'message-in' : 'message-out';
                     const tailType = c.userSend === "1" ? 'tail-out' : 'tail-in';
                     const tail = (c.userSend === "1") ? this.props.out_tail : this.props.in_tail;
-                    return <Message key={c.id}
-                        id = {c.id}
-                        message={c.message}
-                        hour={c.hour}
+                    return <Message
+                        key={c.id}
+                        messageObject = {c}
                         tail={tail}
                         type={TypeMessageControl}
                         tailType={tailType}

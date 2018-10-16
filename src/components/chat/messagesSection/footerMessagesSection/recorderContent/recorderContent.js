@@ -56,7 +56,7 @@ class RecorderContent extends Component {
             //alert(url);
             let date = new Date();
             this.props.addMessage({
-                "id": "15",
+                "id": "150",
                 "userSend": "1",
                 "userGet": "2",
                 "message": {

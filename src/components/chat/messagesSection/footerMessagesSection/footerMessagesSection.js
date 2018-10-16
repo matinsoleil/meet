@@ -13,6 +13,10 @@ class FooterMessagesSection extends Component {
         }
     }
 
+    componentWillUpdate(props){
+        console.log(props);
+    }
+
     selectFiles = (e) => {
         for(let file of this.fileChooser.files){
             let date = new Date();

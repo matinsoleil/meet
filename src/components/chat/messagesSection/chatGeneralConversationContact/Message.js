@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import DotsMenu from './dotsMenu';
 import FileHelper from './../../../../lib/helper/fileHelper';
 import MapPosition from './../../../../lib/helper/mapPosition';
+import { filterMessages } from '../../../../redux/actions/messagesOptions/messagesOptions';
+
 class Message extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            menuState: false
+            menuState: false,
         }
     }
 
@@ -28,12 +30,26 @@ class Message extends Component {
         });
     }
 
+    checked = (e) => {
+        console.log(e.target.checked)
+        this.props.filterMessages(e.target.checked,this.props.messageObject.id);
+    }
+
+    componentWillUpdate = (state) => {
+        if (state.multiSelect) {
+            this.bubble.style.marginRight = '30px'
+        } else {
+            this.bubble.style.marginRight = '0px'
+        }
+    }
+
     render() {
-        let { message, hour, type, tail, tailType, user_icon, id } = this.props;
+        let { id, message, hour } = this.props.messageObject;
+        let { type, tail, tailType, user_icon } = this.props;
         return (
-            <div className="message-row">
+            <div id={`message_row_${id}`} className="message-row">
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
-                <div ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
+                <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
                     <div className={`message-wrapper ${(message.type) ? 'no-text' : ''}`}>
                         <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>
                         <div className="message">{
@@ -43,8 +59,16 @@ class Message extends Component {
                             <span className="time">{hour}</span>
                         </div>
                     </div>
-                    <DotsMenu display={this.state.menuState} />
+                    <DotsMenu display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
                 </div>
+
+                {(this.props.multiSelect)
+                    &&
+                    <div className="select-message">
+                        <input onChange={this.checked} type="checkbox" name="" id="" />
+                    </div>
+                }
+
             </div>
         );
     }
@@ -85,8 +109,17 @@ class Message extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        file_icon: state.customizing.Images.file_icon
+        file_icon: state.customizing.Images.file_icon,
+        multiSelect: state.messagesOptions.multiSelect,
     }
 }
 
-export default connect(mapStateToProps, null)(Message);
+const mapDispatchtoProps = dispatch => {
+    return {
+        filterMessages: (action,message) => {
+            dispatch(filterMessages(action,message));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Message);

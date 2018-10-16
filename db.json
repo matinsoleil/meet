@@ -124,7 +124,7 @@
   "users": [
     {
       "id": "1",
-      "name": "AGUSTIN",
+      "name": "TEST USER CLARO CONNECT 1",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -134,7 +134,7 @@
     },
     {
       "id": "2",
-      "name": "FERNANDO",
+      "name": "TEST USER CLARO CONNECT 2",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -144,7 +144,7 @@
     },
     {
       "id": "3",
-      "name": "RAMIRO",
+      "name": "TEST USER CLARO CONNECT 3",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -154,7 +154,7 @@
     },
     {
       "id": "4",
-      "name": "IVONNE",
+      "name": "TEST USER CLARO CONNECT 4",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -164,7 +164,7 @@
     },
     {
       "id": "5",
-      "name": "DANIEL",
+      "name": "TEST USER CLARO CONNECT 5",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -619,7 +619,7 @@
   "contacts": [
     {
       "id": "1",
-      "name": "ZAPATA",
+      "name": "TEST CONTACT 1 ",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -630,7 +630,7 @@
     },
     {
       "id": "2",
-      "name": "GILSELA",
+      "name": "TEST CONTACT 2",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -641,7 +641,7 @@
     },
     {
       "id": "3",
-      "name": "JAVO",
+      "name": "TEST CONTACT 3",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -663,7 +663,7 @@
     },
     {
       "id": "5",
-      "name": "ROSA",
+      "name": "TEST CONTACT 5",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -674,7 +674,7 @@
     },
     {
       "id": "6",
-      "name": "IRVING",
+      "name": "TEST CONTACT 6 ",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -685,7 +685,7 @@
     },
     {
       "id": "7",
-      "name": "CESAR",
+      "name": "TEST CONTACT 7",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -696,7 +696,7 @@
     },
     {
       "id": "8",
-      "name": "AMILCAR",
+      "name": "TEST CONTACT 8",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -751,7 +751,7 @@
     },
     {
       "id": "10",
-      "name": "FERNANDA",
+      "name": "TEST CONTACT 10",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -762,7 +762,7 @@
     },
     {
       "id": "11",
-      "name": "MARIA",
+      "name": "TEST CONTACT 11",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -773,7 +773,7 @@
     },
     {
       "id": "12",
-      "name": "TERESA",
+      "name": "TEST CONTACT 12",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -784,7 +784,7 @@
     },
     {
       "id": "13",
-      "name": "JUANA",
+      "name": "TEST CONTACT 13",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -795,7 +795,7 @@
     },
     {
       "id": "14",
-      "name": "TANIA",
+      "name": "TEST CONTACT 14",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -806,7 +806,7 @@
     },
     {
       "id": "15",
-      "name": "MARGARITA",
+      "name": "TEST CONTACT 15",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -817,7 +817,7 @@
     },
     {
       "id": "16",
-      "name": "ELVIA",
+      "name": "TEST CONTACT 16",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -828,7 +828,7 @@
     },
     {
       "id": "17",
-      "name": "YURIDIA",
+      "name": "TEST CONTACT 17",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
@@ -839,7 +839,7 @@
     },
     {
       "id": "18",
-      "name": "TEST CONTACT 18 TEST CONTACT 18",
+      "name": "TEST CONTACT 18",
       "photo": "ruta",
       "status": "Status test",
       "label": "label",
