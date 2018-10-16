@@ -14,6 +14,8 @@ class HeaderGroupSection extends Component {
     super(props);
     this.state = { showModalCreateGroup: false };
     this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
+    this.cancelCreateGroup = this.cancelCreateGroup.bind(this);
+    this.createCreateGroup = this.createCreateGroup.bind(this);
     this.filterList = this.filterList.bind(this);
     this.createGroup = this.createGroup.bind(this);
   }
@@ -42,6 +44,44 @@ class HeaderGroupSection extends Component {
       showModalCreateGroup: true
     });
   }
+
+  cancelCreateGroup() {
+    this.setState({
+      showModalCreateGroup: false
+    });
+  }
+
+  createCreateGroup() {
+    this.setState({
+      showModalCreateGroup: false
+    });
+  }
+
+
+  renderBodyCreateGroup = (contacts) => {
+    if (this.props.list_contacts_add_group.length === 0) {
+      return (
+        <div className="body-created-group">
+          <p className="title-name-group">Debe seleccionar un contacto</p>
+          <p>
+            <button className="from-create-group-btn" onClick={this.createCreateGroup}>Ok</button>
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="body-created-group">
+          <p className="title-name-group">Escribe el nombre del grupo</p>
+          <input className="input-name-group"></input>
+          <p>
+            <button className="from-create-group-btn" onClick={this.cancelCreateGroup}>Cancelar</button>
+            <button className="from-create-group-btn" onClick={this.createCreateGroup}>Crear</button>
+          </p>
+        </div>
+      );
+    }
+  }
+
   render() {
     const list_contacts_add_group = this.props.list_contacts_add_group
     return (
@@ -49,9 +89,6 @@ class HeaderGroupSection extends Component {
         <div className="grid-container-header-section">
           <div className="header-group">
             Nuevo grupo
-            <div onClick={this.props.hideSectionGroups}>
-              Cerrar
-            </div>
             <div>
               {list_contacts_add_group.map(contact =>
                 <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
@@ -59,7 +96,8 @@ class HeaderGroupSection extends Component {
               }
             </div>
             <button className="dropbtn" onClick={this.createGroup}>Agregar</button>
-            {this.state.showModalCreateGroup ? <ModalBoxChat content="contentcontentcontentcontentcontentcontentcontentcontent " /> : null}
+            <button className="dropbtn" onClick={this.props.hideSectionGroups}>Cerrar</button>
+            {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>
           <div className="search-contact">
             <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList} ></input>
