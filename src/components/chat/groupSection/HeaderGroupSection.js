@@ -59,16 +59,27 @@ class HeaderGroupSection extends Component {
 
 
   renderBodyCreateGroup = (contacts) => {
-    return (
-      <div className="body-created-group">
-        <p className="title-name-group">Escribe el nombre del grupo</p>
-        <input className="input-name-group"></input>
-        <p>
-          <button className="from-create-group-btn" onClick={this.cancelCreateGroup}>Cancelar</button>
-          <button className="from-create-group-btn" onClick={this.createCreateGroup}>Crear</button>
-        </p>
-      </div>
-    );
+    if (this.props.list_contacts_add_group.length === 0) {
+      return (
+        <div className="body-created-group">
+          <p className="title-name-group">Debe seleccionar un contacto</p>
+          <p>
+            <button className="from-create-group-btn" onClick={this.createCreateGroup}>Ok</button>
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="body-created-group">
+          <p className="title-name-group">Escribe el nombre del grupo</p>
+          <input className="input-name-group"></input>
+          <p>
+            <button className="from-create-group-btn" onClick={this.cancelCreateGroup}>Cancelar</button>
+            <button className="from-create-group-btn" onClick={this.createCreateGroup}>Crear</button>
+          </p>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -78,9 +89,6 @@ class HeaderGroupSection extends Component {
         <div className="grid-container-header-section">
           <div className="header-group">
             Nuevo grupo
-            <div onClick={this.props.hideSectionGroups}>
-              Cerrar
-            </div>
             <div>
               {list_contacts_add_group.map(contact =>
                 <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
@@ -88,6 +96,7 @@ class HeaderGroupSection extends Component {
               }
             </div>
             <button className="dropbtn" onClick={this.createGroup}>Agregar</button>
+            <button className="dropbtn" onClick={this.props.hideSectionGroups}>Cerrar</button>
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>
           <div className="search-contact">
