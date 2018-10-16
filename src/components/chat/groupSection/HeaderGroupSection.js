@@ -17,7 +17,7 @@ class HeaderGroupSection extends Component {
     this.cancelCreateGroup = this.cancelCreateGroup.bind(this);
     this.createCreateGroup = this.createCreateGroup.bind(this);
     this.filterList = this.filterList.bind(this);
-    this.createGroup = this.createGroup.bind(this);  
+    this.createGroup = this.createGroup.bind(this);
   }
   filterList(event) {
     const val = event.target.value.toLowerCase();
@@ -44,27 +44,29 @@ class HeaderGroupSection extends Component {
       showModalCreateGroup: true
     });
   }
-  
-  cancelCreateGroup(){
+
+  cancelCreateGroup() {
     this.setState({
       showModalCreateGroup: false
     });
   }
 
-  createCreateGroup(){
+  createCreateGroup() {
     this.setState({
       showModalCreateGroup: false
     });
   }
 
 
-  renderBodyCreateGroup = ( contacts ) => {
+  renderBodyCreateGroup = (contacts) => {
     return (
       <div className="body-created-group">
-        <p>Escribe el nombre del grupo</p>
-        <p><input></input></p>
-        <button onClick={this.cancelCreateGroup}>Cancelar</button>
-        <button onClick={this.createCreateGroup}>Crear</button>
+        <p className="title-name-group">Escribe el nombre del grupo</p>
+        <input className="input-name-group"></input>
+        <p>
+          <button className="from-create-group-btn" onClick={this.cancelCreateGroup}>Cancelar</button>
+          <button className="from-create-group-btn" onClick={this.createCreateGroup}>Crear</button>
+        </p>
       </div>
     );
   }
