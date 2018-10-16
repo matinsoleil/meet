@@ -14,8 +14,10 @@ class HeaderGroupSection extends Component {
     super(props);
     this.state = { showModalCreateGroup: false };
     this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
+    this.cancelCreateGroup = this.cancelCreateGroup.bind(this);
+    this.createCreateGroup = this.createCreateGroup.bind(this);
     this.filterList = this.filterList.bind(this);
-    this.createGroup = this.createGroup.bind(this);
+    this.createGroup = this.createGroup.bind(this);  
   }
   filterList(event) {
     const val = event.target.value.toLowerCase();
@@ -42,6 +44,31 @@ class HeaderGroupSection extends Component {
       showModalCreateGroup: true
     });
   }
+  
+  cancelCreateGroup(){
+    this.setState({
+      showModalCreateGroup: false
+    });
+  }
+
+  createCreateGroup(){
+    this.setState({
+      showModalCreateGroup: false
+    });
+  }
+
+
+  renderBodyCreateGroup = ( contacts ) => {
+    return (
+      <div className="body-created-group">
+        <p>Escribe el nombre del grupo</p>
+        <p><input></input></p>
+        <button onClick={this.cancelCreateGroup}>Cancelar</button>
+        <button onClick={this.createCreateGroup}>Crear</button>
+      </div>
+    );
+  }
+
   render() {
     const list_contacts_add_group = this.props.list_contacts_add_group
     return (
@@ -59,7 +86,7 @@ class HeaderGroupSection extends Component {
               }
             </div>
             <button className="dropbtn" onClick={this.createGroup}>Agregar</button>
-            {this.state.showModalCreateGroup ? <ModalBoxChat content="contentcontentcontentcontentcontentcontentcontentcontent " /> : null}
+            {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>
           <div className="search-contact">
             <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList} ></input>
