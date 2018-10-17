@@ -18,5 +18,6 @@ export const Images = {
     "trash":require('./../../img/trash.svg'),
     "dots_main":require('./../../img/dots-menu.svg'),
     "add_icon":require('./../../img/plus-a.png'),
-    "status_user_attach_icon":require('./../../img/status-user-attach.png')
+    "status_user_attach_icon":require('./../../img/status-user-attach.png'),
+    "search_icon":require('./../../img/search.png')
 }
