@@ -15,10 +15,8 @@
 
   .dropdown {
     float: right;
-    height: 30px;
-    overflow: hidden;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    position: relative;
+    display: inline-block;
   }
   .dropdown-content {
     display: none;
@@ -39,9 +37,6 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
-
- 
-
   .dropdown:hover .dropbtn {
     background-color: #285996;
     border-radius: 3px 3px 3px 3px;
@@ -50,6 +45,14 @@
   }
 
   .plus-a{
-    width:25px;
-    height: 25px;
+    width:23px;
+    height: 23px;
+    float:left;
+  }
+
+  .plus-text{
+    font-size: 17px;
+    width:65px;
+    height:20px;
+    float:left;
   }
