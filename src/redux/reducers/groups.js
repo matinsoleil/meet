@@ -60,11 +60,11 @@ export const groups = (state = estado, action) => {
             }
 
         case 'CREATE_GROUP':
-        return {
-            ...state,
-            new_group: action.payload,
-            view: true
-        }
+            return {
+                ...state,
+                new_group: action.payload,
+                view: true
+            }
 
         default:
             return state

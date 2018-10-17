@@ -58,7 +58,7 @@ class HeaderGroupSection extends Component {
   createCreateGroup() {
     let newGroup = this.props.list_contacts_add_group;
     let newGroupElemnt = [];
-    newGroupElemnt.push({ contacts : newGroup}, {name : 'stylopm'})
+    newGroupElemnt.push({ contacts: newGroup }, { name: 'stylopm' })
     this.props.creacteGroup(newGroupElemnt);
     this.setState({
       showModalCreateGroup: false
