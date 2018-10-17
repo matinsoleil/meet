@@ -57,14 +57,14 @@ class HeaderGroupSection extends Component {
     });
   }
 
-  submitCreateGroup = values =>{
-    let newGroup = this.props.list_contacts_add_group;
-    let newGroupElemnt = [];
+  submitCreateGroup = values => {
+    let newGroup = this.props.list_contacts_add_group
+    let newGroupElemnt = []
     newGroupElemnt.push({ contacts: newGroup }, { name: values.nameGroup })
-    this.props.creacteGroup(newGroupElemnt);
+    this.props.creacteGroup(newGroupElemnt)
     this.setState({
       showModalCreateGroup: false
-    });
+    })
   }
 
   renderBodyCreateGroup = (contacts) => {
