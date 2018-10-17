@@ -14,7 +14,8 @@ export const Images = {
     "file_icon":require('./../../img/file-icon.png'),
     "claro_connect_logo": require('./../../img/logo/claro-connect-logo.svg'),
     "dots_menu":require('./../../img/dots-menu.svg'),
-    "search_icon":require('./../../img/search.png'),
+    "forward":require('./../../img/forward.svg'),
+    "trash":require('./../../img/trash.svg'),
     "dots_main":require('./../../img/dots-menu.svg'),
     "add_icon":require('./../../img/plus-a.png'),
     "status_user_attach_icon":require('./../../img/status-user-attach.png')

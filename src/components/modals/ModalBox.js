@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModalBox.scss'
 
-const modalBox = ({ body }) => {
+const ModalBox = ({ body }) => {
     return (
         <div className="modal-show" >
             <div className="modal-content">
@@ -10,4 +10,4 @@ const modalBox = ({ body }) => {
         </div>
     );
 };
-export default modalBox;
+export default ModalBox;
