@@ -15,5 +15,7 @@ export const Images = {
     "claro_connect_logo": require('./../../img/logo/claro-connect-logo.svg'),
     "dots_menu":require('./../../img/dots-menu.svg'),
     "forward":require('./../../img/forward.svg'),
-    "trash":require('./../../img/trash.svg')
+    "trash":require('./../../img/trash.svg'),
+    "dots_main":require('./../../img/dots-menu.svg'),
+    "add_icon":require('./../../img/plus-a.png')
 }
