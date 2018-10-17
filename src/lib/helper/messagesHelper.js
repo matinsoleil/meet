@@ -1,11 +1,16 @@
 export default class MessagesHelper {
 
     static getMessageById(conversation,messageId){
-        for (const message in conversation){
+        let actualMessage = undefined;
+        for (const index in conversation){
+            let message = conversation[index];
+            console.log(message.id === messageId);
             if(message.id === messageId){
-                return message;
+                actualMessage = message;
+                break;
             }
         }
+        return actualMessage
     }
 
 }

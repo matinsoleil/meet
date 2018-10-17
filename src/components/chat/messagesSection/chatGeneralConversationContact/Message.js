@@ -33,6 +33,7 @@ class Message extends Component {
     checked = (e) => {
         console.log(e.target.checked)
         this.props.filterMessages(e.target.checked,this.props.messageObject.id);
+        this.row.style.backgroundColor = (!e.target.checked) && '';
     }
 
     componentWillUpdate = (state) => {
@@ -40,14 +41,19 @@ class Message extends Component {
             this.bubble.style.marginRight = '30px'
         } else {
             this.bubble.style.marginRight = '0px'
+            this.row.style.backgroundColor = '';
+
         }
+        if(state.messageSelected === state.messageObject.id){
+            this.row.style.backgroundColor = 'rgba(217,230,245, 0.5)';
+        } 
     }
 
     render() {
         let { id, message, hour } = this.props.messageObject;
         let { type, tail, tailType, user_icon } = this.props;
         return (
-            <div id={`message_row_${id}`} className="message-row">
+            <div ref={div=>{this.row = div}} id={`message_row_${id}`} className="message-row">
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
                     <div className={`message-wrapper ${(message.type) ? 'no-text' : ''}`}>
@@ -111,6 +117,7 @@ const mapStateToProps = (state) => {
     return {
         file_icon: state.customizing.Images.file_icon,
         multiSelect: state.messagesOptions.multiSelect,
+        messageSelected: state.messagesOptions.messageSelected
     }
 }
 
