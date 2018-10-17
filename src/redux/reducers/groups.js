@@ -63,7 +63,7 @@ export const groups = (state = estado, action) => {
             return {
                 ...state,
                 new_group: action.payload,
-                view: true
+                view: false
             }
 
         default:

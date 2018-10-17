@@ -3,10 +3,9 @@ import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFi
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-
 import creacteGroup from '../../../redux/actions/groups/createGroup'
-
-
+import CreateGroupForm from '../../form/group/CreateGroupForm'
+import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
 import { getGroups } from '../../../redux/selectors/groups'
 import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
@@ -18,10 +17,10 @@ class HeaderGroupSection extends Component {
     super(props);
     this.state = { showModalCreateGroup: false };
     this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
-    this.cancelCreateGroup = this.cancelCreateGroup.bind(this);
-    this.createCreateGroup = this.createCreateGroup.bind(this);
+    this.closeWindowFormCreateGroup = this.closeWindowFormCreateGroup.bind(this);
+    this.submitCreateGroup = this.submitCreateGroup.bind(this);
     this.filterList = this.filterList.bind(this);
-    this.createGroup = this.createGroup.bind(this);
+    this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this);
   }
   filterList(event) {
     const val = event.target.value.toLowerCase();
@@ -43,49 +42,36 @@ class HeaderGroupSection extends Component {
       this.props.updateFilterContactsAddGroup(filter_contacts);
     }
   }
-  createGroup() {
+  submit = values => {
+    console.log(values)
+  }
+  openWindowFormCreateGroup() {
     this.setState({
       showModalCreateGroup: true
     });
   }
 
-  cancelCreateGroup() {
+  closeWindowFormCreateGroup() {
     this.setState({
       showModalCreateGroup: false
     });
   }
 
-  createCreateGroup() {
-    let newGroup = this.props.list_contacts_add_group;
-    let newGroupElemnt = [];
-    newGroupElemnt.push({ contacts: newGroup }, { name: 'stylopm' })
-    this.props.creacteGroup(newGroupElemnt);
+  submitCreateGroup = values => {
+    let newGroup = this.props.list_contacts_add_group
+    let newGroupElemnt = []
+    newGroupElemnt.push({ contacts: newGroup }, { name: values.nameGroup })
+    this.props.creacteGroup(newGroupElemnt)
     this.setState({
       showModalCreateGroup: false
-    });
+    })
   }
 
   renderBodyCreateGroup = (contacts) => {
     if (this.props.list_contacts_add_group.length === 0) {
-      return (
-        <div className="body-created-group">
-          <p className="title-name-group">Debe seleccionar un contacto</p>
-          <p>
-            <button className="from-create-group-btn" onClick={this.createCreateGroup}>Ok</button>
-          </p>
-        </div>
-      );
+      return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />);
     } else {
-      return (
-        <div className="body-created-group">
-          <p className="title-name-group">Escribe el nombre del grupo</p>
-          <input className="input-name-group"></input>
-          <p>
-            <button className="from-create-group-btn" onClick={this.cancelCreateGroup}>Cancelar</button>
-            <button className="from-create-group-btn" onClick={this.createCreateGroup}>Crear</button>
-          </p>
-        </div>
-      );
+      return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />);
     }
   }
 
@@ -102,7 +88,7 @@ class HeaderGroupSection extends Component {
               )
               }
             </div>
-            <button className="dropbtn" onClick={this.createGroup}>Agregar</button>
+            <button className="dropbtn" onClick={this.openWindowFormCreateGroup}>Agregar</button>
             <button className="dropbtn" onClick={this.props.hideSectionGroups}>Cerrar</button>
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>
