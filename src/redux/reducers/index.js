@@ -1,4 +1,5 @@
-import { combineReducers } from 'redux'
+import { createStore, combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 import { contacts } from './contacts'
 import { users } from './users'
 import { contact } from './contact'
@@ -6,12 +7,12 @@ import { conversation } from './conversation'
 import { searchContacts } from './searchContacts'
 import { groups } from './groups'
 
-import { countryReducer } from './country';
-import { osReducer } from './os';
-import { countriesReducer } from './countries';
+import { countryReducer } from './country'
+import { osReducer } from './os'
+import { countriesReducer } from './countries'
 import { messageCenterReducer } from './messageCenter'
-import { customizingReducer } from './customizing';
-import { messagesOptionsReducer } from './messagesOptions';
+import { customizingReducer } from './customizing'
+import { messagesOptionsReducer } from './messagesOptions'
 
 // export const reducers = combineReducers({
   export const reducers = combineReducers({
@@ -26,5 +27,6 @@ import { messagesOptionsReducer } from './messagesOptions';
   countries: countriesReducer,
   os: osReducer,
   messagesOptions: messagesOptionsReducer,
-  messageCenterReducer
+  messageCenterReducer,
+  form: formReducer
 })

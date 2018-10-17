@@ -3,10 +3,9 @@ import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFi
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-
 import creacteGroup from '../../../redux/actions/groups/createGroup'
-
-
+import CreateGroupForm from '../../form/group/CreateGroupForm'
+import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
 import { getGroups } from '../../../redux/selectors/groups'
 import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
@@ -14,6 +13,12 @@ import { connect } from 'react-redux'
 import './HeaderGroupSection.scss'
 
 class HeaderGroupSection extends Component {
+  submit = values => {
+    // print the form values to the console
+    console.log(values)
+  }
+
+
   constructor(props) {
     super(props);
     this.state = { showModalCreateGroup: false };
@@ -67,25 +72,9 @@ class HeaderGroupSection extends Component {
 
   renderBodyCreateGroup = (contacts) => {
     if (this.props.list_contacts_add_group.length === 0) {
-      return (
-        <div className="body-created-group">
-          <p className="title-name-group">Debe seleccionar un contacto</p>
-          <p>
-            <button className="from-create-group-btn" onClick={this.createCreateGroup}>Ok</button>
-          </p>
-        </div>
-      );
+      return (<AlertCreateGroupForm onSubmit={this.submit} />);
     } else {
-      return (
-        <div className="body-created-group">
-          <p className="title-name-group">Escribe el nombre del grupo</p>
-          <input className="input-name-group"></input>
-          <p>
-            <button className="from-create-group-btn" onClick={this.cancelCreateGroup}>Cancelar</button>
-            <button className="from-create-group-btn" onClick={this.createCreateGroup}>Crear</button>
-          </p>
-        </div>
-      );
+      return (<CreateGroupForm onSubmit={this.submit} />);
     }
   }
 
