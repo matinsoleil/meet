@@ -13,20 +13,14 @@ import { connect } from 'react-redux'
 import './HeaderGroupSection.scss'
 
 class HeaderGroupSection extends Component {
-  submit = values => {
-    // print the form values to the console
-    console.log(values)
-  }
-
-
   constructor(props) {
     super(props);
     this.state = { showModalCreateGroup: false };
     this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
-    this.cancelCreateGroup = this.cancelCreateGroup.bind(this);
-    this.createCreateGroup = this.createCreateGroup.bind(this);
+    this.closeWindowFormCreateGroup = this.closeWindowFormCreateGroup.bind(this);
+    this.submitCreateGroup = this.submitCreateGroup.bind(this);
     this.filterList = this.filterList.bind(this);
-    this.createGroup = this.createGroup.bind(this);
+    this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this);
   }
   filterList(event) {
     const val = event.target.value.toLowerCase();
@@ -48,22 +42,25 @@ class HeaderGroupSection extends Component {
       this.props.updateFilterContactsAddGroup(filter_contacts);
     }
   }
-  createGroup() {
+  submit = values => {
+    console.log(values)
+  }
+  openWindowFormCreateGroup() {
     this.setState({
       showModalCreateGroup: true
     });
   }
 
-  cancelCreateGroup() {
+  closeWindowFormCreateGroup() {
     this.setState({
       showModalCreateGroup: false
     });
   }
 
-  createCreateGroup() {
+  submitCreateGroup = values =>{
     let newGroup = this.props.list_contacts_add_group;
     let newGroupElemnt = [];
-    newGroupElemnt.push({ contacts: newGroup }, { name: 'stylopm' })
+    newGroupElemnt.push({ contacts: newGroup }, { name: values.nameGroup })
     this.props.creacteGroup(newGroupElemnt);
     this.setState({
       showModalCreateGroup: false
@@ -72,9 +69,9 @@ class HeaderGroupSection extends Component {
 
   renderBodyCreateGroup = (contacts) => {
     if (this.props.list_contacts_add_group.length === 0) {
-      return (<AlertCreateGroupForm onSubmit={this.submit} />);
+      return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />);
     } else {
-      return (<CreateGroupForm onSubmit={this.submit} />);
+      return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />);
     }
   }
 
@@ -91,7 +88,7 @@ class HeaderGroupSection extends Component {
               )
               }
             </div>
-            <button className="dropbtn" onClick={this.createGroup}>Agregar</button>
+            <button className="dropbtn" onClick={this.openWindowFormCreateGroup}>Agregar</button>
             <button className="dropbtn" onClick={this.props.hideSectionGroups}>Cerrar</button>
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>

@@ -3,22 +3,15 @@ import { Field, reduxForm } from 'redux-form'
 import './CreateGroupForm.scss'
 
 let CreateGroupForm = props => {
-  const { handleSubmit } = props
+  const { handleSubmit, closeWindow } = props
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" component="input" type="text" />
+        <label className="title-name-group">Escribe el nombre del grupo</label>
+        <Field name="nameGroup" component="input" type="text" className="input-name-group" />
       </div>
-      <div>
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" component="input" type="text" />
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component="input" type="email" />
-      </div>
-      <button type="submit">Submit</button>
+      <button className="from-create-group-btn" onClick={this.createGroup}>Agregar</button>
+      <button className="from-create-group-btn" onClick={closeWindow}>Close</button>
     </form>
   )
 }
