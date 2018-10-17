@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {addMessage} from './../../../../../redux/actions/conversation/fetchConversation';
 import AudioRecorder from './../../../../../lib/helper/audioRecorder';
 import './recorderContent.scss';
+import GenerateId from '../../../../../lib/helper/generateId';
 
 class RecorderContent extends Component {
     constructor(props) {
@@ -56,7 +57,7 @@ class RecorderContent extends Component {
             //alert(url);
             let date = new Date();
             this.props.addMessage({
-                "id": "150",
+                "id": GenerateId.generate(),
                 "userSend": "1",
                 "userGet": "2",
                 "message": {

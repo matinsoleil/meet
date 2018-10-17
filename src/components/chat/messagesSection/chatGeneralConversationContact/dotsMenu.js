@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {multiSelectState} from './../../../../redux/actions/messagesOptions/messagesOptions';
+import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
 // import $ from 'jquery';
 
 class DotsMenu extends Component {
@@ -29,6 +30,10 @@ class DotsMenu extends Component {
         this.props.multiSelectState(!this.props.multiSelect);
     }
 
+    deleteMessage = (e) => {
+        this.props.deleteMessage(this.props.id);
+    }
+
     render() {
         return (
             <div ref={div=>{this.wrapper_menu_dots=div}} className="menu-wrapper">
@@ -37,7 +42,7 @@ class DotsMenu extends Component {
                     <a>Responder</a>
                     <a>Reenviar</a>
                     <a onClick={this.multiSelection} >Seleccionar varios</a>
-                    <a>Eliminar</a>
+                    <a onClick={this.deleteMessage} >Eliminar</a>
                 </div>
             </div>
         );
@@ -55,6 +60,9 @@ const mapDispatchToProps = dispatch => {
     return{
         multiSelectState: (state) => {
             dispatch(multiSelectState(state));
+        },
+        deleteMessage: messageId =>{
+            dispatch(deleteMessage(messageId));
         }
     }
 }
