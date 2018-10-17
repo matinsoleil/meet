@@ -19,7 +19,7 @@ class ContactSectionContainer extends Component {
                 <div className="chat-state">
                 <h2 className="title-chat">Chats</h2>
                 <div className="dropdown">
-                    <button className="dropbtn"><p class="plus-text">Nuevo</p><img className="plus-a" src={this.props.add_icon} /></button>
+                    <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
                     <div className="dropdown-content">
                         <a onClick={this.showSectionGroupsClick} >Nuevo chat grupal</a>
                     </div>

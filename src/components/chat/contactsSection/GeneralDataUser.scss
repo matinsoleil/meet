@@ -16,7 +16,7 @@
       'search-contact search-contact search-contact search-contact search-contact search-contact search-contact';
 }
 .grid-container-user-chat > div {
-    padding: 10px 0;
+    padding: 6px 0;
  
 }
 
@@ -48,8 +48,8 @@
 
 .img-icon-user-main {
     border-radius: 50%;
-    height: 59px;
-    width: 59px;
+    height: 64px;
+    width: 64px;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -68,16 +68,17 @@
 }
 
 .img-icon-search{
-    width:18px;
-    height:18px;
+    width:24px;
+    height:24px;
     float:left;
+    margin-top:8px;
     margin-right:8px;
     margin-left: 15px;
 }
 .inner-circle-user {
     background-color:#74c365;
     border-color: #ffffff;
-    top: -60px; left:73px;
+    top: -65px; left:88px;
     width:20%;
     height:20%;
     position: relative;
@@ -106,9 +107,9 @@
     float:left;
     padding-top: 5px;
     padding-bottom: 5px;  
-    margin-top:-5px;
+    margin-top:2px;
     border-width: 0px;
-    font-size: 16px;
+    font-size: 19px;
     border-radius: 0px 0px 0px 0px;
     -moz-border-radius: 0px 0x 0px 0px;
     -webkit-border-radius: 0px 0px 0px 0px;

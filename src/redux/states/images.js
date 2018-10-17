@@ -16,5 +16,6 @@ export const Images = {
     "dots_menu":require('./../../img/dots-menu.svg'),
     "search_icon":require('./../../img/search.png'),
     "dots_main":require('./../../img/dots-menu.svg'),
-    "add_icon":require('./../../img/plus-a.png')
+    "add_icon":require('./../../img/plus-a.png'),
+    "status_user_attach_icon":require('./../../img/status-user-attach.png')
 }

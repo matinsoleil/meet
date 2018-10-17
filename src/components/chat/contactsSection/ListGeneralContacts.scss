@@ -1,6 +1,8 @@
 .main-chat-general-list-contact {
-    overflow: scroll; 
+    overflow-y: scroll;
     position: relative;
-    height: 100%;
+    top:0px;
+    height: 100% !important;
     width: 100%;
+    padding-bottom: 200px;
 }

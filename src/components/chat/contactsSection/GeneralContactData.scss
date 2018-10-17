@@ -2,11 +2,11 @@
   background-color: #fefefe;
   position: relative;
   width: 100%;
-  height: 60px;
+  height: 56px;
   border-radius: 0px 0px 0px 0px;
   -moz-border-radius: 0px 0px 0px 0px;
   -webkit-border-radius: 0px 0px 0px 0px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .grid-container-contact-chat {
@@ -14,29 +14,32 @@
   grid-template-areas:
     'icon-contact name-contact name-contact name-contact name-contact name-contact name-contact day-last-message '
     'icon-contact last-message last-message last-message last-message last-message last-message count-message ';
-  grid-gap: 1px;
-  padding: 1px;
+  grid-gap: 0px;
+  padding: 0px;
 }
 .grid-container-contact-chat > div {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 1px 0;
-  margin:3px;
+  padding: 0px 0;
+  margin-right:8px;
+  margin-bottom: 0px;
 }
 
 .icon-contact {
     grid-area: icon-contact;
+    width:52px;
 }
 
 .outer-circle {
-  width:52px;
-  height:52px;
+  width:56px;
+  height:56px;
   position:relative;
+  margin-left: 0px;
 }
 
 .img-icon-user {
   border-radius: 50%;
-  height: 52px;
-  width: 52px;
+  height: 56px;
+  width: 56px;
   -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -44,6 +47,7 @@
 .inner-circle {
   background-color:#74c365;
   border-color: #ffffff;
+  border: 2px solid #ffffff;
   top: -15px; left:70%;
   width:20%;
   height:20%;
@@ -56,24 +60,31 @@
   grid-area: name-contact;
   font-weight: bold;
   font-size: 12px;
+  margin-left:8px;
 }
 .day-last-message { 
   grid-area: day-last-message; 
   justify-self: end;
 }
 .day-last-message > p {
-  font-size: 12px;
+  font-size: 16px;
   color: #cccccc;
 }
 
 .day-last{
   display: inline-flex;
   align-items: center;
+  float:left;
+  width: auto;
+  font-size:16px;
+  margin-top:10px;
 }
 
 .last-message { 
   grid-area: last-message;
-  font-size: 12px;
+  font-size: 16px;
+  margin-top:0px;
+  margin-left:8px;
   color: #cccccc;
 }
 .count-message {
@@ -81,16 +92,45 @@
   justify-self: end;
 }
 .circle-count-message {
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
   background:#f5cd5d;
   color: #fdfdfd;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: center;
   align-items: center; 
+}
+
+.count-message-number{
+  display: inline-flex;
+  align-items: center;
+  margin-top:3px;
+}
+
+.text-contact{
+   float:left;
+   text-align: left;
+   font-size:16px;
+   margin-top:8px;
+   margin-left:1px;
+   width: 260px;
+   overflow: hidden;
+   height: 16px;
+}
+
+.word-contact{
+   float:left;
+   width:auto;
+}
+
+.status-contact{
+   width:16px;
+   height: 16px;
+   float:left;
+   margin-left:10px;
 }
