@@ -6,19 +6,32 @@ import OptionSelection from './optionsSelection/optionsSelection';
 import $ from 'jquery'
 import './footerMessagesSection.scss';
 import MessagesHelper from '../../../../lib/helper/messagesHelper';
+import GenerateId from '../../../../lib/helper/generateId';
+import { multiSelectState } from '../../../../redux/actions/messagesOptions/messagesOptions';
+
 class FooterMessagesSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
             urlAudio: undefined,
         }
+        this.cancelMultiSelection = this.cancelMultiSelection.bind(this,this.props);
+    }
+
+    componentDidUpdate(){
+        (this.props.multiSelect) && document.addEventListener('keyup',this.cancelMultiSelection);
+        (!this.props.multiSelect) && document.removeEventListener('keyup',this.cancelMultiSelection);
+    }
+
+    cancelMultiSelection = (props,e) => {
+        (e.key === 'Escape') && props.multiSelectState(false);
     }
 
     selectFiles = (e) => {
         for (let file of this.fileChooser.files) {
             let date = new Date();
             this.props.addMessage({
-                id: "1",
+                id: GenerateId.generate(),
                 userSend: "1",
                 userGet: "2",
                 message: {
@@ -52,7 +65,7 @@ class FooterMessagesSection extends Component {
                             </div>
                             <RecorderContent />
                         </div> :
-                        <OptionSelection type={MessagesHelper.getMessageById(this.props.conversation,this.props.messageSelected).type}/>
+                        <OptionSelection type={MessagesHelper.getMessageById(this.props.conversation,this.props.messageSelected).message.type}/>
                 }
             </footer>
         );
@@ -66,7 +79,8 @@ const mapStateToProps = state => {
         mic: state.customizing.Images.mic,
         plus: state.customizing.Images.plus,
         conversation: state.conversation,
-        messageSelected: state.messagesOptions.messageSelected
+        messageSelected: state.messagesOptions.messageSelected,
+        multiSelect: state.messagesOptions.multiSelect,
     }
 }
 
@@ -74,6 +88,9 @@ const mapDispatchToProps = dispatch => {
     return {
         addMessage: message => {
             dispatch(addMessage(message));
+        },
+        multiSelectState: state => {
+            dispatch(multiSelectState(state));
         }
     }
 }

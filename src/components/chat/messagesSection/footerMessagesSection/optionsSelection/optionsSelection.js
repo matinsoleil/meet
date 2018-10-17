@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./optionsSelection.scss"
+import { deleteMessagesSelected } from '../../../../../redux/actions/messagesOptions/messagesOptions';
 
 class OptionsSelection extends Component {
 
-    componentDidUpdate(){
-        console.log(this.props.type);
+    deleteMessages = (e) => {
+        this.props.deleteMessagesSelected(this.props.messages);
     }
 
     render() {
         return (
             <div className="options-section">
-                {(this.props.type==='3')&&
-                <IconButton image={this.props.forward} name='Descargar' />
+                {(this.props.type === '3') &&
+                    <IconButton className="download-icon" image={this.props.forward} name='Descargar' />
                 }
                 <IconButton image={this.props.forward} name='Reenviar' />
-                <IconButton image={this.props.trash} name='Eliminar' />
+                <IconButton onClick={this.deleteMessages} image={this.props.trash} name='Eliminar' />
             </div>
         );
     }
@@ -24,7 +25,7 @@ class OptionsSelection extends Component {
 const IconButton = props => {
     let { image, alt, name } = props;
     return (
-        <div className="icon-button">
+        <div onClick={props.onClick} className={`icon-button ${props.className}`}>
             <img src={image} alt={alt} />
             <span>{name}</span>
         </div>
@@ -34,8 +35,17 @@ const IconButton = props => {
 const mapStateToProps = state => {
     return {
         forward: state.customizing.Images.forward,
-        trash: state.customizing.Images.trash
+        trash: state.customizing.Images.trash,
+        messages: state.messagesOptions.messages,
     }
 }
 
-export default connect(mapStateToProps)(OptionsSelection);
+const mapDispathToProps = dispatch => {
+    return{
+        deleteMessagesSelected: messagesId => {
+            dispatch(deleteMessagesSelected(messagesId));
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispathToProps)(OptionsSelection);
