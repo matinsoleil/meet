@@ -3,6 +3,10 @@ import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFi
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
+
+import creacteGroup from '../../../redux/actions/groups/createGroup'
+
+
 import { getGroups } from '../../../redux/selectors/groups'
 import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
@@ -52,11 +56,14 @@ class HeaderGroupSection extends Component {
   }
 
   createCreateGroup() {
+    let newGroup = this.props.list_contacts_add_group;
+    let newGroupElemnt = [];
+    newGroupElemnt.push({ contacts: newGroup }, { name: 'stylopm' })
+    this.props.creacteGroup(newGroupElemnt);
     this.setState({
       showModalCreateGroup: false
     });
   }
-
 
   renderBodyCreateGroup = (contacts) => {
     if (this.props.list_contacts_add_group.length === 0) {
@@ -120,7 +127,11 @@ const mapDispatchToProps = dispatch => {
     },
     updateListContactsAddGroup: (listContacts) => {
       dispatch(updateListContactsAddGroup(listContacts))
+    },
+    creacteGroup: (listContacts) => {
+      dispatch(creacteGroup(listContacts))
     }
+
   }
 }
 const mapStateToProps = (state) => {

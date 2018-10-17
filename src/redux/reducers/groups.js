@@ -3,7 +3,8 @@ const estado = {
     list_contacts: null,
     list_contacts_add_group: null,
     filter_contacts: null,
-    view: false
+    view: false,
+    new_group: null
 }
 export const groups = (state = estado, action) => {
     switch (action.type) {
@@ -14,6 +15,7 @@ export const groups = (state = estado, action) => {
                 list_contacts: null,
                 list_contacts_add_group: null,
                 filter_contacts: null,
+                new_group: [],
                 view: false
             }
         case 'SHOW_SECTION_GROUPS':
@@ -24,6 +26,7 @@ export const groups = (state = estado, action) => {
                 list_contacts_add_group: [],
                 select_contacts: [],
                 filter_contacts: [],
+                new_group: [],
                 view: true
             }
         case 'HIDE_SECTION_GROUPS':
@@ -34,6 +37,7 @@ export const groups = (state = estado, action) => {
                 list_contacts_add_group: [],
                 filter_contacts: [],
                 select_contacts: [],
+                new_group: [],
                 view: false
             }
         case 'UPDATE_LIST_CONTACTS_GROUP':
@@ -54,6 +58,14 @@ export const groups = (state = estado, action) => {
                 filter_contacts: action.payload,
                 view: true
             }
+
+        case 'CREATE_GROUP':
+            return {
+                ...state,
+                new_group: action.payload,
+                view: true
+            }
+
         default:
             return state
     }
