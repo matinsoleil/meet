@@ -19,5 +19,7 @@ export const Images = {
     "dots_main":require('./../../img/dots-menu.svg'),
     "add_icon":require('./../../img/plus-a.png'),
     "status_user_attach_icon":require('./../../img/status-user-attach.png'),
-    "search_icon":require('./../../img/search.png')
+    "search_icon":require('./../../img/search.png'),
+    "close_icon":require('./../../img/close-clear-disable.svg'),
+    "reply_icon":require('./../../img/reply-message.svg'),
 }

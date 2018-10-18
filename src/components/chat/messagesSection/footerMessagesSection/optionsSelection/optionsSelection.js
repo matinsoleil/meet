@@ -20,7 +20,6 @@ class OptionsSelection extends Component {
 
     deleteMessages = (e) => {
         this.toggleModal();
-        //this.props.deleteMessagesSelected(this.props.messages);
     }
 
     accept = () => {

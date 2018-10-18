@@ -31,7 +31,7 @@ export const messagesOptionsReducer = (state = defaultMessagesOptions, action) =
         case SELECT_MESSAGE:
             return{
                 ...state,
-                messageSelected:state.messages.slice(-1)[0]
+                messageSelected:(action.state)?action.payload:state.messages.slice(-1)[0]
             }
         default:
             return state;

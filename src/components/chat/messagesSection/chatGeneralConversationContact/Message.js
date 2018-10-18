@@ -32,7 +32,7 @@ class Message extends Component {
 
     checked = (e) => {
         this.props.filterMessages(e.target.checked,this.props.messageObject.id);
-        this.row.style.backgroundColor = (!e.target.checked) && '';
+        this.row.style.backgroundColor = (!e.target.checked) ? '' : 'rgba(217,230,245, 0.5)';
     }
 
     componentWillUpdate = (state) => {
@@ -43,16 +43,13 @@ class Message extends Component {
             this.row.style.backgroundColor = '';
 
         }
-        if(state.messageSelected === state.messageObject.id){
-            this.row.style.backgroundColor = 'rgba(217,230,245, 0.5)';
-        } 
     }
 
     render() {
         let { id, message, hour } = this.props.messageObject;
         let { type, tail, tailType, user_icon } = this.props;
         return (
-            <div ref={div=>{this.row = div}} id={`message_row_${id}`} className="message-row">
+            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row">
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
                     <div className={`message-wrapper ${(message.type) ? 'no-text' : ''}`}>
@@ -65,7 +62,7 @@ class Message extends Component {
                         </div>
                     </div>
                     {
-                        (this.state.menuState) && 
+                        (this.state.menuState) &&
                         <DotsMenu showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
                     }
                 </div>
@@ -119,14 +116,14 @@ const mapStateToProps = (state) => {
     return {
         file_icon: state.customizing.Images.file_icon,
         multiSelect: state.messagesOptions.multiSelect,
-        messageSelected: state.messagesOptions.messageSelected
+        messageSelected: state.messagesOptions.messageSelected,
     }
 }
 
 const mapDispatchtoProps = dispatch => {
     return {
-        filterMessages: (action,message) => {
-            dispatch(filterMessages(action,message));
+        filterMessages: (action, message) => {
+            dispatch(filterMessages(action, message));
         }
     }
 }
