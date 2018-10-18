@@ -66,7 +66,6 @@ class Message extends Component {
                         <DotsMenu showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
                     }
                 </div>
-
                 {(this.props.multiSelect)
                     &&
                     <div className="select-message">
