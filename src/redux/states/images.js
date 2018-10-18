@@ -20,5 +20,7 @@ export const Images = {
     "add_icon":require('./../../img/plus-a.png'),
     "status_user_attach_icon":require('./../../img/status-user-attach.png'),
     "search_icon":require('./../../img/search.png'),
-    "send_icon":require('./../../img/send.svg')
+    "send_icon":require('./../../img/send.svg'),
+    "close_icon":require('./../../img/close-clear-disable.svg'),
+    "reply_icon":require('./../../img/reply-message.svg'),
 }

@@ -1,12 +1,16 @@
 @media screen {
     .footer-messages-section{
         padding: 0px;
-        max-height: 60px;
+        max-height: 360px;
         flex: none;
         display: flex;
+        flex-flow: column;
         border-style: solid none none none;
         border-width: 1.2px;
         border-color: #e0e0e0;
+        div.hideable-holder{
+            padding: 5px 8px 2px 8px;
+        }
         .data-input{
             display: flex;
             align-items: center;
