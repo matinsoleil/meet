@@ -1,30 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addMessage } from './../../../../redux/actions/conversation/fetchConversation';
+import { multiSelectState } from '../../../../redux/actions/messagesOptions/messagesOptions';
 import RecorderContent from './recorderContent/recorderContent';
 import OptionSelection from './optionsSelection/optionsSelection';
-import $ from 'jquery'
-import './footerMessagesSection.scss';
 import MessagesHelper from '../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../lib/helper/generateId';
-import { multiSelectState } from '../../../../redux/actions/messagesOptions/messagesOptions';
+import ReplyOptions from './replyOptions/replyOptions';
+import $ from 'jquery'
+import './footerMessagesSection.scss';
 
 class FooterMessagesSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            urlAudio: undefined,
+            emojiState:true,
+            textInputState:true,
+            clipState:true,
+            plusState:true,
         }
-        this.cancelMultiSelection = this.cancelMultiSelection.bind(this,this.props);
+        this.cancelMultiSelection = this.cancelMultiSelection.bind(this, this.props);
     }
 
-    componentDidUpdate(){
-        (this.props.multiSelect) && document.addEventListener('keyup',this.cancelMultiSelection);
-        (!this.props.multiSelect) && document.removeEventListener('keyup',this.cancelMultiSelection);
+    componentDidUpdate() {
+        (this.props.multiSelect || this.props.messageSelected) && document.addEventListener('keyup', this.cancelMultiSelection);
+        (!this.props.multiSelect && !this.props.messageSelected) && document.removeEventListener('keyup', this.cancelMultiSelection);
     }
 
-    cancelMultiSelection = (props,e) => {
+    cancelMultiSelection = (props, e) => {
         (e.key === 'Escape') && props.multiSelectState(false);
+    }
+
+    toggleOptions = () => {
+
     }
 
     selectFiles = (e) => {
@@ -47,8 +55,17 @@ class FooterMessagesSection extends Component {
     render() {
         return (
             <footer className='footer-messages-section'>
+                {(this.props.messageSelected && !this.props.multiSelect)&&
+                    <div className='hideable-holder'>
+                        <ReplyOptions messageId={this.props.messageSelected}/>
+                    </div>
+                }
                 {
-                    (!this.props.messageSelected) ?
+                    (this.props.messageSelected && this.props.multiSelect) ?
+                        <OptionSelection
+                            type={
+                                MessagesHelper.getMessageById(this.props.conversation, this.props.messageSelected).message.type
+                            } /> :
                         <div className='data-input'>
                             <div role="button" className="icon">
                                 <img src={this.props.plus} alt="" />
@@ -64,8 +81,7 @@ class FooterMessagesSection extends Component {
                                 </div>
                             </div>
                             <RecorderContent />
-                        </div> :
-                        <OptionSelection type={MessagesHelper.getMessageById(this.props.conversation,this.props.messageSelected).message.type}/>
+                        </div>
                 }
             </footer>
         );

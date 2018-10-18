@@ -1,34 +1,50 @@
 .contact-add-group {
-    background-color: #fefefe;  
+    background-color: black;  
     position: relative;
-    border-radius: 50px 50px 50px 50px;
-    -moz-border-radius: 50px 50px 50px 50px;
-    -webkit-border-radius: 50px 50px 50px 50px;
-    margin-top: 5px;
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    margin-top: 0px;
+    margin-right:4px;
+    margin-left:4px;
+    height:66px;
+    overflow:hidden;
+    width:60px;
+    display: inline-block;
 }
 .grid-container-contact-add-group {
-    display: grid;
-    grid-template-areas:
-    'icon-contact-add-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group name-contact-group count-message-contact-add-group';
-    padding: 1px;
+    
+    padding: 0px;
+    float:left;
+    height: 10px;
+    width:48px;
+   
 }
 .grid-container-contact-add-group > div {
    padding: 0px 0;
+   height: 10px;
+   width: 48px;
+   margin-right: 4px;
+   margin-left: 4px;
+   display: inline-block;
 }
 
 .icon-contact-add-group {
-    grid-area: icon-contact-add-group;
+    width:48px;
+    height: 48px;
+    float:left;
 }
 .outer-circle-contact-add-group {
     // background-color: red;
-    width:30px;
-    height:30px;
-    position:relative;
+    width:48px;
+    height:48px;
+    float:left;
 }
 .img-icon-contact-add-group {
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    height: 48px;
+    width: 48px;
+    float:left;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -38,14 +54,24 @@
 }
 .name-contact-add-group { 
     grid-area: name-contact-group;
-    color: #030303;
-    font-weight: bold;
-    font-size: 12px;
     justify-self: flex-start;
     text-align: center;
-    display: flex;
+    padding: 0px;
     justify-content: center;
     align-items: center; 
+    float:left;
+    width:30px;
+    margin-top:30px;
+    height: 19px;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.46;
+    letter-spacing: 0.4px;
+    color: #fefefe;
+
 }
 .day-last-message-group { 
     grid-area: day-last-message-group; 
@@ -61,20 +87,24 @@
     color: #cccccc;
 }
 .count-message-contact-add-group {
-    grid-area: count-message-contact-add-group;
+    float:left;
+    width:48px;
+    height:10px;
 }
 .circle-count-message-contact-add-group {
-    width: 30px;
-    height: 30px;
-    background:#7198C9;
+    width: 16px;
+    height: 16px;
+    float:right;
+    background:#e52b50;
     color: #fdfdfd;
     border-radius: 50%;
-    font-size: 12px;
+    font-size: 8px;
     text-align: center;
     margin-left: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top:-10px;
 }
 .markerListContactGroup {
     color: rgb(78, 78, 78);

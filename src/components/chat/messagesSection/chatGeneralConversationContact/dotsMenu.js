@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { multiSelectState } from './../../../../redux/actions/messagesOptions/messagesOptions';
+import { multiSelectState, messageSelected } from './../../../../redux/actions/messagesOptions/messagesOptions';
 import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
 import ModalBox from '../../../modals/ModalBox';
+import { showSectionGroups } from '../../../../redux/actions/groups/showSectionGroups';
 // import $ from 'jquery';
-
 class DotsMenu extends Component {
 
     constructor(props) {
@@ -13,6 +13,14 @@ class DotsMenu extends Component {
             showModal: false,
             showMenu: false
         }
+    }
+
+    componentDidMount() {
+        this.dots.addEventListener('click', this.toggleMenu);
+    }
+
+    componentWillUnmount(){
+        this.dots.removeEventListener('click',this.toggleMenu);
     }
 
     toggleModal = () => {
@@ -27,20 +35,21 @@ class DotsMenu extends Component {
         });
     }
 
-    componentDidMount() {
-        this.dots.addEventListener('click', this.toggleMenu);
-    }
-
-    componentWillUnmount(){
-        this.dots.removeEventListener('click',this.toggleMenu);
+    reply = () => {
+        this.toggleMenu();
+        this.props.showDots();
+        this.props.messageSelected(this.props.id,true);
     }
 
     multiSelection = (e) => {
+        this.toggleMenu();
+        this.props.showDots();
         this.props.multiSelectState(!this.props.multiSelect);
     }
 
     accept = () => {
         this.toggleModal();
+        this.props.showDots();
         this.props.deleteMessage(this.props.id);
     }
 
@@ -51,10 +60,10 @@ class DotsMenu extends Component {
                 {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
-                        <a>Responder</a>
-                        <a>Reenviar</a>
-                        <a onClick={this.multiSelection} >Seleccionar varios</a>
-                        <a onClick={this.toggleModal} >Eliminar</a>
+                        <a onClick={this.reply}>{'Responder'}</a>
+                        <a>{'Reenviar'}</a>
+                        <a onClick={this.multiSelection} >{'Seleccionar varios'}</a>
+                        <a onClick={this.toggleModal} >{'Eliminar'}</a>
                     </div>
                 }
                 {(this.state.showModal) &&
@@ -62,7 +71,7 @@ class DotsMenu extends Component {
                         <div>
                             <div className='title'>{'¿Seguro que desea eliminar este mensaje?'}</div>
                             <div className='button-section'>
-                                <button onClick={this.toggleModal}>Cancelar</button>
+                                <button onClick={()=>{this.toggleModal();this.props.showDots();}}>Cancelar</button>
                                 <button onClick={this.accept}>Eliminar</button>
                             </div>
                         </div>
@@ -87,6 +96,12 @@ const mapDispatchToProps = dispatch => {
         },
         deleteMessage: messageId => {
             dispatch(deleteMessage(messageId));
+        },
+        showSectionGroups: listContacs => {
+            dispatch(showSectionGroups(listContacs));
+        },
+        messageSelected: (messageId,state) => {
+            dispatch(messageSelected(messageId,state));
         }
     }
 }

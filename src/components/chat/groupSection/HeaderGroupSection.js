@@ -79,21 +79,27 @@ class HeaderGroupSection extends Component {
     const list_contacts_add_group = this.props.list_contacts_add_group
     return (
       <div className="main-header-group-section">
+       <div className="resendTo">
+       <span className="content-resentTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span>  
+       <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionGroups} />
+       </div>
         <div className="grid-container-header-section">
           <div className="header-group">
-            Nuevo grupo
-            <div>
+            <img className="addGroup" src={this.props.send_icon} onClick={this.openWindowFormCreateGroup} />
+            <div className="grow-group">
               {list_contacts_add_group.map(contact =>
                 <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
               )
               }
+              
             </div>
-            <button className="dropbtn" onClick={this.openWindowFormCreateGroup}>Agregar</button>
-            <button className="dropbtn" onClick={this.props.hideSectionGroups}>Cerrar</button>
+            
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>
           <div className="search-contact">
-            <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList} ></input>
+            <div className="search-box">
+            <img className="seach-icon-contact" src={this.props.search_icon} alt="seach-icon" />
+             <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList} ></input></div>
           </div>
         </div>
       </div>
@@ -120,8 +126,13 @@ const mapDispatchToProps = dispatch => {
 
   }
 }
+
+
 const mapStateToProps = (state) => {
   return {
+    send_icon: state.customizing.Images.send_icon,
+    search_icon: state.customizing.Images.search_icon,
+    cancel_icon: state.customizing.Images.cancel_icon,
     groups: getGroups(state)
   }
 }

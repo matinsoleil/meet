@@ -1,41 +1,105 @@
 .main-header-group-section {
-    background-color: #7198C9;
+    background-color: #fefefe;
     color: #fefefe;
     position: relative;
-    width: 100%;
+    width: 408px;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
 }
 .grid-container-header-section {
     display: grid;
+    float:left;
     grid-template-areas:
       'header-group header-group header-group header-group header-group header-group header-group'
       'search-contact search-contact search-contact search-contact search-contact search-contact search-contact';
 }
 
+.resendTo{
+    float:left;
+    height: 40px;
+    width: 408px;
+    color:black;
+    border:1px solid black;
+}
+
 .header-group {
-    height: 200px;
+    height: 80px;
+    width: 408px;
+    float:left;
     grid-area: header-group; 
     font-weight: bold;
     font-size: 12px;
-    padding: 35px ;
-    overflow: scroll;
+    padding: 1px ;
+    background-color:black;
+    position: fixed;
+    bottom: 8px;
+    right: 8px;
+    z-index: 2000;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
 }
+
+.grow-group{
+    width: 347px;
+    height:66px;
+    overflow: scroll;
+    white-space: nowrap;
+    margin-top:7px;
+    margin-bottom: 7px;
+    margin-right: 7px;
+    margin-left:7px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+}
+
 .search-contact {
     // background-color: #b3cdfd;
     grid-area: search-contact; 
     padding: 10px ;
-    border-radius: 1px 1px 1px 1px;
-    -moz-border-radius: 1px 1px 1px 1px;
-    -webkit-border-radius: 0px 0px 10px 10px;
+    float: left;
+    width: 408px;
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    outline: none;
 
 }
+
+.seach-icon-contact{
+    float:left;
+    width:21px;
+    height: 21px;
+    background-color:#ffffff;
+}
+.search-box{
+    float:left;
+    
+    height: 50px;
+    border: 6px solid #cdcdcd;
+}
+
 .input-search {
-    width: 90%;
-    padding: 10px;  
-    border-radius: 1px 1px 1px 1px;
-    -moz-border-radius: 1px 1px 1px 1px;
-    -webkit-border-radius: 10px 10px 10px 10px;
+    width: 310px;
+    height:23px;
+    padding: 5px;  
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
 }
 
+.closeGroup{
+    float:left;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+.addGroup{
+    float:right;
+    margin-right:16px;
+    margin-top:24px;
+    width:24px;
+    height:24px;
+}

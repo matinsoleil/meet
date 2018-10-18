@@ -1,0 +1,46 @@
+@media screen{
+    div.reply-options{
+        display: flex;
+        align-items: center;
+        height: 55px;
+        background-color: #f2f2f2;
+        border-radius: 2px;
+        padding: 10px 10px 10px 10px;
+        margin: 5px 5px 0 5px;
+        img{
+            flex: 1;
+            cursor: pointer;
+        }
+        .ellipsis-text{
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+        div.reply{
+            max-width: 86%;
+            flex: 15;
+            padding: 5px;
+            margin: 5px;
+            span{
+                height: 20px;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: normal;
+                letter-spacing: normal;
+                color: #5886c0;
+            }
+            div{
+                margin-top: 5px;
+                max-height: 22px;
+                font-family: Roboto;
+                font-size: 16px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: #999999;
+            }
+        }
+    }
+}
