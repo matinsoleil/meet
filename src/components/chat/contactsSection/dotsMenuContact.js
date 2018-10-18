@@ -47,10 +47,12 @@ class dotsMenuContact extends Component {
                 {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
-                        <p><a>A</a></p>
-                        <p><a>B</a></p>
-                        <p><a onClick={this.multiSelection} >Seleccionar varios</a></p>
-                        <p><a onClick={this.toggleModal} >Eliminar</a></p>
+                        <p><a>Archivar chat</a></p>
+                        <p><a>Silenciar chat</a></p>
+                        <p><a>Dejar de fijar chat</a></p>
+                        <p><a>Marcar como no leido</a></p>
+                        <p><a>Eliminar historial del chat</a></p>
+                        <p><a>Eliminar chat</a></p>
                     </div>
                 }
                 {(this.state.showModal) &&
