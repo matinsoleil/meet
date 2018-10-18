@@ -136,7 +136,7 @@
       div.menu-wrapper{
         display: flex;
         img.dots-menu{
-          display: none;
+          display: block;
           width: 20px;
           height: 100%;
           align-self: center;
@@ -149,7 +149,7 @@
           background-color: #f2f2f2;
           position: absolute;
           top: calc(50% - 5px);
-          display: none;
+          display: flex;
           flex-flow: column;
           z-index: 2;
           border-radius: 6px;

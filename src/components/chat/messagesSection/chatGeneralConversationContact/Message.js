@@ -31,7 +31,6 @@ class Message extends Component {
     }
 
     checked = (e) => {
-        console.log(e.target.checked)
         this.props.filterMessages(e.target.checked,this.props.messageObject.id);
         this.row.style.backgroundColor = (!e.target.checked) && '';
     }
@@ -65,7 +64,10 @@ class Message extends Component {
                             <span className="time">{hour}</span>
                         </div>
                     </div>
-                    <DotsMenu display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
+                    {
+                        (this.state.menuState) && 
+                        <DotsMenu showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
+                    }
                 </div>
 
                 {(this.props.multiSelect)

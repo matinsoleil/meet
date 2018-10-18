@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {multiSelectState} from './../../../../redux/actions/messagesOptions/messagesOptions';
+import { connect } from 'react-redux';
+import { multiSelectState } from './../../../../redux/actions/messagesOptions/messagesOptions';
 import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
 import ModalBox from '../../../modals/ModalBox';
 // import $ from 'jquery';
 
 class DotsMenu extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            showModal:false,
+            showModal: false,
+            showMenu: false
         }
     }
 
@@ -19,44 +20,43 @@ class DotsMenu extends Component {
             showModal: !this.state.showModal,
         });
     }
-    
-    componentDidMount(){
-        this.dots.addEventListener('click',(e)=>{
-            var style = '';
-            if(this.menu_dots.style.display === 'flex'){
-                style = 'none'
-            }else{
-                style = 'flex';
-                
-            }
-            this.menu_dots.style.display = style;
+
+    toggleMenu = () => {
+        this.setState({
+            showMenu: !this.state.showMenu
         });
     }
 
-    componentDidUpdate(){
-        this.dots.style.display = (this.props.display) ? 'block' : 'none';
-        this.menu_dots.style.display = (!this.props.display) && 'none';
+    componentDidMount() {
+        this.dots.addEventListener('click', this.toggleMenu);
+    }
+
+    componentWillUnmount(){
+        this.dots.removeEventListener('click',this.toggleMenu);
     }
 
     multiSelection = (e) => {
         this.props.multiSelectState(!this.props.multiSelect);
     }
 
-    accept = () =>{
+    accept = () => {
         this.toggleModal();
         this.props.deleteMessage(this.props.id);
     }
 
     render() {
         return (
-            <div ref={div=>{this.wrapper_menu_dots=div}} className="menu-wrapper">
-                <img ref={img=>{this.dots = img}} className="dots-menu" src={this.props.dots_menu} alt=""/>
-                <div id={`dots_dropmenu_${this.props.id}`} ref={div=>{this.menu_dots=div}} className="dots-dropmenu">
-                    <a>Responder</a>
-                    <a>Reenviar</a>
-                    <a onClick={this.multiSelection} >Seleccionar varios</a>
-                    <a onClick={this.toggleModal} >Eliminar</a>
-                </div>
+            <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper">
+                <img ref={img => { this.dots = img }} className="dots-menu" src={this.props.dots_menu} alt="" />
+                {
+                    (this.state.showMenu) &&
+                    <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
+                        <a>Responder</a>
+                        <a>Reenviar</a>
+                        <a onClick={this.multiSelection} >Seleccionar varios</a>
+                        <a onClick={this.toggleModal} >Eliminar</a>
+                    </div>
+                }
                 {(this.state.showModal) &&
                     <ModalBox body={
                         <div>
@@ -73,22 +73,22 @@ class DotsMenu extends Component {
     }
 }
 
-const mapStateToProps = state =>{
-    return{
+const mapStateToProps = state => {
+    return {
         dots_menu: state.customizing.Images.dots_menu,
         multiSelect: state.messagesOptions.multiSelect
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    return{
+    return {
         multiSelectState: (state) => {
             dispatch(multiSelectState(state));
         },
-        deleteMessage: messageId =>{
+        deleteMessage: messageId => {
             dispatch(deleteMessage(messageId));
         }
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(DotsMenu);
+export default connect(mapStateToProps, mapDispatchToProps)(DotsMenu);
