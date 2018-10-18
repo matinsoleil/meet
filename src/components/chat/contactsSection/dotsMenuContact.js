@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
 import { deleteMessage } from '../../../redux/actions/conversation/fetchConversation';
 import ModalBox from '../../modals/ModalBox';
+import DeleteContact from '../../../components/form/contact/DeleteContact'
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
 
@@ -10,14 +10,26 @@ class dotsMenuContact extends Component {
         super(props);
         this.state = {
             showModal: false,
-            showMenu: false
+            showMenu: false,
+            showModalDeleteContact: false
         }
+        this.closeModalDeleteContactAction = this.closeModalDeleteContactAction.bind(this);
     }
 
-    toggleModal = () => {
+    closeModalDeleteContactAction() {
         this.setState({
-            showModal: !this.state.showModal,
+            showModalDeleteContact: false
         });
+    }
+
+    showModalDeleteContactAction = () => {
+        this.setState({
+            showModalDeleteContact: true,
+        });
+    }
+
+    renderBodyDeleteContact = (nameContact) => {
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={nameContact} />);
     }
 
     toggleMenu = () => {
@@ -47,24 +59,14 @@ class dotsMenuContact extends Component {
                 {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
+                        <p><a onClick={this.showModalDeleteContactAction}>Eliminar chat</a></p>
                         <p><a>Archivar chat</a></p>
                         <p><a>Silenciar chat</a></p>
                         <p><a>Dejar de fijar chat</a></p>
                         <p><a>Marcar como no leido</a></p>
                         <p><a>Eliminar historial del chat</a></p>
-                        <p><a>Eliminar chat</a></p>
+                        {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
                     </div>
-                }
-                {(this.state.showModal) &&
-                    <ModalBox body={
-                        <div>
-                            <div className='title'>{'¿Seguro que desea eliminar este mensaje?'}</div>
-                            <div className='button-section'>
-                                <button onClick={this.toggleModal}>Cancelar</button>
-                                <button onClick={this.accept}>Eliminar</button>
-                            </div>
-                        </div>
-                    } />
                 }
             </div>
         );

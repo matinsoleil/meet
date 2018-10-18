@@ -32,7 +32,7 @@ class GeneralContactData extends Component {
     }
     render() {
         return (
-            <div className="contact-chat"  ref={div => { this.bubble = div }}>
+            <div className="contact-chat" ref={div => { this.bubble = div }}>
                 <div className="grid-container-contact-chat">
                     <div className="icon-contact" onClick={this.handleClick}>
                         <div className="outer-circle" >
@@ -44,13 +44,13 @@ class GeneralContactData extends Component {
                     <div className="day-last-message" onClick={this.handleClick}><p className="day-last">{this.props.contact.dayLastMessage}</p></div>
                     <div className="last-message" onClick={this.handleClick}>{this.props.contact.lastMessage}</div>
                     <div className="count-message" onClick={this.handleClick}>
-                    {
-                        this.props.contact.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.contact.countMessage}</p> </div> : null 
-                    }
+                        {
+                            this.props.contact.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.contact.countMessage}</p> </div> : null
+                        }
                     </div>
                     {
                         (this.state.menuState) &&
-                        <DotsMenuContact showDots={this.showDots} display={this.state.menuState} id={this.props.contact.id} type={null} selectable={this.state.selectable} />
+                        <DotsMenuContact showDots={this.showDots} display={this.state.menuState} name={this.props.contact.name} id={this.props.contact.id} type={null} selectable={this.state.selectable} />
                     }
                 </div>
             </div>
