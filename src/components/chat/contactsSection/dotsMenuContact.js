@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteMessage } from '../../../redux/actions/conversation/fetchConversation';
 import ModalBox from '../../modals/ModalBox';
+import { getContacts } from '../../../redux/selectors/contacts'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
+import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
+
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
 
@@ -14,9 +17,21 @@ class dotsMenuContact extends Component {
             showModalDeleteContact: false
         }
         this.closeModalDeleteContactAction = this.closeModalDeleteContactAction.bind(this);
+        this.deleteContact = this.deleteContact.bind(this);
     }
 
     closeModalDeleteContactAction() {
+        this.setState({
+            showModalDeleteContact: false
+        });
+    }
+
+    deleteContact() {
+        alert("Elimino al contacto");
+        var listContacts = this.props.contacts
+        var idContact = this.props.id;
+        var indexContact = listContacts.findIndex(item => item.id === idContact)
+        listContacts.splice(indexContact, 1)
         this.setState({
             showModalDeleteContact: false
         });
@@ -29,7 +44,7 @@ class dotsMenuContact extends Component {
     }
 
     renderBodyDeleteContact = (nameContact) => {
-        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={nameContact} />);
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={nameContact} deleteContact={this.deleteContact} />);
     }
 
     toggleMenu = () => {
@@ -75,6 +90,7 @@ class dotsMenuContact extends Component {
 
 const mapStateToProps = state => {
     return {
+        contacts: getContacts(state),
         dots_menu: state.customizing.Images.dots_menu,
         multiSelect: state.messagesOptions.multiSelect
     }
@@ -82,11 +98,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // multiSelectState: (state) => {
-        //     dispatch(multiSelectState(state));
-        // },
         deleteMessage: messageId => {
             dispatch(deleteMessage(messageId));
+        }, fetchContacts: () => {
+            dispatch(fetchContacts());
         }
     }
 }

@@ -25,7 +25,6 @@ class GeneralContactData extends Component {
     }
 
     showDots = () => {
-        console.log("Stylopm");
         this.setState({
             menuState: !this.state.menuState
         });
