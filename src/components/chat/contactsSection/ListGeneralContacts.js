@@ -29,11 +29,11 @@ class ListGeneralContacts extends Component {
                         <GeneralContactData contact={contact} onClick={this.selectContacClick} key={contact.id} />
                     )}
                 </div>
-                <div className="message-popup ">
+                {/* <div className="message-popup ">
                     <p className="text-message-popup">
-                        <span className="msg"> ((((stylopm)))) </span>
+                        <span className="msg"> stylopm </span>
                     </p>
-                </div>
+                </div> */}
             </div>
         )
     }

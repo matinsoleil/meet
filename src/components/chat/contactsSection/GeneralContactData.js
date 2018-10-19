@@ -11,9 +11,11 @@ class GeneralContactData extends Component {
             menuState: false,
         }
     }
+    
     clickChat() {
         this.props.onClick(this.props.contact.id)
     }
+    
     componentDidMount() {
         this.bubble.addEventListener('mouseenter', this.showDots);
         this.bubble.addEventListener('mouseleave', this.showDots);
@@ -29,6 +31,7 @@ class GeneralContactData extends Component {
             menuState: !this.state.menuState
         });
     }
+
     render() {
         return (
             <div className="contact-chat" ref={div => { this.bubble = div }}>

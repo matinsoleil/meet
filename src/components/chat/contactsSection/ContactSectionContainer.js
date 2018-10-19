@@ -9,9 +9,11 @@ class ContactSectionContainer extends Component {
         super(props);
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
     }
+
     showSectionGroupsClick(listContact) {
         this.props.showSectionGroups(this.props.contacts)
     }
+    
     render() {
         return (
             <div className="contacts-section-container">
