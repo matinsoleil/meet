@@ -22,10 +22,17 @@ class ListGeneralContacts extends Component {
     render() {
         const listContactsOrderByName = this.orderByName(this.props.contacts);
         return (
-            <div className="main-chat-general-list-contact">
-                {listContactsOrderByName.map(contact =>
-                    <GeneralContactData contact={contact} onClick={this.handleClick} key={contact.id} />
-                )}
+            <div>
+                <div className="main-chat-general-list-contact">
+                    {listContactsOrderByName.map(contact =>
+                        <GeneralContactData contact={contact} onClick={this.handleClick} key={contact.id} />
+                    )}
+                </div>
+                <div className="message-popup ">
+                    <p className="text-message-popup">
+                        <span className="msg"> stylopm </span>
+                    </p>
+                </div>
             </div>
         )
     }

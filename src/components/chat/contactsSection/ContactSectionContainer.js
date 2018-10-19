@@ -17,13 +17,13 @@ class ContactSectionContainer extends Component {
             <div className="contacts-section-container">
                 <GeneralDataUser user={this.props.user} contacts={this.props.contacts} />
                 <div className="chat-state">
-                <h2 className="title-chat">Chats</h2>
-                <div className="dropdown">
-                    <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
-                    <div className="dropdown-content">
-                        <a onClick={this.showSectionGroupsClick} >Nuevo chat grupal</a>
+                    <h2 className="title-chat">Chats</h2>
+                    <div className="dropdown">
+                        <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
+                        <div className="dropdown-content">
+                            <a onClick={this.showSectionGroupsClick} >Nuevo chat grupal</a>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <ListGeneralContacts contacts={this.props.listContact} />
             </div>
@@ -31,10 +31,9 @@ class ContactSectionContainer extends Component {
     }
 }
 
-const mapStateToProps = state =>{
-    return{
+const mapStateToProps = state => {
+    return {
         add_icon: state.customizing.Images.add_icon,
-       
     }
 }
 
