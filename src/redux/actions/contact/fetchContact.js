@@ -13,7 +13,7 @@ export const fetchContact = (id) => dispatch => {
                 label: response.data.label,
                 dayLastMessage: response.data.dayLastMessage,
                 lastMessage: response.data.lastMessage,
-                imgContact: response.data.imgContact,
+                imgContact: response.data.imgContact
             })
         })
 }

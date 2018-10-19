@@ -10,8 +10,8 @@ class GeneralContactData extends Component {
     }
     render() {
         return (
-            <div>
-                <div className="markerListContactGroup">
+            <div className="contact-group">
+                <div className={'markerListContactGroup'+' letterContactGroup-'+this.props.contact.name[0]}>
                     {this.props.contact.name[0]}
                 </div>
                 <div className="contact-chat-group" onClick={this.addContactGroupClick} >
