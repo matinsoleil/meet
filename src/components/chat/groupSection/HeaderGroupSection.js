@@ -80,12 +80,12 @@ class HeaderGroupSection extends Component {
     return (
       <div className="main-header-group-section">
        <div className="resendTo">
-       <span className="content-resentTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span>  
-       <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionGroups} />
+       <span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span>  
+       <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionGroups} alt="addGroup" />
        </div>
         <div className="grid-container-header-section">
           <div className="header-group">
-            <img className="addGroup" src={this.props.send_icon} onClick={this.openWindowFormCreateGroup} />
+            <img className="addGroup" src={this.props.send_icon} onClick={this.openWindowFormCreateGroup} alt="addGroup" />
             <div className="grow-group">
               {list_contacts_add_group.map(contact =>
                 <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
@@ -96,7 +96,7 @@ class HeaderGroupSection extends Component {
             
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>
-          <div className="search-contact">
+          <div className="search-contact-group">
             <div className="search-box">
             <img className="seach-icon-contact" src={this.props.search_icon} alt="seach-icon" />
              <input type="text" className="input-search" placeholder="Buscar" onChange={this.filterList} ></input></div>

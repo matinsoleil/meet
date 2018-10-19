@@ -20,7 +20,20 @@
  
 }
 
+.search-contact {
+    // background-color: #b3cdfd;
+    grid-area: search-contact; 
+    float: left;
+    width: 408px;
+    height:50px;
+    border-top:1px solid #f2f2f2;
+    margin-top:18px;
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    outline: none;
 
+}
 
 .name-user {
     grid-area: name-user; 
@@ -110,19 +123,7 @@
     color: #999999;
 }
 
-.search-contact { 
-    margin-top:20px;
-    margin-bottom: 5px;
-    border-top: 1px solid #E5E5E5;
-    grid-area: search-contact; 
-}
 
-.seach-icon-contact{
-    float:left;
-    width:21px;
-    height: 21px;
-    background-color:#ffffff;
-}
 
 .input-search-main {
     width: 65%;
