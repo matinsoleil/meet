@@ -102,14 +102,13 @@
     div.menu-wrapper {
       display: flex;
       img.dots-menu {
-        display: block;
-        width: 20px;
-        height: 100%;
-        align-self: center;
-        position: absolute;
-        cursor: pointer;
+      display:block;
+      float:left;
+      width: 3px;
+      height:16px;
       }
       div.dots-dropmenu {
+        display:block;
         min-width: 220px;
         color: #353535;
         background-color: #f2f2f2;
@@ -117,7 +116,7 @@
         top: calc(50% - 5px);
         display: flex;
         flex-flow: column;
-        z-index: 2;
+        z-index: 20000;
         border-radius: 6px;
         box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
         border: solid 1px #d2d2d2;
@@ -161,7 +160,7 @@
     }
     div.menu-wrapper {
       img.dots-menu {
-        left: -20px;
+        left: 0px;
       }
       div.dots-dropmenu {
         right: calc(100% + 14px);
@@ -183,16 +182,54 @@
     }
     div.menu-wrapper {
       img.dots-menu {
-        right: -20px;
+        right: 0px;
       }
       div.dots-dropmenu {
         left: calc(100% + 14px);
       }
     }
   }
+
+.sideMenu{
+     width: auto;
+     height: auto;
+     background-color:#F2F2F2;
+     float:right;
+     color: #353535;
+     position:fixed;
+     z-index: 10000;
+     padding-right:20px;
+     padding-left:20px;
+     padding-top:8px;
+     padding-bottom: 8px;
+     border-radius: 10px 10px 10px 10px;
+     -moz-border-radius: 10px 10px 10px 10px;
+     -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.optionSideMenu{
+    height: 23px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: 0.2px;
+    color: #323232;
+    margin-bottom: 4px;
+    margin-right: 15px;
+}
+
   .main-chat-transmitter {
     position: static;
     height: 100px;
     width: 100%;
   }
+}
+
+.menu-wrapper{
+     width:4px;
+     height:10px;
+     margin-top:16px;
 }
