@@ -113,18 +113,16 @@ class dotsMenuContact extends Component {
                 {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
-                        <p><a onClick={this.showModalDeleteConversationContactAction}>Eliminar historial del chat</a></p>
 
-                        {/*
-                        
-                        <p><a onClick={this.showModalDeleteContactAction}>Eliminar chat</a></p>                        
-                        
-                        <p><a>Archivar chat</a></p>
-                        <p><a>Silenciar chat</a></p>
-                        <p><a>Dejar de fijar chat</a></p>
-                        <p><a>Marcar como no leido</a></p> 
-                        */}
-
+                        <div className="sideMenu"> 
+                        <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}>Eliminar chat</a></p>
+                        <p className="optionSideMenu"><a>Archivar chat</a></p>
+                        <p className="optionSideMenu"><a>Silenciar chat</a></p>
+                        <p className="optionSideMenu"><a>Dejar de fijar chat</a></p>
+                        <p className="optionSideMenu"><a>Marcar como no leido</a></p>
+                        <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a>Eliminar historial del chat</a></p>
+                        {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
+                        </div>
                         {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
                         {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.id)} /> : null}
                     </div>
