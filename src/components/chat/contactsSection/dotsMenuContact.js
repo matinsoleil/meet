@@ -4,7 +4,8 @@ import { deleteMessage } from '../../../redux/actions/conversation/fetchConversa
 import ModalBox from '../../modals/ModalBox';
 import { getContacts } from '../../../redux/selectors/contacts'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
-import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
+import updateContacts from '../../../redux/actions/contacts/updateContacts'
+
 
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
@@ -27,11 +28,11 @@ class dotsMenuContact extends Component {
     }
 
     deleteContact() {
-        alert("Elimino al contacto");
         var listContacts = this.props.contacts
         var idContact = this.props.id;
         var indexContact = listContacts.findIndex(item => item.id === idContact)
         listContacts.splice(indexContact, 1)
+        this.props.updateContacts(listContacts);
         this.setState({
             showModalDeleteContact: false
         });
@@ -100,8 +101,8 @@ const mapDispatchToProps = dispatch => {
     return {
         deleteMessage: messageId => {
             dispatch(deleteMessage(messageId));
-        }, fetchContacts: () => {
-            dispatch(fetchContacts());
+        }, updateContacts: (listContacts) => {
+            dispatch(updateContacts(listContacts));
         }
     }
 }
