@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteMessage } from '../../../redux/actions/conversation/fetchConversation';
-import ModalBox from '../../modals/ModalBox';
-import { getContacts } from '../../../redux/selectors/contacts'
-import DeleteContact from '../../../components/form/contact/DeleteContact'
-import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
 import { fetchConversation } from '../../../redux/actions/conversation/fetchConversation'
 import { getConversation } from '../../../redux/selectors/conversation'
 import { deleteConversation } from '../../../redux/actions/conversation/deleteConversation'
-
-
-
+import { getContacts } from '../../../redux/selectors/contacts'
+import DeleteContact from '../../../components/form/contact/DeleteContact'
+import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
+import SilenceConversation from '../../form/contact/SilenceConversation'
+import ModalBox from '../../modals/ModalBox';
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
 
@@ -21,10 +19,14 @@ class dotsMenuContact extends Component {
             showModal: false,
             showMenu: false,
             showModalDeleteContact: false,
-            showModalDeleteConversationContact: false
+            showModalDeleteConversationContact: false,
+            showModalSilenceConversation: false
+
         }
         this.closeModalDeleteContactAction = this.closeModalDeleteContactAction.bind(this);
         this.closeModalDeleteConversationContactAction = this.closeModalDeleteConversationContactAction.bind(this);
+        this.closeModalSilenceConversationAction = this.closeModalSilenceConversationAction.bind(this);
+        this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this);
         this.deleteContact = this.deleteContact.bind(this);
         this.deleteConversationContact = this.deleteConversationContact.bind(this);
     }
@@ -41,15 +43,13 @@ class dotsMenuContact extends Component {
         });
     }
 
+    closeModalSilenceConversationAction() {
+        this.setState({
+            showModalSilenceConversation: false
+        });
+    }
+
     deleteConversationContact() {
-        // var listContacts = this.props.contacts
-        // var idContact = this.props.id;
-        // var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // listContacts.splice(indexContact, 1)
-        // this.props.updateContacts(listContacts);
-        // this.setState({
-        //     showModalDeleteContact: false
-        // });
         this.setState({
             showModalDeleteConversationContact: true,
         });
@@ -72,6 +72,12 @@ class dotsMenuContact extends Component {
         });
     }
 
+    showModalSilenceConversationAction = () => {
+        this.setState({
+            showModalSilenceConversation: true,
+        });
+    }
+
     showModalDeleteContactAction = () => {
         this.setState({
             showModalDeleteContact: true,
@@ -85,7 +91,11 @@ class dotsMenuContact extends Component {
     renderBodyDeleteConversationContact = (id) => {
         return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={id} deleteConversationContact={this.deleteConversationContact} />);
     }
-    
+
+    renderBodySilenceConversation = (id) => {
+        return (<SilenceConversation closeWindow={this.closeModalSilenceConversationAction} />);
+    }
+
     toggleMenu = () => {
         this.setState({
             showMenu: !this.state.showMenu
@@ -114,17 +124,20 @@ class dotsMenuContact extends Component {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
 
-                        <div className="sideMenu"> 
-                        <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}>Eliminar chat</a></p>
-                        <p className="optionSideMenu"><a>Archivar chat</a></p>
-                        <p className="optionSideMenu"><a>Silenciar chat</a></p>
-                        <p className="optionSideMenu"><a>Dejar de fijar chat</a></p>
-                        <p className="optionSideMenu"><a>Marcar como no leido</a></p>
-                        <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a>Eliminar historial del chat</a></p>
-                        {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
+                        <div className="sideMenu">
+                            <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}>Eliminar chat</a></p>
+                            <p className="optionSideMenu"><a>Archivar chat</a></p>
+                            <p className="optionSideMenu" onClick={this.showModalSilenceConversationAction}><a>Silenciar chat</a></p>
+                            <p className="optionSideMenu"><a>Dejar de fijar chat</a></p>
+                            <p className="optionSideMenu"><a>Marcar como no leido</a></p>
+                            <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a>Eliminar historial del chat</a></p>
+                            {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
                         </div>
                         {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
                         {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.id)} /> : null}
+                        {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.id)} /> : null}
+
+
                     </div>
                 }
             </div>
