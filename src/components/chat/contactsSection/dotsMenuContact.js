@@ -29,7 +29,7 @@ class dotsMenuContact extends Component {
         this.closeModalFileContactAction = this.closeModalFileContactAction.bind(this);
         this.closeModalFixContactAction = this.closeModalFixContactAction.bind(this);
         this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this);
-        
+        this.fixContact = this.fixContact.bind(this);
         this.deleteContact = this.deleteContact.bind(this);
         this.fileContact = this.fileContact.bind(this);
         this.deleteConversationContact = this.deleteConversationContact.bind(this);
@@ -85,16 +85,16 @@ class dotsMenuContact extends Component {
     }
 
     fixContact() {
-        alert("Fijar");
-        // var listContacts = this.props.contacts
-        // var idContact = this.props.id
-        // var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // listContacts.splice(indexContact, 1)
-        // this.props.updateContacts(listContacts)
-        // this.setState({
-        //     showModalDeleteContact: false,
-        //     showMenu: false,
-        // });
+        var listContacts = this.props.contacts
+        var idContact = this.props.id
+        var indexContact = listContacts.findIndex(item => item.id === idContact)
+        var infoContact = listContacts.find(item => item.id === idContact)
+        infoContact.pinner = infoContact.pinner === "1" ? "0" : "1";
+        var msg = infoContact.pinner === "1" ? "Se fijo el contacto" : "Se desfijo el contacto";
+        listContacts.splice(indexContact, 1)
+        listContacts.push(infoContact)
+        this.props.updateContacts(listContacts)
+        alert(msg);
     }
 
     fileContact() {
@@ -102,13 +102,12 @@ class dotsMenuContact extends Component {
         var idContact = this.props.id
         var indexContact = listContacts.findIndex(item => item.id === idContact)
         var infoContact = listContacts.find(item => item.id === idContact)
-        infoContact.file = "1";
+        infoContact.file = infoContact.file === "1" ? "0" : "1";
+        var msg = infoContact.file === "1" ? "Se archivo la conversación" : "Se desarchivo la conversación";
         listContacts.splice(indexContact, 1)
         listContacts.push(infoContact)
         this.props.updateContacts(listContacts)
-        this.setState({
-            showModalFileContact: false,
-        })
+        alert(msg);
     }
 
     showModalDeleteConversationContactAction = () => {
@@ -147,10 +146,6 @@ class dotsMenuContact extends Component {
         return (<SilenceConversation closeWindow={this.closeModalSilenceConversationAction} />);
     }
 
-    renderBodyFixContact = (id) => {
-        return (<DeleteConversationContact closeWindow={this.closeModalFixContactAction} id={id} fixContact={this.fixContact} />);
-    }
-
     toggleMenu = () => {
         this.setState({
             showMenu: !this.state.showMenu
@@ -165,13 +160,13 @@ class dotsMenuContact extends Component {
         this.dots.removeEventListener('click', this.toggleMenu);
     }
 
-
     accept = () => {
         this.toggleModal();
-        // this.props.deleteMessage(this.props.id);
     }
 
     render() {
+        const titleActionFix = this.props.contact.pinner === "0" ?  "Fijar chat" : "Dejar de fijar chat";
+        const titleActionFile = this.props.contact.file === "0" ?  "Archivar chat" : "Desarchivar chat";
         return (
             <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper">
                 <img ref={img => { this.dots = img }} className="dots-menu" src={this.props.dots_menu} alt="" />
@@ -180,16 +175,16 @@ class dotsMenuContact extends Component {
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
                         <div className="sideMenu">
                             <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}> Eliminar chat </a></p>
-                            <p className="optionSideMenu"><a onClick={this.fileContact}> Archivar chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.fileContact}> {titleActionFile} </a></p>
                             <p className="optionSideMenu"><a onClick={this.showModalSilenceConversationAction}> Silenciar chat </a></p>
-                            <p className="optionSideMenu"><a onClick={this.showModalFixContactAction}> Dejar de fijar chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.fixContact}> {titleActionFix} </a></p>
                             <p className="optionSideMenu"><a> Marcar como no leido </a></p>
                             <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
                         </div>
-                        {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
-                        {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.name)} /> : null}
-                        {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.id)} /> : null}
-                        
+                        {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.contact.name)} /> : null}
+                        {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.contact.name)} /> : null}
+                        {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.contact.id)} /> : null}
+                        {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.contact.id)} /> : null}
                     </div>
                 }
             </div>
