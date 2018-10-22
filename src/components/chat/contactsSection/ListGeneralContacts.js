@@ -6,9 +6,10 @@ import './ListGeneralContacts.scss'
 class ListGeneralContacts extends Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        this.selectContacClick = this.selectContacClick.bind(this);
+        // this.estado = this.estado.bind(this);
     }
-    handleClick(idContact) {
+    selectContacClick(idContact) {
         this.props.fetchContact(idContact);
     }
     orderByName(listContacts) {
@@ -22,10 +23,17 @@ class ListGeneralContacts extends Component {
     render() {
         const listContactsOrderByName = this.orderByName(this.props.contacts);
         return (
-            <div className="main-chat-general-list-contact">
-                {listContactsOrderByName.map(contact =>
-                    <GeneralContactData contact={contact} onClick={this.handleClick} key={contact.id} />
-                )}
+           
+                <div className="main-chat-general-list-contact">
+                    {listContactsOrderByName.map(contact =>
+                        <GeneralContactData contact={contact} onClick={this.selectContacClick} key={contact.id} />
+                    )}
+               
+                {/* <div className="message-popup ">
+                    <p className="text-message-popup">
+                        <span className="msg"> stylopm </span>
+                    </p>
+                </div> */}
             </div>
         )
     }
