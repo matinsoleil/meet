@@ -22,6 +22,7 @@ class dotsMenuContact extends Component {
             showModalDeleteContact: false,
             showModalFileContact: false,
             showModalDeleteConversationContact: false,
+            showModalSilenceConversation: false,
             showModalSilenceConversation: false
         }
         this.closeModalDeleteContactAction = this.closeModalDeleteContactAction.bind(this);
@@ -30,6 +31,7 @@ class dotsMenuContact extends Component {
         this.closeModalFileContactAction = this.closeModalFileContactAction.bind(this);
         this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this);
         this.deleteContact = this.deleteContact.bind(this);
+        this.fileContact = this.fileContact.bind(this);
         this.deleteConversationContact = this.deleteConversationContact.bind(this);
     }
 
@@ -65,28 +67,29 @@ class dotsMenuContact extends Component {
 
     deleteContact() {
         var listContacts = this.props.contacts
-        var idContact = this.props.id;
+        var idContact = this.props.id
         var indexContact = listContacts.findIndex(item => item.id === idContact)
         listContacts.splice(indexContact, 1)
-        this.props.updateContacts(listContacts);
+        this.props.updateContacts(listContacts)
         this.setState({
-            showModalDeleteContact: false
+            showModalDeleteContact: false,
+            showMenu: false,
         });
     }
 
-
     fileContact() {
         var listContacts = this.props.contacts
-        var idContact = this.props.id;
+        var idContact = this.props.id
         var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // listContacts.splice(indexContact, 1)
-        console.log(" * * * ");
-
-
-        // this.props.updateContacts(listContacts);
-        // this.setState({
-        //     showModalDeleteContact: false
-        // });
+        var infoContact = listContacts.find(item => item.id === idContact)
+        infoContact.file = "1";
+        listContacts.splice(indexContact, 1)
+        listContacts.push(infoContact)
+        this.props.updateContacts(listContacts)
+        this.setState({
+            showModalFileContact: false,
+            showMenu: false,
+        })
     }
 
     showModalDeleteConversationContactAction = () => {
@@ -156,21 +159,18 @@ class dotsMenuContact extends Component {
                 {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
-
                         <div className="sideMenu">
-                            <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}>Eliminar chat</a></p>
-                            <p className="optionSideMenu"><a onClick={this.showModalFileContactAction}>Archivar chat</a></p>
-                            <p className="optionSideMenu" onClick={this.showModalSilenceConversationAction}><a>Silenciar chat</a></p>
-                            <p className="optionSideMenu"><a>Dejar de fijar chat</a></p>
-                            <p className="optionSideMenu"><a>Marcar como no leido</a></p>
-                            <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a>Eliminar historial del chat</a></p>
+                            <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}> Eliminar chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.showModalFileContactAction}> Archivar chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.showModalSilenceConversationAction}> Silenciar chat </a></p>
+                            <p className="optionSideMenu"><a> Dejar de fijar chat </a></p>
+                            <p className="optionSideMenu"><a> Marcar como no leido </a></p>
+                            <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
                         </div>
-
                         {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
                         {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.name)} /> : null}
                         {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.id)} /> : null}
                         {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.id)} /> : null}
-
                     </div>
                 }
             </div>
