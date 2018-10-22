@@ -176,9 +176,9 @@
   "logerror": [
     {
       "user": "[anonymous]",
-      "timestamp": 1540247210,
-      "message": "TypeError: Cannot read property 'toLowerCase' of undefined",
-      "detail": "\n    in ListGeneralContacts (created by Connect(ListGeneralContacts))\n    in Connect(ListGeneralContacts) (at ContactSectionContainer.js:30)\n    in div (at ContactSectionContainer.js:19)\n    in ContactSectionContainer (created by Connect(ContactSectionContainer))\n    in Connect(ContactSectionContainer) (at ChatContainer.js:35)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "timestamp": 1539975828,
+      "message": "TypeError: Failed to execute 'addEventListener' on 'EventTarget': 2 arguments required, but only 1 present.",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
       "id": 1
     },
     {
@@ -199,6 +199,9 @@
       "dayLastMessage": "Ayer",
       "lastMessage": "Last Message",
       "countMessage": "0",
+      "silence": "1",
+      "file": "0",
+      "pinner": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp"
     },
     {
@@ -210,6 +213,9 @@
       "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
     },
     {
@@ -221,6 +227,9 @@
       "dayLastMessage": "22 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
+      "silence": "3",
+      "file": "1",
+      "pinner": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ"
     },
     {
@@ -232,6 +241,9 @@
       "dayLastMessage": "18 min",
       "lastMessage": "Last Message",
       "countMessage": "0",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AMknsVJTTstO5ex2h7DdYmiA-rmqzmXcsRwDm7nCc-mbQgv3"
     },
     {
@@ -243,6 +255,9 @@
       "dayLastMessage": "Ayer",
       "lastMessage": "Last Message",
       "countMessage": "0",
+      "silence": "0",
+      "file": "0",
+      "pinner": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrremDO1rZJn57FqEVQqS-HZSFBef6Uok3yesoyqgNUEgRU7-tQ"
     },
     {
@@ -254,6 +269,9 @@
       "dayLastMessage": "5 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4gRO_bIr2YLXI4-0_NmlZQw55vKYXLCppLfMtq10bmZ-TsiD"
     },
     {
@@ -265,6 +283,9 @@
       "dayLastMessage": "6 min",
       "lastMessage": "Last Message",
       "countMessage": "5",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMybaKtUQwGjyL2fXA7ZNY7J_vM_LSi3ToZnJ6aa6viL9FUDEf"
     },
     {
@@ -276,6 +297,9 @@
       "dayLastMessage": "7 min",
       "lastMessage": "Last Message",
       "countMessage": "10",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4e-0MFbXTwq4C_tb8NoWvmiTOyigeoBMDqd7uXhwcAjXDViN-"
     },
     {
@@ -287,6 +311,9 @@
       "dayLastMessage": "20 min",
       "lastMessage": "Last Message",
       "countMessage": "22",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
     },
     {
@@ -298,6 +325,9 @@
       "dayLastMessage": "8 min",
       "lastMessage": "Last Message",
       "countMessage": "92",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
     },
     {
@@ -309,6 +339,9 @@
       "dayLastMessage": "8 min",
       "lastMessage": "Last Message",
       "countMessage": "6",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
     },
     {
@@ -320,6 +353,9 @@
       "dayLastMessage": "8 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
     },
     {
@@ -331,6 +367,9 @@
       "dayLastMessage": "9 min",
       "lastMessage": "Last Message",
       "countMessage": "0",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3qmREi6Bag9BxxTvSCdXKqL8G2mBNjSFMi1nBZ1r92jNniSwnw"
     },
     {
@@ -342,6 +381,9 @@
       "dayLastMessage": "18 min",
       "lastMessage": "Last Message",
       "countMessage": "7",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAUelg7yg0mepGMf-N93hh6E9XrLnKwsKa4YEQ6swhDknk4F9eQ"
     },
     {
@@ -353,6 +395,9 @@
       "dayLastMessage": "6 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfBlwiKYPWMTt6ROM1-piJUzikE0EaNzi_LnnUGrIYh-aefUqB"
     },
     {
@@ -364,6 +409,9 @@
       "dayLastMessage": "7 min",
       "lastMessage": "Last Message",
       "countMessage": "0",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ"
     },
     {
@@ -375,6 +423,9 @@
       "dayLastMessage": "1 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ"
     },
     {
@@ -386,6 +437,9 @@
       "dayLastMessage": "0 min",
       "lastMessage": "Last Message",
       "countMessage": "29",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-bUtMrovoWkw733UD5sQCF6aaw5VCug-B8Wi3CCvAtaBpS8JMA"
     },
     {
@@ -397,6 +451,9 @@
       "dayLastMessage": "5 min",
       "lastMessage": "Last Message",
       "countMessage": "42",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFjQ9clTxmrIS87TaIYrymyvb3lVBa8yUaQ8ioHqFccj9pCWX"
     },
     {
@@ -408,6 +465,9 @@
       "dayLastMessage": "6 min",
       "lastMessage": "Last Message",
       "countMessage": "52",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSCDTJFjmSOib_a-T764n2AYQRIX-nMO3yMoF1K4EHrQyVTxsz"
     },
     {
@@ -419,6 +479,9 @@
       "dayLastMessage": "7 min",
       "lastMessage": "Last Message",
       "countMessage": "72",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ByyxctCPUvbgtE3yRiAbOLws_steoWeLybXvzUZvXDylO8ZU"
     },
     {
@@ -430,6 +493,9 @@
       "dayLastMessage": "8 min",
       "lastMessage": "Last Message",
       "countMessage": "21",
+      "silence": "0",
+      "file": "1",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTviwffByEVaqIZir9WNZ7CHnHC6q_AklKybQQlrZMHBCVCcTPSHg"
     },
     {
@@ -441,6 +507,9 @@
       "dayLastMessage": "9 min",
       "lastMessage": "Last Message",
       "countMessage": "26º",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwww3bn_7VHZz_ZHgyDSLsg9ukZpGikjEifw2CIPZt1zqflcK5"
     }
   ]
