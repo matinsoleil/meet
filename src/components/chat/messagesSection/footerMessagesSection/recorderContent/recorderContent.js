@@ -15,6 +15,7 @@ class RecorderContent extends Component {
     }
 
     recordAudio = () => {
+        this.props.toggleOptions();
         if (!navigator.getUserMedia)
             navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
                 navigator.mozGetUserMedia || navigator.msGetUserMedia
@@ -68,6 +69,7 @@ class RecorderContent extends Component {
                 status:"1"
               });
         }, save);
+        this.props.toggleOptions();
         this.audioRecorder = null;
     }
     render() {

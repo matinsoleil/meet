@@ -173,7 +173,15 @@
       "imgUser": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5dPFPkiansPhZUUBaZgwkcA3fVUoAUTwrdECR3yEmL7piGGisg"
     }
   ],
-  "logerror": [],
+  "logerror": [
+    {
+      "user": "[anonymous]",
+      "timestamp": 1539975828,
+      "message": "TypeError: Failed to execute 'addEventListener' on 'EventTarget': 2 arguments required, but only 1 present.",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 1
+    }
+  ],
   "contacts": [
     {
       "id": "1",
