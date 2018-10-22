@@ -13,7 +13,6 @@ import SilenceConversation from '../../form/contact/SilenceConversation'
 import ModalBox from '../../modals/ModalBox';
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
