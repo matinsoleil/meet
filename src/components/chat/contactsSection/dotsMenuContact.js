@@ -65,13 +65,11 @@ class dotsMenuContact extends Component {
             showModalSilenceConversation: false
         });
     }
-
     deleteConversationContact() {
         this.setState({
             showModalDeleteConversationContact: true,
         });
     }
-
     deleteContact() {
         var listContacts = this.props.contacts
         var idContact = this.props.id
@@ -83,7 +81,6 @@ class dotsMenuContact extends Component {
             showMenu: false,
         });
     }
-
     fixContact() {
         var listContacts = this.props.contacts
         var idContact = this.props.id
@@ -96,7 +93,6 @@ class dotsMenuContact extends Component {
         this.props.updateContacts(listContacts)
         alert(msg);
     }
-
     fileContact() {
         var listContacts = this.props.contacts
         var idContact = this.props.id
@@ -109,25 +105,21 @@ class dotsMenuContact extends Component {
         this.props.updateContacts(listContacts)
         alert(msg);
     }
-
     showModalDeleteConversationContactAction = () => {
         this.setState({
             showModalDeleteConversationContact: true,
         });
     }
-
     showModalSilenceConversationAction = () => {
         this.setState({
             showModalSilenceConversation: true,
         });
     }
-
     showModalFileContactAction = () => {
         this.setState({
             showModalFileContact: true,
         });
     }
-
     showModalDeleteContactAction = () => {
         this.setState({
             showModalDeleteContact: true,
@@ -151,7 +143,6 @@ class dotsMenuContact extends Component {
             showMenu: !this.state.showMenu
         });
     }
-
     componentDidMount() {
         this.dots.addEventListener('click', this.toggleMenu);
     }
