@@ -14,25 +14,37 @@ class FooterMessagesSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            emojiState:true,
-            textInputState:true,
-            clipState:true,
-            plusState:true,
+            emojiState: true,
+            textInputState: true,
+            clipState: true,
+            plusState: true,
+
         }
-        this.cancelMultiSelection = this.cancelMultiSelection.bind(this, this.props);
     }
 
     componentDidUpdate() {
+        (this.state.inputText) && document.addEventListener('keyup',this.keyUpSendMessage);
+        (!this.state.inputText) && document.removeEventListener('keyup', this.keyUpSendMessage);
         (this.props.multiSelect || this.props.messageSelected) && document.addEventListener('keyup', this.cancelMultiSelection);
         (!this.props.multiSelect && !this.props.messageSelected) && document.removeEventListener('keyup', this.cancelMultiSelection);
     }
 
-    cancelMultiSelection = (props, e) => {
-        (e.key === 'Escape') && props.multiSelectState(false);
+    toggleOptions = () => {
+        this.setState({
+            emojiState: !this.state.emojiState,
+            textInputState: !this.state.textInputState,
+            clipState: !this.state.clipState,
+            plusState: !this.state.plusState,
+            inputText: false
+        });
     }
 
-    toggleOptions = () => {
+    cancelMultiSelection = (e) => {
+        (e.key === 'Escape') && this.props.multiSelectState(false);
+    }
 
+    keyUpSendMessage = (e) => {
+        (e.key === 'Enter') && this.sendMessage(this.inputText.value);
     }
 
     selectFiles = (e) => {
@@ -52,12 +64,27 @@ class FooterMessagesSection extends Component {
             });
         }
     }
+
+    sendMessage = (message) => {
+        let date = new Date();
+        this.props.addMessage({
+            id: GenerateId.generate(),
+            userSend: "1",
+            userGet: "2",
+            message: message,
+            hour: `${date.getHours()}:${date.getMinutes()}`,
+            status: "1",
+        });
+        this.inputText.value = '';
+        this.setState({inputText:false});
+    }
+
     render() {
         return (
             <footer className='footer-messages-section'>
-                {(this.props.messageSelected && !this.props.multiSelect)&&
+                {(this.props.messageSelected && !this.props.multiSelect) &&
                     <div className='hideable-holder'>
-                        <ReplyOptions messageId={this.props.messageSelected}/>
+                        <ReplyOptions messageId={this.props.messageSelected} />
                     </div>
                 }
                 {
@@ -70,17 +97,22 @@ class FooterMessagesSection extends Component {
                             <div role="button" className="icon">
                                 <img src={this.props.plus} alt="" />
                             </div>
-                            <div role="button" onClick={() => { $(this.fileChooser).trigger('click'); }} className="icon">
+                            <div role="button" onClick={() => { (this.state.clipState) && $(this.fileChooser).trigger('click'); }} className="icon">
                                 <img src={this.props.clip} alt="" />
                                 <input onChange={this.selectFiles} ref={(input) => { this.fileChooser = input }} type="file" style={{ display: "none" }} multiple />
                             </div>
                             <div className="text-message">
-                                <input type="text" placeholder="chat" name="" id="" />
+                                <input ref={input=>{this.inputText=input}} onChange={e => { this.setState({ inputText: (e.target.value.length > 0) }) }} disabled={!this.state.textInputState} type="text" placeholder="chat" name="" id="" />
                                 <div className="icon emoji">
                                     <img src={this.props.emoji} alt="" />
                                 </div>
                             </div>
-                            <RecorderContent />
+                            {(this.state.inputText) ?
+                                <div onClick={()=>{this.sendMessage(this.inputText.value)}} role="button" className="icon">
+                                    <img src={this.props.send_icon} alt="" />
+                                </div> :
+                                <RecorderContent toggleOptions={this.toggleOptions} />
+                            }
                         </div>
                 }
             </footer>
@@ -97,6 +129,7 @@ const mapStateToProps = state => {
         conversation: state.conversation,
         messageSelected: state.messagesOptions.messageSelected,
         multiSelect: state.messagesOptions.multiSelect,
+        send_icon: state.customizing.Images.send_icon,
     }
 }
 
