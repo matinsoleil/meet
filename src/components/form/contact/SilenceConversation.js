@@ -6,7 +6,7 @@ const validate = values => {
     const errors = {}
     if (!values.timeSilence) {
         errors.timeSilence = 'Debe seleccionar una opción.'
-    } 
+    }
     return errors
 }
 
