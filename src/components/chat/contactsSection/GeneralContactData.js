@@ -60,7 +60,7 @@ class GeneralContactData extends Component {
                             <div className="inPoints">
                             {
                             (this.state.menuState) &&
-                            <DotsMenuContact showDots={this.showDots} display={this.state.menuState} name={this.props.contact.name} id={this.props.contact.id} type={null} selectable={this.state.selectable} />
+                            <DotsMenuContact showDots={this.showDots} display={this.state.menuState} contact={this.props.contact} id={this.props.contact.id} type={null} selectable={this.state.selectable} />
                             }
                             </div>
                              <p className="day-last">{this.props.contact.dayLastMessage}</p>
