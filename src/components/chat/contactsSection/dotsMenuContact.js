@@ -59,17 +59,18 @@ class dotsMenuContact extends Component {
         });
     }
 
-
     closeModalSilenceConversationAction() {
         this.setState({
             showModalSilenceConversation: false
         });
     }
+
     deleteConversationContact() {
         this.setState({
             showModalDeleteConversationContact: true,
         });
     }
+
     deleteContact() {
         var listContacts = this.props.contacts
         var idContact = this.props.id
@@ -81,6 +82,7 @@ class dotsMenuContact extends Component {
             showMenu: false,
         });
     }
+
     fixContact() {
         var listContacts = this.props.contacts
         var idContact = this.props.id
@@ -93,6 +95,7 @@ class dotsMenuContact extends Component {
         this.props.updateContacts(listContacts)
         alert(msg);
     }
+
     fileContact() {
         var listContacts = this.props.contacts
         var idContact = this.props.id
@@ -105,11 +108,13 @@ class dotsMenuContact extends Component {
         this.props.updateContacts(listContacts)
         alert(msg);
     }
+
     showModalDeleteConversationContactAction = () => {
         this.setState({
             showModalDeleteConversationContact: true,
         });
     }
+
     showModalSilenceConversationAction = () => {
         if (this.props.contact.silence != "0") {
             var listContacts = this.props.contacts
@@ -117,7 +122,7 @@ class dotsMenuContact extends Component {
             var indexContact = listContacts.findIndex(item => item.id === idContact)
             var infoContact = listContacts.find(item => item.id === idContact)
             infoContact.silence = "0";
-            var msg ="Se desactivo el silencio";
+            var msg = "Se desactivo el silencio";
             listContacts.splice(indexContact, 1)
             listContacts.push(infoContact)
             this.props.updateContacts(listContacts)
@@ -128,11 +133,13 @@ class dotsMenuContact extends Component {
             });
         }
     }
+
     showModalFileContactAction = () => {
         this.setState({
             showModalFileContact: true,
         });
     }
+
     showModalDeleteContactAction = () => {
         this.setState({
             showModalDeleteContact: true,
@@ -148,7 +155,7 @@ class dotsMenuContact extends Component {
     }
 
     renderBodySilenceConversation = (id) => {
-        return (<SilenceConversation closeWindow={this.closeModalSilenceConversationAction} />);
+        return (<SilenceConversation onSubmit={this.submitCreateSilence} closeWindow={this.closeModalSilenceConversationAction} />);
     }
 
     toggleMenu = () => {
@@ -166,6 +173,22 @@ class dotsMenuContact extends Component {
 
     accept = () => {
         this.toggleModal();
+    }
+
+    submitCreateSilence = values => {
+        var listContacts = this.props.contacts
+        var idContact = this.props.id
+        var indexContact = listContacts.findIndex(item => item.id === idContact)
+        var infoContact = listContacts.find(item => item.id === idContact)
+        infoContact.silence = values.timeSilence;
+        var msg = "Se activa el silencio";
+        listContacts.splice(indexContact, 1)
+        listContacts.push(infoContact)
+        this.props.updateContacts(listContacts)
+        alert(msg);
+        this.setState({
+            showModalSilenceConversation: false,
+        });
     }
 
     render() {
