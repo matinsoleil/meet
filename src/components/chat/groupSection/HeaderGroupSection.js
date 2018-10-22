@@ -84,6 +84,7 @@ class HeaderGroupSection extends Component {
        <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionGroups} alt="addGroup" />
        </div>
         <div className="grid-container-header-section">
+          <div className="block-right"></div>
           <div className="header-group">
             <img className="addGroup" src={this.props.send_icon} onClick={this.openWindowFormCreateGroup} alt="addGroup" />
             <div className="grow-group">

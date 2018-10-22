@@ -56,17 +56,26 @@ class GeneralContactData extends Component {
                             }
                         </span>
                     </div>
-                    <div className="day-last-message" onClick={this.clickChat}><p className="day-last">{this.props.contact.dayLastMessage}</p></div>
-                    <div className="last-message" onClick={this.clickChat}>{this.props.contact.lastMessage}</div>
-                    <div className="count-message" onClick={this.clickChat}>
-                        {
-                            this.props.contact.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.contact.countMessage}</p> </div> : null
-                        }
+                    <div className="day-last-message" onClick={this.clickChat}>
+                            <div className="inPoints">
+                            {
+                            (this.state.menuState) &&
+                            <DotsMenuContact showDots={this.showDots} display={this.state.menuState} name={this.props.contact.name} id={this.props.contact.id} type={null} selectable={this.state.selectable} />
+                            }
+                            </div>
+                             <p className="day-last">{this.props.contact.dayLastMessage}</p>
+
+                            
                     </div>
-                    {
-                        (this.state.menuState) &&
-                        <DotsMenuContact showDots={this.showDots} display={this.state.menuState} name={this.props.contact.name} id={this.props.contact.id} type={null} selectable={this.state.selectable} />
-                    }
+                    <div className="last-message" onClick={this.clickChat}>
+                            {this.props.contact.lastMessage}
+                    </div>
+                    <div className="count-message" onClick={this.clickChat}>
+                           {
+                            this.props.contact.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.contact.countMessage}</p> </div> : null
+                           }
+                    </div>
+
                 </div>
             </div>
         )

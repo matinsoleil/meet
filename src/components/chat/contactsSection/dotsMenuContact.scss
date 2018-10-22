@@ -105,7 +105,7 @@
       display:block;
       float:left;
       width: 3px;
-      height:16px;
+      height:10px;
       }
       div.dots-dropmenu {
         display:block;
@@ -208,6 +208,7 @@
      border: solid 1px #d2d2d2;
      background-color: #f2f2f2;
      bottom:0px;
+     margin-right: 6px;
 }
 
 .optionSideMenu{
@@ -234,7 +235,9 @@
 }
 
 .menu-wrapper{
-     width:4px;
-     height:10px;
-     margin-top:16px;
+     float:right;
+     width:20px;
+     height:20px;
+     margin-top:-2px;
+    
 }

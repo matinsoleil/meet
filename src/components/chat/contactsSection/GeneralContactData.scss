@@ -10,8 +10,13 @@
   margin-top: 8px;
 }
 
+.contact-chat:hover{
+  background-color: #d9e6f5;
+}
+
 .grid-container-contact-chat {
   display: grid;
+  float:left;
   grid-template-areas:
     "icon-contact name-contact day-last-message btns-options"
     "icon-contact last-message count-message btns-options";
@@ -19,11 +24,11 @@
   padding: 0px;
 }
 .grid-container-contact-chat > div {
-  background-color: rgba(255, 255, 255, 0.8);
   padding: 0px 0;
   margin-right: 0px;
   margin-bottom: 0px;
 }
+
 
 .btns-options {
   grid-area: btns-options;
@@ -67,30 +72,43 @@
   grid-area: name-contact;
   font-weight: bold;
   font-size: 12px;
-  margin-left: 8px;
+  margin-left: 16px;
 }
 .day-last-message {
   grid-area: day-last-message;
   justify-self: end;
+  float:right;
+  margin-top:8px;
+  margin-right:8px;
+  width:85px;
+  height:20px;
 }
 .day-last-message > p {
   font-size: 16px;
   color: #cccccc;
 }
 
+.inPoints{
+  float:right;
+  width:auto;
+  right:0px;
+}
+
 .day-last {
   display: inline-flex;
   align-items: center;
-  float: left;
+  float: right;
   width: auto;
+  height: 20px;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 0px;
+  margin-right: 8px;
 }
 
 .last-message {
   grid-area: last-message;
   margin-top: 0px;
-  margin-left: 8px;
+  margin-left: 16px;
   height: 16px;
   font-family: Roboto;
   font-size: 13px;
@@ -106,15 +124,16 @@
   justify-self: end;
 }
 .circle-count-message {
-  width: 19px;
+  width: auto;
+  min-width: 19px;
   height: 19px;
   background: #f5cd5d;
   color: #fdfdfd;
   border-radius: 50%;
   font-size: 15px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 16px;
+  margin-right: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,6 +167,7 @@
 .word-contact {
   float: left;
   width: auto;
+  max-width: 160px;
   height: 16px;
   font-family: Roboto;
   font-size: 18px;

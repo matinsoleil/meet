@@ -51,6 +51,8 @@
     float:left;
 }
 
+
+
 .header-group {
     height: 80px;
     width: 408px;
@@ -62,11 +64,20 @@
     background-color:black;
     position: fixed;
     bottom: 8px;
-    right: 8px;
+    right: 4px;
     z-index: 2000;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
+    display:block;
+}
+
+@media only screen and (max-width: 1400px) {
+    .header-group {
+     height:408px;
+     width:80px;
+
+    }
 }
 
 .grow-group{
@@ -81,6 +92,16 @@
     overflow-x: scroll;
     overflow-y: hidden;
     
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .grow-group {
+     height:347px;
+     width:66px;
+     overflow-y: scroll;
+     overflow-x: hidden;
+    }
 }
 
 .search-contact-group {
