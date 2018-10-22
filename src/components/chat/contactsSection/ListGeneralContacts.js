@@ -9,9 +9,11 @@ class ListGeneralContacts extends Component {
         this.selectContacClick = this.selectContacClick.bind(this);
         // this.estado = this.estado.bind(this);
     }
+
     selectContacClick(idContact) {
         this.props.fetchContact(idContact);
     }
+
     orderByName(listContacts) {
         const byName = listContacts.slice(0);
         return byName.sort(function (a, b) {
@@ -21,7 +23,6 @@ class ListGeneralContacts extends Component {
         });
     }
 
-
     orderByPinner(listContacts) {
         const byPinner = listContacts.slice(0);
         return byPinner.sort(function (a, b) {
@@ -30,7 +31,6 @@ class ListGeneralContacts extends Component {
             return x > y ? -1 : x < y ? 1 : 0;
         });
     }
-
 
     render() {
         const listContactsOrder = this.orderByPinner(this.props.contacts);

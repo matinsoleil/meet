@@ -111,9 +111,22 @@ class dotsMenuContact extends Component {
         });
     }
     showModalSilenceConversationAction = () => {
-        this.setState({
-            showModalSilenceConversation: true,
-        });
+        if (this.props.contact.silence != "0") {
+            var listContacts = this.props.contacts
+            var idContact = this.props.id
+            var indexContact = listContacts.findIndex(item => item.id === idContact)
+            var infoContact = listContacts.find(item => item.id === idContact)
+            infoContact.silence = "0";
+            var msg ="Se desactivo el silencio";
+            listContacts.splice(indexContact, 1)
+            listContacts.push(infoContact)
+            this.props.updateContacts(listContacts)
+            alert(msg);
+        } else {
+            this.setState({
+                showModalSilenceConversation: true,
+            });
+        }
     }
     showModalFileContactAction = () => {
         this.setState({
@@ -156,8 +169,9 @@ class dotsMenuContact extends Component {
     }
 
     render() {
-        const titleActionFix = this.props.contact.pinner === "0" ?  "Fijar chat" : "Dejar de fijar chat";
-        const titleActionFile = this.props.contact.file === "0" ?  "Archivar chat" : "Desarchivar chat";
+        const titleActionFix = this.props.contact.pinner === "0" ? "Fijar chat" : "Dejar de fijar chat";
+        const titleActionFile = this.props.contact.file === "0" ? "Archivar chat" : "Desarchivar chat";
+        const titleActionSilence = this.props.contact.silence === "0" ? "Silenciar chat" : "Cancelar silencio";
         return (
             <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper">
                 <img ref={img => { this.dots = img }} className="dots-menu" src={this.props.dots_menu} alt="" />
@@ -167,7 +181,7 @@ class dotsMenuContact extends Component {
                         <div className="sideMenu">
                             <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}> Eliminar chat </a></p>
                             <p className="optionSideMenu"><a onClick={this.fileContact}> {titleActionFile} </a></p>
-                            <p className="optionSideMenu"><a onClick={this.showModalSilenceConversationAction}> Silenciar chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.showModalSilenceConversationAction}> {titleActionSilence} </a></p>
                             <p className="optionSideMenu"><a onClick={this.fixContact}> {titleActionFix} </a></p>
                             <p className="optionSideMenu"><a> Marcar como no leido </a></p>
                             <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
