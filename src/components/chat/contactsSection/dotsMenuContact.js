@@ -7,7 +7,6 @@ import { getConversation } from '../../../redux/selectors/conversation'
 import { deleteConversation } from '../../../redux/actions/conversation/deleteConversation'
 import { getContacts } from '../../../redux/selectors/contacts'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
-import FileContact from '../../../components/form/contact/FileContact'
 import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import SilenceConversation from '../../form/contact/SilenceConversation'
 import ModalBox from '../../modals/ModalBox';
@@ -22,13 +21,15 @@ class dotsMenuContact extends Component {
             showModalFileContact: false,
             showModalDeleteConversationContact: false,
             showModalSilenceConversation: false,
-            showModalSilenceConversation: false
+            showModalFixContact: false
         }
         this.closeModalDeleteContactAction = this.closeModalDeleteContactAction.bind(this);
         this.closeModalDeleteConversationContactAction = this.closeModalDeleteConversationContactAction.bind(this);
         this.closeModalSilenceConversationAction = this.closeModalSilenceConversationAction.bind(this);
         this.closeModalFileContactAction = this.closeModalFileContactAction.bind(this);
+        this.closeModalFixContactAction = this.closeModalFixContactAction.bind(this);
         this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this);
+        
         this.deleteContact = this.deleteContact.bind(this);
         this.fileContact = this.fileContact.bind(this);
         this.deleteConversationContact = this.deleteConversationContact.bind(this);
@@ -36,7 +37,7 @@ class dotsMenuContact extends Component {
 
     closeModalDeleteContactAction() {
         this.setState({
-            showModalDeleteContact: false
+            showModalDeleteContact: false,
         });
     }
 
@@ -51,6 +52,13 @@ class dotsMenuContact extends Component {
             showModalDeleteConversationContact: false
         });
     }
+
+    closeModalFixContactAction() {
+        this.setState({
+            showModalFixContact: false
+        });
+    }
+
 
     closeModalSilenceConversationAction() {
         this.setState({
@@ -76,6 +84,19 @@ class dotsMenuContact extends Component {
         });
     }
 
+    fixContact() {
+        alert("Fijar");
+        // var listContacts = this.props.contacts
+        // var idContact = this.props.id
+        // var indexContact = listContacts.findIndex(item => item.id === idContact)
+        // listContacts.splice(indexContact, 1)
+        // this.props.updateContacts(listContacts)
+        // this.setState({
+        //     showModalDeleteContact: false,
+        //     showMenu: false,
+        // });
+    }
+
     fileContact() {
         var listContacts = this.props.contacts
         var idContact = this.props.id
@@ -87,7 +108,6 @@ class dotsMenuContact extends Component {
         this.props.updateContacts(listContacts)
         this.setState({
             showModalFileContact: false,
-            showMenu: false,
         })
     }
 
@@ -119,16 +139,16 @@ class dotsMenuContact extends Component {
         return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={nameContact} deleteContact={this.deleteContact} />);
     }
 
-    renderBodyFileContact = (nameContact) => {
-        return (<FileContact closeWindow={this.closeModalFileContactAction} nameContact={nameContact} fileContact={this.fileContact} />);
-    }
-
     renderBodyDeleteConversationContact = (id) => {
         return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={id} deleteConversationContact={this.deleteConversationContact} />);
     }
 
     renderBodySilenceConversation = (id) => {
         return (<SilenceConversation closeWindow={this.closeModalSilenceConversationAction} />);
+    }
+
+    renderBodyFixContact = (id) => {
+        return (<DeleteConversationContact closeWindow={this.closeModalFixContactAction} id={id} fixContact={this.fixContact} />);
     }
 
     toggleMenu = () => {
@@ -160,16 +180,16 @@ class dotsMenuContact extends Component {
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
                         <div className="sideMenu">
                             <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}> Eliminar chat </a></p>
-                            <p className="optionSideMenu"><a onClick={this.showModalFileContactAction}> Archivar chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.fileContact}> Archivar chat </a></p>
                             <p className="optionSideMenu"><a onClick={this.showModalSilenceConversationAction}> Silenciar chat </a></p>
-                            <p className="optionSideMenu"><a> Dejar de fijar chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.showModalFixContactAction}> Dejar de fijar chat </a></p>
                             <p className="optionSideMenu"><a> Marcar como no leido </a></p>
                             <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
                         </div>
                         {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.name)} /> : null}
                         {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.name)} /> : null}
                         {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.id)} /> : null}
-                        {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.id)} /> : null}
+                        
                     </div>
                 }
             </div>
