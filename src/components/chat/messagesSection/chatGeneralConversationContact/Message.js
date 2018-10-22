@@ -25,9 +25,9 @@ class Message extends Component {
     }
 
     showDots = () => {
-        this.setState({
+        (!this.props.multiSelect && !this.props.messageSelected)?this.setState({
             menuState: !this.state.menuState
-        });
+        }):this.setState({menuState:false});
     }
 
     checked = (e) => {
