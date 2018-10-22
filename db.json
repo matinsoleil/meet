@@ -180,6 +180,13 @@
       "message": "TypeError: Cannot read property 'toLowerCase' of undefined",
       "detail": "\n    in ListGeneralContacts (created by Connect(ListGeneralContacts))\n    in Connect(ListGeneralContacts) (at ContactSectionContainer.js:30)\n    in div (at ContactSectionContainer.js:19)\n    in ContactSectionContainer (created by Connect(ContactSectionContainer))\n    in Connect(ContactSectionContainer) (at ChatContainer.js:35)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
       "id": 1
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540247293,
+      "message": "TypeError: Cannot read property 'toLowerCase' of undefined",
+      "detail": "\n    in ListGeneralContacts (created by Connect(ListGeneralContacts))\n    in Connect(ListGeneralContacts) (at ContactSectionContainer.js:30)\n    in div (at ContactSectionContainer.js:19)\n    in ContactSectionContainer (created by Connect(ContactSectionContainer))\n    in Connect(ContactSectionContainer) (at ChatContainer.js:35)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 2
     }
   ],
   "contacts": [
