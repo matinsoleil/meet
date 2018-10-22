@@ -13,7 +13,7 @@ class ContactSectionContainer extends Component {
     showSectionGroupsClick(listContact) {
         this.props.showSectionGroups(this.props.contacts)
     }
-    
+
     render() {
         return (
             <div className="contacts-section-container">

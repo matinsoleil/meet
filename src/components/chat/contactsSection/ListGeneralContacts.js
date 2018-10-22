@@ -9,9 +9,11 @@ class ListGeneralContacts extends Component {
         this.selectContacClick = this.selectContacClick.bind(this);
         // this.estado = this.estado.bind(this);
     }
+
     selectContacClick(idContact) {
         this.props.fetchContact(idContact);
     }
+
     orderByName(listContacts) {
         const byName = listContacts.slice(0);
         return byName.sort(function (a, b) {
@@ -20,15 +22,24 @@ class ListGeneralContacts extends Component {
             return x < y ? -1 : x > y ? 1 : 0;
         });
     }
+
+    orderByPinner(listContacts) {
+        const byPinner = listContacts.slice(0);
+        return byPinner.sort(function (a, b) {
+            var x = a.pinner.toLowerCase();
+            var y = b.pinner.toLowerCase();
+            return x > y ? -1 : x < y ? 1 : 0;
+        });
+    }
+
     render() {
-        const listContactsOrderByName = this.orderByName(this.props.contacts);
+        const listContactsOrder = this.orderByPinner(this.props.contacts);
         return (
-           
-                <div className="main-chat-general-list-contact">
-                    {listContactsOrderByName.map(contact =>
-                        <GeneralContactData contact={contact} onClick={this.selectContacClick} key={contact.id} />
-                    )}
-                </div>
+            <div className="main-chat-general-list-contact">
+                {listContactsOrder.map(contact =>
+                    <GeneralContactData contact={contact} onClick={this.selectContacClick} key={contact.id} />
+                )}
+            </div>
         )
     }
 }

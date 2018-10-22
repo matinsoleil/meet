@@ -75,7 +75,6 @@ class GeneralContactData extends Component {
                             this.props.contact.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.contact.countMessage}</p> </div> : null
                            }
                     </div>
-
                 </div>
             </div>
         )
