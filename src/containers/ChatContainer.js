@@ -12,9 +12,9 @@ import { getContact } from '../redux/selectors/contact'
 import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
-import { getSearchContacts } from '../redux/selectors/searchContacts';
-import { getGroups } from '../redux/selectors/groups';
-import { getAlertGeneral } from '../redux/selectors/alertGeneral';
+import { getSearchContacts } from '../redux/selectors/searchContacts'
+import { getGroups } from '../redux/selectors/groups'
+import { getAlertGeneral } from '../redux/selectors/alertGeneral'
 import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 
@@ -30,6 +30,7 @@ class ChatContainer extends Component {
         // this.props.login();
         //this.props.logout();
     }
+
     renderBody = (contacts, user, conversation, searchContacts, groups) => {
         const listContact = (searchContacts.length === 0 ? contacts : searchContacts)
         return (
@@ -40,6 +41,7 @@ class ChatContainer extends Component {
             </div>
         );
     }
+
     render() {
         return (
             <AppFrame
@@ -47,7 +49,7 @@ class ChatContainer extends Component {
                 body={this.renderBody(this.props.contacts, this.props.user, this.props.conversation, this.props.searchContacts, this.props.groups)}
                 footer=''>
             </AppFrame>
-        );
+        )
     }
 }
 ChatContainer.defaultProps = {
@@ -95,11 +97,11 @@ const mapDispatchToProps = dispatch => {
             dispatch(getToken(params))
         },
         login: params => {
-            dispatch(login());
+            dispatch(login())
         },
         logout: () => {
-            dispatch(logout());
+            dispatch(logout())
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer)
