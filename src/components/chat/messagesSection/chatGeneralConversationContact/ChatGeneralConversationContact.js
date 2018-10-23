@@ -14,11 +14,12 @@ class ChatGeneralConversationContact extends Component {
                     const tail = (c.userSend === "1") ? this.props.out_tail : this.props.in_tail;
                     return <Message
                         key={c.id}
-                        messageObject = {c}
+                        messageObject={c}
                         tail={tail}
                         type={TypeMessageControl}
                         tailType={tailType}
                         user_icon={this.props.contact.imgContact}
+                        contacts={this.props.contacts}
                     />
                 })}
             </div>

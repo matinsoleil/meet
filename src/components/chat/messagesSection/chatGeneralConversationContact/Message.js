@@ -47,7 +47,7 @@ class Message extends Component {
     }
 
     render() {
-        let { id, message, hour, userSend } = this.props.messageObject;
+        let { id, message, hour } = this.props.messageObject;
         let { type, tail, tailType, user_icon } = this.props;
         return (
             <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row">
@@ -56,7 +56,7 @@ class Message extends Component {
                     <div className={`message-wrapper ${(message.type) ? 'no-text' : ''}`}>
                         <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>
                         <div className="message">{
-                            !(message instanceof Object) ? message : this.MessageContent(message, id, userSend)
+                            !(message instanceof Object) ? message : this.MessageContent(message, id, this.props.contacts)
                         }</div>
                         <div className="time-content">
                             <span className="time">{hour}</span>
@@ -64,7 +64,7 @@ class Message extends Component {
                     </div>
                     {
                         (this.state.menuState) &&
-                        <DotsMenu showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
+                        <DotsMenu contacts={this.props.contacts} showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
                     }
                 </div>
                 {(this.props.multiSelect)
@@ -78,7 +78,7 @@ class Message extends Component {
         );
     }
 
-    MessageContent = (message, id) => {
+    MessageContent = (message, id, contacts) => {
         switch (message.type) {
             case "0":
                 return (
@@ -108,7 +108,7 @@ class Message extends Component {
                 );
             case "4":
                 return (
-                    <ReplyMessage message={message} senderId={message.toWhoReply} />
+                    <ReplyMessage contacts={contacts} message={message} senderId={message.toWhoReply} />
                 );
             default:
                 return <div></div>;
@@ -133,8 +133,7 @@ let ReplyMessage = (props) => {
     );
 }
 ReplyMessage = connect((state) => ({
-    userId: state.users.id,
-    contacts: state.contacts
+    userId: state.users.id
 }))(ReplyMessage);
 
 const mapStateToProps = (state) => {

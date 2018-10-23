@@ -129,7 +129,7 @@ class dotsMenuContact extends Component {
             listContacts.splice(indexContact, 1)
             listContacts.push(infoContact)
             this.props.updateContacts(listContacts)
-            alert(msg)
+            this.props.showAlertGeneral(msg)
         } else {
             this.setState({
                 showModalSilenceConversation: true

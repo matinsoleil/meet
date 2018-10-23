@@ -63,6 +63,7 @@ class FooterMessagesSection extends Component {
                 status: "1"
             });
         }
+        this.scrollDown();
     }
 
     sendMessage = (message) => {
@@ -83,6 +84,13 @@ class FooterMessagesSection extends Component {
         this.inputText.value = '';
         this.setState({ inputText: false });
         this.props.cancelReply('',true);
+        this.scrollDown();
+    }
+
+    scrollDown = () => {
+        const chat_feed = document.getElementById("#main-chat-feed");
+        console.log(chat_feed.scrollHeight);
+        chat_feed.scrollTop = chat_feed.scrollHeight;
     }
 
     setMessageToReply = (message,senderId) => {
@@ -90,9 +98,6 @@ class FooterMessagesSection extends Component {
             messageToReply:message,
             senderId:senderId
         });
-        setTimeout(()=>{
-            console.log(this.state);
-        },5000)
     }
 
     render() {
