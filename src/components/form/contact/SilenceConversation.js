@@ -14,7 +14,9 @@ let silenceConversation = props => {
     const { handleSubmit, closeWindow, touched, error, warning } = props
     return (
         <div>
+            <span className="contentAnswer" >
             <p className="title-name-contact">Silenciar durante… </p>
+            </span>
             <form onSubmit={handleSubmit}>
                 <p><Field name="timeSilence" component="input" type="radio" value="1" /> 15 minutos</p>
                 <p><Field name="timeSilence" component="input" type="radio" value="2" /> 1 hora</p>
