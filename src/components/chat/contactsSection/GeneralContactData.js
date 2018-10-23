@@ -86,7 +86,7 @@ const mapStateToProps = state => {
         dots_menu: state.customizing.Images.dots_menu,
         status_user_icon: state.customizing.Images.status_user_attach_icon,
         mute_a_icon: state.customizing.Images.mute_a_icon,
-        file_icon: state.customizing.Images.file_icon,
+        file_icon: state.customizing.Images.file_icon_chat,
     }
 }
 
