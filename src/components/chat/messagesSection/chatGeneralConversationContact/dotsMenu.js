@@ -55,8 +55,8 @@ class DotsMenu extends Component {
 
     render() {
         return (
-            <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper">
-                <img ref={img => { this.dots = img }} className="dots-menu" src={this.props.dots_menu} alt="" />
+            <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper-message">
+                <img ref={img => { this.dots = img }} className="dots-menu-message" src={this.props.dots_menu} alt="" />
                 {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">

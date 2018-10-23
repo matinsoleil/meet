@@ -6,12 +6,24 @@ import './replyOptions.scss';
 
 class ReplyOptions extends Component {
 
+    componentDidMount() {
+        let { message, userSend } = this.props.messageObject;
+        this.props.setMessage((!message.type) ? message :
+            (message.type === "4") && message.message,
+            userSend
+        );
+    }
+
+    componentWillUnmount() {
+        this.props.setMessage('','');
+    }
+
     cancelReply = () => {
-        this.props.messageSelected('',true);
+        this.props.messageSelected('', true);
     }
 
     render() {
-        let { userSend , message } = MessagesHelper.getMessageById(this.props.conversation, this.props.messageId);
+        let { userSend, message } = this.props.messageObject;
         let { reply_icon, close_icon } = this.props;
         return (
             <div className="reply-options">
@@ -19,9 +31,9 @@ class ReplyOptions extends Component {
                 <div className='reply'>
                     <span className="ellipsis-text">{
                         (userSend === this.props.userId) ? 'tu' :
-                            MessagesHelper.getOwner(this.props.contacts,userSend)
+                            MessagesHelper.getOwner(this.props.contacts, userSend)
                     }</span>
-                    <div className="ellipsis-text">{(!message.type)&&message}</div>
+                    <div className="ellipsis-text">{(!message.type) ? message : (message.type === '4') && message.message}</div>
                 </div>
                 <img onClick={this.cancelReply} src={close_icon} alt={'close'} />
             </div>
@@ -33,16 +45,15 @@ const mapStateToProps = state => {
     return {
         close_icon: state.customizing.Images.close_icon,
         reply_icon: state.customizing.Images.reply_icon,
-        conversation: state.conversation,
         userId: state.users.id,
         contacts: state.contacts
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    return{
-        messageSelected: (messageId,state) =>{
-            dispatch(messageSelected(messageId,state));
+    return {
+        messageSelected: (messageId, state) => {
+            dispatch(messageSelected(messageId, state));
         }
     }
 }
