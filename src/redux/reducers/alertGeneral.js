@@ -7,7 +7,7 @@ export const alertGeneral = (state = estado, action) => {
         case 'SHOW_ALERT_GENERAL':
             return {
                 ...state,
-                msj: action.msj,
+                msj: action.payload,
                 show: true,
             }
         default:

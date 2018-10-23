@@ -1,6 +1,7 @@
 import GeneralDataUser from '../../../components/chat/contactsSection/GeneralDataUser'
 import ListGeneralContacts from '../../../components/chat/contactsSection/ListGeneralContacts'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
+// import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
@@ -11,11 +12,9 @@ class ContactSectionContainer extends Component {
         super(props);
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
     }
-
     showSectionGroupsClick(listContact) {
         this.props.showSectionGroups(this.props.contacts)
     }
-
     render() {
         return (
             <div className="contacts-section-container">
@@ -23,13 +22,13 @@ class ContactSectionContainer extends Component {
                 <div className="chat-state">
                     <h2 className="title-chat">Chats</h2>
                     <div className="dropdown">
-                        <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
                         <div className="dropdown-content">
+                        <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
                             <a onClick={this.showSectionGroupsClick} >Nuevo chat grupal</a>
                         </div>
                     </div>
                 </div>
-                {this.props.alertGeneral === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> stylopm </span> </p> </div> : null}
+                {this.props.alertGeneral.show === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> </div> : null}
                 <ListGeneralContacts contacts={this.props.listContact} />
             </div>
         );
