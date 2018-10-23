@@ -53,6 +53,42 @@
           font-stretch: normal;
           width: 100%;
           overflow-wrap: break-word;
+          div.reply{
+            display: flex;
+            flex-flow: row;
+            max-height: 86px;
+            height: 100%;
+            overflow: hidden;
+            margin: 2px 0 5px 0;
+            padding: 5px;
+            align-items: baseline;
+            background-color: rgba(255, 255, 255, 0.2);
+            div.content{
+              display: flex;
+              flex-flow: column;
+              span.owner{
+                min-height: 18px;
+                font-size: 14px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                padding: 0px;
+                margin: 0px;
+              }
+              div.toReply{
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                font-weight: unset;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 20px;
+                letter-spacing: normal;
+              }
+            }
+          }
           img.map{
             max-width: 320px;
             width: 100%;
@@ -135,10 +171,10 @@
         content: '';
         display: table;
       }
-      div.menu-wrapper{
-        display: flex;
-        img.dots-menu{
-          display: block;
+      div.menu-wrapper-message{
+        display: flex;     
+        img.dots-menu-message{
+          display: flex;
           width: 20px;
           height: 100%;
           align-self: center;
@@ -195,8 +231,8 @@
           color: #e7e7e7;
         }
       }
-      div.menu-wrapper{
-        img.dots-menu{
+      div.menu-wrapper-message{
+        img.dots-menu-message{
           left: -20px;
         }
         div.dots-dropmenu{
@@ -217,8 +253,8 @@
           color: rgba(0, 0, 0, 0.45);
         }
       }
-      div.menu-wrapper{
-        img.dots-menu{
+      div.menu-wrapper-message{
+        img.dots-menu-message{
           right: -20px;
         }
         div.dots-dropmenu{

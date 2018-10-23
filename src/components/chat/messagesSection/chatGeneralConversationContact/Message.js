@@ -4,6 +4,7 @@ import DotsMenu from './dotsMenu';
 import FileHelper from './../../../../lib/helper/fileHelper';
 import MapPosition from './../../../../lib/helper/mapPosition';
 import { filterMessages } from '../../../../redux/actions/messagesOptions/messagesOptions';
+import MessagesHelper from '../../../../lib/helper/messagesHelper';
 
 class Message extends Component {
 
@@ -25,13 +26,13 @@ class Message extends Component {
     }
 
     showDots = () => {
-        (!this.props.multiSelect && !this.props.messageSelected)?this.setState({
+        (!this.props.multiSelect && !this.props.messageSelected) ? this.setState({
             menuState: !this.state.menuState
-        }):this.setState({menuState:false});
+        }) : this.setState({ menuState: false });
     }
 
     checked = (e) => {
-        this.props.filterMessages(e.target.checked,this.props.messageObject.id);
+        this.props.filterMessages(e.target.checked, this.props.messageObject.id);
         this.row.style.backgroundColor = (!e.target.checked) ? '' : 'rgba(217,230,245, 0.5)';
     }
 
@@ -46,7 +47,7 @@ class Message extends Component {
     }
 
     render() {
-        let { id, message, hour } = this.props.messageObject;
+        let { id, message, hour, userSend } = this.props.messageObject;
         let { type, tail, tailType, user_icon } = this.props;
         return (
             <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row">
@@ -55,7 +56,7 @@ class Message extends Component {
                     <div className={`message-wrapper ${(message.type) ? 'no-text' : ''}`}>
                         <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>
                         <div className="message">{
-                            !(message instanceof Object) ? message : this.MessageContent(message, id)
+                            !(message instanceof Object) ? message : this.MessageContent(message, id, userSend)
                         }</div>
                         <div className="time-content">
                             <span className="time">{hour}</span>
@@ -105,11 +106,36 @@ class Message extends Component {
                         </div>
                     </div>
                 );
+            case "4":
+                return (
+                    <ReplyMessage message={message} senderId={message.toWhoReply} />
+                );
             default:
                 return <div></div>;
         }
     }
 }
+
+let ReplyMessage = (props) => {
+    return (
+        <div>
+            <div className="reply">
+                <div className="content">
+                    <span className="owner">{
+                        (props.senderId === props.userId) ? 'tu' :
+                            MessagesHelper.getOwner(props.contacts, props.senderId)
+                    }</span>
+                    <div className="toReply">{props.message.toReply}</div>
+                </div>
+            </div>
+            {props.message.message}
+        </div>
+    );
+}
+ReplyMessage = connect((state) => ({
+    userId: state.users.id,
+    contacts: state.contacts
+}))(ReplyMessage);
 
 const mapStateToProps = (state) => {
     return {
