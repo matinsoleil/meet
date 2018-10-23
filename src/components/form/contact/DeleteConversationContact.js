@@ -2,7 +2,7 @@ import React from 'react'
 import './DeleteContact.scss'
 
 let deleteConversationContact = props => {
-    const { closeWindow, id, deleteConversationContact } = props
+    const { closeWindow, deleteConversationContact } = props
     return (
         <div>
             <p className="title-name-contact">¿Seguro que deseas eliminar el historial del chat?</p>

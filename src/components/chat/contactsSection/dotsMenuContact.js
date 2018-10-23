@@ -116,7 +116,7 @@ class dotsMenuContact extends Component {
     }
 
     showModalSilenceConversationAction = () => {
-        if (this.props.contact.silence != "0") {
+        if (this.props.contact.silence !== "0") {
             var listContacts = this.props.contacts
             var idContact = this.props.id
             var indexContact = listContacts.findIndex(item => item.id === idContact)

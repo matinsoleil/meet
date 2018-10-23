@@ -44,7 +44,7 @@ let CreateGroupForm = props => {
   const { handleSubmit, closeWindow } = props
   return (
     <form onSubmit={handleSubmit}>
-      <Field name="nameGroup" label="Escribe el nombre del grupo" placeholder="Nombre del grupo" type="input" type="text" component={renderField} />
+      <Field name="nameGroup" label="Escribe el nombre del grupo" placeholder="Nombre del grupo" type="text" component={renderField} />
       <button className="from-create-group-btn" type="submit" >Agregar</button>
       <button className="from-create-group-btn" onClick={closeWindow}>Close</button>
     </form>
