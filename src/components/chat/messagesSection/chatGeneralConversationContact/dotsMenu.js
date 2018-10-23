@@ -11,7 +11,7 @@ class DotsMenu extends Component {
         super(props);
         this.state = {
             showModal: false,
-            showMenu: false
+            showMenu: false,
         }
     }
 
@@ -19,8 +19,8 @@ class DotsMenu extends Component {
         this.dots.addEventListener('click', this.toggleMenu);
     }
 
-    componentWillUnmount(){
-        this.dots.removeEventListener('click',this.toggleMenu);
+    componentWillUnmount() {
+        this.dots.removeEventListener('click', this.toggleMenu);
     }
 
     toggleModal = () => {
@@ -33,12 +33,24 @@ class DotsMenu extends Component {
         this.setState({
             showMenu: !this.state.showMenu
         });
+        let element = document.getElementById(`message_${this.props.id}`);
+        let content = document.getElementById('#main-chat-feed');
+        let fillContent = (this.props.type === "message-out") ? content.offsetWidth - (element.offsetLeft + (element.offsetWidth) + 240) > 0 :
+            (element.offsetLeft - 240) > 0;
+        (!fillContent)&&this.setState({
+            menuFillStyle:(this.props.type==="message-out")?{right: 'calc(0% - 12px)',left:'unset'}:
+            {left: 'calc(0% - 12px)',right:'unset'}
+        });
+    }
+
+    forwardTo = () => {
+        this.props.showSectionGroups(this.props.contacts);
     }
 
     reply = () => {
         this.toggleMenu();
         this.props.showDots();
-        this.props.messageSelected(this.props.id,true);
+        this.props.messageSelected(this.props.id, true);
     }
 
     multiSelection = (e) => {
@@ -59,9 +71,9 @@ class DotsMenu extends Component {
                 <img ref={img => { this.dots = img }} className="dots-menu-message" src={this.props.dots_menu} alt="" />
                 {
                     (this.state.showMenu) &&
-                    <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
+                    <div style={this.state.menuFillStyle} id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
                         <a onClick={this.reply}>{'Responder'}</a>
-                        <a>{'Reenviar'}</a>
+                        <a onClick={this.forwardTo}>{'Reenviar'}</a>
                         <a onClick={this.multiSelection} >{'Seleccionar varios'}</a>
                         <a onClick={this.toggleModal} >{'Eliminar'}</a>
                     </div>
@@ -71,7 +83,7 @@ class DotsMenu extends Component {
                         <div>
                             <div className='title'>{'¿Seguro que desea eliminar este mensaje?'}</div>
                             <div className='button-section'>
-                                <button onClick={()=>{this.toggleModal();this.props.showDots();}}>Cancelar</button>
+                                <button onClick={() => { this.toggleModal(); this.props.showDots(); }}>Cancelar</button>
                                 <button onClick={this.accept}>Eliminar</button>
                             </div>
                         </div>
@@ -100,8 +112,8 @@ const mapDispatchToProps = dispatch => {
         showSectionGroups: listContacs => {
             dispatch(showSectionGroups(listContacs));
         },
-        messageSelected: (messageId,state) => {
-            dispatch(messageSelected(messageId,state));
+        messageSelected: (messageId, state) => {
+            dispatch(messageSelected(messageId, state));
         }
     }
 }
