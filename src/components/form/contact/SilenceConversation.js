@@ -14,7 +14,9 @@ let silenceConversation = props => {
     const { handleSubmit, closeWindow, touched, error, warning } = props
     return (
         <div>
+            <span className="contentAnswer" >
             <p className="title-name-contact">Silenciar durante… </p>
+            </span>
             <form onSubmit={handleSubmit}>
                 <p><Field name="timeSilence" component="input" type="radio" value="1" /> 15 minutos</p>
                 <p><Field name="timeSilence" component="input" type="radio" value="2" /> 1 hora</p>
@@ -24,8 +26,10 @@ let silenceConversation = props => {
                 {touched &&
                     ((error && <p><span className="error">{error}</span></p>) ||
                         (warning && <p><span className="warning">{warning}</span></p>))}
-                <button className="from-create-group-btn" type="submit">Silenciar</button>
-                <button className="from-create-group-btn" onClick={closeWindow}>Cancelar</button>
+                 <span className="contentResponse">       
+                <button className="from-create-group-btn response" type="submit">SILENCIAR</button>
+                <button className="from-create-group-btn response" onClick={closeWindow}>CANCELAR</button>
+                </span>
             </form>
         </div>
     )
