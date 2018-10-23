@@ -9,8 +9,8 @@ let AlertCreateGroupForm = props => {
                 <p className="answer">¿Seguro que deseas eliminar el chat con {nameContact}?</p>
             </span>
             <span className="contentResponse">
-                <button className="from-create-group-btn response" onClick={deleteContact}>ELIMINAR</button>
-                <button className="from-create-group-btn response" onClick={closeWindow}>CANCELAR</button>
+                <button className="response" onClick={deleteContact}>ELIMINAR</button>
+                <button className="response" onClick={closeWindow}>CANCELAR</button>
             </span>
         </div>
     )
