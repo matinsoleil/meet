@@ -56,7 +56,6 @@ ChatContainer.defaultProps = {
     user: [],
     contact: [],
     conversation: [],
-    contactsAddGroup: [],
     groups: [],
     alertGeneral: []
 }
