@@ -6,16 +6,15 @@ import { contact } from './contact'
 import { conversation } from './conversation'
 import { searchContacts } from './searchContacts'
 import { groups } from './groups'
-
 import { countryReducer } from './country'
 import { osReducer } from './os'
 import { countriesReducer } from './countries'
 import { messageCenterReducer } from './messageCenter'
 import { customizingReducer } from './customizing'
 import { messagesOptionsReducer } from './messagesOptions'
+import { alertGeneral } from './alertGeneral'
 
-// export const reducers = combineReducers({
-  export const reducers = combineReducers({
+export const reducers = combineReducers({
   contacts,
   users,
   contact,
@@ -28,5 +27,6 @@ import { messagesOptionsReducer } from './messagesOptions'
   os: osReducer,
   messagesOptions: messagesOptionsReducer,
   messageCenterReducer,
-  form: formReducer
+  form: formReducer,
+  alertGeneral
 })

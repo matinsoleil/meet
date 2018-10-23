@@ -1,0 +1,1 @@
+export const getAlertGeneral = state => state.alertGeneral;

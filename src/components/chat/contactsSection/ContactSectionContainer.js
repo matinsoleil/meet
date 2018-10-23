@@ -1,6 +1,7 @@
 import GeneralDataUser from '../../../components/chat/contactsSection/GeneralDataUser'
 import ListGeneralContacts from '../../../components/chat/contactsSection/ListGeneralContacts'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
+import { getAlertGeneral } from '../../../redux/selectors/alertGeneral';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './ContactSectionContainer.scss'
@@ -27,6 +28,7 @@ class ContactSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
+                {this.props.alertGeneral === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> stylopm </span> </p> </div> : null}
                 <ListGeneralContacts contacts={this.props.listContact} />
             </div>
         );
@@ -36,6 +38,7 @@ class ContactSectionContainer extends Component {
 const mapStateToProps = state => {
     return {
         add_icon: state.customizing.Images.add_icon,
+        alertGeneral: getAlertGeneral(state)
     }
 }
 

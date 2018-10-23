@@ -33,6 +33,7 @@ class dotsMenuContact extends Component {
         this.deleteContact = this.deleteContact.bind(this);
         this.fileContact = this.fileContact.bind(this);
         this.deleteConversationContact = this.deleteConversationContact.bind(this);
+        
     }
 
     closeModalDeleteContactAction() {
@@ -206,7 +207,7 @@ class dotsMenuContact extends Component {
                             <p className="optionSideMenu"><a onClick={this.fileContact}> {titleActionFile} </a></p>
                             <p className="optionSideMenu"><a onClick={this.showModalSilenceConversationAction}> {titleActionSilence} </a></p>
                             <p className="optionSideMenu"><a onClick={this.fixContact}> {titleActionFix} </a></p>
-                            <p className="optionSideMenu"><a> Marcar como no leido </a></p>
+                            <p className="optionSideMenu"><a onClick={this.showMsj}> Marcar como no leido </a></p>
                             <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
                         </div>
                         {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.contact.name)} /> : null}
@@ -216,6 +217,7 @@ class dotsMenuContact extends Component {
                     </div>
                 }
             </div>
+            
         );
     }
 }
