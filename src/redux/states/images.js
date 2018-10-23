@@ -23,6 +23,6 @@ export const Images = {
     "send_icon":require('./../../img/send.svg'),
     "close_icon":require('./../../img/close-clear-disable.svg'),
     "reply_icon":require('./../../img/reply-message.svg'),
-    "file_icon":require('./../../img/file.png'),
     "mute_a_icon":require('./../../img/mute-a.png'),
+    "file_icon_chat":require('./../../img/file.png'),
 }

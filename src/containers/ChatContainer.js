@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AppFrame from '../components/AppFrame'
 import { connect } from 'react-redux'
-import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer';
+import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer'
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
 import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
@@ -14,22 +14,24 @@ import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts';
 import { getGroups } from '../redux/selectors/groups';
+import { getAlertGeneral } from '../redux/selectors/alertGeneral';
 import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
+
 class ChatContainer extends Component {
     componentDidMount() {
-        this.props.fetchContacts();
-        this.props.fetchUser();
-        this.props.fetchContact();
-        this.props.fetchConversation();
-        this.props.fetchGroups();
+        this.props.fetchContacts()
+        this.props.fetchUser()
+        this.props.fetchContact()
+        this.props.fetchConversation()
+        this.props.fetchGroups()
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();
         //this.props.logout();
     }
     renderBody = (contacts, user, conversation, searchContacts, groups) => {
-        const listContact = (searchContacts.length === 0 ? contacts : searchContacts);
+        const listContact = (searchContacts.length === 0 ? contacts : searchContacts)
         return (
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />
@@ -55,7 +57,8 @@ ChatContainer.defaultProps = {
     contact: [],
     conversation: [],
     contactsAddGroup: [],
-    groups: []
+    groups: [],
+    alertGeneral: []
 }
 const mapStateToProps = (state) => {
     return {
@@ -64,31 +67,32 @@ const mapStateToProps = (state) => {
         contact: getContact(state),
         conversation: getConversation(state),
         searchContacts: getSearchContacts(state),
-        groups: getGroups(state)
+        groups: getGroups(state),
+        alertGeneral: getAlertGeneral(state)
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
         fetchContacts: () => {
-            dispatch(fetchContacts());
+            dispatch(fetchContacts())
         },
         fetchContact: () => {
-            dispatch(fetchContact(1));
+            dispatch(fetchContact(1))
         },
         fetchConversation: () => {
-            dispatch(fetchConversation());
+            dispatch(fetchConversation())
         },
         fetchGroups: () => {
-            dispatch(fetchGroups());
+            dispatch(fetchGroups())
         },
         fetchUser: () => {
-            dispatch(fetchUser(1));
+            dispatch(fetchUser(1))
         },
         initApi: params => {
-            dispatch(initApi(params));
+            dispatch(initApi(params))
         },
         getToken: params => {
-            dispatch(getToken(params));
+            dispatch(getToken(params))
         },
         login: params => {
             dispatch(login());

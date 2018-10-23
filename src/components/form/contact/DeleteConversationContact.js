@@ -2,7 +2,7 @@ import React from 'react'
 import './DeleteContact.scss'
 
 let deleteConversationContact = props => {
-    const { closeWindow, id, deleteConversationContact } = props
+    const { closeWindow, deleteConversationContact } = props
     return (
         <div  className="contentModal">
              <span className="contentAnswer" >

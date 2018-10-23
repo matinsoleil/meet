@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addMessage } from './../../../../redux/actions/conversation/fetchConversation';
-import { multiSelectState } from '../../../../redux/actions/messagesOptions/messagesOptions';
+import { multiSelectState, messageSelected } from '../../../../redux/actions/messagesOptions/messagesOptions';
 import RecorderContent from './recorderContent/recorderContent';
 import OptionSelection from './optionsSelection/optionsSelection';
 import MessagesHelper from '../../../../lib/helper/messagesHelper';
@@ -18,12 +18,12 @@ class FooterMessagesSection extends Component {
             textInputState: true,
             clipState: true,
             plusState: true,
-
+            messageToReply: ""
         }
     }
 
     componentDidUpdate() {
-        (this.state.inputText) && document.addEventListener('keyup',this.keyUpSendMessage);
+        (this.state.inputText) && document.addEventListener('keyup', this.keyUpSendMessage);
         (!this.state.inputText) && document.removeEventListener('keyup', this.keyUpSendMessage);
         (this.props.multiSelect || this.props.messageSelected) && document.addEventListener('keyup', this.cancelMultiSelection);
         (!this.props.multiSelect && !this.props.messageSelected) && document.removeEventListener('keyup', this.cancelMultiSelection);
@@ -71,12 +71,28 @@ class FooterMessagesSection extends Component {
             id: GenerateId.generate(),
             userSend: "1",
             userGet: "2",
-            message: message,
+            message: (this.props.messageSelected && !this.props.multiSelect) ? {
+                toWhoReply:this.state.senderId,
+                type:"4",
+                toReply: this.state.messageToReply,
+                message: message
+            } : message,
             hour: `${date.getHours()}:${date.getMinutes()}`,
             status: "1",
         });
         this.inputText.value = '';
-        this.setState({inputText:false});
+        this.setState({ inputText: false });
+        this.props.cancelReply('',true);
+    }
+
+    setMessageToReply = (message,senderId) => {
+        this.setState({
+            messageToReply:message,
+            senderId:senderId
+        });
+        setTimeout(()=>{
+            console.log(this.state);
+        },5000)
     }
 
     render() {
@@ -84,7 +100,7 @@ class FooterMessagesSection extends Component {
             <footer className='footer-messages-section'>
                 {(this.props.messageSelected && !this.props.multiSelect) &&
                     <div className='hideable-holder'>
-                        <ReplyOptions messageId={this.props.messageSelected} />
+                        <ReplyOptions setMessage={this.setMessageToReply} messageObject={MessagesHelper.getMessageById(this.props.conversation, this.props.messageSelected) }/>
                     </div>
                 }
                 {
@@ -102,13 +118,13 @@ class FooterMessagesSection extends Component {
                                 <input onChange={this.selectFiles} ref={(input) => { this.fileChooser = input }} type="file" style={{ display: "none" }} multiple />
                             </div>
                             <div className="text-message">
-                                <input ref={input=>{this.inputText=input}} onChange={e => { this.setState({ inputText: (e.target.value.length > 0) }) }} disabled={!this.state.textInputState} type="text" placeholder="chat" name="" id="" />
+                                <input ref={input => { this.inputText = input }} onChange={e => { this.setState({ inputText: (e.target.value.length > 0) }) }} disabled={!this.state.textInputState} type="text" placeholder="chat" name="" id="" />
                                 <div className="icon emoji">
                                     <img src={this.props.emoji} alt="" />
                                 </div>
                             </div>
                             {(this.state.inputText) ?
-                                <div onClick={()=>{this.sendMessage(this.inputText.value)}} role="button" className="icon">
+                                <div onClick={() => { this.sendMessage(this.inputText.value) }} role="button" className="icon">
                                     <img src={this.props.send_icon} alt="" />
                                 </div> :
                                 <RecorderContent toggleOptions={this.toggleOptions} />
@@ -140,6 +156,9 @@ const mapDispatchToProps = dispatch => {
         },
         multiSelectState: state => {
             dispatch(multiSelectState(state));
+        },
+        cancelReply: (messageId,state) =>{
+            dispatch(messageSelected(messageId,state));
         }
     }
 }
