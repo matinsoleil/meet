@@ -5,6 +5,7 @@ import { getAlertGeneral } from '../../../redux/selectors/alertGeneral';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import './ContactSectionContainer.scss'
+
 class ContactSectionContainer extends Component {
     constructor(props) {
         super(props);

@@ -15,9 +15,9 @@ import { initApi, getToken, login, logout } from '../redux/actions/messageCenter
 import { getSearchContacts } from '../redux/selectors/searchContacts';
 import { getGroups } from '../redux/selectors/groups';
 import { getAlertGeneral } from '../redux/selectors/alertGeneral';
-
 import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
+
 class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts()

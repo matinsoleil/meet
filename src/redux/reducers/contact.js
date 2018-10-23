@@ -15,7 +15,7 @@ export const contact = (state = estado, action) => {
                 name: action.name,
                 photo: action.photo,
                 status: action.status,
-                label: action.label,          
+                label: action.label,
                 dayLastMessage: action.dayLastMessage,
                 lastMessage: action.lastMessage,
                 imgContact: action.imgContact,

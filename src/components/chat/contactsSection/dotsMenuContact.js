@@ -6,6 +6,7 @@ import { fetchConversation } from '../../../redux/actions/conversation/fetchConv
 import { getConversation } from '../../../redux/selectors/conversation'
 import { deleteConversation } from '../../../redux/actions/conversation/deleteConversation'
 import { getContacts } from '../../../redux/selectors/contacts'
+import { getAlertGeneral } from '../../../redux/selectors/alertGeneral';
 import DeleteContact from '../../../components/form/contact/DeleteContact'
 import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import SilenceConversation from '../../form/contact/SilenceConversation'
@@ -33,7 +34,6 @@ class dotsMenuContact extends Component {
         this.deleteContact = this.deleteContact.bind(this);
         this.fileContact = this.fileContact.bind(this);
         this.deleteConversationContact = this.deleteConversationContact.bind(this);
-        
     }
 
     closeModalDeleteContactAction() {
@@ -226,8 +226,10 @@ const mapStateToProps = state => {
     return {
         contacts: getContacts(state),
         conversation: getConversation(state),
+        alertGeneral: getAlertGeneral(state),
         dots_menu: state.customizing.Images.dots_menu,
-        multiSelect: state.messagesOptions.multiSelect
+        multiSelect: state.messagesOptions.multiSelect,
+
     }
 }
 
