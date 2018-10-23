@@ -58,13 +58,27 @@ class HeaderGroupSection extends Component {
   }
 
   submitCreateGroup = values => {
-    let newGroup = this.props.list_contacts_add_group
-    let newGroupElemnt = []
-    newGroupElemnt.push({ contacts: newGroup }, { name: values.nameGroup })
+    let contactsGroup = this.props.list_contacts_add_group
+    const name = values.nameGroup;
+    const id = Math.floor(+new Date() / 1000);
+    let newGroupElemnt = [{
+      "id": id,
+      "name": name,
+      "photo": "ruta",
+      "status": "Status test",
+      "label": "label",
+      "dayLastMessage": "3 min",
+      "lastMessage": "Last Message",
+      "countMessage": "1",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
+      "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
+    }]
     this.props.creacteGroup(newGroupElemnt)
-    this.setState({
-      showModalCreateGroup: false
-    })
+    // this.setState({
+    //   showModalCreateGroup: false
+    // })
   }
 
   renderBodyCreateGroup = (contacts) => {
