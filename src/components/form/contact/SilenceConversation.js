@@ -24,8 +24,10 @@ let silenceConversation = props => {
                 {touched &&
                     ((error && <p><span className="error">{error}</span></p>) ||
                         (warning && <p><span className="warning">{warning}</span></p>))}
-                <button className="from-create-group-btn" type="submit">Silenciar</button>
-                <button className="from-create-group-btn" onClick={closeWindow}>Cancelar</button>
+                 <span className="contentResponse">       
+                <button className="from-create-group-btn response" type="submit">SILENCIAR</button>
+                <button className="from-create-group-btn response" onClick={closeWindow}>CANCELAR</button>
+                </span>
             </form>
         </div>
     )
