@@ -39,6 +39,12 @@ class ListGeneralContacts extends Component {
                 {listContactsOrder.map(contact =>
                     <GeneralContactData contact={contact} onClick={this.selectContacClick} key={contact.id} />
                 )}
+
+                <div className="message-popup ">
+                    <p className="text-message-popup">
+                        <span className="msg"> stylopm </span>
+                    </p>
+                </div>
             </div>
         )
     }
