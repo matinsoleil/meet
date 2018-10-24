@@ -5,31 +5,31 @@ import { getGroups } from '../../../redux/selectors/groups'
 import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
 import fetchGroups from '../../../redux/actions/groups/fetchGroups'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
+import hideAlertGeneral from '../../../redux/actions/alertGeneral/hideAlertGeneral'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
-
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './ChatsListsSectionContainer.scss'
-
 class ChatsListsSectionContainer extends Component {
     constructor(props) {
         super(props);
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
+        this.hideMensajeGeneralClick = this.hideMensajeGeneralClick.bind(this);
     }
     showSectionGroupsClick(listContact) {
         this.props.showSectionGroups(this.props.contacts)
     }
-
-    // orderByName(list) {
-    //     const byName = list.slice(0);
-    //     return byName.sort(function (a, b) {
-    //         var x = a.name.toLowerCase();
-    //         var y = b.name.toLowerCase();
-    //         return x < y ? -1 : x > y ? 1 : 0;
-    //     });
-    // }
-
+    hideMensajeGeneralClick() {
+        this.props.hideAlertGeneral()
+    }
+    orderByName(list) {
+        const byName = list.slice(0);
+        return byName.sort(function (a, b) {
+            var x = a.name.toLowerCase();
+            var y = b.name.toLowerCase();
+            return x < y ? -1 : x > y ? 1 : 0;
+        });
+    }
     orderByPinner(list) {
         const byPinner = list.slice(0);
         return byPinner.sort(function (a, b) {
@@ -38,18 +38,14 @@ class ChatsListsSectionContainer extends Component {
             return x > y ? -1 : x < y ? 1 : 0;
         });
     }
-
-
-    grouplistChast(){
+    grouplistChast() {
         const contacts = this.props.contacts
         const groups = this.props.groups.groups
         const list = []
-        contacts.map(contact => list.push(contact) )
-        groups.map(group => list.push(group) )
+        contacts.map(contact => list.push(contact))
+        groups.map(group => list.push(group))
         return this.orderByPinner(list);
     }
-
-
     render() {
         const listChats = this.grouplistChast()
         return (
@@ -64,23 +60,20 @@ class ChatsListsSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
-                {this.props.alertGeneral.show === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> </div> : null}
+                {this.props.alertGeneral.show === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> <p className="text-message-popup"> <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span> </p> </div> : null}
                 <ListGeneralChats listChats={listChats} />
             </div>
         );
     }
 }
-
 const mapStateToProps = state => {
     return {
         contacts: getContacts(state),
         groups: getGroups(state),
-
         add_icon: state.customizing.Images.add_icon,
         alertGeneral: getAlertGeneral(state)
     }
 }
-
 const mapDispatchToProps = dispatch => {
     return {
         fetchContacts: () => {
@@ -92,6 +85,9 @@ const mapDispatchToProps = dispatch => {
         showSectionGroups: (listaContact) => {
             dispatch(showSectionGroups(listaContact));
         },
+        hideAlertGeneral: () => {
+            dispatch(hideAlertGeneral());
+        }
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ChatsListsSectionContainer);

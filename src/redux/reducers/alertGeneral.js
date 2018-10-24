@@ -10,6 +10,12 @@ export const alertGeneral = (state = estado, action) => {
                 msj: action.payload,
                 show: true,
             }
+        case 'HIDE_ALERT_GENERAL':
+            return {
+                ...state,
+                msj: null,
+                show: false,
+            }
         default:
             return state
     }
