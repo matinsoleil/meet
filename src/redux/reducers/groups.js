@@ -55,10 +55,9 @@ export const groups = (state = estado, action) => {
             return {
                 ...state,
                 id: null,
-                list_contacts: null,
-                list_contacts_add_group: null,
-                filter_contacts: null,
-        
+                list_contacts: [],
+                list_contacts_add_group: [],
+                filter_contacts: [],
                 view: false,
                 groups: estado.groups
             }
@@ -70,7 +69,6 @@ export const groups = (state = estado, action) => {
                 list_contacts_add_group: [],
                 select_contacts: [],
                 filter_contacts: [],
-        
                 view: true,
                 groups: estado.groups
             }
@@ -82,7 +80,6 @@ export const groups = (state = estado, action) => {
                 list_contacts_add_group: [],
                 filter_contacts: [],
                 select_contacts: [],
-        
                 view: false,
                 groups: estado.groups
             }
@@ -108,12 +105,16 @@ export const groups = (state = estado, action) => {
         case 'ADD_GROUP':
             const createGroup = state.groups
             createGroup.push(action.payload);
-        return {
+            return {
                 ...state,
                 groups: createGroup,
+                id: null,
+                list_contacts: [],
+                list_contacts_add_group: [],
+                filter_contacts: [],
+                select_contacts: [],
                 view: false
             }
-
         default:
             return state
     }

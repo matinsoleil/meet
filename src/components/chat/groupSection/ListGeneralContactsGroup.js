@@ -25,9 +25,7 @@ class ListGeneralContactsGroup extends Component {
         var listContacts = this.props.contacts
         var filter_contacts = this.props.filter_contacts
         var listAddContactsGroup = this.props.list_contacts_add_group
-        var indexContact = listContacts.findIndex(item => item.id === idContact)
         var infoContact = listContacts.find(item => item.id === idContact)
-        listContacts.splice(indexContact, 1)
         listAddContactsGroup.push(infoContact)
         if (filter_contacts.length !== 0) {
             var listAddContactsGroupFilter = filter_contacts
@@ -35,7 +33,6 @@ class ListGeneralContactsGroup extends Component {
             filter_contacts.splice(indexContactFilter, 1)
             this.props.updateFilterContactsAddGroup(filter_contacts)
         }
-        this.props.updateListContactsGroup(listContacts)
         this.props.updateListContactsAddGroup(listAddContactsGroup)
     }
     render() {

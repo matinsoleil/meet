@@ -31,13 +31,17 @@ class ChatContainer extends Component {
         //this.props.logout();
     }
 
-    renderBody = (contacts, user, conversation, searchContacts, groups) => {
-        const listContact = (searchContacts.length === 0 ? contacts : searchContacts)
+    renderBody = (contacts, user, conversation, groups) => {
+
+        console.log(" * * * ")
+        console.log(contacts)
+        console.log(" * * * ")
+        
         return (
             <div className="main-chat">
-                <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />
+                <ContactSectionContainer user={user} contacts={contacts}/>
                 <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
-                {groups.view ? <GroupSectionContainer groups={groups} /> : null}
+                {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
             </div>
         );
     }
@@ -46,7 +50,7 @@ class ChatContainer extends Component {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(this.props.contacts, this.props.user, this.props.conversation, this.props.searchContacts, this.props.groups)}
+                body={this.renderBody(this.props.contacts, this.props.user, this.props.conversation, this.props.groups)}
                 footer=''>
             </AppFrame>
         )
