@@ -56,7 +56,8 @@ class FooterMessagesSection extends Component {
                 userGet: "2",
                 message: {
                     type: "3",
-                    fileName: file.name.split('.')[0],
+                    blobURL:URL.createObjectURL(file),
+                    fileName: file.name,
                     size: file.size
                 },
                 hour: `${date.getHours()}:${date.getMinutes()}`,
