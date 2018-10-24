@@ -6,7 +6,7 @@ const estado = {
     view: false,
     groups: [
         {
-            "id": "1",
+            "id": "1G",
             "name": "Grupo 1",
             "photo": "ruta",
             "status": "Status test",
@@ -17,10 +17,11 @@ const estado = {
             "silence": "1",
             "file": "0",
             "pinner": "1",
-            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
+            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
+            "typeChat":"2"
         },
         {
-            "id": "2",
+            "id": "2G",
             "name": "Grupo 2",
             "photo": "ruta",
             "status": "Status test",
@@ -31,10 +32,11 @@ const estado = {
             "silence": "0",
             "file": "0",
             "pinner": "0",
-            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
+            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
+            "typeChat":"2"
         },
         {
-            "id": "3",
+            "id": "3G",
             "name": "Grupo 3",
             "photo": "ruta",
             "status": "Status test",
@@ -45,7 +47,8 @@ const estado = {
             "silence": "3",
             "file": "1",
             "pinner": "1",
-            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
+            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
+            "typeChat":"2"
         }]
 
 }

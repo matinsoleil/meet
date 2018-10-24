@@ -101,8 +101,11 @@ class Message extends Component {
                     <div className="file">
                         <img src={this.props.file_icon} alt="file-icon" />
                         <div className="file-info">
+                            <a href={message.blobURL} download={message.fileName} className="download-icon">
+                                <img src={this.props.download_icon} alt="" />
+                            </a>
                             <span>{FileHelper.humanFileSize(message.size, true)}</span>
-                            <span>{message.fileName}</span>
+                            <span>{message.fileName.split('.')[0]}</span>
                         </div>
                     </div>
                 );
@@ -141,6 +144,7 @@ const mapStateToProps = (state) => {
         file_icon: state.customizing.Images.file_icon,
         multiSelect: state.messagesOptions.multiSelect,
         messageSelected: state.messagesOptions.messageSelected,
+        download_icon: state.customizing.Images.download_icon,
     }
 }
 

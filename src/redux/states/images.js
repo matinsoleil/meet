@@ -25,4 +25,5 @@ export const Images = {
     "reply_icon":require('./../../img/reply-message.svg'),
     "mute_a_icon":require('./../../img/mute-a.png'),
     "file_icon_chat":require('./../../img/file.png'),
+    "download_icon":require('./../../img/download-icon.svg'),
 }
