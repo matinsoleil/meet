@@ -1,7 +1,6 @@
 import GeneralDataUser from '../../../components/chat/contactsSection/GeneralDataUser'
 import ListGeneralContacts from '../../../components/chat/contactsSection/ListGeneralContacts'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
-// import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
@@ -30,7 +29,7 @@ class ContactSectionContainer extends Component {
                     </div>
                 </div>
                 {this.props.alertGeneral.show === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> </div> : null}
-                <ListGeneralContacts contacts={this.props.listContact} />
+                <ListGeneralContacts contacts={this.props.contacts} />
             </div>
         );
     }

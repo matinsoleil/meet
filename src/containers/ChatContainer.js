@@ -12,9 +12,9 @@ import { getContact } from '../redux/selectors/contact'
 import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
-import { getSearchContacts } from '../redux/selectors/searchContacts';
-import { getGroups } from '../redux/selectors/groups';
-import { getAlertGeneral } from '../redux/selectors/alertGeneral';
+import { getSearchContacts } from '../redux/selectors/searchContacts'
+import { getGroups } from '../redux/selectors/groups'
+import { getAlertGeneral } from '../redux/selectors/alertGeneral'
 import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 
@@ -30,24 +30,30 @@ class ChatContainer extends Component {
         // this.props.login();
         //this.props.logout();
     }
-    renderBody = (contacts, user, conversation, searchContacts, groups) => {
-        const listContact = (searchContacts.length === 0 ? contacts : searchContacts)
+
+    renderBody = (contacts, user, conversation, groups) => {
+
+        console.log(" * * * ")
+        console.log(contacts)
+        console.log(" * * * ")
+        
         return (
             <div className="main-chat">
-                <ContactSectionContainer user={user} contacts={contacts} listContact={listContact} />
+                <ContactSectionContainer user={user} contacts={contacts}/>
                 <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
-                {groups.view ? <GroupSectionContainer groups={groups} /> : null}
+                {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
             </div>
         );
     }
+
     render() {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(this.props.contacts, this.props.user, this.props.conversation, this.props.searchContacts, this.props.groups)}
+                body={this.renderBody(this.props.contacts, this.props.user, this.props.conversation, this.props.groups)}
                 footer=''>
             </AppFrame>
-        );
+        )
     }
 }
 ChatContainer.defaultProps = {
@@ -56,7 +62,6 @@ ChatContainer.defaultProps = {
     user: [],
     contact: [],
     conversation: [],
-    contactsAddGroup: [],
     groups: [],
     alertGeneral: []
 }
@@ -95,11 +100,11 @@ const mapDispatchToProps = dispatch => {
             dispatch(getToken(params))
         },
         login: params => {
-            dispatch(login());
+            dispatch(login())
         },
         logout: () => {
-            dispatch(logout());
+            dispatch(logout())
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ChatContainer)

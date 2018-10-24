@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import './GeneralContactDataGroup.scss'
 class GeneralContactData extends Component {
-    constructor(...props) {
-        super(...props);
-        this.addContactGroupClick = this.addContactGroupClick.bind(this);
+
+    constructor(props) {
+        super(props)
+        this.addContactGroupClick = this.addContactGroupClick.bind(this)
     }
+
     addContactGroupClick() {
         this.props.onClick(this.props.contact.id)
     }
+
     render() {
         return (
             <div className="contact-group">
@@ -33,4 +36,4 @@ class GeneralContactData extends Component {
         )
     }
 }
-export default GeneralContactData;
+export default GeneralContactData
