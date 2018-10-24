@@ -274,15 +274,14 @@
 
 
 .contentModalDeleteMessge{
-  width:290px;
-  height: auto;
+  width:310px;
+  height: 110px;
   margin: 15% auto; /* 15% from the top and centered */
-  padding-top: 16px;
-  padding-left:15px;
-  padding-right:15px;
-  padding-bottom: 16px;
+  padding-top: 0px;
+  padding-left:0px;
+  padding-right:0px;
+  padding-bottom:0px;
   border: 1px;
-  float:left;
   // width: 40%; /* Could be more or less, depending on screen size */
   color: rgb(0, 0, 0);
   border-radius: 2px;
@@ -294,19 +293,22 @@
 
 .contentAnswerDeleteMessage{
   float:left;
-  width:270px;
-  height:auto;
-  margin:0px;
+  width:310px !important;
+  height:auto !important;
   padding: 0px;
-  border:1px solid black;
+  white-space: pre-line;
+  word-wrap: break-word; 
 }
 
 .answerDeleteMessage{
   float:left;
-  text-align:left;
-  width:270px;
+  text-align:justify;
+  display: block;
+  white-space: pre-line;
+  word-wrap:break-word;
+  width:280px !important;
   height: auto;
-  margin:0px;
+  margin:15px;
   padding:0px;
   -webkit-text-stroke: 0.5px #979797;
   font-family: Roboto;
@@ -316,7 +318,8 @@
   font-stretch: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  color: rgba(0, 0, 0, 0.87);   
+  color: rgba(0, 0, 0, 0.87);  
+  clear:both; 
 }
 
 .contentResponse{
