@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 import GeneralContactData from './GeneralContactData'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import { connect } from 'react-redux'
-import './ListGeneralContacts.scss'
+import './ListGeneralChats.scss'
 class ListGeneralContacts extends Component {
     constructor(props) {
         super(props);
         this.selectContacClick = this.selectContacClick.bind(this);
-        // this.estado = this.estado.bind(this);
     }
 
     selectContacClick(idContact) {

@@ -1,12 +1,12 @@
-import GeneralDataUser from '../../../components/chat/chatsSection/GeneralDataUser'
-import ListGeneralContacts from '../../../components/chat/chatsSection/ListGeneralContacts'
+import GeneralDataUser from './GeneralDataUser'
+import ListGeneralChats from './ListGeneralChats'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import './ContactSectionContainer.scss'
+import './ChatsListsSectionContainer.scss'
 
-class ContactSectionContainer extends Component {
+class ChatsListsSectionContainer extends Component {
     constructor(props) {
         super(props);
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
@@ -21,15 +21,14 @@ class ContactSectionContainer extends Component {
                 <div className="chat-state">
                     <h2 className="title-chat">Chats</h2>
                     <div className="dropdown">
-                    <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
+                        <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
                         <div className="dropdown-content">
-                        
                             <a onClick={this.showSectionGroupsClick} >Nuevo chat grupal</a>
                         </div>
                     </div>
                 </div>
                 {this.props.alertGeneral.show === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> </div> : null}
-                <ListGeneralContacts contacts={this.props.contacts} />
+                <ListGeneralChats contacts={this.props.contacts} />
             </div>
         );
     }
@@ -49,4 +48,4 @@ const mapDispatchToProps = dispatch => {
         },
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ContactSectionContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ChatsListsSectionContainer);
