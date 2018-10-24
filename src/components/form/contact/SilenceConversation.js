@@ -15,18 +15,20 @@ let silenceConversation = props => {
     return (
         <div>
             <span className="contentAnswer" >
-            <p className="title-name-contact">Silenciar durante… </p>
+            <p  className="answer" >Silenciar durante… </p>
             </span>
             <form onSubmit={handleSubmit}>
-                <p><Field name="timeSilence" component="input" type="radio" value="1" /> 15 minutos</p>
-                <p><Field name="timeSilence" component="input" type="radio" value="2" /> 1 hora</p>
-                <p><Field name="timeSilence" component="input" type="radio" value="3" /> 8 horas</p>
-                <p><Field name="timeSilence" component="input" type="radio" value="5" /> 1 año</p>
-                <p><Field name="timeSilence" component="input" type="radio" value="4" /> 1 semana</p>
+                <span className="contentOptions">
+                <p className="contentOption"><Field name="timeSilence" component="input" type="radio" value="1" /> 15 minutos</p>
+                <p className="contentOption"><Field name="timeSilence" component="input" type="radio" value="2" /> 1 hora</p>
+                <p className="contentOption"><Field name="timeSilence" component="input" type="radio" value="3" /> 8 horas</p>
+                <p className="contentOption"><Field name="timeSilence" component="input" type="radio" value="5" /> 1 año</p>
+                <p className="contentOption"><Field name="timeSilence" component="input" type="radio" value="4" /> 1 semana</p>
+                </span>
                 {touched &&
                     ((error && <p><span className="error">{error}</span></p>) ||
                         (warning && <p><span className="warning">{warning}</span></p>))}
-                 <span className="contentResponse">       
+                 <span className="contentResponseBroad">       
                 <button className="from-create-group-btn response" type="submit">SILENCIAR</button>
                 <button className="from-create-group-btn response" onClick={closeWindow}>CANCELAR</button>
                 </span>

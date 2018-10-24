@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import "./optionsSelection.scss"
 import { deleteMessagesSelected } from '../../../../../redux/actions/messagesOptions/messagesOptions';
 import ModalBox from './../../../../modals/ModalBox';
+import { showSectionGroups } from '../../../../../redux/actions/groups/showSectionGroups';
+
 class OptionsSelection extends Component {
 
     constructor(props) {
@@ -33,7 +35,7 @@ class OptionsSelection extends Component {
                 {(this.props.type === '3') &&
                     <IconButton className="download-icon" image={this.props.forward} name='Descargar' />
                 }
-                <IconButton image={this.props.forward} name='Reenviar' />
+                <IconButton onClick={()=>{this.props.showSectionGroups(this.props.contacts)}} image={this.props.forward} name='Reenviar' />
                 <IconButton onClick={this.deleteMessages} image={this.props.trash} name='Eliminar' />
                 {(this.state.showModal) &&
                     <ModalBox body={
@@ -66,6 +68,7 @@ const mapStateToProps = state => {
         forward: state.customizing.Images.forward,
         trash: state.customizing.Images.trash,
         messages: state.messagesOptions.messages,
+        contacts: state.contacts,
     }
 }
 
@@ -73,6 +76,9 @@ const mapDispathToProps = dispatch => {
     return {
         deleteMessagesSelected: messagesId => {
             dispatch(deleteMessagesSelected(messagesId));
+        },
+        showSectionGroups: listContacs => {
+            dispatch(showSectionGroups(listContacs));
         }
     }
 }

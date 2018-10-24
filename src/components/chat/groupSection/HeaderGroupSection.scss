@@ -64,7 +64,7 @@
     background-color:black;
     position: fixed;
     bottom: 8px;
-    right: 4px;
+    right: 6px;
     z-index: 2000;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
@@ -74,9 +74,23 @@
 
 @media only screen and (max-width: 1400px) {
     .header-group {
-     height:408px;
-     width:80px;
+     width:260px;
+     display:block;
+    
+    }
+}
 
+@media only screen and (max-width: 1200px) {
+    .header-group {
+        width:190px;
+        display:block;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .header-group {
+        width:108px;
+        display:none;
     }
 }
 
@@ -95,12 +109,10 @@
 }
 
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1500px) {
     .grow-group {
-     height:347px;
-     width:66px;
-     overflow-y: scroll;
-     overflow-x: hidden;
+     overflow-x: scroll;
+     overflow-y: hidden;
     }
 }
 
