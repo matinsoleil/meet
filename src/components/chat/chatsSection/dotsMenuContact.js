@@ -74,16 +74,21 @@ class dotsMenuContact extends Component {
     }
 
     deleteContact() {
-        var listContacts = this.props.contacts
-        var idContact = this.props.id
-        var indexContact = listContacts.findIndex(item => item.id === idContact)
-        listContacts.splice(indexContact, 1)
-        this.props.updateContacts(listContacts)
-        this.setState({
-            showModalDeleteContact: false,
-            showMenu: false
-        });
-        this.props.showAlertGeneral("Se elimino el contacto")
+
+        alert("Aqui ando");
+
+
+        console.log(this.props)
+        // var listContacts = this.props.contacts
+        // var idContact = this.props.id
+        // var indexContact = listContacts.findIndex(item => item.id === idContact)
+        // listContacts.splice(indexContact, 1)
+        // this.props.updateContacts(listContacts)
+        // this.setState({
+        //     showModalDeleteContact: false,
+        //     showMenu: false
+        // });
+        // this.props.showAlertGeneral("Se elimino el contacto")
     }
 
     fixContact() {
@@ -212,13 +217,13 @@ class dotsMenuContact extends Component {
                             <p className="optionSideMenu"><a onClick={this.showMsj}> Marcar como no leido </a></p>
                             <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
                         </div>
-                      
+
                     </div>
                 }
-                        {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.contact.name)} /> : null}
-                        {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.contact.name)} /> : null}
-                        {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.contact.id)} /> : null}
-                        {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.contact.id)} /> : null}
+                {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.contact.name)} /> : null}
+                {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.contact.name)} /> : null}
+                {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.contact.id)} /> : null}
+                {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.contact.id)} /> : null}
             </div>
         )
     }

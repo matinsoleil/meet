@@ -1,5 +1,5 @@
 import GeneralDataUser from './GeneralDataUser'
-import ListGeneralChats from './ListGeneralChats'
+import ListChats from './ListChats'
 import { getContacts } from '../../../redux/selectors/contacts'
 import { getGroups } from '../../../redux/selectors/groups'
 import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
@@ -61,7 +61,7 @@ class ChatsListsSectionContainer extends Component {
                     </div>
                 </div>
                 {this.props.alertGeneral.show === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> <p className="text-message-popup"> <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span> </p> </div> : null}
-                <ListGeneralChats listChats={listChats} />
+                <ListChats listChats={listChats} />
             </div>
         );
     }
