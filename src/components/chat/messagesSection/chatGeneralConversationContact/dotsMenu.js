@@ -80,12 +80,14 @@ class DotsMenu extends Component {
                 }
                 {(this.state.showModal) &&
                     <ModalBox body={
-                        <div>
-                            <div className='title'>{'¿Seguro que desea eliminar este mensaje?'}</div>
-                            <div className='button-section'>
-                                <button onClick={() => { this.toggleModal(); this.props.showDots(); }}>Cancelar</button>
-                                <button onClick={this.accept}>Eliminar</button>
-                            </div>
+                        <div className="contentModalDeleteMessge">
+                              <span className="contentAnswerDeleteMessage" >
+                               <p className="answerDeleteMessage">{'¿Seguro que desea eliminar este mensaje?'}</p>
+                             </span>
+                             <span className="contentResponse">
+                                <button className="response" onClick={() => { this.toggleModal(); this.props.showDots(); }}>CANCELAR</button>
+                                <button className="response" onClick={this.accept}>ELIMINAR</button>
+                            </span>
                         </div>
                     } />
                 }

@@ -13,7 +13,7 @@ const validate = values => {
 let silenceConversation = props => {
     const { handleSubmit, closeWindow, touched, error, warning } = props
     return (
-        <div>
+        <div className="contentModalSilence" >
             <span className="contentAnswer" >
             <p  className="answer" >Silenciar durante… </p>
             </span>
