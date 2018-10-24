@@ -212,316 +212,7 @@
       "imgUser": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn5dPFPkiansPhZUUBaZgwkcA3fVUoAUTwrdECR3yEmL7piGGisg"
     }
   ],
-  "logerror": [
-    {
-      "user": "[anonymous]",
-      "timestamp": 1539975828,
-      "message": "TypeError: Failed to execute 'addEventListener' on 'EventTarget': 2 arguments required, but only 1 present.",
-      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 1
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235579,
-      "message": "TypeError: undefined is not an object (evaluating 'props.message.toReply')",
-      "detail": "\n    in ReplyMessage (at Message.js:110)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 2
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235580,
-      "message": "TypeError: Cannot read property 'toReply' of undefined",
-      "detail": "\n    in ReplyMessage (at Message.js:110)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 3
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235613,
-      "message": "TypeError: undefined is not an object (evaluating 'props.message.toReply')",
-      "detail": "\n    in ReplyMessage (at Message.js:111)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 4
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235614,
-      "message": "TypeError: Cannot read property 'toReply' of undefined",
-      "detail": "\n    in ReplyMessage (at Message.js:111)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 5
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235646,
-      "message": "TypeError: undefined is not an object (evaluating 'props.message.toReply')",
-      "detail": "\n    in ReplyMessage (at Message.js:111)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 6
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235647,
-      "message": "TypeError: Cannot read property 'toReply' of undefined",
-      "detail": "\n    in ReplyMessage (at Message.js:111)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 7
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235663,
-      "message": "TypeError: undefined is not an object (evaluating 'props.message.toReply')",
-      "detail": "\n    in ReplyMessage (at Message.js:111)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 8
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235663,
-      "message": "TypeError: Cannot read property 'toReply' of undefined",
-      "detail": "\n    in ReplyMessage (at Message.js:111)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 9
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235675,
-      "message": "TypeError: undefined is not an object (evaluating 'props.message.toReply')",
-      "detail": "\n    in ReplyMessage (at Message.js:110)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 10
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540235675,
-      "message": "TypeError: Cannot read property 'toReply' of undefined",
-      "detail": "\n    in ReplyMessage (at Message.js:110)\n    in div (at Message.js:57)\n    in div (at Message.js:55)\n    in div (at Message.js:54)\n    in div (at Message.js:52)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 11
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540240721,
-      "message": "TypeError: Cannot read property 'type' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:95)\n    in div (at footerMessagesSection.js:94)\n    in footer (at footerMessagesSection.js:92)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 12
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540240816,
-      "message": "TypeError: Cannot assign to read only property 'messageObject' of object '#<Object>'",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:95)\n    in div (at footerMessagesSection.js:94)\n    in footer (at footerMessagesSection.js:92)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 13
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540240896,
-      "message": "TypeError: Cannot assign to read only property 'messageObject' of object '#<Object>'",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:95)\n    in div (at footerMessagesSection.js:94)\n    in footer (at footerMessagesSection.js:92)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 14
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540240993,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:97)\n    in div (at footerMessagesSection.js:96)\n    in footer (at footerMessagesSection.js:94)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 15
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241039,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 16
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241063,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 17
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241096,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 18
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241185,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 19
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241255,
-      "message": "TypeError: Cannot read property 'type' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 20
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241320,
-      "message": "TypeError: Cannot read property 'type' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:99)\n    in div (at footerMessagesSection.js:98)\n    in footer (at footerMessagesSection.js:96)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 21
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241350,
-      "message": "TypeError: Cannot read property 'type' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 22
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241472,
-      "message": "TypeError: Cannot read property 'type' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 23
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241631,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 24
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241709,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 25
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241729,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 26
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540241770,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 27
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540242030,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 28
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540242133,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 29
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540243378,
-      "message": "TypeError: undefined is not an object (evaluating '_props$messageObject.userSend')",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:97)\n    in div (at footerMessagesSection.js:96)\n    in footer (at footerMessagesSection.js:94)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 30
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540243379,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:97)\n    in div (at footerMessagesSection.js:96)\n    in footer (at footerMessagesSection.js:94)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 31
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540243834,
-      "message": "TypeError: undefined is not an object (evaluating '_props$messageObject.userSend')",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:97)\n    in div (at footerMessagesSection.js:96)\n    in footer (at footerMessagesSection.js:94)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 32
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540243835,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:97)\n    in div (at footerMessagesSection.js:96)\n    in footer (at footerMessagesSection.js:94)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 33
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540243899,
-      "message": "TypeError: undefined is not an object (evaluating '_props$messageObject.userSend')",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 34
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540243899,
-      "message": "TypeError: Cannot read property 'userSend' of undefined",
-      "detail": "\n    in ReplyOptions (created by Connect(ReplyOptions))\n    in Connect(ReplyOptions) (at footerMessagesSection.js:98)\n    in div (at footerMessagesSection.js:97)\n    in footer (at footerMessagesSection.js:95)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 35
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540244149,
-      "message": "Invariant Violation: Objects are not valid as a React child (found: object with keys {type, toReply, message}). If you meant to render a collection of children, use an array instead.\n    in div (at Message.js:125)\n    in div (at Message.js:123)\n    in div (at Message.js:122)\n    in div (at Message.js:121)\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "detail": "\n    in div (at Message.js:125)\n    in div (at Message.js:123)\n    in div (at Message.js:122)\n    in div (at Message.js:121)\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 36
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540244386,
-      "message": "Invariant Violation: Objects are not valid as a React child (found: object with keys {type, toReply, message}). If you meant to render a collection of children, use an array instead.\n    in div (at Message.js:125)\n    in div (at Message.js:123)\n    in div (at Message.js:122)\n    in div (at Message.js:121)\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "detail": "\n    in div (at Message.js:125)\n    in div (at Message.js:123)\n    in div (at Message.js:122)\n    in div (at Message.js:121)\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 37
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540244642,
-      "message": "Invariant Violation: Objects are not valid as a React child (found: object with keys {type, toReply, message}). If you meant to render a collection of children, use an array instead.\n    in div (at Message.js:125)\n    in div (at Message.js:123)\n    in div (at Message.js:122)\n    in div (at Message.js:121)\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "detail": "\n    in div (at Message.js:125)\n    in div (at Message.js:123)\n    in div (at Message.js:122)\n    in div (at Message.js:121)\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 38
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540245226,
-      "message": "TypeError: Cannot read property 'userId' of undefined",
-      "detail": "\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 39
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540245227,
-      "message": "TypeError: undefined is not an object (evaluating '_this4.props.userId')",
-      "detail": "\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 40
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540313914,
-      "message": "TypeError: Cannot read property 'id' of null",
-      "detail": "\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 41
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540313928,
-      "message": "TypeError: Cannot read property 'id' of null",
-      "detail": "\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:111)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 42
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540314836,
-      "message": "TypeError: Cannot read property 'id' of null",
-      "detail": "\n    in ReplyMessage (created by Connect(ReplyMessage))\n    in Connect(ReplyMessage) (at Message.js:112)\n    in div (at Message.js:58)\n    in div (at Message.js:56)\n    in div (at Message.js:55)\n    in div (at Message.js:53)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:15)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:29)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:36)\n    in div (at ChatContainer.js:34)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:43)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 43
-    },
-    {
-      "user": "[anonymous]",
-      "timestamp": 1540328124,
-      "message": "TypeError: listContacts.slice is not a function",
-      "detail": "\n    in ListGeneralContactsGroup (created by Connect(ListGeneralContactsGroup))\n    in Connect(ListGeneralContactsGroup) (at GroupSectionContainer.js:16)\n    in div (at GroupSectionContainer.js:14)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:39)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:45)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
-      "id": 44
-    }
-  ],
+  "logerror": [],
   "contacts": [
     {
       "id": "1",
@@ -535,7 +226,8 @@
       "silence": "1",
       "file": "0",
       "pinner": "1",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp",
+      "typeChat":"1"
     },
     {
       "id": "2",
@@ -549,7 +241,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg",
+      "typeChat":"1"
     },
     {
       "id": "3",
@@ -563,7 +256,8 @@
       "silence": "3",
       "file": "1",
       "pinner": "1",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ",
+      "typeChat":"1"
     },
     {
       "id": "4",
@@ -577,7 +271,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AMknsVJTTstO5ex2h7DdYmiA-rmqzmXcsRwDm7nCc-mbQgv3"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AMknsVJTTstO5ex2h7DdYmiA-rmqzmXcsRwDm7nCc-mbQgv3",
+      "typeChat":"1"
     },
     {
       "id": "5",
@@ -591,7 +286,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "1",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrremDO1rZJn57FqEVQqS-HZSFBef6Uok3yesoyqgNUEgRU7-tQ"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrremDO1rZJn57FqEVQqS-HZSFBef6Uok3yesoyqgNUEgRU7-tQ",
+      "typeChat":"1"
     },
     {
       "id": "6",
@@ -605,7 +301,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4gRO_bIr2YLXI4-0_NmlZQw55vKYXLCppLfMtq10bmZ-TsiD"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4gRO_bIr2YLXI4-0_NmlZQw55vKYXLCppLfMtq10bmZ-TsiD",
+      "typeChat":"1"
     },
     {
       "id": "7",
@@ -619,7 +316,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMybaKtUQwGjyL2fXA7ZNY7J_vM_LSi3ToZnJ6aa6viL9FUDEf"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMybaKtUQwGjyL2fXA7ZNY7J_vM_LSi3ToZnJ6aa6viL9FUDEf",
+      "typeChat":"1"
     },
     {
       "id": "8",
@@ -633,7 +331,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4e-0MFbXTwq4C_tb8NoWvmiTOyigeoBMDqd7uXhwcAjXDViN-"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4e-0MFbXTwq4C_tb8NoWvmiTOyigeoBMDqd7uXhwcAjXDViN-",
+      "typeChat":"1"
     },
     {
       "id": "9",
@@ -647,7 +346,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
+      "typeChat":"1"
     },
     {
       "id": "50",
@@ -661,7 +361,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
+      "typeChat":"1"
     },
     {
       "id": "59",
@@ -675,7 +376,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
+      "typeChat":"1"
     },
     {
       "id": "69",
@@ -689,7 +391,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
+      "typeChat":"1"
     },
     {
       "id": "10",
@@ -703,7 +406,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3qmREi6Bag9BxxTvSCdXKqL8G2mBNjSFMi1nBZ1r92jNniSwnw"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3qmREi6Bag9BxxTvSCdXKqL8G2mBNjSFMi1nBZ1r92jNniSwnw",
+      "typeChat":"1"
     },
     {
       "id": "11",
@@ -717,7 +421,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAUelg7yg0mepGMf-N93hh6E9XrLnKwsKa4YEQ6swhDknk4F9eQ"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAUelg7yg0mepGMf-N93hh6E9XrLnKwsKa4YEQ6swhDknk4F9eQ",
+      "typeChat":"1"
     },
     {
       "id": "12",
@@ -731,7 +436,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfBlwiKYPWMTt6ROM1-piJUzikE0EaNzi_LnnUGrIYh-aefUqB"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfBlwiKYPWMTt6ROM1-piJUzikE0EaNzi_LnnUGrIYh-aefUqB",
+      "typeChat":"1"
     },
     {
       "id": "13",
@@ -745,7 +451,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ",
+      "typeChat":"1"
     },
     {
       "id": "14",
@@ -759,7 +466,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ",
+      "typeChat":"1"
     },
     {
       "id": "15",
@@ -773,7 +481,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-bUtMrovoWkw733UD5sQCF6aaw5VCug-B8Wi3CCvAtaBpS8JMA"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-bUtMrovoWkw733UD5sQCF6aaw5VCug-B8Wi3CCvAtaBpS8JMA",
+      "typeChat":"1"
     },
     {
       "id": "16",
@@ -787,7 +496,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFjQ9clTxmrIS87TaIYrymyvb3lVBa8yUaQ8ioHqFccj9pCWX"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFjQ9clTxmrIS87TaIYrymyvb3lVBa8yUaQ8ioHqFccj9pCWX",
+      "typeChat":"1"
     },
     {
       "id": "17",
@@ -801,7 +511,8 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSCDTJFjmSOib_a-T764n2AYQRIX-nMO3yMoF1K4EHrQyVTxsz"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSCDTJFjmSOib_a-T764n2AYQRIX-nMO3yMoF1K4EHrQyVTxsz",
+      "typeChat":"1"
     },
     {
       "id": "18",
@@ -815,7 +526,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ByyxctCPUvbgtE3yRiAbOLws_steoWeLybXvzUZvXDylO8ZU"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ByyxctCPUvbgtE3yRiAbOLws_steoWeLybXvzUZvXDylO8ZU",
+      "typeChat":"1"
     },
     {
       "id": "19",
@@ -829,7 +541,8 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTviwffByEVaqIZir9WNZ7CHnHC6q_AklKybQQlrZMHBCVCcTPSHg"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTviwffByEVaqIZir9WNZ7CHnHC6q_AklKybQQlrZMHBCVCcTPSHg",
+      "typeChat":"1"
     },
     {
       "id": "20",
@@ -843,12 +556,13 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwww3bn_7VHZz_ZHgyDSLsg9ukZpGikjEifw2CIPZt1zqflcK5"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwww3bn_7VHZz_ZHgyDSLsg9ukZpGikjEifw2CIPZt1zqflcK5",
+      "typeChat":"1"
     }
   ],
   "groups": [
     {
-      "id": "1",
+      "id": "1G",
       "name": "Grupo 1",
       "photo": "ruta",
       "status": "Status test",
@@ -859,10 +573,11 @@
       "silence": "1",
       "file": "0",
       "pinner": "1",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp",
+      "typeChat":"2"
     },
     {
-      "id": "2",
+      "id": "2G",
       "name": "Grupo 2",
       "photo": "ruta",
       "status": "Status test",
@@ -873,10 +588,11 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg",
+      "typeChat":"2"
     },
     {
-      "id": "3",
+      "id": "3G",
       "name": "Grupo 3",
       "photo": "ruta",
       "status": "Status test",
@@ -887,7 +603,8 @@
       "silence": "3",
       "file": "1",
       "pinner": "1",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ"
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ",
+      "typeChat":"2"
     }
   ]
 }
