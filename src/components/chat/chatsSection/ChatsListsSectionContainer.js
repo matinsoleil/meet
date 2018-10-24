@@ -21,8 +21,8 @@ class ChatsListsSectionContainer extends Component {
         this.props.showSectionGroups(this.props.contacts)
     }
 
-    // orderByName(listContacts) {
-    //     const byName = listContacts.slice(0);
+    // orderByName(list) {
+    //     const byName = list.slice(0);
     //     return byName.sort(function (a, b) {
     //         var x = a.name.toLowerCase();
     //         var y = b.name.toLowerCase();
@@ -30,14 +30,14 @@ class ChatsListsSectionContainer extends Component {
     //     });
     // }
 
-    // orderByPinner(listContacts) {
-    //     const byPinner = listContacts.slice(0);
-    //     return byPinner.sort(function (a, b) {
-    //         var x = a.pinner.toLowerCase();
-    //         var y = b.pinner.toLowerCase();
-    //         return x > y ? -1 : x < y ? 1 : 0;
-    //     });
-    // }
+    orderByPinner(list) {
+        const byPinner = list.slice(0);
+        return byPinner.sort(function (a, b) {
+            var x = a.pinner.toLowerCase();
+            var y = b.pinner.toLowerCase();
+            return x > y ? -1 : x < y ? 1 : 0;
+        });
+    }
 
 
     grouplistChast(){
@@ -46,7 +46,7 @@ class ChatsListsSectionContainer extends Component {
         const list = []
         contacts.map(contact => list.push(contact) )
         groups.map(group => list.push(group) )
-        return list;
+        return this.orderByPinner(list);
     }
 
 
