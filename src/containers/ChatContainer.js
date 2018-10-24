@@ -34,7 +34,7 @@ class ChatContainer extends Component {
     renderBody = (contacts, user, conversation, groups) => {        
         return (
             <div className="main-chat">
-                <ChatsListsSectionContainer user={user} contacts={contacts}/> 
+                <ChatsListsSectionContainer user={user} contacts={contacts} groups={groups}/> 
                 <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
                 {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
             </div>

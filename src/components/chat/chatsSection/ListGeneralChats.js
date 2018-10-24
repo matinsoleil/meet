@@ -13,26 +13,8 @@ class ListGeneralContacts extends Component {
         this.props.fetchContact(idContact);
     }
 
-    orderByName(listContacts) {
-        const byName = listContacts.slice(0);
-        return byName.sort(function (a, b) {
-            var x = a.name.toLowerCase();
-            var y = b.name.toLowerCase();
-            return x < y ? -1 : x > y ? 1 : 0;
-        });
-    }
-
-    orderByPinner(listContacts) {
-        const byPinner = listContacts.slice(0);
-        return byPinner.sort(function (a, b) {
-            var x = a.pinner.toLowerCase();
-            var y = b.pinner.toLowerCase();
-            return x > y ? -1 : x < y ? 1 : 0;
-        });
-    }
-
     render() {
-        const listContactsOrder = this.orderByPinner(this.props.contacts);
+        const listContactsOrder = this.props.listChats;
         return (
             <div className="main-chat-general-list-contact">
                 {listContactsOrder.map(contact =>
