@@ -66,7 +66,8 @@ class HeaderGroupSection extends Component {
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
+      "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
+      "contactsGroup": contactsGroup
     }
     this.props.addGroup(newGroupElemnt)
     this.setState({
