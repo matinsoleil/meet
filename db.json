@@ -132,19 +132,6 @@
       },
       "hour": "11:45",
       "status": "1"
-    },
-    {
-      "id": "16",
-      "userSend": "2",
-      "userGet": "1",
-      "message": {
-        "type": "4",
-        "toWhoReply": "1",
-        "toReply": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porta justo ut scelerisque cursus. Etiam ultricies, urna sit amet rhoncus condimentum, tellus neque finibus ex, in vestibulum neque mauris quis justo",
-        "message": "hi Friend, What is that means"
-      },
-      "hour": "11:45",
-      "status": "1"
     }
   ],
   "users": [
@@ -826,11 +813,55 @@
       "label": "label",
       "dayLastMessage": "9 min",
       "lastMessage": "Last Message",
-      "countMessage": "26º",
+      "countMessage": "26",
       "silence": "0",
       "file": "0",
       "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwww3bn_7VHZz_ZHgyDSLsg9ukZpGikjEifw2CIPZt1zqflcK5"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Grupo 1",
+      "photo": "ruta",
+      "status": "Status test",
+      "label": "label",
+      "dayLastMessage": "Ayer",
+      "lastMessage": "Last Message",
+      "countMessage": "0",
+      "silence": "1",
+      "file": "0",
+      "pinner": "1",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp"
+    },
+    {
+      "id": "2",
+      "name": "Grupo 2",
+      "photo": "ruta",
+      "status": "Status test",
+      "label": "label",
+      "dayLastMessage": "3 min",
+      "lastMessage": "Last Message",
+      "countMessage": "1",
+      "silence": "0",
+      "file": "0",
+      "pinner": "0",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg"
+    },
+    {
+      "id": "3",
+      "name": "Grupo 3",
+      "photo": "ruta",
+      "status": "Status test",
+      "label": "label",
+      "dayLastMessage": "22 min",
+      "lastMessage": "Last Message",
+      "countMessage": "2",
+      "silence": "3",
+      "file": "1",
+      "pinner": "1",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ"
     }
   ]
 }

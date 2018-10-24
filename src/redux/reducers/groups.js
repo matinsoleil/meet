@@ -4,7 +4,50 @@ const estado = {
     list_contacts_add_group: null,
     filter_contacts: null,
     view: false,
-    new_group: null
+    groups: [
+        {
+            "id": "1",
+            "name": "Grupo 1",
+            "photo": "ruta",
+            "status": "Status test",
+            "label": "label",
+            "dayLastMessage": "Ayer",
+            "lastMessage": "Last Message",
+            "countMessage": "0",
+            "silence": "1",
+            "file": "0",
+            "pinner": "1",
+            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
+        },
+        {
+            "id": "2",
+            "name": "Grupo 2",
+            "photo": "ruta",
+            "status": "Status test",
+            "label": "label",
+            "dayLastMessage": "3 min",
+            "lastMessage": "Last Message",
+            "countMessage": "1",
+            "silence": "0",
+            "file": "0",
+            "pinner": "0",
+            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
+        },
+        {
+            "id": "3",
+            "name": "Grupo 3",
+            "photo": "ruta",
+            "status": "Status test",
+            "label": "label",
+            "dayLastMessage": "22 min",
+            "lastMessage": "Last Message",
+            "countMessage": "2",
+            "silence": "3",
+            "file": "1",
+            "pinner": "1",
+            "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
+        }]
+
 }
 export const groups = (state = estado, action) => {
     switch (action.type) {
@@ -15,8 +58,9 @@ export const groups = (state = estado, action) => {
                 list_contacts: null,
                 list_contacts_add_group: null,
                 filter_contacts: null,
-                new_group: [],
-                view: false
+        
+                view: false,
+                groups: estado.groups
             }
         case 'SHOW_SECTION_GROUPS':
             return {
@@ -26,8 +70,9 @@ export const groups = (state = estado, action) => {
                 list_contacts_add_group: [],
                 select_contacts: [],
                 filter_contacts: [],
-                new_group: [],
-                view: true
+        
+                view: true,
+                groups: estado.groups
             }
         case 'HIDE_SECTION_GROUPS':
             return {
@@ -37,8 +82,9 @@ export const groups = (state = estado, action) => {
                 list_contacts_add_group: [],
                 filter_contacts: [],
                 select_contacts: [],
-                new_group: [],
-                view: false
+        
+                view: false,
+                groups: estado.groups
             }
         case 'UPDATE_LIST_CONTACTS_GROUP':
             return {
@@ -59,10 +105,12 @@ export const groups = (state = estado, action) => {
                 view: true
             }
 
-        case 'CREATE_GROUP':
-            return {
+        case 'ADD_GROUP':
+            const createGroup = state.groups
+            createGroup.push(action.payload);
+        return {
                 ...state,
-                new_group: action.payload,
+                groups: createGroup,
                 view: false
             }
 
