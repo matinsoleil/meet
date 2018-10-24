@@ -1,5 +1,5 @@
-import GeneralDataUser from '../../../components/chat/contactsSection/GeneralDataUser'
-import ListGeneralContacts from '../../../components/chat/contactsSection/ListGeneralContacts'
+import GeneralDataUser from '../../../components/chat/chatsSection/GeneralDataUser'
+import ListGeneralContacts from '../../../components/chat/chatsSection/ListGeneralContacts'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral';
 import React, { Component } from 'react';

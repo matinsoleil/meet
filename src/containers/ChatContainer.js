@@ -15,7 +15,7 @@ import { initApi, getToken, login, logout } from '../redux/actions/messageCenter
 import { getSearchContacts } from '../redux/selectors/searchContacts'
 import { getGroups } from '../redux/selectors/groups'
 import { getAlertGeneral } from '../redux/selectors/alertGeneral'
-import ContactSectionContainer from '../components/chat/contactsSection/ContactSectionContainer'
+import ContactSectionContainer from '../components/chat/chatsSection/ContactSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 
 class ChatContainer extends Component {
@@ -39,7 +39,7 @@ class ChatContainer extends Component {
         
         return (
             <div className="main-chat">
-                <ContactSectionContainer user={user} contacts={contacts}/>
+                <ContactSectionContainer user={user} contacts={contacts}/> 
                 <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
                 {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
             </div>
