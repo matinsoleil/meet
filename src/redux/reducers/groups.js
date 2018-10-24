@@ -6,7 +6,7 @@ const estado = {
     view: false,
     groups: [
         {
-            "id": "1",
+            "id": "1G",
             "name": "Grupo 1",
             "photo": "ruta",
             "status": "Status test",
@@ -21,7 +21,7 @@ const estado = {
             "typeChat":"2"
         },
         {
-            "id": "2",
+            "id": "2G",
             "name": "Grupo 2",
             "photo": "ruta",
             "status": "Status test",
@@ -36,7 +36,7 @@ const estado = {
             "typeChat":"2"
         },
         {
-            "id": "3",
+            "id": "3G",
             "name": "Grupo 3",
             "photo": "ruta",
             "status": "Status test",
