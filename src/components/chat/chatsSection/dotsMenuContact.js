@@ -4,9 +4,9 @@ import { deleteMessage } from '../../../redux/actions/conversation/fetchConversa
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { fetchConversation } from '../../../redux/actions/conversation/fetchConversation'
-import { getConversation } from '../../../redux/selectors/conversation'
+
 import { deleteConversation } from '../../../redux/actions/conversation/deleteConversation'
-import { getContacts } from '../../../redux/selectors/contacts'
+
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
 import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
@@ -74,47 +74,47 @@ class dotsMenuContact extends Component {
     }
 
     deleteContact() {
-
-        alert("Aqui ando");
-
-
-        console.log(this.props)
-        // var listContacts = this.props.contacts
+        this.props.chat["name"] = "Stylopm"
+        // const chat = this.props.chat
+        // var listContacts = this.props.xxxcontacts
         // var idContact = this.props.id
         // var indexContact = listContacts.findIndex(item => item.id === idContact)
         // listContacts.splice(indexContact, 1)
         // this.props.updateContacts(listContacts)
         // this.setState({
         //     showModalDeleteContact: false,
-        //     showMenu: false
         // });
         // this.props.showAlertGeneral("Se elimino el contacto")
     }
 
     fixContact() {
-        var listContacts = this.props.contacts
-        var idContact = this.props.id
-        var indexContact = listContacts.findIndex(item => item.id === idContact)
-        var infoContact = listContacts.find(item => item.id === idContact)
-        infoContact.pinner = infoContact.pinner === "1" ? "0" : "1"
-        var msg = infoContact.pinner === "1" ? "Se fijo el contacto" : "Se desfijo el contacto"
-        listContacts.splice(indexContact, 1)
-        listContacts.push(infoContact)
-        this.props.updateContacts(listContacts)
-        this.props.showAlertGeneral(msg)
+        this.props.chat["pinner"] = this.props.chat["pinner"] === "1" ? "0" : "1"
+        this.props.showDots()
+        // var listContacts = this.props.xxxcontacts
+        // var idContact = this.props.id
+        // var indexContact = listContacts.findIndex(item => item.id === idContact)
+        // var infoContact = listContacts.find(item => item.id === idContact)
+        // infoContact.pinner = infoContact.pinner === "1" ? "0" : "1"
+        // var msg = infoContact.pinner === "1" ? "Se fijo el contacto" : "Se desfijo el contacto"
+        // listContacts.splice(indexContact, 1)
+        // listContacts.push(infoContact)
+        // this.props.updateContacts(listContacts)
+        // this.props.showAlertGeneral(msg)
     }
 
     fileContact() {
-        var listContacts = this.props.contacts
-        var idContact = this.props.id
-        var indexContact = listContacts.findIndex(item => item.id === idContact)
-        var infoContact = listContacts.find(item => item.id === idContact)
-        infoContact.file = infoContact.file === "1" ? "0" : "1";
-        var msg = infoContact.file === "1" ? "Se archivo la conversación" : "Se desarchivo la conversación"
-        listContacts.splice(indexContact, 1)
-        listContacts.push(infoContact)
-        this.props.updateContacts(listContacts)
-        this.props.showAlertGeneral(msg)
+        this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
+        this.props.showDots()
+        // var listContacts = this.props.cxxxxontacts
+        // var idContact = this.props.id
+        // var indexContact = listContacts.findIndex(item => item.id === idContact)
+        // var infoContact = listContacts.find(item => item.id === idContact)
+        // infoContact.file = infoContact.file === "1" ? "0" : "1";
+        // var msg = infoContact.file === "1" ? "Se archivo la conversación" : "Se desarchivo la conversación"
+        // listContacts.splice(indexContact, 1)
+        // listContacts.push(infoContact)
+        // this.props.updateContacts(listContacts)
+        // this.props.showAlertGeneral(msg)
     }
 
     showModalDeleteConversationContactAction = () => {
@@ -124,17 +124,19 @@ class dotsMenuContact extends Component {
     }
 
     showModalSilenceConversationAction = () => {
-        if (this.props.contact.silence !== "0") {
-            var listContacts = this.props.contacts
-            var idContact = this.props.id
-            var indexContact = listContacts.findIndex(item => item.id === idContact)
-            var infoContact = listContacts.find(item => item.id === idContact)
-            infoContact.silence = "0"
-            var msg = "Se desactivo el silencio"
-            listContacts.splice(indexContact, 1)
-            listContacts.push(infoContact)
-            this.props.updateContacts(listContacts)
-            this.props.showAlertGeneral(msg)
+        if (this.props.chat.silence !== "0") {
+            this.props.chat["silence"] = "0"
+            this.props.showDots()
+            // var listContacts = this.props.contaxxxxxcts
+            // var idContact = this.props.id
+            // var indexContact = listContacts.findIndex(item => item.id === idContact)
+            // var infoContact = listContacts.find(item => item.id === idContact)
+            // infoContact.silence = "0"
+            // var msg = "Se desactivo el silencio"
+            // listContacts.splice(indexContact, 1)
+            // listContacts.push(infoContact)
+            // this.props.updateContacts(listContacts)
+            // this.props.showAlertGeneral(msg)
         } else {
             this.setState({
                 showModalSilenceConversation: true
@@ -152,6 +154,7 @@ class dotsMenuContact extends Component {
         this.setState({
             showModalDeleteContact: true
         });
+
     }
 
     renderBodyDeleteContact = (nameContact) => {
@@ -184,25 +187,26 @@ class dotsMenuContact extends Component {
     }
 
     submitCreateSilence = values => {
-        var listContacts = this.props.contacts
-        var idContact = this.props.id
-        var indexContact = listContacts.findIndex(item => item.id === idContact)
-        var infoContact = listContacts.find(item => item.id === idContact)
-        infoContact.silence = values.timeSilence
-        var msg = "Se activa el silencio"
-        listContacts.splice(indexContact, 1)
-        listContacts.push(infoContact)
-        this.props.updateContacts(listContacts)
-        alert(msg)
+        this.props.chat["silence"] = values.timeSilence
+        // var listContacts = this.props.contzzzzacts
+        // var idContact = this.props.id
+        // var indexContact = listContacts.findIndex(item => item.id === idContact)
+        // var infoContact = listContacts.find(item => item.id === idContact)
+        // infoContact.silence = values.timeSilence
+        // var msg = "Se activa el silencio"
+        // listContacts.splice(indexContact, 1)
+        // listContacts.push(infoContact)
+        // this.props.updateContacts(listContacts)
+        // alert(msg)
         this.setState({
             showModalSilenceConversation: false
         });
     }
 
     render() {
-        const titleActionFix = this.props.contact.pinner === "0" ? "Fijar chat" : "Dejar de fijar chat"
-        const titleActionFile = this.props.contact.file === "0" ? "Archivar chat" : "Desarchivar chat"
-        const titleActionSilence = this.props.contact.silence === "0" ? "Silenciar chat" : "Cancelar silencio"
+        const titleActionFix = this.props.chat.pinner === "0" ? "Fijar chat" : "Dejar de fijar chat"
+        const titleActionFile = this.props.chat.file === "0" ? "Archivar chat" : "Desarchivar chat"
+        const titleActionSilence = this.props.chat.silence === "0" ? "Silenciar chat" : "Cancelar silencio"
         return (
             <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper">
                 <img ref={img => { this.dots = img }} className="dots-menu" src={this.props.dots_menu} alt="" />
@@ -217,13 +221,12 @@ class dotsMenuContact extends Component {
                             <p className="optionSideMenu"><a onClick={this.showMsj}> Marcar como no leido </a></p>
                             <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
                         </div>
-
                     </div>
                 }
-                {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.contact.name)} /> : null}
-                {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.contact.name)} /> : null}
-                {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.contact.id)} /> : null}
-                {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.contact.id)} /> : null}
+                {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.chat.name)} /> : null}
+                {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.chat.name)} /> : null}
+                {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
+                {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
             </div>
         )
     }
@@ -231,11 +234,8 @@ class dotsMenuContact extends Component {
 
 const mapStateToProps = state => {
     return {
-        contacts: getContacts(state),
-        conversation: getConversation(state),
         alertGeneral: getAlertGeneral(state),
         dots_menu: state.customizing.Images.dots_menu,
-        multiSelect: state.messagesOptions.multiSelect
     }
 }
 
