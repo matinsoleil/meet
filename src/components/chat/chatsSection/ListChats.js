@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import GeneralContactData from './GeneralContactData'
+import GeneralChatData from './GeneralChatData'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import { connect } from 'react-redux'
-import './ListGeneralChats.scss'
+import './ListChats.scss'
 class ListGeneralContacts extends Component {
     constructor(props) {
         super(props);
-        this.selectContacClick = this.selectContacClick.bind(this);
+        this.selectChat = this.selectChat.bind(this);
     }
 
-    selectContacClick(idContact) {
+    selectChat(idContact) {
         this.props.fetchContact(idContact);
     }
 
@@ -17,8 +17,8 @@ class ListGeneralContacts extends Component {
         const listContactsOrder = this.props.listChats;
         return (
             <div className="main-chat-general-list-contact">
-                {listContactsOrder.map(contact =>
-                    <GeneralContactData contact={contact} onClick={this.selectContacClick} key={contact.id} />
+                {listContactsOrder.map(chat =>
+                    <GeneralChatData chat={chat} onClick={this.selectChat} key={chat.id} />
                 )}
             </div>
         )

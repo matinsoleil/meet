@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './GeneralContactData.scss'
+import './GeneralChatData.scss'
 import DotsMenuContact from './dotsMenuContact';
 import { connect } from 'react-redux'
 
@@ -9,11 +9,12 @@ class GeneralContactData extends Component {
         this.clickChat = this.clickChat.bind(this);
         this.state = {
             menuState: false,
+            msjChat: false,
         }
     }
 
     clickChat() {
-        this.props.onClick(this.props.contact.id)
+        this.props.onClick(this.props.chat.id)
     }
 
     componentDidMount() {
@@ -32,27 +33,40 @@ class GeneralContactData extends Component {
         });
     }
 
+    msjGeneralChatData = () => {
+        return (
+            <div className="message-popup ">
+                <p className="text-message-popup">
+                    <span className="msg"> text </span>
+                </p>
+                <p className="text-message-popup">
+                    <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span>
+                </p>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div className="contact-chat" ref={div => { this.bubble = div }}>
                 <div className="grid-container-contact-chat">
                     <div className="icon-contact" onClick={this.clickChat}>
                         <div className="outer-circle" >
-                            <img className="img-icon-user" src={this.props.contact.imgContact} alt="icon-user" />
+                            <img className="img-icon-user" src={this.props.chat.imgContact} alt="icon-user" />
                             <div className="inner-circle circle">&nbsp;</div>
                         </div>
                     </div>
                     <div className="name-contact" onClick={this.clickChat}>
                         <span className="text-contact">
-                            <p className="word-contact">{this.props.contact.name}</p>
+                            <p className="word-contact">{this.props.chat.name}</p>
                             {
-                                this.props.contact.silence !== "0" ? <img className="status-contact" src={this.props.mute_a_icon} alt="status-conctact" /> : null
+                                this.props.chat.silence !== "0" ? <img className="status-contact" src={this.props.mute_a_icon} alt="status-conctact" /> : null
                             }
                             {
-                                this.props.contact.file !== "0" ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
+                                this.props.chat.file !== "0" ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
                             }
                             {
-                                this.props.contact.pinner !== "0" ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
+                                this.props.chat.pinner !== "0" ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
                             }
                         </span>
                     </div>
@@ -60,22 +74,33 @@ class GeneralContactData extends Component {
                         <div className="inPoints">
                             {
                                 (this.state.menuState) &&
-                                <DotsMenuContact showDots={this.showDots} display={this.state.menuState} contact={this.props.contact} id={this.props.contact.id} type={null} selectable={this.state.selectable} />
+                                <DotsMenuContact showDots={this.showDots} display={this.state.menuState} contact={this.props.chat} id={this.props.chat.id} type={null} selectable={this.state.selectable} />
                             }
                         </div>
-                        <p className="day-last">{this.props.contact.dayLastMessage}</p>
+                        <p className="day-last">{this.props.chat.dayLastMessage}</p>
 
 
                     </div>
                     <div className="last-message" onClick={this.clickChat}>
-                        {this.props.contact.lastMessage}
+                        {this.props.chat.lastMessage}
                     </div>
                     <div className="count-message" onClick={this.clickChat}>
                         {
-                            this.props.contact.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.contact.countMessage}</p> </div> : null
+                            this.props.chat.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
                         }
                     </div>
                 </div>
+
+                    { (this.state.msjChat) &&
+                    <div className="message-popup ">
+                        <p className="text-message-popup">
+                            <span className="msg"> {this.props.chat.name} </span>
+                        </p>
+                        <p className="text-message-popup">
+                            <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span>
+                        </p>
+                    </div>
+                    }
             </div>
         )
     }
