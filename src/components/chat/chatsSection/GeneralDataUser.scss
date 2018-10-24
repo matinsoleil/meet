@@ -124,6 +124,19 @@
 }
 
 
+input::-webkit-input-placeholder {
+    color: #a1a1a1;
+  }
+  input:-moz-placeholder {
+    color: #a1a1a1;
+  }
+  input::-moz-placeholder {
+    color: #a1a1a1;
+  }
+  input:-ms-input-placeholder {
+    color: #a1a1a1;
+  }
+
 
 .input-search-main {
     width: 65%;
@@ -144,8 +157,9 @@
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #a1a1a1;
+    color: #323232;
 }
+
 
 
 .input-search {
