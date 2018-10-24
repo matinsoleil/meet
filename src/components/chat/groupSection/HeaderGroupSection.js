@@ -3,7 +3,7 @@ import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFi
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-import creacteGroup from '../../../redux/actions/groups/createGroup'
+import addGroup from '../../../redux/actions/groups/addGroup'
 import CreateGroupForm from '../../form/group/CreateGroupForm'
 import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
 import { getGroups } from '../../../redux/selectors/groups'
@@ -58,11 +58,11 @@ class HeaderGroupSection extends Component {
   }
 
   submitCreateGroup = values => {
-    let contactsGroup = this.props.list_contacts_add_group
+    const contactsGroup = this.props.list_contacts_add_group
     const name = values.nameGroup;
     const id = Math.floor(+new Date() / 1000);
-    let newGroupElemnt = [{
-      "id": id,
+    const newGroupElemnt = {
+      "id": id.toString(),
       "name": name,
       "photo": "ruta",
       "status": "Status test",
@@ -74,11 +74,11 @@ class HeaderGroupSection extends Component {
       "file": "0",
       "pinner": "0",
       "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png"
-    }]
-    this.props.creacteGroup(newGroupElemnt)
-    // this.setState({
-    //   showModalCreateGroup: false
-    // })
+    }
+    this.props.addGroup(newGroupElemnt)
+    this.setState({
+      showModalCreateGroup: false
+    })
   }
 
   renderBodyCreateGroup = (contacts) => {
@@ -135,8 +135,8 @@ const mapDispatchToProps = dispatch => {
     updateListContactsAddGroup: (listContacts) => {
       dispatch(updateListContactsAddGroup(listContacts))
     },
-    creacteGroup: (listContacts) => {
-      dispatch(creacteGroup(listContacts))
+    addGroup: (listContacts) => {
+      dispatch(addGroup(listContacts))
     }
 
   }
