@@ -26,4 +26,7 @@ export const Images = {
     "mute_a_icon":require('./../../img/mute-a.png'),
     "file_icon_chat":require('./../../img/file.png'),
     "download_icon":require('./../../img/download-icon.svg'),
+    'claro_user_icon':require('./../../img/claro-user.svg'),
+    'check_mark_check':require('./../../img/check-mark-check.svg'),
+    'check_mark_uncheck':require('./../../img/check-mark-uncheck.svg')
 }

@@ -64,7 +64,7 @@
     background-color:black;
     position: fixed;
     bottom: 8px;
-    right: 6px;
+    right: 8px;
     z-index: 2000;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
@@ -72,30 +72,9 @@
     display:block;
 }
 
-@media only screen and (max-width: 1400px) {
-    .header-group {
-     width:260px;
-     display:block;
-    
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .header-group {
-        width:190px;
-        display:block;
-    }
-}
-
-@media only screen and (max-width: 1110px) {
-    .header-group {
-        width:108px;
-        display:none;
-    }
-}
 
 .grow-group{
-    width: 347px;
+    width: 285px;
     height:66px;
     overflow: scroll;
     white-space: nowrap;
@@ -109,12 +88,7 @@
 }
 
 
-@media only screen and (max-width: 1500px) {
-    .grow-group {
-     overflow-x: scroll;
-     overflow-y: hidden;
-    }
-}
+
 
 .search-contact-group {
     // background-color: #b3cdfd;
@@ -163,8 +137,32 @@
 }
 .addGroup{
     float:right;
-    margin-right:16px;
+    margin-right:45px;
     margin-top:24px;
     width:24px;
     height:24px;
+}
+
+.acceptAddGroup{
+    float:right;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color:#fefefe;
+    background-color: #5886c0;
+    border:0px;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: 0.2px;
+    text-align: right;
+    padding: 6px;
+    margin-top:24px;
+    margin-right:20px;
 }
