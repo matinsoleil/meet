@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './GeneralChatData.scss'
 import DotsMenuContact from './dotsMenuContact';
+import fetchContact from '../../../redux/actions/contact/fetchContact'
+
 import { connect } from 'react-redux'
 
 class GeneralContactData extends Component {
@@ -13,8 +15,8 @@ class GeneralContactData extends Component {
         }
     }
 
-    clickChat() {
-        this.props.onClick(this.props.chat.id)
+    clickChat(idChat) {
+        this.props.fetchContact(idChat);
     }
 
     componentDidMount() {
@@ -50,7 +52,7 @@ class GeneralContactData extends Component {
         return (
             <div className="contact-chat" ref={div => { this.bubble = div }}>
                 <div className="grid-container-contact-chat">
-                    <div className="icon-contact" onClick={this.clickChat}>
+                    <div className="icon-contact" onClick={this.clickChat(this.props.chat.id)}>
                         <div className="outer-circle" >
                             <img className="img-icon-user" src={this.props.chat.imgContact} alt="icon-user" />
                             <div className="inner-circle circle">&nbsp;</div>
@@ -74,7 +76,7 @@ class GeneralContactData extends Component {
                         <div className="inPoints">
                             {
                                 (this.state.menuState) &&
-                                <DotsMenuContact showDots={this.showDots} chat={this.props.chat} id={this.props.chat.id}/>
+                                <DotsMenuContact showDots={this.showDots} chat={this.props.chat} id={this.props.chat.id} />
                             }
                         </div>
                         <p className="day-last">{this.props.chat.dayLastMessage}</p>
@@ -89,7 +91,7 @@ class GeneralContactData extends Component {
                     </div>
                 </div>
 
-                    { (this.state.msjChat) &&
+                {(this.state.msjChat) &&
                     <div className="message-popup ">
                         <p className="text-message-popup">
                             <span className="msg"> {this.props.chat.name} </span>
@@ -98,7 +100,7 @@ class GeneralContactData extends Component {
                             <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span>
                         </p>
                     </div>
-                    }
+                }
             </div>
         )
     }
@@ -113,4 +115,13 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(GeneralContactData);
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchContact: (id) => {
+            dispatch(fetchContact(id));
+        },
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(GeneralContactData);
