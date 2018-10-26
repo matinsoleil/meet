@@ -50,6 +50,7 @@ class ChatsListsSectionContainer extends Component {
         const listChats = this.grouplistChast()
         return (
             <div className="contacts-section-container">
+                <span className="tab-contacts"></span> 
                 <GeneralDataUser user={this.props.user} contacts={this.props.contacts} />
                 <div className="chat-state">
                     <h2 className="title-chat">Chats</h2>

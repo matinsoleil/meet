@@ -8,6 +8,16 @@
     -webkit-border-radius: 10px 10px 10px 10px;
     margin-bottom: 15px;
 }
+
+@media only screen and (max-width: 1200px) {
+
+    .main-chat-general-data-user{
+        width: 100%;
+    }
+
+}
+
+
 .grid-container-user-chat {
     display: grid;
     grid-template-areas:
