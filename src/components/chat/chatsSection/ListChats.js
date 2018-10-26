@@ -9,7 +9,6 @@ class ListGeneralContacts extends Component {
             showModalFixContact: false
         }
     }
-
     deleteElementChat = (id) => {
         var listContacts = this.props.listChats
         var idContact = id
@@ -17,7 +16,6 @@ class ListGeneralContacts extends Component {
         listContacts.splice(indexContact, 1)
         console.log(listContacts);
     }
-
     render() {
         const listContactsOrder = this.props.listChats;
         return (
@@ -29,6 +27,4 @@ class ListGeneralContacts extends Component {
         )
     }
 }
-
-
 export default ListGeneralContacts;
