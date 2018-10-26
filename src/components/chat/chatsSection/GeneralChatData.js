@@ -74,12 +74,10 @@ class GeneralContactData extends Component {
                         <div className="inPoints">
                             {
                                 (this.state.menuState) &&
-                                <DotsMenuContact showDots={this.showDots} display={this.state.menuState} contact={this.props.chat} id={this.props.chat.id} type={null} selectable={this.state.selectable} />
+                                <DotsMenuContact showDots={this.showDots} chat={this.props.chat} id={this.props.chat.id}/>
                             }
                         </div>
                         <p className="day-last">{this.props.chat.dayLastMessage}</p>
-
-
                     </div>
                     <div className="last-message" onClick={this.clickChat}>
                         {this.props.chat.lastMessage}

@@ -4,7 +4,9 @@ import "./optionsSelection.scss"
 import { deleteMessagesSelected } from '../../../../../redux/actions/messagesOptions/messagesOptions';
 import ModalBox from './../../../../modals/ModalBox';
 import { showSectionGroups } from '../../../../../redux/actions/groups/showSectionGroups';
-
+import MessagesHelper from '../../../../../lib/helper/messagesHelper';
+import GenerateId from '../../../../../lib/helper/generateId';
+import $ from 'jquery';
 class OptionsSelection extends Component {
 
     constructor(props) {
@@ -24,6 +26,31 @@ class OptionsSelection extends Component {
         this.toggleModal();
     }
 
+    downloadFiles = async () => {
+        let files = [];
+        for (let messageId of this.props.messages) {
+            const message = MessagesHelper.getMessageById(this.props.conversation, messageId).message;
+            await MessagesHelper.getBlobObject(message.blobURL)
+                .then(e => {
+                    files.push({
+                        fileName: message.fileName,
+                        blobData: e
+                    });
+                });
+        }
+
+        MessagesHelper.getZipUrl(files).then(
+            url => {
+                this.link.download = `${GenerateId.generate()}.zip`;
+                this.link.href = url;
+                this.link.onclick = () => {
+                    setTimeout(() => { URL.revokeObjectURL(this.link.href); this.link.href = ''; }, 1500);
+                }
+                this.link.click();
+            }
+        );
+    }
+
     accept = () => {
         this.toggleModal();
         this.props.deleteMessagesSelected(this.props.messages);
@@ -33,9 +60,9 @@ class OptionsSelection extends Component {
         return (
             <div className="options-section">
                 {(this.props.type === '3') &&
-                    <IconButton className="download-icon" image={this.props.forward} name='Descargar' />
+                    <IconButton ref={iconButton => { this.link = iconButton }} type={this.props.type} onClick={this.downloadFiles} className="download-icon" image={this.props.forward} name='Descargar' />
                 }
-                <IconButton onClick={()=>{this.props.showSectionGroups(this.props.contacts)}} image={this.props.forward} name='Reenviar' />
+                <IconButton onClick={() => { this.props.showSectionGroups(this.props.contacts) }} image={this.props.forward} name='Reenviar' />
                 <IconButton onClick={this.deleteMessages} image={this.props.trash} name='Eliminar' />
                 {(this.state.showModal) &&
                     <ModalBox body={
@@ -53,21 +80,25 @@ class OptionsSelection extends Component {
     }
 }
 
-const IconButton = props => {
+const IconButton = React.forwardRef((props, ref) => {
     let { image, alt, name } = props;
     return (
-        <div onClick={props.onClick} className={`icon-button ${props.className}`}>
-            <img src={image} alt={alt} />
-            <span>{name}</span>
-        </div>
+        <React.Fragment>
+            <div onClick={props.onClick} className={`icon-button ${props.className}`}>
+                <img src={image} alt={alt} />
+                <span>{name}</span>
+            </div>
+            {(props.type) && <a style={{ display: 'none' }} ref={ref}>zip</a>}
+        </React.Fragment>
     );
-}
+})
 
 const mapStateToProps = state => {
     return {
         forward: state.customizing.Images.forward,
         trash: state.customizing.Images.trash,
         messages: state.messagesOptions.messages,
+        conversation: state.conversation,
         contacts: state.contacts,
     }
 }
