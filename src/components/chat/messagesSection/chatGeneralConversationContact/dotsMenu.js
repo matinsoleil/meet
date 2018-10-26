@@ -4,7 +4,7 @@ import { multiSelectState, messageSelected } from './../../../../redux/actions/m
 import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
 import ModalBox from '../../../modals/ModalBox';
 import { showSectionGroups } from '../../../../redux/actions/groups/showSectionGroups';
-// import $ from 'jquery';
+
 class DotsMenu extends Component {
 
     constructor(props) {
@@ -13,14 +13,6 @@ class DotsMenu extends Component {
             showModal: false,
             showMenu: false,
         }
-    }
-
-    componentDidMount() {
-        this.dots.addEventListener('click', this.toggleMenu);
-    }
-
-    componentWillUnmount() {
-        this.dots.removeEventListener('click', this.toggleMenu);
     }
 
     toggleModal = () => {
@@ -37,9 +29,9 @@ class DotsMenu extends Component {
         let content = document.getElementById('#main-chat-feed');
         let fillContent = (this.props.type === "message-out") ? content.offsetWidth - (element.offsetLeft + (element.offsetWidth) + 240) > 0 :
             (element.offsetLeft - 240) > 0;
-        (!fillContent)&&this.setState({
-            menuFillStyle:(this.props.type==="message-out")?{right: 'calc(0% - 12px)',left:'unset'}:
-            {left: 'calc(0% - 12px)',right:'unset'}
+        (!fillContent) && this.setState({
+            menuFillStyle: (this.props.type === "message-out") ? { right: 'calc(0% - 12px)', left: 'unset' } :
+                { left: 'calc(0% - 12px)', right: 'unset' }
         });
     }
 
@@ -68,7 +60,7 @@ class DotsMenu extends Component {
     render() {
         return (
             <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper-message">
-                <img ref={img => { this.dots = img }} className="dots-menu-message" src={this.props.dots_menu} alt="" />
+                <img onClick={this.toggleMenu} ref={img => { this.dots = img }} className="dots-menu-message" src={this.props.dots_menu} alt="" />
                 {
                     (this.state.showMenu) &&
                     <div style={this.state.menuFillStyle} id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">

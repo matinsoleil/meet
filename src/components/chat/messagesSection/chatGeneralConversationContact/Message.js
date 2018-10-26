@@ -12,6 +12,7 @@ class Message extends Component {
         super(props);
         this.state = {
             menuState: false,
+            blockedMenu: false,
         }
     }
 
@@ -26,9 +27,16 @@ class Message extends Component {
     }
 
     showDots = () => {
-        (!this.props.multiSelect && !this.props.messageSelected) ? this.setState({
-            menuState: !this.state.menuState
-        }) : this.setState({ menuState: false });
+        (!this.props.multiSelect && !this.props.messageSelected) ?
+            (!this.state.blockedMenu) && this.setState({
+                menuState: !this.state.menuState
+            }) : this.setState({ menuState: false });
+    }
+
+    blockView = (state) => {
+        this.setState({
+            blockedMenu: !this.state.blockedMenu,
+        });
     }
 
     checked = (e) => {
@@ -64,7 +72,7 @@ class Message extends Component {
                     </div>
                     {
                         (this.state.menuState) &&
-                        <DotsMenu contacts={this.props.contacts} showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
+                        <DotsMenu blockView={this.blockView} contacts={this.props.contacts} showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
                     }
                 </div>
                 {(this.props.multiSelect)
