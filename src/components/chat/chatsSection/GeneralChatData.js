@@ -23,7 +23,6 @@ class GeneralContactData extends Component {
     }
 
     clickChat = () => {
-        // this.props.fetchContact(idChat);
         const idChat = this.props.chat.id
         this.props.fetchContact(idChat)
     }
@@ -49,8 +48,9 @@ class GeneralContactData extends Component {
     }
 
     render() {
+        const idElement = "chat-"+this.props.chat.id
         return (
-            <div className="contact-chat" ref={div => { this.bubble = div }}  >
+            <div className="contact-chat" ref={div => { this.bubble = div }} id={idElement} >
                 <div className="grid-container-contact-chat">
                     <div className="icon-contact" onClick={this.clickChat}>
                         <div className="outer-circle" >
@@ -72,11 +72,11 @@ class GeneralContactData extends Component {
                             }
                         </span>
                     </div>
-                    <div className="day-last-message" onClick={this.clickChat}>
+                    <div className="day-last-message" >
                         <div className="inPoints">
                             {
                                 (this.state.menuState) &&
-                                <DotsMenuContact showDots={this.showDots} chat={this.props.chat} id={this.props.chat.id} />
+                                <DotsMenuContact showDots={this.showDots} chat={this.props.chat} id={this.props.chat.id} deleteElementChat={this.props.deleteElementChat} />
                             }
                         </div>
                         <p className="day-last">{this.props.chat.dayLastMessage}</p>

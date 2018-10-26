@@ -74,22 +74,25 @@ class dotsMenuContact extends Component {
     }
 
     deleteContact() {
-        this.props.chat["name"] = "Stylopm"
+        this.props.deleteElementChat( this.props.chat.id );
+        // let unmount = React.unmountComponentAtNode(mountNode);
         // const chat = this.props.chat
         // var listContacts = this.props.xxxcontacts
         // var idContact = this.props.id
         // var indexContact = listContacts.findIndex(item => item.id === idContact)
         // listContacts.splice(indexContact, 1)
         // this.props.updateContacts(listContacts)
-        // this.setState({
-        //     showModalDeleteContact: false,
-        // });
+        this.setState({
+            showModalDeleteContact: false,
+        });
         // this.props.showAlertGeneral("Se elimino el contacto")
     }
 
     fixContact() {
         this.props.chat["pinner"] = this.props.chat["pinner"] === "1" ? "0" : "1"
         this.props.showDots()
+
+        
         // var listContacts = this.props.xxxcontacts
         // var idContact = this.props.id
         // var indexContact = listContacts.findIndex(item => item.id === idContact)
