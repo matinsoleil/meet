@@ -20,9 +20,8 @@ class GeneralContactData extends Component {
             showModalSilenceConversation: false,
             showModalFixContact: false
         }
-        
-        this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
         // this.fileContact = this.fileContact.bind(this)
+        this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
         // this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
         // this.fixContact = this.fixContact.bind(this)
         // this.showMsj = this.showMsj.bind(this)
@@ -41,11 +40,11 @@ class GeneralContactData extends Component {
     }
 
     renderBodyDeleteContact = () => {
-        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.deleteContact} />)
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.props.deleteElementChat} />)
     }
 
     showModalDeleteContactAction = () => {
-        this.closeDots()
+        this.showDots()
         this.setState({
             showModalDeleteContact: true
         })
@@ -79,12 +78,6 @@ class GeneralContactData extends Component {
     showDots = () => {
         this.setState({
             menuState: !this.state.menuState
-        })
-    }
-
-    closeDots = () => {
-        this.setState({
-            menuState: false
         })
     }
 
