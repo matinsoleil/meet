@@ -2,21 +2,14 @@ import React, { Component } from 'react';
 import './GeneralChatData.scss'
 import DotsMenuContact from './dotsMenuContact';
 import fetchContact from '../../../redux/actions/contact/fetchContact'
-
 import { connect } from 'react-redux'
-
 class GeneralContactData extends Component {
     constructor(...props) {
         super(...props);
-        this.clickChat = this.clickChat.bind(this);
         this.state = {
             menuState: false,
             msjChat: false,
         }
-    }
-
-    clickChat(idChat) {
-        this.props.fetchContact(idChat);
     }
 
     componentDidMount() {
@@ -28,6 +21,13 @@ class GeneralContactData extends Component {
         this.bubble.removeEventListener('mouseenter', this.showDots);
         this.bubble.removeEventListener('mouseleave', this.showDots);
     }
+
+    clickChat = () => {
+        // this.props.fetchContact(idChat);
+        const idChat = this.props.chat.id
+        this.props.fetchContact(idChat)
+    }
+
 
     showDots = () => {
         this.setState({
@@ -50,9 +50,9 @@ class GeneralContactData extends Component {
 
     render() {
         return (
-            <div className="contact-chat" ref={div => { this.bubble = div }}>
+            <div className="contact-chat" ref={div => { this.bubble = div }}  >
                 <div className="grid-container-contact-chat">
-                    <div className="icon-contact" onClick={this.clickChat(this.props.chat.id)}>
+                    <div className="icon-contact" onClick={this.clickChat}>
                         <div className="outer-circle" >
                             <img className="img-icon-user" src={this.props.chat.imgContact} alt="icon-user" />
                             <div className="inner-circle circle">&nbsp;</div>
@@ -119,9 +119,10 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchContact: (id) => {
             dispatch(fetchContact(id));
-        },
+        }, fetchContact: (id) => {
+            dispatch(fetchContact(id));
+        }
     }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(GeneralContactData);
