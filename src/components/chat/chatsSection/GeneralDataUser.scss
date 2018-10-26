@@ -8,12 +8,23 @@
     -webkit-border-radius: 10px 10px 10px 10px;
     margin-bottom: 15px;
 }
+
+@media only screen and (max-width: 1200px) {
+
+    .main-chat-general-data-user{
+        width: 100%;
+    }
+
+}
+
+
 .grid-container-user-chat {
     display: grid;
     grid-template-areas:
       'icon-user name-user name-user name-user name-user name-user name-user'
       'icon-user status-user status-user status-user status-user status-user status-user'
       'search-contact search-contact search-contact search-contact search-contact search-contact search-contact';
+      width:408px;
 }
 .grid-container-user-chat > div {
     padding: 6px 0;

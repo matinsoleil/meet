@@ -57,7 +57,10 @@
 }
 .name-contact-group { 
   height: 16px;
+  width:210px;
   margin-top:20px;
+  overflow:hidden;
+  margin-left:10px;
   font-family: Roboto;
   font-size: 16px;
   font-weight: normal;
@@ -84,6 +87,16 @@
   grid-area: count-message-group;
   // justify-self: end;
 }
+
+.stateUserGroup{
+   margin-top:18px;
+   margin-bottom: 18px;
+   margin-right: 8px;
+   margin-right:8px;
+   height:20px;
+   width: 20px;
+}
+
 .circle-count-message-group {
   width: 20px;
   height: 20px;

@@ -23,6 +23,7 @@ class GeneralContactDataCreateGroup extends Component {
                         <div className="circle-count-message-group"><p>{this.props.countMessage}</p>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         )
