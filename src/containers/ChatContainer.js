@@ -51,6 +51,7 @@ class ChatContainer extends Component {
         )
     }
 }
+
 ChatContainer.defaultProps = {
     contacts: [],
     searchContacts: [],
@@ -60,6 +61,7 @@ ChatContainer.defaultProps = {
     groups: [],
     alertGeneral: []
 }
+
 const mapStateToProps = (state) => {
     return {
         contacts: getContacts(state),
@@ -71,6 +73,7 @@ const mapStateToProps = (state) => {
         alertGeneral: getAlertGeneral(state)
     }
 }
+
 const mapDispatchToProps = dispatch => {
     return {
         fetchContacts: () => {

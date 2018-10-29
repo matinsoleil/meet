@@ -3,15 +3,15 @@ import { getContacts } from '../../../redux/selectors/contacts'
 import searchContacts from '../../../redux/actions/contacts/searchContacts'
 import { connect } from 'react-redux'
 import './GeneralDataUser.scss'
-
-
-
 class GeneralDataUser extends Component {
-    filterList = contacts => event => {
-        const val = event.target.value.toLowerCase();
-        const listContactsFecth = this.props.contacts.filter(v => v.name.toLowerCase().includes(val));
-        this.props.searchContacts(listContactsFecth);
-    };
+    
+    // filterList = contacts => event => {
+    //     const val = event.target.value.toLowerCase()
+    //     const listContactsFecth = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
+    //     console.log(listContactsFecth)
+    //     // this.props.searchContacts(listContactsFecth)
+    // };
+
     render() {
         return (
             <div className="main-chat-general-data-user">
@@ -26,13 +26,14 @@ class GeneralDataUser extends Component {
                     <div className="status-user">{this.props.user.status}</div>
                     <div className="search-contact">
                         <img className="img-icon-search" src={this.props.search_icon} alt="search" />
-                        <input type="text" className="input-search-main" placeholder="Buscar" onChange={this.filterList(this.props.user.contacts)}></input>
+                        <input type="text" className="input-search-main" placeholder="Buscar" onChange={this.props.filterList}></input>
                     </div>
                 </div>
             </div>
         )
     }
 }
+
 const mapStateToProps = (state) => {
     return {
         search_icon: state.customizing.Images.search_icon,
@@ -40,11 +41,13 @@ const mapStateToProps = (state) => {
         contacts: getContacts(state),
     }
 }
+
 const mapDispatchToProps = dispatch => {
     return {
         searchContacts: (listContactsFecth) => {
-            dispatch(searchContacts(listContactsFecth));
+            dispatch(searchContacts(listContactsFecth))
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(GeneralDataUser);
+
+export default connect(mapStateToProps, mapDispatchToProps)(GeneralDataUser)
