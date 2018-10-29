@@ -43,11 +43,17 @@ const renderField = ({
 let CreateGroupForm = props => {
   const { handleSubmit, closeWindow } = props
   return (
+    <div className="contentModal">
     <form onSubmit={handleSubmit}>
+    <span className="contentAnswer" > 
       <Field name="nameGroup" label="Escribe el nombre del grupo" placeholder="Nombre del grupo" type="text" component={renderField} />
-      <button className="from-create-group-btn" type="submit" >Agregar</button>
-      <button className="from-create-group-btn" onClick={closeWindow}>Close</button>
+     </span> 
+     <span className="contentResponse">
+      <button className="from-create-group-btn" type="submit" >AGREGAR</button>
+      <button className="from-create-group-btn" onClick={closeWindow}>CERRAR</button>
+     </span> 
     </form>
+    </div>
   )
 }
 
