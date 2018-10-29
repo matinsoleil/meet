@@ -22,6 +22,7 @@ class ListGeneralContactsGroup extends Component {
         })
     }
     addContactGroupClick(idContact) {
+        console.log('add');
         var listContacts = this.props.contacts
         var filter_contacts = this.props.filter_contacts
         var listAddContactsGroup = this.props.list_contacts_add_group
