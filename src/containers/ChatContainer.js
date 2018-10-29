@@ -31,10 +31,10 @@ class ChatContainer extends Component {
         //this.props.logout();
     }
 
-    renderBody = (contacts, user, conversation, groups) => {        
+    renderBody = (contacts, user, conversation, groups) => {
         return (
             <div className="main-chat">
-                <ChatsListsSectionContainer user={user} contacts={contacts} groups={groups}/> 
+                <ChatsListsSectionContainer user={user} contacts={contacts} groups={groups} />
                 <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
                 {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
             </div>
