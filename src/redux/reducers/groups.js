@@ -18,7 +18,7 @@ const estado = {
             "file": "0",
             "pinner": "1",
             "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
-            "typeChat":"2"
+            "typeChat": "2"
         },
         {
             "id": "2G",
@@ -33,7 +33,7 @@ const estado = {
             "file": "0",
             "pinner": "0",
             "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
-            "typeChat":"2"
+            "typeChat": "2"
         },
         {
             "id": "3G",
@@ -48,7 +48,7 @@ const estado = {
             "file": "1",
             "pinner": "1",
             "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
-            "typeChat":"2"
+            "typeChat": "2"
         }]
 
 }
@@ -117,6 +117,11 @@ export const groups = (state = estado, action) => {
                 filter_contacts: [],
                 select_contacts: [],
                 view: false
+            }
+        case 'UPDATE_GROUPS':
+            return {
+                ...state,
+                groups: action.payload
             }
         default:
             return state

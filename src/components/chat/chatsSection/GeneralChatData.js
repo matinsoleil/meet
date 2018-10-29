@@ -3,11 +3,13 @@ import './GeneralChatData.scss'
 import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import ModalBox from '../../modals/ModalBox'
+import { getGroups } from '../../../redux/selectors/groups'
+import { getContacts } from '../../../redux/selectors/contacts'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
+import updateGroups from '../../../redux/actions/groups/updateGroups'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { connect } from 'react-redux'
-
 class GeneralContactData extends Component {
     constructor(...props) {
         super(...props)
@@ -32,24 +34,26 @@ class GeneralContactData extends Component {
 
     }
 
-
     actionDeleteElementChat = () => {
-        // var listContacts = this.props.listChats
-        // var idContact = id
-        // var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // this.props.listChats.splice(indexContact, 1)
-        // this.props.updateContacts(listContacts);
-        // this.setState({
-        //     deleteChat: false
-        // })
-
-        this.props.showAlertGeneral('Eliminaste el chat con '+ this.props.chat.name)
+        if (this.props.chat.typeChat === "1") {
+            var listContacts = this.props.contacts
+            var idContact = this.props.chat.id
+            var indexContact = listContacts.findIndex(item => item.id === idContact)
+            listContacts.splice(indexContact, 1)
+            this.props.updateContacts(listContacts);
+        } else {
+            var listGroups = this.props.groups.groups
+            var idGroup = this.props.chat.id
+            var indexGroups = listGroups.findIndex(item => item.id === idGroup)
+            listGroups.splice(indexGroups, 1)
+            this.props.updateGroups(listGroups);
+        }
+        this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name)
         this.setState({
             deleteChat: true
         })
     }
-
-
+    
     componentDidMount() {
         this.bubble.addEventListener('mouseenter', this.showDots)
         this.bubble.addEventListener('mouseleave', this.showDots)
@@ -128,9 +132,6 @@ class GeneralContactData extends Component {
     }
 
     render() {
-        // console.log(" * * * ");
-        // console.log(this.props.showDelete);
-        // console.log(" - - - ");
         const idElement = "chat-" + this.props.chat.id
         return (
             !this.state.deleteChat ?
@@ -203,11 +204,17 @@ const mapStateToProps = state => {
         status_user_icon: state.customizing.Images.status_user_attach_icon,
         mute_a_icon: state.customizing.Images.mute_a_icon,
         file_icon: state.customizing.Images.file_icon_chat,
+
+        contacts: getContacts(state),
+        groups: getGroups(state),
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
+        updateGroups: (listUpdate) => {
+            dispatch(updateGroups(listUpdate))
+        },
         updateContacts: (listUpdate) => {
             dispatch(updateContacts(listUpdate))
         },
