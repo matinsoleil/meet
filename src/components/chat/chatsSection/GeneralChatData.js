@@ -43,7 +43,7 @@ class GeneralContactData extends Component {
         //     deleteChat: false
         // })
 
-        this.props.showAlertGeneral('¿Seguro que deseas eliminar el chat con '+ this.props.chat.name +'?')
+        this.props.showAlertGeneral('Eliminaste el chat con '+ this.props.chat.name)
         this.setState({
             deleteChat: true
         })
