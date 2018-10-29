@@ -118,11 +118,20 @@ export const groups = (state = estado, action) => {
                 select_contacts: [],
                 view: false
             }
+
+
         case 'UPDATE_GROUPS':
             return {
                 ...state,
                 groups: action.payload
             }
+
+        case 'UPDATE_PINER_GROUP':
+            return {
+                ...state,
+                groups: action.payload
+            }
+
         default:
             return state
     }

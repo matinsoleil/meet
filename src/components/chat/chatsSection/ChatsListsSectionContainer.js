@@ -14,14 +14,12 @@ class ChatsListsSectionContainer extends Component {
     constructor(props) {
         super(props);
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
-        this.hideMensajeGeneralClick = this.hideMensajeGeneralClick.bind(this);
     }
+    
     showSectionGroupsClick(listContact) {
         this.props.showSectionGroups(this.props.contacts)
     }
-    hideMensajeGeneralClick() {
-        this.props.hideAlertGeneral()
-    }
+
     orderByName(list) {
         const byName = list.slice(0);
         return byName.sort(function (a, b) {
@@ -46,11 +44,20 @@ class ChatsListsSectionContainer extends Component {
         groups.map(group => list.push(group))
         return this.orderByPinner(list);
     }
+
+
     render() {
+        if (this.props.alertGeneral.show === true) {
+            setTimeout(function () {
+                this.props.hideAlertGeneral()
+            }.bind(this), 3000)
+        }
+
+        console.log("Renderizo");
         const listChats = this.grouplistChast()
         return (
             <div className="contacts-section-container">
-                <span className="tab-contacts"></span> 
+                <span className="tab-contacts"></span>
                 <GeneralDataUser user={this.props.user} contacts={this.props.contacts} />
                 <div className="chat-state">
                     <h2 className="title-chat">Chats</h2>
@@ -61,10 +68,12 @@ class ChatsListsSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
-                {this.props.alertGeneral.show === true ? <div className="message-popup "> 
-                                                            <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> 
-                                                            {/* <p className="text-message-popup"> <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span> </p>  */}
-                                                        </div> : null}
+                {this.props.alertGeneral.show === true ?
+                    <div className="message-popup">
+                        <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
+                    </div>
+                    : null
+                }
                 <ListChats listChats={listChats} />
             </div>
         );

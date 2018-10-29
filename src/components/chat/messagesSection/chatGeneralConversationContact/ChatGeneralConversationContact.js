@@ -8,20 +8,25 @@ class ChatGeneralConversationContact extends Component {
         return (
             <div id='#main-chat-feed' style={{ backgroundImage: `url(${this.props.background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
-                {this.props.chat.map(c => {
-                    const TypeMessageControl = c.userSend === "1" ? 'message-in' : 'message-out';
-                    const tailType = c.userSend === "1" ? 'tail-out' : 'tail-in';
-                    const tail = (c.userSend === "1") ? this.props.out_tail : this.props.in_tail;
-                    return <Message
-                        key={c.id}
-                        messageObject={c}
-                        tail={tail}
-                        type={TypeMessageControl}
-                        tailType={tailType}
-                        user_icon={this.props.contact.imgContact}
-                        contacts={this.props.contacts}
-                    />
-                })}
+                {
+                    this.props.chat.length !== 0 ?
+                        this.props.chat.map(c => {
+                            const TypeMessageControl = c.userSend === "1" ? 'message-in' : 'message-out';
+                            const tailType = c.userSend === "1" ? 'tail-out' : 'tail-in';
+                            const tail = (c.userSend === "1") ? this.props.out_tail : this.props.in_tail;
+                            return <Message
+                                key={c.id}
+                                messageObject={c}
+                                tail={tail}
+                                type={TypeMessageControl}
+                                tailType={tailType}
+                                user_icon={this.props.contact.imgContact}
+                                contacts={this.props.contacts}
+                            />
+                        })
+                        : 
+                        null
+                }
             </div>
         );
     }
