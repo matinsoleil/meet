@@ -4,21 +4,10 @@ import './ListChats.scss'
 class ListGeneralContacts extends Component {
     constructor(props) {
         super(props);
-        this.deleteElementChat = this.deleteElementChat.bind(this)
-
         this.state = {
-            showModalFixContact: false
+            showModalFixContact: false,
         }
     }
-
-    deleteElementChat = (id) => {
-        var listContacts = this.props.listChats
-        var idContact = id
-        var indexContact = listContacts.findIndex(item => item.id === idContact)
-        this.props.listChats.splice(indexContact, 1)
-        console.log(listContacts);
-    }
-
     render() {
         const listContactsOrder = this.props.listChats;
         return (
@@ -26,8 +15,7 @@ class ListGeneralContacts extends Component {
                 {listContactsOrder.map(chat =>
                     <GeneralChatData chat={chat}
                         key={chat.id}
-                        clickChat={this.clickChat}
-                        deleteElementChat={this.deleteElementChat} />
+                    />
                 )}
             </div>
         )

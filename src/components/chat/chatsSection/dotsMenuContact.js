@@ -164,12 +164,12 @@ class dotsMenuContact extends Component {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
                         <div className="sideMenu">
-                            <p className="optionSideMenu"><a onClick={this.props.showModalDeleteContactAction}> Eliminar chat </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.fileContact}> {titleActionFile} </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.showModalSilenceConversationAction}> {titleActionSilence} </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.fixContact}> {titleActionFix} </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.showMsj}> Marcar como no leido </a></p>
                             <p className="optionSideMenu" onClick={this.props.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.props.showModalDeleteContactAction}> Eliminar chat </a></p>
                         </div>
                     </div>
                 }
