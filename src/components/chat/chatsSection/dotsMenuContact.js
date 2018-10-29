@@ -4,14 +4,12 @@ import { deleteMessage } from '../../../redux/actions/conversation/fetchConversa
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { fetchConversation } from '../../../redux/actions/conversation/fetchConversation'
-
 import { deleteConversation } from '../../../redux/actions/conversation/deleteConversation'
-
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
 import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import SilenceConversation from '../../form/contact/SilenceConversation'
-import ModalBox from '../../modals/ModalBox'
+
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
     constructor(props) {
@@ -74,47 +72,20 @@ class dotsMenuContact extends Component {
     }
 
     deleteContact() {
-        this.props.chat["name"] = "Stylopm"
-        // const chat = this.props.chat
-        // var listContacts = this.props.xxxcontacts
-        // var idContact = this.props.id
-        // var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // listContacts.splice(indexContact, 1)
-        // this.props.updateContacts(listContacts)
-        // this.setState({
-        //     showModalDeleteContact: false,
-        // });
-        // this.props.showAlertGeneral("Se elimino el contacto")
+        this.props.deleteElementChat(this.props.chat.id);
+        this.setState({
+            showModalDeleteContact: false,
+        });
     }
 
     fixContact() {
         this.props.chat["pinner"] = this.props.chat["pinner"] === "1" ? "0" : "1"
         this.props.showDots()
-        // var listContacts = this.props.xxxcontacts
-        // var idContact = this.props.id
-        // var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // var infoContact = listContacts.find(item => item.id === idContact)
-        // infoContact.pinner = infoContact.pinner === "1" ? "0" : "1"
-        // var msg = infoContact.pinner === "1" ? "Se fijo el contacto" : "Se desfijo el contacto"
-        // listContacts.splice(indexContact, 1)
-        // listContacts.push(infoContact)
-        // this.props.updateContacts(listContacts)
-        // this.props.showAlertGeneral(msg)
     }
 
     fileContact() {
         this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
         this.props.showDots()
-        // var listContacts = this.props.cxxxxontacts
-        // var idContact = this.props.id
-        // var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // var infoContact = listContacts.find(item => item.id === idContact)
-        // infoContact.file = infoContact.file === "1" ? "0" : "1";
-        // var msg = infoContact.file === "1" ? "Se archivo la conversación" : "Se desarchivo la conversación"
-        // listContacts.splice(indexContact, 1)
-        // listContacts.push(infoContact)
-        // this.props.updateContacts(listContacts)
-        // this.props.showAlertGeneral(msg)
     }
 
     showModalDeleteConversationContactAction = () => {
@@ -127,16 +98,6 @@ class dotsMenuContact extends Component {
         if (this.props.chat.silence !== "0") {
             this.props.chat["silence"] = "0"
             this.props.showDots()
-            // var listContacts = this.props.contaxxxxxcts
-            // var idContact = this.props.id
-            // var indexContact = listContacts.findIndex(item => item.id === idContact)
-            // var infoContact = listContacts.find(item => item.id === idContact)
-            // infoContact.silence = "0"
-            // var msg = "Se desactivo el silencio"
-            // listContacts.splice(indexContact, 1)
-            // listContacts.push(infoContact)
-            // this.props.updateContacts(listContacts)
-            // this.props.showAlertGeneral(msg)
         } else {
             this.setState({
                 showModalSilenceConversation: true
@@ -150,12 +111,11 @@ class dotsMenuContact extends Component {
         });
     }
 
-    showModalDeleteContactAction = () => {
-        this.setState({
-            showModalDeleteContact: true
-        });
-
-    }
+    // showModalDeleteContactAction = () => {
+    //     this.setState({
+    //         showModalDeleteContact: true
+    //     });
+    // }
 
     renderBodyDeleteContact = (nameContact) => {
         return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={nameContact} deleteContact={this.deleteContact} />)
@@ -188,16 +148,6 @@ class dotsMenuContact extends Component {
 
     submitCreateSilence = values => {
         this.props.chat["silence"] = values.timeSilence
-        // var listContacts = this.props.contzzzzacts
-        // var idContact = this.props.id
-        // var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // var infoContact = listContacts.find(item => item.id === idContact)
-        // infoContact.silence = values.timeSilence
-        // var msg = "Se activa el silencio"
-        // listContacts.splice(indexContact, 1)
-        // listContacts.push(infoContact)
-        // this.props.updateContacts(listContacts)
-        // alert(msg)
         this.setState({
             showModalSilenceConversation: false
         });
@@ -214,31 +164,29 @@ class dotsMenuContact extends Component {
                     (this.state.showMenu) &&
                     <div id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
                         <div className="sideMenu">
-                            <p className="optionSideMenu"><a onClick={this.showModalDeleteContactAction}> Eliminar chat </a></p>
-                            <p className="optionSideMenu"><a onClick={this.fileContact}> {titleActionFile} </a></p>
-                            <p className="optionSideMenu"><a onClick={this.showModalSilenceConversationAction}> {titleActionSilence} </a></p>
-                            <p className="optionSideMenu"><a onClick={this.fixContact}> {titleActionFix} </a></p>
-                            <p className="optionSideMenu"><a onClick={this.showMsj}> Marcar como no leido </a></p>
-                            <p className="optionSideMenu" onClick={this.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.props.fileContact}> {titleActionFile} </a></p>
+                            <p className="optionSideMenu"><a onClick={this.props.showModalSilenceConversationAction}> {titleActionSilence} </a></p>
+                            <p className="optionSideMenu"><a onClick={this.props.fixContact}> {titleActionFix} </a></p>
+                            <p className="optionSideMenu"><a onClick={this.props.showMsj}> Marcar como no leido </a></p>
+                            <p className="optionSideMenu" onClick={this.props.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
+                            <p className="optionSideMenu"><a onClick={this.props.showModalDeleteContactAction}> Eliminar chat </a></p>
                         </div>
                     </div>
                 }
-                {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.chat.name)} /> : null}
+                {/* {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact(this.props.chat.name)} /> : null}
                 {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.chat.name)} /> : null}
                 {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
-                {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
+                {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null} */}
             </div>
         )
     }
 }
-
 const mapStateToProps = state => {
     return {
         alertGeneral: getAlertGeneral(state),
         dots_menu: state.customizing.Images.dots_menu,
     }
 }
-
 const mapDispatchToProps = dispatch => {
     return {
         deleteMessage: messageId => {

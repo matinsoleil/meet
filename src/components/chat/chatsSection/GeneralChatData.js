@@ -1,36 +1,105 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import './GeneralChatData.scss'
-import DotsMenuContact from './dotsMenuContact';
+import DotsMenuContact from './dotsMenuContact'
+import fetchContact from '../../../redux/actions/contact/fetchContact'
+import ModalBox from '../../modals/ModalBox'
+import DeleteContact from '../../../components/form/contact/DeleteContact'
+import updateContacts from '../../../redux/actions/contacts/updateContacts'
+import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { connect } from 'react-redux'
 
 class GeneralContactData extends Component {
     constructor(...props) {
-        super(...props);
-        this.clickChat = this.clickChat.bind(this);
+        super(...props)
         this.state = {
+            deleteChat: false,
             menuState: false,
             msjChat: false,
+            showModal: false,
+            showMenu: false,
+            showModalDeleteContact: false,
+            showModalFileContact: false,
+            showModalDeleteConversationContact: false,
+            showModalSilenceConversation: false,
+            showModalFixContact: false
         }
+        // this.fileContact = this.fileContact.bind(this)
+        this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
+        // this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
+        // this.fixContact = this.fixContact.bind(this)
+        // this.showMsj = this.showMsj.bind(this)
+        // this.showModalDeleteConversationContactAction = this.actionsMenu.bind(this)
+
     }
 
-    clickChat() {
-        this.props.onClick(this.props.chat.id)
+
+    actionDeleteElementChat = () => {
+        // var listContacts = this.props.listChats
+        // var idContact = id
+        // var indexContact = listContacts.findIndex(item => item.id === idContact)
+        // this.props.listChats.splice(indexContact, 1)
+        // this.props.updateContacts(listContacts);
+        // this.setState({
+        //     deleteChat: false
+        // })
+
+        this.props.showAlertGeneral('¿Seguro que deseas eliminar el chat con '+ this.props.chat.name +'?')
+        this.setState({
+            deleteChat: true
+        })
     }
+
 
     componentDidMount() {
-        this.bubble.addEventListener('mouseenter', this.showDots);
-        this.bubble.addEventListener('mouseleave', this.showDots);
+        this.bubble.addEventListener('mouseenter', this.showDots)
+        this.bubble.addEventListener('mouseleave', this.showDots)
     }
 
     componentWillUnmount() {
-        this.bubble.removeEventListener('mouseenter', this.showDots);
-        this.bubble.removeEventListener('mouseleave', this.showDots);
+        this.bubble.removeEventListener('mouseenter', this.showDots)
+        this.bubble.removeEventListener('mouseleave', this.showDots)
+    }
+
+    renderBodyDeleteContact = () => {
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.actionDeleteElementChat} />)
+    }
+
+    showModalDeleteContactAction = () => {
+        this.showDots()
+        this.setState({
+            showModalDeleteContact: true
+        })
+    }
+
+    fileContact = () => {
+        console.log("fileContact")
+    }
+
+    showModalSilenceConversationAction = () => {
+        console.log("showModalSilenceConversationAction")
+    }
+
+    fixContact = () => {
+        console.log("fixContact")
+    }
+
+    showMsj = () => {
+        console.log("showMsj")
+    }
+
+    showModalDeleteConversationContactAction = () => {
+        console.log("showModalDeleteConversationContactAction")
+    }
+
+    clickChat = () => {
+        const idChat = this.props.chat.id
+        this.props.fetchContact(idChat)
     }
 
     showDots = () => {
         this.setState({
             menuState: !this.state.menuState
-        });
+        })
     }
 
     msjGeneralChatData = () => {
@@ -46,64 +115,88 @@ class GeneralContactData extends Component {
         )
     }
 
-    render() {
-        return (
-            <div className="contact-chat" ref={div => { this.bubble = div }}>
-                <div className="grid-container-contact-chat">
-                    <div className="icon-contact" onClick={this.clickChat}>
-                        <div className="outer-circle" >
-                            <img className="img-icon-user" src={this.props.chat.imgContact} alt="icon-user" />
-                            <div className="inner-circle circle">&nbsp;</div>
-                        </div>
-                    </div>
-                    <div className="name-contact" onClick={this.clickChat}>
-                        <span className="text-contact">
-                            <p className="word-contact">{this.props.chat.name}</p>
-                            {
-                                this.props.chat.silence !== "0" ? <img className="status-contact" src={this.props.mute_a_icon} alt="status-conctact" /> : null
-                            }
-                            {
-                                this.props.chat.file !== "0" ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
-                            }
-                            {
-                                this.props.chat.pinner !== "0" ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
-                            }
-                        </span>
-                    </div>
-                    <div className="day-last-message" onClick={this.clickChat}>
-                        <div className="inPoints">
-                            {
-                                (this.state.menuState) &&
-                                <DotsMenuContact showDots={this.showDots} chat={this.props.chat} id={this.props.chat.id}/>
-                            }
-                        </div>
-                        <p className="day-last">{this.props.chat.dayLastMessage}</p>
-                    </div>
-                    <div className="last-message" onClick={this.clickChat}>
-                        {this.props.chat.lastMessage}
-                    </div>
-                    <div className="count-message" onClick={this.clickChat}>
-                        {
-                            this.props.chat.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
-                        }
-                    </div>
-                </div>
+    closeModalDeleteContactAction = () => {
+        this.setState({
+            showModalDeleteContact: false,
+        })
+    }
 
-                    { (this.state.msjChat) &&
-                    <div className="message-popup ">
-                        <p className="text-message-popup">
-                            <span className="msg"> {this.props.chat.name} </span>
-                        </p>
-                        <p className="text-message-popup">
-                            <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span>
-                        </p>
+    deleteContact = () => {
+        this.setState({
+            showModalDeleteContact: false,
+        })
+    }
+
+    render() {
+        // console.log(" * * * ");
+        // console.log(this.props.showDelete);
+        // console.log(" - - - ");
+        const idElement = "chat-" + this.props.chat.id
+        return (
+            !this.state.deleteChat ?
+                <div className="contact-chat" ref={div => { this.bubble = div }} id={idElement} >
+                    <div className="grid-container-contact-chat">
+                        <div className="icon-contact" onClick={this.clickChat}>
+                            <div className="outer-circle" >
+                                <img className="img-icon-user" src={this.props.chat.imgContact} alt="icon-user" />
+                                <div className="inner-circle circle">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div className="name-contact" onClick={this.clickChat}>
+                            <span className="text-contact">
+                                <p className="word-contact">{this.props.chat.name}</p>
+                                {
+                                    this.props.chat.silence !== "0" ? <img className="status-contact" src={this.props.mute_a_icon} alt="status-conctact" /> : null
+                                }
+                                {
+                                    this.props.chat.file !== "0" ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
+                                }
+                                {
+                                    this.props.chat.pinner !== "0" ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
+                                }
+                            </span>
+                        </div>
+                        <div className="day-last-message" >
+                            <div className="inPoints">
+                                {
+                                    (this.state.menuState) &&
+                                    <DotsMenuContact showDots={this.showDots}
+                                        chat={this.props.chat}
+                                        showModalDeleteContactAction={this.showModalDeleteContactAction} />
+                                }
+                            </div>
+                            <p className="day-last">{this.props.chat.dayLastMessage}</p>
+                        </div>
+                        <div className="last-message" onClick={this.clickChat}>
+                            {this.props.chat.lastMessage}
+                        </div>
+                        <div className="count-message" onClick={this.clickChat}>
+                            {
+                                this.props.chat.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
+                            }
+                        </div>
                     </div>
+
+                    {(this.state.msjChat) &&
+                        <div className="message-popup ">
+                            <p className="text-message-popup">
+                                <span className="msg"> {this.props.chat.name} </span>
+                            </p>
+                            <p className="text-message-popup">
+                                <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span>
+                            </p>
+                        </div>
                     }
-            </div>
+
+                    {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
+                    {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.chat.name)} /> : null}
+                    {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
+                    {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
+                </div>
+                : null
         )
     }
 }
-
 const mapStateToProps = state => {
     return {
         dots_menu: state.customizing.Images.dots_menu,
@@ -113,4 +206,21 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(GeneralContactData);
+const mapDispatchToProps = dispatch => {
+    return {
+        updateContacts: (listUpdate) => {
+            dispatch(updateContacts(listUpdate))
+        },
+        fetchContact: (id) => {
+            dispatch(fetchContact(id))
+        },
+        fetchContact: (id) => {
+            dispatch(fetchContact(id))
+        },
+        showAlertGeneral: (msj) => {
+            dispatch(showAlertGeneral(msj))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GeneralContactData)

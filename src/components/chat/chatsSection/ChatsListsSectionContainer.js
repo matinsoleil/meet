@@ -61,7 +61,10 @@ class ChatsListsSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
-                {this.props.alertGeneral.show === true ? <div className="message-popup "> <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> <p className="text-message-popup"> <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span> </p> </div> : null}
+                {this.props.alertGeneral.show === true ? <div className="message-popup "> 
+                                                            <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p> 
+                                                            {/* <p className="text-message-popup"> <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span> </p>  */}
+                                                        </div> : null}
                 <ListChats listChats={listChats} />
             </div>
         );
