@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import './GeneralChatData.scss'
 import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
+import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
 import ModalBox from '../../modals/ModalBox'
 import { getGroups } from '../../../redux/selectors/groups'
 import { getContacts } from '../../../redux/selectors/contacts'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
+import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
 import updateGroups from '../../../redux/actions/groups/updateGroups'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
+
 import { connect } from 'react-redux'
 class GeneralContactData extends Component {
     constructor(...props) {
@@ -27,10 +30,13 @@ class GeneralContactData extends Component {
         }
         // this.fileContact = this.fileContact.bind(this)
         this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
+        this.closeModalDeleteConversationContactAction = this.closeModalDeleteConversationContactAction.bind(this)
+
         // this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
         // this.fixContact = this.fixContact.bind(this)
         // this.showMsj = this.showMsj.bind(this)
         this.showModalDeleteConversationContactAction = this.showModalDeleteConversationContactAction.bind(this)
+        this.deleteConversationContact = this.deleteConversationContact.bind(this)
 
     }
 
@@ -69,7 +75,7 @@ class GeneralContactData extends Component {
     }
 
     renderBodyDeleteConversationContact = () => {
-        // return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={id} deleteConversationContact={this.deleteConversationContact} />)
+        return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={this.props.chat.name} deleteConversationContact={this.deleteConversationContact} />)
     }
 
     showModalDeleteContactAction = () => {
@@ -83,6 +89,14 @@ class GeneralContactData extends Component {
         this.showDots()
         this.setState({
             showModalDeleteConversationContact: true
+        });
+    }
+
+    deleteConversationContact() {
+        this.props.deleteConversation(null)
+        this.props.showAlertGeneral('Historial del chat eliminado')
+        this.setState({
+            showModalDeleteConversationContact: false
         });
     }
 
@@ -132,6 +146,12 @@ class GeneralContactData extends Component {
         })
     }
 
+    closeModalDeleteConversationContactAction() {
+        this.setState({
+            showModalDeleteConversationContact: false
+        });
+    }
+
     deleteContact = () => {
         this.setState({
             showModalDeleteContact: false,
@@ -172,8 +192,8 @@ class GeneralContactData extends Component {
                                         chat={this.props.chat}
                                         showModalDeleteContactAction={this.showModalDeleteContactAction}
                                         showModalDeleteConversationContactAction={this.showModalDeleteConversationContactAction}
-                                        
-                                        />
+
+                                    />
                                 }
                             </div>
                             <p className="day-last">{this.props.chat.dayLastMessage}</p>
@@ -200,7 +220,7 @@ class GeneralContactData extends Component {
                     }
 
                     {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.chat.name)} /> : null}
-                    
+
                     {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
 
 
@@ -235,8 +255,8 @@ const mapDispatchToProps = dispatch => {
         fetchContact: (id) => {
             dispatch(fetchContact(id))
         },
-        fetchContact: (id) => {
-            dispatch(fetchContact(id))
+        deleteConversation: (id) => {
+            dispatch(deleteConversation(id))
         },
         showAlertGeneral: (msj) => {
             dispatch(showAlertGeneral(msj))
