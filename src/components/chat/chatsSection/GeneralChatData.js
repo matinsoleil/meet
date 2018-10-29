@@ -30,7 +30,7 @@ class GeneralContactData extends Component {
         // this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
         // this.fixContact = this.fixContact.bind(this)
         // this.showMsj = this.showMsj.bind(this)
-        // this.showModalDeleteConversationContactAction = this.actionsMenu.bind(this)
+        this.showModalDeleteConversationContactAction = this.showModalDeleteConversationContactAction.bind(this)
 
     }
 
@@ -53,7 +53,7 @@ class GeneralContactData extends Component {
             deleteChat: true
         })
     }
-    
+
     componentDidMount() {
         this.bubble.addEventListener('mouseenter', this.showDots)
         this.bubble.addEventListener('mouseleave', this.showDots)
@@ -68,11 +68,22 @@ class GeneralContactData extends Component {
         return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.actionDeleteElementChat} />)
     }
 
+    renderBodyDeleteConversationContact = () => {
+        // return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={id} deleteConversationContact={this.deleteConversationContact} />)
+    }
+
     showModalDeleteContactAction = () => {
         this.showDots()
         this.setState({
             showModalDeleteContact: true
         })
+    }
+
+    showModalDeleteConversationContactAction = () => {
+        this.showDots()
+        this.setState({
+            showModalDeleteConversationContact: true
+        });
     }
 
     fileContact = () => {
@@ -89,10 +100,6 @@ class GeneralContactData extends Component {
 
     showMsj = () => {
         console.log("showMsj")
-    }
-
-    showModalDeleteConversationContactAction = () => {
-        console.log("showModalDeleteConversationContactAction")
     }
 
     clickChat = () => {
@@ -163,7 +170,10 @@ class GeneralContactData extends Component {
                                     (this.state.menuState) &&
                                     <DotsMenuContact showDots={this.showDots}
                                         chat={this.props.chat}
-                                        showModalDeleteContactAction={this.showModalDeleteContactAction} />
+                                        showModalDeleteContactAction={this.showModalDeleteContactAction}
+                                        showModalDeleteConversationContactAction={this.showModalDeleteConversationContactAction}
+                                        
+                                        />
                                 }
                             </div>
                             <p className="day-last">{this.props.chat.dayLastMessage}</p>
@@ -189,15 +199,19 @@ class GeneralContactData extends Component {
                         </div>
                     }
 
-                    {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
                     {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.chat.name)} /> : null}
-                    {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
+                    
                     {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
+
+
+                    {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
+                    {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
                 </div>
                 : null
         )
     }
 }
+
 const mapStateToProps = state => {
     return {
         dots_menu: state.customizing.Images.dots_menu,

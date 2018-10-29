@@ -110,13 +110,7 @@ class dotsMenuContact extends Component {
             showModalFileContact: true
         });
     }
-
-    // showModalDeleteContactAction = () => {
-    //     this.setState({
-    //         showModalDeleteContact: true
-    //     });
-    // }
-
+    
     renderBodyDeleteContact = (nameContact) => {
         return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={nameContact} deleteContact={this.deleteContact} />)
     }
