@@ -14,6 +14,8 @@ export const fetchUser = (id) => dispatch => {
                 label: response.data.label,
                 dayLastMessage: response.data.dayLastMessage,
                 imgUser: response.data.imgUser,
+                lastState: response.data.lastState,
+                onEdit: response.data.onEdit
             })
         })
 }

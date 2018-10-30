@@ -16,6 +16,7 @@ class GeneralContactData extends Component {
        
         let existentUserId = undefined;
            console.log('contact:');
+          
            console.log(this.props.contact);
            this.currentListGroup.map(match=>{
                if(this.props.contact.id===match.id){
@@ -26,10 +27,12 @@ class GeneralContactData extends Component {
             if(existentUserId===undefined){
             this.props.onClick(this.props.contact.id);
             this.userChecked = true;
+            this.props.contact.onEdit="1"
             
             }else{
-              
+            this.props.onClick(this.props.contact.id);  
             this.userChecked = false;
+            this.props.contact.onEdit="0";
             }
     }
 
@@ -49,8 +52,8 @@ class GeneralContactData extends Component {
                         </div>
                         <div className="name-contact-group">{this.props.contact.name} </div>
                         <div className="count-message-group">
-                                {  this.userChecked === true || this.currentListGroup[this.props.contact.id] ?<img className="stateUserGroup" src={this.props.check_mark_check} alt="stateUserGroup" />:null }
-                                {  this.userChecked === false || this.currentListGroup[this.props.contact.id] ?<img className="stateUserGroup" src={this.props.check_mark_uncheck} alt="stateUserGroup" />:null } 
+                                {  this.props.contact.onEdit === '1' ?<img className="stateUserGroup" src={this.props.check_mark_check} alt="stateUserGroup" />:null }
+                                {  this.props.contact.onEdit === '0' ?<img className="stateUserGroup" src={this.props.check_mark_uncheck} alt="stateUserGroup" />:null } 
                         </div>
                     </div>
                 </div>
@@ -72,6 +75,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
     return {
+        onEdit: state.contact.onEdit,
         claro_user_icon: state.customizing.Images.claro_user_icon,
         check_mark_check:  state.customizing.Images.check_mark_check ,
         check_mark_uncheck:  state.customizing.Images.check_mark_uncheck
