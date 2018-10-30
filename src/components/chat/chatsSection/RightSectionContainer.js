@@ -41,22 +41,24 @@ class RightSectionContainer extends Component {
         this.props.showSectionGroups(this.props.contacts)
     }
 
-    grouplistChast() {
-        const contacts = this.props.contacts
-        const list = []
-        contacts.map(contact => list.push(contact))
-        return this.orderByPinner(list);
-    }
+    // grouplistChast() {
+    //     const contacts = this.props.contacts
+    //     return this.orderByPinner(list);
+    // }
 
     filterList = (event) => {
         const val = event.target.value.toLowerCase()
         let result = [];
         if (val.length === 0) {
-            result = this.grouplistChast()
+            result = this.props.contacts
         } else {
-            result = this.grouplistChast().filter(v => v.name.toLowerCase().includes(val))
+            result = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
         }
-        this.setState({listChats: result})
+
+        this.setState({
+            listChats: result
+        });
+
     }
 
     render() {
@@ -65,6 +67,17 @@ class RightSectionContainer extends Component {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
+
+        const contacts =  this.state.listChats
+
+        // console.log(this.state.listChats.length);
+
+        // if () {
+
+        // } else {
+            
+        // }
+
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
@@ -84,9 +97,9 @@ class RightSectionContainer extends Component {
                     </div>
                     : null
                 }
-                <ListChats listChats={this.grouplistChast()} />
+                {/* <ListChats listChats={this.grouplistChast()} /> */}
 
-                {/* <ListChats listChats={this.state.listChats} /> */}
+                <ListChats listChats={contacts} />
                 
             </div>
         )
