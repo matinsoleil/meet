@@ -25,11 +25,14 @@ class ListGeneralContactsGroup extends Component {
         var listContacts = this.props.contacts;
         var filter_contacts = this.props.filter_contacts;
         var listAddContactsGroup = this.props.list_contacts_add_group;
-
+        var currentId;
    
         for (var i = 0; i < listAddContactsGroup.length; i++) {
               console.log('match')
-              console.log(listAddContactsGroup[i].id);
+              currentId = listAddContactsGroup[i].id;
+               console.log(currentId);
+               console.log('...');
+               console.log(idContact);
           }
         var infoContact = listContacts.find(item => item.id === idContact)
         listAddContactsGroup.push(infoContact)
