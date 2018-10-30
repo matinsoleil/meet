@@ -17,6 +17,10 @@ const estado = {
             "silence": "1",
             "file": "0",
             "pinner": "1",
+            "chatGroups":["0"],
+            "previousState":"ready",
+            "lastState":"ready",
+            "onEdit":"0",
             "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
             "typeChat": "2"
         },
@@ -32,6 +36,10 @@ const estado = {
             "silence": "0",
             "file": "0",
             "pinner": "0",
+            "chatGroups":["0"],
+            "previousState":"ready",
+            "lastState":"ready",
+            "onEdit":"0",
             "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
             "typeChat": "2"
         },
@@ -47,6 +55,10 @@ const estado = {
             "silence": "3",
             "file": "1",
             "pinner": "1",
+            "chatGroups":["0"],
+            "previousState":"ready",
+            "lastState":"ready",
+            "onEdit":"0",
             "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
             "typeChat": "2"
         }]

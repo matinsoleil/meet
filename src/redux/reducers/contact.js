@@ -5,7 +5,10 @@ const estado = {
     dayLastMessage: null,
     lastMessage: null,
     imgContact: null,
-    checkGroup : false,
+    chatGroups:[],
+    lastState: null,
+    onEdit: null
+    
 }
 export const contact = (state = estado, action) => {
     switch (action.type) {
@@ -20,7 +23,9 @@ export const contact = (state = estado, action) => {
                 dayLastMessage: action.dayLastMessage,
                 lastMessage: action.lastMessage,
                 imgContact: action.imgContact,
-                checkGroup: action.checkGroup,
+                chatGroups: action.chatGroups,
+                lastState: action.lastState,
+                onEdit: action.onEdit
             }
         default:
             return state
