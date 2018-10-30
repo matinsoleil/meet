@@ -23,7 +23,7 @@ class ChatContainer extends Component {
         this.props.fetchContacts()
         this.props.fetchUser()
         this.props.fetchContact()
-        this.props.fetchConversation()
+        //this.props.fetchConversation()
         this.props.fetchGroups()
         // this.props.initApi();
         // this.props.getToken({});

@@ -90,7 +90,7 @@ class FooterMessagesSection extends Component {
 
     scrollDown = () => {
         const chat_feed = document.getElementById("#main-chat-feed");
-        console.log(chat_feed.scrollHeight);
+        //console.log(chat_feed.scrollHeight);
         chat_feed.scrollTop = chat_feed.scrollHeight;
     }
 

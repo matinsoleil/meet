@@ -60,7 +60,13 @@ export default class MessagesHelper {
         for (let file of files) {
             zip.file(file.fileName, file.blobData);
         }
-        await zip.generateAsync({ type: "blob" })
+        await zip.generateAsync({
+            type: "blob",
+            compression: "DEFLATE",
+            compressionOptions: {
+                level: 3,
+            }
+        })
             .then(content => {
                 zipURL = URL.createObjectURL(content);
             });
