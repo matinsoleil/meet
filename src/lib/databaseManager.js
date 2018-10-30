@@ -24,7 +24,7 @@ export default class DatabaseManage {
         } :
         (state,action) => {
             let result = method.apply(this,[state,action]);
-            (keys.includes(action.type))&&DatabaseManage.saver(stateName,result,type);
+            (keys.includes(action.type))&&DatabaseManage.saver(stateName,action.payload,type);
             return result;
         }
         return resultMethod;
