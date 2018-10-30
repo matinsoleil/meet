@@ -134,7 +134,6 @@ class GeneralContactData extends Component {
     }
 
     showModalSilenceConversationAction = () => {
-        var msj = "";
         this.showDots()
         if (this.props.chat.silence !== "0") {
             this.props.chat["silence"] = "0"

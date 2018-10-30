@@ -6,8 +6,8 @@ import { getContacts } from '../../../redux/selectors/contacts'
 import fetchGroups from '../../../redux/actions/groups/fetchGroups'
 import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
 import { connect } from 'react-redux'
-import './GroupSectionContainer.scss'
-class GroupSectionContainer extends Component {
+import './RightSectionContainer.scss'
+class RightSectionContainer extends Component {
     render() {
         const list_contacts = this.props.contacts
         const list_contacts_add_group = this.props.groups.list_contacts_add_group
@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => {
 
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(GroupSectionContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(RightSectionContainer)
