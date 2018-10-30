@@ -3,14 +3,13 @@ import ListChats from './ListChats'
 import { getContacts } from '../../../redux/selectors/contacts'
 import { getGroups } from '../../../redux/selectors/groups'
 import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
-import fetchGroups from '../../../redux/actions/groups/fetchGroups'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
 import hideAlertGeneral from '../../../redux/actions/alertGeneral/hideAlertGeneral'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './ChatsListsSectionContainer.scss'
-class ChatsListsSectionContainer extends Component {
+import './RightSectionContainer.scss'
+class RightSectionContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -44,10 +43,8 @@ class ChatsListsSectionContainer extends Component {
 
     grouplistChast() {
         const contacts = this.props.contacts
-        const groups = this.props.groups.groups
         const list = []
         contacts.map(contact => list.push(contact))
-        groups.map(group => list.push(group))
         return this.orderByPinner(list);
     }
 
@@ -110,9 +107,6 @@ const mapDispatchToProps = dispatch => {
         fetchContacts: () => {
             dispatch(fetchContacts())
         },
-        fetchGroups: () => {
-            dispatch(fetchGroups())
-        },
         showSectionGroups: (listaContact) => {
             dispatch(showSectionGroups(listaContact))
         },
@@ -122,4 +116,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChatsListsSectionContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(RightSectionContainer)
