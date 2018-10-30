@@ -41,11 +41,6 @@ class RightSectionContainer extends Component {
         this.props.showSectionGroups(this.props.contacts)
     }
 
-    // grouplistChast() {
-    //     const contacts = this.props.contacts
-    //     return this.orderByPinner(list);
-    // }
-
     filterList = (event) => {
         const val = event.target.value.toLowerCase()
         let result = [];
@@ -54,11 +49,9 @@ class RightSectionContainer extends Component {
         } else {
             result = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
         }
-
         this.setState({
             listChats: result
         });
-
     }
 
     render() {
@@ -67,17 +60,7 @@ class RightSectionContainer extends Component {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
-
-        const contacts =  this.state.listChats
-
-        // console.log(this.state.listChats.length);
-
-        // if () {
-
-        // } else {
-            
-        // }
-
+        const contacts = this.orderByPinner(this.state.listChats)
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
@@ -100,7 +83,7 @@ class RightSectionContainer extends Component {
                 {/* <ListChats listChats={this.grouplistChast()} /> */}
 
                 <ListChats listChats={contacts} />
-                
+
             </div>
         )
     }
@@ -108,7 +91,7 @@ class RightSectionContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        contacts: getContacts(state),
+        // contacts: getContacts(state),
         groups: getGroups(state),
         add_icon: state.customizing.Images.add_icon,
         alertGeneral: getAlertGeneral(state)
