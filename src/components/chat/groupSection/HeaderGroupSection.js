@@ -52,6 +52,7 @@ class HeaderGroupSection extends Component {
 
   submitCreateGroup = values => {
     const contactsGroup = this.props.list_contacts_add_group
+    console.log(contactsGroup);
     const name = values.nameGroup;
     const id = Math.floor(+new Date() / 1000);
     const newGroupElemnt = {
