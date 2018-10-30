@@ -4,8 +4,6 @@ import { getContacts } from '../../../redux/selectors/contacts'
 import { getGroups } from '../../../redux/selectors/groups'
 import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
-import hideAlertGeneral from '../../../redux/actions/alertGeneral/hideAlertGeneral'
-import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './RightSectionContainer.scss'
@@ -54,30 +52,13 @@ class RightSectionContainer extends Component {
         } else {
             result = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
         }
-
         this.setState({
             listChats: result
         });
-
     }
 
     render() {
-        if (this.props.alertGeneral.show === true) {
-            setTimeout(function () {
-                this.props.hideAlertGeneral()
-            }.bind(this), 3000)
-        }
-
-        const contacts =  this.state.listChats
-
-        // console.log(this.state.listChats.length);
-
-        // if () {
-
-        // } else {
-            
-        // }
-
+        const contacts = this.orderByPinner(this.props.contacts)
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
@@ -91,16 +72,8 @@ class RightSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
-                {this.props.alertGeneral.show === true ?
-                    <div className="message-popup">
-                        <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
-                    </div>
-                    : null
-                }
-                {/* <ListChats listChats={this.grouplistChast()} /> */}
 
-                <ListChats listChats={contacts} />
-                
+                <ListChats listChats={contacts} />               
             </div>
         )
     }
@@ -108,10 +81,7 @@ class RightSectionContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        contacts: getContacts(state),
-        groups: getGroups(state),
         add_icon: state.customizing.Images.add_icon,
-        alertGeneral: getAlertGeneral(state)
     }
 }
 
@@ -123,9 +93,7 @@ const mapDispatchToProps = dispatch => {
         showSectionGroups: (listaContact) => {
             dispatch(showSectionGroups(listaContact))
         },
-        hideAlertGeneral: () => {
-            dispatch(hideAlertGeneral())
-        }
+
     }
 }
 

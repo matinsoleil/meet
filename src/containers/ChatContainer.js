@@ -17,6 +17,7 @@ import { getGroups } from '../redux/selectors/groups'
 import { getAlertGeneral } from '../redux/selectors/alertGeneral'
 import RightSectionContainer from '../components/chat/chatsSection/RightSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
+import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
 
 class ChatContainer extends Component {
     componentDidMount() {
@@ -32,11 +33,24 @@ class ChatContainer extends Component {
     }
 
     renderBody = (contacts, user, conversation, groups) => {
+        if (this.props.alertGeneral.show === true) {
+            setTimeout(function () {
+                this.props.hideAlertGeneral()
+            }.bind(this), 3000)
+        }
+
         return (
             <div className="main-chat">
-                <RightSectionContainer user={user} />
+                <RightSectionContainer user={user} contacts={contacts} />
                 <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
                 {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
+
+                {this.props.alertGeneral.show === true ?
+                    <div className="message-popup">
+                        <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
+                    </div>
+                    : null
+                }
             </div>
         );
     }
@@ -102,6 +116,8 @@ const mapDispatchToProps = dispatch => {
         },
         logout: () => {
             dispatch(logout())
+        }, hideAlertGeneral: () => {
+            dispatch(hideAlertGeneral())
         }
     }
 }
