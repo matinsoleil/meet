@@ -24,7 +24,7 @@ let reducer  = (state = {...portalCountryConfig}, action) => {
         return state
     }
 }
-
+export const restoreKey = ActionTypes.GENERAL_SET_COUNTRY;
 export const countryReducer = DatabaseManage.addSaver([
     ActionTypes.GENERAL_SET_COUNTRY,
 ],reducer,'local','country');

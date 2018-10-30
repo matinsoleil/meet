@@ -3,12 +3,17 @@ import { reducer as formReducer } from 'redux-form'
 import { contacts } from './contacts'
 import { users } from './users'
 import { contact } from './contact'
-import { conversation,
-   restoreKey as restoreKeyConversation,
-    defaultValue as defaultValueConversation } from './conversation'
+import {
+  conversation,
+  restoreKey as restoreKeyConversation,
+  defaultValue as defaultValueConversation
+} from './conversation'
 import { searchContacts } from './searchContacts'
 import { groups } from './groups'
-import { countryReducer } from './country'
+import {
+  countryReducer,
+  restoreKey as restoreKeyCountry
+} from './country'
 import { osReducer } from './os'
 import { countriesReducer } from './countries'
 import { messageCenterReducer } from './messageCenter'
@@ -34,8 +39,12 @@ export const reducers = combineReducers({
 })
 
 export const keyToRestore = {
-  'conversation':{
+  'conversation': {
     restoreKey: restoreKeyConversation,
     defaultValue: defaultValueConversation,
   },
+  'country': {
+    restoreKey: restoreKeyCountry,
+    defaultValue:null
+  }
 }
