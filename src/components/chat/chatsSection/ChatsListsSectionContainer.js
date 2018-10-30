@@ -12,9 +12,12 @@ import { connect } from 'react-redux'
 import './ChatsListsSectionContainer.scss'
 class ChatsListsSectionContainer extends Component {
     constructor(props) {
-        super(props);
-        this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
-        this.filterList = this.filterList.bind(this);
+        super(props)
+        this.state = {
+            listChats: [],
+        };
+        this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this)
+        this.filterList = this.filterList.bind(this)
     }
 
     orderByName(list) {
@@ -50,8 +53,13 @@ class ChatsListsSectionContainer extends Component {
 
     filterList = (event) => {
         const val = event.target.value.toLowerCase()
-        const listChatsFecth = this.grouplistChast().filter(v => v.name.toLowerCase().includes(val))
-        console.log(listChatsFecth);
+        let result = [];
+        if (val.length === 0) {
+            result = this.grouplistChast()
+        } else {
+            result = this.grouplistChast().filter(v => v.name.toLowerCase().includes(val))
+        }
+        this.setState({listChats: result})
     }
 
     render() {
@@ -60,7 +68,6 @@ class ChatsListsSectionContainer extends Component {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
-        const listChats = this.grouplistChast()
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
@@ -80,11 +87,15 @@ class ChatsListsSectionContainer extends Component {
                     </div>
                     : null
                 }
-                <ListChats listChats={listChats} />
+                <ListChats listChats={this.grouplistChast()} />
+
+                {/* <ListChats listChats={this.state.listChats} /> */}
+                
             </div>
-        );
+        )
     }
 }
+
 const mapStateToProps = state => {
     return {
         contacts: getContacts(state),
@@ -93,6 +104,7 @@ const mapStateToProps = state => {
         alertGeneral: getAlertGeneral(state)
     }
 }
+
 const mapDispatchToProps = dispatch => {
     return {
         fetchContacts: () => {
@@ -102,11 +114,12 @@ const mapDispatchToProps = dispatch => {
             dispatch(fetchGroups())
         },
         showSectionGroups: (listaContact) => {
-            dispatch(showSectionGroups(listaContact));
+            dispatch(showSectionGroups(listaContact))
         },
         hideAlertGeneral: () => {
-            dispatch(hideAlertGeneral());
+            dispatch(hideAlertGeneral())
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ChatsListsSectionContainer);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatsListsSectionContainer)

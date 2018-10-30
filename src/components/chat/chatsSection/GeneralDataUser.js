@@ -5,13 +5,6 @@ import { connect } from 'react-redux'
 import './GeneralDataUser.scss'
 class GeneralDataUser extends Component {
     
-    // filterList = contacts => event => {
-    //     const val = event.target.value.toLowerCase()
-    //     const listContactsFecth = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
-    //     console.log(listContactsFecth)
-    //     // this.props.searchContacts(listContactsFecth)
-    // };
-
     render() {
         return (
             <div className="main-chat-general-data-user">
@@ -26,7 +19,7 @@ class GeneralDataUser extends Component {
                     <div className="status-user">{this.props.user.status}</div>
                     <div className="search-contact">
                         <img className="img-icon-search" src={this.props.search_icon} alt="search" />
-                        <input type="text" className="input-search-main" placeholder="Buscar" onChange={this.props.filterList}></input>
+                        <input type="text" className="input-search-main" placeholder="Buscar" onChange={this.props.filterList} ></input>
                     </div>
                 </div>
             </div>
