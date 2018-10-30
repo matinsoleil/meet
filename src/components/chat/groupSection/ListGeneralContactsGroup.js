@@ -22,10 +22,18 @@ class ListGeneralContactsGroup extends Component {
         })
     }
     addContactGroupClick(idContact) {
-        console.log('add');
-        var listContacts = this.props.contacts
-        var filter_contacts = this.props.filter_contacts
-        var listAddContactsGroup = this.props.list_contacts_add_group
+        var listContacts = this.props.contacts;
+        var filter_contacts = this.props.filter_contacts;
+        var listAddContactsGroup = this.props.list_contacts_add_group;
+        var currentId;
+   
+        for (var i = 0; i < listAddContactsGroup.length; i++) {
+              console.log('match')
+              currentId = listAddContactsGroup[i].id;
+               console.log(currentId);
+               console.log('...');
+               console.log(idContact);
+          }
         var infoContact = listContacts.find(item => item.id === idContact)
         listAddContactsGroup.push(infoContact)
         if (filter_contacts.length !== 0) {
@@ -36,6 +44,21 @@ class ListGeneralContactsGroup extends Component {
         }
         this.props.updateListContactsAddGroup(listAddContactsGroup)
     }
+
+    deleteContactGroupClick(idContact){
+        console.log('delete');
+        var listAddContactsGroup = this.props.list_contacts_add_group;
+        
+        for (var i = 0; i < listAddContactsGroup.length; i++) {
+            console.log(listAddContactsGroup[i].id); 
+            
+            
+          }
+
+    }
+
+
+
     render() {
         const listContactsOrderByName = this.orderByName((this.props.filter_contacts.length === 0 ? this.props.contacts : this.props.filter_contacts))
         return (
@@ -43,7 +66,7 @@ class ListGeneralContactsGroup extends Component {
                 <div className="main-chat-general-list-contact-group-title">
 
                 </div>
-                {listContactsOrderByName.map(contact => <GeneralContactDataGroup className="contact-group" key={contact.id} contact={contact} onClick={this.addContactGroupClick} />)}
+                {listContactsOrderByName.map(contact => <GeneralContactDataGroup className="contact-group" groups={this.props.groups} key={contact.id} contact={contact} onClick={this.addContactGroupClick} />)}
             </div>
         )
     }

@@ -4,7 +4,8 @@ const estado = {
     photo: null,
     dayLastMessage: null,
     lastMessage: null,
-    imgContact: null
+    imgContact: null,
+    checkGroup : false,
 }
 export const contact = (state = estado, action) => {
     switch (action.type) {
@@ -19,6 +20,7 @@ export const contact = (state = estado, action) => {
                 dayLastMessage: action.dayLastMessage,
                 lastMessage: action.lastMessage,
                 imgContact: action.imgContact,
+                checkGroup: action.checkGroup,
             }
         default:
             return state

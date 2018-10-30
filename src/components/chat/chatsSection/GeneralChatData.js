@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import './GeneralChatData.scss'
 import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
+import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
+import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
 import ModalBox from '../../modals/ModalBox'
+import { getGroups } from '../../../redux/selectors/groups'
+import { getContacts } from '../../../redux/selectors/contacts'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
+import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
+import updateGroups from '../../../redux/actions/groups/updateGroups'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
+import SilenceConversation from '../../form/contact/SilenceConversation'
 import { connect } from 'react-redux'
-
 class GeneralContactData extends Component {
     constructor(...props) {
         super(...props)
@@ -23,32 +29,14 @@ class GeneralContactData extends Component {
             showModalSilenceConversation: false,
             showModalFixContact: false
         }
-        // this.fileContact = this.fileContact.bind(this)
+        this.fileContact = this.fileContact.bind(this)
         this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
-        // this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
-        // this.fixContact = this.fixContact.bind(this)
-        // this.showMsj = this.showMsj.bind(this)
-        // this.showModalDeleteConversationContactAction = this.actionsMenu.bind(this)
-
+        this.closeModalDeleteConversationContactAction = this.closeModalDeleteConversationContactAction.bind(this)
+        this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
+        this.showModalDeleteConversationContactAction = this.showModalDeleteConversationContactAction.bind(this)
+        this.deleteConversationContact = this.deleteConversationContact.bind(this)
+        this.fixContact = this.fixContact.bind(this)
     }
-
-
-    actionDeleteElementChat = () => {
-        // var listContacts = this.props.listChats
-        // var idContact = id
-        // var indexContact = listContacts.findIndex(item => item.id === idContact)
-        // this.props.listChats.splice(indexContact, 1)
-        // this.props.updateContacts(listContacts);
-        // this.setState({
-        //     deleteChat: false
-        // })
-
-        this.props.showAlertGeneral('Eliminaste el chat con '+ this.props.chat.name)
-        this.setState({
-            deleteChat: true
-        })
-    }
-
 
     componentDidMount() {
         this.bubble.addEventListener('mouseenter', this.showDots)
@@ -60,8 +48,75 @@ class GeneralContactData extends Component {
         this.bubble.removeEventListener('mouseleave', this.showDots)
     }
 
+    showDots = () => {
+        this.setState({
+            menuState: !this.state.menuState
+        })
+    }
+
+    fileContact() {
+        this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
+        var msj = this.props.chat["file"] === "1" ? "Archivaste el chat" : "Desarchivaste el chat"
+        this.props.showAlertGeneral(msj)
+        this.showDots()
+    }
+
+    fixContact() {
+        var msj = "";
+        this.props.chat["pinner"] = this.props.chat["pinner"] === "1" ? "0" : "1"
+        msj = this.props.chat["pinner"] === "1" ? "Fijaste el chat" : "Dejaste de fijar el chat"
+        this.props.showAlertGeneral(msj)
+        this.showDots()
+    }
+
+    actionDeleteElementChat = () => {
+        if (this.props.chat.typeChat === "1") {
+            var listContacts = this.props.contacts
+            var idContact = this.props.chat.id
+            var indexContact = listContacts.findIndex(item => item.id === idContact)
+            listContacts.splice(indexContact, 1)
+            this.props.updateContacts(listContacts);
+        } else {
+            var listGroups = this.props.groups.groups
+            var idGroup = this.props.chat.id
+            var indexGroups = listGroups.findIndex(item => item.id === idGroup)
+            listGroups.splice(indexGroups, 1)
+            this.props.updateGroups(listGroups);
+        }
+        this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name)
+        this.setState({
+            deleteChat: true
+        })
+        this.showDots()
+    }
+
+    submitCreateSilence = (values) => {
+        this.props.chat["silence"] = values.timeSilence
+        this.setState({
+            showModalSilenceConversation: false
+        });
+        this.props.showAlertGeneral("Silenciaste el chat")
+        this.showDots()
+    }
+
+    renderBodySilenceConversation = () => {
+        return (<SilenceConversation onSubmit={this.submitCreateSilence} closeWindow={this.closeModalSilenceConversationAction} />)
+    }
+
     renderBodyDeleteContact = () => {
         return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.actionDeleteElementChat} />)
+    }
+
+    renderBodyDeleteConversationContact = () => {
+        return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={this.props.chat.name} deleteConversationContact={this.deleteConversationContact} />)
+    }
+
+    deleteConversationContact = () => {
+        this.props.showAlertGeneral('Historial del chat eliminado')
+        this.setState({
+            showModalDeleteConversationContact: false
+        });
+        this.showDots()
     }
 
     showModalDeleteContactAction = () => {
@@ -71,35 +126,29 @@ class GeneralContactData extends Component {
         })
     }
 
-    fileContact = () => {
-        console.log("fileContact")
+    showModalDeleteConversationContactAction = () => {
+        this.showDots()
+        this.setState({
+            showModalDeleteConversationContact: true
+        });
     }
 
     showModalSilenceConversationAction = () => {
-        console.log("showModalSilenceConversationAction")
-    }
-
-    fixContact = () => {
-        console.log("fixContact")
-    }
-
-    showMsj = () => {
-        console.log("showMsj")
-    }
-
-    showModalDeleteConversationContactAction = () => {
-        console.log("showModalDeleteConversationContactAction")
+        var msj = "";
+        this.showDots()
+        if (this.props.chat.silence !== "0") {
+            this.props.chat["silence"] = "0"
+            this.props.showAlertGeneral("Cancelaste el silencio del chat")
+        } else {
+            this.setState({
+                showModalSilenceConversation: true
+            });
+        }
     }
 
     clickChat = () => {
         const idChat = this.props.chat.id
         this.props.fetchContact(idChat)
-    }
-
-    showDots = () => {
-        this.setState({
-            menuState: !this.state.menuState
-        })
     }
 
     msjGeneralChatData = () => {
@@ -121,6 +170,12 @@ class GeneralContactData extends Component {
         })
     }
 
+    closeModalDeleteConversationContactAction = () => {
+        this.setState({
+            showModalDeleteConversationContact: false
+        });
+    }
+
     deleteContact = () => {
         this.setState({
             showModalDeleteContact: false,
@@ -128,9 +183,6 @@ class GeneralContactData extends Component {
     }
 
     render() {
-        // console.log(" * * * ");
-        // console.log(this.props.showDelete);
-        // console.log(" - - - ");
         const idElement = "chat-" + this.props.chat.id
         return (
             !this.state.deleteChat ?
@@ -162,7 +214,12 @@ class GeneralContactData extends Component {
                                     (this.state.menuState) &&
                                     <DotsMenuContact showDots={this.showDots}
                                         chat={this.props.chat}
-                                        showModalDeleteContactAction={this.showModalDeleteContactAction} />
+                                        showModalDeleteContactAction={this.showModalDeleteContactAction}
+                                        showModalDeleteConversationContactAction={this.showModalDeleteConversationContactAction}
+                                        fixContact={this.fixContact}
+                                        showModalSilenceConversationAction={this.showModalSilenceConversationAction}
+                                        fileContact={this.fileContact}
+                                    />
                                 }
                             </div>
                             <p className="day-last">{this.props.chat.dayLastMessage}</p>
@@ -176,7 +233,6 @@ class GeneralContactData extends Component {
                             }
                         </div>
                     </div>
-
                     {(this.state.msjChat) &&
                         <div className="message-popup ">
                             <p className="text-message-popup">
@@ -187,38 +243,47 @@ class GeneralContactData extends Component {
                             </p>
                         </div>
                     }
-
-                    {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
                     {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.chat.name)} /> : null}
-                    {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
                     {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
+                    {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
+                    {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
                 </div>
                 : null
         )
     }
 }
+
 const mapStateToProps = state => {
     return {
         dots_menu: state.customizing.Images.dots_menu,
         status_user_icon: state.customizing.Images.status_user_attach_icon,
         mute_a_icon: state.customizing.Images.mute_a_icon,
         file_icon: state.customizing.Images.file_icon_chat,
+
+        contacts: getContacts(state),
+        groups: getGroups(state),
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
+        updateGroups: (listUpdate) => {
+            dispatch(updateGroups(listUpdate))
+        },
         updateContacts: (listUpdate) => {
             dispatch(updateContacts(listUpdate))
         },
         fetchContact: (id) => {
             dispatch(fetchContact(id))
         },
-        fetchContact: (id) => {
-            dispatch(fetchContact(id))
+        deleteConversation: (id) => {
+            dispatch(deleteConversation(id))
         },
         showAlertGeneral: (msj) => {
             dispatch(showAlertGeneral(msj))
+        },
+        updatePinerGroup: (id) => {
+            dispatch(updatePinerGroup(id))
         }
     }
 }
