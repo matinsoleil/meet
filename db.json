@@ -558,7 +558,9 @@
       "silence": "1",
       "file": "0",
       "pinner": "1",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp",
       "typeChat": "1"
     },
@@ -574,7 +576,9 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg",
       "typeChat": "1"
     },
@@ -590,7 +594,9 @@
       "silence": "3",
       "file": "1",
       "pinner": "1",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ",
       "typeChat": "1"
     },
@@ -606,7 +612,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AMknsVJTTstO5ex2h7DdYmiA-rmqzmXcsRwDm7nCc-mbQgv3",
       "typeChat": "1"
     },
@@ -622,7 +630,9 @@
       "silence": "0",
       "file": "0",
       "pinner": "1",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrremDO1rZJn57FqEVQqS-HZSFBef6Uok3yesoyqgNUEgRU7-tQ",
       "typeChat": "1"
     },
@@ -638,7 +648,9 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4gRO_bIr2YLXI4-0_NmlZQw55vKYXLCppLfMtq10bmZ-TsiD",
       "typeChat": "1"
     },
@@ -654,7 +666,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMybaKtUQwGjyL2fXA7ZNY7J_vM_LSi3ToZnJ6aa6viL9FUDEf",
       "typeChat": "1"
     },
@@ -670,7 +684,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4e-0MFbXTwq4C_tb8NoWvmiTOyigeoBMDqd7uXhwcAjXDViN-",
       "typeChat": "1"
     },
@@ -686,7 +702,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       "typeChat": "1"
     },
@@ -702,7 +720,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       "typeChat": "1"
     },
@@ -718,7 +738,9 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       "typeChat": "1"
     },
@@ -734,7 +756,9 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       "typeChat": "1"
     },
@@ -750,7 +774,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3qmREi6Bag9BxxTvSCdXKqL8G2mBNjSFMi1nBZ1r92jNniSwnw",
       "typeChat": "1"
     },
@@ -766,7 +792,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAUelg7yg0mepGMf-N93hh6E9XrLnKwsKa4YEQ6swhDknk4F9eQ",
       "typeChat": "1"
     },
@@ -782,7 +810,9 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfBlwiKYPWMTt6ROM1-piJUzikE0EaNzi_LnnUGrIYh-aefUqB",
       "typeChat": "1"
     },
@@ -813,7 +843,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ",
       "typeChat": "1"
     },
@@ -829,7 +861,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-bUtMrovoWkw733UD5sQCF6aaw5VCug-B8Wi3CCvAtaBpS8JMA",
       "typeChat": "1"
     },
@@ -845,7 +879,9 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFjQ9clTxmrIS87TaIYrymyvb3lVBa8yUaQ8ioHqFccj9pCWX",
       "typeChat": "1"
     },
@@ -861,7 +897,9 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSCDTJFjmSOib_a-T764n2AYQRIX-nMO3yMoF1K4EHrQyVTxsz",
       "typeChat": "1"
     },
@@ -877,7 +915,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ByyxctCPUvbgtE3yRiAbOLws_steoWeLybXvzUZvXDylO8ZU",
       "typeChat": "1"
     },
@@ -893,7 +933,9 @@
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTviwffByEVaqIZir9WNZ7CHnHC6q_AklKybQQlrZMHBCVCcTPSHg",
       "typeChat": "1"
     },
@@ -909,20 +951,19 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "chatGroups":["0"],
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwww3bn_7VHZz_ZHgyDSLsg9ukZpGikjEifw2CIPZt1zqflcK5",
       "typeChat": "1"
-    }
-  ],
-  "groups": [
+    },
     {
       "id": "1G",
       "name": "Grupo 1",
       "photo": "ruta",
       "status": "Status test",
-      "contactsGroup": [
-        "1"
-      ],
+      "lastState": "lastState",
+      "contactsIds": ["1"],
       "label": "label",
       "dayLastMessage": "Ayer",
       "lastMessage": "Last Message",
@@ -931,19 +972,18 @@
       "file": "0",
       "pinner": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp",
-      "typeChat": "2"
+      "typeChat": "2",
+      "ounner": [
+        "1"
+      ]
     },
     {
       "id": "2G",
       "name": "Grupo 2",
       "photo": "ruta",
       "status": "Status test",
-      "contactsGroup": [
-        "1"
-      ],
-      "contactsIds": [
-        "1"
-      ],
+      "lastState": "lastState",
+      "contactsIds": ["1"],
       "label": "label",
       "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
@@ -952,16 +992,16 @@
       "file": "0",
       "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg",
-      "typeChat": "2"
+      "typeChat": "2",
+      "ounner": ["1"]
     },
     {
       "id": "3G",
       "name": "Grupo 3",
       "photo": "ruta",
       "status": "Status test",
-      "contactsGroup": [
-        "1"
-      ],
+      "lastState": "lastState",
+      "contactsIds": ["1"],
       "label": "label",
       "dayLastMessage": "22 min",
       "lastMessage": "Last Message",
@@ -970,7 +1010,10 @@
       "file": "1",
       "pinner": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ",
-      "typeChat": "2"
+      "typeChat": "2",
+      "ounner": [
+        "1"
+      ]
     }
   ]
 }

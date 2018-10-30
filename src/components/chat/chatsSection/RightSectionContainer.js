@@ -3,21 +3,20 @@ import ListChats from './ListChats'
 import { getContacts } from '../../../redux/selectors/contacts'
 import { getGroups } from '../../../redux/selectors/groups'
 import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
-import fetchGroups from '../../../redux/actions/groups/fetchGroups'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
 import hideAlertGeneral from '../../../redux/actions/alertGeneral/hideAlertGeneral'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './ChatsListsSectionContainer.scss'
-class ChatsListsSectionContainer extends Component {
+import './RightSectionContainer.scss'
+class RightSectionContainer extends Component {
     constructor(props) {
-        super(props);
-        this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
-    }
-    
-    showSectionGroupsClick(listContact) {
-        this.props.showSectionGroups(this.props.contacts)
+        super(props)
+        this.state = {
+            listChats: [],
+        };
+        this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this)
+        this.filterList = this.filterList.bind(this)
     }
 
     orderByName(list) {
@@ -28,6 +27,7 @@ class ChatsListsSectionContainer extends Component {
             return x < y ? -1 : x > y ? 1 : 0;
         });
     }
+
     orderByPinner(list) {
         const byPinner = list.slice(0);
         return byPinner.sort(function (a, b) {
@@ -36,15 +36,30 @@ class ChatsListsSectionContainer extends Component {
             return x > y ? -1 : x < y ? 1 : 0;
         });
     }
-    grouplistChast() {
-        const contacts = this.props.contacts
-        const groups = this.props.groups.groups
-        const list = []
-        contacts.map(contact => list.push(contact))
-        groups.map(group => list.push(group))
-        return this.orderByPinner(list);
+
+    showSectionGroupsClick(listContact) {
+        this.props.showSectionGroups(this.props.contacts)
     }
 
+    // grouplistChast() {
+    //     const contacts = this.props.contacts
+    //     return this.orderByPinner(list);
+    // }
+
+    filterList = (event) => {
+        const val = event.target.value.toLowerCase()
+        let result = [];
+        if (val.length === 0) {
+            result = this.props.contacts
+        } else {
+            result = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
+        }
+
+        this.setState({
+            listChats: result
+        });
+
+    }
 
     render() {
         if (this.props.alertGeneral.show === true) {
@@ -53,12 +68,20 @@ class ChatsListsSectionContainer extends Component {
             }.bind(this), 3000)
         }
 
-        console.log("Renderizo");
-        const listChats = this.grouplistChast()
+        const contacts =  this.state.listChats
+
+        // console.log(this.state.listChats.length);
+
+        // if () {
+
+        // } else {
+            
+        // }
+
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
-                <GeneralDataUser user={this.props.user} contacts={this.props.contacts} />
+                <GeneralDataUser user={this.props.user} filterList={this.filterList} />
                 <div className="chat-state">
                     <h2 className="title-chat">Chats</h2>
                     <div className="dropdown">
@@ -74,11 +97,15 @@ class ChatsListsSectionContainer extends Component {
                     </div>
                     : null
                 }
-                <ListChats listChats={listChats} />
+                {/* <ListChats listChats={this.grouplistChast()} /> */}
+
+                <ListChats listChats={contacts} />
+                
             </div>
-        );
+        )
     }
 }
+
 const mapStateToProps = state => {
     return {
         contacts: getContacts(state),
@@ -87,20 +114,19 @@ const mapStateToProps = state => {
         alertGeneral: getAlertGeneral(state)
     }
 }
+
 const mapDispatchToProps = dispatch => {
     return {
         fetchContacts: () => {
             dispatch(fetchContacts())
         },
-        fetchGroups: () => {
-            dispatch(fetchGroups())
-        },
         showSectionGroups: (listaContact) => {
-            dispatch(showSectionGroups(listaContact));
+            dispatch(showSectionGroups(listaContact))
         },
         hideAlertGeneral: () => {
-            dispatch(hideAlertGeneral());
+            dispatch(hideAlertGeneral())
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ChatsListsSectionContainer);
+
+export default connect(mapStateToProps, mapDispatchToProps)(RightSectionContainer)

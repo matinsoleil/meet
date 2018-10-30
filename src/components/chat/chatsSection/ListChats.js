@@ -14,7 +14,7 @@ class ListGeneralContacts extends Component {
             <div className="main-chat-general-list-contact" >
                 {listContactsOrder.map(chat =>
                     <GeneralChatData chat={chat}
-                        key={chat.id}
+                        key={chat.id+'-'+Math.random()}
                     />
                 )}
             </div>

@@ -6,7 +6,8 @@ class ContactAddGroup extends Component {
         this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
     }
     deleteContactListCreateGroup() {
-        this.props.onClick(this.props.contact.id)
+        this.props.onClick(this.props.contact.id);
+        this.props.contact.onEdit='0';
     }
     render() {
         return (

@@ -15,7 +15,7 @@ import { initApi, getToken, login, logout } from '../redux/actions/messageCenter
 import { getSearchContacts } from '../redux/selectors/searchContacts'
 import { getGroups } from '../redux/selectors/groups'
 import { getAlertGeneral } from '../redux/selectors/alertGeneral'
-import ChatsListsSectionContainer from '../components/chat/chatsSection/ChatsListsSectionContainer'
+import RightSectionContainer from '../components/chat/chatsSection/RightSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 
 class ChatContainer extends Component {
@@ -34,7 +34,7 @@ class ChatContainer extends Component {
     renderBody = (contacts, user, conversation, groups) => {
         return (
             <div className="main-chat">
-                <ChatsListsSectionContainer user={user} contacts={contacts} groups={groups} />
+                <RightSectionContainer user={user} />
                 <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
                 {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
             </div>
@@ -51,6 +51,7 @@ class ChatContainer extends Component {
         )
     }
 }
+
 ChatContainer.defaultProps = {
     contacts: [],
     searchContacts: [],
@@ -60,6 +61,7 @@ ChatContainer.defaultProps = {
     groups: [],
     alertGeneral: []
 }
+
 const mapStateToProps = (state) => {
     return {
         contacts: getContacts(state),
@@ -71,6 +73,7 @@ const mapStateToProps = (state) => {
         alertGeneral: getAlertGeneral(state)
     }
 }
+
 const mapDispatchToProps = dispatch => {
     return {
         fetchContacts: () => {
