@@ -13,6 +13,7 @@ class OptionsSelection extends Component {
         super(props);
         this.state = {
             showModal: false,
+            busy:false,
         }
     }
 
@@ -27,28 +28,34 @@ class OptionsSelection extends Component {
     }
 
     downloadFiles = async () => {
-        let files = [];
-        for (let messageId of this.props.messages) {
-            const message = MessagesHelper.getMessageById(this.props.conversation, messageId).message;
-            await MessagesHelper.getBlobObject(message.blobURL)
-                .then(e => {
-                    files.push({
-                        fileName: message.fileName,
-                        blobData: e
+        console.log(this.state);
+        if (!this.state.busy) {
+            console.log(this.state.busy);
+            let files = [];
+            this.setState({busy:true});
+            for (let messageId of this.props.messages) {
+                const message = MessagesHelper.getMessageById(this.props.conversation, messageId).message;
+                await MessagesHelper.getBlobObject(message.blobURL)
+                    .then(e => {
+                        files.push({
+                            fileName: message.fileName,
+                            blobData: e
+                        });
                     });
-                });
-        }
-
-        MessagesHelper.getZipUrl(files).then(
-            url => {
-                this.link.download = `${GenerateId.generate()}.zip`;
-                this.link.href = url;
-                this.link.onclick = () => {
-                    setTimeout(() => { URL.revokeObjectURL(this.link.href); this.link.href = ''; }, 1500);
-                }
-                this.link.click();
             }
-        );
+
+            MessagesHelper.getZipUrl(files).then(
+                url => {
+                    this.link.download = `${GenerateId.generate()}.zip`;
+                    this.link.href = url;
+                    this.link.onclick = () => {
+                        setTimeout(() => { URL.revokeObjectURL(this.link.href); this.link.href = ''; }, 1500);
+                    }
+                    this.link.click();
+                    this.setState({busy:false});
+                }
+            );
+        }
     }
 
     accept = () => {
@@ -60,7 +67,11 @@ class OptionsSelection extends Component {
         return (
             <div className="options-section">
                 {(this.props.type === '3') &&
-                    <IconButton ref={iconButton => { this.link = iconButton }} type={this.props.type} onClick={this.downloadFiles} className="download-icon" image={this.props.forward} name='Descargar' />
+                    <IconButton
+                        ref={iconButton => { this.link = iconButton }}
+                        type={this.props.type} onClick={this.downloadFiles}
+                        className="download-icon" image={this.props.forward}
+                        name='Descargar' />
                 }
                 <IconButton onClick={() => { this.props.showSectionGroups(this.props.contacts) }} image={this.props.forward} name='Reenviar' />
                 <IconButton onClick={this.deleteMessages} image={this.props.trash} name='Eliminar' />

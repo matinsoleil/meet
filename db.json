@@ -508,6 +508,132 @@
       "message": "TypeError: Cannot add property current, object is not extensible",
       "detail": "\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
       "id": 46
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540833276,
+      "message": "TypeError: undefined is not a function (near '...this.props.chat.map...')",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 47
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540833277,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 48
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540833278,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 49
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540834965,
+      "message": "TypeError: undefined is not a function (near '...this.props.chat.map...')",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 50
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540834966,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 51
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540834970,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 52
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540834994,
+      "message": "TypeError: undefined is not a function (near '...this.props.chat.map...')",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 53
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540834995,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 54
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540834997,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 55
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540835051,
+      "message": "TypeError: undefined is not a function (near '...this.props.chat.map...')",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 56
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540835051,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 57
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540835053,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 58
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540836276,
+      "message": "TypeError: undefined is not a function (near '...this.props.chat.map...')",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 59
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540836277,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 60
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540836279,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
+      "id": 61
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540851287,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 62
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540851368,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 63
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1540851476,
+      "message": "TypeError: this.props.chat.map is not a function",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:38)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 64
     }
   ],
   "contacts": [
@@ -863,7 +989,6 @@
       "name": "Grupo 1",
       "photo": "ruta",
       "status": "Status test",
-      "contactsIds":[],
       "label": "label",
       "dayLastMessage": "Ayer",
       "lastMessage": "Last Message",
@@ -879,7 +1004,6 @@
       "name": "Grupo 2",
       "photo": "ruta",
       "status": "Status test",
-      "contactsIds":[],
       "label": "label",
       "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
@@ -895,7 +1019,6 @@
       "name": "Grupo 3",
       "photo": "ruta",
       "status": "Status test",
-      "contactsIds":[],
       "label": "label",
       "dayLastMessage": "22 min",
       "lastMessage": "Last Message",

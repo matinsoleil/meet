@@ -1,4 +1,5 @@
 import {ActionTypes} from './../../redux/actionstypes';
+import DatabaseManage from '../../lib/databaseManager';
 
 const portalCountryConfig = {
     name: null,
@@ -7,7 +8,7 @@ const portalCountryConfig = {
     translator: null
 };
 
-export const countryReducer  = (state = {...portalCountryConfig}, action) => {
+let reducer  = (state = {...portalCountryConfig}, action) => {
     switch(action.type){
         case ActionTypes.GENERAL_SET_COUNTRY:
         return {
@@ -23,3 +24,7 @@ export const countryReducer  = (state = {...portalCountryConfig}, action) => {
         return state
     }
 }
+
+export const countryReducer = DatabaseManage.addSaver([
+    ActionTypes.GENERAL_SET_COUNTRY,
+],reducer,'local','country');
