@@ -14,6 +14,12 @@ export default class DatabaseManage {
         }
     } 
 
+    /**
+     * @param {ActionType} ActionType of reducer.
+     * @param {Function} function to will be added the saver.
+     * @param {String } 'local','session' or 'server'.
+     * @param {String} stateName name of the key to will be saved the data, in the storage
+     */
     static addSaver = (key,method,type,stateName=null) => {
         let keys = (key instanceof Array)&& key;
         const resultMethod = (!stateName)?

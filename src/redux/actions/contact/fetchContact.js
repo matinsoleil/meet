@@ -6,14 +6,7 @@ export const fetchContact = (id) => dispatch => {
         .then(response => {
             dispatch({
                 type: FETCH_CONTACT,
-                id: response.data.id,
-                name: response.data.name,
-                photo: response.data.photo,
-                status: response.data.status,
-                label: response.data.label,
-                dayLastMessage: response.data.dayLastMessage,
-                lastMessage: response.data.lastMessage,
-                imgContact: response.data.imgContact
+                payload:response.data
             })
         })
 }

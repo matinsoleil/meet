@@ -21,7 +21,7 @@ import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
 
 class ChatContainer extends Component {
     componentDidMount() {
-        this.props.fetchContacts()
+        //this.props.fetchContacts()
         this.props.fetchUser()
         this.props.fetchContact()
         //this.props.fetchConversation()
@@ -42,7 +42,7 @@ class ChatContainer extends Component {
         return (
             <div className="main-chat">
                 <RightSectionContainer user={user} contacts={contacts} />
-                <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
+                <MessageSectionContainer contacts={contacts} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
                 {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
 
                 {this.props.alertGeneral.show === true ?
@@ -103,7 +103,7 @@ const mapDispatchToProps = dispatch => {
             dispatch(fetchGroups())
         },
         fetchUser: () => {
-            dispatch(fetchUser(1))
+            dispatch(fetchUser('U1'))
         },
         initApi: params => {
             dispatch(initApi(params))

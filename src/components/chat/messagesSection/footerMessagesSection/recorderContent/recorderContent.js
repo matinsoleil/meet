@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {addMessage} from './../../../../../redux/actions/conversation/fetchConversation';
+import { addMessage } from './../../../../../redux/actions/conversation/fetchConversation';
 import AudioRecorder from './../../../../../lib/helper/audioRecorder';
 import './recorderContent.scss';
 import GenerateId from '../../../../../lib/helper/generateId';
@@ -20,20 +20,20 @@ class RecorderContent extends Component {
             navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
                 navigator.mozGetUserMedia || navigator.msGetUserMedia
         if (navigator.getUserMedia) {
-            this.audioRecorder = new AudioRecorder(this.changeTimerState); 
-            navigator.getUserMedia({ audio:{channelCount:1}, video:false}, this.audioRecorder.record, this.handleRecordError);
+            this.audioRecorder = new AudioRecorder(this.changeTimerState);
+            navigator.getUserMedia({ audio: { channelCount: 1 }, video: false }, this.audioRecorder.record, this.handleRecordError);
             this.setState({
                 recording: true
             });
-        } else if( navigator.mediaDevices.getUserMedia ){
-            this.audioRecorder = new AudioRecorder(this.changeTimerState); 
-            navigator.mediaDevices.getUserMedia({ audio:{channelCount: 1}, video:false})
-            .then(this.audioRecorder.record)
-            .catch(this.handleRecordError);
+        } else if (navigator.mediaDevices.getUserMedia) {
+            this.audioRecorder = new AudioRecorder(this.changeTimerState);
+            navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1 }, video: false })
+                .then(this.audioRecorder.record)
+                .catch(this.handleRecordError);
             this.setState({
                 recording: true
             });
-        }else{
+        } else {
             console.log("Browser not supported");
         }
     }
@@ -41,7 +41,7 @@ class RecorderContent extends Component {
     handleRecordError = () => {
 
     }
-    
+
     changeTimerState = timer => {
         (this.state.recording && this.audioRecorder) && this.setState({
             timer: timer
@@ -57,17 +57,16 @@ class RecorderContent extends Component {
             console.log(url);
             //alert(url);
             let date = new Date();
-            this.props.addMessage({
+            this.props.addMessage(this.props.conversation.id, {
                 "id": GenerateId.generate(),
-                "userSend": "1",
-                "userGet": "2",
+                sender: this.props.user.id,
                 "message": {
-                  "type": "2",
-                  "src": url
+                    "type": "2",
+                    "src": url
                 },
-                hour:`${date.getHours()}:${date.getMinutes()}`,
-                status:"1"
-              });
+                hour: `${date.getHours()}:${date.getMinutes()}`,
+                status: "1"
+            });
         }, save);
         this.props.toggleOptions();
         this.audioRecorder = null;
@@ -95,14 +94,15 @@ const mapStateToProps = state => {
     return {
         mic: state.customizing.Images.mic,
         ok_icon: state.customizing.Images.ok_icon,
-        cancel_icon: state.customizing.Images.cancel_icon
+        cancel_icon: state.customizing.Images.cancel_icon,
+        user: state.users
     }
 }
 
 const mapDispatchToProps = dispatch => {
-    return{
-        addMessage: message => {
-            dispatch(addMessage(message));
+    return {
+        addMessage: (conversationId,message) => {
+            dispatch(addMessage(conversationId,message));
         }
     }
 }

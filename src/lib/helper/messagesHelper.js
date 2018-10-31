@@ -16,7 +16,7 @@ export default class MessagesHelper {
 
     static getOwner(contacts, ownerId) {
         let owner = undefined;
-        for (const index in contacts) {
+        for (let index in contacts) {
             let contact = contacts[index];
             if (contact.id === ownerId) {
                 owner = contact.name;
@@ -24,6 +24,20 @@ export default class MessagesHelper {
             }
         }
         return owner;
+    }
+    /**
+     * @param {Object} conversations.
+     * @param {String} conversation Id.
+     */
+    static getConversation(conversations,conversationId){
+        let result = undefined;
+        for (let conversation of conversations){
+            if(conversation.id === conversationId){
+                result = conversation;
+                break;
+            }
+        }
+        return result;
     }
 
     /**

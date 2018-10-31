@@ -54,7 +54,7 @@ class DotsMenu extends Component {
     accept = () => {
         this.toggleModal();
         this.props.showDots();
-        this.props.deleteMessage(this.props.id);
+        this.props.deleteMessage(this.props.conversationId,this.props.id);
     }
 
     render() {
@@ -100,8 +100,8 @@ const mapDispatchToProps = dispatch => {
         multiSelectState: (state) => {
             dispatch(multiSelectState(state));
         },
-        deleteMessage: messageId => {
-            dispatch(deleteMessage(messageId));
+        deleteMessage: (conversationId,messageId) => {
+            dispatch(deleteMessage(conversationId,messageId));
         },
         showSectionGroups: listContacs => {
             dispatch(showSectionGroups(listContacs));

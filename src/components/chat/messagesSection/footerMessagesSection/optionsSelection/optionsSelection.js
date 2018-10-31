@@ -34,7 +34,7 @@ class OptionsSelection extends Component {
             let files = [];
             this.setState({busy:true});
             for (let messageId of this.props.messages) {
-                const message = MessagesHelper.getMessageById(this.props.conversation, messageId).message;
+                const message = MessagesHelper.getMessageById(this.props.conversation.conversation, messageId).message;
                 await MessagesHelper.getBlobObject(message.blobURL)
                     .then(e => {
                         files.push({
@@ -60,7 +60,7 @@ class OptionsSelection extends Component {
 
     accept = () => {
         this.toggleModal();
-        this.props.deleteMessagesSelected(this.props.messages);
+        this.props.deleteMessagesSelected(this.props.conversation.id,this.props.messages);
     }
 
     render() {
@@ -109,15 +109,14 @@ const mapStateToProps = state => {
         forward: state.customizing.Images.forward,
         trash: state.customizing.Images.trash,
         messages: state.messagesOptions.messages,
-        conversation: state.conversation,
         contacts: state.contacts,
     }
 }
 
 const mapDispathToProps = dispatch => {
     return {
-        deleteMessagesSelected: messagesId => {
-            dispatch(deleteMessagesSelected(messagesId));
+        deleteMessagesSelected: (conversationId,messagesId) => {
+            dispatch(deleteMessagesSelected(conversationId,messagesId));
         },
         showSectionGroups: listContacs => {
             dispatch(showSectionGroups(listContacs));
