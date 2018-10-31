@@ -19,6 +19,10 @@ class RightSectionContainer extends Component {
         this.filterList = this.filterList.bind(this)
     }
 
+    componentDidMount() {
+        this.props.fetchContacts()
+    }
+
     orderByName(list) {
         const byName = list.slice(0);
         return byName.sort(function (a, b) {
@@ -60,7 +64,9 @@ class RightSectionContainer extends Component {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
-        const contacts = this.orderByPinner(this.state.listChats)
+        // const contacts = this.orderByPinner(this.state.listChats)
+
+        const contacts = this.orderByPinner(this.props.contacts)
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
