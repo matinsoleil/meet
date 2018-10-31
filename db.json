@@ -46,8 +46,8 @@
           "id": "6",
           "message": "Quite busy. I'm preparing for my presentation tomorrow on our marketing strategy. I'm not even half done yet.",
           "hour": "10:06",
-          "status": "1"
-"sender": "U1"
+          "status": "1",
+          "sender": "U1"
         },
         {
           "id": "7",
@@ -81,9 +81,8 @@
           "id": "11",
           "message": "I didn't know you play pool. Are you having fun?",
           "hour": "10:11",
-          "status": "1"
-
-"sender": "U1"
+          "status": "1",
+          "sender": "U1"
         },
         {
           "id": "12",
