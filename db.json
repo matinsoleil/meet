@@ -126,6 +126,133 @@
           "sender": "U1"
         }
       ]
+    },
+    {
+      "id": "2",
+      "contactos": [
+        "U1",
+        "3"
+      ],
+      "conversation": [
+        {
+          "id": "1",
+          "message": "Hi Jack. What are you doing?",
+          "hour": "10:01",
+          "status": "1",
+          "sender": "U1"
+        },
+        {
+          "id": "2",
+          "message": "Hi Mary. I'm filling out a job application.",
+          "hour": "10:02",
+          "status": "1",
+          "sender": "2"
+        },
+        {
+          "id": "3",
+          "message": "Are you finished with school already?",
+          "hour": "10:03",
+          "status": "1",
+          "sender": "U1"
+        },
+        {
+          "id": "4",
+          "message": "No. I have one more semester, but it would be great to have a job lined up.",
+          "hour": "10:04",
+          "status": "1",
+          "sender": "2"
+        },
+        {
+          "id": "5",
+          "message": "How is your day going?",
+          "hour": "10:05",
+          "status": "1",
+          "sender": "U1"
+        },
+        {
+          "id": "6",
+          "message": "Quite busy. I'm preparing for my presentation tomorrow on our marketing strategy. I'm not even half done yet.",
+          "hour": "10:06",
+          "status": "1",
+          "sender": "U1"
+        },
+        {
+          "id": "7",
+          "message": "You must feel stressed out now.",
+          "hour": "10:07",
+          "status": "1",
+          "sender": "2"
+        },
+        {
+          "id": "8",
+          "message": "That's an understatement.",
+          "hour": "10:08",
+          "status": "1",
+          "sender": "U1"
+        },
+        {
+          "id": "9",
+          "message": "What are you doing now?",
+          "hour": "10:09",
+          "status": "1",
+          "sender": "U1"
+        },
+        {
+          "id": "10",
+          "message": "I'm playing pool with my friends at a pool hall.",
+          "hour": "10:10",
+          "status": "1",
+          "sender": "2"
+        },
+        {
+          "id": "11",
+          "message": "I didn't know you play pool. Are you having fun?",
+          "hour": "10:11",
+          "status": "1",
+          "sender": "U1"
+        },
+        {
+          "id": "12",
+          "message": "I'm having a great time. How about you? What are you doing?",
+          "hour": "10:12",
+          "status": "1",
+          "sender": "2"
+        },
+        {
+          "id": "13",
+          "message": {
+            "type": "0",
+            "lat": 19.4492167,
+            "lon": -99.2148245,
+            "zoom": 16
+          },
+          "hour": "10:13",
+          "status": "1",
+          "sender": "U1"
+        },
+        {
+          "id": "14",
+          "message": {
+            "type": "1",
+            "src": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+          },
+          "hour": "10:14",
+          "status": "1",
+          "sender": "2"
+        },
+        {
+          "id": "15",
+          "message": {
+            "type": "4",
+            "toWhoReply": "2",
+            "toReply": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porta justo ut scelerisque cursus. Etiam ultricies, urna sit amet rhoncus condimentum, tellus neque finibus ex, in vestibulum neque mauris quis justo",
+            "message": "hi Friend, What is that means"
+          },
+          "hour": "11:45",
+          "status": "1",
+          "sender": "U1"
+        }
+      ]
     }
   ],
   "users": [
@@ -497,6 +624,34 @@
       "message": "TypeError: Cannot read property 'bind' of undefined",
       "detail": "\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListGeneralContactsGroup.js:60)\n    in div (at ListGeneralContactsGroup.js:56)\n    in ListGeneralContactsGroup (created by Connect(ListGeneralContactsGroup))\n    in Connect(ListGeneralContactsGroup) (at GroupSectionContainer.js:18)\n    in div (at GroupSectionContainer.js:16)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at ChatContainer.js:39)\n    in div (at ChatContainer.js:36)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:46)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:10)\n    in Provider (at src/index.js:9)",
       "id": 51
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541022287,
+      "message": "TypeError: Cannot read property 'removeEventListener' of null",
+      "detail": "\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListChats.js:16)\n    in div (at ListChats.js:14)\n    in ListGeneralContacts (at RightSectionContainer.js:65)\n    in div (at RightSectionContainer.js:53)\n    in RightSectionContainer (created by Connect(RightSectionContainer))\n    in Connect(RightSectionContainer) (at ChatContainer.js:46)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:62)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 52
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541024965,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:62)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 53
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541024978,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:62)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 54
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541025620,
+      "message": "TypeError: Cannot read property 'type' of undefined",
+      "detail": "\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:17)\n    in div (at ChatGeneralConversationContact.js:9)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:30)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:45)\n    in div (at ChatContainer.js:43)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:60)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 55
     }
   ],
   "contacts": [
@@ -950,7 +1105,7 @@
       "silence": "1",
       "file": "0",
       "pinner": "1",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOehNLPeWcwV-I-y1a69hGw3E7UcG-Elzv2soKmagEfjARURR6wQ",
       "typeChat": "2",
       "conversations": null,
       "ounner": [
@@ -973,7 +1128,7 @@
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOehNLPeWcwV-I-y1a69hGw3E7UcG-Elzv2soKmagEfjARURR6wQ",
       "typeChat": "2",
       "conversations": null,
       "ounner": [
@@ -996,7 +1151,7 @@
       "silence": "3",
       "file": "1",
       "pinner": "1",
-      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ",
+      "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOehNLPeWcwV-I-y1a69hGw3E7UcG-Elzv2soKmagEfjARURR6wQ",
       "typeChat": "2",
       "conversations": null,
       "ounner": [
