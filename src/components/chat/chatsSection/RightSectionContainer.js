@@ -1,33 +1,15 @@
 import GeneralDataUser from './GeneralDataUser'
 import ListChats from './ListChats'
-import { getContacts } from '../../../redux/selectors/contacts'
-import { getGroups } from '../../../redux/selectors/groups'
-import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
+import updateFilterContactRightSectionContainer from '../../../redux/actions/rightSectionContainer/updateFilterContactRightSectionContainer'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './RightSectionContainer.scss'
 class RightSectionContainer extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            listChats: [],
-        };
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this)
         this.filterList = this.filterList.bind(this)
-    }
-
-    componentDidMount() {
-        this.props.fetchContacts()
-    }
-
-    orderByName(list) {
-        const byName = list.slice(0);
-        return byName.sort(function (a, b) {
-            var x = a.name.toLowerCase();
-            var y = b.name.toLowerCase();
-            return x < y ? -1 : x > y ? 1 : 0;
-        });
     }
 
     orderByPinner(list) {
@@ -51,13 +33,13 @@ class RightSectionContainer extends Component {
         } else {
             result = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
         }
-        this.setState({
-            listChats: result
-        });
+        this.props.updateFilterContactRightSectionContainer(result);
     }
 
     render() {
-        const contacts = this.orderByPinner(this.props.contacts)
+        const filter_contacts = this.props.rightSectionContainer.filter_contacts
+        let contacts = []
+        if (!filter_contacts) { contacts = this.props.contacts } else { contacts = filter_contacts }
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
@@ -71,8 +53,7 @@ class RightSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
-
-                <ListChats listChats={contacts} />               
+                <ListChats listChats={this.orderByPinner(contacts)} />
             </div>
         )
     }
@@ -86,13 +67,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchContacts: () => {
-            dispatch(fetchContacts())
-        },
         showSectionGroups: (listaContact) => {
             dispatch(showSectionGroups(listaContact))
         },
-
+        updateFilterContactRightSectionContainer: (listaContact) => {
+            dispatch(updateFilterContactRightSectionContainer(listaContact))
+        },
     }
 }
 

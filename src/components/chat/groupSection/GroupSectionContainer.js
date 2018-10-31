@@ -15,12 +15,7 @@ class GroupSectionContainer extends Component {
         return (
             <div className="group-section-container">
                 <HeaderGroupSection list_contacts={list_contacts} list_contacts_add_group={list_contacts_add_group} filter_contacts={filter_contacts} />
-                
-                
                 <ListGeneralContactsGroup contacts={list_contacts} list_contacts_add_group={list_contacts_add_group} filter_contacts={filter_contacts} />
-
-
-                
             </div>
         )
     }

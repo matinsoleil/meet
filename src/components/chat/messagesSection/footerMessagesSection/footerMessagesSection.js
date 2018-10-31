@@ -27,6 +27,7 @@ class FooterMessagesSection extends Component {
         (!this.state.inputText) && document.removeEventListener('keyup', this.keyUpSendMessage);
         (this.props.multiSelect || this.props.messageSelected) && document.addEventListener('keyup', this.cancelMultiSelection);
         (!this.props.multiSelect && !this.props.messageSelected) && document.removeEventListener('keyup', this.cancelMultiSelection);
+        this.conversation = (this.props.conversation.length > 0) && MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations)
     }
 
     toggleOptions = () => {
@@ -50,13 +51,12 @@ class FooterMessagesSection extends Component {
     selectFiles = (e) => {
         for (let file of this.fileChooser.files) {
             let date = new Date();
-            this.props.addMessage({
+            this.props.addMessage(this.conversation.id, {
                 id: GenerateId.generate(),
-                userSend: "1",
-                userGet: "2",
+                sender: this.props.user.id,
                 message: {
                     type: "3",
-                    blobURL:URL.createObjectURL(file),
+                    blobURL: URL.createObjectURL(file),
                     fileName: file.name,
                     size: file.size
                 },
@@ -69,13 +69,12 @@ class FooterMessagesSection extends Component {
 
     sendMessage = (message) => {
         let date = new Date();
-        this.props.addMessage({
+        this.props.addMessage(this.conversation.id, {
             id: GenerateId.generate(),
-            userSend: "1",
-            userGet: "2",
+            sender: this.props.user.id,
             message: (this.props.messageSelected && !this.props.multiSelect) ? {
-                toWhoReply:this.state.senderId,
-                type:"4",
+                toWhoReply: this.state.senderId,
+                type: "4",
                 toReply: this.state.messageToReply,
                 message: message
             } : message,
@@ -84,7 +83,7 @@ class FooterMessagesSection extends Component {
         });
         this.inputText.value = '';
         this.setState({ inputText: false });
-        this.props.cancelReply('',true);
+        this.props.cancelReply('', true);
         this.scrollDown();
     }
 
@@ -94,10 +93,10 @@ class FooterMessagesSection extends Component {
         chat_feed.scrollTop = chat_feed.scrollHeight;
     }
 
-    setMessageToReply = (message,senderId) => {
+    setMessageToReply = (message, senderId) => {
         this.setState({
-            messageToReply:message,
-            senderId:senderId
+            messageToReply: message,
+            senderId: senderId
         });
     }
 
@@ -106,14 +105,15 @@ class FooterMessagesSection extends Component {
             <footer className='footer-messages-section'>
                 {(this.props.messageSelected && !this.props.multiSelect) &&
                     <div className='hideable-holder'>
-                        <ReplyOptions setMessage={this.setMessageToReply} messageObject={MessagesHelper.getMessageById(this.props.conversation, this.props.messageSelected) }/>
+                        <ReplyOptions setMessage={this.setMessageToReply} messageObject={MessagesHelper.getMessageById(this.conversation.conversation, this.props.messageSelected)} />
                     </div>
                 }
                 {
                     (this.props.messageSelected && this.props.multiSelect) ?
                         <OptionSelection
+                            conversation={this.conversation}
                             type={
-                                MessagesHelper.getMessageById(this.props.conversation, this.props.messageSelected).message.type
+                                MessagesHelper.getMessageById(this.conversation.conversation, this.props.messageSelected).message.type
                             } /> :
                         <div className='data-input'>
                             <div role="button" className="icon">
@@ -133,7 +133,7 @@ class FooterMessagesSection extends Component {
                                 <div onClick={() => { this.sendMessage(this.inputText.value) }} role="button" className="icon">
                                     <img src={this.props.send_icon} alt="" />
                                 </div> :
-                                <RecorderContent toggleOptions={this.toggleOptions} />
+                                <RecorderContent conversation={this.conversation} toggleOptions={this.toggleOptions} />
                             }
                         </div>
                 }
@@ -152,19 +152,21 @@ const mapStateToProps = state => {
         messageSelected: state.messagesOptions.messageSelected,
         multiSelect: state.messagesOptions.multiSelect,
         send_icon: state.customizing.Images.send_icon,
+        contact: state.contact,
+        user: state.users
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        addMessage: message => {
-            dispatch(addMessage(message));
+        addMessage: (id, message) => {
+            dispatch(addMessage(id, message));
         },
         multiSelectState: state => {
             dispatch(multiSelectState(state));
         },
-        cancelReply: (messageId,state) =>{
-            dispatch(messageSelected(messageId,state));
+        cancelReply: (messageId, state) => {
+            dispatch(messageSelected(messageId, state));
         }
     }
 }

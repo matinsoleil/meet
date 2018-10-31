@@ -5,6 +5,7 @@ import MessageSectionContainer from './../components/chat/messagesSection/messag
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
 import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
+import fetchRightSectionContainer from '../redux/actions/rightSectionContainer/fetchRightSectionContainer'
 import fetchUser from '../redux/actions/users/fetchUser'
 import fetchGroups from '../redux/actions/groups/fetchGroups'
 import { getContacts } from '../redux/selectors/contacts'
@@ -18,6 +19,7 @@ import { getAlertGeneral } from '../redux/selectors/alertGeneral'
 import RightSectionContainer from '../components/chat/chatsSection/RightSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
+import { getRightSectionContainer } from '../redux/selectors/rightSectionContainer'
 
 class ChatContainer extends Component {
     componentDidMount() {
@@ -26,23 +28,23 @@ class ChatContainer extends Component {
         this.props.fetchContact()
         //this.props.fetchConversation()
         this.props.fetchGroups()
+        this.props.fetchRightSectionContainer()
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();
         //this.props.logout();
     }
 
-    renderBody = (contacts, user, conversation, groups) => {
+    renderBody = (contacts, user, conversation, groups, rightSectionContainer) => {
         if (this.props.alertGeneral.show === true) {
             setTimeout(function () {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
-
         return (
             <div className="main-chat">
-                <RightSectionContainer user={user} contacts={contacts} />
-                <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
+                <RightSectionContainer user={user} contacts={contacts} rightSectionContainer={rightSectionContainer} />
+                <MessageSectionContainer contacts={contacts} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
                 {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
 
                 {this.props.alertGeneral.show === true ?
@@ -59,7 +61,7 @@ class ChatContainer extends Component {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(this.props.contacts, this.props.user, this.props.conversation, this.props.groups)}
+                body={this.renderBody(this.props.contacts, this.props.user, this.props.conversation, this.props.groups, this.props.rightSectionContainer)}
                 footer=''>
             </AppFrame>
         )
@@ -84,7 +86,8 @@ const mapStateToProps = (state) => {
         conversation: getConversation(state),
         searchContacts: getSearchContacts(state),
         groups: getGroups(state),
-        alertGeneral: getAlertGeneral(state)
+        alertGeneral: getAlertGeneral(state),
+        rightSectionContainer: getRightSectionContainer(state)
     }
 }
 
@@ -103,7 +106,10 @@ const mapDispatchToProps = dispatch => {
             dispatch(fetchGroups())
         },
         fetchUser: () => {
-            dispatch(fetchUser(1))
+            dispatch(fetchUser("U1"))
+        },
+        fetchRightSectionContainer: (listaContact) => {
+            dispatch(fetchRightSectionContainer(listaContact))
         },
         initApi: params => {
             dispatch(initApi(params))
@@ -116,7 +122,8 @@ const mapDispatchToProps = dispatch => {
         },
         logout: () => {
             dispatch(logout())
-        }, hideAlertGeneral: () => {
+        },
+        hideAlertGeneral: () => {
             dispatch(hideAlertGeneral())
         }
     }

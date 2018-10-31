@@ -2,6 +2,8 @@ import { handleActions } from 'redux-actions';
 import { FETCH_CONVERSATION, DELETE_MESSAGE, DELETE_CONVERSATION } from '../actionstypes';
 import DatabaseManage from '../../lib/databaseManager';
 
+
+
 let mapActions = new Map([
     [
         FETCH_CONVERSATION + '_FULFILLED',
@@ -9,7 +11,14 @@ let mapActions = new Map([
     ],
     [
         FETCH_CONVERSATION + '_ADD',
-        (state, action) => [...state, action.payload]
+        (state, action) => {
+            for (let index in state){
+                if(state[index].id===action.payload.conversationId){
+                    state[index].conversation = [...state[index].conversation,action.payload.message];
+                    return [...state];
+                }
+            }
+        },
     ],
     [
         DELETE_CONVERSATION,
@@ -17,7 +26,15 @@ let mapActions = new Map([
     ],
     [
         DELETE_MESSAGE,
-        (state, action) => [...state].filter(message => (message.id === action.payload) ? false : true)
+        (state, action) => {
+            //[...state].filter(message => (message.id === action.payload) ? false : true)
+            for(let index in state){
+                if(state[index].id===action.payload.conversationId){
+                    state[index].conversation = state[index].conversation.filter(message => (message.id === action.payload.messageId) ? false : true);
+                    return [...state]
+                }
+            }
+        }
     ],
 ]);
 

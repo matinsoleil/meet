@@ -23,15 +23,15 @@ class ReplyOptions extends Component {
     }
 
     render() {
-        let { userSend, message } = this.props.messageObject;
+        let { sender, message } = this.props.messageObject;
         let { reply_icon, close_icon } = this.props;
         return (
             <div className="reply-options">
                 <img src={reply_icon} alt={'reply'} />
                 <div className='reply'>
                     <span className="ellipsis-text">{
-                        (userSend === this.props.userId) ? 'tu' :
-                            MessagesHelper.getOwner(this.props.contacts, userSend)
+                        (sender === this.props.userId) ? 'tu' :
+                            MessagesHelper.getOwner(this.props.contacts, sender)
                     }</span>
                     <div className="ellipsis-text">{(!message.type) ? message : (message.type === '4') && message.message}</div>
                 </div>
