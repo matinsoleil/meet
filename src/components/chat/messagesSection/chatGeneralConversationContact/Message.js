@@ -72,7 +72,7 @@ class Message extends Component {
                     </div>
                     {
                         (this.state.menuState) &&
-                        <DotsMenu blockView={this.blockView} contacts={this.props.contacts} showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
+                        <DotsMenu conversationId={this.props.conversationId} blockView={this.blockView} contacts={this.props.contacts} showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
                     }
                 </div>
                 {(this.props.multiSelect)

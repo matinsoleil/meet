@@ -41,18 +41,19 @@ class ChatContainer extends Component {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
-        
-        return (<div className="main-chat">
-            <RightSectionContainer user={user} contacts={contacts} rightSectionContainer={rightSectionContainer} />
-            <MessageSectionContainer contacts={contacts} activeChat={true} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
-            {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
-            {this.props.alertGeneral.show === true ?
-                <div className="message-popup">
-                    <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
-                </div>
-                : null
-            }
-        </div>
+        return (
+            <div className="main-chat">
+                <RightSectionContainer user={user} contacts={contacts} rightSectionContainer={rightSectionContainer} />
+                <MessageSectionContainer contacts={contacts} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
+                {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
+
+                {this.props.alertGeneral.show === true ?
+                    <div className="message-popup">
+                        <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
+                    </div>
+                    : null
+                }
+            </div>
         );
     }
 
