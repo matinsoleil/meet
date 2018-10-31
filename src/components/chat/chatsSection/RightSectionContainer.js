@@ -12,15 +12,6 @@ class RightSectionContainer extends Component {
         this.filterList = this.filterList.bind(this)
     }
 
-    orderByName(list) {
-        const byName = list.slice(0);
-        return byName.sort(function (a, b) {
-            var x = a.name.toLowerCase();
-            var y = b.name.toLowerCase();
-            return x < y ? -1 : x > y ? 1 : 0;
-        });
-    }
-
     orderByPinner(list) {
         const byPinner = list.slice(0);
         return byPinner.sort(function (a, b) {
@@ -71,19 +62,14 @@ class RightSectionContainer extends Component {
 const mapStateToProps = state => {
     return {
         add_icon: state.customizing.Images.add_icon,
-        // rightSectionContainer: getRightSectionContainer(state),
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        // fetchRightSectionContainer: (listaContact) => {
-        //     dispatch(fetchRightSectionContainer(listaContact))
-        // },
         showSectionGroups: (listaContact) => {
             dispatch(showSectionGroups(listaContact))
         },
-
         updateFilterContactRightSectionContainer: (listaContact) => {
             dispatch(updateFilterContactRightSectionContainer(listaContact))
         },

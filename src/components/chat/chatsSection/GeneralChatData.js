@@ -70,19 +70,11 @@ class GeneralContactData extends Component {
     }
 
     actionDeleteElementChat = () => {
-        if (this.props.chat.typeChat === "1") {
-            var listContacts = this.props.contacts
-            var idContact = this.props.chat.id
-            var indexContact = listContacts.findIndex(item => item.id === idContact)
-            listContacts.splice(indexContact, 1)
-            this.props.updateContacts(listContacts);
-        } else {
-            var listGroups = this.props.groups.groups
-            var idGroup = this.props.chat.id
-            var indexGroups = listGroups.findIndex(item => item.id === idGroup)
-            listGroups.splice(indexGroups, 1)
-            this.props.updateGroups(listGroups);
-        }
+        var listContacts = this.props.contacts
+        var idContact = this.props.chat.id
+        var indexContact = listContacts.findIndex(item => item.id === idContact)
+        listContacts.splice(indexContact, 1)
+        this.props.updateContacts(listContacts);
         this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name)
         this.setState({
             deleteChat: true
