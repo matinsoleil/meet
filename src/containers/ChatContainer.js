@@ -35,7 +35,7 @@ class ChatContainer extends Component {
         //this.props.logout();
     }
 
-    renderBody = (contacts, user, conversation, groups, rightSectionContainer) => {
+    renderBody = (listContact, user, conversation, groups, rightSectionContainer) => {
         if (this.props.alertGeneral.show === true) {
             setTimeout(function () {
                 this.props.hideAlertGeneral()
@@ -43,9 +43,9 @@ class ChatContainer extends Component {
         }
         return (
             <div className="main-chat">
-                <RightSectionContainer user={user} contacts={contacts} rightSectionContainer={rightSectionContainer} />
-                <MessageSectionContainer contacts={contacts} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
-                {groups.view ? <GroupSectionContainer contacts={contacts} groups={groups} /> : null}
+                <RightSectionContainer user={user} contacts={listContact} rightSectionContainer={rightSectionContainer} />
+                <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
+                {groups.view ? <GroupSectionContainer contacts={listContact} groups={groups} /> : null}
 
                 {this.props.alertGeneral.show === true ?
                     <div className="message-popup">
@@ -58,10 +58,17 @@ class ChatContainer extends Component {
     }
 
     render() {
+
+        let listContact =  this.props.contacts.filter(function (contact) {
+            return contact.conversations !== null;
+        })
+        // console.log(" 1 1 1 ");
+        // console.log(resultado);
+        // console.log(" 2 2 2 ");
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(this.props.contacts, this.props.user, this.props.conversation, this.props.groups, this.props.rightSectionContainer)}
+                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.rightSectionContainer)}
                 footer=''>
             </AppFrame>
         )
