@@ -17,6 +17,10 @@ class RightSectionContainer extends Component {
         this.filterList = this.filterList.bind(this)
     }
 
+    componentDidMount() {
+        this.props.fetchContacts()
+    }
+
     orderByName(list) {
         const byName = list.slice(0);
         return byName.sort(function (a, b) {
@@ -38,11 +42,6 @@ class RightSectionContainer extends Component {
     showSectionGroupsClick(listContact) {
         this.props.showSectionGroups(this.props.contacts)
     }
-
-    // grouplistChast() {
-    //     const contacts = this.props.contacts
-    //     return this.orderByPinner(list);
-    // }
 
     filterList = (event) => {
         const val = event.target.value.toLowerCase()

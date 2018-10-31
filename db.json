@@ -2,136 +2,115 @@
   "conversations": [
     {
       "id": "1",
-      "userSend": "1",
-      "userGet": "2",
-      "message": "Hi Jack. What are you doing?",
-      "hour": "10:01",
-      "status": "1"
-    },
-    {
-      "id": "2",
-      "userSend": "2",
-      "userGet": "1",
-      "message": "Hi Mary. I'm filling out a job application.",
-      "hour": "10:02",
-      "status": "1"
-    },
-    {
-      "id": "3",
-      "userSend": "1",
-      "userGet": "2",
-      "message": "Are you finished with school already?",
-      "hour": "10:03",
-      "status": "1"
-    },
-    {
-      "id": "4",
-      "userSend": "2",
-      "userGet": "1",
-      "message": "No. I have one more semester, but it would be great to have a job lined up.",
-      "hour": "10:04",
-      "status": "1"
-    },
-    {
-      "id": "5",
-      "userSend": "1",
-      "userGet": "2",
-      "message": "How is your day going?",
-      "hour": "10:05",
-      "status": "1"
-    },
-    {
-      "id": "6",
-      "userSend": "2",
-      "userGet": "1",
-      "message": "Quite busy. I'm preparing for my presentation tomorrow on our marketing strategy. I'm not even half done yet.",
-      "hour": "10:06",
-      "status": "1"
-    },
-    {
-      "id": "7",
-      "userSend": "1",
-      "userGet": "2",
-      "message": "You must feel stressed out now.",
-      "hour": "10:07",
-      "status": "1"
-    },
-    {
-      "id": "8",
-      "userSend": "2",
-      "userGet": "1",
-      "message": "That's an understatement.",
-      "hour": "10:08",
-      "status": "1"
-    },
-    {
-      "id": "9",
-      "userSend": "1",
-      "userGet": "2",
-      "message": "What are you doing now?",
-      "hour": "10:09",
-      "status": "1"
-    },
-    {
-      "id": "10",
-      "userSend": "2",
-      "userGet": "1",
-      "message": "I'm playing pool with my friends at a pool hall.",
-      "hour": "10:10",
-      "status": "1"
-    },
-    {
-      "id": "11",
-      "userSend": "1",
-      "userGet": "2",
-      "message": "I didn't know you play pool. Are you having fun?",
-      "hour": "10:11",
-      "status": "1"
-    },
-    {
-      "id": "12",
-      "userSend": "2",
-      "userGet": "1",
-      "message": "I'm having a great time. How about you? What are you doing?",
-      "hour": "10:12",
-      "status": "1"
-    },
-    {
-      "id": "13",
-      "userSend": "1",
-      "userGet": "2",
-      "message": {
-        "type": "0",
-        "lat": 19.4492167,
-        "lon": -99.2148245,
-        "zoom": 16
-      },
-      "hour": "10:13",
-      "status": "1"
-    },
-    {
-      "id": "14",
-      "userSend": "2",
-      "userGet": "1",
-      "message": {
-        "type": "1",
-        "src": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
-      },
-      "hour": "10:14",
-      "status": "1"
-    },
-    {
-      "id": "15",
-      "userSend": "1",
-      "userGet": "2",
-      "message": {
-        "type": "4",
-        "toWhoReply": "2",
-        "toReply": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porta justo ut scelerisque cursus. Etiam ultricies, urna sit amet rhoncus condimentum, tellus neque finibus ex, in vestibulum neque mauris quis justo",
-        "message": "hi Friend, What is that means"
-      },
-      "hour": "11:45",
-      "status": "1"
+      "contactos": [
+        "1",
+        "2"
+      ],
+      "conversation": [
+        {
+          "id": "1",
+          "message": "Hi Jack. What are you doing?",
+          "hour": "10:01",
+          "status": "1"
+        },
+        {
+          "id": "2",
+          "message": "Hi Mary. I'm filling out a job application.",
+          "hour": "10:02",
+          "status": "1"
+        },
+        {
+          "id": "3",
+          "message": "Are you finished with school already?",
+          "hour": "10:03",
+          "status": "1"
+        },
+        {
+          "id": "4",
+          "message": "No. I have one more semester, but it would be great to have a job lined up.",
+          "hour": "10:04",
+          "status": "1"
+        },
+        {
+          "id": "5",
+          "message": "How is your day going?",
+          "hour": "10:05",
+          "status": "1"
+        },
+        {
+          "id": "6",
+          "message": "Quite busy. I'm preparing for my presentation tomorrow on our marketing strategy. I'm not even half done yet.",
+          "hour": "10:06",
+          "status": "1"
+        },
+        {
+          "id": "7",
+          "message": "You must feel stressed out now.",
+          "hour": "10:07",
+          "status": "1"
+        },
+        {
+          "id": "8",
+          "message": "That's an understatement.",
+          "hour": "10:08",
+          "status": "1"
+        },
+        {
+          "id": "9",
+          "message": "What are you doing now?",
+          "hour": "10:09",
+          "status": "1"
+        },
+        {
+          "id": "10",
+          "message": "I'm playing pool with my friends at a pool hall.",
+          "hour": "10:10",
+          "status": "1"
+        },
+        {
+          "id": "11",
+          "message": "I didn't know you play pool. Are you having fun?",
+          "hour": "10:11",
+          "status": "1"
+        },
+        {
+          "id": "12",
+          "message": "I'm having a great time. How about you? What are you doing?",
+          "hour": "10:12",
+          "status": "1"
+        },
+        {
+          "id": "13",
+          "message": {
+            "type": "0",
+            "lat": 19.4492167,
+            "lon": -99.2148245,
+            "zoom": 16
+          },
+          "hour": "10:13",
+          "status": "1"
+        },
+        {
+          "id": "14",
+          "message": {
+            "type": "1",
+            "src": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+          },
+          "hour": "10:14",
+          "status": "1"
+        },
+        {
+          "id": "15",
+          "message": {
+            "type": "4",
+            "toWhoReply": "2",
+            "toReply": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porta justo ut scelerisque cursus. Etiam ultricies, urna sit amet rhoncus condimentum, tellus neque finibus ex, in vestibulum neque mauris quis justo",
+            "message": "hi Friend, What is that means"
+          },
+          "hour": "11:45",
+          "status": "1"
+        }
+      ]
     }
   ],
   "users": [
@@ -562,7 +541,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "2",
@@ -580,7 +560,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "3",
@@ -598,7 +579,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "4",
@@ -616,7 +598,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AMknsVJTTstO5ex2h7DdYmiA-rmqzmXcsRwDm7nCc-mbQgv3",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "5",
@@ -634,7 +617,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrremDO1rZJn57FqEVQqS-HZSFBef6Uok3yesoyqgNUEgRU7-tQ",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "6",
@@ -652,7 +636,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4gRO_bIr2YLXI4-0_NmlZQw55vKYXLCppLfMtq10bmZ-TsiD",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "7",
@@ -670,7 +655,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMybaKtUQwGjyL2fXA7ZNY7J_vM_LSi3ToZnJ6aa6viL9FUDEf",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "8",
@@ -688,7 +674,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4e-0MFbXTwq4C_tb8NoWvmiTOyigeoBMDqd7uXhwcAjXDViN-",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "9",
@@ -706,7 +693,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "50",
@@ -724,7 +712,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "59",
@@ -742,7 +731,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "69",
@@ -760,7 +750,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "10",
@@ -778,7 +769,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3qmREi6Bag9BxxTvSCdXKqL8G2mBNjSFMi1nBZ1r92jNniSwnw",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "11",
@@ -796,7 +788,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAUelg7yg0mepGMf-N93hh6E9XrLnKwsKa4YEQ6swhDknk4F9eQ",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "12",
@@ -814,7 +807,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfBlwiKYPWMTt6ROM1-piJUzikE0EaNzi_LnnUGrIYh-aefUqB",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "13",
@@ -829,7 +823,8 @@
       "file": "0",
       "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "14",
@@ -847,7 +842,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "15",
@@ -865,7 +861,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-bUtMrovoWkw733UD5sQCF6aaw5VCug-B8Wi3CCvAtaBpS8JMA",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "16",
@@ -883,7 +880,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFjQ9clTxmrIS87TaIYrymyvb3lVBa8yUaQ8ioHqFccj9pCWX",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "17",
@@ -901,7 +899,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSCDTJFjmSOib_a-T764n2AYQRIX-nMO3yMoF1K4EHrQyVTxsz",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "18",
@@ -919,7 +918,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ByyxctCPUvbgtE3yRiAbOLws_steoWeLybXvzUZvXDylO8ZU",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "19",
@@ -937,7 +937,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTviwffByEVaqIZir9WNZ7CHnHC6q_AklKybQQlrZMHBCVCcTPSHg",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "20",
@@ -955,7 +956,8 @@
         "0"
       ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwww3bn_7VHZz_ZHgyDSLsg9ukZpGikjEifw2CIPZt1zqflcK5",
-      "typeChat": "1"
+      "typeChat": "1",
+      "conversations": "1"
     },
     {
       "id": "1G",
@@ -963,7 +965,9 @@
       "photo": "ruta",
       "status": "Status test",
       "lastState": "lastState",
-      "contactsIds": ["1"],
+      "contactsIds": [
+        "1"
+      ],
       "label": "label",
       "dayLastMessage": "Ayer",
       "lastMessage": "Last Message",
@@ -973,6 +977,7 @@
       "pinner": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp",
       "typeChat": "2",
+      "conversations": "1",
       "ounner": [
         "1"
       ]
@@ -983,7 +988,9 @@
       "photo": "ruta",
       "status": "Status test",
       "lastState": "lastState",
-      "contactsIds": ["1"],
+      "contactsIds": [
+        "1"
+      ],
       "label": "label",
       "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
@@ -993,7 +1000,10 @@
       "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg",
       "typeChat": "2",
-      "ounner": ["1"]
+      "conversations": "1",
+      "ounner": [
+        "1"
+      ]
     },
     {
       "id": "3G",
@@ -1001,7 +1011,9 @@
       "photo": "ruta",
       "status": "Status test",
       "lastState": "lastState",
-      "contactsIds": ["1"],
+      "contactsIds": [
+        "1"
+      ],
       "label": "label",
       "dayLastMessage": "22 min",
       "lastMessage": "Last Message",
@@ -1011,6 +1023,7 @@
       "pinner": "1",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ",
       "typeChat": "2",
+      "conversations": "1",
       "ounner": [
         "1"
       ]
