@@ -46,7 +46,6 @@ class ChatContainer extends Component {
                 <RightSectionContainer user={user} contacts={listContact} rightSectionContainer={rightSectionContainer} />
                 <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
                 {groups.view ? <GroupSectionContainer contacts={listContact} groups={groups} /> : null}
-
                 {this.props.alertGeneral.show === true ?
                     <div className="message-popup">
                         <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
@@ -58,13 +57,9 @@ class ChatContainer extends Component {
     }
 
     render() {
-
-        let listContact =  this.props.contacts.filter(function (contact) {
+        let listContact = this.props.contacts.filter(function (contact) {
             return contact.conversations !== null;
         })
-        // console.log(" 1 1 1 ");
-        // console.log(resultado);
-        // console.log(" 2 2 2 ");
         return (
             <AppFrame
                 header=''
@@ -113,10 +108,10 @@ const mapDispatchToProps = dispatch => {
             dispatch(fetchGroups())
         },
         fetchUser: () => {
-            dispatch(fetchUser("U1"))
+            dispatch(fetchUser("U2"))
         },
-        fetchRightSectionContainer: (listaContact) => {
-            dispatch(fetchRightSectionContainer(listaContact))
+        fetchRightSectionContainer: () => {
+            dispatch(fetchRightSectionContainer())
         },
         initApi: params => {
             dispatch(initApi(params))
