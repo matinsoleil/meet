@@ -108,7 +108,7 @@ const mapDispatchToProps = dispatch => {
             dispatch(fetchGroups())
         },
         fetchUser: () => {
-            dispatch(fetchUser("U2"))
+            dispatch(fetchUser("U1"))
         },
         fetchRightSectionContainer: () => {
             dispatch(fetchRightSectionContainer())
