@@ -6,7 +6,7 @@ import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
 import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
 import ModalBox from '../../modals/ModalBox'
 import { getContacts } from '../../../redux/selectors/contacts'
-import { getRightSectionContainer } from '../../../redux/selectors/rightSectionContainer'
+import { getContactSection } from '../../../redux/selectors/contactSection'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
 import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
@@ -71,7 +71,7 @@ class GeneralContactData extends Component {
         var idContact = this.props.chat.id
         var indexContact = listContacts.findIndex(item => item.id === idContact)
        listContacts.splice(indexContact, 1)
-        var filter_contacts = this.props.rightSectionContainer.filter_contacts
+        var filter_contacts = this.props.contactSection.filter_contacts
         if (filter_contacts !== null) {
             var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
             filter_contacts.splice(index_filter_contacts, 1)
@@ -247,7 +247,7 @@ const mapStateToProps = state => {
         mute_a_icon: state.customizing.Images.mute_a_icon,
         file_icon: state.customizing.Images.file_icon_chat,
         contacts: getContacts(state),
-        rightSectionContainer: getRightSectionContainer(state)
+        contactSection: getContactSection(state)
     }
 }
 
