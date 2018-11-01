@@ -14,6 +14,9 @@ import {
   countryReducer,
   restoreKey as restoreKeyCountry
 } from './country'
+
+
+import { rightSectionContainer } from './rightSectionContainer'
 import { osReducer } from './os'
 import { countriesReducer } from './countries'
 import { messageCenterReducer } from './messageCenter'
@@ -28,6 +31,7 @@ export const reducers = combineReducers({
   conversation,
   searchContacts,
   groups,
+  rightSectionContainer,
   customizing: customizingReducer,
   country: countryReducer,
   countries: countriesReducer,

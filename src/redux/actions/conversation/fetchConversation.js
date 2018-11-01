@@ -7,18 +7,20 @@ const fetchConversationAction = createAction(FETCH_CONVERSATION, apiGet(urlConve
 export const fetchConversation = () => dispatch => {
     dispatch(fetchConversationAction());
 }
-export const addMessage = (message) => {
-    
+
+export const addMessage = (message) => {  
     //connection.send(JSON.stringify(message))
+export const addMessage = (conversationId,message) => {
+
     return{
         type: FETCH_CONVERSATION+'_ADD',
-        payload:message
+        payload:{conversationId,message}
     }
 }
 
-export const deleteMessage = (messageId) => {
+export const deleteMessage = (conversationId,messageId) => {
     return{
         type: DELETE_MESSAGE,
-        payload: messageId
+        payload: {conversationId,messageId}
     }
 }

@@ -14,6 +14,7 @@ class MessagesSectionContainer extends Component {
                         subTitle={this.props.subTitle}
                         chat={this.props.chat}
                         contacts={this.props.contacts}
+                        contact={this.props.activeChat}
                     />
                 ) : (
                         <InactiveChat/>
@@ -27,7 +28,7 @@ const ActiveChat = (props) => {
     return (
         <React.Fragment>
             <HeaderMessagesSection chatName={props.chatName} subTitle={props.subTitle} />
-            <ChatGeneralConversationContact contacts={props.contacts} chat={props.chat} />
+            <ChatGeneralConversationContact contact={props.contact} contacts={props.contacts} chat={props.chat} />
             <FooterMessagesSection/>
         </React.Fragment>
     );

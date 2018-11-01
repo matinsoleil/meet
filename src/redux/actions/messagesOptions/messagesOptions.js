@@ -17,10 +17,10 @@ export const filterMessages = (action, messageId) => dispatch => {
     dispatch(messageSelected(messageId,action));
 }
 
-export const deleteMessagesSelected = (messagesId) => dispatch => {
+export const deleteMessagesSelected = (conversationId,messagesId) => dispatch => {
     dispatch(multiSelectState(false));
     for (const id in messagesId) {
-        dispatch(deleteMessage(messagesId[id]));
+        dispatch(deleteMessage(conversationId,messagesId[id]));
     }
 }
 

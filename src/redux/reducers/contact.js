@@ -15,17 +15,7 @@ export const contact = (state = estado, action) => {
         case 'FETCH_CONTACT':
             return {
                 ...state,
-                id: action.id,
-                name: action.name,
-                photo: action.photo,
-                status: action.status,
-                label: action.label,
-                dayLastMessage: action.dayLastMessage,
-                lastMessage: action.lastMessage,
-                imgContact: action.imgContact,
-                chatGroups: action.chatGroups,
-                lastState: action.lastState,
-                onEdit: action.onEdit
+                ...action.payload,
             }
         default:
             return state
