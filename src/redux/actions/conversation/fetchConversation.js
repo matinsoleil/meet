@@ -8,7 +8,7 @@ export const fetchConversation = () => dispatch => {
     dispatch(fetchConversationAction());
 }
 
-export const addMessage = (message) => {  
+// export const addMessage = (message) => {  
     //connection.send(JSON.stringify(message))
 export const addMessage = (conversationId,message) => {
 
