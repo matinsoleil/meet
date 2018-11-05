@@ -3,7 +3,8 @@ import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFi
 import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-import addGroup from '../../../redux/actions/groups/addGroup'
+// import addGroup from '../../../redux/actions/groups/addGroup'
+import addContact from '../../../redux/actions/contacts/addContact'
 import CreateGroupForm from '../../form/group/CreateGroupForm'
 import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
 import { getGroups } from '../../../redux/selectors/groups'
@@ -24,11 +25,13 @@ class HeaderGroupSection extends Component {
     this.filterList = this.filterList.bind(this);
     this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this);
   }
+
   filterList(event) {
     const val = event.target.value.toLowerCase();
     const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
     this.props.updateFilterContactsAddGroup(listContactsFecth);
-  };
+  }
+
   deleteContactListCreateGroup(idContact) {
     var listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
@@ -37,24 +40,25 @@ class HeaderGroupSection extends Component {
     this.props.updateListContactsGroup(listContacts)
     this.props.updateListContactsAddGroup(listAddContactsGroup)
   }
+
   submit = values => {
     console.log(values)
   }
+
   openWindowFormCreateGroup() {
     this.setState({
       showModalCreateGroup: true
-    });
+    })
   }
 
   closeWindowFormCreateGroup() {
     this.setState({
       showModalCreateGroup: false
-    });
+    })
   }
 
   submitCreateGroup = values => {
     const contactsGroup = this.props.list_contacts_add_group
-    console.log(contactsGroup);
     const name = values.nameGroup;
     const id = Math.floor(+new Date() / 1000);
     const newGroupElemnt = {
@@ -70,9 +74,11 @@ class HeaderGroupSection extends Component {
       "file": "0",
       "pinner": "0",
       "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
-      "contactsGroup": contactsGroup
+      "contactsGroup": contactsGroup,
+      "typeChat": "2"
     }
-    this.props.addGroup(newGroupElemnt)
+    this.props.addContact(newGroupElemnt)
+
     this.setState({
       showModalCreateGroup: false
     })
@@ -92,10 +98,12 @@ class HeaderGroupSection extends Component {
       <div className="main-header-group-section">
         <div className="resendTo">
           {
+
             this.typeText === "addTo" ?<span className="content-resendTo"><p className="text-resendTo">Agregar a:</p><p className="user-resendTo"></p></span>:null
           }
           {
             this.typeText === "resendTo" ?<span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span>:null
+
           }
           <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionGroups} alt="addGroup" />
         </div>
@@ -103,19 +111,19 @@ class HeaderGroupSection extends Component {
           <div className="block-right"></div>
           <div className="header-group" >
             {
+
                this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon}  alt="addGroup" />: null
             }
             {
                this.typeButton === "aceptTo" ?<button className="acceptAddGroup" onClick={this.openWindowFormCreateGroup} >{'Aceptar'}</button>:null
+
             }
             <div className="grow-group">
-            {list_contacts_add_group.map(contact =>
+              {list_contacts_add_group.map(contact =>
                 <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
               )
-            }
-
+              }
             </div>
-
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>
           <div className="search-contact-group">
@@ -142,8 +150,8 @@ const mapDispatchToProps = dispatch => {
     updateListContactsAddGroup: (listContacts) => {
       dispatch(updateListContactsAddGroup(listContacts))
     },
-    addGroup: (listContacts) => {
-      dispatch(addGroup(listContacts))
+    addContact: (newContact) => {
+      dispatch(addContact(newContact))
     }
 
   }

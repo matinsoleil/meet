@@ -6,7 +6,7 @@ import ModalBox from './../../../../modals/ModalBox';
 import { showSectionGroups } from '../../../../../redux/actions/groups/showSectionGroups';
 import MessagesHelper from '../../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../../lib/helper/generateId';
-import $ from 'jquery';
+
 class OptionsSelection extends Component {
 
     constructor(props) {
@@ -77,7 +77,7 @@ class OptionsSelection extends Component {
                 <IconButton onClick={this.deleteMessages} image={this.props.trash} name='Eliminar' />
                 {(this.state.showModal) &&
                     <ModalBox body={
-                        <div>
+                        <div className="modal-content">
                             <div className='title'>{'¿Seguro que desea eliminar estos mensajes?'}</div>
                             <div className='button-section'>
                                 <button onClick={this.toggleModal}>Cancelar</button>

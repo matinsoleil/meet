@@ -21,31 +21,31 @@ class ListGeneralContactsGroup extends Component {
             return x < y ? -1 : x > y ? 1 : 0
         })
     }
+
     addContactGroupClick(idContact) {
         var listContacts = this.props.contacts;
         var filter_contacts = this.props.filter_contacts;
         var listAddContactsGroup = this.props.list_contacts_add_group;
         var clearUser = 0;
-
-        console.log(listAddContactsGroup);
-
         for (var i = 0; i < listAddContactsGroup.length; i++) {
             if (listAddContactsGroup[i].id === idContact) {
-                listAddContactsGroup.splice(i,1);
+                listAddContactsGroup.splice(i, 1);
                 clearUser = 1;
-              break;
-            }else{
-               console.log('not equal'); 
+                break;
+            } else {
+                console.log('not equal');
             }
-          }
-            
-        if(clearUser===0){
-        var infoContact = listContacts.find(item => item.id === idContact)
-        console.log(infoContact);
-        listAddContactsGroup.push(infoContact)
-        }else{
 
-        } 
+        }
+        if (clearUser == 0) {
+            var infoContact = listContacts.find(item => item.id === idContact)
+            var newContact = {
+                id: infoContact.id,
+                name: infoContact.name,
+                imgContact: infoContact.imgContact
+            }
+            listAddContactsGroup.push(newContact)
+        }
 
         if (filter_contacts.length !== 0) {
             var listAddContactsGroupFilter = filter_contacts
@@ -56,24 +56,42 @@ class ListGeneralContactsGroup extends Component {
         this.props.updateListContactsAddGroup(listAddContactsGroup)
     }
 
-    deleteContactGroupClick(idContact){
-       
-        var listAddContactsGroup = this.props.list_contacts_add_group;     
+    deleteContactGroupClick(idContact) {
+
+        var listAddContactsGroup = this.props.list_contacts_add_group;
         for (var i = 0; i < listAddContactsGroup.length; i++) {
+
            console.log(listAddContactsGroup[i].id);  
           }
+
     }
 
-
+    filterOnlyContacts(listContacts) {
+        return listContacts.filter(function (contact) {
+            return contact.typeChat === "1";
+        })
+    }
 
     render() {
-        const listContactsOrderByName = this.orderByName((this.props.filter_contacts.length === 0 ? this.props.contacts : this.props.filter_contacts))
+        // const listContactsOrderByName = this.orderByName((this.props.filter_contacts.length === 0 ? this.props.contacts : this.props.filter_contacts))
+        const result = this.filterOnlyContacts(this.props.contacts)
+        const listContacts = this.orderByName(result)
+        var indexAlphabet = ''
+        var flagAlphabet = ''
         return (
             <div className="main-chat-general-list-contact-group">
-                <div className="main-chat-general-list-contact-group-title">
-
-                </div>
-                {listContactsOrderByName.map(contact => <GeneralContactDataGroup className="contact-group" groups={this.props.groups} key={contact.id} contact={contact} onClick={this.addContactGroupClick} />)}
+                <div className="main-chat-general-list-contact-group-title"></div>
+                {
+                    listContacts.map(contact => {
+                        if (indexAlphabet.includes(contact.name.charAt(0)) === false) {
+                            indexAlphabet = contact.name.charAt(0)
+                            flagAlphabet = contact.name.charAt(0)
+                        } else {
+                            flagAlphabet = ""
+                        }
+                        return <GeneralContactDataGroup className="contact-group" groups={this.props.groups} key={contact.id} contact={contact} onClick={this.addContactGroupClick} flagAlphabet={flagAlphabet} />
+                    })
+                }
             </div>
         )
     }

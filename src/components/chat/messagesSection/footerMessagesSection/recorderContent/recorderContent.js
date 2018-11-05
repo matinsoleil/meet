@@ -4,29 +4,61 @@ import { addMessage } from './../../../../../redux/actions/conversation/fetchCon
 import AudioRecorder from './../../../../../lib/helper/audioRecorder';
 import './recorderContent.scss';
 import GenerateId from '../../../../../lib/helper/generateId';
+import ModalBox from '../../../../modals/ModalBox';
 
 class RecorderContent extends Component {
     constructor(props) {
         super(props);
         this.state = {
             recording: false,
-            timer: "00:00"
+            timer: "00:00",
+            showInfoBox: false,
+            showModal:false,
         }
+
+    }
+    componentDidMount() {
+        this.recordAudio();
     }
 
-    recordAudio = () => {
+    toggleModal = () => {
+        this.setState({
+            showModal:!this.state.showModal,
+        });
+    }
+
+    permissions = async (nav) => {
+        let status = false;
+        await nav.mediaDevices.enumerateDevices().then((devices) => {
+            for (let device of devices) {
+                if (device.kind === 'audioinput'
+                    && device.label !== '') {
+                    status = true;
+                    break;
+                }
+            }
+        });
+        return status;
+    }
+
+    recordAudio = async () => {
+
         this.props.toggleOptions();
         if (!navigator.getUserMedia)
             navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
                 navigator.mozGetUserMedia || navigator.msGetUserMedia
         if (navigator.getUserMedia) {
-            this.audioRecorder = new AudioRecorder(this.changeTimerState);
+            let status = await this.permissions(navigator);
+            (!status) && this.setState({ showInfoBox: true });
+            this.audioRecorder = new AudioRecorder(this.changeTimerState, () => { this.setState({ showInfoBox: false }) });
             navigator.getUserMedia({ audio: { channelCount: 1 }, video: false }, this.audioRecorder.record, this.handleRecordError);
             this.setState({
                 recording: true
             });
         } else if (navigator.mediaDevices.getUserMedia) {
-            this.audioRecorder = new AudioRecorder(this.changeTimerState);
+            let status = await this.permissions(navigator);
+            (!status) && this.setState({ showInfoBox: true });
+            this.audioRecorder = new AudioRecorder(this.changeTimerState, () => { this.setState({ showInfoBox: false }) });
             navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1 }, video: false })
                 .then(this.audioRecorder.record)
                 .catch(this.handleRecordError);
@@ -38,8 +70,10 @@ class RecorderContent extends Component {
         }
     }
 
-    handleRecordError = () => {
-
+    handleRecordError = (e) => {
+        alert('Here error get USER MEDIA');
+        this.setState({ showInfoBox: false });
+        this.props.hide();
     }
 
     changeTimerState = timer => {
@@ -69,25 +103,60 @@ class RecorderContent extends Component {
             });
         }, save);
         this.props.toggleOptions();
+        this.props.hide();
         this.audioRecorder = null;
     }
     render() {
         return (
-            <div className={(!this.state.recording) ? "icon" : "record-content"}>
-                {(this.state.recording) ?
-                    <div className="controls">
-                        <img onClick={
-                            () => { this.stopRecording(true) }
-                        } id="ok_button" src={this.props.ok_icon} alt="ok" />
-                        <span id="counter" > {this.state.timer}</span>
-                        <img onClick={
-                            () => { this.stopRecording(false) }
-                        } id="cancel_button" src={this.props.cancel_icon} alt="cancel" />
+            <div className={"record-content"}>
+                <div className="controls">
+                    <img onClick={
+                        ()=>{this.audioRecorder.pause();this.setState({showModal:true})}
+                    } id="cancel_button" src={this.props.trash_red} alt="cancel" />
+                    <div className='outside-circle'>
+                        <div className='inside-circle'>
+                            <span id="counter" > {this.state.timer}</span>
+                        </div>
                     </div>
-                    : <img onClick={this.recordAudio} src={this.props.mic} alt="" />}
+                    <img onClick={
+                        () => { this.stopRecording(true) }
+                    } id="send_button" src={this.props.send_icon} alt="send" />
+                </div>
+                {(this.state.showInfoBox) &&
+                    <InfoBox
+                        img={this.props.mic}
+                        title={"Permitir Micrófono"}
+                        data={"Para grabar un chat de voz, haz click en 'Permitir' para conceder a Claro connect acceso al micrófono de tu computadora"}
+                    />}
+                {(this.state.showModal) &&
+                    <ModalBox
+                        body={
+                            <div className="modal-content">
+                                <div className='title'>{'¿Seguro que desea eliminar este chat de voz?'}</div>
+                                <div className='button-section'>
+                                    <button onClick={()=>{this.audioRecorder.resume();this.toggleModal();}}>Cancelar</button>
+                                    <button onClick={()=>{this.stopRecording(false);this.toggleModal();}}>Eliminar</button>
+                                </div>
+                            </div>
+                        }
+
+                    />
+                }
             </div>
         );
     }
+}
+
+const InfoBox = props => {
+    return (
+        <div className="info-box">
+            <div className="info-box-content">
+                <img src={props.img} alt="" />
+                <span className="info-box-title">{props.title}</span>
+                <div className="info-box-data">{props.data}</div>
+            </div>
+        </div>
+    );
 }
 
 const mapStateToProps = state => {
@@ -95,14 +164,16 @@ const mapStateToProps = state => {
         mic: state.customizing.Images.mic,
         ok_icon: state.customizing.Images.ok_icon,
         cancel_icon: state.customizing.Images.cancel_icon,
+        trash_red: state.customizing.Images.trash_red,
+        send_icon: state.customizing.Images.send_icon,
         user: state.users
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        addMessage: (conversationId,message) => {
-            dispatch(addMessage(conversationId,message));
+        addMessage: (conversationId, message) => {
+            dispatch(addMessage(conversationId, message));
         }
     }
 }
