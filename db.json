@@ -902,7 +902,372 @@
       "imgUser": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png"
     }
   ],
-  "logerror": [],
+  "logerror": [
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541085006,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 1
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541085735,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 2
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541085744,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 3
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541085990,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 4
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541085993,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 5
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086007,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 6
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086102,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 7
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086110,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 8
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086188,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 9
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086258,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 10
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086269,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 11
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086309,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 12
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086316,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 13
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541086352,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 14
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541087420,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 15
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541087508,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 16
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541087517,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 17
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541092694,
+      "message": "TypeError: Cannot read property 'type' of undefined",
+      "detail": "\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:19)\n    in div (at ChatGeneralConversationContact.js:11)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 18
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541092841,
+      "message": "TypeError: Cannot read property 'type' of undefined",
+      "detail": "\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:19)\n    in div (at ChatGeneralConversationContact.js:11)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 19
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541092842,
+      "message": "TypeError: Cannot read property 'type' of undefined",
+      "detail": "\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:19)\n    in div (at ChatGeneralConversationContact.js:11)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:31)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 20
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541093594,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 21
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541093594,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 22
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541093595,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 23
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541093645,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 24
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541094087,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 25
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095809,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 26
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095809,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 27
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095811,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 28
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095907,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 29
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095907,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 30
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095907,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 31
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095933,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 32
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095933,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 33
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095934,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 34
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095964,
+      "message": "TypeError: Cannot read property '0' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 35
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095964,
+      "message": "TypeError: Cannot read property '0' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 36
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541095964,
+      "message": "TypeError: Cannot read property '0' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 37
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541106653,
+      "message": "TypeError: Cannot add property server, object is not extensible",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 38
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541106653,
+      "message": "TypeError: Cannot add property server, object is not extensible",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 39
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541106653,
+      "message": "TypeError: Cannot add property server, object is not extensible",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 40
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541106921,
+      "message": "TypeError: Cannot add property server, object is not extensible",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 41
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541106921,
+      "message": "TypeError: Cannot add property server, object is not extensible",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 42
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541106922,
+      "message": "TypeError: Cannot add property server, object is not extensible",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 43
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541108717,
+      "message": "TypeError: Cannot read property 'ip' of undefined",
+      "detail": "\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 44
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541108717,
+      "message": "TypeError: Cannot read property 'ip' of undefined",
+      "detail": "\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 45
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541108718,
+      "message": "TypeError: Cannot read property 'ip' of undefined",
+      "detail": "\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 46
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541108742,
+      "message": "TypeError: Cannot read property 'domain' of undefined",
+      "detail": "\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 47
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541108742,
+      "message": "TypeError: Cannot read property 'domain' of undefined",
+      "detail": "\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 48
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541108743,
+      "message": "TypeError: Cannot read property 'domain' of undefined",
+      "detail": "\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:42)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:39)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 49
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541113180,
+      "message": "TypeError: Cannot read property 'server' of undefined",
+      "detail": "\n    in ActiveChat (at messagesSectionContainer.js:14)\n    in div (at messagesSectionContainer.js:12)\n    in MessagesSectionContainer (at ChatContainer.js:49)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:73)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 50
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541113180,
+      "message": "TypeError: Cannot read property 'server' of undefined",
+      "detail": "\n    in ActiveChat (at messagesSectionContainer.js:14)\n    in div (at messagesSectionContainer.js:12)\n    in MessagesSectionContainer (at ChatContainer.js:49)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:73)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 51
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541113181,
+      "message": "TypeError: Cannot read property 'server' of undefined",
+      "detail": "\n    in ActiveChat (at messagesSectionContainer.js:14)\n    in div (at messagesSectionContainer.js:12)\n    in MessagesSectionContainer (at ChatContainer.js:49)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:73)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 52
+    }
+  ],
   "contacts": [
     {
       "id": "1",

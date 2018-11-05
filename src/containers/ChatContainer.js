@@ -26,7 +26,7 @@ class ChatContainer extends Component {
         this.props.fetchContacts()
         this.props.fetchUser()
         this.props.fetchContact()
-        //this.props.fetchConversation()
+        this.props.fetchConversation()
         this.props.fetchGroups()
         this.props.fetchRightSectionContainer()
         // this.props.initApi();
@@ -43,8 +43,8 @@ class ChatContainer extends Component {
         }
         return (
             <div className="main-chat">
-                <RightSectionContainer user={user} contacts={listContact} rightSectionContainer={rightSectionContainer} />
-                <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} />
+                <RightSectionContainer user={user} contacts={listContact} rightSectionContainer={rightSectionContainer} server={this.props.server} />
+                <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} server={this.props.server} />
                 {groups.view ? <GroupSectionContainer contacts={listContact} groups={groups} /> : null}
 
                 {this.props.alertGeneral.show === true ?
@@ -68,7 +68,7 @@ class ChatContainer extends Component {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.rightSectionContainer)}
+                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.rightSectionContainer,this.props.server)}
                 footer=''>
             </AppFrame>
         )
@@ -82,7 +82,7 @@ ChatContainer.defaultProps = {
     contact: [],
     conversation: [],
     groups: [],
-    alertGeneral: []
+    alertGeneral: [],
 }
 
 const mapStateToProps = (state) => {
@@ -94,7 +94,8 @@ const mapStateToProps = (state) => {
         searchContacts: getSearchContacts(state),
         groups: getGroups(state),
         alertGeneral: getAlertGeneral(state),
-        rightSectionContainer: getRightSectionContainer(state)
+        rightSectionContainer: getRightSectionContainer(state),
+        server: {serverName:'192.168.23.77',port:'8888'}
     }
 }
 

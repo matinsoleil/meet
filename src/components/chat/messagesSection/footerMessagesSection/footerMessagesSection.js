@@ -10,8 +10,10 @@ import ReplyOptions from './replyOptions/replyOptions';
 import $ from 'jquery'
 import './footerMessagesSection.scss';
 
+var oneSocket = undefined;
+
 class FooterMessagesSection extends Component {
-    constructor(props) {
+    constructor(props) {    
         super(props);
         this.state = {
             emojiState: true,
@@ -27,7 +29,16 @@ class FooterMessagesSection extends Component {
         (!this.state.inputText) && document.removeEventListener('keyup', this.keyUpSendMessage);
         (this.props.multiSelect || this.props.messageSelected) && document.addEventListener('keyup', this.cancelMultiSelection);
         (!this.props.multiSelect && !this.props.messageSelected) && document.removeEventListener('keyup', this.cancelMultiSelection);
-        this.conversation = (this.props.conversation.length > 0) && MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations)
+        this.conversation = (this.props.conversation.length > 0) && MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations);
+        let cnv = this.conversation;
+        if(cnv!==undefined){    
+         if(oneSocket===undefined){   
+            this.connection = new WebSocket('ws://'+this.props.serverChat.serverName+':'+this.props.serverChat.port+'/'+cnv.id);
+             oneSocket = 1;
+             //console.log('one instance of socket ');
+            }
+        }
+        
     }
 
     toggleOptions = () => {
@@ -68,8 +79,18 @@ class FooterMessagesSection extends Component {
     }
 
     sendMessage = (message) => {
+
+        this.connection.onmessage = function (event) {
+        console.log(event.data);
+        
+        this.props.addMessage(this.conversation.id,JSON.parse(event.data));
+        
+      }.bind(this); 
+
+       
         let date = new Date();
-        this.props.addMessage(this.conversation.id, {
+
+        let msg = {
             id: GenerateId.generate(),
             sender: this.props.user.id,
             message: (this.props.messageSelected && !this.props.multiSelect) ? {
@@ -80,7 +101,12 @@ class FooterMessagesSection extends Component {
             } : message,
             hour: `${date.getHours()}:${date.getMinutes()}`,
             status: "1",
-        });
+        }
+        this.connection.send(JSON.stringify(msg));
+
+        this.props.addMessage(this.conversation.id, msg );
+        message='';
+
         this.inputText.value = '';
         this.setState({ inputText: false });
         this.props.cancelReply('', true);
@@ -153,7 +179,8 @@ const mapStateToProps = state => {
         multiSelect: state.messagesOptions.multiSelect,
         send_icon: state.customizing.Images.send_icon,
         contact: state.contact,
-        user: state.users
+        user: state.users,
+        server: state.server,
     }
 }
 

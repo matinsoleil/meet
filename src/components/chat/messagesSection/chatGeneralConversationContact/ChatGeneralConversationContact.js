@@ -17,7 +17,7 @@ class ChatGeneralConversationContact extends Component {
                             const tailType = c.sender === this.props.user.id ? 'tail-out' : 'tail-in';
                             const tail = (c.sender === this.props.user.id) ? this.props.out_tail : this.props.in_tail;
                             return <Message
-                                key={c.id}
+                                key={c.id+'-'+Math.random()}
                                 messageObject={c}
                                 tail={tail}
                                 type={TypeMessageControl}
