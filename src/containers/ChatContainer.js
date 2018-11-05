@@ -43,9 +43,6 @@ class ChatContainer extends Component {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
-        // console.log("1 - 1 - 1");
-        // console.log(contactSection);
-        // console.log("2 - 2 - 2");
         return (
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} />
