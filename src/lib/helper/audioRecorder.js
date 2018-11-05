@@ -14,6 +14,7 @@ export default class AudioRecorder {
         this.confirmMediaAccess = confirmMediaAccess;
         this.audioElement = document.createElement('audio');
         this.audioElement.onloadedmetadata = () => {
+            this.audioElement.muted = true;
             this.audioElement.play();
         }
     }
@@ -60,19 +61,16 @@ export default class AudioRecorder {
         (this.confirmMediaAccess) && this.confirmMediaAccess();
         this.stream = stream;
         var context = new (window.AudioContext || window.webkitAudioContext)();
-        (this.timerCallback) && this.recTime(() => {
-            this.time = Date.now();
-        });
         var source = context.createMediaStreamSource(this.stream);
         this.rec = new Recorder(source, {
             numChannels: 1,
         });
         this.rec.record();
         this.audioElement.srcObject = stream;
+        (this.timerCallback) && this.recTime();
     }
 
-    recTime(init) {
-        (init) && init();
+    recTime() {
         setTimeout(() => {
             this.timerCallback(new Date(this.audioElement.currentTime*1000).toISOString().substr(14, 5));
             (this.recording) && this.recTime();
