@@ -67,7 +67,7 @@ class ChatContainer extends Component {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.rightSectionContainer,this.props.server)}
+                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.contactSection,this.props.server)}
                 footer=''>
             </AppFrame>
         )
