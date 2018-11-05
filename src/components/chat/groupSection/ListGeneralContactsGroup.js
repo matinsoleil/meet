@@ -39,7 +39,7 @@ class ListGeneralContactsGroup extends Component {
             }
           }
             
-        if(clearUser==0){
+        if(clearUser===0){
         var infoContact = listContacts.find(item => item.id === idContact)
         console.log(infoContact);
         listAddContactsGroup.push(infoContact)
@@ -60,7 +60,7 @@ class ListGeneralContactsGroup extends Component {
        
         var listAddContactsGroup = this.props.list_contacts_add_group;     
         for (var i = 0; i < listAddContactsGroup.length; i++) {
-           (listAddContactsGroup[i].id);  
+           console.log(listAddContactsGroup[i].id);  
           }
     }
 
