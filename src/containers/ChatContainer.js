@@ -5,18 +5,20 @@ import MessageSectionContainer from './../components/chat/messagesSection/messag
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import fetchContact from '../redux/actions/contact/fetchContact'
 import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
-import fetchRightSectionContainer from '../redux/actions/rightSectionContainer/fetchRightSectionContainer'
-import fetchUser from '../redux/actions/users/fetchUser'
-import fetchGroups from '../redux/actions/groups/fetchGroups'
+import { fetchContactSection } from '../redux/actions/contactSection/fetchContactSection'
+import { fetchUser } from '../redux/actions/users/fetchUser'
+import { fetchGroups } from '../redux/actions/groups/fetchGroups'
 import { getContacts } from '../redux/selectors/contacts'
 import { getContact } from '../redux/selectors/contact'
 import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
+import { getContactSection } from '../redux/selectors/contactSection'
+
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts'
 import { getGroups } from '../redux/selectors/groups'
 import { getAlertGeneral } from '../redux/selectors/alertGeneral'
-import RightSectionContainer from '../components/chat/chatsSection/RightSectionContainer'
+import ContactSectionContainer from '../components/chat/chatsSection/ContactSectionContainer'
 import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
 import { getRightSectionContainer } from '../redux/selectors/rightSectionContainer'
@@ -28,25 +30,29 @@ class ChatContainer extends Component {
         this.props.fetchContact()
         this.props.fetchConversation()
         this.props.fetchGroups()
-        this.props.fetchRightSectionContainer()
+        this.props.fetchContactSection()
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();
         //this.props.logout();
     }
 
-    renderBody = (listContact, user, conversation, groups, rightSectionContainer) => {
+    renderBody = (listContact, user, conversation, groups, contactSection) => {
         if (this.props.alertGeneral.show === true) {
             setTimeout(function () {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
+        // console.log("1 - 1 - 1");
+        // console.log(contactSection);
+        // console.log("2 - 2 - 2");
         return (
             <div className="main-chat">
-                <RightSectionContainer user={user} contacts={listContact} rightSectionContainer={rightSectionContainer} server={this.props.server} />
-                <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} server={this.props.server} />
-                {groups.view ? <GroupSectionContainer contacts={listContact} groups={groups} /> : null}
 
+                <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} />
+                <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} server={this.props.server} />
+
+                {groups.view ? <GroupSectionContainer contacts={listContact} groups={groups} /> : null}
                 {this.props.alertGeneral.show === true ?
                     <div className="message-popup">
                         <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
@@ -58,13 +64,9 @@ class ChatContainer extends Component {
     }
 
     render() {
-
-        let listContact =  this.props.contacts.filter(function (contact) {
+        let listContact = this.props.contacts.filter(function (contact) {
             return contact.conversations !== null;
         })
-        // console.log(" 1 1 1 ");
-        // console.log(resultado);
-        // console.log(" 2 2 2 ");
         return (
             <AppFrame
                 header=''
@@ -83,6 +85,7 @@ ChatContainer.defaultProps = {
     conversation: [],
     groups: [],
     alertGeneral: [],
+    rightSectionContainer: []
 }
 
 const mapStateToProps = (state) => {
@@ -95,7 +98,8 @@ const mapStateToProps = (state) => {
         groups: getGroups(state),
         alertGeneral: getAlertGeneral(state),
         rightSectionContainer: getRightSectionContainer(state),
-        server: {serverName:'192.168.23.77',port:'8888'}
+        contactSection: getContactSection(state),
+        server: {serverName:'192.168.23.77',port:'8888'},
     }
 }
 
@@ -116,8 +120,8 @@ const mapDispatchToProps = dispatch => {
         fetchUser: () => {
             dispatch(fetchUser("U1"))
         },
-        fetchRightSectionContainer: (listaContact) => {
-            dispatch(fetchRightSectionContainer(listaContact))
+        fetchContactSection: () => {
+            dispatch(fetchContactSection())
         },
         initApi: params => {
             dispatch(initApi(params))

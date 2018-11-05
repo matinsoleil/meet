@@ -9,10 +9,9 @@ class ListGeneralContacts extends Component {
         }
     }
     render() {
-        const listContactsOrder = this.props.listChats;
         return (
             <div className="main-chat-general-list-contact" >
-                {listContactsOrder.map(chat =>
+                {this.props.listChats.map(chat =>
                     <GeneralChatData chat={chat}
                         key={chat.id+'-'+Math.random()}
                     />
