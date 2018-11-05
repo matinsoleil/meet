@@ -7,6 +7,7 @@ import MessagesHelper from '../../../../lib/helper/messagesHelper';
 class ChatGeneralConversationContact extends Component {
     render() {
         let conversation = MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations);
+        //console.log(this.props.conversation,this.props.contact.conversations,conversation);
         return (
             <div id='#main-chat-feed' style={{ backgroundImage: `url(${this.props.background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
@@ -17,7 +18,7 @@ class ChatGeneralConversationContact extends Component {
                             const tailType = c.sender === this.props.user.id ? 'tail-out' : 'tail-in';
                             const tail = (c.sender === this.props.user.id) ? this.props.out_tail : this.props.in_tail;
                             return <Message
-                                key={c.id+'-'+Math.random()}
+                                key={c.id}
                                 messageObject={c}
                                 tail={tail}
                                 type={TypeMessageControl}
