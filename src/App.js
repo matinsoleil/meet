@@ -48,6 +48,7 @@ const mapStateToProps = state => {
     languages: state.country.languages,
     os: state.os,
     countries: state.countries,
+    server: state.server
   }
 }
 const mapDispatchToProps = dispatch => {
