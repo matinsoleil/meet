@@ -43,9 +43,6 @@ class ChatContainer extends Component {
                 this.props.hideAlertGeneral()
             }.bind(this), 3000)
         }
-        // console.log("1 - 1 - 1");
-        // console.log(contactSection);
-        // console.log("2 - 2 - 2");
         return (
             <div className="main-chat">
 
@@ -70,7 +67,7 @@ class ChatContainer extends Component {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.rightSectionContainer,this.props.server)}
+                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.contactSection,this.props.server)}
                 footer=''>
             </AppFrame>
         )
