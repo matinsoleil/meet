@@ -27,9 +27,6 @@ class ListGeneralContactsGroup extends Component {
         var filter_contacts = this.props.filter_contacts;
         var listAddContactsGroup = this.props.list_contacts_add_group;
         var clearUser = 0;
-
-        console.log(listAddContactsGroup);
-
         for (var i = 0; i < listAddContactsGroup.length; i++) {
             if (listAddContactsGroup[i].id === idContact) {
                 listAddContactsGroup.splice(i, 1);
@@ -39,15 +36,15 @@ class ListGeneralContactsGroup extends Component {
                 console.log('not equal');
             }
         }
-
         if (clearUser == 0) {
             var infoContact = listContacts.find(item => item.id === idContact)
-            console.log(infoContact);
-            listAddContactsGroup.push(infoContact)
-        } else {
-
+            var newContact = {
+                id: infoContact.id,
+                name: infoContact.name,
+                imgContact: infoContact.imgContact
+            }
+            listAddContactsGroup.push(newContact)
         }
-
         if (filter_contacts.length !== 0) {
             var listAddContactsGroupFilter = filter_contacts
             var indexContactFilter = listAddContactsGroupFilter.findIndex(item => item.id === idContact)
