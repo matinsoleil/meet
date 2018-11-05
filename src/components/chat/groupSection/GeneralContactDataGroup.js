@@ -40,7 +40,7 @@ class GeneralContactData extends Component {
         return (
             <div className="contact-group">
                 <div className={'markerListContactGroup'}>
-                    {this.props.contact.name[0]}
+                    {this.props.flagAlphabet}
                 </div>
                 <div className="contact-chat-group" onClick={this.addContactGroupClick} >
                     <div className="grid-container-contact-chat-group">
