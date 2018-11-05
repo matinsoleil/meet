@@ -7,7 +7,7 @@ export const contactSection = (state = estado, action) => {
             return {
                 ...state,
             }
-        case 'UPDATE_FILTER_CONTACT_CONTACT_SECTION':
+        case 'UPDATE_FILTER_CONTACT_SECTION':
             return {
                 filter_contacts: action.payload,
             }
