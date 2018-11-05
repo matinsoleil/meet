@@ -52,7 +52,6 @@ class HeaderGroupSection extends Component {
 
   submitCreateGroup = values => {
     const contactsGroup = this.props.list_contacts_add_group
-    console.log(contactsGroup);
     const name = values.nameGroup;
     const id = Math.floor(+new Date() / 1000);
     const newGroupElemnt = {
@@ -90,10 +89,10 @@ class HeaderGroupSection extends Component {
       <div className="main-header-group-section">
         <div className="resendTo">
           {
-            "0"=== "0" ?<span className="content-resendTo"><p className="text-resendTo">Agregar a:</p><p className="user-resendTo"></p></span>:null
+            "0" === "0" ? <span className="content-resendTo"><p className="text-resendTo">Agregar a:</p><p className="user-resendTo"></p></span> : null
           }
           {
-            1=== "0" ?<span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span>:null
+            1 === "0" ? <span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span> : null
           }
           <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionGroups} alt="addGroup" />
         </div>
@@ -101,19 +100,17 @@ class HeaderGroupSection extends Component {
           <div className="block-right"></div>
           <div className="header-group" >
             {
-               1 === "0" ? <img className="addGroup" src={this.props.send_icon}  alt="addGroup" />: null
+              1 === "0" ? <img className="addGroup" src={this.props.send_icon} alt="addGroup" /> : null
             }
             {
-               "0" === "0" ?<button className="acceptAddGroup" onClick={this.openWindowFormCreateGroup} >{'Aceptar'}</button>:null
+              "0" === "0" ? <button className="acceptAddGroup" onClick={this.openWindowFormCreateGroup} >{'Aceptar'}</button> : null
             }
             <div className="grow-group">
-            {list_contacts_add_group.map(contact =>
+              {list_contacts_add_group.map(contact =>
                 <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
               )
-            }
-
+              }
             </div>
-
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>
           <div className="search-contact-group">

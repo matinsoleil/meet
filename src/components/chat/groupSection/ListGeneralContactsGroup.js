@@ -28,8 +28,6 @@ class ListGeneralContactsGroup extends Component {
         var listAddContactsGroup = this.props.list_contacts_add_group;
         var clearUser = 0;
 
-        console.log(listAddContactsGroup);
-
         for (var i = 0; i < listAddContactsGroup.length; i++) {
             if (listAddContactsGroup[i].id === idContact) {
                 listAddContactsGroup.splice(i, 1);
@@ -42,10 +40,12 @@ class ListGeneralContactsGroup extends Component {
 
         if (clearUser == 0) {
             var infoContact = listContacts.find(item => item.id === idContact)
-            console.log(infoContact);
-            listAddContactsGroup.push(infoContact)
-        } else {
-
+            var newContact = {
+                id: infoContact.id,
+                name: infoContact.name,
+                imgContact: infoContact.imgContact
+            }
+            listAddContactsGroup.push(newContact)
         }
 
         if (filter_contacts.length !== 0) {
