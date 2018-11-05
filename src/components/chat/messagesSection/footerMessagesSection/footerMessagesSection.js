@@ -20,7 +20,8 @@ class FooterMessagesSection extends Component {
             textInputState: true,
             clipState: true,
             plusState: true,
-            messageToReply: ""
+            messageToReply: "",
+            showRecording: false,
         }
     }
 
@@ -140,28 +141,31 @@ class FooterMessagesSection extends Component {
                             conversation={this.conversation}
                             type={
                                 MessagesHelper.getMessageById(this.conversation.conversation, this.props.messageSelected).message.type
-                            } /> :
-                        <div className='data-input'>
-                            <div role="button" className="icon">
-                                <img src={this.props.plus} alt="" />
-                            </div>
-                            <div role="button" onClick={() => { (this.state.clipState) && $(this.fileChooser).trigger('click'); }} className="icon">
-                                <img src={this.props.clip} alt="" />
-                                <input onChange={this.selectFiles} ref={(input) => { this.fileChooser = input }} type="file" style={{ display: "none" }} multiple />
-                            </div>
-                            <div className="text-message">
-                                <input ref={input => { this.inputText = input }} onChange={e => { this.setState({ inputText: (e.target.value.length > 0) }) }} disabled={!this.state.textInputState} type="text" placeholder="chat" name="" id="" />
-                                <div className="icon emoji">
-                                    <img src={this.props.emoji} alt="" />
+                            } /> : (!this.state.showRecording) ?
+                            <div className='data-input'>
+                                <div role="button" className="icon">
+                                    <img src={this.props.plus} alt="" />
                                 </div>
-                            </div>
-                            {(this.state.inputText) ?
-                                <div onClick={() => { this.sendMessage(this.inputText.value) }} role="button" className="icon">
-                                    <img src={this.props.send_icon} alt="" />
-                                </div> :
-                                <RecorderContent conversation={this.conversation} toggleOptions={this.toggleOptions} />
-                            }
-                        </div>
+                                <div role="button" onClick={() => { (this.state.clipState) && $(this.fileChooser).trigger('click'); }} className="icon">
+                                    <img src={this.props.clip} alt="" />
+                                    <input onChange={this.selectFiles} ref={(input) => { this.fileChooser = input }} type="file" style={{ display: "none" }} multiple />
+                                </div>
+                                <div className="text-message">
+                                    <input ref={input => { this.inputText = input }} onChange={e => { this.setState({ inputText: (e.target.value.length > 0) }) }} disabled={!this.state.textInputState} type="text" placeholder="chat" name="" id="" />
+                                    <div className="icon emoji">
+                                        <img src={this.props.emoji} alt="" />
+                                    </div>
+                                </div>
+                                {(this.state.inputText) ?
+                                    <div onClick={() => { this.sendMessage(this.inputText.value) }} role="button" className="icon">
+                                        <img src={this.props.send_icon} alt="" />
+                                    </div> :
+                                    <div className="icon">
+                                        <img onClick={() => (this.setState({ showRecording: true }))} src={this.props.mic} alt="" />
+                                    </div>
+                                }
+                            </div> :
+                            <RecorderContent hide={() => { this.setState({ showRecording: false }) }} conversation={this.conversation} toggleOptions={this.toggleOptions} />
                 }
             </footer>
         );
