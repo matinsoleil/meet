@@ -6,7 +6,7 @@ import updateListContactsAddGroup from '../../../redux/actions/groups/updateList
 import addContact from '../../../redux/actions/contacts/addContact'
 import CreateGroupForm from '../../form/group/CreateGroupForm'
 import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
-import { getGroups } from '../../../redux/selectors/groups'
+import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
 import { connect } from 'react-redux'
@@ -163,7 +163,7 @@ const mapStateToProps = (state) => {
     send_icon: state.customizing.Images.send_icon,
     search_icon: state.customizing.Images.search_icon,
     cancel_icon: state.customizing.Images.cancel_icon,
-    groups: getGroups(state)
+    groupsSection: getGroupsSection(state)
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection)

@@ -15,7 +15,7 @@ import { getConversation } from '../redux/selectors/conversation'
 import { getContactSection } from '../redux/selectors/contactSection'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts'
-import { getGroups } from '../redux/selectors/groups'
+import { getGroupsSection } from '../redux/selectors/groupsSection'
 import { getAlertGeneral } from '../redux/selectors/alertGeneral'
 import ContactSectionContainer from '../components/chat/chatsSection/ContactSectionContainer'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
@@ -89,7 +89,7 @@ const mapStateToProps = (state) => {
         contact: getContact(state),
         conversation: getConversation(state),
         searchContacts: getSearchContacts(state),
-        groups: getGroups(state),
+        groupsSection: getGroupsSection(state),
         alertGeneral: getAlertGeneral(state),
         rightSection: getRightSection(state),
         contactSection: getContactSection(state),

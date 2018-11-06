@@ -1,7 +1,7 @@
 import HeaderGroupSection from './HeaderGroupSection'
 import ListGeneralContactsGroup from './ListGeneralContactsGroup'
 import React, { Component } from 'react'
-import { getGroups } from '../../../redux/selectors/groups'
+import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import { getContacts } from '../../../redux/selectors/contacts'
 import fetchGroups from '../../../redux/actions/groups/fetchGroups'
 import fetchContacts from '../../../redux/actions/contacts/fetchContacts'
@@ -10,8 +10,8 @@ import './GroupSectionContainer.scss'
 class GroupSectionContainer extends Component {
     render() {
         const list_contacts = this.props.contacts
-        const list_contacts_add_group = this.props.groups.list_contacts_add_group
-        const filter_contacts = this.props.groups.filter_contacts
+        const list_contacts_add_group = this.props.groupsSection.list_contacts_add_group
+        const filter_contacts = this.props.groupsSection.filter_contacts
         return (
             <div className="group-section-container">
                 <HeaderGroupSection list_contacts={list_contacts} list_contacts_add_group={list_contacts_add_group} filter_contacts={filter_contacts} />
@@ -22,7 +22,7 @@ class GroupSectionContainer extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        groups: getGroups(state),
+        groupsSection: getGroupsSection(state),
         contacts: getContacts(state)
     }
 }

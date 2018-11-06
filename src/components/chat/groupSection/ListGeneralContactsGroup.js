@@ -4,7 +4,8 @@ import updateListContactsGroup from '../../../redux/actions/groups/updateListCon
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
 import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
 import fetchGroups from '../../../redux/actions/groups/fetchGroups'
-import { getGroups } from '../../../redux/selectors/groups'
+import { getGroupsSection } from '../../../redux/selectors/groupsSection'
+
 import { connect } from 'react-redux'
 import './ListGeneralContactsGroup.scss'
 class ListGeneralContactsGroup extends Component {
@@ -114,7 +115,7 @@ const mapDispatchToProps = dispatch => {
 }
 const mapStateToProps = (state) => {
     return {
-        groups: getGroups(state)
+        groups: getGroupsSection(state)
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ListGeneralContactsGroup)
