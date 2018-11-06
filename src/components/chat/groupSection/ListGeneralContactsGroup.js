@@ -24,6 +24,7 @@ class ListGeneralContactsGroup extends Component {
     }
 
     addContactGroupClick(idContact) {
+        console.log("revision A")
         var listContacts = this.props.contacts
         var filter_contacts = this.props.filter_contacts
         var listAddContactsGroup = this.props.list_contacts_add_group
@@ -56,13 +57,11 @@ class ListGeneralContactsGroup extends Component {
     }
 
     deleteContactGroupClick(idContact) {
-
         var listAddContactsGroup = this.props.list_contacts_add_group
         for (var i = 0 ; i < listAddContactsGroup.length ; i++) {
 
             console.log(listAddContactsGroup[i].id)
         }
-
     }
 
     filterOnlyContacts(listContacts) {
