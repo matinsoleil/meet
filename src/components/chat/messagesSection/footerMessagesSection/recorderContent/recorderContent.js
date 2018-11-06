@@ -13,7 +13,7 @@ class RecorderContent extends Component {
             recording: false,
             timer: "00:00",
             showInfoBox: false,
-            showModal:false,
+            showModal: false,
         }
 
     }
@@ -23,7 +23,7 @@ class RecorderContent extends Component {
 
     toggleModal = () => {
         this.setState({
-            showModal:!this.state.showModal,
+            showModal: !this.state.showModal,
         });
     }
 
@@ -59,9 +59,9 @@ class RecorderContent extends Component {
             let status = await this.permissions(navigator);
             (!status) && this.setState({ showInfoBox: true });
             this.audioRecorder = new AudioRecorder(this.changeTimerState, () => { this.setState({ showInfoBox: false }) });
-            navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1 }, video: false })
-                .then(this.audioRecorder.record)
-                .catch(this.handleRecordError);
+            this.nav = navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1 }, video: false });
+            this.nav.then(this.audioRecorder.record)
+            this.nav.catch(this.handleRecordError);
             this.setState({
                 recording: true
             });
@@ -111,7 +111,7 @@ class RecorderContent extends Component {
             <div className={"record-content"}>
                 <div className="controls">
                     <img onClick={
-                        ()=>{this.audioRecorder.pause();this.setState({showModal:true})}
+                        () => { this.audioRecorder.pause(); this.setState({ showModal: true }) }
                     } id="cancel_button" src={this.props.trash_red} alt="cancel" />
                     <div className='outside-circle'>
                         <div className='inside-circle'>
@@ -134,8 +134,8 @@ class RecorderContent extends Component {
                             <div className="modal-content">
                                 <div className='title'>{'¿Seguro que desea eliminar este chat de voz?'}</div>
                                 <div className='button-section'>
-                                    <button onClick={()=>{this.audioRecorder.resume();this.toggleModal();}}>Cancelar</button>
-                                    <button onClick={()=>{this.stopRecording(false);this.toggleModal();}}>Eliminar</button>
+                                    <button onClick={() => { this.audioRecorder.resume(); this.toggleModal(); }}>Cancelar</button>
+                                    <button onClick={() => { this.stopRecording(false); this.toggleModal(); }}>Eliminar</button>
                                 </div>
                             </div>
                         }
