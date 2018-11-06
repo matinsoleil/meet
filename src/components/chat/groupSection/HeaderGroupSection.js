@@ -25,12 +25,6 @@ class HeaderGroupSection extends Component {
     this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this);
   }
 
-  filterList(event) {
-    const val = event.target.value.toLowerCase();
-    const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
-    this.props.updateFilterContactsAddGroup(listContactsFecth);
-  }
-
   deleteContactListCreateGroup(idContact) {
     var listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
@@ -57,7 +51,6 @@ class HeaderGroupSection extends Component {
   }
 
   submitCreateGroup = values => {
-    const contactsGroup = this.props.list_contacts_add_group
     const name = values.nameGroup;
     const id = Math.floor(+new Date() / 1000);
     const newGroupElemnt = {
@@ -94,8 +87,19 @@ class HeaderGroupSection extends Component {
     }
   }
 
+  filterList(event) {
+    const val = event.target.value.toLowerCase();
+    const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
+    this.props.updateFilterContactsAddGroup(listContactsFecth);
+  }
+
   render() {
     const list_contacts_add_group = this.props.list_contacts_add_group
+
+
+
+
+
     return (
       <div className="main-header-group-section">
         <div className="resendTo">
@@ -121,10 +125,10 @@ class HeaderGroupSection extends Component {
 
             }
             <div className="grow-group">
-              {list_contacts_add_group.map(contact =>
-                <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
-              )
-              }
+              {list_contacts_add_group !== null ?
+                list_contacts_add_group.map(contact =>
+                  <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
+                ) : null}
             </div>
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
           </div>

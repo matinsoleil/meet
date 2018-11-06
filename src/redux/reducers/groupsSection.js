@@ -8,17 +8,17 @@ export const groupsSection = (state = estado, action) => {
         case 'FETCH_GROUPS':
             return {
                 ...state,
-                list_contacts: [],
-                list_contacts_add_group: [],
-                filter_contacts: [],
+                list_contacts: null,
+                list_contacts_add_group: null,
+                filter_contacts: null,
             }
         case 'SHOW_SECTION_GROUPS':
             return {
                 ...state,
                 list_contacts: action.payload,
-                list_contacts_add_group: [],
-                select_contacts: [],
-                filter_contacts: [],
+                list_contacts_add_group: null,
+                select_contacts: null,
+                filter_contacts: null,
             }
         case 'HIDE_SECTION_GROUPS':
             return {

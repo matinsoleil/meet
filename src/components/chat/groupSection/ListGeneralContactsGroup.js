@@ -62,8 +62,8 @@ class ListGeneralContactsGroup extends Component {
         var listAddContactsGroup = this.props.list_contacts_add_group;
         for (var i = 0; i < listAddContactsGroup.length; i++) {
 
-           console.log(listAddContactsGroup[i].id);  
-          }
+            console.log(listAddContactsGroup[i].id);
+        }
 
     }
 
@@ -74,23 +74,28 @@ class ListGeneralContactsGroup extends Component {
     }
 
     render() {
-        // const listContactsOrderByName = this.orderByName((this.props.filter_contacts.length === 0 ? this.props.contacts : this.props.filter_contacts))
-        const result = this.filterOnlyContacts(this.props.contacts)
-        const listContacts = this.orderByName(result)
         var indexAlphabet = ''
         var flagAlphabet = ''
+        const filter_contacts = this.props.groupsSection.filter_contacts
+        let contacts = []
+        if (!filter_contacts) { contacts = this.orderByName(this.props.contacts) } else { contacts = this.orderByName(filter_contacts) }
+
+        console.log(" 1 1 1 1 ");
+        console.log(filter_contacts);
+        console.log(" 8 8 8 8 ");
+
         return (
             <div className="main-chat-general-list-contact-group">
                 <div className="main-chat-general-list-contact-group-title"></div>
                 {
-                    listContacts.map(contact => {
+                    contacts.map(contact => {
                         if (indexAlphabet.includes(contact.name.charAt(0)) === false) {
                             indexAlphabet = contact.name.charAt(0)
                             flagAlphabet = contact.name.charAt(0)
                         } else {
                             flagAlphabet = ""
                         }
-                        return <GeneralContactDataGroup className="contact-group" groups={this.props.groups} key={contact.id} contact={contact} onClick={this.addContactGroupClick} flagAlphabet={flagAlphabet} />
+                        return <GeneralContactDataGroup className="contact-group" groups={this.props.groupsSection} key={contact.id} contact={contact} onClick={this.addContactGroupClick} flagAlphabet={flagAlphabet} />
                     })
                 }
             </div>
@@ -115,7 +120,7 @@ const mapDispatchToProps = dispatch => {
 }
 const mapStateToProps = (state) => {
     return {
-        groups: getGroupsSection(state)
+        groupsSection: getGroupsSection(state)
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ListGeneralContactsGroup)
