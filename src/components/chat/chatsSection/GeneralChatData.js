@@ -145,9 +145,6 @@ class GeneralContactData extends Component {
                 <p className="text-message-popup">
                     <span className="msg"> text </span>
                 </p>
-                <p className="text-message-popup">
-                    <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span>
-                </p>
             </div>
         )
     }
