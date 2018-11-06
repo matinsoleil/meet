@@ -27,7 +27,10 @@ export default class AudioRecorder {
         this.recording = false;
         if (this.stream) {
             this.stream.getAudioTracks().forEach(track => {
+                console.log('__BEFORE__',track);
                 track.stop();
+                track.enabled = false;
+                console.log('__AFTER__',track);
             });
             this.stream.getVideoTracks().forEach(tracks => {
                 tracks.stop();
