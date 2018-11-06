@@ -195,6 +195,34 @@
       "message": "TypeError: Cannot read property 'mediaDevices' of undefined",
       "detail": "\n    in RecorderContent (created by Connect(RecorderContent))\n    in Connect(RecorderContent) (at footerMessagesSection.js:142)\n    in footer (at footerMessagesSection.js:106)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 1
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541535451,
+      "message": "TypeError: undefined is not an object (evaluating 'audioElement.currentTime')",
+      "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 2
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541535452,
+      "message": "TypeError: Cannot read property 'currentTime' of undefined",
+      "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 3
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541537904,
+      "message": "TypeError: null is not an object (evaluating 'this.state.currentTime')",
+      "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 4
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541537905,
+      "message": "TypeError: Cannot read property 'currentTime' of null",
+      "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 5
     }
   ],
   "contacts": [

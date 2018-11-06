@@ -29,5 +29,7 @@ export const Images = {
     "download_icon":require('./../../img/download-icon.svg'),
     'claro_user_icon':require('./../../img/claro-user.svg'),
     'check_mark_check':require('./../../img/check-mark-check.svg'),
-    'check_mark_uncheck':require('./../../img/check-mark-uncheck.svg')
+    'check_mark_uncheck':require('./../../img/check-mark-uncheck.svg'),
+    'play_icon':require('./../../img/play-icon.svg'),
+    'pause_icon':require('./../../img/pause-icon.svg'),
 }
