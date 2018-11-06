@@ -27,9 +27,6 @@ class ListGeneralContactsGroup extends Component {
         var filter_contacts = this.props.filter_contacts;
         var listAddContactsGroup = this.props.list_contacts_add_group;
         var clearUser = 0;
-
-        console.log(listAddContactsGroup);
-
         for (var i = 0; i < listAddContactsGroup.length; i++) {
             if (listAddContactsGroup[i].id === idContact) {
                 listAddContactsGroup.splice(i, 1);
@@ -38,14 +35,16 @@ class ListGeneralContactsGroup extends Component {
             } else {
                 console.log('not equal');
             }
-        }
 
+        }
         if (clearUser == 0) {
             var infoContact = listContacts.find(item => item.id === idContact)
-            console.log(infoContact);
-            listAddContactsGroup.push(infoContact)
-        } else {
-
+            var newContact = {
+                id: infoContact.id,
+                name: infoContact.name,
+                imgContact: infoContact.imgContact
+            }
+            listAddContactsGroup.push(newContact)
         }
 
         if (filter_contacts.length !== 0) {
@@ -61,8 +60,10 @@ class ListGeneralContactsGroup extends Component {
 
         var listAddContactsGroup = this.props.list_contacts_add_group;
         for (var i = 0; i < listAddContactsGroup.length; i++) {
-            (listAddContactsGroup[i].id);
-        }
+
+           console.log(listAddContactsGroup[i].id);  
+          }
+
     }
 
     filterOnlyContacts(listContacts) {
@@ -74,12 +75,23 @@ class ListGeneralContactsGroup extends Component {
     render() {
         // const listContactsOrderByName = this.orderByName((this.props.filter_contacts.length === 0 ? this.props.contacts : this.props.filter_contacts))
         const result = this.filterOnlyContacts(this.props.contacts)
-    //    console.log(result)
         const listContacts = this.orderByName(result)
+        var indexAlphabet = ''
+        var flagAlphabet = ''
         return (
             <div className="main-chat-general-list-contact-group">
                 <div className="main-chat-general-list-contact-group-title"></div>
-                {listContacts.map(contact => <GeneralContactDataGroup className="contact-group" groups={this.props.groups} key={contact.id} contact={contact} onClick={this.addContactGroupClick} />)}
+                {
+                    listContacts.map(contact => {
+                        if (indexAlphabet.includes(contact.name.charAt(0)) === false) {
+                            indexAlphabet = contact.name.charAt(0)
+                            flagAlphabet = contact.name.charAt(0)
+                        } else {
+                            flagAlphabet = ""
+                        }
+                        return <GeneralContactDataGroup className="contact-group" groups={this.props.groups} key={contact.id} contact={contact} onClick={this.addContactGroupClick} flagAlphabet={flagAlphabet} />
+                    })
+                }
             </div>
         )
     }

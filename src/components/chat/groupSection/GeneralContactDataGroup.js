@@ -9,6 +9,7 @@ class GeneralContactData extends Component {
         super(props)
         this.addContactGroupClick = this.addContactGroupClick.bind(this)
         this.userChecked = false;
+        this.props.contact.onEdit='0';
         this.currentListGroup=this.props.groups.list_contacts_add_group;
     }
 
@@ -40,7 +41,7 @@ class GeneralContactData extends Component {
         return (
             <div className="contact-group">
                 <div className={'markerListContactGroup'}>
-                    {this.props.contact.name[0]}
+                    {this.props.flagAlphabet}
                 </div>
                 <div className="contact-chat-group" onClick={this.addContactGroupClick} >
                     <div className="grid-container-contact-chat-group">
