@@ -9,32 +9,29 @@ class GeneralContactData extends Component {
         super(props)
         this.addContactGroupClick = this.addContactGroupClick.bind(this)
         this.userChecked = false;
-        this.props.contact.onEdit='0';
-        this.currentListGroup=this.props.groups.list_contacts_add_group;
+        this.props.contact.onEdit = '0';
+        this.currentListGroup = this.props.groupsSection.list_contacts_add_group;
     }
 
     addContactGroupClick() {
-       
-        let existentUserId = undefined;
-           console.log('contact:');
-          
-           console.log(this.props.contact);
-           this.currentListGroup.map(match=>{
-               if(this.props.contact.id===match.id){
-                 existentUserId=match.id;
-               }
-               return existentUserId;
-           })
-            if(existentUserId===undefined){
+
+        console.log("revision B")
+        let existentUserId = undefined
+        this.currentListGroup.map(match => {
+            if (this.props.contact.id === match.id) {
+                existentUserId = match.id;
+            }
+            return existentUserId;
+        })
+        if (existentUserId === undefined) {
             this.props.onClick(this.props.contact.id);
             this.userChecked = true;
-            this.props.contact.onEdit="1"
-            
-            }else{
-            this.props.onClick(this.props.contact.id);  
+            this.props.contact.onEdit = "1"
+        } else {
+            this.props.onClick(this.props.contact.id);
             this.userChecked = false;
-            this.props.contact.onEdit="0";
-            }
+            this.props.contact.onEdit = "0";
+        }
     }
 
     render() {
@@ -43,7 +40,7 @@ class GeneralContactData extends Component {
                 <div className={'markerListContactGroup'}>
                     {this.props.flagAlphabet}
                 </div>
-                <div className="contact-chat-group" onClick={this.addContactGroupClick} >
+                <div className="contact-chat-group " onClick={this.addContactGroupClick} >
                     <div className="grid-container-contact-chat-group">
                         <div className="icon-contact-group">
                             <div className="outer-circle-group" >
@@ -53,8 +50,8 @@ class GeneralContactData extends Component {
                         </div>
                         <div className="name-contact-group">{this.props.contact.name} </div>
                         <div className="count-message-group">
-                                {  this.props.contact.onEdit === '1' ?<img className="stateUserGroup" src={this.props.check_mark_check} alt="stateUserGroup" />:null }
-                                {  this.props.contact.onEdit === '0' ?<img className="stateUserGroup" src={this.props.check_mark_uncheck} alt="stateUserGroup" />:null } 
+                            {this.props.contact.onEdit === '1' ? <img className="stateUserGroup " src={this.props.check_mark_check} alt="stateUserGroup" /> : 
+                                                                 <img className="stateUserGroup" src={this.props.check_mark_uncheck} alt="stateUserGroup" />}
                         </div>
                     </div>
                 </div>
@@ -66,21 +63,21 @@ class GeneralContactData extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
- 
-      updateListContactsGroup: (listContacts) => {
-        dispatch(updateListContactsGroup(listContacts))
-      }
-  
+
+        updateListContactsGroup: (listContacts) => {
+            dispatch(updateListContactsGroup(listContacts))
+        }
+
     }
-  }
+}
 
 const mapStateToProps = state => {
     return {
         onEdit: state.contact.onEdit,
         claro_user_icon: state.customizing.Images.claro_user_icon,
-        check_mark_check:  state.customizing.Images.check_mark_check ,
-        check_mark_uncheck:  state.customizing.Images.check_mark_uncheck
+        check_mark_check: state.customizing.Images.check_mark_check,
+        check_mark_uncheck: state.customizing.Images.check_mark_uncheck
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(GeneralContactData)
+export default connect(mapStateToProps, mapDispatchToProps)(GeneralContactData)

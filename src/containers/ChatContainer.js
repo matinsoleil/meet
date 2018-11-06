@@ -13,15 +13,14 @@ import { getContact } from '../redux/selectors/contact'
 import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { getContactSection } from '../redux/selectors/contactSection'
-
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts'
-import { getGroups } from '../redux/selectors/groups'
+import { getGroupsSection } from '../redux/selectors/groupsSection'
 import { getAlertGeneral } from '../redux/selectors/alertGeneral'
 import ContactSectionContainer from '../components/chat/chatsSection/ContactSectionContainer'
-import GroupSectionContainer from '../components/chat/groupSection/GroupSectionContainer'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
-import { getRightSectionContainer } from '../redux/selectors/rightSectionContainer'
+import { getRightSection } from '../redux/selectors/rightSection'
+import RightSection from '../components/chat/rightSection/RightSection';
 
 class ChatContainer extends Component {
     componentDidMount() {
@@ -45,10 +44,9 @@ class ChatContainer extends Component {
         }
         return (
             <div className="main-chat">
-
                 <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} />
                 <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} server={this.props.server} />
-               {groups.view ? <GroupSectionContainer contacts={listContact} groups={groups} /> : null}
+                {this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null}
                 {this.props.alertGeneral.show === true ?
                     <div className="message-popup">
                         <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
@@ -66,7 +64,7 @@ class ChatContainer extends Component {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.contactSection,this.props.server)}
+                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.contactSection, this.props.server)}
                 footer=''>
             </AppFrame>
         )
@@ -81,7 +79,7 @@ ChatContainer.defaultProps = {
     conversation: [],
     groups: [],
     alertGeneral: [],
-    rightSectionContainer: []
+    rightSection: []
 }
 
 const mapStateToProps = (state) => {
@@ -91,11 +89,11 @@ const mapStateToProps = (state) => {
         contact: getContact(state),
         conversation: getConversation(state),
         searchContacts: getSearchContacts(state),
-        groups: getGroups(state),
+        groupsSection: getGroupsSection(state),
         alertGeneral: getAlertGeneral(state),
-        rightSectionContainer: getRightSectionContainer(state),
+        rightSection: getRightSection(state),
         contactSection: getContactSection(state),
-        server: {serverName:'192.168.23.77',port:'8888'},
+        server: { serverName: '192.168.23.77', port: '8888' },
     }
 }
 

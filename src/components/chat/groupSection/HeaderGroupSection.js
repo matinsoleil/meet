@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
-import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
+import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-// import addGroup from '../../../redux/actions/groups/addGroup'
 import addContact from '../../../redux/actions/contacts/addContact'
 import CreateGroupForm from '../../form/group/CreateGroupForm'
 import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
-import { getGroups } from '../../../redux/selectors/groups'
+import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
 import { connect } from 'react-redux'
@@ -15,21 +14,15 @@ import './HeaderGroupSection.scss'
 
 class HeaderGroupSection extends Component {
   constructor(props) {
-    super(props);
-    this.typeText = 'addTo';
-    this.typeButton = 'aceptTo';
-    this.state = { showModalCreateGroup: false };
-    this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
-    this.closeWindowFormCreateGroup = this.closeWindowFormCreateGroup.bind(this);
-    this.submitCreateGroup = this.submitCreateGroup.bind(this);
-    this.filterList = this.filterList.bind(this);
-    this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this);
-  }
-
-  filterList(event) {
-    const val = event.target.value.toLowerCase();
-    const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
-    this.props.updateFilterContactsAddGroup(listContactsFecth);
+    super(props)
+    this.typeText = 'addTo'
+    this.typeButton = 'aceptTo'
+    this.state = { showModalCreateGroup: false }
+    this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this)
+    this.closeWindowFormCreateGroup = this.closeWindowFormCreateGroup.bind(this)
+    this.submitCreateGroup = this.submitCreateGroup.bind(this)
+    this.filterList = this.filterList.bind(this)
+    this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this)
   }
 
   deleteContactListCreateGroup(idContact) {
@@ -58,23 +51,25 @@ class HeaderGroupSection extends Component {
   }
 
   submitCreateGroup = values => {
-    const contactsGroup = this.props.list_contacts_add_group
-    const name = values.nameGroup;
-    const id = Math.floor(+new Date() / 1000);
+    const name = values.nameGroup
+    const id = Math.floor(+new Date() / 1000)
     const newGroupElemnt = {
       "id": id.toString(),
       "name": name,
       "photo": "ruta",
-      "status": "Status test",
-      "label": "label",
-      "dayLastMessage": "3 min",
-      "lastMessage": "Last Message",
-      "countMessage": "1",
+      "status": null,
+      "lastState": null,
+      "label": null,
+      "dayLastMessage": null,
+      "lastMessage": null,
+      "countMessage": null,
       "silence": "0",
       "file": "0",
       "pinner": "0",
       "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
-      "contactsGroup": contactsGroup,
+      "ounner": [
+        "1"
+      ],
       "typeChat": "2"
     }
     this.props.addContact(newGroupElemnt)
@@ -84,12 +79,18 @@ class HeaderGroupSection extends Component {
     })
   }
 
-  renderBodyCreateGroup = (contacts) => {
-    if (this.props.list_contacts_add_group.length === 0) {
-      return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />);
+  renderBodyCreateGroup = () => {
+    if (this.props.list_contacts_add_group === null) {
+      return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />)
     } else {
-      return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />);
+      return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />)
     }
+  }
+
+  filterList(event) {
+    const val = event.target.value.toLowerCase()
+    const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val))
+    this.props.updateFilterContactsAddGroup(listContactsFecth)
   }
 
   render() {
@@ -99,32 +100,32 @@ class HeaderGroupSection extends Component {
         <div className="resendTo">
           {
 
-            this.typeText === "addTo" ?<span className="content-resendTo"><p className="text-resendTo">Agregar a:</p><p className="user-resendTo"></p></span>:null
+            this.typeText === "addTo" ? <span className="content-resendTo"><p className="text-resendTo">Agregar a:</p><p className="user-resendTo"></p></span> : null
           }
           {
-            this.typeText === "resendTo" ?<span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span>:null
+            this.typeText === "resendTo" ? <span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span> : null
 
           }
-          <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionGroups} alt="addGroup" />
+          <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionRight} alt="addGroup" />
         </div>
         <div className="grid-container-header-section">
           <div className="block-right"></div>
           <div className="header-group" >
             {
 
-               this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon}  alt="addGroup" />: null
+              this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon} alt="addGroup" /> : null
             }
             {
-               this.typeButton === "aceptTo" ?<button className="acceptAddGroup" onClick={this.openWindowFormCreateGroup} >{'Aceptar'}</button>:null
+              this.typeButton === "aceptTo" ? <button className="acceptAddGroup" onClick={this.openWindowFormCreateGroup} >{'Aceptar'}</button> : null
 
             }
             <div className="grow-group">
-              {list_contacts_add_group.map(contact =>
-                <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
-              )
-              }
+              {list_contacts_add_group !== null ?
+                list_contacts_add_group.map(contact =>
+                  <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
+                ) : null}
             </div>
-            {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
+            {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup()} /> : null}
           </div>
           <div className="search-contact-group">
             <div className="search-box">
@@ -141,8 +142,8 @@ const mapDispatchToProps = dispatch => {
     updateFilterContactsAddGroup: (listContactsFecth) => {
       dispatch(updateFilterContactsAddGroup(listContactsFecth))
     },
-    hideSectionGroups: () => {
-      dispatch(hideSectionGroups())
+    hideSectionRight: () => {
+      dispatch(hideSectionRight())
     },
     updateListContactsGroup: (listContacts) => {
       dispatch(updateListContactsGroup(listContacts))
@@ -153,7 +154,6 @@ const mapDispatchToProps = dispatch => {
     addContact: (newContact) => {
       dispatch(addContact(newContact))
     }
-
   }
 }
 
@@ -162,7 +162,7 @@ const mapStateToProps = (state) => {
     send_icon: state.customizing.Images.send_icon,
     search_icon: state.customizing.Images.search_icon,
     cancel_icon: state.customizing.Images.cancel_icon,
-    groups: getGroups(state)
+    groupsSection: getGroupsSection(state)
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection)
