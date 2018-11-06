@@ -9,12 +9,12 @@ import {
   defaultValue as defaultValueConversation
 } from './conversation'
 import { searchContacts } from './searchContacts'
-import { groups } from './groups'
+import { groupsSection } from './groupsSection'
 import {
   countryReducer,
   restoreKey as restoreKeyCountry
 } from './country'
-import { rightSectionContainer } from './rightSectionContainer'
+import { rightSection } from './rightSection'
 import { contactSection } from './contactSection'
 import { osReducer } from './os'
 import { countriesReducer } from './countries'
@@ -29,8 +29,8 @@ export const reducers = combineReducers({
   contact,
   conversation,
   searchContacts,
-  groups,
-  rightSectionContainer,
+  groupsSection,
+  rightSection,
   contactSection,
   customizing: customizingReducer,
   country: countryReducer,
