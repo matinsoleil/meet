@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import './ListGeneralContactsGroup.scss'
 class ListGeneralContactsGroup extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.addContactGroupClick = this.addContactGroupClick.bind(this)
     }
 
@@ -24,19 +24,18 @@ class ListGeneralContactsGroup extends Component {
     }
 
     addContactGroupClick(idContact) {
-        var listContacts = this.props.contacts;
-        var filter_contacts = this.props.filter_contacts;
-        var listAddContactsGroup = this.props.list_contacts_add_group;
-        var clearUser = 0;
-        for (var i = 0; i < listAddContactsGroup.length; i++) {
+        var listContacts = this.props.contacts
+        var filter_contacts = this.props.filter_contacts
+        var listAddContactsGroup = this.props.list_contacts_add_group
+        var clearUser = 0
+        for (var i = 0 ; i < listAddContactsGroup.length ; i++) {
             if (listAddContactsGroup[i].id === idContact) {
-                listAddContactsGroup.splice(i, 1);
-                clearUser = 1;
-                break;
+                listAddContactsGroup.splice(i, 1)
+                clearUser = 1
+                break
             } else {
-                console.log('not equal');
+                console.log('not equal')
             }
-
         }
         if (clearUser == 0) {
             var infoContact = listContacts.find(item => item.id === idContact)
@@ -47,7 +46,6 @@ class ListGeneralContactsGroup extends Component {
             }
             listAddContactsGroup.push(newContact)
         }
-
         if (filter_contacts.length !== 0) {
             var listAddContactsGroupFilter = filter_contacts
             var indexContactFilter = listAddContactsGroupFilter.findIndex(item => item.id === idContact)
@@ -59,17 +57,17 @@ class ListGeneralContactsGroup extends Component {
 
     deleteContactGroupClick(idContact) {
 
-        var listAddContactsGroup = this.props.list_contacts_add_group;
-        for (var i = 0; i < listAddContactsGroup.length; i++) {
+        var listAddContactsGroup = this.props.list_contacts_add_group
+        for (var i = 0 ; i < listAddContactsGroup.length ; i++) {
 
-            console.log(listAddContactsGroup[i].id);
+            console.log(listAddContactsGroup[i].id)
         }
 
     }
 
     filterOnlyContacts(listContacts) {
         return listContacts.filter(function (contact) {
-            return contact.typeChat === "1";
+            return contact.typeChat === "1"
         })
     }
 
@@ -90,7 +88,12 @@ class ListGeneralContactsGroup extends Component {
                         } else {
                             flagAlphabet = ""
                         }
-                        return <GeneralContactDataGroup className="contact-group" groupsSection={this.props.groupsSection} key={contact.id} contact={contact} onClick={this.addContactGroupClick} flagAlphabet={flagAlphabet} />
+                        return <GeneralContactDataGroup className="contact-group" 
+                                                        groupsSection={this.props.groupsSection} 
+                                                        key={contact.id} 
+                                                        contact={contact} 
+                                                        onClick={this.addContactGroupClick} 
+                                                        flagAlphabet={flagAlphabet} />
                     })
                 }
             </div>

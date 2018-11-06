@@ -38,7 +38,7 @@ class GeneralContactData extends Component {
                 <div className={'markerListContactGroup'}>
                     {this.props.flagAlphabet}
                 </div>
-                <div className="contact-chat-group" onClick={this.addContactGroupClick} >
+                <div className="contact-chat-group " onClick={this.addContactGroupClick} >
                     <div className="grid-container-contact-chat-group">
                         <div className="icon-contact-group">
                             <div className="outer-circle-group" >
@@ -48,8 +48,8 @@ class GeneralContactData extends Component {
                         </div>
                         <div className="name-contact-group">{this.props.contact.name} </div>
                         <div className="count-message-group">
-                            {this.props.contact.onEdit === '1' ? <img className="stateUserGroup" src={this.props.check_mark_check} alt="stateUserGroup" /> : null}
-                            {this.props.contact.onEdit === '0' ? <img className="stateUserGroup" src={this.props.check_mark_uncheck} alt="stateUserGroup" /> : null}
+                            {this.props.contact.onEdit === '1' ? <img className="stateUserGroup " src={this.props.check_mark_check} alt="stateUserGroup" /> : 
+                                                                 <img className="stateUserGroup" src={this.props.check_mark_uncheck} alt="stateUserGroup" />}
                         </div>
                     </div>
                 </div>
