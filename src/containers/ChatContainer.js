@@ -13,7 +13,6 @@ import { getContact } from '../redux/selectors/contact'
 import { getUser } from '../redux/selectors/user'
 import { getConversation } from '../redux/selectors/conversation'
 import { getContactSection } from '../redux/selectors/contactSection'
-
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import { getSearchContacts } from '../redux/selectors/searchContacts'
 import { getGroups } from '../redux/selectors/groups'
@@ -48,7 +47,7 @@ class ChatContainer extends Component {
 
                 <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} />
                 <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} server={this.props.server} />
-               {groups.view ? <GroupSectionContainer contacts={listContact} groups={groups} /> : null}
+                {groups.view ? <GroupSectionContainer contacts={listContact} groups={groups} /> : null}
                 {this.props.alertGeneral.show === true ?
                     <div className="message-popup">
                         <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
@@ -66,7 +65,7 @@ class ChatContainer extends Component {
         return (
             <AppFrame
                 header=''
-                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.contactSection,this.props.server)}
+                body={this.renderBody(listContact, this.props.user, this.props.conversation, this.props.groups, this.props.contactSection, this.props.server)}
                 footer=''>
             </AppFrame>
         )
@@ -95,7 +94,7 @@ const mapStateToProps = (state) => {
         alertGeneral: getAlertGeneral(state),
         rightSectionContainer: getRightSectionContainer(state),
         contactSection: getContactSection(state),
-        server: {serverName:'192.168.23.77',port:'8888'},
+        server: { serverName: '192.168.23.77', port: '8888' },
     }
 }
 

@@ -63,16 +63,19 @@ class HeaderGroupSection extends Component {
       "id": id.toString(),
       "name": name,
       "photo": "ruta",
-      "status": "Status test",
-      "label": "label",
-      "dayLastMessage": "3 min",
-      "lastMessage": "Last Message",
-      "countMessage": "1",
+      "status": null,
+      "lastState": null,
+      "label": null,
+      "dayLastMessage": null,
+      "lastMessage": null,
+      "countMessage": null,
       "silence": "0",
       "file": "0",
       "pinner": "0",
       "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
-      "contactsGroup": contactsGroup,
+      "ounner": [
+        "1"
+      ],
       "typeChat": "2"
     }
     this.props.addContact(newGroupElemnt)
