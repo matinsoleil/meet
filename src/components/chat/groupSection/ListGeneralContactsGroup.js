@@ -78,12 +78,7 @@ class ListGeneralContactsGroup extends Component {
         var flagAlphabet = ''
         const filter_contacts = this.props.groupsSection.filter_contacts
         let contacts = []
-        if (!filter_contacts) { contacts = this.orderByName(this.props.contacts) } else { contacts = this.orderByName(filter_contacts) }
-
-        console.log(" 1 1 1 1 ");
-        console.log(filter_contacts);
-        console.log(" 8 8 8 8 ");
-
+        if (filter_contacts.length === 0) { contacts = this.orderByName(this.props.contacts) } else { contacts = this.orderByName(filter_contacts) }
         return (
             <div className="main-chat-general-list-contact-group">
                 <div className="main-chat-general-list-contact-group-title"></div>
@@ -95,7 +90,7 @@ class ListGeneralContactsGroup extends Component {
                         } else {
                             flagAlphabet = ""
                         }
-                        return <GeneralContactDataGroup className="contact-group" groups={this.props.groupsSection} key={contact.id} contact={contact} onClick={this.addContactGroupClick} flagAlphabet={flagAlphabet} />
+                        return <GeneralContactDataGroup className="contact-group" groupsSection={this.props.groupsSection} key={contact.id} contact={contact} onClick={this.addContactGroupClick} flagAlphabet={flagAlphabet} />
                     })
                 }
             </div>

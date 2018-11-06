@@ -40,12 +40,6 @@ class RightSectionContainer extends Component {
         const filter_contacts = this.props.contactSection.filter_contacts
         let contacts = []
         if (!filter_contacts) { contacts = this.props.contacts } else { contacts = filter_contacts }
-
-        // console.log(" 3 3 3 3 ");
-        // console.log(filter_contacts);
-        // console.log(" 5 5 5 5 ");
-
-
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>

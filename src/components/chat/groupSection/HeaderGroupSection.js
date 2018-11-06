@@ -14,15 +14,15 @@ import './HeaderGroupSection.scss'
 
 class HeaderGroupSection extends Component {
   constructor(props) {
-    super(props);
-    this.typeText = 'addTo';
-    this.typeButton = 'aceptTo';
-    this.state = { showModalCreateGroup: false };
-    this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
-    this.closeWindowFormCreateGroup = this.closeWindowFormCreateGroup.bind(this);
-    this.submitCreateGroup = this.submitCreateGroup.bind(this);
-    this.filterList = this.filterList.bind(this);
-    this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this);
+    super(props)
+    this.typeText = 'addTo'
+    this.typeButton = 'aceptTo'
+    this.state = { showModalCreateGroup: false }
+    this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this)
+    this.closeWindowFormCreateGroup = this.closeWindowFormCreateGroup.bind(this)
+    this.submitCreateGroup = this.submitCreateGroup.bind(this)
+    this.filterList = this.filterList.bind(this)
+    this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this)
   }
 
   deleteContactListCreateGroup(idContact) {
@@ -51,8 +51,8 @@ class HeaderGroupSection extends Component {
   }
 
   submitCreateGroup = values => {
-    const name = values.nameGroup;
-    const id = Math.floor(+new Date() / 1000);
+    const name = values.nameGroup
+    const id = Math.floor(+new Date() / 1000)
     const newGroupElemnt = {
       "id": id.toString(),
       "name": name,
@@ -79,27 +79,22 @@ class HeaderGroupSection extends Component {
     })
   }
 
-  renderBodyCreateGroup = (contacts) => {
-    if (this.props.list_contacts_add_group.length === 0) {
-      return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />);
+  renderBodyCreateGroup = () => {
+    if (this.props.list_contacts_add_group === null) {
+      return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />)
     } else {
-      return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />);
+      return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />)
     }
   }
 
   filterList(event) {
-    const val = event.target.value.toLowerCase();
-    const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
-    this.props.updateFilterContactsAddGroup(listContactsFecth);
+    const val = event.target.value.toLowerCase()
+    const listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val))
+    this.props.updateFilterContactsAddGroup(listContactsFecth)
   }
 
   render() {
     const list_contacts_add_group = this.props.list_contacts_add_group
-
-
-
-
-
     return (
       <div className="main-header-group-section">
         <div className="resendTo">
@@ -130,7 +125,7 @@ class HeaderGroupSection extends Component {
                   <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
                 ) : null}
             </div>
-            {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup(null)} /> : null}
+            {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup()} /> : null}
           </div>
           <div className="search-contact-group">
             <div className="search-box">
