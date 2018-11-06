@@ -99,8 +99,15 @@ class FooterMessagesSection extends Component {
         console.log(e);    
         }
 
-      }.bind(this); 
+       }.bind(this); 
 
+
+       this.connection.onclose = function (event) {
+
+        console.log(event.code);
+        console.log(event.reason);  
+
+       }.bind(this); 
        
         let date = new Date();
 

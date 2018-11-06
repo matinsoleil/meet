@@ -37,7 +37,7 @@ class ListGeneralContactsGroup extends Component {
             }
 
         }
-        if (clearUser == 0) {
+        if (clearUser === 0) {
             var infoContact = listContacts.find(item => item.id === idContact)
             var newContact = {
                 id: infoContact.id,
