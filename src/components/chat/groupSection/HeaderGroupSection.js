@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
-import hideSectionGroups from '../../../redux/actions/groups/hideSectionGroups'
+import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-// import addGroup from '../../../redux/actions/groups/addGroup'
 import addContact from '../../../redux/actions/contacts/addContact'
 import CreateGroupForm from '../../form/group/CreateGroupForm'
 import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
@@ -102,23 +101,23 @@ class HeaderGroupSection extends Component {
         <div className="resendTo">
           {
 
-            this.typeText === "addTo" ?<span className="content-resendTo"><p className="text-resendTo">Agregar a:</p><p className="user-resendTo"></p></span>:null
+            this.typeText === "addTo" ? <span className="content-resendTo"><p className="text-resendTo">Agregar a:</p><p className="user-resendTo"></p></span> : null
           }
           {
-            this.typeText === "resendTo" ?<span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span>:null
+            this.typeText === "resendTo" ? <span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span> : null
 
           }
-          <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionGroups} alt="addGroup" />
+          <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionRight} alt="addGroup" />
         </div>
         <div className="grid-container-header-section">
           <div className="block-right"></div>
           <div className="header-group" >
             {
 
-               this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon}  alt="addGroup" />: null
+              this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon} alt="addGroup" /> : null
             }
             {
-               this.typeButton === "aceptTo" ?<button className="acceptAddGroup" onClick={this.openWindowFormCreateGroup} >{'Aceptar'}</button>:null
+              this.typeButton === "aceptTo" ? <button className="acceptAddGroup" onClick={this.openWindowFormCreateGroup} >{'Aceptar'}</button> : null
 
             }
             <div className="grow-group">
@@ -144,8 +143,8 @@ const mapDispatchToProps = dispatch => {
     updateFilterContactsAddGroup: (listContactsFecth) => {
       dispatch(updateFilterContactsAddGroup(listContactsFecth))
     },
-    hideSectionGroups: () => {
-      dispatch(hideSectionGroups())
+    hideSectionRight: () => {
+      dispatch(hideSectionRight())
     },
     updateListContactsGroup: (listContacts) => {
       dispatch(updateListContactsGroup(listContacts))
@@ -156,7 +155,6 @@ const mapDispatchToProps = dispatch => {
     addContact: (newContact) => {
       dispatch(addContact(newContact))
     }
-
   }
 }
 

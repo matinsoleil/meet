@@ -44,10 +44,9 @@ class ChatContainer extends Component {
         }
         return (
             <div className="main-chat">
-
                 <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} />
                 <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} server={this.props.server} />
-                {groups.view ? <RightSection />  : null}
+                {this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null}
                 {this.props.alertGeneral.show === true ?
                     <div className="message-popup">
                         <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>

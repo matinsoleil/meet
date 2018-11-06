@@ -4,11 +4,17 @@ import './RightSection.scss'
 
 class RightSection extends Component {
     render() {
-        return (
-            <div className="right-section-container">
-                <GroupSectionContainer />
-            </div>
-        );
+        switch (this.props.showSection) {
+            case 'GroupSectionContainer':
+                return (
+                    <div className="right-section-container">
+                        <GroupSectionContainer />
+                    </div>
+                );
+                break;
+            default:
+                break;
+        }
     }
 }
 
