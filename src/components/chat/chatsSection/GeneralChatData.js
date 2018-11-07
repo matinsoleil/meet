@@ -32,6 +32,7 @@ class GeneralContactData extends Component {
         this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
         this.showModalDeleteConversationContactAction = this.showModalDeleteConversationContactAction.bind(this)
         this.deleteConversationContact = this.deleteConversationContact.bind(this)
+        this.readMessage = this.readMessage.bind(this)
         this.fixContact = this.fixContact.bind(this)
     }
 
@@ -167,6 +168,18 @@ class GeneralContactData extends Component {
         })
     }
 
+
+    readMessage = () => {
+        this.showDots()
+        if (this.props.chat.countMessage !== "") {
+            this.props.chat["countMessage"] = ""
+            this.props.showAlertGeneral("Marcando como no leído")
+        } else {
+            this.props.chat["countMessage"] = null
+            this.props.showAlertGeneral("Marcando como leído")
+        }
+    }
+
     render() {
         const idElement = "chat-" + this.props.chat.id
         return (
@@ -204,6 +217,7 @@ class GeneralContactData extends Component {
                                     fixContact={this.fixContact}
                                     showModalSilenceConversationAction={this.showModalSilenceConversationAction}
                                     fileContact={this.fileContact}
+                                    readMessage={this.readMessage}
                                 />
                             }
                         </div>
@@ -214,7 +228,7 @@ class GeneralContactData extends Component {
                     </div>
                     <div className="count-message" onClick={this.clickChat}>
                         {
-                            this.props.chat.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
+                            this.props.chat.countMessage !== null ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
                         }
                     </div>
                 </div>

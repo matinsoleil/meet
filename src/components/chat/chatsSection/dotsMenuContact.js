@@ -36,6 +36,7 @@ class dotsMenuContact extends Component {
         const titleActionFix = this.props.chat.pinner === "0" ? "Fijar chat" : "Dejar de fijar chat"
         const titleActionFile = this.props.chat.file === "0" ? "Archivar chat" : "Desarchivar chat"
         const titleActionSilence = this.props.chat.silence === "0" ? "Silenciar chat" : "Cancelar silencio"
+        const titleReadMessage = this.props.chat.countMessage !== "" ? "Marcar como no leído" : "Marcar como leído"
         return (
             <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper">
                 <img ref={img => { this.dots = img }} className="dots-menu" src={this.props.dots_menu} alt="" />
@@ -46,7 +47,7 @@ class dotsMenuContact extends Component {
                             <p className="optionSideMenu"><a onClick={this.props.fileContact}> {titleActionFile} </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.showModalSilenceConversationAction}> {titleActionSilence} </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.fixContact}> {titleActionFix} </a></p>
-                            <p className="optionSideMenu"><a onClick={this.props.showMsj}> Marcar como no leido </a></p>
+                            <p className="optionSideMenu"><a onClick={this.props.readMessage}> {titleReadMessage} </a></p>
                             <p className="optionSideMenu" onClick={this.props.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.showModalDeleteContactAction}> Eliminar chat </a></p>
                         </div>
