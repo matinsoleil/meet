@@ -8,6 +8,7 @@ import ModalBox from '../../modals/ModalBox'
 import { getContacts } from '../../../redux/selectors/contacts'
 import { getContactSection } from '../../../redux/selectors/contactSection'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
+import SilenceGroup from '../../../components/form/contact/SilenceGroup'
 import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import SilenceConversation from '../../form/contact/SilenceConversation'
@@ -21,6 +22,8 @@ class GeneralContactData extends Component {
             showModal: false,
             showMenu: false,
             showModalDeleteContact: false,
+            showModalDeleteGroup: false,
+            showModalLeaveGroup: false,
             showModalFileContact: false,
             showModalDeleteConversationContact: false,
             showModalSilenceConversation: false,
@@ -28,6 +31,7 @@ class GeneralContactData extends Component {
         }
         this.fileContact = this.fileContact.bind(this)
         this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
+        this.leaveGroup = this.leaveGroup.bind(this)
         this.closeModalDeleteConversationContactAction = this.closeModalDeleteConversationContactAction.bind(this)
         this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
         this.showModalDeleteConversationContactAction = this.showModalDeleteConversationContactAction.bind(this)
@@ -52,19 +56,23 @@ class GeneralContactData extends Component {
         })
     }
 
-    fileContact() {
+    fileContact = () => {
         this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
         var msj = this.props.chat["file"] === "1" ? "Archivaste el chat" : "Desarchivaste el chat"
         this.props.showAlertGeneral(msj)
         this.showDots()
     }
 
-    fixContact() {
+    fixContact = () => {
         var msj = "";
         this.props.chat["pinner"] = this.props.chat["pinner"] === "1" ? "0" : "1"
         msj = this.props.chat["pinner"] === "1" ? "Fijaste el chat" : "Dejaste de fijar el chat"
         this.props.showAlertGeneral(msj)
         this.showDots()
+    }
+
+    leaveGroup = () => {
+        console.log("Salir del grupo")
     }
 
     actionDeleteElementChat = () => {
@@ -91,6 +99,14 @@ class GeneralContactData extends Component {
 
     renderBodySilenceConversation = () => {
         return (<SilenceConversation onSubmit={this.submitCreateSilence} closeWindow={this.closeModalSilenceConversationAction} />)
+    }
+
+    renderBodyLeaveGroup = () => {
+        return (<SilenceGroup closeWindow={this.closeModalLeaveGroupAction} nameContact={'test'} leaveGroup={this.leaveGroup} />)
+    }
+
+    renderBodyDeleteGroup = () => {
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.actionDeleteElementChat} />)
     }
 
     renderBodyDeleteContact = () => {
@@ -135,6 +151,12 @@ class GeneralContactData extends Component {
         }
     }
 
+    showModalLeaveGroup = () => {
+        this.setState({
+            showModalLeaveGroup: true,
+        })
+    }
+
     clickChat = () => {
         const idChat = this.props.chat.id
         this.props.fetchContact(idChat)
@@ -153,6 +175,12 @@ class GeneralContactData extends Component {
     closeModalDeleteContactAction = () => {
         this.setState({
             showModalDeleteContact: false,
+        })
+    }
+
+    closeModalLeaveGroupAction = () => {
+        this.setState({
+            showModalLeaveGroup: false,
         })
     }
 
@@ -218,6 +246,7 @@ class GeneralContactData extends Component {
                                     showModalSilenceConversationAction={this.showModalSilenceConversationAction}
                                     fileContact={this.fileContact}
                                     readMessage={this.readMessage}
+                                    showModalLeaveGroup={this.showModalLeaveGroup}
                                 />
                             }
                         </div>
@@ -246,6 +275,8 @@ class GeneralContactData extends Component {
                 {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
                 {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
                 {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
+                {this.state.showModalDeleteGroup ? <ModalBox body={this.renderBodyDeleteGroup()} /> : null}
+                {this.state.showModalLeaveGroup ? <ModalBox body={this.renderBodyLeaveGroup()} /> : null}
             </div>
         )
     }

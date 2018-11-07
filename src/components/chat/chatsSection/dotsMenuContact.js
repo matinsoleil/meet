@@ -49,7 +49,12 @@ class dotsMenuContact extends Component {
                             <p className="optionSideMenu"><a onClick={this.props.fixContact}> {titleActionFix} </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.readMessage}> {titleReadMessage} </a></p>
                             <p className="optionSideMenu" onClick={this.props.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
-                            <p className="optionSideMenu"><a onClick={this.props.showModalDeleteContactAction}> Eliminar chat </a></p>
+                            {
+                                this.props.chat.typeChat !== "1" ?
+                                    <p className="optionSideMenu"><a onClick={this.props.showModalLeaveGroup}> Salir del grupo </a></p>
+                                    :
+                                    <p className="optionSideMenu"><a onClick={this.props.showModalDeleteContactAction}> Eliminar chat </a></p>
+                            }
                         </div>
                     </div>
                 }
