@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DotsMenu from './dotsMenu';
+import AudioMessage from './messagesTypes/audioMessage';
+import ReplyMessage from './messagesTypes/replayMessage';
 import FileHelper from './../../../../lib/helper/fileHelper';
 import MapPosition from './../../../../lib/helper/mapPosition';
 import { filterMessages } from '../../../../redux/actions/messagesOptions/messagesOptions';
-import MessagesHelper from '../../../../lib/helper/messagesHelper';
 
 class Message extends Component {
 
@@ -100,9 +101,7 @@ class Message extends Component {
                 );
             case "2":
                 return (
-                    <audio controls>
-                        <source src={message.src} />
-                    </audio>
+                    <AudioMessage message={message} />
                 );
             case "3":
                 return (
@@ -126,26 +125,6 @@ class Message extends Component {
         }
     }
 }
-
-let ReplyMessage = (props) => {
-    return (
-        <div>
-            <div className="reply">
-                <div className="content">
-                    <span className="owner">{
-                        (props.senderId === props.userId) ? 'tu' :
-                            MessagesHelper.getOwner(props.contacts, props.senderId)
-                    }</span>
-                    <div className="toReply">{props.message.toReply}</div>
-                </div>
-            </div>
-            {props.message.message}
-        </div>
-    );
-}
-ReplyMessage = connect((state) => ({
-    userId: state.users.id
-}))(ReplyMessage);
 
 const mapStateToProps = (state) => {
     return {
