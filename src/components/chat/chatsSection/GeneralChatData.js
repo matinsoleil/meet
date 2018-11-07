@@ -11,7 +11,8 @@ import DeleteContact from '../../../components/form/contact/DeleteContact'
 import SilenceGroup from '../../../components/form/contact/SilenceGroup'
 import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
-import SilenceConversation from '../../form/contact/SilenceConversation'
+import SilenceConversation from '../../../components/form/contact/SilenceConversation'
+
 import { connect } from 'react-redux'
 class GeneralContactData extends Component {
     constructor(...props) {
@@ -79,7 +80,7 @@ class GeneralContactData extends Component {
         var listContacts = this.props.contacts
         var idContact = this.props.chat.id
         var indexContact = listContacts.findIndex(item => item.id === idContact)
-       listContacts.splice(indexContact, 1)
+        listContacts.splice(indexContact, 1)
         var filter_contacts = this.props.contactSection.filter_contacts
         if (filter_contacts !== null) {
             var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
@@ -98,10 +99,12 @@ class GeneralContactData extends Component {
     }
 
     renderBodySilenceConversation = () => {
-        return (<SilenceConversation onSubmit={this.submitCreateSilence} closeWindow={this.closeModalSilenceConversationAction} />)
+
+        return (<SilenceConversation closeWindow={null} onSubmit={this.submitCreateSilence} />)
     }
 
     renderBodyLeaveGroup = () => {
+        
         return (<SilenceGroup closeWindow={this.closeModalLeaveGroupAction} nameContact={'test'} leaveGroup={this.leaveGroup} />)
     }
 
@@ -140,7 +143,6 @@ class GeneralContactData extends Component {
     }
 
     showModalSilenceConversationAction = () => {
-        this.showDots()
         if (this.props.chat.silence !== "0") {
             this.props.chat["silence"] = "0"
             this.props.showAlertGeneral("Cancelaste el silencio del chat")
@@ -196,7 +198,6 @@ class GeneralContactData extends Component {
         })
     }
 
-
     readMessage = () => {
         this.showDots()
         if (this.props.chat.countMessage !== "") {
@@ -209,9 +210,8 @@ class GeneralContactData extends Component {
     }
 
     render() {
-        const idElement = "chat-" + this.props.chat.id
+        const idElement = this.props.chat.id
         return (
-
             <div className="contact-chat" ref={div => { this.bubble = div }} id={idElement} >
                 <div className="grid-container-contact-chat">
                     <div className="icon-contact" onClick={this.clickChat}>
