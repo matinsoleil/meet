@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: column;
     overflow: scroll; 
-    position: relative;
+    position: fixed;
+    top:150px;
     height: 100%;
-    width: 100%;
-    padding-bottom: 234px;
+    width: 408px;
+    padding-bottom: 248px;
 }
 
 @media only screen and (max-width: 1400px) {
