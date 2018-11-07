@@ -11,7 +11,6 @@ class RightSection extends Component {
                         <GroupSectionContainer />
                     </div>
                 );
-                break;
             default:
                 break;
         }

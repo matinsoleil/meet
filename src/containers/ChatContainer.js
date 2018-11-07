@@ -49,7 +49,7 @@ class ChatContainer extends Component {
                 {this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null}
                 {this.props.alertGeneral.show === true ?
                     <div className="message-popup">
-                        <p className="text-message-popup"> <span className="msg"> {this.props.alertGeneral.msj} </span> </p>
+                        <p className="text-message-popup"> {this.props.alertGeneral.msj} </p>
                     </div>
                     : null
                 }
