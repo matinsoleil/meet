@@ -113,10 +113,48 @@
             width: 224px;
             height: auto;
           }
-          audio{
-            max-width: 320px;
-            min-width: 260px;
-            width: 100%;
+          .audio-message{
+            width: 220px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span{
+              font-size: 13px;
+              font-weight: 300;
+            }
+            .seek-section{
+              width: 100%;
+              position: relative;
+              display: inline-block;
+              span{
+                position: absolute;
+                left: 0;
+                top:47%;
+                height: 4px;
+                background:#F5CD5C;
+              }
+              input[type=range]{
+                width: 100%;
+                appearance: none;
+                height: 4px;
+                border-radius: 2px;
+                background: #353535;
+                &::-webkit-slider-thumb{
+                  appearance: none;
+                  width: 12px;
+                  height: 12px;
+                  background: #F5CD5C;
+                  border-radius: 12px;
+                }
+                &::-moz-range-thumb{
+                  appearance: none;
+                  width: 12px;
+                  height: 12px;
+                  background: #F5CD5C;
+                  border-radius: 12px;
+                }
+              }
+            }
           }
           div.file{
             min-width: 100px;
