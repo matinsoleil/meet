@@ -103,19 +103,20 @@ class GeneralContactData extends Component {
     }
 
     renderBodyLeaveGroup = () => {
-        return (<SilenceGroup closeWindow={this.closeModalLeaveGroupAction} nameContact={'test'} leaveGroup={this.leaveGroup} />)
+        return (<SilenceGroup closeWindow={this.closeModalLeaveGroupAction} nameContact={this.props.chat.name} leaveGroup={this.leaveGroup} />)
     }
 
     renderBodyDeleteGroup = () => {
-        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.actionDeleteElementChat} />)
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={this.props.chat.name} deleteContact={this.actionDeleteElementChat} />)
     }
 
     renderBodyDeleteContact = () => {
-        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.actionDeleteElementChat} />)
+        
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={this.props.chat.name} deleteContact={this.actionDeleteElementChat} />)
     }
 
     renderBodyDeleteConversationContact = () => {
-        return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={this.props.chat.name} deleteConversationContact={this.deleteConversationContact} />)
+        return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={this.props.chat.id} nameContact={this.props.chat.name} deleteConversationContact={this.deleteConversationContact} />)
     }
 
     deleteConversationContact = () => {
