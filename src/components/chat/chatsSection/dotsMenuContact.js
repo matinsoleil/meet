@@ -36,7 +36,7 @@ class dotsMenuContact extends Component {
         const titleActionFix = this.props.chat.pinner === "0" ? "Fijar chat" : "Dejar de fijar chat"
         const titleActionFile = this.props.chat.file === "0" ? "Archivar chat" : "Desarchivar chat"
         const titleActionSilence = this.props.chat.silence === "0" ? "Silenciar chat" : "Cancelar silencio"
-        const titleReadMessage = this.props.chat.countMessage !== "" ? "Marcar como no leído" : "Marcar como leído"
+        const titleReadMessage = this.props.chat.countMessage !== "" ? "Marcar como leído" : "Marcar como no leído"
         return (
             <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper">
                 <img ref={img => { this.dots = img }} className="dots-menu" src={this.props.dots_menu} alt="" />

@@ -111,7 +111,7 @@ class GeneralContactData extends Component {
     }
 
     renderBodyDeleteContact = () => {
-        
+
         return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={this.props.chat.name} deleteContact={this.actionDeleteElementChat} />)
     }
 
@@ -201,10 +201,10 @@ class GeneralContactData extends Component {
         this.showDots()
         if (this.props.chat.countMessage !== "") {
             this.props.chat["countMessage"] = ""
-            this.props.showAlertGeneral("Marcando como no leído")
+            this.props.showAlertGeneral("Marcando como leído")
         } else {
             this.props.chat["countMessage"] = null
-            this.props.showAlertGeneral("Marcando como leído")
+            this.props.showAlertGeneral("Marcando como no leído")
         }
     }
 
