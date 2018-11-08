@@ -1,0 +1,22 @@
+@media screen{
+    .file-message-wrapper{
+        display:flex;
+        flex-flow: column;
+        img{
+            width: 264px;
+            border-radius: 4px 4px 0 0;
+        }
+        .footer-message{
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            padding: 2px 10px 0px 10px;
+            justify-content: space-between;
+        }
+    }
+    .image-footer{
+        .footer-message{
+            flex-flow: row-reverse;
+        }
+    }
+}

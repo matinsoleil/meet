@@ -223,6 +223,20 @@
       "message": "TypeError: Cannot read property 'currentTime' of null",
       "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 5
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541697941,
+      "message": "TypeError: Cannot create property 'hour' on string 'I'm having a great time. How about you? What are you doing?'",
+      "detail": "\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:48)\n    in div (at ChatContainer.js:46)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:65)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 6
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541701514,
+      "message": "TypeError: Cannot read property 'toUpperCase' of undefined",
+      "detail": "\n    in FileMessage (at Message.js:120)\n    in div (at Message.js:69)\n    in div (at Message.js:67)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:48)\n    in div (at ChatContainer.js:46)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:65)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 7
     }
   ],
   "contacts": [
