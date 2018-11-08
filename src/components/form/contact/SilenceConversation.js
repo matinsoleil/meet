@@ -2,6 +2,9 @@ import React from 'react'
 import { reduxForm } from 'redux-form'
 import './SilenceConversation.scss'
 
+
+
+
 // const validate = values => {
 //     const errors = {}
 //     if (!values.timeSilence) {
