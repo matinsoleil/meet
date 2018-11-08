@@ -25,7 +25,6 @@ class HeaderGroupSection extends Component {
     this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this)
     this.listContacts = []
     this.assingedIds = []
-
   }
 
   deleteContactListCreateGroup(idContact) {
@@ -36,9 +35,6 @@ class HeaderGroupSection extends Component {
         this.listContacts[i].onEdit='0';
        }
     }
-
-    
-
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
     this.props.updateListContactsGroup(this.listContacts)
@@ -91,7 +87,7 @@ class HeaderGroupSection extends Component {
   }
 
   renderBodyCreateGroup = () => {
-    if (this.props.list_contacts_add_group === null) {
+    if (this.props.list_contacts_add_group.length === 0) {
       return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />)
     } else {
       return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />)

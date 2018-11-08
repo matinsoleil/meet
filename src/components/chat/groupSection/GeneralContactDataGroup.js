@@ -14,8 +14,6 @@ class GeneralContactData extends Component {
     }
 
     addContactGroupClick() {
-
-        console.log("revision B")
         let existentUserId = undefined
         this.currentListGroup.map(match => {
             if (this.props.contact.id === match.id) {
