@@ -99,12 +99,10 @@ class GeneralContactData extends Component {
     }
 
     renderBodySilenceConversation = () => {
-
-        return (<SilenceConversation closeWindow={null} onSubmit={this.submitCreateSilence} />)
+        return (<SilenceConversation onSubmit={this.submitCreateSilence} closeWindow={this.closeModalSilenceConversationAction} />)
     }
 
     renderBodyLeaveGroup = () => {
-        
         return (<SilenceGroup closeWindow={this.closeModalLeaveGroupAction} nameContact={'test'} leaveGroup={this.leaveGroup} />)
     }
 
