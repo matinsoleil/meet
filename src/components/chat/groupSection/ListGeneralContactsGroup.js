@@ -79,8 +79,6 @@ class ListGeneralContactsGroup extends Component {
                 <div className="main-chat-general-list-contact-group-title"></div>
                 {
                     contacts.map(contact => {
-                        //console.log('map')
-                        //console.log(contact);
                         if (indexAlphabet.includes(contact.name.charAt(0)) === false) {
                             indexAlphabet = contact.name.charAt(0)
                             flagAlphabet = contact.name.charAt(0)

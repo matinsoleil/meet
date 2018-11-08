@@ -6,6 +6,7 @@ import updateListContactsAddGroup from '../../../redux/actions/groups/updateList
 import addContact from '../../../redux/actions/contacts/addContact'
 import CreateGroupForm from '../../form/group/CreateGroupForm'
 import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
+import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
@@ -30,10 +31,10 @@ class HeaderGroupSection extends Component {
   deleteContactListCreateGroup(idContact) {
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
-    for (var i = 0 ; i < this.listContacts.length ; i++) {
-       if(this.listContacts[i].id==idContact){
-        this.listContacts[i].onEdit='0';
-       }
+    for (var i = 0; i < this.listContacts.length; i++) {
+      if (this.listContacts[i].id == idContact) {
+        this.listContacts[i].onEdit = '0';
+      }
     }
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
@@ -80,10 +81,11 @@ class HeaderGroupSection extends Component {
       "typeChat": "2"
     }
     this.props.addContact(newGroupElemnt)
-
     this.setState({
       showModalCreateGroup: false
     })
+    this.props.hideSectionRight()
+    this.props.showAlertGeneral('Se creo el nuevo grupo ' + name)
   }
 
   renderBodyCreateGroup = () => {
@@ -146,7 +148,7 @@ class HeaderGroupSection extends Component {
   }
 }
 const mapDispatchToProps = dispatch => {
-  var account = {onEdit:'1'};
+  var account = { onEdit: '1' };
   return {
     updateFilterContactsAddGroup: (listContactsFecth) => {
       dispatch(updateFilterContactsAddGroup(listContactsFecth))
@@ -162,7 +164,10 @@ const mapDispatchToProps = dispatch => {
     },
     addContact: (newContact) => {
       dispatch(addContact(newContact))
-    }
+    },
+    showAlertGeneral: (msj) => {
+      dispatch(showAlertGeneral(msj))
+    },
   }
 }
 
@@ -172,7 +177,7 @@ const mapStateToProps = (state) => {
     search_icon: state.customizing.Images.search_icon,
     cancel_icon: state.customizing.Images.cancel_icon,
     groupsSection: getGroupsSection(state),
-    onEdit : state.contact.onEdit
+    onEdit: state.contact.onEdit
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection)
