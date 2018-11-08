@@ -8,9 +8,11 @@ import ModalBox from '../../modals/ModalBox'
 import { getContacts } from '../../../redux/selectors/contacts'
 import { getContactSection } from '../../../redux/selectors/contactSection'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
+import SilenceGroup from '../../../components/form/contact/SilenceGroup'
 import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
-import SilenceConversation from '../../form/contact/SilenceConversation'
+import SilenceConversation from '../../../components/form/contact/SilenceConversation'
+
 import { connect } from 'react-redux'
 class GeneralContactData extends Component {
     constructor(...props) {
@@ -21,6 +23,8 @@ class GeneralContactData extends Component {
             showModal: false,
             showMenu: false,
             showModalDeleteContact: false,
+            showModalDeleteGroup: false,
+            showModalLeaveGroup: false,
             showModalFileContact: false,
             showModalDeleteConversationContact: false,
             showModalSilenceConversation: false,
@@ -28,10 +32,12 @@ class GeneralContactData extends Component {
         }
         this.fileContact = this.fileContact.bind(this)
         this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
+        this.leaveGroup = this.leaveGroup.bind(this)
         this.closeModalDeleteConversationContactAction = this.closeModalDeleteConversationContactAction.bind(this)
         this.showModalSilenceConversationAction = this.showModalSilenceConversationAction.bind(this)
         this.showModalDeleteConversationContactAction = this.showModalDeleteConversationContactAction.bind(this)
         this.deleteConversationContact = this.deleteConversationContact.bind(this)
+        this.readMessage = this.readMessage.bind(this)
         this.fixContact = this.fixContact.bind(this)
     }
 
@@ -51,14 +57,14 @@ class GeneralContactData extends Component {
         })
     }
 
-    fileContact() {
+    fileContact = () => {
         this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
         var msj = this.props.chat["file"] === "1" ? "Archivaste el chat" : "Desarchivaste el chat"
         this.props.showAlertGeneral(msj)
         this.showDots()
     }
 
-    fixContact() {
+    fixContact = () => {
         var msj = "";
         this.props.chat["pinner"] = this.props.chat["pinner"] === "1" ? "0" : "1"
         msj = this.props.chat["pinner"] === "1" ? "Fijaste el chat" : "Dejaste de fijar el chat"
@@ -66,11 +72,15 @@ class GeneralContactData extends Component {
         this.showDots()
     }
 
+    leaveGroup = () => {
+        console.log("Salir del grupo")
+    }
+
     actionDeleteElementChat = () => {
         var listContacts = this.props.contacts
         var idContact = this.props.chat.id
         var indexContact = listContacts.findIndex(item => item.id === idContact)
-       listContacts.splice(indexContact, 1)
+        listContacts.splice(indexContact, 1)
         var filter_contacts = this.props.contactSection.filter_contacts
         if (filter_contacts !== null) {
             var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
@@ -92,12 +102,21 @@ class GeneralContactData extends Component {
         return (<SilenceConversation onSubmit={this.submitCreateSilence} closeWindow={this.closeModalSilenceConversationAction} />)
     }
 
+    renderBodyLeaveGroup = () => {
+        return (<SilenceGroup closeWindow={this.closeModalLeaveGroupAction} nameContact={this.props.chat.name} leaveGroup={this.leaveGroup} />)
+    }
+
+    renderBodyDeleteGroup = () => {
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={this.props.chat.name} deleteContact={this.actionDeleteElementChat} />)
+    }
+
     renderBodyDeleteContact = () => {
-        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={'test'} deleteContact={this.actionDeleteElementChat} />)
+        
+        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={this.props.chat.name} deleteContact={this.actionDeleteElementChat} />)
     }
 
     renderBodyDeleteConversationContact = () => {
-        return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={this.props.chat.name} deleteConversationContact={this.deleteConversationContact} />)
+        return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={this.props.chat.id} nameContact={this.props.chat.name} deleteConversationContact={this.deleteConversationContact} />)
     }
 
     deleteConversationContact = () => {
@@ -123,7 +142,6 @@ class GeneralContactData extends Component {
     }
 
     showModalSilenceConversationAction = () => {
-        this.showDots()
         if (this.props.chat.silence !== "0") {
             this.props.chat["silence"] = "0"
             this.props.showAlertGeneral("Cancelaste el silencio del chat")
@@ -132,6 +150,12 @@ class GeneralContactData extends Component {
                 showModalSilenceConversation: true
             });
         }
+    }
+
+    showModalLeaveGroup = () => {
+        this.setState({
+            showModalLeaveGroup: true,
+        })
     }
 
     clickChat = () => {
@@ -155,6 +179,12 @@ class GeneralContactData extends Component {
         })
     }
 
+    closeModalLeaveGroupAction = () => {
+        this.setState({
+            showModalLeaveGroup: false,
+        })
+    }
+
     closeModalDeleteConversationContactAction = () => {
         this.setState({
             showModalDeleteConversationContact: false
@@ -167,10 +197,20 @@ class GeneralContactData extends Component {
         })
     }
 
-    render() {
-        const idElement = "chat-" + this.props.chat.id
-        return (
+    readMessage = () => {
+        this.showDots()
+        if (this.props.chat.countMessage !== "") {
+            this.props.chat["countMessage"] = ""
+            this.props.showAlertGeneral("Marcando como no leído")
+        } else {
+            this.props.chat["countMessage"] = null
+            this.props.showAlertGeneral("Marcando como leído")
+        }
+    }
 
+    render() {
+        const idElement = this.props.chat.id
+        return (
             <div className="contact-chat" ref={div => { this.bubble = div }} id={idElement} >
                 <div className="grid-container-contact-chat">
                     <div className="icon-contact" onClick={this.clickChat}>
@@ -204,6 +244,8 @@ class GeneralContactData extends Component {
                                     fixContact={this.fixContact}
                                     showModalSilenceConversationAction={this.showModalSilenceConversationAction}
                                     fileContact={this.fileContact}
+                                    readMessage={this.readMessage}
+                                    showModalLeaveGroup={this.showModalLeaveGroup}
                                 />
                             }
                         </div>
@@ -214,7 +256,7 @@ class GeneralContactData extends Component {
                     </div>
                     <div className="count-message" onClick={this.clickChat}>
                         {
-                            this.props.chat.countMessage !== "0" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
+                            this.props.chat.countMessage !== null ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
                         }
                     </div>
                 </div>
@@ -232,6 +274,8 @@ class GeneralContactData extends Component {
                 {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
                 {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
                 {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
+                {this.state.showModalDeleteGroup ? <ModalBox body={this.renderBodyDeleteGroup()} /> : null}
+                {this.state.showModalLeaveGroup ? <ModalBox body={this.renderBodyLeaveGroup()} /> : null}
             </div>
         )
     }

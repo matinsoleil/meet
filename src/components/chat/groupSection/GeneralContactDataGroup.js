@@ -9,13 +9,11 @@ class GeneralContactData extends Component {
         super(props)
         this.addContactGroupClick = this.addContactGroupClick.bind(this)
         this.userChecked = false;
-        this.props.contact.onEdit = '0';
+        //this.props.contact.onEdit = '0';
         this.currentListGroup = this.props.groupsSection.list_contacts_add_group;
     }
 
     addContactGroupClick() {
-
-        console.log("revision B")
         let existentUserId = undefined
         this.currentListGroup.map(match => {
             if (this.props.contact.id === match.id) {

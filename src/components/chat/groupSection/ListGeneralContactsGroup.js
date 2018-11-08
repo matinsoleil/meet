@@ -24,7 +24,6 @@ class ListGeneralContactsGroup extends Component {
     }
 
     addContactGroupClick(idContact) {
-        console.log("revision A")
         var listContacts = this.props.contacts
         var filter_contacts = this.props.filter_contacts
         var listAddContactsGroup = this.props.list_contacts_add_group
@@ -38,19 +37,19 @@ class ListGeneralContactsGroup extends Component {
                 console.log('not equal')
             }
         }
-        if (clearUser == 0) {
+        if (clearUser === 0) {
             var infoContact = listContacts.find(item => item.id === idContact)
             var newContact = {
                 id: infoContact.id,
                 name: infoContact.name,
-                imgContact: infoContact.imgContact
+                imgContact: infoContact.imgContact,
+                onEdit : '1'
             }
             listAddContactsGroup.push(newContact)
         }
         if (filter_contacts.length !== 0) {
             var listAddContactsGroupFilter = filter_contacts
             var indexContactFilter = listAddContactsGroupFilter.findIndex(item => item.id === idContact)
-            filter_contacts.splice(indexContactFilter, 1)
             this.props.updateFilterContactsAddGroup(filter_contacts)
         }
         this.props.updateListContactsAddGroup(listAddContactsGroup)
@@ -59,8 +58,7 @@ class ListGeneralContactsGroup extends Component {
     deleteContactGroupClick(idContact) {
         var listAddContactsGroup = this.props.list_contacts_add_group
         for (var i = 0 ; i < listAddContactsGroup.length ; i++) {
-
-            console.log(listAddContactsGroup[i].id)
+             console.log('delete')
         }
     }
 
@@ -75,7 +73,7 @@ class ListGeneralContactsGroup extends Component {
         var flagAlphabet = ''
         const filter_contacts = this.props.groupsSection.filter_contacts
         let contacts = []
-        if (filter_contacts.length === 0) { contacts = this.orderByName(this.props.contacts) } else { contacts = this.orderByName(filter_contacts) }
+        if (filter_contacts.length === 0) { contacts = this.orderByName(this.filterOnlyContacts(this.props.contacts)) } else { contacts = this.orderByName(this.filterOnlyContacts(filter_contacts)) }
         return (
             <div className="main-chat-general-list-contact-group">
                 <div className="main-chat-general-list-contact-group-title"></div>
@@ -84,6 +82,7 @@ class ListGeneralContactsGroup extends Component {
                         if (indexAlphabet.includes(contact.name.charAt(0)) === false) {
                             indexAlphabet = contact.name.charAt(0)
                             flagAlphabet = contact.name.charAt(0)
+                            
                         } else {
                             flagAlphabet = ""
                         }
