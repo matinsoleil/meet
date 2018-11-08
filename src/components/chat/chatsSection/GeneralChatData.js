@@ -256,7 +256,7 @@ class GeneralContactData extends Component {
                     </div>
                     <div className="count-message" onClick={this.clickChat}>
                         {
-                            this.props.chat.countMessage !== null ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
+                            this.props.chat.countMessage !== "" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
                         }
                     </div>
                 </div>
