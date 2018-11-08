@@ -14,17 +14,17 @@ class RightSectionContainer extends Component {
     }
 
     orderByPinner(list) {
-        const byPinner = list.slice(0);
+        const byPinner = list.slice(0)
         return byPinner.sort(function (a, b) {
-            var x = a.pinner.toLowerCase();
-            var y = b.pinner.toLowerCase();
+            var x = a.pinner.toLowerCase()
+            var y = b.pinner.toLowerCase()
             return x > y ? -1 : x < y ? 1 : 0;
-        });
+        })
     }
 
     showSectionGroupsClick = () => {
-        this.props.showSectionGroups()
         this.props.showSectionRight('GroupSectionContainer')
+        this.props.showSectionGroups()
     }
 
     filterList = (event) => {
@@ -35,7 +35,7 @@ class RightSectionContainer extends Component {
         } else {
             result = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
         }
-        this.props.updateFilterContactSection(result);
+        this.props.updateFilterContactSection(result)
     }
 
     render() {
