@@ -1,6 +1,7 @@
 const estado = {
     list_contacts: [],
     list_contacts_add_group: [],
+    select_contacts: [],
     filter_contacts: [],
 }
 export const groupsSection = (state = estado, action) => {
@@ -10,6 +11,7 @@ export const groupsSection = (state = estado, action) => {
                 ...state,
                 list_contacts: [],
                 list_contacts_add_group: [],
+                select_contacts: [],
                 filter_contacts: [],
             }
         case 'SHOW_SECTION_GROUPS':

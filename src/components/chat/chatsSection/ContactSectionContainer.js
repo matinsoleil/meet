@@ -2,6 +2,7 @@ import GeneralDataUser from './GeneralDataUser'
 import ListChats from './ListChats'
 import showSectionRight from '../../../redux/actions/rightSection/showSectionRight'
 import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection'
+import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './RightSectionContainer.scss'
@@ -22,6 +23,7 @@ class RightSectionContainer extends Component {
     }
 
     showSectionGroupsClick = () => {
+        this.props.showSectionGroups()
         this.props.showSectionRight('GroupSectionContainer')
     }
 
@@ -70,6 +72,9 @@ const mapDispatchToProps = dispatch => {
         showSectionRight: (showSection) => {
             dispatch(showSectionRight(showSection))
         },
+        showSectionGroups: () => {
+            dispatch(showSectionGroups())
+        },       
         updateFilterContactSection: (listaContact) => {
             dispatch(updateFilterContactSection(listaContact))
         },
