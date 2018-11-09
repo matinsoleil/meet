@@ -6,6 +6,7 @@ import updateListContactsAddGroup from '../../../redux/actions/groups/updateList
 import addContact from '../../../redux/actions/contacts/addContact'
 import CreateGroupForm from '../../form/group/CreateGroupForm'
 import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
+import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
@@ -25,20 +26,23 @@ class HeaderGroupSection extends Component {
     this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this)
     this.listContacts = []
     this.assingedIds = []
-
   }
 
   deleteContactListCreateGroup(idContact) {
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
+<<<<<<< HEAD
     for (var i = 0 ; i < this.listContacts.length ; i++) {
        if(this.listContacts[i].id===idContact){
         this.listContacts[i].onEdit='0';
        }
+=======
+    for (var i = 0; i < this.listContacts.length; i++) {
+      if (this.listContacts[i].id == idContact) {
+        this.listContacts[i].onEdit = '0';
+      }
+>>>>>>> 982478e7d7af07ccd89548b94b28f00a6c2f5754
     }
-
-    
-
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
     this.props.updateListContactsGroup(this.listContacts)
@@ -84,14 +88,15 @@ class HeaderGroupSection extends Component {
       "typeChat": "2"
     }
     this.props.addContact(newGroupElemnt)
-
     this.setState({
       showModalCreateGroup: false
     })
+    this.props.hideSectionRight()
+    this.props.showAlertGeneral('Se creo el nuevo grupo ' + name)
   }
 
   renderBodyCreateGroup = () => {
-    if (this.props.list_contacts_add_group === null) {
+    if (this.props.list_contacts_add_group.length === 0) {
       return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />)
     } else {
       return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />)
@@ -149,6 +154,7 @@ class HeaderGroupSection extends Component {
   }
 }
 const mapDispatchToProps = dispatch => {
+
   return {
     updateFilterContactsAddGroup: (listContactsFecth) => {
       dispatch(updateFilterContactsAddGroup(listContactsFecth))
@@ -164,7 +170,10 @@ const mapDispatchToProps = dispatch => {
     },
     addContact: (newContact) => {
       dispatch(addContact(newContact))
-    }
+    },
+    showAlertGeneral: (msj) => {
+      dispatch(showAlertGeneral(msj))
+    },
   }
 }
 
@@ -174,7 +183,7 @@ const mapStateToProps = (state) => {
     search_icon: state.customizing.Images.search_icon,
     cancel_icon: state.customizing.Images.cancel_icon,
     groupsSection: getGroupsSection(state),
-    onEdit : state.contact.onEdit
+    onEdit: state.contact.onEdit
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderGroupSection)
