@@ -31,17 +31,12 @@ class HeaderGroupSection extends Component {
   deleteContactListCreateGroup(idContact) {
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
-<<<<<<< HEAD
+
     for (var i = 0 ; i < this.listContacts.length ; i++) {
        if(this.listContacts[i].id===idContact){
         this.listContacts[i].onEdit='0';
        }
-=======
-    for (var i = 0; i < this.listContacts.length; i++) {
-      if (this.listContacts[i].id == idContact) {
-        this.listContacts[i].onEdit = '0';
-      }
->>>>>>> 982478e7d7af07ccd89548b94b28f00a6c2f5754
+
     }
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
