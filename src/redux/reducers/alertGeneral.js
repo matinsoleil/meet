@@ -14,7 +14,13 @@ export const alertGeneral = (state = estado, action) => {
             return {
                 ...state,
                 msj: null,
-                show: false,
+                show: null,
+            }
+        case 'PAUSE_HIDE_GENERAL_ALERT':
+            return {
+                ...state,
+                msj: null,
+                show: null,
             }
         default:
             return state

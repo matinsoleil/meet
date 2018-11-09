@@ -18,7 +18,7 @@ import { getSearchContacts } from '../redux/selectors/searchContacts'
 import { getGroupsSection } from '../redux/selectors/groupsSection'
 import { getAlertGeneral } from '../redux/selectors/alertGeneral'
 import ContactSectionContainer from '../components/chat/chatsSection/ContactSectionContainer'
-import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
+import pauseHideGeneralAlert from '../redux/actions/alertGeneral/pauseHideGeneralAlert'
 import { getRightSection } from '../redux/selectors/rightSection'
 import RightSection from '../components/chat/rightSection/RightSection';
 
@@ -39,7 +39,7 @@ class ChatContainer extends Component {
     renderBody = (listContact, user, conversation, groups, contactSection) => {
         if (this.props.alertGeneral.show === true) {
             setTimeout(function () {
-                this.props.hideAlertGeneral()
+                this.props.pauseHideGeneralAlert()
             }.bind(this), 3000)
         }
         return (
@@ -129,8 +129,8 @@ const mapDispatchToProps = dispatch => {
         logout: () => {
             dispatch(logout())
         },
-        hideAlertGeneral: () => {
-            dispatch(hideAlertGeneral())
+        pauseHideGeneralAlert: () => {
+            dispatch(pauseHideGeneralAlert())
         }
     }
 }

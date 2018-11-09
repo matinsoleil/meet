@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
+import hideAlertGeneral from '../../../redux/actions/alertGeneral/hideAlertGeneral'
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
     constructor(props) {
@@ -14,8 +15,15 @@ class dotsMenuContact extends Component {
     }
 
     toggleMenu = () => {
+        var actualStatusShowMenu = !this.state.showMenu 
+        if (actualStatusShowMenu === true)
+        {
+            if (this.props.alertGeneral.show === true) {
+                this.props.hideAlertGeneral()
+            }
+        } 
         this.setState({
-            showMenu: !this.state.showMenu
+            showMenu: actualStatusShowMenu
         });
     }
 
@@ -99,4 +107,11 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(dotsMenuContact)
+const mapDispatchToProps = dispatch => {
+    return {
+        hideAlertGeneral: () => {
+            dispatch(hideAlertGeneral())
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(dotsMenuContact)
