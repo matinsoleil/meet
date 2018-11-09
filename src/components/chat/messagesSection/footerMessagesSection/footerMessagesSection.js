@@ -103,7 +103,7 @@ class FooterMessagesSection extends Component {
 
 
        this.connection.onclose = function (event) {
-
+        this.idMessage='00000';
         console.log(event.code);
         console.log(event.reason);  
 
