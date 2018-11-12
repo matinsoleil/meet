@@ -7,7 +7,8 @@ const estado = {
     imgContact: null,
     chatGroups: [],
     lastState: null,
-    onEdit: null
+    onEdit: null,
+    contactsIds: null
 
 }
 export const contact = (state = estado, action) => {
@@ -30,6 +31,7 @@ export const contact = (state = estado, action) => {
                 "imgContact": action.payload.imgContact,
                 "typeChat": action.payload.typeChat,
                 "conversations": action.payload.conversations,
+                "contactsIds": action.payload.contactsIds
             }
         default:
             return state

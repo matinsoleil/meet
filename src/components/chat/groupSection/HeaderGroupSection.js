@@ -63,6 +63,7 @@ class HeaderGroupSection extends Component {
   submitCreateGroup = values => {
     const name = values.nameGroup
     const id = Math.floor(+new Date() / 1000)
+
     const newGroupElemnt = {
       "id": id.toString(),
       "name": name,
@@ -80,7 +81,9 @@ class HeaderGroupSection extends Component {
       "owner": [
         "1"
       ],
-      "typeChat": "2"
+      "typeChat": "2",
+      "contactsIds": this.props.groupsSection.list_contacts_add_group
+      
     }
     this.props.addContact(newGroupElemnt)
     this.setState({
