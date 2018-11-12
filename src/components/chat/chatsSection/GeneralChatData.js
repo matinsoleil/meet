@@ -93,7 +93,7 @@ class GeneralContactData extends Component {
         this.props.chat["silence"] = values.timeSilence
         this.setState({
             showModalSilenceConversation: false
-        });
+        })
         this.props.showAlertGeneral("Silenciaste el chat")
         this.showDots()
     }
@@ -123,7 +123,7 @@ class GeneralContactData extends Component {
         this.props.showAlertGeneral('Historial del chat eliminado')
         this.setState({
             showModalDeleteConversationContact: false
-        });
+        })
         this.showDots()
     }
 
@@ -138,7 +138,7 @@ class GeneralContactData extends Component {
         this.showDots()
         this.setState({
             showModalDeleteConversationContact: true
-        });
+        })
     }
 
     showModalSilenceConversationAction = () => {
@@ -148,7 +148,7 @@ class GeneralContactData extends Component {
         } else {
             this.setState({
                 showModalSilenceConversation: true
-            });
+            })
         }
     }
 
@@ -160,7 +160,9 @@ class GeneralContactData extends Component {
 
     clickChat = () => {
         const idChat = this.props.chat.id
-        this.props.fetchContact(idChat)
+        const contacts = this.props.contacts
+        const contactLoad = contacts.find(item => item.id === idChat)
+        this.props.fetchContact(contactLoad)
     }
 
     msjGeneralChatData = () => {
@@ -188,7 +190,7 @@ class GeneralContactData extends Component {
     closeModalDeleteConversationContactAction = () => {
         this.setState({
             showModalDeleteConversationContact: false
-        });
+        })
     }
 
     deleteContact = () => {
@@ -284,8 +286,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchContact: (id) => {
-            dispatch(fetchContact(id))
+        fetchContact: (infoContact) => {
+            dispatch(fetchContact(infoContact))
         },
         deleteConversation: (id) => {
             dispatch(deleteConversation(id))

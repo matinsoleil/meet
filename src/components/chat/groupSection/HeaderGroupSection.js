@@ -77,7 +77,7 @@ class HeaderGroupSection extends Component {
       "file": "0",
       "pinner": "0",
       "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
-      "ounner": [
+      "owner": [
         "1"
       ],
       "typeChat": "2"
