@@ -5,11 +5,11 @@ class headerMessagesSection extends Component {
         return (
             <header className='header-messages-section'>
                 <span className='title' >{this.props.chatName}</span>
-                {this.props.subTitle.lenght ?
+                {this.props.label.lenght ?
                     (<div>
-                        <Members members={this.props.subTitle} />
+                        <Members members={this.props.label} />
                     </div>) :
-                    (<span className='subtitle' >{this.props.subTitle}</span>)
+                    (<span className='subtitle' >{this.props.label}</span>)
                 }
             </header>
         );

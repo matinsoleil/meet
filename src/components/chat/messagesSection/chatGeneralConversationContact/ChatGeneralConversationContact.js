@@ -5,12 +5,11 @@ import Message from './Message';
 import MessagesHelper from '../../../../lib/helper/messagesHelper';
 
 class ChatGeneralConversationContact extends Component {
-    render() {
-        // let conversation = MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations);
+    render() {        
+        // let conversation = MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations)
+        let conversation = null
 
-        let conversation = null;
-
-        //console.log(this.props.conversation,this.props.contact.conversations,conversation);
+        //console.log(this.props.conversation,this.props.contact.conversations,conversation)
         return (
             <div id='#main-chat-feed' style={{ backgroundImage: `url(${this.props.background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
@@ -35,7 +34,7 @@ class ChatGeneralConversationContact extends Component {
                         null
                 }
             </div>
-        );
+        )
     }
 }
 
@@ -50,4 +49,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(ChatGeneralConversationContact);
+export default connect(mapStateToProps, null)(ChatGeneralConversationContact)

@@ -44,11 +44,6 @@ class ChatContainer extends Component {
                 }
             }.bind(this), 3000)
         }
-
-        // console.log(" 1 - 1 - 1 ")
-        // console.log(this.props.contact)
-        // console.log(" 9 - 9 - 9 ")
-
         return (
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} />
