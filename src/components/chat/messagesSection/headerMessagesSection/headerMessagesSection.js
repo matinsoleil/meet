@@ -19,8 +19,14 @@ class headerMessagesSection extends Component {
 }
 
 const Members = (props) => {
-    return props.members.map(
-        (member) => <span key={ member.id }> { member.name},</span>
+    var cdn = ""
+    var flag = ""
+     return props.members.map(
+        member => {
+            flag == "" ? cdn = "" : cdn = "," 
+            flag = ","
+            return <span key= { member.id }>  {cdn}  { member.name}</span>
+        }
     );
 }
 
