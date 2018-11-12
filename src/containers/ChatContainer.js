@@ -26,7 +26,7 @@ class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts()
         this.props.fetchUser()
-        this.props.fetchContact()
+        // this.props.fetchContact()
         //this.props.fetchConversation()
         this.props.fetchGroups()
         this.props.fetchContactSection()
@@ -45,10 +45,14 @@ class ChatContainer extends Component {
             }.bind(this), 3000)
         }
 
+        // console.log(" 1 - 1 - 1 ")
+        // console.log(this.props.contact)
+        // console.log(" 9 - 9 - 9 ")
+
         return (
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} />
-                <MessageSectionContainer contacts={listContact} activeChat={this.props.contact} chatName={this.props.contact.name} subTitle='Have a nice day' chat={conversation} server={this.props.server} />
+                <MessageSectionContainer contacts={listContact} chat={conversation} contact={this.props.contact} server={this.props.server} />
                 {this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null}
                 {this.props.alertGeneral.show === true ?
                     <div className="message-popup">
@@ -78,7 +82,7 @@ ChatContainer.defaultProps = {
     contacts: [],
     searchContacts: [],
     user: [],
-    contact: [],
+    contact: null,
     conversation: [],
     groups: [],
     alertGeneral: [],
@@ -105,9 +109,9 @@ const mapDispatchToProps = dispatch => {
         fetchContacts: () => {
             dispatch(fetchContacts())
         },
-        fetchContact: () => {
-            dispatch(fetchContact(1))
-        },
+        // fetchContact: () => {
+        //     dispatch(fetchContact(1))
+        // },
         fetchConversation: () => {
             dispatch(fetchConversation())
         },

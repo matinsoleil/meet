@@ -8,10 +8,12 @@ class MessagesSectionContainer extends Component {
     render() {
         return (
             <div className='messages-section-container' >
-                {this.props.activeChat ? (
+                {this.props.contact.id ? (
                     <ActiveChat
-                        chatName={this.props.chatName}
-                        subTitle={this.props.subTitle}
+                        // chatName={this.props.chatName}
+                        // subTitle={this.props.subTitle}
+                        subTitle='Have a nice day'
+                        chatName={this.props.contact.name}
                         chat={this.props.chat}
                         contacts={this.props.contacts}
                         contact={this.props.activeChat}
