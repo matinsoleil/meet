@@ -15,7 +15,7 @@ class MessagesSectionContainer extends Component {
                         chatName={this.props.contact.name}
                         chat={this.props.chat}
                         contacts={this.props.contacts}
-                        contact={this.props.activeChat}
+                        contact={this.props.contact}
                         server={this.props.server}
                     />
                 ) : (

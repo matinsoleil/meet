@@ -6,10 +6,7 @@ import MessagesHelper from '../../../../lib/helper/messagesHelper';
 
 class ChatGeneralConversationContact extends Component {
     render() {        
-        // let conversation = MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations)
-        let conversation = null
-
-        //console.log(this.props.conversation,this.props.contact.conversations,conversation)
+        let conversation = MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations)
         return (
             <div id='#main-chat-feed' style={{ backgroundImage: `url(${this.props.background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
