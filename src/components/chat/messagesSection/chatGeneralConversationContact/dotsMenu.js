@@ -2,23 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { multiSelectState, messageSelected } from './../../../../redux/actions/messagesOptions/messagesOptions';
 import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
-import ModalBox from '../../../modals/ModalBox';
 import { showSectionGroups } from '../../../../redux/actions/groups/showSectionGroups';
+import { showModal } from '../../../../redux/actions/modalBox/modalBox';
 
 class DotsMenu extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            showModal: false,
             showMenu: false,
         }
-    }
-
-    toggleModal = () => {
-        this.setState({
-            showModal: !this.state.showModal,
-        });
+        this.modalModel = {
+            title: '¿Seguro que desea eliminar este mensaje?',
+            buttons: [{ name: 'CANCELAR', action: this.props.showDots }, { name: 'ELIMINAR', action: this.accept }],
+            viewPath: 'Confirm'
+        }
     }
 
     toggleMenu = () => {
@@ -52,9 +50,8 @@ class DotsMenu extends Component {
     }
 
     accept = () => {
-        this.toggleModal();
         this.props.showDots();
-        this.props.deleteMessage(this.props.conversationId,this.props.id);
+        this.props.deleteMessage(this.props.conversationId, this.props.id);
     }
 
     render() {
@@ -67,21 +64,13 @@ class DotsMenu extends Component {
                         <a onClick={this.reply}>{'Responder'}</a>
                         <a onClick={this.forwardTo}>{'Reenviar'}</a>
                         <a onClick={this.multiSelection} >{'Seleccionar varios'}</a>
-                        <a onClick={this.toggleModal} >{'Eliminar'}</a>
+                        <a onClick={() => {
+                            this.props.showModal(
+                                this.modalModel.title, 
+                                this.modalModel.buttons,
+                                this.modalModel.viewPath)
+                        }} >{'Eliminar'}</a>
                     </div>
-                }
-                {(this.state.showModal) &&
-                    <ModalBox body={
-                        <div className="contentModalDeleteMessge">
-                              <span className="contentAnswerDeleteMessage" >
-                               <p className="answerDeleteMessage">{'¿Seguro que desea eliminar este mensaje?'}</p>
-                             </span>
-                             <span className="contentResponse">
-                                <button className="response" onClick={() => { this.toggleModal(); this.props.showDots(); }}>CANCELAR</button>
-                                <button className="response" onClick={this.accept}>ELIMINAR</button>
-                            </span>
-                        </div>
-                    } />
                 }
             </div>
         );
@@ -100,14 +89,17 @@ const mapDispatchToProps = dispatch => {
         multiSelectState: (state) => {
             dispatch(multiSelectState(state));
         },
-        deleteMessage: (conversationId,messageId) => {
-            dispatch(deleteMessage(conversationId,messageId));
+        deleteMessage: (conversationId, messageId) => {
+            dispatch(deleteMessage(conversationId, messageId));
         },
         showSectionGroups: listContacs => {
             dispatch(showSectionGroups(listContacs));
         },
         messageSelected: (messageId, state) => {
             dispatch(messageSelected(messageId, state));
+        },
+        showModal: (title, buttons, viewPath) => {
+            dispatch(showModal(title, buttons, viewPath));
         }
     }
 }

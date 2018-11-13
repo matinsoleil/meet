@@ -123,7 +123,7 @@ class FooterMessagesSection extends Component {
             hour: `${date.getHours()}:${date.getMinutes()}`,
             status: "1",
         }
-        this.connection.send(JSON.stringify(msg));
+        //this.connection.send(JSON.stringify(msg));
 
         this.props.addMessage(this.conversation.id, msg );
         message='';

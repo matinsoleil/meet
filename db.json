@@ -237,6 +237,216 @@
       "message": "TypeError: Cannot read property 'toUpperCase' of undefined",
       "detail": "\n    in FileMessage (at Message.js:120)\n    in div (at Message.js:69)\n    in div (at Message.js:67)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:48)\n    in div (at ChatContainer.js:46)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:65)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 7
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541715847,
+      "message": "TypeError: Cannot read property 'title' of undefined",
+      "detail": "\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 8
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541717358,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 9
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541717517,
+      "message": "Invariant Violation: Objects are not valid as a React child (found: object with keys {dispatchConfig, _targetInst, _dispatchListeners, _dispatchInstances, nativeEvent, type, target, currentTarget, eventPhase, bubbles, cancelable, timeStamp, defaultPrevented, isTrusted, view, detail, screenX, screenY, clientX, clientY, pageX, pageY, ctrlKey, shiftKey, altKey, metaKey, getModifierState, button, buttons, relatedTarget, movementX, movementY, isDefaultPrevented, isPropagationStopped}). If you meant to render a collection of children, use an array instead.\n    in div (at ModalBox.js:29)\n    in div (at ModalBox.js:28)\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "detail": "\n    in div (at ModalBox.js:29)\n    in div (at ModalBox.js:28)\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 10
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541719781,
+      "message": "Invariant Violation: Objects are not valid as a React child (found: object with keys {name}). If you meant to render a collection of children, use an array instead.\n    in div (at ModalBox.js:11)\n    in div (at ModalBox.js:10)\n    in div (at ModalBox.js:9)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "detail": "\n    in div (at ModalBox.js:11)\n    in div (at ModalBox.js:10)\n    in div (at ModalBox.js:9)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 11
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541721440,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:14)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at GeneralChatData.js:274)\n    in div (at GeneralChatData.js:214)\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListChats.js:15)\n    in div (at ListChats.js:13)\n    in ListGeneralContacts (at ContactSectionContainer.js:58)\n    in div (at ContactSectionContainer.js:46)\n    in RightSectionContainer (created by Connect(RightSectionContainer))\n    in Connect(RightSectionContainer) (at ChatContainer.js:48)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 12
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541722633,
+      "message": "TypeError: Cannot read property 'view' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 13
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541722673,
+      "message": "TypeError: Cannot read property 'view' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 14
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541722686,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 15
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541722836,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 16
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789561,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: null.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 17
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789607,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: null.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 18
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789691,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 19
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789702,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 20
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789741,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 21
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541791473,
+      "message": "TypeError: Cannot read property 'viewPath' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 22
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541791483,
+      "message": "TypeError: Cannot read property 'viewPath' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 23
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541791556,
+      "message": "TypeError: Cannot read property 'viewPath' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 24
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044185,
+      "message": "TypeError: Cannot read property 'showModal' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 25
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044312,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 26
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044436,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 27
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044817,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 28
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044930,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 29
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542045089,
+      "message": "TypeError: console.log(...) is not a function",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 30
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542045143,
+      "message": "TypeError: console.log(...) is not a function",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 31
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542046609,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 32
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542047054,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 33
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542052828,
+      "message": "TypeError: Cannot read property 'buttons' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 34
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542054879,
+      "message": "TypeError: Cannot read property 'action' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 35
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542056454,
+      "message": "TypeError: Cannot read property 'action' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 36
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542056544,
+      "message": "TypeError: this.props.buttons.map is not a function",
+      "detail": "\n    in Confirm (created by Connect(Confirm))\n    in Connect(Confirm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 37
     }
   ],
   "contacts": [

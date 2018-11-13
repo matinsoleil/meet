@@ -1,6 +1,9 @@
-import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import React from 'react';
+import {connect} from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+import { showModal } from '../../../redux/actions/modalBox/modalBox';
 import './CreateGroupForm.scss'
+
 
 const validate = values => {
   const errors = {}
@@ -46,11 +49,11 @@ let CreateGroupForm = props => {
     <div className="contentModal">
     <form onSubmit={handleSubmit}>
     <span className="contentAnswer" > 
-      <Field name="nameGroup" label="Escribe el nombre del grupo" placeholder="Nombre del grupo" type="text" component={renderField} />
+      <Field name="nameGroup" label={props.title} placeholder="Nombre del grupo" type="text" component={renderField} />
      </span> 
      <span className="contentResponse">
       <button className="from-create-group-btn" type="submit" >AGREGAR</button>
-      <button className="from-create-group-btn" onClick={closeWindow}>CERRAR</button>
+      <button className="from-create-group-btn" onClick={props.showModal}>CERRAR</button>
      </span> 
     </form>
     </div>
@@ -63,4 +66,6 @@ CreateGroupForm = reduxForm({
   warn
 })(CreateGroupForm)
 
-export default CreateGroupForm
+export default connect(null,dispatch => ({
+  showModal: ()=>{dispatch(showModal())},
+}))(CreateGroupForm);

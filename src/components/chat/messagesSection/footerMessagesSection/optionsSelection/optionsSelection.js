@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./optionsSelection.scss"
 import { deleteMessagesSelected } from '../../../../../redux/actions/messagesOptions/messagesOptions';
-import ModalBox from './../../../../modals/ModalBox';
 import { showSectionGroups } from '../../../../../redux/actions/groups/showSectionGroups';
 import MessagesHelper from '../../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../../lib/helper/generateId';
+import { showModal } from '../../../../../redux/actions/modalBox/modalBox';
 
 class OptionsSelection extends Component {
 
@@ -13,18 +13,13 @@ class OptionsSelection extends Component {
         super(props);
         this.state = {
             showModal: false,
-            busy:false,
+            busy: false,
         }
-    }
-
-    toggleModal = () => {
-        this.setState({
-            showModal: !this.state.showModal,
-        });
-    }
-
-    deleteMessages = (e) => {
-        this.toggleModal();
+        this.modalModel = {
+            title: '¿Seguro que desea eliminar estos mensajes?',
+            buttons: [{ name: 'Eliminar', action: this.accept }, { name: 'Cancelar' }],
+            viewPath: 'Confirm'
+        }
     }
 
     downloadFiles = async () => {
@@ -32,7 +27,7 @@ class OptionsSelection extends Component {
         if (!this.state.busy) {
             console.log(this.state.busy);
             let files = [];
-            this.setState({busy:true});
+            this.setState({ busy: true });
             for (let messageId of this.props.messages) {
                 const message = MessagesHelper.getMessageById(this.props.conversation.conversation, messageId).message;
                 await MessagesHelper.getBlobObject(message.blobURL)
@@ -52,15 +47,14 @@ class OptionsSelection extends Component {
                         setTimeout(() => { URL.revokeObjectURL(this.link.href); this.link.href = ''; }, 1500);
                     }
                     this.link.click();
-                    this.setState({busy:false});
+                    this.setState({ busy: false });
                 }
             );
         }
     }
 
     accept = () => {
-        this.toggleModal();
-        this.props.deleteMessagesSelected(this.props.conversation.id,this.props.messages);
+        this.props.deleteMessagesSelected(this.props.conversation.id, this.props.messages);
     }
 
     render() {
@@ -74,18 +68,12 @@ class OptionsSelection extends Component {
                         name='Descargar' />
                 }
                 <IconButton onClick={() => { this.props.showSectionGroups(this.props.contacts) }} image={this.props.forward} name='Reenviar' />
-                <IconButton onClick={this.deleteMessages} image={this.props.trash} name='Eliminar' />
-                {(this.state.showModal) &&
-                    <ModalBox body={
-                        <div className="modal-content">
-                            <div className='title'>{'¿Seguro que desea eliminar estos mensajes?'}</div>
-                            <div className='button-section'>
-                                <button onClick={this.toggleModal}>Cancelar</button>
-                                <button onClick={this.accept}>Eliminar</button>
-                            </div>
-                        </div>
-                    } />
-                }
+                <IconButton onClick={() => {
+                    this.props.showModal(
+                        this.modalModel.title, 
+                        this.modalModel.buttons,
+                        this.modalModel.viewPath);
+                }} image={this.props.trash} name='Eliminar' />
             </div>
         );
     }
@@ -115,11 +103,14 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
     return {
-        deleteMessagesSelected: (conversationId,messagesId) => {
-            dispatch(deleteMessagesSelected(conversationId,messagesId));
+        deleteMessagesSelected: (conversationId, messagesId) => {
+            dispatch(deleteMessagesSelected(conversationId, messagesId));
         },
         showSectionGroups: listContacs => {
             dispatch(showSectionGroups(listContacs));
+        },
+        showModal: (title, buttons, viewPath) => {
+            dispatch(showModal(title, buttons, viewPath));
         }
     }
 }
