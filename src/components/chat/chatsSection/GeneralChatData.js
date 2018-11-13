@@ -5,6 +5,7 @@ import fetchContact from '../../../redux/actions/contact/fetchContact'
 import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
 import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
 import ModalBox from '../../modals/ModalBox'
+import { getContact } from '../../../redux/selectors/contact'
 import { getContacts } from '../../../redux/selectors/contacts'
 import { getContactSection } from '../../../redux/selectors/contactSection'
 import DeleteContact from '../../../components/form/contact/DeleteContact'
@@ -29,7 +30,6 @@ class GeneralContactData extends Component {
             showModalDeleteConversationContact: false,
             showModalSilenceConversation: false,
             showModalFixContact: false,
-            seletedChat: false
         }
         this.fileContact = this.fileContact.bind(this)
         this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
@@ -164,7 +164,6 @@ class GeneralContactData extends Component {
         const contacts = this.props.contacts
         const contactLoad = contacts.find(item => item.id === idChat)
         this.props.fetchContact(contactLoad)
-        this.setState({seletedChat: true})
     }
 
     msjGeneralChatData = () => {
@@ -214,8 +213,7 @@ class GeneralContactData extends Component {
 
     render() {
         const idElement = this.props.chat.id
-        let seleted_chat_class = this.state.seletedChat === true ? "contact-chat selected-contact-chat" : "contact-chat";
-
+        let seleted_chat_class = idElement === this.props.contact.id ? "contact-chat selected-contact-chat" : "contact-chat";
         return (
             <div className={seleted_chat_class} ref={div => { this.bubble = div }} id={idElement} >
                 <div className="grid-container-contact-chat">
@@ -284,6 +282,7 @@ const mapStateToProps = state => {
         mute_a_icon: state.customizing.Images.mute_a_icon,
         file_icon: state.customizing.Images.file_icon_chat,
         contacts: getContacts(state),
+        contact: getContact(state),
         contactSection: getContactSection(state)
     }
 }

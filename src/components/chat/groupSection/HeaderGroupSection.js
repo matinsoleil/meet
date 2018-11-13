@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
 import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight'
+import fetchContact from '../../../redux/actions/contact/fetchContact'
+
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
 import addContact from '../../../redux/actions/contacts/addContact'
@@ -73,7 +75,7 @@ class HeaderGroupSection extends Component {
       "label": null,
       "dayLastMessage": null,
       "lastMessage": null,
-      "countMessage": null,
+      "countMessage": "",
       "silence": "0",
       "file": "0",
       "pinner": "0",
@@ -86,6 +88,7 @@ class HeaderGroupSection extends Component {
       
     }
     this.props.addContact(newGroupElemnt)
+    this.props.fetchContact(newGroupElemnt)
     this.setState({
       showModalCreateGroup: false
     })
@@ -154,6 +157,11 @@ class HeaderGroupSection extends Component {
 const mapDispatchToProps = dispatch => {
 
   return {
+
+    fetchContact: (infoContact) => {
+      dispatch(fetchContact(infoContact))
+    },
+
     updateFilterContactsAddGroup: (listContactsFecth) => {
       dispatch(updateFilterContactsAddGroup(listContactsFecth))
     },
