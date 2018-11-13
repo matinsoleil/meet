@@ -12,6 +12,7 @@ class ListGeneralContactsGroup extends Component {
     constructor(props) {
         super(props)
         this.addContactGroupClick = this.addContactGroupClick.bind(this)
+        this.firstTime = 0;
     }
 
     orderByName(listContacts) {
@@ -71,11 +72,12 @@ class ListGeneralContactsGroup extends Component {
     render() {
         var indexAlphabet = ''
         var flagAlphabet = ''
-        const filter_contacts = this.props.groupsSection.filter_contacts
-        let contacts = []
-        if (filter_contacts.length === 0) { contacts = this.orderByName(this.filterOnlyContacts(this.props.contacts)) } else { contacts = this.orderByName(this.filterOnlyContacts(filter_contacts)) }
+        const filter_contacts = this.props.groupsSection.filter_contacts;
+        let contacts = [];
+        
+        if (filter_contacts.length === 0 && this.firstTime ===0 ) { contacts = this.orderByName(this.filterOnlyContacts(this.props.contacts)); this.firstTime =1; } else { contacts = this.orderByName(this.filterOnlyContacts(filter_contacts)) }
         return (
-            <div className="main-chat-general-list-contact-group">
+            <div id='list-contact-group' className="main-chat-general-list-contact-group">
                 <div className="main-chat-general-list-contact-group-title"></div>
                 {
                     contacts.map(contact => {
