@@ -5,7 +5,10 @@ export const contacts = handleActions({
     [UPDATE_CONTACTS]: (state, action) => [...action.payload],
     [ADD_CONTACT]: (state, action) => {
         const createGroup = state
-        createGroup.push(action.payload)
+        // createGroup.push(action.payload)
+
+        createGroup.unshift(action.payload)
+        
         return [...createGroup]    
     },
 }, [])

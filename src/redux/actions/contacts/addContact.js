@@ -3,8 +3,6 @@ export const addContact = (newContact) => dispatch => {
     dispatch({
         type: ADD_CONTACT,
         payload: newContact,
-        // meta :'wait',
-        // error: 'false',
     })
 }
 export default addContact
