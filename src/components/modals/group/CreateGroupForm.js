@@ -46,7 +46,7 @@ const renderField = ({
 let CreateGroupForm = props => {
   const { handleSubmit} = props
   return (
-    <div className="contentModal">
+    <div className="modal-content">
     <form onSubmit={handleSubmit}>
     <span className="contentAnswer" > 
       <Field name="nameGroup" label={props.title} placeholder="Nombre del grupo" type="text" component={renderField} />

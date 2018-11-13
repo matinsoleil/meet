@@ -4,7 +4,7 @@ import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRig
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
 import addContact from '../../../redux/actions/contacts/addContact'
-import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
+//import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'

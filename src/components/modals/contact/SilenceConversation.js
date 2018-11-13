@@ -1,9 +1,8 @@
 import React from 'react'
 import { reduxForm } from 'redux-form'
+import {connect} from 'react-redux';
 import './SilenceConversation.scss'
-
-
-
+import { showModal } from '../../../redux/actions/modalBox/modalBox';
 
 // const validate = values => {
 //     const errors = {}
@@ -14,11 +13,11 @@ import './SilenceConversation.scss'
 // }
 
 let SilenceConversation = props => {
-    const { handleSubmit, closeWindow} = props
+    const { handleSubmit} = props
     return (
         <div className="contentModalSilence" >
             <span className="contentAnswer" >
-            <p  className="answer" >Silenciar durante… </p>
+            <p  className="answer" >{props.title}</p>
             </span>
             <form onSubmit={handleSubmit}>
                 <span className="contentOptions">
@@ -30,8 +29,8 @@ let SilenceConversation = props => {
                 </span>
 
                  <span className="contentResponseBroad">       
-                <button className="from-create-group-btn response" type="submit">SILENCIAR</button>
-                <button className="from-create-group-btn response" onClick={closeWindow}>CANCELAR</button>
+                <button className="from-create-group-btn response" type="submit">{props.buttons['Accept'].name}</button>
+                <button className="from-create-group-btn response" onClick={props.showModal}>{props.buttons['Cancel'].name}</button>
                 </span>
             </form>
         </div>
@@ -43,4 +42,6 @@ SilenceConversation = reduxForm({
     // validate
 })(SilenceConversation)
 
-export default SilenceConversation
+export default connect(null,dispatch=>({
+    showModal: () => {dispatch(showModal)}
+}))(SilenceConversation);
