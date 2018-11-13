@@ -106,10 +106,10 @@ class HeaderGroupSection extends Component {
     var yes = 0;
     var listContactsFecth = [];
     var equalWord = 0;
-    var listContactsFecth = this.props.list_contacts.filter(v => { if(v.name.toLowerCase().indexOf(val) !== -1) { yes = 1 ; if(v.name.toLowerCase === val){ equalWord = 1;} if(equalWord==0){ return v.name.toLowerCase();}}else{ return '';}})
-    if(yes==1){
+    listContactsFecth = this.props.list_contacts.filter(v => { if(v.name.toLowerCase().indexOf(val) !== -1) { yes = 1 ; if(v.name.toLowerCase === val){ equalWord = 1;} if(equalWord===0){ return v.name.toLowerCase();}}else{ return null;}})
+    if(yes===1){
     this.props.updateFilterContactsAddGroup(listContactsFecth) 
-    var listContactsFecth = [];
+    listContactsFecth = [];
     }else{
       this.props.updateFilterContactsAddGroup(listContactsFecth);  
     }
@@ -120,7 +120,6 @@ class HeaderGroupSection extends Component {
      for (var i = 0 ; i < this.listContacts.length ; i++) {
        this.listContacts[i].onEdit='0';
     }
-    let listAddContactsGroup = this.props.list_contacts_add_group;
     this.props.updateListContactsGroup(this.listContacts)
     this.props.hideSectionRight() 
   }
