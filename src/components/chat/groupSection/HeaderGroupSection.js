@@ -24,8 +24,11 @@ class HeaderGroupSection extends Component {
     this.submitCreateGroup = this.submitCreateGroup.bind(this)
     this.filterList = this.filterList.bind(this)
     this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this)
+    this.clearClose.bind(this)
     this.listContacts = []
     this.assingedIds = []
+    this.list_contacts_add_group = [];
+    this.notDisplayUsers = 0;
   }
 
   deleteContactListCreateGroup(idContact) {
@@ -86,8 +89,11 @@ class HeaderGroupSection extends Component {
     this.setState({
       showModalCreateGroup: false
     })
-    this.props.hideSectionRight()
+    
+    this.clearClose()
+   
     this.props.showAlertGeneral('Se creo el nuevo grupo ' + name)
+   
   }
 
   renderBodyCreateGroup = () => {
@@ -99,13 +105,31 @@ class HeaderGroupSection extends Component {
   }
 
   filterList(event) {
-    const val = event.target.value.toLowerCase()
-    var listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
-    this.props.updateFilterContactsAddGroup(listContactsFecth)
+    const val = event.target.value.toLowerCase();
+    var yes = 0;
+    var listContactsFecth = [];
+    var equalWord = 0;
+    var listContactsFecth = this.props.list_contacts.filter(v => { if(v.name.toLowerCase().indexOf(val) !== -1) { yes = 1 ; if(v.name.toLowerCase === val){ equalWord = 1;} if(equalWord==0){ return v.name.toLowerCase();}}else{ return '';}})
+    if(yes==1){
+    this.props.updateFilterContactsAddGroup(listContactsFecth) 
+    var listContactsFecth = [];
+    }else{
+      this.props.updateFilterContactsAddGroup(listContactsFecth);  
+    }
+  }
+
+  clearClose (){
+     this.listContacts = this.props.list_contacts;
+     for (var i = 0 ; i < this.listContacts.length ; i++) {
+       this.listContacts[i].onEdit='0';
+    }
+    let listAddContactsGroup = this.props.list_contacts_add_group;
+    this.props.updateListContactsGroup(this.listContacts)
+    this.props.hideSectionRight() 
   }
 
   render() {
-    const list_contacts_add_group = this.props.list_contacts_add_group
+    this.list_contacts_add_group = this.props.list_contacts_add_group;
     return (
       <div className="main-header-group-section">
         <div className="resendTo">
@@ -117,7 +141,7 @@ class HeaderGroupSection extends Component {
             this.typeText === "resendTo" ? <span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span> : null
 
           }
-          <img src={this.props.cancel_icon} className="closeGroup" onClick={this.props.hideSectionRight} alt="addGroup" />
+          <img src={this.props.cancel_icon} className="closeGroup" onClick={this.clearClose.bind(this)} alt="addGroup" />
         </div>
         <div className="grid-container-header-section">
           <div className="block-right"></div>
@@ -131,9 +155,9 @@ class HeaderGroupSection extends Component {
 
             }
             <div className="grow-group">
-              {list_contacts_add_group !== null ?
-                list_contacts_add_group.map(contact =>
-                  <ContactAddGroup key={contact.id} contact={contact} onClick={this.deleteContactListCreateGroup} />
+              {this.list_contacts_add_group !== null && this.notDisplayUsers ===0?
+                this.list_contacts_add_group.map(contact =>
+                  <ContactAddGroup key={contact.id} contact={contact} matched = {this.matched} onClick={this.deleteContactListCreateGroup} />
                 ) : null}
             </div>
             {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup()} /> : null}
@@ -162,7 +186,7 @@ const mapDispatchToProps = dispatch => {
     },
     updateListContactsAddGroup: (listContacts) => {
       dispatch(updateListContactsAddGroup(listContacts))
-    },
+    },   
     addContact: (newContact) => {
       dispatch(addContact(newContact))
     },
