@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
+import hideAlertGeneral from '../../../redux/actions/alertGeneral/hideAlertGeneral'
+import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
     constructor(props) {
@@ -9,14 +11,20 @@ class dotsMenuContact extends Component {
             showModal: false,
             showMenu: false,
         }
-        this.position = {bottom:'0px'};
+        this.position = { bottom: '0px' };
         this.coordenate = { x: 0, y: 0 };
     }
 
     toggleMenu = () => {
+        var actualStatusShowMenu = !this.state.showMenu
         this.setState({
-            showMenu: !this.state.showMenu
-        });
+            showMenu: actualStatusShowMenu
+        })
+        if (actualStatusShowMenu === true) {
+            if (this.props.alertGeneral.show === true) {
+                this.props.hideAlertGeneral()
+            }
+        }
     }
 
     isBottom(el) {
@@ -34,24 +42,24 @@ class dotsMenuContact extends Component {
     }
 
     _onMouseMove(e) {
-        this.coordenate= { x: e.screenX, y: e.screenY };
+        this.coordenate = { x: e.screenX, y: e.screenY };
     }
 
     onMouse = () => {
         let windowHeight = window.outerHeight;
         let currentBounding = this.dots.getBoundingClientRect();
-        let difference = windowHeight-currentBounding.bottom;
-        
-        if(difference<=390){
-           this.position = {bottom:'167px'};    
+        let difference = windowHeight - currentBounding.bottom;
+
+        if (difference <= 390) {
+            this.position = { bottom: '167px' };
         }
-        else if(difference<= 380){
-           this.position = {bottom:'167px'}; 
-        } 
-        else if(difference<=350){
-           this.position = {bottom:'165px'}
-        }else if(difference<=300){
-           this.position = {bottom:'155px'};    
+        else if (difference <= 380) {
+            this.position = { bottom: '167px' };
+        }
+        else if (difference <= 350) {
+            this.position = { bottom: '165px' }
+        } else if (difference <= 300) {
+            this.position = { bottom: '155px' };
         }
     }
 
@@ -99,4 +107,14 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(dotsMenuContact)
+const mapDispatchToProps = dispatch => {
+    return {
+        hideAlertGeneral: () => {
+            dispatch(hideAlertGeneral())
+        },
+        showAlertGeneral: (msj) => {
+            dispatch(showAlertGeneral(msj))
+        },
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(dotsMenuContact)
