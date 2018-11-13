@@ -10,13 +10,16 @@
   margin-top: 8px;
 }
 
-.contact-chat:hover{
+.selected-contact-chat {
+  background-color: #86aedf;
+}
+.contact-chat:hover {
   background-color: #d9e6f5;
 }
 
 .grid-container-contact-chat {
   display: grid;
-  float:left;
+  float: left;
   grid-template-areas:
     "icon-contact name-contact day-last-message btns-options"
     "icon-contact last-message count-message btns-options";
@@ -28,7 +31,6 @@
   margin-right: 0px;
   margin-bottom: 0px;
 }
-
 
 .btns-options {
   grid-area: btns-options;
@@ -77,21 +79,21 @@
 .day-last-message {
   grid-area: day-last-message;
   justify-self: end;
-  float:right;
-  margin-top:8px;
-  margin-right:8px;
-  width:85px;
-  height:20px;
+  float: right;
+  margin-top: 8px;
+  margin-right: 8px;
+  width: 85px;
+  height: 20px;
 }
 .day-last-message > p {
   font-size: 16px;
   color: #cccccc;
 }
 
-.inPoints{
-  float:right;
-  width:auto;
-  right:0px;
+.inPoints {
+  float: right;
+  width: auto;
+  right: 0px;
 }
 
 .day-last {

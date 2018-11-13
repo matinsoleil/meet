@@ -28,7 +28,8 @@ class GeneralContactData extends Component {
             showModalFileContact: false,
             showModalDeleteConversationContact: false,
             showModalSilenceConversation: false,
-            showModalFixContact: false
+            showModalFixContact: false,
+            seletedChat: false
         }
         this.fileContact = this.fileContact.bind(this)
         this.showModalDeleteContactAction = this.showModalDeleteContactAction.bind(this)
@@ -163,6 +164,7 @@ class GeneralContactData extends Component {
         const contacts = this.props.contacts
         const contactLoad = contacts.find(item => item.id === idChat)
         this.props.fetchContact(contactLoad)
+        this.setState({seletedChat: true})
     }
 
     msjGeneralChatData = () => {
@@ -212,8 +214,10 @@ class GeneralContactData extends Component {
 
     render() {
         const idElement = this.props.chat.id
+        let seleted_chat_class = this.state.seletedChat === true ? "contact-chat selected-contact-chat" : "contact-chat";
+
         return (
-            <div className="contact-chat" ref={div => { this.bubble = div }} id={idElement} >
+            <div className={seleted_chat_class} ref={div => { this.bubble = div }} id={idElement} >
                 <div className="grid-container-contact-chat">
                     <div className="icon-contact" onClick={this.clickChat}>
                         <div className="outer-circle" >
