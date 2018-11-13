@@ -22,6 +22,7 @@ import { messageCenterReducer } from './messageCenter'
 import { customizingReducer } from './customizing'
 import { messagesOptionsReducer } from './messagesOptions'
 import { alertGeneral } from './alertGeneral'
+import { modalBoxReducer } from './modalBox';
 
 export const reducers = combineReducers({
   contacts,
@@ -32,6 +33,7 @@ export const reducers = combineReducers({
   groupsSection,
   rightSection,
   contactSection,
+  generalModal: modalBoxReducer,
   customizing: customizingReducer,
   country: countryReducer,
   countries: countriesReducer,

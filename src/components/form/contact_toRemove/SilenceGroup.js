@@ -1,5 +1,4 @@
 import React from 'react'
-import './DeleteContact.scss'
 
 let AlertSilenceGroupForm = props => {
     const { closeWindow, nameContact, leaveGroup } = props

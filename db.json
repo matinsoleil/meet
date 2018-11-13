@@ -202,6 +202,20 @@
       "message": "TypeError: Cannot read property 'conversations' of undefined",
       "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 2
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542133129,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:17)\n    in div (at GroupSectionContainer.js:16)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at RightSection.js:11)\n    in div (at RightSection.js:10)\n    in RightSection (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 3
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542133453,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:17)\n    in div (at GroupSectionContainer.js:16)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at RightSection.js:11)\n    in div (at RightSection.js:10)\n    in RightSection (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 4
     }
   ],
   "contacts": [
