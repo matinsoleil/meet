@@ -40,9 +40,12 @@ class ChatContainer extends Component {
     renderBody = (listContact, user, conversation, groups, contactSection) => {
         if (this.props.alertGeneral.show === true) {
             setTimeout(function () {
-                this.props.hideAlertGeneral()
+                if (this.props.alertGeneral.show === true) {
+                    this.props.hideAlertGeneral()
+                }
             }.bind(this), 3000)
         }
+
         return (
             <div className="main-chat">
                 <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} />

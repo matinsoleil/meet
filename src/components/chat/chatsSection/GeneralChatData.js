@@ -204,10 +204,10 @@ class GeneralContactData extends Component {
         this.showDots()
         if (this.props.chat.countMessage !== "") {
             this.props.chat["countMessage"] = ""
-            this.props.showAlertGeneral("Marcando como no leído")
+            this.props.showAlertGeneral("Marcando como leído")
         } else {
             this.props.chat["countMessage"] = null
-            this.props.showAlertGeneral("Marcando como leído")
+            this.props.showAlertGeneral("Marcando como no leído")
         }
     }
 
@@ -259,20 +259,12 @@ class GeneralContactData extends Component {
                     </div>
                     <div className="count-message" onClick={this.clickChat}>
                         {
-                            this.props.chat.countMessage !== null ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
+                            this.props.chat.countMessage !== "" ? <div className="circle-count-message"> <p className="count-message-number">{this.props.chat.countMessage}</p> </div> : null
                         }
                     </div>
                 </div>
-                {(this.state.msjChat) &&
-                    <div className="message-popup ">
-                        <p className="text-message-popup">
-                            <span className="msg"> {this.props.chat.name} </span>
-                        </p>
-                        <p className="text-message-popup">
-                            <span className="msg" onClick={this.hideMensajeGeneralClick}> Cerrar </span>
-                        </p>
-                    </div>
-                }
+
+                {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.chat.name)} /> : null}
                 {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
                 {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
                 {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
@@ -285,7 +277,6 @@ class GeneralContactData extends Component {
 
 const mapStateToProps = state => {
     return {
-        dots_menu: state.customizing.Images.dots_menu,
         status_user_icon: state.customizing.Images.status_user_attach_icon,
         mute_a_icon: state.customizing.Images.mute_a_icon,
         file_icon: state.customizing.Images.file_icon_chat,

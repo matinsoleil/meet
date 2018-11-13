@@ -34,10 +34,12 @@ class HeaderGroupSection extends Component {
   deleteContactListCreateGroup(idContact) {
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
-    for (var i = 0; i < this.listContacts.length; i++) {
-      if (this.listContacts[i].id === idContact) {
-        this.listContacts[i].onEdit = '0';
-      }
+
+    for (var i = 0 ; i < this.listContacts.length ; i++) {
+       if(this.listContacts[i].id===idContact){
+        this.listContacts[i].onEdit='0';
+       }
+
     }
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
@@ -87,7 +89,6 @@ class HeaderGroupSection extends Component {
 
   filterList(event) {
     const val = event.target.value.toLowerCase()
-    const currentGroupList = this.props.list_contacts_add_group;
     var listContactsFecth = this.props.list_contacts.filter(v => v.name.toLowerCase().includes(val));
     this.props.updateFilterContactsAddGroup(listContactsFecth)
   }
@@ -140,7 +141,7 @@ class HeaderGroupSection extends Component {
   }
 }
 const mapDispatchToProps = dispatch => {
-  var account = { onEdit: '1' };
+
   return {
     updateFilterContactsAddGroup: (listContactsFecth) => {
       dispatch(updateFilterContactsAddGroup(listContactsFecth))
