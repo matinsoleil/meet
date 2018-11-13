@@ -13,7 +13,7 @@ class ListGeneralContacts extends Component {
             <div className="main-chat-general-list-contact" >
                 {this.props.listChats.map(chat =>
                     <GeneralChatData chat={chat}
-                        key={chat.id+'-'+Math.random()}
+                        key={chat.id + '-' + Math.random()}
                     />
                 )}
             </div>

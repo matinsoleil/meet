@@ -13,6 +13,26 @@ const estado = {
 }
 export const contact = (state = estado, action) => {
     switch (action.type) {
+        case 'CLEAR_CONTACT':
+            return {
+                ...state,
+                "id": null,
+                "name": null,
+                "photo": null,
+                "status": null,
+                "label": null,
+                "dayLastMessage": null,
+                "lastMessage": null,
+                "countMessage": null,
+                "silence": null,
+                "file": null,
+                "pinner": null,
+                "chatGroups": null,
+                "imgContact": null,
+                "typeChat": null,
+                "conversations": null,
+                "contactsIds": null
+            }
         case 'FETCH_CONTACT':
             return {
                 ...state,

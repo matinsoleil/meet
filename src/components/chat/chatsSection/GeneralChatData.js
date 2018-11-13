@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './GeneralChatData.scss'
 import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
+import clearContact from '../../../redux/actions/contact/clearContact'
 import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
 import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
 import { getContact } from '../../../redux/selectors/contact'
@@ -83,6 +84,7 @@ class GeneralContactData extends Component {
             var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
             filter_contacts.splice(index_filter_contacts, 1)
         }
+        if (this.props.contact.id === this.props.chat.id) { this.props.clearContact() }
         this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name)
     }
 
@@ -102,7 +104,7 @@ class GeneralContactData extends Component {
         this.showDots()
         this.props.showModal(
             `¿Seguro que deseas eliminar el chat con ${this.props.chat.name}`,
-            [{name:'ELIMINAR',action:this.actionDeleteElementChat},{name:'CANCELAR'}],
+            [{ name: 'ELIMINAR', action: this.actionDeleteElementChat }, { name: 'CANCELAR' }],
             'Confirm');
     }
 
@@ -110,7 +112,7 @@ class GeneralContactData extends Component {
         this.showDots();
         this.props.showModal(
             `¿Seguro que deseas eliminar el historial del chat de ${this.props.chat.name}`,
-            [{name:'ELIMINAR',action:this.deleteConversationContact},{name:'CANCELAR'}],
+            [{ name: 'ELIMINAR', action: this.deleteConversationContact }, { name: 'CANCELAR' }],
             'Confirm'
         );
     }
@@ -122,7 +124,7 @@ class GeneralContactData extends Component {
         } else {
             this.props.showModal(
                 `Silenciar durante…`,
-                {Accept:{name:'Silenciar',action:this.submitCreateSilence},Cancel:{name:'Cancelar'}},
+                { Accept: { name: 'Silenciar', action: this.submitCreateSilence }, Cancel: { name: 'Cancelar' } },
                 'contact/SilenceConversation'
             );
         }
@@ -257,6 +259,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        clearContact: (infoContact) => {
+            dispatch(clearContact(infoContact))
+        },
         fetchContact: (infoContact) => {
             dispatch(fetchContact(infoContact))
         },
@@ -269,8 +274,8 @@ const mapDispatchToProps = dispatch => {
         updatePinerGroup: (id) => {
             dispatch(updatePinerGroup(id))
         },
-        showModal: (title,buttons,viewPath) =>{
-            dispatch(showModal(title,buttons,viewPath));
+        showModal: (title, buttons, viewPath) => {
+            dispatch(showModal(title, buttons, viewPath));
         }
     }
 }
