@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
 import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
-
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
 import addContact from '../../../redux/actions/contacts/addContact'
@@ -14,7 +13,6 @@ import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
 import { connect } from 'react-redux'
 import './HeaderGroupSection.scss'
-
 class HeaderGroupSection extends Component {
   constructor(props) {
     super(props)
@@ -34,10 +32,10 @@ class HeaderGroupSection extends Component {
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
 
-    for (var i = 0 ; i < this.listContacts.length ; i++) {
-       if(this.listContacts[i].id===idContact){
-        this.listContacts[i].onEdit='0';
-       }
+    for (var i = 0; i < this.listContacts.length; i++) {
+      if (this.listContacts[i].id === idContact) {
+        this.listContacts[i].onEdit = '0';
+      }
 
     }
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
@@ -85,7 +83,7 @@ class HeaderGroupSection extends Component {
       ],
       "typeChat": "2",
       "contactsIds": this.props.groupsSection.list_contacts_add_group
-      
+
     }
     this.props.addContact(newGroupElemnt)
     this.props.fetchContact(newGroupElemnt)
@@ -155,13 +153,10 @@ class HeaderGroupSection extends Component {
   }
 }
 const mapDispatchToProps = dispatch => {
-
   return {
-
     fetchContact: (infoContact) => {
       dispatch(fetchContact(infoContact))
     },
-
     updateFilterContactsAddGroup: (listContactsFecth) => {
       dispatch(updateFilterContactsAddGroup(listContactsFecth))
     },
