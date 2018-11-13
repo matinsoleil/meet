@@ -21,6 +21,7 @@ import ContactSectionContainer from '../components/chat/chatsSection/ContactSect
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
 import { getRightSection } from '../redux/selectors/rightSection'
 import RightSection from '../components/chat/rightSection/RightSection';
+import ModalBox from '../components/modals/ModalBox';
 
 class ChatContainer extends Component {
     componentDidMount() {
@@ -56,6 +57,7 @@ class ChatContainer extends Component {
                     </div>
                     : null
                 }
+                <ModalBox/>
             </div>
         );
     }
@@ -96,7 +98,7 @@ const mapStateToProps = (state) => {
         alertGeneral: getAlertGeneral(state),
         rightSection: getRightSection(state),
         contactSection: getContactSection(state),
-        server: { serverName: '192.168.23.77', port: '8888' },
+        server: { serverName: '192.168.21.150', port: '8888' },
     }
 }
 

@@ -4,6 +4,7 @@ import DotsMenu from './dotsMenu';
 import AudioMessage from './messagesTypes/audioMessage';
 import ReplyMessage from './messagesTypes/replayMessage';
 import FileHelper from './../../../../lib/helper/fileHelper';
+import FileMessage from './messagesTypes/fileMessage';
 import MapPosition from './../../../../lib/helper/mapPosition';
 import { filterMessages } from '../../../../redux/actions/messagesOptions/messagesOptions';
 
@@ -58,11 +59,12 @@ class Message extends Component {
     render() {
         let { id, message, hour } = this.props.messageObject;
         let { type, tail, tailType, user_icon } = this.props;
+        if(message.type)message.hour=hour;
         return (
             <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row">
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
-                    <div className={`message-wrapper ${(message.type) ? 'no-text' : ''}`}>
+                    <div className={`message-wrapper ${(message.type) ? (message.type==='3')?'file-message':'no-text' : ''}`}>
                         <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>
                         <div className="message">{
                             !(message instanceof Object) ? message : this.MessageContent(message, id, this.props.contacts)
@@ -105,16 +107,17 @@ class Message extends Component {
                 );
             case "3":
                 return (
-                    <div className="file">
-                        <img src={this.props.file_icon} alt="file-icon" />
-                        <div className="file-info">
-                            <a href={message.blobURL} download={message.fileName} className="download-icon">
-                                <img src={this.props.download_icon} alt="" />
-                            </a>
-                            <span>{FileHelper.humanFileSize(message.size, true)}</span>
-                            <span>{message.fileName.split('.')[0]}</span>
-                        </div>
-                    </div>
+                    // <div className="file">
+                    //     <img src={this.props.file_icon} alt="file-icon" />
+                    //     <div className="file-info">
+                    //         <a href={message.blobURL} download={message.fileName} className="download-icon">
+                    //             <img src={this.props.download_icon} alt="" />
+                    //         </a>
+                    //         <span>{FileHelper.humanFileSize(message.size, true)}</span>
+                    //         <span>{message.fileName.split('.')[0]}</span>
+                    //     </div>
+                    // </div>
+                    <FileMessage id={id} message={message} />
                 );
             case "4":
                 return (

@@ -299,6 +299,11 @@
         flex-flow: column !important;
       }
     }
+    .file-message{
+      div.time-content{
+        display: none !important;
+      }
+    }
     .message-in{
       margin-left: auto;
       order: 2;

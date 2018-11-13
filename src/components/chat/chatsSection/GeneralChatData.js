@@ -4,16 +4,12 @@ import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
 import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
-import ModalBox from '../../modals/ModalBox'
 import { getContacts } from '../../../redux/selectors/contacts'
 import { getContactSection } from '../../../redux/selectors/contactSection'
-import DeleteContact from '../../../components/form/contact/DeleteContact'
-import SilenceGroup from '../../../components/form/contact/SilenceGroup'
-import DeleteConversationContact from '../../../components/form/contact/DeleteConversationContact'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
-import SilenceConversation from '../../../components/form/contact/SilenceConversation'
-
+import { showModal } from '../../../redux/actions/modalBox/modalBox';
 import { connect } from 'react-redux'
+
 class GeneralContactData extends Component {
     constructor(...props) {
         super(...props)
@@ -91,54 +87,31 @@ class GeneralContactData extends Component {
 
     submitCreateSilence = (values) => {
         this.props.chat["silence"] = values.timeSilence
-        this.setState({
-            showModalSilenceConversation: false
-        });
+        this.props.showModal();
         this.props.showAlertGeneral("Silenciaste el chat")
         this.showDots()
     }
 
-    renderBodySilenceConversation = () => {
-        return (<SilenceConversation onSubmit={this.submitCreateSilence} closeWindow={this.closeModalSilenceConversationAction} />)
-    }
-
-    renderBodyLeaveGroup = () => {
-        return (<SilenceGroup closeWindow={this.closeModalLeaveGroupAction} nameContact={this.props.chat.name} leaveGroup={this.leaveGroup} />)
-    }
-
-    renderBodyDeleteGroup = () => {
-        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={this.props.chat.name} deleteContact={this.actionDeleteElementChat} />)
-    }
-
-    renderBodyDeleteContact = () => {
-
-        return (<DeleteContact closeWindow={this.closeModalDeleteContactAction} nameContact={this.props.chat.name} deleteContact={this.actionDeleteElementChat} />)
-    }
-
-    renderBodyDeleteConversationContact = () => {
-        return (<DeleteConversationContact closeWindow={this.closeModalDeleteConversationContactAction} id={this.props.chat.id} nameContact={this.props.chat.name} deleteConversationContact={this.deleteConversationContact} />)
-    }
-
     deleteConversationContact = () => {
-        this.props.showAlertGeneral('Historial del chat eliminado')
-        this.setState({
-            showModalDeleteConversationContact: false
-        });
+        this.props.showAlertGeneral('Historial del chat eliminado');
         this.showDots()
     }
 
     showModalDeleteContactAction = () => {
         this.showDots()
-        this.setState({
-            showModalDeleteContact: true
-        })
+        this.props.showModal(
+            `¿Seguro que deseas eliminar el chat con ${this.props.chat.name}`,
+            [{name:'ELIMINAR',action:this.actionDeleteElementChat},{name:'CANCELAR'}],
+            'Confirm');
     }
 
     showModalDeleteConversationContactAction = () => {
-        this.showDots()
-        this.setState({
-            showModalDeleteConversationContact: true
-        });
+        this.showDots();
+        this.props.showModal(
+            `¿Seguro que deseas eliminar el historial del chat de ${this.props.chat.name}`,
+            [{name:'ELIMINAR',action:this.deleteConversationContact},{name:'CANCELAR'}],
+            'Confirm'
+        );
     }
 
     showModalSilenceConversationAction = () => {
@@ -146,9 +119,11 @@ class GeneralContactData extends Component {
             this.props.chat["silence"] = "0"
             this.props.showAlertGeneral("Cancelaste el silencio del chat")
         } else {
-            this.setState({
-                showModalSilenceConversation: true
-            });
+            this.props.showModal(
+                `Silenciar durante…`,
+                {Accept:{name:'Silenciar',action:this.submitCreateSilence},Cancel:{name:'Cancelar'}},
+                'contact/SilenceConversation'
+            );
         }
     }
 
@@ -260,13 +235,6 @@ class GeneralContactData extends Component {
                         }
                     </div>
                 </div>
-
-                {this.state.showModalFileContact ? <ModalBox body={this.renderBodyFileContact(this.props.chat.name)} /> : null}
-                {this.state.showModalSilenceConversation ? <ModalBox body={this.renderBodySilenceConversation(this.props.chat.id)} /> : null}
-                {this.state.showModalDeleteConversationContact ? <ModalBox body={this.renderBodyDeleteConversationContact(this.props.chat.id)} /> : null}
-                {this.state.showModalDeleteContact ? <ModalBox body={this.renderBodyDeleteContact()} /> : null}
-                {this.state.showModalDeleteGroup ? <ModalBox body={this.renderBodyDeleteGroup()} /> : null}
-                {this.state.showModalLeaveGroup ? <ModalBox body={this.renderBodyLeaveGroup()} /> : null}
             </div>
         )
     }
@@ -295,6 +263,9 @@ const mapDispatchToProps = dispatch => {
         },
         updatePinerGroup: (id) => {
             dispatch(updatePinerGroup(id))
+        },
+        showModal: (title,buttons,viewPath) =>{
+            dispatch(showModal(title,buttons,viewPath));
         }
     }
 }

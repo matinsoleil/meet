@@ -1,0 +1,43 @@
+.title-name-group {
+    width: 296px;
+    height: 24px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.87);
+}
+.input-name-group {
+    width: 255px;
+    height: 24px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.54);
+}
+.from-create-group-btn {
+  background-color: #ffffff;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  color: #5886c0;
+  padding: 10px;
+  font-size: 16px;
+  border-color: #ffffff;
+}
+
+
+.warning {
+    color: #d4c04a;
+}
+
+.error{
+    color: #af1616;
+}

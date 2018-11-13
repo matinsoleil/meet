@@ -4,13 +4,13 @@ import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRig
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
 import addContact from '../../../redux/actions/contacts/addContact'
-import CreateGroupForm from '../../form/group/CreateGroupForm'
-import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
+//import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
 import ModalBoxChat from '../../modals/ModalBox'
 import { connect } from 'react-redux'
+import { showModal } from '../../../redux/actions/modalBox/modalBox';
 import './HeaderGroupSection.scss'
 
 class HeaderGroupSection extends Component {
@@ -20,9 +20,15 @@ class HeaderGroupSection extends Component {
     this.typeButton = 'aceptTo'
     this.state = { showModalCreateGroup: false }
     this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this)
-    this.closeWindowFormCreateGroup = this.closeWindowFormCreateGroup.bind(this)
     this.submitCreateGroup = this.submitCreateGroup.bind(this)
     this.filterList = this.filterList.bind(this)
+    this.listContacts = []
+    this.assingedIds = []
+    this.modalModel = {
+      title: 'Escribe el nombre del grupo',
+      buttons: { Accept: { name: 'Aceptar', action: this.submitCreateGroup }, Cancel: { name: 'Cancelar' } },
+      viewPath: '',
+    }
     this.openWindowFormCreateGroup = this.openWindowFormCreateGroup.bind(this)
     this.clearClose.bind(this)
     this.listContacts = []
@@ -51,18 +57,6 @@ class HeaderGroupSection extends Component {
     console.log(values)
   }
 
-  openWindowFormCreateGroup() {
-    this.setState({
-      showModalCreateGroup: true
-    })
-  }
-
-  closeWindowFormCreateGroup() {
-    this.setState({
-      showModalCreateGroup: false
-    })
-  }
-
   submitCreateGroup = values => {
     const name = values.nameGroup
     const id = Math.floor(+new Date() / 1000)
@@ -85,22 +79,19 @@ class HeaderGroupSection extends Component {
       ],
       "typeChat": "2"
     }
-    this.props.addContact(newGroupElemnt)
-    this.setState({
-      showModalCreateGroup: false
-    })
-    
+    this.props.addContact(newGroupElemnt);
+    this.props.showModal();
+    this.props.hideSectionRight()
     this.clearClose()
-   
     this.props.showAlertGeneral('Se creo el nuevo grupo ' + name)
    
   }
 
-  renderBodyCreateGroup = () => {
+  viewPathRender = () => {
     if (this.props.list_contacts_add_group.length === 0) {
-      return (<AlertCreateGroupForm closeWindow={this.closeWindowFormCreateGroup} />)
+      this.modalModel.viewPath = `group/AlertCreateGroupForm`;
     } else {
-      return (<CreateGroupForm onSubmit={this.submitCreateGroup} closeWindow={this.closeWindowFormCreateGroup} />)
+      this.modalModel.viewPath = `group/CreateGroupForm`;
     }
   }
 
@@ -150,7 +141,10 @@ class HeaderGroupSection extends Component {
               this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon} alt="addGroup" /> : null
             }
             {
-              this.typeButton === "aceptTo" ? <button className="acceptAddGroup" onClick={this.openWindowFormCreateGroup} >{'Aceptar'}</button> : null
+              this.typeButton === "aceptTo" ? <button className="acceptAddGroup" onClick={() => {
+                this.viewPathRender();
+                this.props.showModal(this.modalModel.title, this.modalModel.buttons, this.modalModel.viewPath);
+              }} >{'Aceptar'}</button> : null
 
             }
             <div className="grow-group">
@@ -192,6 +186,9 @@ const mapDispatchToProps = dispatch => {
     showAlertGeneral: (msj) => {
       dispatch(showAlertGeneral(msj))
     },
+    showModal: (title, buttons, viewPath) => {
+      dispatch(showModal(title, buttons, viewPath));
+    }
   }
 }
 
