@@ -74,7 +74,7 @@ const mapDispatchToProps = dispatch => {
         },
         showSectionGroups: () => {
             dispatch(showSectionGroups())
-        },       
+        },
         updateFilterContactSection: (listaContact) => {
             dispatch(updateFilterContactSection(listaContact))
         },

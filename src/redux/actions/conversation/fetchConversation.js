@@ -9,17 +9,17 @@ export const fetchConversation = () => dispatch => {
 }
 
 // export const addMessage = (message) => {  
-    //connection.send(JSON.stringify(message))
-export const addMessage = (conversationId,message) => {
-    return{
-        type: FETCH_CONVERSATION+'_ADD',
-        payload:{conversationId,message}
+//connection.send(JSON.stringify(message))
+export const addMessage = (conversationId, message) => {
+    return {
+        type: FETCH_CONVERSATION + '_ADD',
+        payload: { conversationId, message }
     }
 }
 
-export const deleteMessage = (conversationId,messageId) => {
-    return{
+export const deleteMessage = (conversationId, messageId) => {
+    return {
         type: DELETE_MESSAGE,
-        payload: {conversationId,messageId}
+        payload: { conversationId, messageId }
     }
 }

@@ -1,7 +1,6 @@
 import { handleActions } from 'redux-actions';
 import { FETCH_CONVERSATION, DELETE_MESSAGE, DELETE_CONVERSATION, ADD_CONVERSATION } from '../actionstypes';
 import DatabaseManage from '../../lib/databaseManager';
-
 let mapActions = new Map([
     [
         FETCH_CONVERSATION + '_FULFILLED',
@@ -18,7 +17,6 @@ let mapActions = new Map([
             }
         },
     ],
-// 
     [
         ADD_CONVERSATION,
         (state, action) => {
@@ -26,7 +24,6 @@ let mapActions = new Map([
             return [...state]
         },
     ],
-// 
     [
         DELETE_CONVERSATION,
         (state, action) => [...action.payload]
@@ -44,7 +41,6 @@ let mapActions = new Map([
         }
     ],
 ]);
-
 export const restoreKey = FETCH_CONVERSATION + '_FULFILLED';
 export const defaultValue = [];
 DatabaseManage.mapping('conversation', [
