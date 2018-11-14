@@ -5,13 +5,13 @@ import './AlertCreateGroupForm.scss'
 
 let AlertCreateGroupForm = props => {
     return (
-        <div className="contentModal">
+        <div className="modal-content">
              <span className="contentAnswer" > 
             <p className="title-name-group">Debe seleccionar un contacto</p>
             </span> 
-            <span className="contentResponse">
+            <span className="button-section">
             <p>
-                <button className="from-create-group-btn" onClick={props.showModal}>CERRAR</button>
+                <button onClick={props.showModal}>CERRAR</button>
             </p>
             </span>
         </div>

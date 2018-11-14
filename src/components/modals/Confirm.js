@@ -9,7 +9,6 @@ class Confirm extends Component {
                 <div className="title">{this.props.title}</div>
                 <div className="button-section">
                     {(this.props.buttons) && this.props.buttons.map((c, key) => {
-                        console.log(c)
                         return <button key={key} onClick={() => {
                             (c.action) && c.action();
                             this.props.showModal();

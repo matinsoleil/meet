@@ -5,11 +5,9 @@ import fetchContact from '../../../redux/actions/contact/fetchContact'
 import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
 import addContact from '../../../redux/actions/contacts/addContact'
-//import AlertCreateGroupForm from '../../form/group/AlertCreateGroupForm'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
-import ModalBoxChat from '../../modals/ModalBox'
 import { connect } from 'react-redux'
 import { showModal } from '../../../redux/actions/modalBox/modalBox';
 import './HeaderGroupSection.scss'
@@ -19,9 +17,6 @@ class HeaderGroupSection extends Component {
     this.typeText = 'addTo'
     this.typeButton = 'aceptTo'
     this.state = { showModalCreateGroup: false }
-    this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this)
-    this.submitCreateGroup = this.submitCreateGroup.bind(this)
-    this.filterList = this.filterList.bind(this)
     this.listContacts = []
     this.assingedIds = []
     this.modalModel = {
@@ -29,14 +24,13 @@ class HeaderGroupSection extends Component {
       buttons: { Accept: { name: 'Aceptar', action: this.submitCreateGroup }, Cancel: { name: 'Cancelar' } },
       viewPath: '',
     }
-    this.clearClose.bind(this)
     this.listContacts = []
     this.assingedIds = []
     this.list_contacts_add_group = [];
     this.notDisplayUsers = 0;
   }
 
-  deleteContactListCreateGroup(idContact) {
+  deleteContactListCreateGroup = (idContact) => {
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
 
@@ -44,7 +38,6 @@ class HeaderGroupSection extends Component {
       if (this.listContacts[i].id === idContact) {
         this.listContacts[i].onEdit = '0';
       }
-
     }
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
@@ -83,14 +76,11 @@ class HeaderGroupSection extends Component {
     }
     this.props.addContact(newGroupElemnt)
     this.props.fetchContact(newGroupElemnt)
-    this.setState({
-      showModalCreateGroup: false
-    })
     this.props.showModal();
     this.props.hideSectionRight()
     this.clearClose()
     this.props.showAlertGeneral('Se creo el nuevo grupo ' + name)
-   
+
   }
 
   viewPathRender = () => {
@@ -101,27 +91,27 @@ class HeaderGroupSection extends Component {
     }
   }
 
-  filterList(event) {
+  filterList = (event) => {
     const val = event.target.value.toLowerCase();
     var yes = 0;
     var listContactsFecth = [];
     var equalWord = 0;
-    listContactsFecth = this.props.list_contacts.filter(v => { if(v.name.toLowerCase().indexOf(val) !== -1) { yes = 1 ; if(v.name.toLowerCase === val){ equalWord = 1;} if(equalWord===0){ return v.name.toLowerCase();}}else{ return null;}})
-    if(yes===1){
-    this.props.updateFilterContactsAddGroup(listContactsFecth) 
-    listContactsFecth = [];
-    }else{
-      this.props.updateFilterContactsAddGroup(listContactsFecth);  
+    listContactsFecth = this.props.list_contacts.filter(v => { if (v.name.toLowerCase().indexOf(val) !== -1) { yes = 1; if (v.name.toLowerCase === val) { equalWord = 1; } if (equalWord === 0) { return v.name.toLowerCase(); } } else { return null; } })
+    if (yes === 1) {
+      this.props.updateFilterContactsAddGroup(listContactsFecth)
+      listContactsFecth = [];
+    } else {
+      this.props.updateFilterContactsAddGroup(listContactsFecth);
     }
   }
 
-  clearClose (){
-     this.listContacts = this.props.list_contacts;
-     for (var i = 0 ; i < this.listContacts.length ; i++) {
-       this.listContacts[i].onEdit='0';
+  clearClose = () => {
+    this.listContacts = this.props.list_contacts;
+    for (var i = 0; i < this.listContacts.length; i++) {
+      this.listContacts[i].onEdit = '0';
     }
     this.props.updateListContactsGroup(this.listContacts)
-    this.props.hideSectionRight() 
+    this.props.hideSectionRight()
   }
 
   render() {
@@ -129,37 +119,31 @@ class HeaderGroupSection extends Component {
     return (
       <div className="main-header-group-section">
         <div className="resendTo">
-          {
-
-            this.typeText === "addTo" ? <span className="content-resendTo"><p className="text-resendTo">Agregar a:</p><p className="user-resendTo"></p></span> : null
-          }
-          {
-            this.typeText === "resendTo" ? <span className="content-resendTo"><p className="text-resendTo">Reenviar a:</p><p className="user-resendTo"></p></span> : null
-
-          }
-          <img src={this.props.cancel_icon} className="closeGroup" onClick={this.clearClose.bind(this)} alt="addGroup" />
+          <span className="content-resendTo"><p className="text-resendTo">{this.props.title}</p><p className="user-resendTo"></p></span>
+          <img src={this.props.cancel_icon} className="closeGroup" onClick={this.clearClose} alt="addGroup" />
         </div>
         <div className="grid-container-header-section">
           <div className="block-right"></div>
           <div className="header-group" >
             {
-
               this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon} alt="addGroup" /> : null
             }
             {
               this.typeButton === "aceptTo" ? <button className="acceptAddGroup" onClick={() => {
                 this.viewPathRender();
-                this.props.showModal(this.modalModel.title, this.modalModel.buttons, this.modalModel.viewPath);
+                this.props.showModal(
+                  this.modalModel.title,
+                  this.modalModel.buttons,
+                  this.modalModel.viewPath);
               }} >{'Aceptar'}</button> : null
 
             }
             <div className="grow-group">
-              {this.list_contacts_add_group !== null && this.notDisplayUsers ===0?
+              {this.list_contacts_add_group !== null && this.notDisplayUsers === 0 ?
                 this.list_contacts_add_group.map(contact =>
-                  <ContactAddGroup key={contact.id} contact={contact} matched = {this.matched} onClick={this.deleteContactListCreateGroup} />
+                  <ContactAddGroup key={contact.id} contact={contact} matched={this.matched} onClick={this.deleteContactListCreateGroup} />
                 ) : null}
             </div>
-            {this.state.showModalCreateGroup ? <ModalBoxChat body={this.renderBodyCreateGroup()} /> : null}
           </div>
           <div className="search-contact-group">
             <div className="search-box">
@@ -187,7 +171,7 @@ const mapDispatchToProps = dispatch => {
     },
     updateListContactsAddGroup: (listContacts) => {
       dispatch(updateListContactsAddGroup(listContacts))
-    },   
+    },
     addContact: (newContact) => {
       dispatch(addContact(newContact))
     },

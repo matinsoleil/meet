@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import './ContactAddGroup.scss'
 class ContactAddGroup extends Component {
-    constructor(props) {
-        super(props);
-        this.deleteContactListCreateGroup = this.deleteContactListCreateGroup.bind(this);
-    }
-    deleteContactListCreateGroup() {
+    deleteContactListCreateGroup = () => {
         this.props.onClick(this.props.contact.id);
         this.props.contact.onEdit='0';
     }

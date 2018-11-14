@@ -191,31 +191,283 @@
   "logerror": [
     {
       "user": "[anonymous]",
-      "timestamp": 1542130913,
-      "message": "TypeError: Cannot read property 'conversations' of undefined",
-      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "timestamp": 1541116810,
+      "message": "TypeError: Cannot read property 'mediaDevices' of undefined",
+      "detail": "\n    in RecorderContent (created by Connect(RecorderContent))\n    in Connect(RecorderContent) (at footerMessagesSection.js:142)\n    in footer (at footerMessagesSection.js:106)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:47)\n    in div (at ChatContainer.js:45)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 1
     },
     {
       "user": "[anonymous]",
-      "timestamp": 1542131010,
-      "message": "TypeError: Cannot read property 'conversations' of undefined",
-      "detail": "\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:33)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "timestamp": 1541535451,
+      "message": "TypeError: undefined is not an object (evaluating 'audioElement.currentTime')",
+      "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 2
     },
     {
       "user": "[anonymous]",
-      "timestamp": 1542133129,
-      "message": "TypeError: Cannot read property 'bind' of undefined",
-      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:17)\n    in div (at GroupSectionContainer.js:16)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at RightSection.js:11)\n    in div (at RightSection.js:10)\n    in RightSection (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "timestamp": 1541535452,
+      "message": "TypeError: Cannot read property 'currentTime' of undefined",
+      "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 3
     },
     {
       "user": "[anonymous]",
-      "timestamp": 1542133453,
-      "message": "TypeError: Cannot read property 'bind' of undefined",
-      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:17)\n    in div (at GroupSectionContainer.js:16)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at RightSection.js:11)\n    in div (at RightSection.js:10)\n    in RightSection (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "timestamp": 1541537904,
+      "message": "TypeError: null is not an object (evaluating 'this.state.currentTime')",
+      "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 4
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541537905,
+      "message": "TypeError: Cannot read property 'currentTime' of null",
+      "detail": "\n    in AudioMessage (created by Connect(AudioMessage))\n    in Connect(AudioMessage) (at Message.js:103)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in div (at Message.js:63)\n    in div (at Message.js:61)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:50)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 5
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541697941,
+      "message": "TypeError: Cannot create property 'hour' on string 'I'm having a great time. How about you? What are you doing?'",
+      "detail": "\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:48)\n    in div (at ChatContainer.js:46)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:65)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 6
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541701514,
+      "message": "TypeError: Cannot read property 'toUpperCase' of undefined",
+      "detail": "\n    in FileMessage (at Message.js:120)\n    in div (at Message.js:69)\n    in div (at Message.js:67)\n    in div (at Message.js:66)\n    in div (at Message.js:64)\n    in Message (created by Connect(Message))\n    in Connect(Message) (at ChatGeneralConversationContact.js:20)\n    in div (at ChatGeneralConversationContact.js:12)\n    in ChatGeneralConversationContact (created by Connect(ChatGeneralConversationContact))\n    in Connect(ChatGeneralConversationContact) (at messagesSectionContainer.js:32)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:48)\n    in div (at ChatContainer.js:46)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:65)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 7
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541715847,
+      "message": "TypeError: Cannot read property 'title' of undefined",
+      "detail": "\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 8
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541717358,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 9
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541717517,
+      "message": "Invariant Violation: Objects are not valid as a React child (found: object with keys {dispatchConfig, _targetInst, _dispatchListeners, _dispatchInstances, nativeEvent, type, target, currentTarget, eventPhase, bubbles, cancelable, timeStamp, defaultPrevented, isTrusted, view, detail, screenX, screenY, clientX, clientY, pageX, pageY, ctrlKey, shiftKey, altKey, metaKey, getModifierState, button, buttons, relatedTarget, movementX, movementY, isDefaultPrevented, isPropagationStopped}). If you meant to render a collection of children, use an array instead.\n    in div (at ModalBox.js:29)\n    in div (at ModalBox.js:28)\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "detail": "\n    in div (at ModalBox.js:29)\n    in div (at ModalBox.js:28)\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 10
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541719781,
+      "message": "Invariant Violation: Objects are not valid as a React child (found: object with keys {name}). If you meant to render a collection of children, use an array instead.\n    in div (at ModalBox.js:11)\n    in div (at ModalBox.js:10)\n    in div (at ModalBox.js:9)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "detail": "\n    in div (at ModalBox.js:11)\n    in div (at ModalBox.js:10)\n    in div (at ModalBox.js:9)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 11
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541721440,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:14)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at GeneralChatData.js:274)\n    in div (at GeneralChatData.js:214)\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListChats.js:15)\n    in div (at ListChats.js:13)\n    in ListGeneralContacts (at ContactSectionContainer.js:58)\n    in div (at ContactSectionContainer.js:46)\n    in RightSectionContainer (created by Connect(RightSectionContainer))\n    in Connect(RightSectionContainer) (at ChatContainer.js:48)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 12
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541722633,
+      "message": "TypeError: Cannot read property 'view' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 13
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541722673,
+      "message": "TypeError: Cannot read property 'view' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 14
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541722686,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 15
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541722836,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 16
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789561,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: null.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 17
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789607,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: null.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 18
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789691,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 19
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789702,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 20
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541789741,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.\n\nCheck the render method of `ModalBox`.",
+      "detail": "\n    in div (at ModalBox.js:27)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 21
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541791473,
+      "message": "TypeError: Cannot read property 'viewPath' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 22
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541791483,
+      "message": "TypeError: Cannot read property 'viewPath' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 23
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1541791556,
+      "message": "TypeError: Cannot read property 'viewPath' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 24
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044185,
+      "message": "TypeError: Cannot read property 'showModal' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 25
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044312,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 26
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044436,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 27
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044817,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 28
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542044930,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 29
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542045089,
+      "message": "TypeError: console.log(...) is not a function",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 30
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542045143,
+      "message": "TypeError: console.log(...) is not a function",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 31
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542046609,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 32
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542047054,
+      "message": "TypeError: Cannot read property 'Accept' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 33
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542052828,
+      "message": "TypeError: Cannot read property 'buttons' of undefined",
+      "detail": "\n    in CreateGroupForm (created by Form(CreateGroupForm))\n    in Form(CreateGroupForm) (created by Connect(Form(CreateGroupForm)))\n    in Connect(Form(CreateGroupForm)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 34
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542054879,
+      "message": "TypeError: Cannot read property 'action' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 35
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542056454,
+      "message": "TypeError: Cannot read property 'action' of undefined",
+      "detail": "\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 36
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542056544,
+      "message": "TypeError: this.props.buttons.map is not a function",
+      "detail": "\n    in Confirm (created by Connect(Confirm))\n    in Connect(Confirm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:57)\n    in div (at ChatContainer.js:47)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:67)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 37
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542131669,
+      "message": "TypeError: Cannot read property 'showModal' of undefined",
+      "detail": "\n    in SilenceConversation (created by Form(SilenceConversation))\n    in Form(SilenceConversation) (created by Connect(Form(SilenceConversation)))\n    in Connect(Form(SilenceConversation)) (created by ReduxForm)\n    in ReduxForm (created by Connect(ReduxForm))\n    in Connect(ReduxForm) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:60)\n    in div (at ChatContainer.js:50)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:70)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 38
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542132876,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:17)\n    in div (at GroupSectionContainer.js:16)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at RightSection.js:11)\n    in div (at RightSection.js:10)\n    in RightSection (at ChatContainer.js:53)\n    in div (at ChatContainer.js:50)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:70)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 39
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542149074,
+      "message": "TypeError: this.props.fetchContact is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 40
     }
   ],
   "contacts": [
@@ -224,14 +476,16 @@
       "name": "Zapata",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 1",
+      "label": "label",
       "dayLastMessage": "Ayer",
       "lastMessage": "Last Message",
-      "countMessage": "",
+      "countMessage": "0",
       "silence": "1",
       "file": "0",
       "pinner": "1",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKOA3tAE8n9J_1MXpJ3CDH-GT3cWysa0Il7dpNksxpTlyugDgp",
       "typeChat": "1",
       "conversations": "1"
@@ -241,14 +495,16 @@
       "name": "Gilsela",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 2",
+      "label": "label",
       "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8VYC6NgcgkwxTojYdGgUb6vHSFGkJEmuPkStVsMerPyxnnK1Vfg",
       "typeChat": "1",
       "conversations": "2"
@@ -258,14 +514,16 @@
       "name": "Javo",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 3",
+      "label": "label",
       "dayLastMessage": "22 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
       "silence": "3",
       "file": "1",
       "pinner": "1",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtcMa1tiLUbwXqTMfxr0FoUKZcHFhu2wInV9MTEzZbfm1eAzXWQ",
       "typeChat": "1",
       "conversations": "3"
@@ -275,14 +533,16 @@
       "name": "Antonio L",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 4",
+      "label": "label",
       "dayLastMessage": "18 min",
       "lastMessage": "Last Message",
-      "countMessage": "",
+      "countMessage": "0",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AMknsVJTTstO5ex2h7DdYmiA-rmqzmXcsRwDm7nCc-mbQgv3",
       "typeChat": "1",
       "conversations": "4"
@@ -292,14 +552,16 @@
       "name": "Rosa",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 5",
+      "label": "label",
       "dayLastMessage": "Ayer",
       "lastMessage": "Last Message",
-      "countMessage": "",
+      "countMessage": "0",
       "silence": "0",
       "file": "0",
       "pinner": "1",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrremDO1rZJn57FqEVQqS-HZSFBef6Uok3yesoyqgNUEgRU7-tQ",
       "typeChat": "1",
       "conversations": "5"
@@ -309,14 +571,16 @@
       "name": "Irving",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 6",
+      "label": "label",
       "dayLastMessage": "5 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn4gRO_bIr2YLXI4-0_NmlZQw55vKYXLCppLfMtq10bmZ-TsiD",
       "typeChat": "1",
       "conversations": "6"
@@ -326,14 +590,16 @@
       "name": "Cesar",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 7",
+      "label": "label",
       "dayLastMessage": "6 min",
       "lastMessage": "Last Message",
       "countMessage": "5",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMybaKtUQwGjyL2fXA7ZNY7J_vM_LSi3ToZnJ6aa6viL9FUDEf",
       "typeChat": "1",
       "conversations": "7"
@@ -342,15 +608,17 @@
       "id": "8",
       "name": "Amilcar",
       "photo": "ruta",
-      "status": "Status test 8",
-      "label": "label contact 8",
+      "status": "Status test",
+      "label": "label",
       "dayLastMessage": "7 min",
       "lastMessage": "Last Message",
       "countMessage": "10",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4e-0MFbXTwq4C_tb8NoWvmiTOyigeoBMDqd7uXhwcAjXDViN-",
       "typeChat": "1",
       "conversations": null
@@ -360,14 +628,16 @@
       "name": "Antonio U",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 9",
+      "label": "label",
       "dayLastMessage": "20 min",
       "lastMessage": "Last Message",
       "countMessage": "22",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       "typeChat": "1",
       "conversations": null
@@ -377,14 +647,16 @@
       "name": "Antonio Q",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 50",
+      "label": "label",
       "dayLastMessage": "8 min",
       "lastMessage": "Last Message",
       "countMessage": "92",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       "typeChat": "1",
       "conversations": null
@@ -394,14 +666,16 @@
       "name": "Antonio V",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 59",
+      "label": "label",
       "dayLastMessage": "8 min",
       "lastMessage": "Last Message",
       "countMessage": "6",
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       "typeChat": "1",
       "conversations": null
@@ -411,14 +685,16 @@
       "name": "Antonio M",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 69",
+      "label": "label",
       "dayLastMessage": "8 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       "typeChat": "1",
       "conversations": null
@@ -428,14 +704,16 @@
       "name": "Fernanda",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 10",
+      "label": "label",
       "dayLastMessage": "9 min",
       "lastMessage": "Last Message",
-      "countMessage": "",
+      "countMessage": "0",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn3qmREi6Bag9BxxTvSCdXKqL8G2mBNjSFMi1nBZ1r92jNniSwnw",
       "typeChat": "1",
       "conversations": null
@@ -445,14 +723,16 @@
       "name": "Maria",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 11",
+      "label": "label",
       "dayLastMessage": "18 min",
       "lastMessage": "Last Message",
       "countMessage": "7",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsAUelg7yg0mepGMf-N93hh6E9XrLnKwsKa4YEQ6swhDknk4F9eQ",
       "typeChat": "1",
       "conversations": null
@@ -462,14 +742,16 @@
       "name": "Teresa",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 12",
+      "label": "label",
       "dayLastMessage": "6 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfBlwiKYPWMTt6ROM1-piJUzikE0EaNzi_LnnUGrIYh-aefUqB",
       "typeChat": "1",
       "conversations": null
@@ -479,16 +761,15 @@
       "name": "Juana",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 13",
+      "label": "label",
       "dayLastMessage": "7 min",
       "lastMessage": "Last Message",
-      "countMessage": "",
+      "countMessage": "0",
       "silence": "0",
       "file": "0",
       "pinner": "0",
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ",
       "typeChat": "1",
-      "contactsIds": null,
       "conversations": null
     },
     {
@@ -496,14 +777,16 @@
       "name": "Tania",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 14",
+      "label": "label",
       "dayLastMessage": "1 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLvMsmKCKx17K2ECuG7LoUmEiviXKwqIccgrm9naAQKnku0G2yMQ",
       "typeChat": "1",
       "conversations": null
@@ -513,14 +796,16 @@
       "name": "Margarita",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 15",
+      "label": "label",
       "dayLastMessage": "0 min",
       "lastMessage": "Last Message",
       "countMessage": "29",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP-bUtMrovoWkw733UD5sQCF6aaw5VCug-B8Wi3CCvAtaBpS8JMA",
       "typeChat": "1",
       "conversations": null
@@ -530,14 +815,16 @@
       "name": "Elvia",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 16",
+      "label": "label",
       "dayLastMessage": "5 min",
       "lastMessage": "Last Message",
       "countMessage": "42",
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaFjQ9clTxmrIS87TaIYrymyvb3lVBa8yUaQ8ioHqFccj9pCWX",
       "typeChat": "1",
       "conversations": null
@@ -547,14 +834,16 @@
       "name": "Yuridia",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 17",
+      "label": "label",
       "dayLastMessage": "6 min",
       "lastMessage": "Last Message",
       "countMessage": "52",
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSCDTJFjmSOib_a-T764n2AYQRIX-nMO3yMoF1K4EHrQyVTxsz",
       "typeChat": "1",
       "conversations": null
@@ -564,14 +853,16 @@
       "name": "Test contact 18 test contact 18",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 18",
+      "label": "label",
       "dayLastMessage": "7 min",
       "lastMessage": "Last Message",
       "countMessage": "72",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ByyxctCPUvbgtE3yRiAbOLws_steoWeLybXvzUZvXDylO8ZU",
       "typeChat": "1",
       "conversations": null
@@ -581,14 +872,16 @@
       "name": "Test contact 19",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 19",
+      "label": "label",
       "dayLastMessage": "8 min",
       "lastMessage": "Last Message",
       "countMessage": "21",
       "silence": "0",
       "file": "1",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTviwffByEVaqIZir9WNZ7CHnHC6q_AklKybQQlrZMHBCVCcTPSHg",
       "typeChat": "1",
       "conversations": null
@@ -598,14 +891,16 @@
       "name": "Test contact 20",
       "photo": "ruta",
       "status": "Status test",
-      "label": "label contact 20",
+      "label": "label",
       "dayLastMessage": "9 min",
       "lastMessage": "Last Message",
       "countMessage": "26",
       "silence": "0",
       "file": "0",
       "pinner": "0",
-      "contactsIds": null,
+      "chatGroups": [
+        "0"
+      ],
       "imgContact": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwww3bn_7VHZz_ZHgyDSLsg9ukZpGikjEifw2CIPZt1zqflcK5",
       "typeChat": "1",
       "conversations": null
@@ -619,10 +914,10 @@
       "contactsIds": [
         "1"
       ],
-      "label": "label contact 1G",
+      "label": "label",
       "dayLastMessage": "Ayer",
       "lastMessage": "Last Message",
-      "countMessage": "",
+      "countMessage": "0",
       "silence": "1",
       "file": "0",
       "pinner": "1",
@@ -642,7 +937,7 @@
       "contactsIds": [
         "1"
       ],
-      "label": "label contact 2G",
+      "label": "label",
       "dayLastMessage": "3 min",
       "lastMessage": "Last Message",
       "countMessage": "1",
@@ -665,7 +960,7 @@
       "contactsIds": [
         "1"
       ],
-      "label": "label contact 3G",
+      "label": "label",
       "dayLastMessage": "22 min",
       "lastMessage": "Last Message",
       "countMessage": "2",
