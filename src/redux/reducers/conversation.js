@@ -12,9 +12,9 @@ let mapActions = new Map([
     [
         FETCH_CONVERSATION + '_ADD',
         (state, action) => {
-            for (let index in state){
-                if(state[index].id===action.payload.conversationId){
-                    state[index].conversation = [...state[index].conversation,action.payload.message];
+            for (let index in state) {
+                if (state[index].id === action.payload.conversationId) {
+                    state[index].conversation = [...state[index].conversation, action.payload.message];
                     return [...state];
                 }
             }
@@ -28,8 +28,8 @@ let mapActions = new Map([
         DELETE_MESSAGE,
         (state, action) => {
             //[...state].filter(message => (message.id === action.payload) ? false : true)
-            for(let index in state){
-                if(state[index].id===action.payload.conversationId){
+            for (let index in state) {
+                if (state[index].id === action.payload.conversationId) {
                     state[index].conversation = state[index].conversation.filter(message => (message.id === action.payload.messageId) ? false : true);
                     return [...state]
                 }
@@ -38,10 +38,10 @@ let mapActions = new Map([
     ],
 ]);
 
-export const restoreKey = FETCH_CONVERSATION+'_FULFILLED';
+export const restoreKey = FETCH_CONVERSATION + '_FULFILLED';
 export const defaultValue = [];
-DatabaseManage.mapping('conversation',[
-    FETCH_CONVERSATION+'_ADD',
+DatabaseManage.mapping('conversation', [
+    FETCH_CONVERSATION + '_ADD',
     DELETE_MESSAGE
-],mapActions,'local');
-export const conversation = handleActions( mapActions,defaultValue);
+], mapActions, 'local');
+export const conversation = handleActions(mapActions, defaultValue);
