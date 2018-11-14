@@ -68,6 +68,7 @@ class HeaderGroupSection extends Component {
       "lastState": null,
       "label": null,
       "dayLastMessage": null,
+      "conversations": "1",
       "lastMessage": null,
       "countMessage": "",
       "silence": "0",

@@ -2,8 +2,6 @@ import { handleActions } from 'redux-actions';
 import { FETCH_CONVERSATION, DELETE_MESSAGE, DELETE_CONVERSATION } from '../actionstypes';
 import DatabaseManage from '../../lib/databaseManager';
 
-
-
 let mapActions = new Map([
     [
         FETCH_CONVERSATION + '_FULFILLED',
