@@ -8,7 +8,10 @@ let mapActions = new Map([
         (state, action) => [...action.payload]
     ], [
         UPDATE_CONTACTS,
-        (state, action) => [...action.payload]
+        (state, action) => {
+            const contacts = state
+            const contactLoad = contacts.find(item => item.id === action.payload)
+        }
     ], [
         ADD_CONTACT, (state, action) => {
             const createGroup = state

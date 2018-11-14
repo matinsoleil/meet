@@ -4,6 +4,7 @@ import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import clearContact from '../../../redux/actions/contact/clearContact'
 import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
+import updateContacts from '../../../redux/actions/contacts/updateContacts'
 import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
 import { getContact } from '../../../redux/selectors/contact'
 import { getContacts } from '../../../redux/selectors/contacts'
@@ -77,8 +78,7 @@ class GeneralContactData extends Component {
     actionDeleteElementChat = () => {
         var listContacts = this.props.contacts
         var idContact = this.props.chat.id
-        var indexContact = listContacts.findIndex(item => item.id === idContact)
-        listContacts.splice(indexContact, 1)
+        this.props.chat["conversations"] = null
         var filter_contacts = this.props.contactSection.filter_contacts
         if (filter_contacts !== null) {
             var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
@@ -270,6 +270,9 @@ const mapDispatchToProps = dispatch => {
         },
         showAlertGeneral: (msj) => {
             dispatch(showAlertGeneral(msj))
+        },
+        updateContacts: (param) => {
+            dispatch(updateContacts(param))
         },
         updatePinerGroup: (id) => {
             dispatch(updatePinerGroup(id))

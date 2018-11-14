@@ -24,11 +24,13 @@ import ModalBox from '../components/modals/ModalBox'
 
 class ChatContainer extends Component {
     componentDidMount() {
-        // this.props.fetchContacts()
+        this.props.fetchContacts()
+        this.props.fetchConversation()
+
         this.props.fetchUser()
-        // this.props.fetchConversation()
         this.props.fetchGroups()
         this.props.fetchContactSection()
+
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();
@@ -54,7 +56,7 @@ class ChatContainer extends Component {
                     </div>
                     : null
                 }
-                <ModalBox />
+                <ModalBox/>
             </div>
         );
     }
