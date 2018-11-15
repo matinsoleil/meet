@@ -71,7 +71,7 @@ class HeaderGroupSection extends Component {
       "lastMessage": null,
       "countMessage": "",
       "silence": "0",
-      "file": "0",
+      "file": false,
       "pinner": "0",
       "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
       "owner": [
