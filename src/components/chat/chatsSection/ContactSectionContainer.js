@@ -83,7 +83,7 @@ const mapDispatchToProps = dispatch => {
         },   
         hideSectionRight: () =>{
             dispatch(hideSectionRight())
-        },    
+        },
         updateFilterContactSection: (listaContact) => {
             dispatch(updateFilterContactSection(listaContact))
         },
