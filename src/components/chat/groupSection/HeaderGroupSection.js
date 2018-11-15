@@ -34,9 +34,12 @@ class HeaderGroupSection extends Component {
     this.assingedIds = []
     this.list_contacts_add_group = [];
     this.notDisplayUsers = 0;
+    console.log('props');
+    console.log(this.props);
   }
 
   deleteContactListCreateGroup(idContact) {
+    
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
 
@@ -120,8 +123,6 @@ class HeaderGroupSection extends Component {
      for (var i = 0 ; i < this.listContacts.length ; i++) {
        this.listContacts[i].onEdit='0';
     }
-    
-    console.log(this.props);
     this.props.hideSectionRight() 
     this.props.updateListContactsAddGroup([]);
   }
@@ -143,7 +144,7 @@ class HeaderGroupSection extends Component {
         </div>
         <div className="grid-container-header-section">
           <div className="block-right"></div>
-          <div className="header-group" >
+          <div className="header-group" style={{display:'block'}} >
             {
 
               this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon} alt="addGroup" /> : null

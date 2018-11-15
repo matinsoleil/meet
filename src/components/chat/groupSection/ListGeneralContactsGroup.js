@@ -72,8 +72,13 @@ class ListGeneralContactsGroup extends Component {
         var indexAlphabet = ''
         var flagAlphabet = ''
         const filter_contacts = this.props.groupsSection.filter_contacts;
+ 
+        if(this.firstTime == 0){
+        this.firstTime = 1;
+        }
+
         let contacts = [];
-        if (filter_contacts.length === 0) { contacts = this.orderByName(this.filterOnlyContacts(filter_contacts)); this.firstTime =1; } else { contacts = this.orderByName(this.filterOnlyContacts(filter_contacts)) }
+        if (filter_contacts.length === 0) { contacts = this.orderByName(this.filterOnlyContacts(this.props.contacts));  } else { contacts = this.orderByName(this.filterOnlyContacts(filter_contacts)) }
         return (
             <div id='list-contact-group' className="main-chat-general-list-contact-group">
                 <div className="main-chat-general-list-contact-group-title"></div>
