@@ -72,11 +72,6 @@ class ListGeneralContactsGroup extends Component {
         var indexAlphabet = ''
         var flagAlphabet = ''
         const filter_contacts = this.props.groupsSection.filter_contacts;
- 
-        if(this.firstTime == 0){
-        this.firstTime = 1;
-        }
-
         let contacts = [];
         if (filter_contacts.length === 0) { contacts = this.orderByName(this.filterOnlyContacts(this.props.contacts));  } else { contacts = this.orderByName(this.filterOnlyContacts(filter_contacts)) }
         return (

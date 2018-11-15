@@ -34,9 +34,21 @@ class HeaderGroupSection extends Component {
     this.assingedIds = []
     this.list_contacts_add_group = [];
     this.notDisplayUsers = 0;
-    console.log('props');
-    console.log(this.props);
+    this.firstClear = 0;
+    this.clear();
   }
+
+  clear(){
+    if(this.firstClear ===0){
+    this.listContacts = this.props.list_contacts;
+    for (var i = 0; i < this.listContacts.length; i++) {
+        this.listContacts[i].onEdit = '0';
+    }
+    this.props.updateListContactsGroup(this.listContacts);
+    this.firstClear = 1;
+    }
+  }
+
 
   deleteContactListCreateGroup(idContact) {
     
@@ -47,7 +59,6 @@ class HeaderGroupSection extends Component {
       if (this.listContacts[i].id === idContact) {
         this.listContacts[i].onEdit = '0';
       }
-
     }
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
@@ -135,6 +146,8 @@ class HeaderGroupSection extends Component {
   }
 
   render() {
+  
+
     this.list_contacts_add_group = this.props.list_contacts_add_group;
     return (
       <div className="main-header-group-section">
