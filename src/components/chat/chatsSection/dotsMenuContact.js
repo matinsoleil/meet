@@ -72,7 +72,7 @@ class dotsMenuContact extends Component {
 
     render() {
         const titleActionFix = this.props.chat.pinner === "0" ? "Fijar chat" : "Dejar de fijar chat"
-        const titleActionFile = this.props.chat.file === true ? "Archivar chat" : "Desarchivar chat"
+        const titleActionFile = this.props.chat.file !== true ? "Archivar chat" : "Desarchivar chat"
         const titleActionSilence = this.props.chat.silence === "0" ? "Silenciar chat" : "Cancelar silencio"
         const titleReadMessage = this.props.chat.countMessage !== "" ? "Marcar como leído" : "Marcar como no leído"
         return (
