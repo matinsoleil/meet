@@ -25,12 +25,9 @@ class RightSectionContainer extends Component {
     }
 
     showSectionGroupsClick = () => {
-        console.log(this.props);
-      
         this.props.showSectionRight('GroupSectionContainer')
         //this.props.showSectionGroups()
-        this.open = 0;
-        
+        this.open = 0; 
     }
 
     filterList = (event) => {

@@ -29,9 +29,28 @@ class HeaderGroupSection extends Component {
     this.assingedIds = []
     this.list_contacts_add_group = [];
     this.notDisplayUsers = 0;
+    this.firstClear = 0;
+    this.clear();
   }
 
+<<<<<<< HEAD
   deleteContactListCreateGroup = (idContact) => {
+=======
+  clear(){
+    if(this.firstClear ===0){
+    this.listContacts = this.props.list_contacts;
+    for (var i = 0; i < this.listContacts.length; i++) {
+        this.listContacts[i].onEdit = '0';
+    }
+    this.props.updateListContactsGroup(this.listContacts);
+    this.firstClear = 1;
+    }
+  }
+
+
+  deleteContactListCreateGroup(idContact) {
+    
+>>>>>>> e8e29d3733684d767c450d0cbea8b73e195e2bf0
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
 
@@ -116,11 +135,18 @@ class HeaderGroupSection extends Component {
     for (var i = 0; i < this.listContacts.length; i++) {
       this.listContacts[i].onEdit = '0';
     }
+<<<<<<< HEAD
+=======
+    this.props.hideSectionRight() 
+    this.props.updateListContactsAddGroup([]);
+>>>>>>> e8e29d3733684d767c450d0cbea8b73e195e2bf0
     this.props.updateListContactsGroup(this.listContacts)
     this.props.hideSectionRight()
   }
 
   render() {
+  
+
     this.list_contacts_add_group = this.props.list_contacts_add_group;
     return (
       <div className="main-header-group-section">
@@ -130,7 +156,7 @@ class HeaderGroupSection extends Component {
         </div>
         <div className="grid-container-header-section">
           <div className="block-right"></div>
-          <div className="header-group" >
+          <div className="header-group" style={{display:'block'}} >
             {
               this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon} alt="addGroup" /> : null
             }
