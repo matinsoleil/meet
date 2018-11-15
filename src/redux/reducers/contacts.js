@@ -11,6 +11,11 @@ let mapActions = new Map([
         (state, action) => {
             const contacts = state
             const contactLoad = contacts.find(item => item.id === action.payload)
+            contactLoad.file = !contactLoad.file
+
+            console.log();
+
+            // return [...contactLoad]
         }
     ], [
         ADD_CONTACT, (state, action) => {

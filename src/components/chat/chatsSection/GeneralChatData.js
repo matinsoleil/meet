@@ -60,6 +60,7 @@ class GeneralContactData extends Component {
         this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
         var msj = this.props.chat["file"] === "1" ? "Archivaste el chat" : "Desarchivaste el chat"
         this.props.showAlertGeneral(msj)
+        this.props.updateContacts(this.props.chat["id"])
         this.showDots()
     }
 
