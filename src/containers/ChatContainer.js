@@ -3,7 +3,6 @@ import AppFrame from '../components/AppFrame'
 import { connect } from 'react-redux'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer'
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
-import fetchContact from '../redux/actions/contact/fetchContact'
 import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
 import { fetchContactSection } from '../redux/actions/contactSection/fetchContactSection'
 import { fetchUser } from '../redux/actions/users/fetchUser'
@@ -20,17 +19,18 @@ import { getAlertGeneral } from '../redux/selectors/alertGeneral'
 import ContactSectionContainer from '../components/chat/chatsSection/ContactSectionContainer'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
 import { getRightSection } from '../redux/selectors/rightSection'
-import RightSection from '../components/chat/rightSection/RightSection';
-import ModalBox from '../components/modals/ModalBox';
+import RightSection from '../components/chat/rightSection/RightSection'
+import ModalBox from '../components/modals/ModalBox'
 
 class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts()
+        // this.props.fetchConversation()
+
         this.props.fetchUser()
-        //this.props.fetchContact()
-        this.props.fetchConversation()
         this.props.fetchGroups()
         this.props.fetchContactSection()
+
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();
@@ -106,9 +106,6 @@ const mapDispatchToProps = dispatch => {
         fetchContacts: () => {
             dispatch(fetchContacts())
         },
-        // fetchContact: () => {
-        //     dispatch(fetchContact(1))
-        // },
         fetchConversation: () => {
             dispatch(fetchConversation())
         },
