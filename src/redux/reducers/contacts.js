@@ -13,7 +13,10 @@ let mapActions = new Map([
             const contactLoad = contacts.find(item => item.id === action.payload)
             contactLoad.file = !contactLoad.file
 
-            console.log();
+            console.log("AAA")
+            console.log(contactLoad);
+            console.log("BBB")
+
 
             // return [...contactLoad]
         }

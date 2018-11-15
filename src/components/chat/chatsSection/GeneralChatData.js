@@ -57,10 +57,10 @@ class GeneralContactData extends Component {
     }
 
     fileContact = () => {
-        this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
-        var msj = this.props.chat["file"] === "1" ? "Archivaste el chat" : "Desarchivaste el chat"
+        this.props.chat["file"] = this.props.chat["file"] === true ? false : true
+        var msj = this.props.chat["file"] !== true ? "Archivaste el chat" : "Desarchivaste el chat"
         this.props.showAlertGeneral(msj)
-        this.props.updateContacts(this.props.chat["id"])
+        // this.props.updateContacts(this.props.chat["id"])
         this.showDots()
     }
 
@@ -208,7 +208,7 @@ class GeneralContactData extends Component {
                                 this.props.chat.silence !== "0" ? <img className="status-contact" src={this.props.mute_a_icon} alt="status-conctact" /> : null
                             }
                             {
-                                this.props.chat.file !== "0" ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
+                                this.props.chat.file !== true ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
                             }
                             {
                                 this.props.chat.pinner !== "0" ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
