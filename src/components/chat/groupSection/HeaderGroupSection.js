@@ -127,6 +127,10 @@ class HeaderGroupSection extends Component {
     }
     this.props.updateListContactsGroup(this.listContacts)
     this.props.hideSectionRight()
+    
+    console.log(this.props);
+    this.props.hideSectionRight() 
+    this.props.updateListContactsAddGroup([]);
   }
 
   render() {
