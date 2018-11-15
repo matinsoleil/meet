@@ -120,8 +120,10 @@ class HeaderGroupSection extends Component {
      for (var i = 0 ; i < this.listContacts.length ; i++) {
        this.listContacts[i].onEdit='0';
     }
-    this.props.updateListContactsGroup(this.listContacts)
+    
+    console.log(this.props);
     this.props.hideSectionRight() 
+    this.props.updateListContactsAddGroup([]);
   }
 
   render() {

@@ -1,6 +1,7 @@
 import GeneralDataUser from './GeneralDataUser'
 import ListChats from './ListChats'
 import showSectionRight from '../../../redux/actions/rightSection/showSectionRight'
+import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight'
 import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection'
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
 import React, { Component } from 'react'
@@ -10,7 +11,8 @@ class RightSectionContainer extends Component {
     constructor(props) {
         super(props)
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this)
-        this.filterList = this.filterList.bind(this)
+        this.filterList = this.filterList.bind(this);
+        this.open = 1;
     }
 
     orderByPinner(list) {
@@ -23,8 +25,12 @@ class RightSectionContainer extends Component {
     }
 
     showSectionGroupsClick = () => {
+        console.log(this.props);
+      
         this.props.showSectionRight('GroupSectionContainer')
-        this.props.showSectionGroups()
+        //this.props.showSectionGroups()
+        this.open = 0;
+        
     }
 
     filterList = (event) => {
@@ -74,7 +80,10 @@ const mapDispatchToProps = dispatch => {
         },
         showSectionGroups: () => {
             dispatch(showSectionGroups())
-        },       
+        },   
+        hideSectionRight: () =>{
+            dispatch(hideSectionRight())
+        },    
         updateFilterContactSection: (listaContact) => {
             dispatch(updateFilterContactSection(listaContact))
         },
