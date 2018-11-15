@@ -1,6 +1,11 @@
 import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
-import { contacts } from './contacts'
+import {
+  contacts,
+  restoreKey as restoreKeyContacts,
+  defaultValue as defaultValueContacts
+} from './contacts'
+
 import { users } from './users'
 import { contact } from './contact'
 import {
@@ -45,12 +50,16 @@ export const reducers = combineReducers({
 })
 
 export const keyToRestore = {
+  'contacts': {
+    restoreKey: restoreKeyContacts,
+    defaultValue: defaultValueContacts,
+  },
   'conversation': {
     restoreKey: restoreKeyConversation,
     defaultValue: defaultValueConversation,
   },
   'country': {
     restoreKey: restoreKeyCountry,
-    defaultValue:null
+    defaultValue: null
   }
 }
