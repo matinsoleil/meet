@@ -1,16 +1,23 @@
-.right-section-container {
-  width: 408px;
-  float: left;
-  display: table-cell;
-  vertical-align: middle;
-  margin-right: 4px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: #ffffff;
-  border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
+
+@media screen{
+  .right-section-container {
+    width: 408px;
+    float: left;
+    display: table-cell;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    .group-section-container{
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
 }
 
 @media only screen and (max-width: 1400px) {

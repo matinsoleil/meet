@@ -5,7 +5,7 @@ import { deleteMessagesSelected } from '../../../../../redux/actions/messagesOpt
 import { showSectionGroups } from '../../../../../redux/actions/groups/showSectionGroups';
 import MessagesHelper from '../../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../../lib/helper/generateId';
-import { showModal } from '../../../../../redux/actions/modalBox/modalBox';
+import { showModal,View } from '../../../../../redux/actions/modalBox/modalBox';
 
 class OptionsSelection extends Component {
 
@@ -18,7 +18,7 @@ class OptionsSelection extends Component {
         this.modalModel = {
             title: '¿Seguro que desea eliminar estos mensajes?',
             buttons: [{ name: 'Eliminar', action: this.accept }, { name: 'Cancelar' }],
-            viewPath: 'Confirm'
+            viewPath: View.CONFIRM
         }
     }
 

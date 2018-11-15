@@ -5,7 +5,7 @@ import AudioRecorder from './../../../../../lib/helper/audioRecorder';
 import './recorderContent.scss';
 import GenerateId from '../../../../../lib/helper/generateId';
 import ModalBox from '../../../../modals/ModalBox';
-import { showModal } from '../../../../../redux/actions/modalBox/modalBox';
+import { showModal,View } from '../../../../../redux/actions/modalBox/modalBox';
 
 class RecorderContent extends Component {
     constructor(props) {
@@ -115,7 +115,7 @@ class RecorderContent extends Component {
                         () => { this.audioRecorder.pause(); this.props.showModal(
                             `¿Seguro que desea eliminar este chat de voz?`,
                             [{name:'Cancelar',action:this.audioRecorder.resume},{name:'Eliminar',action:()=>{this.stopRecording(false)}}],
-                            'Confirm'
+                            View.CONFIRM
                         )}
                     } id="cancel_button" src={this.props.trash_red} alt="cancel" />
                     <div className='outside-circle'>

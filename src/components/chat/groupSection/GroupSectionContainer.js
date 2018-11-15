@@ -37,4 +37,4 @@ const mapDispatchToProps = dispatch => {
 
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(GroupSectionContainer)
+export default connect(mapStateToProps, null)(GroupSectionContainer)

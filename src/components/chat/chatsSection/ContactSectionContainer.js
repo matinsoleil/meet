@@ -7,7 +7,7 @@ import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './RightSectionContainer.scss'
-class RightSectionContainer extends Component {
+class ContactSectionContainer extends Component {
     constructor(props) {
         super(props)
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this)
@@ -87,4 +87,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RightSectionContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ContactSectionContainer)

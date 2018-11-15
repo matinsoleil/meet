@@ -10,7 +10,7 @@ import { getContact } from '../../../redux/selectors/contact'
 import { getContacts } from '../../../redux/selectors/contacts'
 import { getContactSection } from '../../../redux/selectors/contactSection'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
-import { showModal } from '../../../redux/actions/modalBox/modalBox';
+import { showModal,View } from '../../../redux/actions/modalBox/modalBox';
 import { connect } from 'react-redux'
 
 class GeneralContactData extends Component {
@@ -105,7 +105,7 @@ class GeneralContactData extends Component {
         this.props.showModal(
             `¿Seguro que deseas eliminar el chat con ${this.props.chat.name}`,
             [{ name: 'ELIMINAR', action: this.actionDeleteElementChat }, { name: 'CANCELAR' }],
-            'Confirm');
+            View.CONFIRM);
     }
 
     showModalDeleteConversationContactAction = () => {
@@ -113,7 +113,7 @@ class GeneralContactData extends Component {
         this.props.showModal(
             `¿Seguro que deseas eliminar el historial del chat de ${this.props.chat.name}`,
             [{ name: 'ELIMINAR', action: this.deleteConversationContact }, { name: 'CANCELAR' }],
-            'Confirm'
+            View.CONFIRM
         );
     }
 
@@ -125,7 +125,7 @@ class GeneralContactData extends Component {
             this.props.showModal(
                 `Silenciar durante…`,
                 { Accept: { name: 'Silenciar', action: this.submitCreateSilence }, Cancel: { name: 'Cancelar' } },
-                'contact/SilenceConversation'
+                View.SILENCE_CONVERSATION,
             );
         }
     }

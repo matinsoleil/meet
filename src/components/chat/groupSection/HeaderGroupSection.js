@@ -10,7 +10,7 @@ import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGener
 import { getGroupsSection } from '../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
 import { connect } from 'react-redux'
-import { showModal } from '../../../redux/actions/modalBox/modalBox';
+import { showModal,View } from '../../../redux/actions/modalBox/modalBox';
 import './HeaderGroupSection.scss'
 class HeaderGroupSection extends Component {
   constructor(props) {
@@ -33,9 +33,6 @@ class HeaderGroupSection extends Component {
     this.clear();
   }
 
-<<<<<<< HEAD
-  deleteContactListCreateGroup = (idContact) => {
-=======
   clear(){
     if(this.firstClear ===0){
     this.listContacts = this.props.list_contacts;
@@ -50,7 +47,6 @@ class HeaderGroupSection extends Component {
 
   deleteContactListCreateGroup(idContact) {
     
->>>>>>> e8e29d3733684d767c450d0cbea8b73e195e2bf0
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
 
@@ -110,9 +106,9 @@ class HeaderGroupSection extends Component {
 
   viewPathRender = () => {
     if (this.props.list_contacts_add_group.length === 0) {
-      this.modalModel.viewPath = `group/AlertCreateGroupForm`;
+      this.modalModel.viewPath = View.ALERTGROUP;
     } else {
-      this.modalModel.viewPath = `group/CreateGroupForm`;
+      this.modalModel.viewPath = View.CREATEGROUP;
     }
   }
 
@@ -131,15 +127,11 @@ class HeaderGroupSection extends Component {
   }
 
   clearClose = () => {
+    console.log('CLEAR_CLOSE');
     this.listContacts = this.props.list_contacts;
     for (var i = 0; i < this.listContacts.length; i++) {
       this.listContacts[i].onEdit = '0';
     }
-<<<<<<< HEAD
-=======
-    this.props.hideSectionRight() 
-    this.props.updateListContactsAddGroup([]);
->>>>>>> e8e29d3733684d767c450d0cbea8b73e195e2bf0
     this.props.updateListContactsGroup(this.listContacts)
     this.props.hideSectionRight()
   }
@@ -156,20 +148,14 @@ class HeaderGroupSection extends Component {
         </div>
         <div className="grid-container-header-section">
           <div className="block-right"></div>
-          <div className="header-group" style={{display:'block'}} >
-            {
-              this.typeButton === "addGroup" ? <img className="addGroup" src={this.props.send_icon} alt="addGroup" /> : null
-            }
-            {
-              this.typeButton === "aceptTo" ? <button className="acceptAddGroup" onClick={() => {
-                this.viewPathRender();
-                this.props.showModal(
-                  this.modalModel.title,
-                  this.modalModel.buttons,
-                  this.modalModel.viewPath);
-              }} >{'Aceptar'}</button> : null
-
-            }
+          <div className="header-group" >
+            <button className="acceptAddGroup" onClick={() => {
+              this.viewPathRender();
+              this.props.showModal(
+                this.modalModel.title,
+                this.modalModel.buttons,
+                this.modalModel.viewPath);
+            }} >{'Aceptar'}</button>
             <div className="grow-group">
               {this.list_contacts_add_group !== null && this.notDisplayUsers === 0 ?
                 this.list_contacts_add_group.map(contact =>

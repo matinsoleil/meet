@@ -468,6 +468,62 @@
       "message": "TypeError: this.props.fetchContact is not a function",
       "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 40
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542229255,
+      "message": "TypeError: Cannot read property 'filter_contacts' of undefined",
+      "detail": "\n    in RightSection (created by Connect(RightSection))\n    in Connect(RightSection) (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 41
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542229312,
+      "message": "TypeError: Cannot read property 'list_contacts_add_group' of undefined",
+      "detail": "\n    in RightSection (created by Connect(RightSection))\n    in Connect(RightSection) (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 42
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542230669,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ListGeneralContacts (at RightSection.js:19)\n    in div (at RightSection.js:13)\n    in div (at RightSection.js:12)\n    in RightSection (created by Connect(RightSection))\n    in Connect(RightSection) (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 43
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542230848,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in ListGeneralContacts (at RightSection.js:19)\n    in div (at RightSection.js:13)\n    in div (at RightSection.js:12)\n    in RightSection (created by Connect(RightSection))\n    in Connect(RightSection) (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 44
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542232735,
+      "message": "TypeError: Cannot read property '7' of undefined",
+      "detail": "\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListChats.js:15)\n    in div (at ListChats.js:13)\n    in ListGeneralContacts (at ContactSectionContainer.js:58)\n    in div (at ContactSectionContainer.js:46)\n    in ContactSectionContainer (created by Connect(ContactSectionContainer))\n    in Connect(ContactSectionContainer) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 45
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542232747,
+      "message": "TypeError: Cannot read property '6' of undefined",
+      "detail": "\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListChats.js:15)\n    in div (at ListChats.js:13)\n    in ListGeneralContacts (at ContactSectionContainer.js:58)\n    in div (at ContactSectionContainer.js:46)\n    in ContactSectionContainer (created by Connect(ContactSectionContainer))\n    in Connect(ContactSectionContainer) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 46
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542232866,
+      "message": "TypeError: Cannot read property '3' of undefined",
+      "detail": "\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListChats.js:15)\n    in div (at ListChats.js:13)\n    in ListGeneralContacts (at ContactSectionContainer.js:58)\n    in div (at ContactSectionContainer.js:46)\n    in ContactSectionContainer (created by Connect(ContactSectionContainer))\n    in Connect(ContactSectionContainer) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 47
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542232909,
+      "message": "Invariant Violation: Objects are not valid as a React child (found: object with keys {id, name, photo, status, label, dayLastMessage, lastMessage, countMessage, silence, file, pinner, chatGroups, imgContact, typeChat, conversations}). If you meant to render a collection of children, use an array instead.\n    in div (at GeneralChatData.js:195)\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListChats.js:15)\n    in div (at ListChats.js:13)\n    in ListGeneralContacts (at ContactSectionContainer.js:58)\n    in div (at ContactSectionContainer.js:46)\n    in ContactSectionContainer (created by Connect(ContactSectionContainer))\n    in Connect(ContactSectionContainer) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "detail": "\n    in div (at GeneralChatData.js:195)\n    in GeneralContactData (created by Connect(GeneralContactData))\n    in Connect(GeneralContactData) (at ListChats.js:15)\n    in div (at ListChats.js:13)\n    in ListGeneralContacts (at ContactSectionContainer.js:58)\n    in div (at ContactSectionContainer.js:46)\n    in ContactSectionContainer (created by Connect(ContactSectionContainer))\n    in Connect(ContactSectionContainer) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 48
     }
   ],
   "contacts": [
