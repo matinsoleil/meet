@@ -4,7 +4,7 @@ import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import clearContact from '../../../redux/actions/contact/clearContact'
 import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
-import updateContacts from '../../../redux/actions/contacts/updateContacts'
+import fileContacts from '../../../redux/actions/contacts/fileContacts'
 import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
 import { getContact } from '../../../redux/selectors/contact'
 import { getContacts } from '../../../redux/selectors/contacts'
@@ -60,7 +60,7 @@ class GeneralContactData extends Component {
         this.props.chat["file"] = this.props.chat["file"] === true ? false : true
         var msj = this.props.chat["file"] !== true ? "Archivaste el chat" : "Desarchivaste el chat"
         this.props.showAlertGeneral(msj)
-        // this.props.updateContacts(this.props.chat["id"])
+        this.props.fileContacts(this.props.chat["id"])
         this.showDots()
     }
 
@@ -272,8 +272,8 @@ const mapDispatchToProps = dispatch => {
         showAlertGeneral: (msj) => {
             dispatch(showAlertGeneral(msj))
         },
-        updateContacts: (param) => {
-            dispatch(updateContacts(param))
+        fileContacts: (param) => {
+            dispatch(fileContacts(param))
         },
         updatePinerGroup: (id) => {
             dispatch(updatePinerGroup(id))
