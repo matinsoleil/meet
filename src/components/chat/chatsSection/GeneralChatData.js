@@ -5,6 +5,7 @@ import fetchContact from '../../../redux/actions/contact/fetchContact'
 import clearContact from '../../../redux/actions/contact/clearContact'
 import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
 import fileContacts from '../../../redux/actions/contacts/fileContacts'
+import fixContacts from '../../../redux/actions/contacts/fixContacts'
 import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
 import { getContact } from '../../../redux/selectors/contact'
 import { getContacts } from '../../../redux/selectors/contacts'
@@ -57,36 +58,36 @@ class GeneralContactData extends Component {
     }
 
     fileContact = () => {
-        this.props.chat["file"] = this.props.chat["file"] === true ? false : true
-        var msj = this.props.chat["file"] === true ? "Archivaste el chat" : "Desarchivaste el chat"
-        this.props.showAlertGeneral(msj)
-        this.props.fileContacts(this.props.chat["id"])
-        this.showDots()
+        this.props.chat["file"] = this.props.chat["file"] === true ? false : true;
+        var msj = this.props.chat["file"] === true ? "Archivaste el chat" : "Desarchivaste el chat";
+        this.props.showAlertGeneral(msj);
+        this.props.fileContacts(this.props.chat["id"]);
+        this.showDots();
     }
 
     fixContact = () => {
         var msj = "";
-        this.props.chat["fix"] = this.props.chat["fix"] === true ? false : true
-        msj = this.props.chat["fix"] === true ? "Fijaste el chat" : "Dejaste de fijar el chat"
-        this.props.showAlertGeneral(msj)
-        this.showDots()
+        this.props.chat["fix"] = this.props.chat["fix"] === true ? false : true;
+        msj = this.props.chat["fix"] === true ? "Fijaste el chat" : "Dejaste de fijar el chat";
+        this.props.showAlertGeneral(msj);
+        this.props.fixContacts(this.props.chat["id"]);
+        this.showDots();
     }
 
     leaveGroup = () => {
-        console.log("Salir del grupo")
+        console.log("Salir del grupo");
     }
 
     actionDeleteElementChat = () => {
-        var listContacts = this.props.contacts
-        var idContact = this.props.chat.id
-        this.props.chat["conversations"] = null
-        var filter_contacts = this.props.contactSection.filter_contacts
+        var idContact = this.props.chat.id;
+        this.props.chat["conversations"] = null;
+        var filter_contacts = this.props.contactSection.filter_contacts;
         if (filter_contacts !== null) {
-            var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
-            filter_contacts.splice(index_filter_contacts, 1)
+            var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact);
+            filter_contacts.splice(index_filter_contacts, 1);
         }
-        if (this.props.contact.id === this.props.chat.id) { this.props.clearContact() }
-        this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name)
+        if (this.props.contact.id === this.props.chat.id) { this.props.clearContact(); }
+        this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name);
     }
 
     submitCreateSilence = (values) => {
@@ -272,8 +273,11 @@ const mapDispatchToProps = dispatch => {
         showAlertGeneral: (msj) => {
             dispatch(showAlertGeneral(msj))
         },
-        fileContacts: (param) => {
-            dispatch(fileContacts(param))
+        fileContacts: (idContact) => {
+            dispatch(fileContacts(idContact))
+        },
+        fixContacts: (idContact) => {
+            dispatch(fixContacts(idContact))
         },
         updatePinerGroup: (id) => {
             dispatch(updatePinerGroup(id))

@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { FETCH_CONTACTS, FILE_CONTACTS, ADD_CONTACT } from '../actionstypes'
+import { FETCH_CONTACTS, FILE_CONTACTS, ADD_CONTACT, FIX_CONTACTS } from '../actionstypes'
 import DatabaseManage from '../../lib/databaseManager';
 
 let mapActions = new Map([
@@ -10,7 +10,14 @@ let mapActions = new Map([
         FILE_CONTACTS,
         (state, action) => {
             const contacts = state
-            contacts.filter(messageId=>((messageId===action.payload)?false:true))
+            contacts.filter(messageId => ((messageId === action.payload) ? false : true))
+            return [...contacts]
+        }
+    ], [
+        FIX_CONTACTS,
+        (state, action) => {
+            const contacts = state
+            contacts.filter(messageId => ((messageId === action.payload) ? false : true))
             return [...contacts]
         }
     ], [
@@ -28,6 +35,7 @@ export const defaultValue = [];
 DatabaseManage.mapping('contacts', [
     FETCH_CONTACTS + '_ADD',
     FILE_CONTACTS,
+    FIX_CONTACTS,
     ADD_CONTACT
 ], mapActions, 'local');
 export const contacts = handleActions(mapActions, defaultValue);

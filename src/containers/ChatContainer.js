@@ -54,7 +54,7 @@ class ChatContainer extends Component {
                     </div>
                     : null
                 }
-                <ModalBox/>
+                <ModalBox />
             </div>
         );
     }
