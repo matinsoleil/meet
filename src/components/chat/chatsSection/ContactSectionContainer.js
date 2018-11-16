@@ -15,11 +15,11 @@ class RightSectionContainer extends Component {
         this.open = 1;
     }
 
-    orderByPinner(list) {
-        const byPinner = list.slice(0)
-        return byPinner.sort(function (a, b) {
-            var x = a.pinner.toLowerCase()
-            var y = b.pinner.toLowerCase()
+    orderByFix(list) {
+        const byFix = list.slice(0)
+        return byFix.sort(function (a, b) {
+            var x = a.fix
+            var y = b.fix
             return x > y ? -1 : x < y ? 1 : 0;
         })
     }
@@ -27,7 +27,7 @@ class RightSectionContainer extends Component {
     showSectionGroupsClick = () => {
         this.props.showSectionRight('GroupSectionContainer')
         //this.props.showSectionGroups()
-        this.open = 0; 
+        this.open = 0;
     }
 
     filterList = (event) => {
@@ -58,7 +58,7 @@ class RightSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
-                <ListChats listChats={this.orderByPinner(contacts)} />
+                <ListChats listChats={this.orderByFix(contacts)} />
             </div>
         )
     }
@@ -77,8 +77,8 @@ const mapDispatchToProps = dispatch => {
         },
         showSectionGroups: () => {
             dispatch(showSectionGroups())
-        },   
-        hideSectionRight: () =>{
+        },
+        hideSectionRight: () => {
             dispatch(hideSectionRight())
         },
         updateFilterContactSection: (listaContact) => {
