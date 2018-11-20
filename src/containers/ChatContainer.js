@@ -21,6 +21,7 @@ import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
 import { getRightSection } from '../redux/selectors/rightSection'
 import RightSection from '../components/chat/rightSection/RightSection'
 import ModalBox from '../components/modals/ModalBox'
+import Profile from '../components/chat/profileSection/Profile';
 
 class ChatContainer extends Component {
     componentDidMount() {
@@ -45,7 +46,8 @@ class ChatContainer extends Component {
         }
         return (
             <div className="main-chat">
-                <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} />
+                {/* <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} /> */}
+                <Profile />
                 <MessageSectionContainer contacts={listContact} chat={conversation} contact={this.props.contact} server={this.props.server} />
                 {this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null}
                 {this.props.alertGeneral.show === true ?
