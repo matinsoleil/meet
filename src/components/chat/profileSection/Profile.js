@@ -32,6 +32,7 @@ const mapStateToProps = (state) => {
         qr_icon: state.customizing.Images.qr_icon,
         angle_right_icon: state.customizing.Images.angle_right_icon,
         angle_left_icon: state.customizing.Images.angle_left_icon,
+        Translator: state.country.translator,
     }
 }
 
