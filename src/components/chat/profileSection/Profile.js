@@ -19,7 +19,7 @@ class Profile extends Component {
                 <button className="btn-edit-profile">{this.props.Translator.t('Editar perfil')}</button>
                 <div className="my-code-qr">
                     <img src={this.props.qr_icon} alt="seach-icon" />
-                    <div className="my-code-qr-title"> {this.props.Translator.t('Mi codigo QR')}</div>
+                    <div className="my-code-qr-title"> {this.props.Translator.t('Mi código QR')}</div>
                     <img src={this.props.angle_right_icon} alt="" />
                 </div>
             </div>

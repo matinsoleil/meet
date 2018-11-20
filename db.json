@@ -251,6 +251,125 @@
       "message": "TypeError: this.orderByfix is not a function",
       "detail": "\n    in RightSectionContainer (created by Connect(RightSectionContainer))\n    in Connect(RightSectionContainer) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 9
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738770,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 10
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738780,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 11
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738804,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 12
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738882,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 13
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738894,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 14
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738904,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 15
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738910,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 16
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738915,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 17
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542738975,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 18
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542739087,
+      "message": "TypeError: Cannot read property 'translator' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 19
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542739111,
+      "message": "TypeError: Cannot read property 'Images' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 20
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542739116,
+      "message": "TypeError: Cannot read property 'Images' of undefined",
+      "detail": "\n    in Connect(Profile) (at ChatContainer.js:50)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 21
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542739737,
+      "message": "TypeError: Cannot read property 't' of undefined",
+      "detail": "\n    in MyCodeQR (at ChatContainer.js:53)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:72)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 22
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542739773,
+      "message": "TypeError: Cannot read property 't' of undefined",
+      "detail": "\n    in MyCodeQR (at ChatContainer.js:53)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:72)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 23
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542739781,
+      "message": "TypeError: Cannot read property 't' of undefined",
+      "detail": "\n    in MyCodeQR (at ChatContainer.js:53)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:72)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 24
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542739787,
+      "message": "TypeError: Cannot read property 't' of undefined",
+      "detail": "\n    in MyCodeQR (at ChatContainer.js:53)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:72)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 25
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542739797,
+      "message": "TypeError: Cannot read property 't' of undefined",
+      "detail": "\n    in MyCodeQR (at ChatContainer.js:53)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:72)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 26
     }
   ],
   "contacts": [
