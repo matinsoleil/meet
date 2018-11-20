@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 class MyCodeQR extends Component {
     render() {
         return (
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null)(MyCodeQR)
+export default connect(mapStateToProps, null)(MyCodeQR);
