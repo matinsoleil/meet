@@ -1,59 +1,57 @@
 import GeneralDataUser from './GeneralDataUser';
-import ListChats from './ListChats';
+import GeneralChatData from './GeneralChatData'
 import { fetchContactSection } from '../../../redux/actions/contactSection/fetchContactSection'
 import showSectionRight from '../../../redux/actions/rightSection/showSectionRight';
-import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight';
 import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection';
 import showSectionGroups from '../../../redux/actions/groups/showSectionGroups';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './RightSectionContainer.scss'
+import './ContactSectionContainer.scss'
 
 class ContactSectionContainer extends Component {
     constructor(props) {
-        super(props)
-        this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this)
+        super(props);
+        this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
         this.filterList = this.filterList.bind(this);
         this.open = 1;
     }
 
     componentDidMount() {
-        this.props.fetchContactSection()
+        this.props.fetchContactSection();
     }
 
     orderByFix(list) {
-        const byFix = list.slice(0)
+        const byFix = list.slice(0);
         return byFix.sort(function (a, b) {
-            var x = a.fix
-            var y = b.fix
+            var x = a.fix;
+            var y = b.fix;
             return x > y ? -1 : x < y ? 1 : 0;
         })
     }
 
     showSectionGroupsClick = () => {
-        this.props.showSectionRight('GroupSectionContainer')
-        //this.props.showSectionGroups()
+        this.props.showSectionRight('GroupSectionContainer');
         this.open = 0;
     }
 
     filterList = (event) => {
-        const val = event.target.value.toLowerCase()
+        const val = event.target.value.toLowerCase();
         let result = [];
         if (val.length === 0) {
-            result = this.props.contacts
+            result = this.props.contacts;
         } else {
-            result = this.props.contacts.filter(v => v.name.toLowerCase().includes(val))
+            result = this.props.contacts.filter(v => v.name.toLowerCase().includes(val));
         }
-        this.props.updateFilterContactSection(result)
+        this.props.updateFilterContactSection(result);
     }
 
     render() {
         let listContact = this.props.contacts.filter(function (contact) {
             return contact.conversations !== null;
         })
-        const filter_contacts = this.props.contactSection.filter_contacts
-        let contacts = []
-        if (!filter_contacts) { contacts = listContact } else { contacts = filter_contacts }
+        const filter_contacts = this.props.contactSection.filter_contacts;
+        let contacts = [];
+        if (!filter_contacts) { contacts = listContact; } else { contacts = filter_contacts; }
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
@@ -67,7 +65,13 @@ class ContactSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
-                <ListChats listChats={this.orderByFix(contacts)} />
+                <div className="main-chat-general-list-contact" >
+                    {this.orderByFix(contacts).map(chat =>
+                        <GeneralChatData chat={chat}
+                            key={chat.id}
+                        />
+                    )}
+                </div>
             </div>
         )
     }
@@ -89,9 +93,6 @@ const mapDispatchToProps = dispatch => {
         },
         showSectionGroups: () => {
             dispatch(showSectionGroups())
-        },
-        hideSectionRight: () => {
-            dispatch(hideSectionRight())
         },
         updateFilterContactSection: (listaContact) => {
             dispatch(updateFilterContactSection(listaContact))
