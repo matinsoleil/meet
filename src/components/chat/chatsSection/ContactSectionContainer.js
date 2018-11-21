@@ -18,8 +18,6 @@ class ContactSectionContainer extends Component {
     }
 
     componentDidMount() {
-        // this.props.fetchUser()
-        // this.props.fetchGroups()
         this.props.fetchContactSection()
     }
 
@@ -79,7 +77,6 @@ const mapStateToProps = state => {
     return {
         add_icon: state.customizing.Images.add_icon,
         contactSection: state.contactSection,
-        // contactSection: state.contactSection,
         user: state.users,
         contacts: state.contacts,
     }
