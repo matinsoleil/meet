@@ -1,18 +1,26 @@
-import GeneralDataUser from './GeneralDataUser'
-import ListChats from './ListChats'
-import showSectionRight from '../../../redux/actions/rightSection/showSectionRight'
-import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight'
-import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection'
-import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
+import GeneralDataUser from './GeneralDataUser';
+import ListChats from './ListChats';
+import { fetchContactSection } from '../../../redux/actions/contactSection/fetchContactSection'
+import showSectionRight from '../../../redux/actions/rightSection/showSectionRight';
+import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight';
+import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection';
+import showSectionGroups from '../../../redux/actions/groups/showSectionGroups';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './RightSectionContainer.scss'
-class RightSectionContainer extends Component {
+
+class ContactSectionContainer extends Component {
     constructor(props) {
         super(props)
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this)
         this.filterList = this.filterList.bind(this);
         this.open = 1;
+    }
+
+    componentDidMount() {
+        // this.props.fetchUser()
+        // this.props.fetchGroups()
+        this.props.fetchContactSection()
     }
 
     orderByFix(list) {
@@ -67,6 +75,10 @@ class RightSectionContainer extends Component {
 const mapStateToProps = state => {
     return {
         add_icon: state.customizing.Images.add_icon,
+        contactSection: state.contactSection,
+        // contactSection: state.contactSection,
+        user: state.users,
+        contacts: state.contacts,
     }
 }
 
@@ -84,7 +96,10 @@ const mapDispatchToProps = dispatch => {
         updateFilterContactSection: (listaContact) => {
             dispatch(updateFilterContactSection(listaContact))
         },
+        fetchContactSection: () => {
+            dispatch(fetchContactSection())
+        }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RightSectionContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ContactSectionContainer)

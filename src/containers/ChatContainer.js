@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer'
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
-import { fetchContactSection } from '../redux/actions/contactSection/fetchContactSection'
 import { fetchUser } from '../redux/actions/users/fetchUser'
 import { fetchGroups } from '../redux/actions/groups/fetchGroups'
 import { getContacts } from '../redux/selectors/contacts'
@@ -31,14 +30,14 @@ class ChatContainer extends Component {
         // this.props.fetchConversation()
         this.props.fetchUser()
         this.props.fetchGroups()
-        this.props.fetchContactSection()
+        
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();
         //this.props.logout();
     }
 
-    renderBody = (listContact, user, conversation, groups, contactSection) => {
+    renderBody = (listContact, user, conversation, groups) => {
         if (this.props.alertGeneral.show === true) {
             setTimeout(function () {
                 if (this.props.alertGeneral.show === true) {
@@ -48,9 +47,9 @@ class ChatContainer extends Component {
         }
         return (
             <div className="main-chat">
-                {/* <ContactSectionContainer user={user} contacts={listContact} contactSection={contactSection} server={this.props.server} /> */}
+              <ContactSectionContainer contacts={listContact} />
                 {/* <Profile /> */}
-                <MyCodeQR />
+                {/* <MyCodeQR /> */}
                 {/* <EditProfile /> */}
                 <MessageSectionContainer contacts={listContact} chat={conversation} contact={this.props.contact} server={this.props.server} />
                 {this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null}
@@ -118,9 +117,6 @@ const mapDispatchToProps = dispatch => {
         },
         fetchUser: () => {
             dispatch(fetchUser("U1"))
-        },
-        fetchContactSection: () => {
-            dispatch(fetchContactSection())
         },
         initApi: params => {
             dispatch(initApi(params))
