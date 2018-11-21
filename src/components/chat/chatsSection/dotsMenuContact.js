@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getAlertGeneral } from '../../../redux/selectors/alertGeneral'
 import hideAlertGeneral from '../../../redux/actions/alertGeneral/hideAlertGeneral'
-import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import './dotsMenuContact.scss'
 class dotsMenuContact extends Component {
     constructor(props) {
@@ -71,10 +70,11 @@ class dotsMenuContact extends Component {
     }
 
     render() {
-        const titleActionFix = this.props.chat.fix !== true ? "Fijar chat" : "Dejar de fijar chat"
-        const titleActionFile = this.props.chat.file !== true ? "Archivar chat" : "Desarchivar chat"
-        const titleActionSilence = this.props.chat.silence === "0" ? "Silenciar chat" : "Cancelar silencio"
-        const titleReadMessage = this.props.chat.countMessage !== "" ? "Marcar como leído" : "Marcar como no leído"
+        const titleActionFix = this.props.chat.fix !== true ? this.props.Translator.t('Fijar chat') : this.props.Translator.t('Dejar de fijar chat')
+        const titleActionFile = this.props.chat.file !== true ? this.props.Translator.t('Archivar chat') : this.props.Translator.t('Desarchivar chat')
+        const titleActionSilence = this.props.chat.silence === "0" ? this.props.Translator.t('Silenciar chat') : this.props.Translator.t('Cancelar silencio')
+        const titleReadMessage = this.props.chat.countMessage !== "" ? this.props.Translator.t('Marcar como leído') : this.props.Translator.t('Marcar como no leído')
+
         return (
             <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper">
                 <img ref={img => { this.dots = img }} className="dots-menu" src={this.props.dots_menu} alt="" />
@@ -86,12 +86,12 @@ class dotsMenuContact extends Component {
                             <p className="optionSideMenu"><a onClick={this.props.showModalSilenceConversationAction}> {titleActionSilence} </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.fixContact}> {titleActionFix} </a></p>
                             <p className="optionSideMenu"><a onClick={this.props.readMessage}> {titleReadMessage} </a></p>
-                            <p className="optionSideMenu" onClick={this.props.showModalDeleteConversationContactAction} ><a> Eliminar historial del chat </a></p>
+                            <p className="optionSideMenu" onClick={this.props.showModalDeleteConversationContactAction} ><a> {this.props.Translator.t('Eliminar historial del chat')} </a></p>
                             {
                                 this.props.chat.typeChat !== "1" ?
-                                    <p className="optionSideMenu"><a onClick={this.props.showModalLeaveGroup}> Salir del grupo </a></p>
+                                    <p className="optionSideMenu"><a onClick={this.props.showModalLeaveGroup}> {this.props.Translator.t('Salir del grupo')} </a></p>
                                     :
-                                    <p className="optionSideMenu"><a onClick={this.props.showModalDeleteContactAction}> Eliminar chat </a></p>
+                                    <p className="optionSideMenu"><a onClick={this.props.showModalDeleteContactAction}> {this.props.Translator.t('Eliminar chat')} </a></p>
                             }
                         </div>
                     </div>
@@ -104,6 +104,7 @@ const mapStateToProps = state => {
     return {
         alertGeneral: getAlertGeneral(state),
         dots_menu: state.customizing.Images.dots_menu,
+        Translator: state.country.translator,
     }
 }
 
@@ -111,10 +112,7 @@ const mapDispatchToProps = dispatch => {
     return {
         hideAlertGeneral: () => {
             dispatch(hideAlertGeneral())
-        },
-        showAlertGeneral: (msj) => {
-            dispatch(showAlertGeneral(msj))
-        },
+        }
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(dotsMenuContact)
