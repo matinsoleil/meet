@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import updateFilterContactsAddGroup from '../../../../redux/actions/groups/updateFilterContactsAddGroup'
-import hideSectionRight from '../../../../redux/actions/rightSection/hideSectionRight'
-import fetchContact from '../../../../redux/actions/contact/fetchContact'
-import updateListContactsAddGroup from '../../../../redux/actions/groups/updateListContactsAddGroup'
-import addContact from '../../../../redux/actions/contacts/addContact'
-import addConversation from '../../../../redux/actions/conversation/addConversation'
-import showAlertGeneral from '../../../../redux/actions/alertGeneral/showAlertGeneral'
-import { getGroupsSection } from '../../../../redux/selectors/groupsSection'
+import updateFilterContactsAddGroup from '../../../../../redux/actions/groups/updateFilterContactsAddGroup'
+import hideSectionRight from '../../../../../redux/actions/rightSection/hideSectionRight'
+import fetchContact from '../../../../../redux/actions/contact/fetchContact'
+import updateListContactsAddGroup from '../../../../../redux/actions/groups/updateListContactsAddGroup'
+import addContact from '../../../../../redux/actions/contacts/addContact'
+import addConversation from '../../../../../redux/actions/conversation/addConversation'
+import showAlertGeneral from '../../../../../redux/actions/alertGeneral/showAlertGeneral'
+import { getGroupsSection } from '../../../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
 import { connect } from 'react-redux'
-import { showModal,View } from '../../../../redux/actions/modalBox/modalBox';
+import { showModal,View } from '../../../../../redux/actions/modalBox/modalBox';
 import './HeaderGroupSection.scss'
 class HeaderGroupSection extends Component {
   constructor(props) {

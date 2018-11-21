@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { getGroupsSection } from '../../../../redux/selectors/groupsSection';
+import { getGroupsSection } from '../../../../../redux/selectors/groupsSection';
 import { connect } from 'react-redux'
 import GeneralContactDataGroup from './GeneralContactDataGroup'
-import updateFilterContactsAddGroup from '../../../../redux/actions/groups/updateFilterContactsAddGroup';
-import updateListContactsAddGroup from '../../../../redux/actions/groups/updateListContactsAddGroup';
+import updateFilterContactsAddGroup from '../../../../../redux/actions/groups/updateFilterContactsAddGroup';
+import updateListContactsAddGroup from '../../../../../redux/actions/groups/updateListContactsAddGroup';
 import './ContactList.scss';
 
 class ContactList extends Component {

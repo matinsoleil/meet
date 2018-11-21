@@ -5,15 +5,6 @@ import MessageSectionContainer from './../components/chat/messagesSection/messag
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
 import { fetchUser } from '../redux/actions/users/fetchUser'
-<<<<<<< Updated upstream
-import { fetchGroups } from '../redux/actions/groups/fetchGroups'
-=======
-import { getContacts } from '../redux/selectors/contacts'
-import { getContact } from '../redux/selectors/contact'
-import { getUser } from '../redux/selectors/user'
-import { getConversation } from '../redux/selectors/conversation'
-import { getContactSection } from '../redux/selectors/contactSection'
->>>>>>> Stashed changes
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
 import RightSection from '../components/chat/rightSection/RightSection'
@@ -23,18 +14,9 @@ import LengthSection from '../components/chat/lengthSection/LengthSection';
 class ChatContainer extends Component {
     componentDidMount() {
         this.props.fetchContacts()
-<<<<<<< Updated upstream
         // this.props.fetchConversation()
         this.props.fetchUser()
-        this.props.fetchGroups()
-=======
-        //this.props.fetchConversation()
-
-        this.props.fetchUser()
         //this.props.fetchGroups()
-        this.props.fetchContactSection()
-
->>>>>>> Stashed changes
         // this.props.initApi();
         // this.props.getToken({});
         // this.props.login();

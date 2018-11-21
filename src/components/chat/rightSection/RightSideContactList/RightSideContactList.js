@@ -1,8 +1,8 @@
 import HeaderGroupSection from './HeaderRightSection/HeaderGroupSection';
 import ContactList from './ContactList/ContactList';
 import React, { Component } from 'react'
-import { getGroupsSection } from '../../../redux/selectors/groupsSection'
-import { getContacts } from '../../../redux/selectors/contacts'
+import { getGroupsSection } from '../../../../redux/selectors/groupsSection'
+import { getContacts } from '../../../../redux/selectors/contacts'
 import { connect } from 'react-redux'
 import './RightSideContactList.scss'
 

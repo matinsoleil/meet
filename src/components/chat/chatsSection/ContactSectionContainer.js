@@ -6,6 +6,7 @@ import updateFilterContactSection from '../../../redux/actions/contactSection/up
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './ContactSectionContainer.scss'
+import { toggleRightSide } from '../../../redux/actions/rightSection/rightSection';
 
 class ContactSectionContainer extends Component {
     constructor(props) {
@@ -60,7 +61,7 @@ class ContactSectionContainer extends Component {
                     <div className="dropdown">
                         <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
                         <div className="dropdown-content">
-                            <a onClick={this.showSectionGroupsClick} >Nuevo chat grupal</a>
+                            <a onClick={()=>{this.props.toggleRightSide('Agregar a','RightSideContactList/RightSideContactList.js')}} >Nuevo chat grupal</a>
                         </div>
                     </div>
                 </div>
@@ -95,6 +96,9 @@ const mapDispatchToProps = dispatch => {
         },
         fetchContactSection: () => {
             dispatch(fetchContactSection())
+        },
+        toggleRightSide: (title,type) => {
+            dispatch(toggleRightSide(title,type));
         }
     }
 }
