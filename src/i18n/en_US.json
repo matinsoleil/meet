@@ -21,6 +21,16 @@
   "¿Seguro que deseas eliminar el chat con": "¿Seguro que deseas eliminar el chat con",
   "¿Seguro que deseas eliminar el historial del chat de": "¿Seguro que deseas eliminar el historial del chat de",
   "Silenciar durante…": "Silenciar durante…",
-  "Cancelaste el silencio del chat": "Cancelaste el silencio del chat"
-  
+  "Cancelaste el silencio del chat": "Cancelaste el silencio del chat",
+  "Fijar chat": "Fijar chat",
+  "Dejar de fijar chat": "Dejar de fijar chat",
+  "Archivar chat": "Archivar chat",
+  "Desarchivar chat": "Desarchivar chat",
+  "Silenciar chat": "Silenciar chat",
+  "Cancelar silencio":"Cancelar silencio",
+  "Marcar como leído":"Marcar como leído",
+  "Marcar como no leído":"Marcar como no leído",
+  "Eliminar historial del chat":"Eliminar historial del chat",
+  "Salir del grupo":"Salir del grupo",
+  "Eliminar chat":"Eliminar chat"
 }
