@@ -4,11 +4,10 @@ import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import clearContact from '../../../redux/actions/contact/clearContact'
 import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
+import fileContacts from '../../../redux/actions/contacts/fileContacts'
+import fixContacts from '../../../redux/actions/contacts/fixContacts'
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
 import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
-import { getContact } from '../../../redux/selectors/contact'
-import { getContacts } from '../../../redux/selectors/contacts'
-import { getContactSection } from '../../../redux/selectors/contactSection'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { showModal } from '../../../redux/actions/modalBox/modalBox';
 import { connect } from 'react-redux'
@@ -57,46 +56,51 @@ class GeneralContactData extends Component {
     }
 
     fileContact = () => {
-        this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
-        var msj = this.props.chat["file"] === "1" ? "Archivaste el chat" : "Desarchivaste el chat"
-        this.props.showAlertGeneral(msj)
-        this.showDots()
+        this.props.chat["file"] = this.props.chat["file"] === true ? false : true;
+        let msj = this.props.chat["file"] === true ? "Archivaste el chat" : "Desarchivaste el chat";
+        this.props.showAlertGeneral(msj);
+        // this.props.fileContacts(this.props.chat["id"]);
+        this.props.updateContacts(this.props.chat["id"]);
+        this.showDots();
     }
 
     fixContact = () => {
-        var msj = "";
-        this.props.chat["pinner"] = this.props.chat["pinner"] === "1" ? "0" : "1"
-        msj = this.props.chat["pinner"] === "1" ? "Fijaste el chat" : "Dejaste de fijar el chat"
-        this.props.showAlertGeneral(msj)
-        this.showDots()
+        let msj = "";
+        this.props.chat["fix"] = this.props.chat["fix"] === true ? false : true;
+        msj = this.props.chat["fix"] === true ? "Fijaste el chat" : "Dejaste de fijar el chat";
+        this.props.showAlertGeneral(msj);
+        // this.props.fixContacts(this.props.chat["id"]);
+        this.props.updateContacts(this.props.chat["id"]);
+        this.showDots();
     }
 
     leaveGroup = () => {
-        console.log("Salir del grupo")
+        console.log("Salir del grupo");
     }
 
     actionDeleteElementChat = () => {
-        var listContacts = this.props.contacts
-        var idContact = this.props.chat.id
-        this.props.chat["conversations"] = null
-        var filter_contacts = this.props.contactSection.filter_contacts
+        let idContact = this.props.chat.id;
+        this.props.chat["conversations"] = null;
+        let filter_contacts = this.props.contactSection.filter_contacts;
         if (filter_contacts !== null) {
-            var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
-            filter_contacts.splice(index_filter_contacts, 1)
+            let index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact);
+            filter_contacts.splice(index_filter_contacts, 1);
         }
-        if (this.props.contact.id === this.props.chat.id) { this.props.clearContact() }
-        this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name)
+        if (this.props.contact.id === this.props.chat.id) { this.props.clearContact(); }
+        this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name);
     }
 
     submitCreateSilence = (values) => {
         this.props.chat["silence"] = values.timeSilence
         this.props.showModal();
         this.props.showAlertGeneral("Silenciaste el chat")
+        this.props.updateContacts(this.props.chat["id"]);
         this.showDots()
     }
 
     deleteConversationContact = () => {
         this.props.showAlertGeneral('Historial del chat eliminado');
+        this.props.updateContacts(this.props.chat["id"]);
         this.showDots()
     }
 
@@ -121,6 +125,7 @@ class GeneralContactData extends Component {
         if (this.props.chat.silence !== "0") {
             this.props.chat["silence"] = "0"
             this.props.showAlertGeneral("Cancelaste el silencio del chat")
+            this.props.updateContacts(this.props.chat["id"]);
         } else {
             this.props.showModal(
                 `Silenciar durante…`,
@@ -186,6 +191,7 @@ class GeneralContactData extends Component {
             this.props.chat["countMessage"] = null
             this.props.showAlertGeneral("Marcando como no leído")
         }
+        this.props.updateContacts(this.props.chat["id"]);
     }
 
     render() {
@@ -207,10 +213,10 @@ class GeneralContactData extends Component {
                                 this.props.chat.silence !== "0" ? <img className="status-contact" src={this.props.mute_a_icon} alt="status-conctact" /> : null
                             }
                             {
-                                this.props.chat.file !== "0" ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
+                                this.props.chat.file === true ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
                             }
                             {
-                                this.props.chat.pinner !== "0" ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
+                                this.props.chat.fix === true ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
                             }
                         </span>
                     </div>
@@ -251,9 +257,9 @@ const mapStateToProps = state => {
         status_user_icon: state.customizing.Images.status_user_attach_icon,
         mute_a_icon: state.customizing.Images.mute_a_icon,
         file_icon: state.customizing.Images.file_icon_chat,
-        contacts: getContacts(state),
-        contact: getContact(state),
-        contactSection: getContactSection(state)
+        contacts: state.contacts,
+        contact: state.contacts,
+        contactSection: state.contactSection
     }
 }
 
@@ -271,8 +277,14 @@ const mapDispatchToProps = dispatch => {
         showAlertGeneral: (msj) => {
             dispatch(showAlertGeneral(msj))
         },
-        updateContacts: (param) => {
-            dispatch(updateContacts(param))
+        fileContacts: (idContact) => {
+            dispatch(fileContacts(idContact))
+        },
+        fixContacts: (idContact) => {
+            dispatch(fixContacts(idContact))
+        },
+        updateContacts: (id) => {
+            dispatch(updateContacts(id))
         },
         updatePinerGroup: (id) => {
             dispatch(updatePinerGroup(id))

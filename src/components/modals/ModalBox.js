@@ -26,7 +26,6 @@ class ModalBox extends Component {
         }) : this.setState({view:undefined});
     }
 
-
     render() {
         return (
             <div className="modal-show" hidden={!this.props.show}>

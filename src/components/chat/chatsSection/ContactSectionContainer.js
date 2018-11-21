@@ -1,13 +1,15 @@
-import GeneralDataUser from './GeneralDataUser'
-import ListChats from './ListChats'
-import showSectionRight from '../../../redux/actions/rightSection/showSectionRight'
-import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight'
-import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection'
-import showSectionGroups from '../../../redux/actions/groups/showSectionGroups'
+import GeneralDataUser from './GeneralDataUser';
+import ListChats from './ListChats';
+import { fetchContactSection } from '../../../redux/actions/contactSection/fetchContactSection'
+import showSectionRight from '../../../redux/actions/rightSection/showSectionRight';
+import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight';
+import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection';
+import showSectionGroups from '../../../redux/actions/groups/showSectionGroups';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './RightSectionContainer.scss'
-class RightSectionContainer extends Component {
+
+class ContactSectionContainer extends Component {
     constructor(props) {
         super(props)
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this)
@@ -15,11 +17,15 @@ class RightSectionContainer extends Component {
         this.open = 1;
     }
 
-    orderByPinner(list) {
-        const byPinner = list.slice(0)
-        return byPinner.sort(function (a, b) {
-            var x = a.pinner.toLowerCase()
-            var y = b.pinner.toLowerCase()
+    componentDidMount() {
+        this.props.fetchContactSection()
+    }
+
+    orderByFix(list) {
+        const byFix = list.slice(0)
+        return byFix.sort(function (a, b) {
+            var x = a.fix
+            var y = b.fix
             return x > y ? -1 : x < y ? 1 : 0;
         })
     }
@@ -27,7 +33,7 @@ class RightSectionContainer extends Component {
     showSectionGroupsClick = () => {
         this.props.showSectionRight('GroupSectionContainer')
         //this.props.showSectionGroups()
-        this.open = 0; 
+        this.open = 0;
     }
 
     filterList = (event) => {
@@ -42,9 +48,12 @@ class RightSectionContainer extends Component {
     }
 
     render() {
+        let listContact = this.props.contacts.filter(function (contact) {
+            return contact.conversations !== null;
+        })
         const filter_contacts = this.props.contactSection.filter_contacts
         let contacts = []
-        if (!filter_contacts) { contacts = this.props.contacts } else { contacts = filter_contacts }
+        if (!filter_contacts) { contacts = listContact } else { contacts = filter_contacts }
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
@@ -58,7 +67,7 @@ class RightSectionContainer extends Component {
                         </div>
                     </div>
                 </div>
-                <ListChats listChats={this.orderByPinner(contacts)} />
+                <ListChats listChats={this.orderByFix(contacts)} />
             </div>
         )
     }
@@ -67,6 +76,9 @@ class RightSectionContainer extends Component {
 const mapStateToProps = state => {
     return {
         add_icon: state.customizing.Images.add_icon,
+        contactSection: state.contactSection,
+        user: state.users,
+        contacts: state.contacts,
     }
 }
 
@@ -77,14 +89,17 @@ const mapDispatchToProps = dispatch => {
         },
         showSectionGroups: () => {
             dispatch(showSectionGroups())
-        },   
-        hideSectionRight: () =>{
+        },
+        hideSectionRight: () => {
             dispatch(hideSectionRight())
         },
         updateFilterContactSection: (listaContact) => {
             dispatch(updateFilterContactSection(listaContact))
         },
+        fetchContactSection: () => {
+            dispatch(fetchContactSection())
+        }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RightSectionContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ContactSectionContainer)
