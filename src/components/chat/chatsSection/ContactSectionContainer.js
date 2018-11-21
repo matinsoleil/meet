@@ -3,7 +3,6 @@ import GeneralChatData from './GeneralChatData'
 import { fetchContactSection } from '../../../redux/actions/contactSection/fetchContactSection'
 import showSectionRight from '../../../redux/actions/rightSection/showSectionRight';
 import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection';
-import showSectionGroups from '../../../redux/actions/groups/showSectionGroups';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './ContactSectionContainer.scss'
@@ -90,9 +89,6 @@ const mapDispatchToProps = dispatch => {
     return {
         showSectionRight: (showSection) => {
             dispatch(showSectionRight(showSection))
-        },
-        showSectionGroups: () => {
-            dispatch(showSectionGroups())
         },
         updateFilterContactSection: (listaContact) => {
             dispatch(updateFilterContactSection(listaContact))
