@@ -1,35 +1,35 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-//import GroupSectionContainer from '../../../components/chat/groupSection/GroupSectionContainer'
-import './RightSection.scss'
-import HeaderGroupSection from '../groupSection/HeaderGroupSection';
-import ListGeneralContactsGroup from '../groupSection/ListGeneralContactsGroup';
-import HeaderHolder from './headerHolder/HeaderHolder';
+import {connect} from 'react-redux';
+import { createNewGroup } from '../../../redux/actions/groups/groups';
+import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight';
+import RightSideContactList from '../../../components/chat/groupSection/RightSideContactList'
+import './RightSection.scss';
 
 class RightSection extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            View: undefined,
+        }
+    }
+
+    componentDidMount(){
+
+    } 
+
     render() {
         return (
             <div className="right-section-container">
-                <div className="group-section-container">
-                    <HeaderHolder>
-                        <HeaderGroupSection
-                            list_contacts={this.props.contacts}
-                            list_contacts_add_group={this.props.groupsSection.list_contacts_add_group}
-                            filter_contacts={this.props.groupsSection.filter_contacts}
-                        />
-                    </HeaderHolder>
-                    <ListGeneralContactsGroup
-                        contacts={this.props.contacts}
-                        list_contacts_add_group={this.props.groupsSection.list_contacts_add_group}
-                        filter_contacts={this.props.groupsSection.filter_contacts}
-                    />
-                </div>
+                <RightSideContactList action={this.props.createNewGroup}/>
             </div>
         );
     }
-}
 
-export default connect(state => ({
-    groupsSection: state.groupsSection,
-    contacts: state.contacts,
+}
+export default connect(null,dispatch=>({
+    createNewGroup: (newConversation,newGroupElement) =>{
+        dispatch(createNewGroup(newConversation,newGroupElement));
+        dispatch(hideSectionRight());
+    },
 }))(RightSection);
