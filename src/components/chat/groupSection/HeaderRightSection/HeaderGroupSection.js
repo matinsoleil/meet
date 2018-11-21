@@ -1,23 +1,19 @@
 import React, { Component } from 'react'
-import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
-import hideSectionRight from '../../../redux/actions/rightSection/hideSectionRight'
-import fetchContact from '../../../redux/actions/contact/fetchContact'
-import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
-import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-import addContact from '../../../redux/actions/contacts/addContact'
-import addConversation from '../../../redux/actions/conversation/addConversation'
-import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
-import { getGroupsSection } from '../../../redux/selectors/groupsSection'
+import updateFilterContactsAddGroup from '../../../../redux/actions/groups/updateFilterContactsAddGroup'
+import hideSectionRight from '../../../../redux/actions/rightSection/hideSectionRight'
+import fetchContact from '../../../../redux/actions/contact/fetchContact'
+import updateListContactsAddGroup from '../../../../redux/actions/groups/updateListContactsAddGroup'
+import addContact from '../../../../redux/actions/contacts/addContact'
+import addConversation from '../../../../redux/actions/conversation/addConversation'
+import showAlertGeneral from '../../../../redux/actions/alertGeneral/showAlertGeneral'
+import { getGroupsSection } from '../../../../redux/selectors/groupsSection'
 import ContactAddGroup from './ContactAddGroup'
 import { connect } from 'react-redux'
-import { showModal,View } from '../../../redux/actions/modalBox/modalBox';
+import { showModal,View } from '../../../../redux/actions/modalBox/modalBox';
 import './HeaderGroupSection.scss'
 class HeaderGroupSection extends Component {
   constructor(props) {
     super(props)
-    this.typeText = 'addTo'
-    this.typeButton = 'aceptTo'
-    this.state = { showModalCreateGroup: false }
     this.listContacts = []
     this.assingedIds = []
     this.modalModel = {
@@ -39,17 +35,14 @@ class HeaderGroupSection extends Component {
     for (var i = 0; i < this.listContacts.length; i++) {
         this.listContacts[i].onEdit = '0';
     }
-    this.props.updateListContactsGroup(this.listContacts);
     this.firstClear = 1;
     }
   }
 
 
-  deleteContactListCreateGroup(idContact) {
-    
+  deleteContactListCreateGroup = (idContact) => {
     this.listContacts = this.props.list_contacts
     var listAddContactsGroup = this.props.list_contacts_add_group
-
     for (var i = 0; i < this.listContacts.length; i++) {
       if (this.listContacts[i].id === idContact) {
         this.listContacts[i].onEdit = '0';
@@ -57,7 +50,6 @@ class HeaderGroupSection extends Component {
     }
     var indexContact = listAddContactsGroup.findIndex(item => item.id === idContact)
     listAddContactsGroup.splice(indexContact, 1)
-    this.props.updateListContactsGroup(this.listContacts)
     this.props.updateListContactsAddGroup(listAddContactsGroup)
   }
 
@@ -80,8 +72,8 @@ class HeaderGroupSection extends Component {
       "lastMessage": null,
       "countMessage": "",
       "silence": "0",
-      "file": false,
-      "fix": false,
+      "file": "0",
+      "pinner": "0",
       "imgContact": "https://imageog.flaticon.com/icons/png/512/27/27825.png",
       "owner": [
         "1"
@@ -94,11 +86,8 @@ class HeaderGroupSection extends Component {
       "contactos": ["U1", "9999"],
       "conversation": []
     }
-    this.props.addConversation(newConversation)
-    this.props.addContact(newGroupElemnt)
-    this.props.fetchContact(newGroupElemnt)
+    this.props.action(newConversation,newGroupElemnt);
     this.props.showModal();
-    this.props.hideSectionRight()
     this.clearClose()
     this.props.showAlertGeneral('Se creo el nuevo grupo ' + name)
 
@@ -127,18 +116,15 @@ class HeaderGroupSection extends Component {
   }
 
   clearClose = () => {
-    console.log('CLEAR_CLOSE');
     this.listContacts = this.props.list_contacts;
     for (var i = 0; i < this.listContacts.length; i++) {
       this.listContacts[i].onEdit = '0';
     }
-    this.props.updateListContactsGroup(this.listContacts)
-    this.props.hideSectionRight()
+    this.props.updateListContactsAddGroup([]);
+    this.props.action();
   }
 
   render() {
-  
-
     this.list_contacts_add_group = this.props.list_contacts_add_group;
     return (
       <div className="main-header-group-section">
@@ -183,9 +169,6 @@ const mapDispatchToProps = dispatch => {
     },
     hideSectionRight: () => {
       dispatch(hideSectionRight())
-    },
-    updateListContactsGroup: (listContacts) => {
-      dispatch(updateListContactsGroup(listContacts))
     },
     updateListContactsAddGroup: (listContacts) => {
       dispatch(updateListContactsAddGroup(listContacts))

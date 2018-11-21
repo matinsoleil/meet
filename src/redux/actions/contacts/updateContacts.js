@@ -1,8 +1,10 @@
 import { UPDATE_CONTACTS } from '../../actionstypes'
-export const updateContacts = (updateParam) => dispatch => {
+export const updateContacts = (idContact) => dispatch => {
     dispatch({
         type: UPDATE_CONTACTS,
-        payload: updateParam,
+        payload: idContact,
     })
 }
 export default updateContacts;
+
+

@@ -1,0 +1,34 @@
+.main-chat-general-list-contact-group {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll; 
+    position: fixed;
+    top:150px;
+    height: 100%;
+    width: 408px;
+    padding-bottom: 248px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .main-chat-general-list-contact-group {
+      border:0px solid black;  
+      background-color: white;
+      position: fixed; 
+      width: 408px;
+      top:150px;
+      right: 6px;
+      margin-left: 8px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 248px;
+      -moz-box-shadow: -1px 0px 0px #F2F2F2;;
+      -webkit-box-shadow: -1px 0px 0px#F2F2F2;;
+      box-shadow: -1px 0px 0px #F2F2F2;;
+      
+    }
+  }
+
+.main-chat-general-list-contact-group-title{
+    color: rgb(78, 78, 78);
+    font-weight: bold;
+}

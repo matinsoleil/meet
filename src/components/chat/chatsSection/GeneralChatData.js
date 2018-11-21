@@ -3,12 +3,7 @@ import './GeneralChatData.scss'
 import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import clearContact from '../../../redux/actions/contact/clearContact'
-import updatePinerGroup from '../../../redux/actions/groups/updatePinerGroup'
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
-import deleteConversation from '../../../redux/actions/conversation/deleteConversation'
-import { getContact } from '../../../redux/selectors/contact'
-import { getContacts } from '../../../redux/selectors/contacts'
-import { getContactSection } from '../../../redux/selectors/contactSection'
 import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { showModal,View } from '../../../redux/actions/modalBox/modalBox';
 import { connect } from 'react-redux'
@@ -57,53 +52,56 @@ class GeneralContactData extends Component {
     }
 
     fileContact = () => {
-        this.props.chat["file"] = this.props.chat["file"] === "1" ? "0" : "1"
-        var msj = this.props.chat["file"] === "1" ? "Archivaste el chat" : "Desarchivaste el chat"
-        this.props.showAlertGeneral(msj)
-        this.showDots()
+        this.props.chat["file"] = this.props.chat["file"] === true ? false : true;
+        let msj = this.props.chat["file"] === true ? this.props.Translator.t('Archivaste el chat') : this.props.Translator.t('Desarchivaste el chat');
+        this.props.showAlertGeneral(msj);
+        this.props.updateContacts(this.props.chat["id"]);
+        this.showDots();
     }
 
     fixContact = () => {
-        var msj = "";
-        this.props.chat["pinner"] = this.props.chat["pinner"] === "1" ? "0" : "1"
-        msj = this.props.chat["pinner"] === "1" ? "Fijaste el chat" : "Dejaste de fijar el chat"
-        this.props.showAlertGeneral(msj)
-        this.showDots()
+        let msj = "";
+        this.props.chat["fix"] = this.props.chat["fix"] === true ? false : true;
+        msj = this.props.chat["fix"] === true ? this.props.Translator.t('Fijaste el chat') : this.props.Translator.t('Archivaste el chat');
+        this.props.showAlertGeneral(msj);
+        this.props.updateContacts(this.props.chat["id"]);
+        this.showDots();
     }
 
     leaveGroup = () => {
-        console.log("Salir del grupo")
+        console.log("Salir del grupo");
     }
 
     actionDeleteElementChat = () => {
-        var listContacts = this.props.contacts
-        var idContact = this.props.chat.id
-        this.props.chat["conversations"] = null
-        var filter_contacts = this.props.contactSection.filter_contacts
+        let idContact = this.props.chat.id;
+        this.props.chat["conversations"] = null;
+        let filter_contacts = this.props.contactSection.filter_contacts;
         if (filter_contacts !== null) {
-            var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
-            filter_contacts.splice(index_filter_contacts, 1)
+            let index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact);
+            filter_contacts.splice(index_filter_contacts, 1);
         }
-        if (this.props.contact.id === this.props.chat.id) { this.props.clearContact() }
-        this.props.showAlertGeneral('Eliminaste el chat con ' + this.props.chat.name)
+        if (this.props.contact.id === this.props.chat.id) { this.props.clearContact(); }
+        this.props.showAlertGeneral(this.props.Translator.t('Eliminaste el chat con ') + this.props.chat.name);
     }
 
     submitCreateSilence = (values) => {
         this.props.chat["silence"] = values.timeSilence
         this.props.showModal();
-        this.props.showAlertGeneral("Silenciaste el chat")
+        this.props.showAlertGeneral(this.props.Translator.t('Silenciaste el chat'))
+        this.props.updateContacts(this.props.chat["id"]);
         this.showDots()
     }
 
     deleteConversationContact = () => {
-        this.props.showAlertGeneral('Historial del chat eliminado');
+        this.props.showAlertGeneral(this.props.Translator.t('Historial del chat eliminado'));
+        this.props.updateContacts(this.props.chat["id"]);
         this.showDots()
     }
 
     showModalDeleteContactAction = () => {
         this.showDots()
         this.props.showModal(
-            `¿Seguro que deseas eliminar el chat con ${this.props.chat.name}`,
+            `${this.props.Translator.t('¿Seguro que deseas eliminar el chat con')} ${this.props.chat.name}`,
             [{ name: 'ELIMINAR', action: this.actionDeleteElementChat }, { name: 'CANCELAR' }],
             View.CONFIRM);
     }
@@ -111,7 +109,7 @@ class GeneralContactData extends Component {
     showModalDeleteConversationContactAction = () => {
         this.showDots();
         this.props.showModal(
-            `¿Seguro que deseas eliminar el historial del chat de ${this.props.chat.name}`,
+            `${this.props.Translator.t('¿Seguro que deseas eliminar el historial del chat de')} ${this.props.chat.name}`,
             [{ name: 'ELIMINAR', action: this.deleteConversationContact }, { name: 'CANCELAR' }],
             View.CONFIRM
         );
@@ -120,10 +118,11 @@ class GeneralContactData extends Component {
     showModalSilenceConversationAction = () => {
         if (this.props.chat.silence !== "0") {
             this.props.chat["silence"] = "0"
-            this.props.showAlertGeneral("Cancelaste el silencio del chat")
+            this.props.showAlertGeneral(this.props.Translator.t('Cancelaste el silencio del chat'))
+            this.props.updateContacts(this.props.chat["id"]);
         } else {
             this.props.showModal(
-                `Silenciar durante…`,
+                `${this.props.Translator.t('Silenciar durante…')}`,
                 { Accept: { name: 'Silenciar', action: this.submitCreateSilence }, Cancel: { name: 'Cancelar' } },
                 View.SILENCE_CONVERSATION,
             );
@@ -181,11 +180,12 @@ class GeneralContactData extends Component {
         this.showDots()
         if (this.props.chat.countMessage !== "") {
             this.props.chat["countMessage"] = ""
-            this.props.showAlertGeneral("Marcando como leído")
+            this.props.showAlertGeneral(this.props.Translator.t('Marcando como leído'))
         } else {
             this.props.chat["countMessage"] = null
-            this.props.showAlertGeneral("Marcando como no leído")
+            this.props.showAlertGeneral(this.props.Translator.t('Marcando como no leído'))
         }
+        this.props.updateContacts(this.props.chat["id"]);
     }
 
     render() {
@@ -207,10 +207,10 @@ class GeneralContactData extends Component {
                                 this.props.chat.silence !== "0" ? <img className="status-contact" src={this.props.mute_a_icon} alt="status-conctact" /> : null
                             }
                             {
-                                this.props.chat.file !== "0" ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
+                                this.props.chat.file === true ? <img className="status-contact" src={this.props.file_icon} alt="status-conctact" /> : null
                             }
                             {
-                                this.props.chat.pinner !== "0" ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
+                                this.props.chat.fix === true ? <img className="status-contact" src={this.props.status_user_icon} alt="status-conctact" /> : null
                             }
                         </span>
                     </div>
@@ -251,9 +251,10 @@ const mapStateToProps = state => {
         status_user_icon: state.customizing.Images.status_user_attach_icon,
         mute_a_icon: state.customizing.Images.mute_a_icon,
         file_icon: state.customizing.Images.file_icon_chat,
-        contacts: getContacts(state),
-        contact: getContact(state),
-        contactSection: getContactSection(state)
+        contacts: state.contacts,
+        contact: state.contacts,
+        contactSection: state.contactSection,
+        Translator: state.country.translator,
     }
 }
 
@@ -265,17 +266,11 @@ const mapDispatchToProps = dispatch => {
         fetchContact: (infoContact) => {
             dispatch(fetchContact(infoContact))
         },
-        deleteConversation: (id) => {
-            dispatch(deleteConversation(id))
-        },
         showAlertGeneral: (msj) => {
             dispatch(showAlertGeneral(msj))
         },
-        updateContacts: (param) => {
-            dispatch(updateContacts(param))
-        },
-        updatePinerGroup: (id) => {
-            dispatch(updatePinerGroup(id))
+        updateContacts: (id) => {
+            dispatch(updateContacts(id))
         },
         showModal: (title, buttons, viewPath) => {
             dispatch(showModal(title, buttons, viewPath));

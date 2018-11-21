@@ -185,3 +185,13 @@
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255); 
 }
+
+.main-chat-general-list-contact {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  top:0px;
+  height: 100% !important;
+  width: 100%;
+  padding-bottom: 195px;
+}
