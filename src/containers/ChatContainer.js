@@ -47,7 +47,7 @@ class ChatContainer extends Component {
         }
         return (
             <div className="main-chat">
-              <ContactSectionContainer contacts={listContact} />
+              <ContactSectionContainer />
                 {/* <Profile /> */}
                 {/* <MyCodeQR /> */}
                 {/* <EditProfile /> */}

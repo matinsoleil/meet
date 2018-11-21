@@ -50,9 +50,12 @@ class ContactSectionContainer extends Component {
     }
 
     render() {
+        let listContact = this.props.contacts.filter(function (contact) {
+            return contact.conversations !== null;
+        })
         const filter_contacts = this.props.contactSection.filter_contacts
         let contacts = []
-        if (!filter_contacts) { contacts = this.props.contacts } else { contacts = filter_contacts }
+        if (!filter_contacts) { contacts = listContact } else { contacts = filter_contacts }
         return (
             <div className="contacts-section-container">
                 <span className="tab-contacts"></span>
