@@ -16,7 +16,7 @@ class Popup extends Component{
 
     render(){
         return (
-            <div className="message-popup">
+            <div className="message-popup" hidden={!this.props.show}>
                 <p className="text-message-popup"> { this.props.message } </p>
             </div>
         );

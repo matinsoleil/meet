@@ -5,10 +5,12 @@ import {setRegionConfig} from './../src/redux/actions/general/country';
 import {LoaderScreen} from "./components/utils/loaderScreen";
 import ErrorHandler from './ErrorHandler';
 import ChatContainer from './containers/ChatContainer';
-import './components/claro-connect.scss';
 import ModalBox from './components/modals/ModalBox';
+import Popup from "./components/modals/Popup";
 
 import './App.css';
+import './components/claro-connect.scss';
+
 class App extends Component {
 
     constructor(props) {
@@ -35,6 +37,7 @@ class App extends Component {
                             <LoaderScreen/>
                     }
                     <ModalBox />
+                    <Popup/>
                 </ErrorHandler>
 
         );
