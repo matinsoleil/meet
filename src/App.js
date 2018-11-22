@@ -1,70 +1,44 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {connect} from 'react-redux';
 import './App.css';
-import { setCountryConfig, setTranslator } from './../src/redux/actions/general/country'
-import { setOs } from './../src/redux/actions/general/os'
+import {setRegionConfig, setTranslator} from './../src/redux/actions/general/country';
+import ErrorHandler from './ErrorHandler';
 import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
-import MessageError from './components/logerror/MessageError';
 import './components/claro-connect.scss';
+
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      errorInfo: null
-    };
-  }
-  componentWillMount() {
-    // 17 Estados unidos
-    // 0 México
-    this.props.setCountryConfig(this.props.countries[17]);
-  }
-  componentDidCatch(error, errorInfo) {
-    this.setState({
-      error: error,
-      errorInfo: errorInfo
-    });
-  }
-  render() {
-    if (this.state.error) {
-      return (<MessageError message={this.state.error.toString()} detail={this.state.errorInfo.componentStack} />)
-    } else {
-      return (
-        <Router>
-          <React.Fragment>
-            <Route exact path="/" component={LoginContainer} />
-            <Route exact path="/chat" component={ChatContainer} />
-          </React.Fragment>
-        </Router>);
+
+    constructor(props) {
+        super(props);
     }
-  }
-}
-const mapStateToProps = state => {
-  return {
-    region: state.country.region,
-    dialect: state.country.dialect,
-    languages: state.country.languages,
-    os: state.os,
-    countries: state.countries,
-    server: state.server
-  }
-}
-const mapDispatchToProps = dispatch => {
-  return {
-    setOs: () => {
-      dispatch(setOs());
-    },
-    setTranslator: dialect => {
-      dispatch(setTranslator(dialect));
-    },
-    setCountryConfig: country => {
-      dispatch(setCountryConfig(country));
+
+    componentWillMount() {
+        this.props.setRegionConfig();
     }
-  }
+
+    render() {
+        return (
+            <ErrorHandler>
+                <Router>
+                    <React.Fragment>
+                        {/*<Route exact path="/" component={LoginContainer}/>*/}
+                        <Route exact path="/" component={ChatContainer}/>
+                    </React.Fragment>
+                </Router>
+            </ErrorHandler>
+        );
+    }
 }
+
+const mapDispatchToProps = () => {
+    return {
+        setRegionConfig: setRegionConfig
+    }
+};
+
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+    null,
+    mapDispatchToProps
 )(App);
