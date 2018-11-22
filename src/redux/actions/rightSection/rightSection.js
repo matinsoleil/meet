@@ -1,6 +1,6 @@
 import {createAction} from 'redux-actions';
-import { TOGGLE_RIGHT_SIDE, SET_TITLE_RIGHT_SIDE, SET_TYPE_RIGHT_SIDE } from '../../actionstypes';
-import { store } from '../../store';
+import {SET_TITLE_RIGHT_SIDE, SET_TYPE_RIGHT_SIDE, TOGGLE_RIGHT_SIDE} from '../../actionstypes';
+import {store} from '../../store';
 
 export const toggleRightSide = createAction(TOGGLE_RIGHT_SIDE,async (title,type)=>{
     await store.dispatch(setTitleRightSide(title));

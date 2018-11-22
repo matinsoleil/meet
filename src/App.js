@@ -6,7 +6,7 @@ import {LoaderScreen} from "./components/utils/loaderScreen";
 import ErrorHandler from './ErrorHandler';
 import ChatContainer from './containers/ChatContainer';
 import ModalBox from './components/modals/ModalBox';
-import Popup from "./components/modals/Popup";
+import Popup from "./components/modals/popup";
 
 import './App.css';
 import './components/claro-connect.scss';

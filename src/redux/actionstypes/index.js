@@ -70,7 +70,8 @@ export const modalActions = {
 }
 export const popupActions = {
     'SHOW_POPUP':'SHOW_POPUP',
-    'SET_POPUP_TEXT':'SET_POPUP_TEXT',
+    'SET_TIME_TO_HIDE':'SET_TIME_TO_HIDE',
+    'SET_POPUP_MESSAGE':'SET_POPUP_MESSAGE',
 }
 export const ActionTypes = {
     'GENERAL_SET_REGION_CONFIG': 'GENERAL_SET_REGION_CONFIG',
