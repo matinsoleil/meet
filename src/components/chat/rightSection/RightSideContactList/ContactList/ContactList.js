@@ -1,19 +1,17 @@
-import React, { Component } from 'react'
-import GeneralContactDataGroup from './GeneralContactDataGroup'
-import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
-import updateListContactsAddGroup from '../../../redux/actions/groups/updateListContactsAddGroup'
-import updateFilterContactsAddGroup from '../../../redux/actions/groups/updateFilterContactsAddGroup'
-import fetchGroups from '../../../redux/actions/groups/fetchGroups'
-import { getGroupsSection } from '../../../redux/selectors/groupsSection'
-
+import React, { Component } from 'react';
+import { getGroupsSection } from '../../../../../redux/selectors/groupsSection';
 import { connect } from 'react-redux'
-import './ListGeneralContactsGroup.scss'
-class ListGeneralContactsGroup extends Component {
+import GeneralContactDataGroup from './GeneralContactDataGroup'
+import updateFilterContactsAddGroup from '../../../../../redux/actions/groups/updateFilterContactsAddGroup';
+import updateListContactsAddGroup from '../../../../../redux/actions/groups/updateListContactsAddGroup';
+import './ContactList.scss';
+
+class ContactList extends Component {
     constructor(props) {
         super(props)
         this.addContactGroupClick = this.addContactGroupClick.bind(this)
         this.firstTime = 0;
-        this.props.updateFilterContactsAddGroup(this.props.contacts);
+        //this.props.updateFilterContactsAddGroup(this.props.contacts);
     }
 
     orderByName(listContacts) {
@@ -100,17 +98,12 @@ class ListGeneralContactsGroup extends Component {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        updateListContactsGroup: (listContacts) => {
-            dispatch(updateListContactsGroup(listContacts))
-        },
         updateListContactsAddGroup: (listContacts) => {
+            //Change!!
             dispatch(updateListContactsAddGroup(listContacts))
         },
         updateFilterContactsAddGroup: (listContacts) => {
             dispatch(updateFilterContactsAddGroup(listContacts))
-        },
-        fetchGroups: () => {
-            dispatch(fetchGroups())
         }
     }
 }
@@ -119,4 +112,4 @@ const mapStateToProps = (state) => {
         groupsSection: getGroupsSection(state)
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ListGeneralContactsGroup)
+export default connect(mapStateToProps, mapDispatchToProps)(ContactList);

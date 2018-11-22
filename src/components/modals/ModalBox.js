@@ -12,8 +12,6 @@ class ModalBox extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log(nextProps, nextState);
-        console.log(this.props, this.state);
         return (nextState.view !== this.state.view ||
             nextProps.viewPath !== this.props.viewPath);
     }
@@ -25,7 +23,6 @@ class ModalBox extends Component {
             });
         }) : this.setState({view:undefined});
     }
-
 
     render() {
         return (

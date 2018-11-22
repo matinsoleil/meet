@@ -5,6 +5,7 @@ import AudioRecorder from './../../../../../lib/helper/audioRecorder';
 import './recorderContent.scss';
 import GenerateId from '../../../../../lib/helper/generateId';
 import ModalBox from '../../../../modals/ModalBox';
+import { showModal,View } from '../../../../../redux/actions/modalBox/modalBox';
 
 class RecorderContent extends Component {
     constructor(props) {
@@ -111,7 +112,11 @@ class RecorderContent extends Component {
             <div className={"record-content"}>
                 <div className="controls">
                     <img onClick={
-                        () => { this.audioRecorder.pause(); this.setState({ showModal: true }) }
+                        () => { this.audioRecorder.pause(); this.props.showModal(
+                            `¿Seguro que desea eliminar este chat de voz?`,
+                            [{name:'Cancelar',action:this.audioRecorder.resume},{name:'Eliminar',action:()=>{this.stopRecording(false)}}],
+                            View.CONFIRM
+                        )}
                     } id="cancel_button" src={this.props.trash_red} alt="cancel" />
                     <div className='outside-circle'>
                         <div className='inside-circle'>
@@ -174,6 +179,9 @@ const mapDispatchToProps = dispatch => {
     return {
         addMessage: (conversationId, message) => {
             dispatch(addMessage(conversationId, message));
+        },
+        showModal: (title,buttons,viewPath) => {
+            dispatch(showModal(title,buttons,viewPath));
         }
     }
 }

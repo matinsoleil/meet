@@ -12,22 +12,27 @@ class App extends Component {
 
     constructor(props) {
         super(props);
+        this.state = { readyToRender: false }
     }
 
-    componentWillMount() {
-        this.props.setRegionConfig();
+    async componentWillMount() {
+        await this.props.setRegionConfig();
+        await this.setState({ readyToRender: true })
     }
 
     render() {
         return (
-            <ErrorHandler>
-                <Router>
-                    <React.Fragment>
-                        {/*<Route exact path="/" component={LoginContainer}/>*/}
-                        <Route exact path="/" component={ChatContainer}/>
-                    </React.Fragment>
-                </Router>
-            </ErrorHandler>
+            this.state.readyToRender ?
+                <ErrorHandler>
+                    <Router>
+                        <React.Fragment>
+                            {/*<Route exact path="/" component={LoginContainer}/>*/}
+                            <Route exact path="/" component={ChatContainer}/>
+                        </React.Fragment>
+                    </Router>
+                </ErrorHandler>
+                :
+                <div>Loading</div>
         );
     }
 }

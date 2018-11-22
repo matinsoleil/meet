@@ -8,6 +8,13 @@ export const showModal = (title, buttons, viewPath) => dispatch => {
         type: modalActions.SHOW_MODAL,
     });
 }
+export const View = {
+    CONFIRM:'Confirm',
+    CREATEGROUP: 'group/CreateGroupForm',
+    ALERTGROUP:'group/AlertCreateGroupForm',
+    SILENCE_CONVERSATION: 'contact/SilenceConversation',
+}
+
 
 const setButtons = (buttons) => {
     return {

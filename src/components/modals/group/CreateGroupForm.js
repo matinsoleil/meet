@@ -51,9 +51,9 @@ let CreateGroupForm = props => {
     <span className="contentAnswer" > 
       <Field name="nameGroup" label={props.title} placeholder="Nombre del grupo" type="text" component={renderField} />
      </span> 
-     <span className="contentResponse">
-      <button className="from-create-group-btn" type="submit" >AGREGAR</button>
-      <button className="from-create-group-btn" onClick={props.showModal}>CERRAR</button>
+     <span className="button-section">
+      <button type="submit" >AGREGAR</button>
+      <button onClick={props.showModal}>CERRAR</button>
      </span> 
     </form>
     </div>

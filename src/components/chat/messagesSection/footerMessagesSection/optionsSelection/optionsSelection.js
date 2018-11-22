@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./optionsSelection.scss"
 import { deleteMessagesSelected } from '../../../../../redux/actions/messagesOptions/messagesOptions';
-import { showSectionGroups } from '../../../../../redux/actions/groups/showSectionGroups';
 import MessagesHelper from '../../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../../lib/helper/generateId';
-import { showModal } from '../../../../../redux/actions/modalBox/modalBox';
+import { showModal,View } from '../../../../../redux/actions/modalBox/modalBox';
 
 class OptionsSelection extends Component {
 
@@ -18,7 +17,7 @@ class OptionsSelection extends Component {
         this.modalModel = {
             title: '¿Seguro que desea eliminar estos mensajes?',
             buttons: [{ name: 'Eliminar', action: this.accept }, { name: 'Cancelar' }],
-            viewPath: 'Confirm'
+            viewPath: View.CONFIRM
         }
     }
 
@@ -67,7 +66,7 @@ class OptionsSelection extends Component {
                         className="download-icon" image={this.props.forward}
                         name='Descargar' />
                 }
-                <IconButton onClick={() => { this.props.showSectionGroups(this.props.contacts) }} image={this.props.forward} name='Reenviar' />
+                <IconButton onClick={() => { }} image={this.props.forward} name='Reenviar' />
                 <IconButton onClick={() => {
                     this.props.showModal(
                         this.modalModel.title, 
@@ -105,9 +104,6 @@ const mapDispathToProps = dispatch => {
     return {
         deleteMessagesSelected: (conversationId, messagesId) => {
             dispatch(deleteMessagesSelected(conversationId, messagesId));
-        },
-        showSectionGroups: listContacs => {
-            dispatch(showSectionGroups(listContacs));
         },
         showModal: (title, buttons, viewPath) => {
             dispatch(showModal(title, buttons, viewPath));

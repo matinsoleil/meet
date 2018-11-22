@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { multiSelectState, messageSelected } from './../../../../redux/actions/messagesOptions/messagesOptions';
 import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
-import { showSectionGroups } from '../../../../redux/actions/groups/showSectionGroups';
 import { showModal } from '../../../../redux/actions/modalBox/modalBox';
 
 class DotsMenu extends Component {
@@ -34,7 +33,6 @@ class DotsMenu extends Component {
     }
 
     forwardTo = () => {
-        this.props.showSectionGroups(this.props.contacts);
     }
 
     reply = () => {
@@ -91,9 +89,6 @@ const mapDispatchToProps = dispatch => {
         },
         deleteMessage: (conversationId, messageId) => {
             dispatch(deleteMessage(conversationId, messageId));
-        },
-        showSectionGroups: listContacs => {
-            dispatch(showSectionGroups(listContacs));
         },
         messageSelected: (messageId, state) => {
             dispatch(messageSelected(messageId, state));

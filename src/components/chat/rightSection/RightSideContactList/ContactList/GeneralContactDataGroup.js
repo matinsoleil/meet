@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './GeneralContactDataGroup.scss'
 import { connect } from 'react-redux'
-import updateListContactsGroup from '../../../redux/actions/groups/updateListContactsGroup'
 
 class GeneralContactData extends Component {
 
@@ -59,16 +58,6 @@ class GeneralContactData extends Component {
 }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-
-        updateListContactsGroup: (listContacts) => {
-            dispatch(updateListContactsGroup(listContacts))
-        }
-
-    }
-}
-
 const mapStateToProps = state => {
     return {
         onEdit: state.contact.onEdit,
@@ -78,4 +67,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(GeneralContactData)
+export default connect(mapStateToProps)(GeneralContactData)

@@ -216,6 +216,41 @@
       "message": "TypeError: Cannot read property 'bind' of undefined",
       "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:17)\n    in div (at GroupSectionContainer.js:16)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at RightSection.js:11)\n    in div (at RightSection.js:10)\n    in RightSection (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 4
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542751416,
+      "message": "TypeError: _this.props.updateFilterContactsAddGroup is not a function",
+      "detail": "\n    in ContactList (created by Connect(ContactList))\n    in Connect(ContactList) (at RightSideContactList.js:16)\n    in div (at RightSideContactList.js:14)\n    in RightSideContactList (created by Connect(RightSideContactList))\n    in Connect(RightSideContactList) (at RightSection.js:12)\n    in div (at RightSection.js:11)\n    in RightSection (created by Connect(RightSection))\n    in Connect(RightSection) (at ChatContainer.js:51)\n    in div (at ChatContainer.js:48)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:68)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 5
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542756976,
+      "message": "TypeError: Cannot read property 'conversations' of undefined",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 6
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542757077,
+      "message": "TypeError: Cannot read property 'conversations' of null",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 7
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542821393,
+      "message": "TypeError: this.props.fetchGroups is not a function",
+      "detail": "\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 8
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542821397,
+      "message": "Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.\n\nCheck the render method of `RightSection`.",
+      "detail": "\n    in div (at RightSection.js:20)\n    in RightSection (created by Connect(RightSection))\n    in Connect(RightSection) (at ChatContainer.js:38)\n    in div (at ChatContainer.js:35)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:55)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 9
     }
   ],
   "contacts": [
