@@ -12,3 +12,9 @@ export const toggleRightSide = createAction(TOGGLE_RIGHT_SIDE,async (title,type)
 
 const setTitleRightSide = createAction(SET_TITLE_RIGHT_SIDE);
 const setTypeRightSide = createAction(SET_TYPE_RIGHT_SIDE);
+
+export const Type = {
+    CREATE_GROUP: 'RightSideContactList/RightSideContactList.js',
+    FORWARD_MESSAGE: '',
+    CREATE_DIFFUSION_GROUP: ''
+}
