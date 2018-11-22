@@ -2,15 +2,14 @@ import {handleActions} from 'redux-actions';
 import {popupActions} from "../../actionstypes/index";
 const defaultValues = {
     show:false,
-    title:undefined
+    autoClose:true,
+    message:undefined,
+    timeToHide:1500,
 }
 let mapActions = new Map([
     [
         popupActions.SHOW_POPUP,
-        (state) => ({...state,show:!state.show})
-    ],[
-        popupActions.SET_POPUP_TEXT,
-        (state,action) => ({...state,title:action.payload})
-    ]
+        (state,action) => ({...state,show:!state.show,...action.payload})
+    ],
 ])
 export const popupReducer = handleActions(mapActions,defaultValues);
