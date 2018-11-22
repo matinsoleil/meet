@@ -7,6 +7,7 @@ import ErrorHandler from './ErrorHandler';
 import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
 import './components/claro-connect.scss';
+import ModalBox from './components/modals/ModalBox';
 
 class App extends Component {
 
@@ -30,6 +31,7 @@ class App extends Component {
                             <Route exact path="/" component={ChatContainer}/>
                         </React.Fragment>
                     </Router>
+                    <ModalBox />
                 </ErrorHandler>
                 :
                 <div>Loading</div>
