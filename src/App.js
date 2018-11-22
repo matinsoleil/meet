@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
-import './App.css';
-import {setRegionConfig, setTranslator} from './../src/redux/actions/general/country';
+import {setRegionConfig} from './../src/redux/actions/general/country';
+import {LoaderScreen} from "./components/utils/loaderScreen";
 import ErrorHandler from './ErrorHandler';
-import LoginContainer from './containers/LoginContainer';
 import ChatContainer from './containers/ChatContainer';
 import './components/claro-connect.scss';
 import ModalBox from './components/modals/ModalBox';
 
+import './App.css';
 class App extends Component {
 
     constructor(props) {
@@ -23,18 +23,20 @@ class App extends Component {
 
     render() {
         return (
-            this.state.readyToRender ?
                 <ErrorHandler>
-                    <Router>
-                        <React.Fragment>
-                            {/*<Route exact path="/" component={LoginContainer}/>*/}
-                            <Route exact path="/" component={ChatContainer}/>
-                        </React.Fragment>
-                    </Router>
+                    {
+                        (this.state.readyToRender) ?
+                            <Router>
+                                <React.Fragment>
+                                    {/*<Route exact path="/" component={LoginContainer}/>*/}
+                                    <Route exact path="/" component={ChatContainer}/>
+                                </React.Fragment>
+                            </Router> :
+                            <LoaderScreen/>
+                    }
                     <ModalBox />
                 </ErrorHandler>
-                :
-                <div>Loading</div>
+
         );
     }
 }
