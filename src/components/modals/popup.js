@@ -3,14 +3,6 @@ import {connect} from 'react-redux';
 import {togglePopup} from "../../redux/actions/popup/popup";
 class Popup extends Component{
 
-    componentDidMount(){
-        console.log('__IN_MOUNT__',this.props);
-    }
-
-    shouldComponentUpdate(nextProps){
-        return (this.props.show !== nextProps.show);
-    }
-
     componentDidUpdate(){
         (this.props.show) && this.startTimerToClose();
     }
