@@ -23,20 +23,19 @@ class App extends Component {
 
     render() {
         return (
-                <ErrorHandler>
-                    {
-                        (this.state.readyToRender) ?
-                            <Router>
-                                <React.Fragment>
-                                    {/*<Route exact path="/" component={LoginContainer}/>*/}
-                                    <Route exact path="/" component={ChatContainer}/>
-                                </React.Fragment>
-                            </Router> :
-                            <LoaderScreen/>
-                    }
-                    <ModalBox />
-                </ErrorHandler>
-
+            <ErrorHandler>
+                {
+                    (this.state.readyToRender) ?
+                        <Router>
+                            <React.Fragment>
+                                <Route exact path="/" component={ChatContainer}/>
+                            </React.Fragment>
+                        </Router>
+                        :
+                        <LoaderScreen/>
+                }
+                <ModalBox />
+            </ErrorHandler>
         );
     }
 }

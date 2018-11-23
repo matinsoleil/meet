@@ -1,0 +1,155 @@
+.user-data{
+    background-color: #fefefe;
+    border-radius: 10px;
+    height: 128px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    .user-info{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+
+        .avatar {
+            height: 64px;
+            width: 64px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 8px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .user-options-button{
+            height: 100%;
+            width: 32px;
+            display: flex;
+        }
+
+        .personal{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            margin-top: 18px;
+            font-family: Roboto;
+
+            .name{
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+
+                .text{
+                    max-width: 195px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.4;
+                    letter-spacing: 0.2px;
+                    color: #323232;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                .inner-circle-user {
+                    background-color:#74c365;
+                    border-color: #ffffff;
+                    width: 12px;
+                    height: 12px;
+                    position: relative;
+                    margin-right: 5px;
+                }
+
+                .circle-user {
+                    border-radius: 50%;
+                }
+            }
+            .status{
+                font-size: 13px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.46;
+                max-width: 213px;
+                letter-spacing: 0.4px;
+                color: #999999;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+    .contact-search{
+        border-top: 1px solid #f2f2f2;
+        display: flex;
+        align-items: center;
+
+        .img-icon-search{
+            height: 24px;
+            width: 24px;
+            margin: 12px;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #a1a1a1;
+        }
+
+        input:-moz-placeholder {
+            color: #a1a1a1;
+        }
+
+        input::-moz-placeholder {
+            color: #a1a1a1;
+        }
+
+        input:-ms-input-placeholder {
+            color: #a1a1a1;
+        }
+
+        .input-search-main {
+            width: 65%;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            border-width: 0px;
+            border-radius: 0px 0px 0px 0px;
+            -moz-border-radius: 0px 0x 0px 0px;
+            -webkit-border-radius: 0px 0px 0px 0px;
+            outline: none;
+            height: 19px;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #323232;
+            margin-right: 10px;
+            flex-grow: 1;
+        }
+
+        .input-search {
+            padding-top: 10px;
+            border-width: 0px;
+            border-radius: 0px 0px 0px 0px;
+            -moz-border-radius: 0px 0x 0px 0px;
+            -webkit-border-radius: 0px 0px 0px 0px;
+            width: 310px;
+            height: 23px;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.44;
+            letter-spacing: 0.2px;
+            color: #323232;
+            outline: none;
+        }
+    }
+}

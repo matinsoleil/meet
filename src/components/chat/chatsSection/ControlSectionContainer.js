@@ -1,14 +1,15 @@
-import GeneralDataUser from './GeneralDataUser';
+import UserData from './userData';
 import GeneralChatData from './GeneralChatData'
-import { fetchContactSection } from '../../../redux/actions/contactSection/fetchContactSection'
+import {fetchContactSection} from '../../../redux/actions/contactSection/fetchContactSection'
 import showSectionRight from '../../../redux/actions/rightSection/showSectionRight';
 import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection';
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import './ContactSectionContainer.scss'
-import { toggleRightSide, Type } from '../../../redux/actions/rightSection/rightSection';
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import './ControlSectionContainer.scss'
+import {toggleRightSide, Type} from '../../../redux/actions/rightSection/rightSection';
 
-class ContactSectionContainer extends Component {
+class ControlSectionContainer extends Component {
+
     constructor(props) {
         super(props);
         this.showSectionGroupsClick = this.showSectionGroupsClick.bind(this);
@@ -46,36 +47,57 @@ class ContactSectionContainer extends Component {
     }
 
     render() {
-        let listContact = this.props.contacts.filter(function (contact) {
+        /*let listContact = this.props.contacts.filter(function (contact) {
             return contact.conversations !== null;
         })
         const filter_contacts = this.props.contactSection.filter_contacts;
         let contacts = [];
-        if (!filter_contacts) { contacts = listContact; } else { contacts = filter_contacts; }
+        if (!filter_contacts) {
+            contacts = listContact;
+        } else {
+            contacts = filter_contacts;
+        }*/
         return (
             <div className="contacts-section-container">
-                <span className="tab-contacts"></span>
-                <GeneralDataUser user={this.props.user} filterList={this.filterList} />
-                <div className="chat-state">
-                    <h2 className="title-chat">Chats</h2>
-                    <div className="dropdown">
-                        <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a" className="plus-a" src={this.props.add_icon} /></button>
-                        <div className="dropdown-content">
-                            <a onClick={()=>{this.props.toggleRightSide('Agregar a',Type.CREATE_GROUP)}} >Nuevo chat grupal</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="main-chat-general-list-contact" >
-                    {this.orderByFix(contacts).map(chat =>
-                        <GeneralChatData chat={chat}
-                            key={chat.id}
-                        />
-                    )}
-                </div>
+                <UserData/>
+                {/*<CreateConversationsOptions/>
+                <Conversations/>*/}
             </div>
         )
     }
 }
+
+/*const CreateConversationsOptions = props => {
+    return (
+        <div className="chat-state">
+            <h2 className="title-chat">Chats</h2>
+            <div className="dropdown">
+                <button className="dropbtn"><p className="plus-text">Nuevo</p><img alt="plus-a"
+                                                                                   className="plus-a"
+                                                                                   src={props.add_icon}/>
+                </button>
+                <div className="dropdown-content">
+                    <a onClick={() => {
+                        this.props.toggleRightSide('Agregar a', Type.CREATE_GROUP)
+                    }}>Nuevo chat grupal</a>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const Conversations = props => {
+    let contacts = [];
+    return(
+        <div className="main-chat-general-list-contact">
+            {this.orderByFix(contacts).map(chat =>
+                <GeneralChatData chat={chat}
+                                 key={chat.id}
+                />
+            )}
+        </div>
+    );
+};*/
 
 const mapStateToProps = state => {
     return {
@@ -97,10 +119,10 @@ const mapDispatchToProps = dispatch => {
         fetchContactSection: () => {
             dispatch(fetchContactSection())
         },
-        toggleRightSide: (title,type) => {
-            dispatch(toggleRightSide(title,type));
+        toggleRightSide: (title, type) => {
+            dispatch(toggleRightSide(title, type));
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContactSectionContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ControlSectionContainer)

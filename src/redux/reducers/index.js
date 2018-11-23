@@ -28,6 +28,7 @@ import { customizingReducer } from './customizing'
 import { messagesOptionsReducer } from './messagesOptions'
 import { alertGeneral } from './alertGeneral'
 import { modalBoxReducer } from './modalBox';
+import {userReducer} from "./user";
 
 export const reducers = combineReducers({
   contacts,
@@ -46,8 +47,9 @@ export const reducers = combineReducers({
   messagesOptions: messagesOptionsReducer,
   messageCenterReducer,
   form: formReducer,
-  alertGeneral
-})
+  alertGeneral,
+    user: userReducer
+});
 
 export const keyToRestore = {
   'contacts': {

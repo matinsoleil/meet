@@ -35,4 +35,5 @@ export const Images = {
     'check_mark_uncheck': require('./../../img/check-mark-uncheck.svg'),
     'play_icon': require('./../../img/play-icon.svg'),
     'pause_icon': require('./../../img/pause-icon.svg'),
+    'avatar': require('./../../img/avatar.jpg')
 }

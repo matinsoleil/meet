@@ -7,10 +7,11 @@ import { fetchUser } from '../redux/actions/users/fetchUser'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
 import RightSection from '../components/chat/rightSection/RightSection'
-import LengthSection from '../components/chat/lengthSection/LengthSection';
+import ControlSectionContainer from '../components/chat/chatsSection/ControlSectionContainer';
 
 class ChatContainer extends Component {
-    componentDidMount() {
+
+    componentWillMount() {
         this.props.fetchContacts();
         this.props.fetchUser();
     }
@@ -18,11 +19,11 @@ class ChatContainer extends Component {
     render() {
         let listContact = this.props.contacts.filter(function (contact) {
             return contact.conversations !== null;
-        })
+        });
         return (
             <div className="app-frame">
                 <div className="main-chat">
-                    <LengthSection />
+                    <ControlSectionContainer/>
                     <MessageSectionContainer contacts={listContact} chat={this.props.conversation} contact={this.props.contact} server={this.props.server} />
                     {this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null}
                 </div>

@@ -76,3 +76,7 @@ export const ActionTypes = {
     'GENERAL_SET_HEADER_HEIGHT': 'GENERAL_SET_HEADER_HEIGHT',
     'PORTAL_SET_FAQ_FILTER': 'PORTAL_SET_FAQ_FILTER'
 }
+
+export const UserActionTypes = {
+  SET_USER: 'SET_USER'
+};

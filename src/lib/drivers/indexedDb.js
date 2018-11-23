@@ -10,6 +10,7 @@ class IndexedDbDriver {
 
     /**
      * Returns the database instance
+     *
      * @returns {Dexie}
      */
     get db(){
@@ -18,6 +19,7 @@ class IndexedDbDriver {
 
     /**
      * Returns a collection of data from a query
+     *
      * @param table
      * @param condition
      * @returns {Promise}
@@ -28,6 +30,7 @@ class IndexedDbDriver {
 
     /**
      * Returns a object that matches with the specified query
+     *
      * @param table
      * @param condition
      * @returns {*|Dexie.Collection<T, Key>}
@@ -38,6 +41,7 @@ class IndexedDbDriver {
 
     /**
      * Update an object that matches with the query
+     *
      * @param table
      * @param condition
      * @param set
@@ -49,6 +53,7 @@ class IndexedDbDriver {
 
     /**
      * Remove an objetc that matches with the query
+     *
      * @param table
      * @param condition
      * @returns {Dexie.Promise<number>}
@@ -59,6 +64,7 @@ class IndexedDbDriver {
 
     /**
      * Create a new object in a specified table
+     *
      * @param table
      * @param data
      * @returns {*}
@@ -69,6 +75,7 @@ class IndexedDbDriver {
 
     /**
      * Adds new or replaces existing object in the object store.
+     *
      * @param table
      * @param data
      * @returns {*}
