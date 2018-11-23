@@ -4,8 +4,8 @@ import DotsMenuContact from './dotsMenuContact'
 import fetchContact from '../../../redux/actions/contact/fetchContact'
 import clearContact from '../../../redux/actions/contact/clearContact'
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
-import showAlertGeneral from '../../../redux/actions/alertGeneral/showAlertGeneral'
 import { showModal,View } from '../../../redux/actions/modalBox/modalBox';
+import {togglePopup} from "../../../redux/actions/popup/popup";
 import { connect } from 'react-redux'
 
 class GeneralContactData extends Component {
@@ -54,7 +54,8 @@ class GeneralContactData extends Component {
     fileContact = () => {
         this.props.chat["file"] = this.props.chat["file"] === true ? false : true;
         let msj = this.props.chat["file"] === true ? this.props.Translator.t('Archivaste el chat') : this.props.Translator.t('Desarchivaste el chat');
-        this.props.showAlertGeneral(msj);
+        //this.props.showAlertGeneral(msj);
+        this.props.togglePopup(msj);
         this.props.updateContacts(this.props.chat["id"]);
         this.showDots();
     }
@@ -63,7 +64,8 @@ class GeneralContactData extends Component {
         let msj = "";
         this.props.chat["fix"] = this.props.chat["fix"] === true ? false : true;
         msj = this.props.chat["fix"] === true ? this.props.Translator.t('Fijaste el chat') : this.props.Translator.t('Archivaste el chat');
-        this.props.showAlertGeneral(msj);
+        //this.props.showAlertGeneral(msj);
+        this.props.togglePopup(msj);
         this.props.updateContacts(this.props.chat["id"]);
         this.showDots();
     }
@@ -81,19 +83,22 @@ class GeneralContactData extends Component {
             filter_contacts.splice(index_filter_contacts, 1);
         }
         if (this.props.contact.id === this.props.chat.id) { this.props.clearContact(); }
-        this.props.showAlertGeneral(this.props.Translator.t('Eliminaste el chat con ') + this.props.chat.name);
+        //this.props.showAlertGeneral(this.props.Translator.t('Eliminaste el chat con ') + this.props.chat.name);
+        this.props.togglePopup(this.props.Translator.t('Eliminaste el chat con')+ this.props.chat.name);
     }
 
     submitCreateSilence = (values) => {
         this.props.chat["silence"] = values.timeSilence
         this.props.showModal();
-        this.props.showAlertGeneral(this.props.Translator.t('Silenciaste el chat'))
+        //this.props.showAlertGeneral(this.props.Translator.t('Silenciaste el chat'))
+        this.props.togglePopup(this.props.Translator.t('Silenciaste el chat'));
         this.props.updateContacts(this.props.chat["id"]);
         this.showDots()
     }
 
     deleteConversationContact = () => {
-        this.props.showAlertGeneral(this.props.Translator.t('Historial del chat eliminado'));
+        //this.props.showAlertGeneral(this.props.Translator.t('Historial del chat eliminado'));
+        this.props.togglePopup(this.props.Translator.t('Historial del chat eliminado'));
         this.props.updateContacts(this.props.chat["id"]);
         this.showDots()
     }
@@ -118,7 +123,8 @@ class GeneralContactData extends Component {
     showModalSilenceConversationAction = () => {
         if (this.props.chat.silence !== "0") {
             this.props.chat["silence"] = "0"
-            this.props.showAlertGeneral(this.props.Translator.t('Cancelaste el silencio del chat'))
+            //this.props.showAlertGeneral(this.props.Translator.t('Cancelaste el silencio del chat'))
+            this.props.togglePopup(this.props.Translator.t('Cancelaste el silencio del chat'));
             this.props.updateContacts(this.props.chat["id"]);
         } else {
             this.props.showModal(
@@ -180,10 +186,12 @@ class GeneralContactData extends Component {
         this.showDots()
         if (this.props.chat.countMessage !== "") {
             this.props.chat["countMessage"] = ""
-            this.props.showAlertGeneral(this.props.Translator.t('Marcando como leído'))
+            //this.props.showAlertGeneral(this.props.Translator.t('Marcando como leído'))
+            this.props.togglePopup(this.props.Translator.t('Marcando como leído'));
         } else {
             this.props.chat["countMessage"] = null
-            this.props.showAlertGeneral(this.props.Translator.t('Marcando como no leído'))
+            //this.props.showAlertGeneral(this.props.Translator.t('Marcando como no leído'))
+            this.props.togglePopup(this.props.Translator.t('Marcando como no leído'));
         }
         this.props.updateContacts(this.props.chat["id"]);
     }
@@ -266,8 +274,11 @@ const mapDispatchToProps = dispatch => {
         fetchContact: (infoContact) => {
             dispatch(fetchContact(infoContact))
         },
-        showAlertGeneral: (msj) => {
-            dispatch(showAlertGeneral(msj))
+        // showAlertGeneral: (msj) => {
+        //     dispatch(showAlertGeneral(msj))
+        // },
+        togglePopup:(message,timeToHide)=>{
+            dispatch(togglePopup(message,timeToHide));
         },
         updateContacts: (id) => {
             dispatch(updateContacts(id))

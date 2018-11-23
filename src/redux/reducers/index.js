@@ -1,23 +1,23 @@
 import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 import {
-  contacts,
-  restoreKey as restoreKeyContacts,
-  defaultValue as defaultValueContacts
+    contacts,
+    restoreKey as restoreKeyContacts,
+    defaultValue as defaultValueContacts
 } from './contacts'
 
 import { users } from './users'
 import { contact } from './contact'
 import {
-  conversation,
-  restoreKey as restoreKeyConversation,
-  defaultValue as defaultValueConversation
+    conversation,
+    restoreKey as restoreKeyConversation,
+    defaultValue as defaultValueConversation
 } from './conversation'
 import { searchContacts } from './searchContacts'
 import { groupsSection } from './groupsSection'
 import {
-  countryReducer,
-  restoreKey as restoreKeyCountry
+    countryReducer,
+    restoreKey as restoreKeyCountry
 } from './country'
 import { rightSection } from './rightSection'
 import { contactSection } from './contactSection'
@@ -29,6 +29,7 @@ import { messagesOptionsReducer } from './messagesOptions'
 import { alertGeneral } from './alertGeneral'
 import { modalBoxReducer } from './modalBox';
 import {userReducer} from "./user";
+import {viewsReducers} from "./views/";
 
 export const reducers = combineReducers({
   contacts,
@@ -48,20 +49,21 @@ export const reducers = combineReducers({
   messageCenterReducer,
   form: formReducer,
   alertGeneral,
-    user: userReducer
+    user: userReducer,
+    views: viewsReducers
 });
 
 export const keyToRestore = {
-  'contacts': {
-    restoreKey: restoreKeyContacts,
-    defaultValue: defaultValueContacts,
-  },
-  'conversation': {
-    restoreKey: restoreKeyConversation,
-    defaultValue: defaultValueConversation,
-  },
-  'country': {
-    restoreKey: restoreKeyCountry,
-    defaultValue: null
-  }
+    'contacts': {
+        restoreKey: restoreKeyContacts,
+        defaultValue: defaultValueContacts,
+    },
+    'conversation': {
+        restoreKey: restoreKeyConversation,
+        defaultValue: defaultValueConversation,
+    },
+    'country': {
+        restoreKey: restoreKeyCountry,
+        defaultValue: null
+    }
 }

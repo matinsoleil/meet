@@ -40,7 +40,7 @@ export const DELETE_MESSAGE = 'DELETE_MESSAGE';
 export const CREATE_GROUP = 'CREATE_GROUP';
 export const TOGGLE_RIGHT_SIDE = 'TOGGLE_RIGHT_SIDE';
 export const SET_TITLE_RIGHT_SIDE = 'SET_TITLE_RIGHT_SIDE';
-export const SET_TYPE_RIGHT_SIDE = 'SET_TYPE_RIGHT_SIDE'
+export const SET_TYPE_RIGHT_SIDE = 'SET_TYPE_RIGHT_SIDE';
 export const ZTE_CLIENTINIT = 'ZTE_CLIENTINIT';
 export const ZTE_GETTOKEN = 'ZTE_GETTOKEN';
 export const ZTE_LOGOUT = 'ZTE_LOGOUT';
@@ -67,6 +67,9 @@ export const modalActions = {
     'SET_BUTTONS': 'SET_BUTTONS',
     'SET_TITLE': 'SET_TITLE',
     'SET_VIEW': 'SET_VIEW'
+}
+export const popupActions = {
+    'SHOW_POPUP':'SHOW_POPUP'
 }
 export const ActionTypes = {
     'GENERAL_SET_REGION_CONFIG': 'GENERAL_SET_REGION_CONFIG',

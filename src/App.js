@@ -5,10 +5,12 @@ import {setRegionConfig} from './../src/redux/actions/general/country';
 import {LoaderScreen} from "./components/utils/loaderScreen";
 import ErrorHandler from './ErrorHandler';
 import ChatContainer from './containers/ChatContainer';
-import './components/claro-connect.scss';
 import ModalBox from './components/modals/ModalBox';
+import Popup from "./components/modals/popup";
 
 import './App.css';
+import './components/claro-connect.scss';
+
 class App extends Component {
 
     constructor(props) {
@@ -23,19 +25,21 @@ class App extends Component {
 
     render() {
         return (
-            <ErrorHandler>
-                {
-                    (this.state.readyToRender) ?
-                        <Router>
-                            <React.Fragment>
-                                <Route exact path="/" component={ChatContainer}/>
-                            </React.Fragment>
-                        </Router>
-                        :
-                        <LoaderScreen/>
-                }
-                <ModalBox />
-            </ErrorHandler>
+                <ErrorHandler>
+                    {
+                        (this.state.readyToRender) ?
+                            <Router>
+                                <React.Fragment>
+                                    {/*<Route exact path="/" component={LoginContainer}/>*/}
+                                    <Route exact path="/" component={ChatContainer}/>
+                                </React.Fragment>
+                            </Router> :
+                            <LoaderScreen/>
+                    }
+                    <ModalBox />
+                    <Popup/>
+                </ErrorHandler>
+
         );
     }
 }
