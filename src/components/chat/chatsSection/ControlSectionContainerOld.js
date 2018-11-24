@@ -47,7 +47,7 @@ class ControlSectionContainer extends Component {
     }
 
     render() {
-        let listContact = this.props.contacts.filter(function (contact) {
+        /*let listContact = this.props.contacts.filter(function (contact) {
             return contact.conversations !== null;
         })
         const filter_contacts = this.props.contactSection.filter_contacts;
@@ -56,22 +56,18 @@ class ControlSectionContainer extends Component {
             contacts = listContact;
         } else {
             contacts = filter_contacts;
-        }
-
-
-
+        }*/
         return (
             <div className="contacts-section-container">
                 <UserData/>
-                <CreateConversationsOptions/>
-                <Conversations contacts={contacts} />
+                {/*<CreateConversationsOptions/>
+                <Conversations/>*/}
             </div>
         )
     }
 }
 
-const CreateConversationsOptions = props => {
-
+/*const CreateConversationsOptions = props => {
     return (
         <div className="chat-state">
             <h2 className="title-chat">Chats</h2>
@@ -91,29 +87,17 @@ const CreateConversationsOptions = props => {
 };
 
 const Conversations = props => {
-
-    // console.log(" (*) [*] (*) ");
-    // console.log(props.contacts)
-    // console.log(" (·) [·] (·) ");
-    
-
-    // return (
-    //         <div>
-    //             Aqui ando
-    //         </div> 
-    // )
-
-    let contacts = props.contacts;
+    let contacts = [];
     return(
         <div className="main-chat-general-list-contact">
-            {contacts.map(chat =>
+            {this.orderByFix(contacts).map(chat =>
                 <GeneralChatData chat={chat}
                                  key={chat.id}
                 />
             )}
         </div>
     );
-};
+};*/
 
 const mapStateToProps = state => {
     return {
