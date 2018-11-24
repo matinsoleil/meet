@@ -6,27 +6,28 @@ import MessagesHelper from '../../../../lib/helper/messagesHelper';
 
 class ChatGeneralConversationContact extends Component {
     render() {        
-        let conversation = MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations)
+        let lisconversation = MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations)
         return (
             <div id='#main-chat-feed' style={{ backgroundImage: `url(${this.props.background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
                 {
-                    (conversation) ?
-                        conversation.conversation.map(c => {
-                            const TypeMessageControl = c.sender === this.props.user.id ? 'message-in' : 'message-out';
-                            const tailType = c.sender === this.props.user.id ? 'tail-out' : 'tail-in';
-                            const tail = (c.sender === this.props.user.id) ? this.props.out_tail : this.props.in_tail;
-                            return <Message
-                                key={c.id}
-                                messageObject={c}
-                                tail={tail}
-                                type={TypeMessageControl}
-                                tailType={tailType}
-                                user_icon={this.props.contact.imgContact}
-                                contacts={this.props.contacts}
-                                conversationId = {conversation.id}
-                            />
-                        })
+                    (lisconversation) ?
+                    <ConversationArea />
+                    // conversation.conversation.map(c => {
+                    //         const TypeMessageControl = c.sender === this.props.user.id ? 'message-in' : 'message-out';
+                    //         const tailType = c.sender === this.props.user.id ? 'tail-out' : 'tail-in';
+                    //         const tail = (c.sender === this.props.user.id) ? this.props.out_tail : this.props.in_tail;
+                    //         return <Message
+                    //             key={c.id}
+                    //             messageObject={c}
+                    //             tail={tail}
+                    //             type={TypeMessageControl}
+                    //             tailType={tailType}
+                    //             user_icon={this.props.contact.imgContact}
+                    //             contacts={this.props.contacts}
+                    //             conversationId = {conversation.id}
+                    //         />
+                    //     })
                         :
                         null
                 }
@@ -34,6 +35,14 @@ class ChatGeneralConversationContact extends Component {
         )
     }
 }
+
+
+
+
+const ConversationArea = props => {
+    <div>Aqui ando en la conversacion</div>
+}
+
 
 
 const mapStateToProps = state => {

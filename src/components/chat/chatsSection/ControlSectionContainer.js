@@ -91,18 +91,6 @@ const CreateConversationsOptions = props => {
 };
 
 const Conversations = props => {
-
-    // console.log(" (*) [*] (*) ");
-    // console.log(props.contacts)
-    // console.log(" (·) [·] (·) ");
-    
-
-    // return (
-    //         <div>
-    //             Aqui ando
-    //         </div> 
-    // )
-
     let contacts = props.contacts;
     return(
         <div className="main-chat-general-list-contact">
