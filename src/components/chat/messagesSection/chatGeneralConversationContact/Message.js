@@ -59,12 +59,12 @@ class Message extends Component {
     render() {
         let { id, message, hour } = this.props.messageObject;
         let { type, tail, tailType, user_icon } = this.props;
-        if(message.type)message.hour=hour;
+        if (message.type) message.hour = hour;
         return (
             <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row">
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
-                    <div className={`message-wrapper ${(message.type) ? (message.type==='3')?'file-message':'no-text' : ''}`}>
+                    <div className={`message-wrapper ${(message.type) ? (message.type === '3') ? 'file-message' : 'no-text' : ''}`}>
                         <span className={`tail ${tailType}`} style={{ backgroundImage: `url(${tail})` }}></span>
                         <div className="message">{
                             !(message instanceof Object) ? message : this.MessageContent(message, id, this.props.contacts)
