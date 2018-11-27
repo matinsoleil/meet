@@ -6,16 +6,23 @@ import {db} from '../../../index';
 import {Database} from '../../../config/config';
 
 const fetchConversationAction = createAction(FETCH_CONVERSATION, apiGet(urlConversation));
+
 export const fetchConversation = () => dispatch => {
     dispatch(fetchConversationAction());
 }
-export const addMessage = (conversationId, message) => {
-    const resp = db.storage.put(Database.tables.messages, {id: message.id, data: message});
-    return {
-        type: FETCH_CONVERSATION + '_ADD',
-        payload: { conversationId, message }
+
+
+export const addMessage = createAction( FETCH_CONVERSATION + '_ADD', (conversationId, message) => {
+        db.storage.put(Database.tables.messages, {id: message.id, data: message});        
+        return { conversationId, message };
     }
-}
+);
+
+
+
+
+
+
 
 export const deleteMessage = (conversationId, messageId) => {
     return {
