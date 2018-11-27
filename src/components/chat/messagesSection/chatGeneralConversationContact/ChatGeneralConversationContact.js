@@ -23,6 +23,7 @@ class ChatGeneralConversationContact extends Component {
 }
 
 const ListMessagesChatArea = props => {
+    
     return props.listMessagesChat.conversation.map(c => {
         const TypeMessageControl = c.sender === props.idUser ? 'message-in' : 'message-out';
         const tailType = c.sender === props.idUser ? 'tail-out' : 'tail-in';
@@ -35,7 +36,7 @@ const ListMessagesChatArea = props => {
             tailType={tailType}
             user_icon={props.imgContact}
             contacts={props.contacts}
-            conversationId={c.id}
+            conversationId={props.listMessagesChat.id}
         />
     })
 }
