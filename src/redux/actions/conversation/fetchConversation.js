@@ -9,21 +9,8 @@ const fetchConversationAction = createAction(FETCH_CONVERSATION, apiGet(urlConve
 export const fetchConversation = () => dispatch => {
     dispatch(fetchConversationAction());
 }
-// export const addMessage = (message) => {  
-//connection.send(JSON.stringify(message))
 export const addMessage = (conversationId, message) => {
     const resp = db.storage.put(Database.tables.messages, {id: message.id, data: message});
-
-    console.log(" (*) (*) (*) ");
-    console.log(resp);
-    console.log(" [!] [!] [!] ");
-
-
-
-
-
-
-
     return {
         type: FETCH_CONVERSATION + '_ADD',
         payload: { conversationId, message }
@@ -37,7 +24,3 @@ export const deleteMessage = (conversationId, messageId) => {
     }
 }
 
-// const fetchConversationAction = createAction(FETCH_CONVERSATION, (msg) => {
-//     db.storage.put(Database.tables.messages, {id: message.id, data: message});
-//     return msg;
-// });
