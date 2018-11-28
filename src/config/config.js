@@ -5,13 +5,6 @@ export const Database = {
     table_schemas: {
         cn_messages: [
             'id',
-            // 'messageType',
-            // 'messageid',
-            // 'msgtext',
-            // 'senderUri',
-            // 'receiverUri',
-            // 'sendTime',
-            // 'status',
             'messageid',
             'conversationid',
             'propertyid',
