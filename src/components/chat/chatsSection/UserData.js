@@ -39,6 +39,6 @@ const mapStateToProps = ({user, country}) => {
         translator: country.translator,
         user: user
     }
-}
+};
 
 export default connect(mapStateToProps, null)(UserData)
