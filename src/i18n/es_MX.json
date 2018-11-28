@@ -32,5 +32,22 @@
   "Marcar como no leído":"Marcar como no leído",
   "Eliminar historial del chat":"Eliminar historial del chat",
   "Salir del grupo":"Salir del grupo",
-  "Eliminar chat":"Eliminar chat"
+  "Eliminar chat":"Eliminar chat",
+
+  "CHATS": "Chats",
+  "NEW": "Nuevo",
+  "NEW_GROUPAL_CHAT": "Nuevo chat grupal",
+  "NEW_CHAT": "Nuevo chat",
+  "NEW_DIFFUSION_CHAT": "Nuevo chat de difusión",
+  "SILENCE_CHAT": "Silenciar chat",
+  "REMOVE_CHAT_SILENCE": "Dejar de silenciar chat",
+  "MARK_AS_UNREADED": "Marcar como no leído",
+  "MARK_AS_READED": "Marcar como leído",
+  "ADD_CHAT_PIN": "Fijar chat",
+  "REMOVE_CHAT_PIN": "Dejar de fijar chat",
+  "REMOVE_CHAT": "Eliminar chat",
+  "STORE_CHAT": "Archivar chat",
+  "REMOVE_CHAT_FROM_STORE": "Dejar de archivar chat",
+  "REMOVE_CHAT_HISTORY": "Eliminar historial del chat",
+  "GO_OUT_OF_GROUP": "Salir del grupo"
 }

@@ -2,7 +2,7 @@ export const Images = {
     "clip": require('./../../img/attache-clip.svg'),
     "emoji": require('./../../img/ic-emoticon-smile.svg'),
     "mic": require('./../../img/ic-microphone-a.svg'),
-    "plus": require('./../../img/plus-b.svg'),
+    "plus": require('./../../img/plus.svg'),
     "in_tail": require('./../../img/in-tail.svg'),
     "out_tail": require('./../../img/out-tail.svg'),
     "green_tail": require('./../../img/green-tail.png'),

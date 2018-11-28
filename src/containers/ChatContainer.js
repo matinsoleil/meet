@@ -6,7 +6,6 @@ import { fetchConversation } from '../redux/actions/conversation/fetchConversati
 import { fetchUser } from '../redux/actions/users/fetchUser'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
-import RightSection from '../components/chat/rightSection/RightSection'
 import ControlSectionContainer from '../components/chat/chatsSection/ControlSectionContainer';
 
 class ChatContainer extends Component {
@@ -25,7 +24,7 @@ class ChatContainer extends Component {
                 <div className="main-chat">
                     <ControlSectionContainer/>
                     <MessageSectionContainer contacts={listContact} chat={this.props.conversation} contact={this.props.contact} server={this.props.server} />
-                    {this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null}
+                    {/*this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null*/}
                 </div>
             </div>
         )

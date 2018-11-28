@@ -5,7 +5,6 @@ import fetchContact from '../../../redux/actions/contact/fetchContact'
 import clearContact from '../../../redux/actions/contact/clearContact'
 import updateContacts from '../../../redux/actions/contacts/updateContacts'
 import { showModal,View } from '../../../redux/actions/modalBox/modalBox';
-import {togglePopup} from "../../../redux/actions/popup/popup";
 import { connect } from 'react-redux'
 
 class GeneralContactData extends Component {
