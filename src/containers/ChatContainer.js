@@ -24,12 +24,7 @@ class ChatContainer extends Component {
                 <div className="main-chat">
                     <ControlSectionContainer/>
                     <MessageSectionContainer/>
-
-
                     {/* <MessageSectionContainer contacts={listContact} chat={this.props.conversation} contact={this.props.contact} server={this.props.server} /> */}
-
-
-
                     {/*this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null*/}
                 </div>
             </div>

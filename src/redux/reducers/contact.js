@@ -2,10 +2,11 @@ import { handleActions } from 'redux-actions';
 import { ContactActionTypes } from '../actionstypes';
 
 const defaultState = {
-    name: 'Scarlett Johansson',
-    isOnline: false,
-    avatar: '',
-    authentication: {}
+    id: 1,
+    name: "Viejo Lesbiano",
+    label: "label contact 69",
+    members: [{ id: 1 , name: 'Jose'} , {id: 2 , name: 'Juan'}],
+    type: "basic",
 };
 
 const actionHandlersMap = new Map([
