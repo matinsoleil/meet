@@ -3,12 +3,14 @@ import HeaderMessagesSection from './headerMessagesSection/headerMessagesSection
 import FooterMessagesSection from './footerMessagesSection/footerMessagesSection';
 import ChatGeneralConversationContact from './chatGeneralConversationContact/ChatGeneralConversationContact';
 import InactiveChat from './inactiveChat/inactiveChat';
+import { connect } from 'react-redux'
 import './messagesSectionContainer.scss'
 class MessagesSectionContainer extends Component {
+
     render() {
         return (
             <div className='messages-section-container' >
-                {this.props.contact.id ? (
+                {this.props.contact ? (
                     <ActiveChat
                         label={this.props.contact.label}
                         contactsIds={this.props.contact.contactsIds}
@@ -36,4 +38,11 @@ const ActiveChat = (props) => {
     );
 }
 
-export default MessagesSectionContainer;
+const mapStateToProps = ({ user, contact }) => {
+    return {
+        user: user,
+        contact: contact
+    }
+}
+
+export default connect(mapStateToProps, null)(MessagesSectionContainer)

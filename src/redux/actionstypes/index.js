@@ -70,12 +70,12 @@ export const modalActions = {
     'SET_VIEW': 'SET_VIEW'
 }
 export const popupActions = {
-    'SHOW_POPUP':'SHOW_POPUP'
+    'SHOW_POPUP': 'SHOW_POPUP'
 }
 
 export const ViewsActions = {
     CreateConversationBar: {
-       TOGGLE_MENU: 'TOGGLE_MENU'
+        TOGGLE_MENU: 'TOGGLE_MENU'
     }
 };
 
@@ -93,5 +93,9 @@ export const ActionTypes = {
 };
 
 export const UserActionTypes = {
-  SET_USER: 'SET_USER'
+    SET_USER: 'SET_USER'
+};
+
+export const ContactActionTypes = {
+    SET_USER: 'SET_CONTACT'
 };
