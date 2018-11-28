@@ -58,18 +58,6 @@ hr {
   color: #d0d0d0;
 }
 
-.dropbtn {
-  background-color: #5886c0;
-  border-radius: 3px 3px 3px 3px;
-  -moz-border-radius: 3px 3px 3px 3px;
-  -webkit-border-radius: 3px 3px 3px 3px;
-  color: white;
-  padding: 4px;
-  font-size: 16px;
-  width: 100px;
-  display: inline-flex;
-}
-
 .data-profile-rectangle {
   width: 417px;
   height: 176px;
