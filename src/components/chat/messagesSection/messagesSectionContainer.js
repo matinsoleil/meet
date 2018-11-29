@@ -45,11 +45,10 @@ const ActiveChat = (props) => {
     );
 }
 
-const mapStateToProps = ({ user, contact, conversation }) => {
+const mapStateToProps = ({ user, contact}) => {
     return {
         user: user,
         contact: contact,
-        conversation: conversation
     }
 }
 
