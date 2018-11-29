@@ -1,25 +1,24 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import * as moment from 'moment';
+import 'moment/locale/es';
+import 'moment/locale/pt-br';
 
 class TimeFromNow extends Component {
-
-    constructor(props) {
-        super(props);
-        this.dateText = this.transformDateFromNow(props.date);
-    }
-
-    componentDidUpdate() {
-        this.dateText = this.transformDateFromNow(props.date);
-    }
 
     render() {
         return (
             <React.Fragment>
-                <span>{this.dateText}</span>
+                <span>{this.transformDateFromNow(this.props.date)}</span>
             </React.Fragment>
         );
     }
 
+    /**
+     * Retrieve a relative date from now
+     * @param timestamp
+     * @returns {string}
+     */
     transformDateFromNow(timestamp) {
         moment.locale(this.props.dialect);
         const message = moment(parseInt(timestamp)).fromNow();
@@ -28,10 +27,11 @@ class TimeFromNow extends Component {
 
 }
 
-const mapStateToProps = ({views}) => {
+const mapStateToProps = ({views, country}) => {
     return {
-        signalToRerender: views.timeFromNow.signalToRerender
+        shouldUpdate: views.timeFromNow.shouldUpdate, // Is currently used to force a rerender ;)
+        dialect: country.dialect
     };
 };
 
-export default connect(null, null)(TimeFromNow);
+export default connect(mapStateToProps, null)(TimeFromNow);

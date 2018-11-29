@@ -45,7 +45,7 @@ export const conversationsReducer = handleActions(mapActions, [
         id: 1,
         name: "Viejo Lesbiano",
         label: "label contact 69",
-        lastMessageDate: 1543436663354,//"dayLastMessage": "8 min",
+        lastMessageDate: 1543447426077,//"dayLastMessage": "8 min",
         lastMessage: "Hello, how are you?",//"lastMessage": "Last Message",
         unreadMessages: { status: true, messages: null },//"countMessage": "1",
         mutted: false,//"silence": "0",

@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
+import TimeFromNow from './TimeFromNow';
 import {connect} from 'react-redux';
 import {Images} from "../../../redux/states/images";
 import {updateConversations, removeConversations} from "../../../redux/actions/conversations/conversations";
 import './ConversationItem.scss';
-import * as moment from 'moment';
-import 'moment/locale/es';
 
 const conversationTypes = {
     basic: 'basic',
@@ -48,7 +47,9 @@ class ConversationItem extends Component {
                             {this.props.conversation.mutted && <img src={Images.mute_a_icon} alt="Mutted" className="icon"/>}
                             {this.props.conversation.stored && <img src={Images.file_icon_chat} alt="Stored" className="icon"/>}
                         </div>
-                        <div className="last-message-date">{this.lastMessageDate}</div>
+                        <div className="last-message-date">
+                            <TimeFromNow date={ parseInt(this.props.conversation.lastMessageDate) }/>
+                        </div>
                     </div>
 
                     <div className="bottom-content">
@@ -158,8 +159,7 @@ class ConversationItem extends Component {
 
 const mapStateToProps = ({country}) => {
     return {
-        translator: country.translator,
-        dialect: country.dialect
+        translator: country.translator
     };
 };
 

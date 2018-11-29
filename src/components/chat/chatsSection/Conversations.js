@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import ConversationItem from './ConversationItem'
 import {connect} from 'react-redux';
+import {updateTimeFromNow} from "../../../redux/actions/views/timeFromNow";
 
 class Conversations extends Component {
 
     constructor(props) {
         super(props);
-        this.timeToAutoupdate = 0.3 * 1000;
+        this.timeToAutoupdate = 30 * 1000;
     }
 
     componentWillUnmount() {
@@ -48,14 +49,11 @@ class Conversations extends Component {
     }
 
     autoUpdateConversationsDate() {
-        console.log(this.timeToAutoupdate)
-
         this.autoUpdateConversationsInterval = setInterval(() => {
-            this.forceUpdate();
+            this.props.updateTimeFromNow();
         }, this.timeToAutoupdate);
     }
 }
-
 
 const mapStateToProps = ({conversations}) => {
     return {
@@ -63,4 +61,9 @@ const mapStateToProps = ({conversations}) => {
     };
 };
 
-export default connect(mapStateToProps, null)(Conversations);
+const mapDispatchToProps = dispatch => {
+    return {
+        updateTimeFromNow: (payload = {shouldUpdate: true}) => dispatch(updateTimeFromNow(payload))
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Conversations);
