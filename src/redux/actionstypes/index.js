@@ -104,3 +104,7 @@ export const UserActionTypes = {
 export const ContactActionTypes = {
     SET_USER: 'SET_CONTACT'
 };
+
+export const ConversationActionTypes = {
+    SET_CONVERSATION: 'SET_CONVERSATION'
+};
