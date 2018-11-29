@@ -131,10 +131,6 @@ const defaultState = [{
 
 const actionHandlersMap = new Map([
     [
-        ActionTypes.FETCH_CONVERSATION_FULFILLED,
-        (state, action) => [...action.payload],
-    ],
-    [
         ActionTypes.FETCH_CONVERSATION_ADD,
         (state, action) => {
             for (let index in state) {

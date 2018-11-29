@@ -7,12 +7,9 @@ import { connect } from 'react-redux'
 import './messagesSectionContainer.scss'
 class MessagesSectionContainer extends Component {
     render() {
-
-        console.log(" 0 0 0 ");
-        console.log(this.props);
-        console.log(" 1 1 1 ");
-    
-
+        // console.log(" 0 0 0 ");
+        // console.log(this.props);
+        // console.log(" 1 1 1 ");
         return (
             <div className='messages-section-container' >
                 {this.props.contact ? (
