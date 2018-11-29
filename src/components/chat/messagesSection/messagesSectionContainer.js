@@ -31,7 +31,9 @@ const ActiveChat = (props) => {
     return (
         <React.Fragment>
             <HeaderMessagesSection/>
-            {/* <ChatGeneralConversationContact contact={props.conversation} contacts={props.contacts} chat={props.chat} />
+            <ChatGeneralConversationContact/>
+            <FooterMessagesSection />
+            {/* <ChatGeneralConversationContact contact={props.conversation} contacts={props.contacts} chat=[{props.chat}] />
             <FooterMessagesSection serverChat={props.server} /> */}
         </React.Fragment>
     );

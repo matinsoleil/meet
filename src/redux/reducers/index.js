@@ -7,7 +7,7 @@ import {
 } from './contacts'
 
 import { users } from './users'
-import { contactReducer } from './contact'
+
 // import {
 //     conversation,
 //     restoreKey as restoreKeyConversation,
@@ -57,7 +57,6 @@ export const reducers = combineReducers({
     views: viewsReducers,
     conversations: conversationsReducer,
     conversation: conversationReducer,
-    contact: contactReducer,
 });
 
 export const keyToRestore = {

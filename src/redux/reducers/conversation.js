@@ -3,15 +3,23 @@ import { ActionTypes, ConversationActionTypes } from '../actionstypes';
 
 const defaultState = {
     id: 1,
-    name: "Viejo Lesbiano Versio 2",
+    name: "Viejo Lesbiano",
     label: "label contact 69",
-    members: [{ id: 1 , name: 'Jose'} , {id: 2 , name: 'Juan'}],
+    members: [{ id: 1, name: 'Jose' }, { id: 2, name: 'Juan' }],
     type: "basic",
 };
 
 const actionHandlersMap = new Map([
 
     [ConversationActionTypes.SET_CONVERSATION, (state, action) => ({ ...state, ...action.payload })],
+    
+    
+    
+    
+    
+    
+    
+    
     [
         ActionTypes.FETCH_CONVERSATION_ADD,
         (state, action) => {
@@ -23,6 +31,7 @@ const actionHandlersMap = new Map([
             }
         },
     ],
+
     [
         ActionTypes.ADD_CONVERSATION,
         (state, action) => {

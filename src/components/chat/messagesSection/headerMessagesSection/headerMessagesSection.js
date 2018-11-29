@@ -29,8 +29,6 @@ const Members = (props) => {
     );
 }
 
-
-
 const mapStateToProps = ({ conversation }) => {
     return {
         conversation: conversation,
