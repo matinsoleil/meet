@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import TimeFromNow from './TimeFromNow';
 import {connect} from 'react-redux';
 import {Images} from "../../../redux/states/images";
 import {updateConversations, removeConversations} from "../../../redux/actions/conversations/conversations";
@@ -46,7 +47,9 @@ class ConversationItem extends Component {
                             {this.props.conversation.mutted && <img src={Images.mute_a_icon} alt="Mutted" className="icon"/>}
                             {this.props.conversation.stored && <img src={Images.file_icon_chat} alt="Stored" className="icon"/>}
                         </div>
-                        <div className="last-message-date">{this.props.conversation.lastMessageDate}</div>
+                        <div className="last-message-date">
+                            <TimeFromNow date={ parseInt(this.props.conversation.lastMessageDate) }/>
+                        </div>
                     </div>
 
                     <div className="bottom-content">
