@@ -16,7 +16,6 @@ export const fetchConversation = createAction(ActionTypes.FETCH_CONVERSATION, (c
     }
 );
 export const addConversation = createAction(ActionTypes.ADD_CONVERSATION, (conversation) => {
-    // db.storage.findKeyAndRemove(Database.tables.messages, messageId);
     return { conversation };
     }
 );
