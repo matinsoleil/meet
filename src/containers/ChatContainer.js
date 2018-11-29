@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MessageSectionContainer from './../components/chat/messagesSection/messagesSectionContainer'
 import fetchContacts from '../redux/actions/contacts/fetchContacts'
-import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
+// import { fetchConversation } from '../redux/actions/conversation/fetchConversation'
 import { fetchUser } from '../redux/actions/users/fetchUser'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
@@ -52,9 +52,9 @@ const mapDispatchToProps = dispatch => {
         fetchContacts: () => {
             dispatch(fetchContacts())
         },
-        fetchConversation: () => {
-            dispatch(fetchConversation())
-        },
+        // fetchConversation: () => {
+        //     dispatch(fetchConversation())
+        // },
         fetchUser: () => {
             dispatch(fetchUser("U1"))
         },

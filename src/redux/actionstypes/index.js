@@ -95,7 +95,9 @@ export const ActionTypes = {
     'DELETE_MESSAGE': 'DELETE_MESSAGE',
     'DELETE_CONVERSATION': 'DELETE_CONVERSATION',
     'ADD_CONVERSATION': 'ADD_CONVERSATION',
-    'TIME_FROM_NOW_UPDATE': 'TIME_FROM_NOW_UPDATE'
+    'TIME_FROM_NOW_UPDATE': 'TIME_FROM_NOW_UPDATE',
+
+    'SET_CONVERSATION': 'SET_CONVERSATION'
 };
 
 export const UserActionTypes = {
@@ -106,6 +108,6 @@ export const ContactActionTypes = {
     SET_CONTACT: 'SET_CONTACT'
 };
 
-export const ConversationActionTypes = {
-    SET_CONVERSATION: 'SET_CONVERSATION'
-};
+// export const ConversationActionTypes = {
+//     SET_CONVERSATION: 'SET_CONVERSATION'
+// };

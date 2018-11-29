@@ -1,25 +1,20 @@
 import { handleActions } from 'redux-actions';
-import { ActionTypes, ConversationActionTypes } from '../actionstypes';
+import { ActionTypes } from '../actionstypes';
 
 const defaultState = {
-    id: 1,
+    id: 2,
     name: "Viejo Lesbiano",
     label: "label contact 69",
     members: [{ id: 1, name: 'Jose' }, { id: 2, name: 'Juan' }],
+    conversation: [],
     type: "basic",
 };
 
 const actionHandlersMap = new Map([
-
-    [ConversationActionTypes.SET_CONVERSATION, (state, action) => ({ ...state, ...action.payload })],
-    
-    
-    
-    
-    
-    
-    
-    
+    // [ConversationActionTypes.SET_CONVERSATION, (state, action) => ({ ...state, ...action.payload })],
+    [
+        ActionTypes.ADD_CONVERSATION, (state, action) => { return action.payload.conversation }
+    ],
     [
         ActionTypes.FETCH_CONVERSATION_ADD,
         (state, action) => {
@@ -29,14 +24,6 @@ const actionHandlersMap = new Map([
                     return [...state];
                 }
             }
-        },
-    ],
-
-    [
-        ActionTypes.ADD_CONVERSATION,
-        (state, action) => {
-            state.push(action.payload)
-            return [...state]
         },
     ],
     [
