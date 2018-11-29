@@ -7,6 +7,11 @@ const defaultState = {
     label: "label contact 69",
     members: [{ id: 1 , name: 'Jose'} , {id: 2 , name: 'Juan'}],
     type: "basic",
+    messages: [
+        { conversationId: 1,
+            propertyId: 3
+        }
+    ]
 };
 
 const actionHandlersMap = new Map([

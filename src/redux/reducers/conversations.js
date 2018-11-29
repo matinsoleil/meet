@@ -55,11 +55,7 @@ export const conversationsReducer = handleActions(mapActions, [
         //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
         type: "basic",
         stored: true,
-        messages: [
-            { conversationId: 1,
-                propertyId: 3
-            }
-        ]
+
     },
     {
         id: 2,
