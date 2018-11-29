@@ -85,9 +85,9 @@ class FooterMessagesSection extends Component {
     }
 
     sendMessage = (message) => {
-
         this.idMessage = GenerateId.generate();
 
+        /*
         this.connection.onmessage = function (event) {
         this.idMessage = GenerateId.generate();    
         console.log(event.data);
@@ -101,14 +101,16 @@ class FooterMessagesSection extends Component {
 
        }.bind(this); 
 
-
+       
        this.connection.onclose = function (event) {
         this.idMessage='00000';
         console.log(event.code);
         console.log(event.reason);  
 
        }.bind(this); 
-       
+       */
+
+
         let date = new Date();
 
         let msg = {
@@ -123,15 +125,22 @@ class FooterMessagesSection extends Component {
             hour: `${date.getHours()}:${date.getMinutes()}`,
             status: "1",
         }
+        
         //this.connection.send(JSON.stringify(msg));
 
-        this.props.addMessage(this.conversation.id, msg );
-        message='';
+        console.log(" 111 ");
+        console.log(this.conversation);
+        console.log(" 222 ");
+        // this.props.addMessage(this.conversation.id, msg );
 
-        this.inputText.value = '';
-        this.setState({ inputText: false });
-        this.props.cancelReply('', true);
-        this.scrollDown();
+
+        // message='';
+
+        // this.inputText.value = '';
+        // this.setState({ inputText: false });
+        // this.props.cancelReply('', true);
+        // this.scrollDown();
+        
     }
 
     scrollDown = () => {

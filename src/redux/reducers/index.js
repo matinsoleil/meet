@@ -8,11 +8,16 @@ import {
 
 import { users } from './users'
 import { contactReducer } from './contact'
-import {
-    conversation,
-    restoreKey as restoreKeyConversation,
-    defaultValue as defaultValueConversation
-} from './conversation'
+// import {
+//     conversation,
+//     restoreKey as restoreKeyConversation,
+//     defaultValue as defaultValueConversation
+// } from './conversation'
+
+import { conversationReducer } from './conversation'
+
+
+
 import { searchContacts } from './searchContacts'
 import { groupsSection } from './groupsSection'
 import {
@@ -35,7 +40,7 @@ export const reducers = combineReducers({
   contacts,
   users,
   
-  conversation,
+  
   searchContacts,
   groupsSection,
   contactSection,
@@ -51,6 +56,7 @@ export const reducers = combineReducers({
     user: userReducer,
     views: viewsReducers,
     conversations: conversationsReducer,
+    conversation: conversationReducer,
     contact: contactReducer,
 });
 
@@ -59,10 +65,10 @@ export const keyToRestore = {
         restoreKey: restoreKeyContacts,
         defaultValue: defaultValueContacts,
     },
-    'conversation': {
-        restoreKey: restoreKeyConversation,
-        defaultValue: defaultValueConversation,
-    },
+    // 'conversation': {
+    //     restoreKey: restoreKeyConversation,
+    //     defaultValue: defaultValueConversation,
+    // },
     'country': {
         restoreKey: restoreKeyCountry,
         defaultValue: null
