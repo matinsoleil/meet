@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { ConversationActionTypes } from '../actionstypes';
+import { ActionTypes } from '../actionstypes';
 
 const defaultState = [{
     "id": "1",
@@ -131,11 +131,11 @@ const defaultState = [{
 
 const actionHandlersMap = new Map([
     [
-        ConversationActionTypes.FETCH_CONVERSATION_FULFILLED,
+        ActionTypes.FETCH_CONVERSATION_FULFILLED,
         (state, action) => [...action.payload],
     ],
     [
-        ConversationActionTypes.FETCH_CONVERSATION_ADD,
+        ActionTypes.FETCH_CONVERSATION_ADD,
         (state, action) => {
             for (let index in state) {
                 if (state[index].id === action.payload.conversationId) {
@@ -146,18 +146,18 @@ const actionHandlersMap = new Map([
         },
     ],
     [
-        ConversationActionTypes.ADD_CONVERSATION,
+        ActionTypes.ADD_CONVERSATION,
         (state, action) => {
             state.push(action.payload)
             return [...state]
         },
     ],
     [
-        ConversationActionTypes.DELETE_CONVERSATION,
+        ActionTypes.DELETE_CONVERSATION,
         (state, action) => [...action.payload]
     ],
     [
-        ConversationActionTypes.DELETE_MESSAGE,
+        ActionTypes.DELETE_MESSAGE,
         (state, action) => {
             //[...state].filter(message => (message.id === action.payload) ? false : true)
             for (let index in state) {
