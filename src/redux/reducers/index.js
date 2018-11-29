@@ -30,6 +30,9 @@ import { countriesReducer } from './countries'
 import { messageCenterReducer } from './messageCenter'
 import { customizingReducer } from './customizing'
 import { messagesOptionsReducer } from './messagesOptions'
+
+import { messagesReducer } from './messages'
+
 import { alertGeneral } from './alertGeneral'
 import { modalBoxReducer } from './modalBox';
 import {userReducer} from "./user";
@@ -57,6 +60,7 @@ export const reducers = combineReducers({
     views: viewsReducers,
     conversations: conversationsReducer,
     conversation: conversationReducer,
+    messages: messagesReducer
 });
 
 export const keyToRestore = {

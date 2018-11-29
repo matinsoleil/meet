@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HeaderMessagesSection from './headerMessagesSection/headerMessagesSection';
 import FooterMessagesSection from './footerMessagesSection/footerMessagesSection';
 import { addConversation } from '../../../redux/actions/conversation/conversation'
+import { addMessages } from '../../../redux/actions/messages/messages'
 import ChatGeneralConversationContact from './chatGeneralConversationContact/ChatGeneralConversationContact';
 import InactiveChat from './inactiveChat/inactiveChat';
 import { connect } from 'react-redux'
@@ -12,7 +13,7 @@ class MessagesSectionContainer extends Component {
         const conversationTest = {
             id: 3,
             name: "stylopm ",
-            label: "label grupo stylopm",
+            label: "label grupo stylopm 99999",
             members: [{ id: 1, name: 'Jose' }, { id: 2, name: 'Juan' }],
             conversation: [
                 {
@@ -136,7 +137,40 @@ class MessagesSectionContainer extends Component {
               ],
             type: "basic",
         };
+
+        const messagesTest = [
+          {
+            "id": "1",
+            "message": "Hi Jack. What are you doing?",
+            "hour": "10:01",
+            "status": "1",
+            "sender": "U1"
+          },
+          {
+            "id": "2",
+            "message": "Hi Mary. I'm filling out a job application.",
+            "hour": "10:02",
+            "status": "1",
+            "sender": "2"
+          },
+          {
+            "id": "3",
+            "message": "Are you finished with school already?",
+            "hour": "10:03",
+            "status": "1",
+            "sender": "U1"
+          }, 
+          {
+            "id": "4",
+            "message": "No. I have one more semester, but it would be great to have a job lined up.",
+            "hour": "10:04",
+            "status": "1",
+            "sender": "2"
+          },
+        ]
         this.props.addConversation(conversationTest);
+        this.props.addMessages(messagesTest);
+        
     }
 
     render() {
@@ -183,6 +217,12 @@ const mapDispatchToProps = dispatch => {
         addConversation: (conversations) => {
             dispatch(addConversation(conversations))
         },
+
+        addMessages: (messages) => {
+          dispatch(addMessages(messages))
+      },
+        
+
     }
 }
 
