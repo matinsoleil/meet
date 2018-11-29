@@ -4,15 +4,11 @@ export const Database = {
     name : 'claro_connect_chat',
     table_schemas: {
         cn_messages: [
-            '++id',
-            'messageType',
+            'id',
             'messageid',
-            'msgtext',
-            'senderUri',
-            'receiverUri',
-            'sendTime',
-            'status',
-            'ownMessage'
+            'conversationid',
+            'propertyid',
+            'data'
         ].join(','),
         cn_status: [
             'id',

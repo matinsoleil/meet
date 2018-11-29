@@ -29,6 +29,7 @@ import { alertGeneral } from './alertGeneral'
 import { modalBoxReducer } from './modalBox';
 import { userReducer } from "./user";
 import { viewsReducers } from "./views/";
+import {conversationsReducer} from "./conversations";
 
 export const reducers = combineReducers({
   contacts,
@@ -48,7 +49,8 @@ export const reducers = combineReducers({
   form: formReducer,
   alertGeneral,
     user: userReducer,
-    views: viewsReducers
+    views: viewsReducers,
+    conversations: conversationsReducer
 });
 
 export const keyToRestore = {

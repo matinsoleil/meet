@@ -1,9 +1,9 @@
 import Dexie from 'dexie';
-import {Database} from "../../config/config";
+import { Database } from "../../config/config";
 
 class IndexedDbDriver {
 
-    constructor(database, tables){
+    constructor(database, tables) {
         this._db = new Dexie(database);
         this._db.version(2).stores(tables);
     }
@@ -13,7 +13,7 @@ class IndexedDbDriver {
      *
      * @returns {Dexie}
      */
-    get db(){
+    get db() {
         return this._db;
     }
 
@@ -24,7 +24,7 @@ class IndexedDbDriver {
      * @param condition
      * @returns {Promise}
      */
-    find(table, condition){
+    find(table, condition) {
         return this._db[table].get(condition).toArray();
     }
 
@@ -35,9 +35,25 @@ class IndexedDbDriver {
      * @param condition
      * @returns {*|Dexie.Collection<T, Key>}
      */
-    findOne(table, condition){
+    findOne(table, condition) {
         return this._db[table].get(condition);
     }
+
+
+
+
+    /**
+     * Returns a object that matches with the specified query
+     *
+     * @param table
+     * @param condition
+     * @returns {*|Dexie.Collection<T, Key>}
+     */
+    findWhere(table, condition) {
+        return this._db[table].where(condition);
+    }
+
+
 
     /**
      * Update an object that matches with the query
@@ -47,9 +63,10 @@ class IndexedDbDriver {
      * @param set
      * @returns {Dexie.Promise<number>}
      */
-    findOneAndUpdate(table, condition, set){
+    findOneAndUpdate(table, condition, set) {
         return this.findOne(table, condition).modify(set);
     }
+
 
     /**
      * Remove an objetc that matches with the query
@@ -58,8 +75,26 @@ class IndexedDbDriver {
      * @param condition
      * @returns {Dexie.Promise<number>}
      */
-    findOneAndRemove(table, condition){
-        return this.findOne(table, condition).delete();
+    // findKeyAndRemove(table, condition){
+
+    findKeyAndRemove(table, id) {
+        // return this.findOne(table, condition).delete();
+        return this._db[table].delete(id);
+    }
+
+
+    /**
+     * Remove an objetc that matches with the query
+     *
+     * @param table
+     * @param condition
+     * @returns {Dexie.Promise<number>}
+     */
+    // findOneAndRemove(table, condition){
+
+    findOneAndRemove(table, condition) {
+        // return this.findWhere(table, condition).delete();
+        return this.findOne(table, condition).delete();;
     }
 
     /**
@@ -69,7 +104,7 @@ class IndexedDbDriver {
      * @param data
      * @returns {*}
      */
-    add(table, data){
+    add(table, data) {
         return this._db[table].add(data);
     }
 
@@ -80,7 +115,7 @@ class IndexedDbDriver {
      * @param data
      * @returns {*}
      */
-    put(table, data){
+    put(table, data) {
         return this._db[table].put(data);
     }
 
