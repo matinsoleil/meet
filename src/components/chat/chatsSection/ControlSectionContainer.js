@@ -1,12 +1,11 @@
 import UserData from './userData';
-import GeneralChatData from './GeneralChatData'
 import {fetchContactSection} from '../../../redux/actions/contactSection/fetchContactSection'
-import showSectionRight from '../../../redux/actions/rightSection/showSectionRight';
+import showSectionRight from '../../../redux/actions/supportSection/showSectionRight';
 import updateFilterContactSection from '../../../redux/actions/contactSection/updateFilterContactSection';
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import './ControlSectionContainer.scss'
-import {toggleRightSide, Type} from '../../../redux/actions/rightSection/rightSection';
+import {toggleSupportSection, Type} from '../../../redux/actions/views/supportSection';
 
 class ControlSectionContainer extends Component {
 
@@ -78,7 +77,7 @@ class ControlSectionContainer extends Component {
                 </button>
                 <div className="dropdown-content">
                     <a onClick={() => {
-                        this.props.toggleRightSide('Agregar a', Type.CREATE_GROUP)
+                        this.props.toggleSupportSection('Agregar a', Type.CREATE_GROUP)
                     }}>Nuevo chat grupal</a>
                 </div>
             </div>
@@ -119,8 +118,8 @@ const mapDispatchToProps = dispatch => {
         fetchContactSection: () => {
             dispatch(fetchContactSection())
         },
-        toggleRightSide: (title, type) => {
-            dispatch(toggleRightSide(title, type));
+        toggleSupportSection: (title, type) => {
+            dispatch(toggleSupportSection(title, type));
         }
     }
 }

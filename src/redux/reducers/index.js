@@ -19,7 +19,6 @@ import {
     countryReducer,
     restoreKey as restoreKeyCountry
 } from './country'
-import { rightSection } from './rightSection'
 import { contactSection } from './contactSection'
 import { osReducer } from './os'
 import { countriesReducer } from './countries'
@@ -28,8 +27,8 @@ import { customizingReducer } from './customizing'
 import { messagesOptionsReducer } from './messagesOptions'
 import { alertGeneral } from './alertGeneral'
 import { modalBoxReducer } from './modalBox';
-import {userReducer} from "./user";
-import {viewsReducers} from "./views/";
+import { userReducer } from "./user";
+import { viewsReducers } from "./views/";
 
 export const reducers = combineReducers({
   contacts,
@@ -38,7 +37,6 @@ export const reducers = combineReducers({
   conversation,
   searchContacts,
   groupsSection,
-  rightSection,
   contactSection,
   generalModal: modalBoxReducer,
   customizing: customizingReducer,

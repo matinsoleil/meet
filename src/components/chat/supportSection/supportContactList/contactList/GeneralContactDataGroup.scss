@@ -1,0 +1,43 @@
+@media screen {
+  .contact-row{
+    display: flex;
+    height: 56px;
+    margin: 12px 5px 12px 5px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0 10px 0 10px;
+    .info-container{
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: center;
+      img{
+        width: 56px;
+        height: 56px;
+        border-radius: 56px;
+      }
+      span{
+        margin-left: 20px;
+        height: 16px;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: -0.3px;
+        color: #323232;
+        text-overflow: ellipsis;
+      }
+    }
+    .check-box{
+      width: 15px;
+      height: 15px;
+      border-radius: 4px;
+      border-color: #6399f5;
+      border-style: solid;
+      border-width: 1px;
+    }
+  }
+}
+
