@@ -27,7 +27,7 @@ class Conversations extends Component {
             </div>
         );
     }
-
+//TODO: Separate logic part
     /**
      * Retrieve the ConversationItems array sorted by the UX conditions
      */
