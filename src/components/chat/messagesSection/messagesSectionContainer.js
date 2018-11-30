@@ -28,7 +28,7 @@ class MessagesSectionContainer extends Component {
           "message": "Hi Jack. What are you doing?",
           "hour": "10:01",
           "status": "1",
-          "sender": "U1"
+          "sender": "50"
         },
         {
           "id": "2",
@@ -42,7 +42,7 @@ class MessagesSectionContainer extends Component {
           "message": "Are you finished with school already?",
           "hour": "10:03",
           "status": "1",
-          "sender": "U1"
+          "sender": "50"
         },
         {
           "id": "4",

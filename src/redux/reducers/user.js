@@ -3,6 +3,7 @@ import {UserActionTypes} from '../actionstypes';
 
 const defaultState = {
     name: 'John Doe',
+    idUser: 50,
     isOnline: false,
     avatar: '',
     status: 'Hey, I\'m using Claro connect!',

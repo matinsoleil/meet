@@ -134,9 +134,7 @@ class ConversationItem extends Component {
                 )
             }
         ];
-
         //TODO: verify if this conversation is selected
-
         switch (this.props.conversation.type) {
             case conversationTypes.group:
                 if(this.props.conversation.banned){
