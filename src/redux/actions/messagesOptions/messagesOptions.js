@@ -14,17 +14,17 @@ export const multiSelectState = state => dispatch => {
 export const filterMessages = (action, messageId) => dispatch => {
     (action) ? dispatch(addMessage(messageId)) :
         dispatch(removeMessage(messageId));
-    dispatch(messageSelected(messageId,action));
+    dispatch(messageSelected(messageId, action));
 }
 
-export const deleteMessagesSelected = (conversationId,messagesId) => dispatch => {
+export const deleteMessagesSelected = (conversationId, messagesId) => dispatch => {
     dispatch(multiSelectState(false));
     for (const id in messagesId) {
-        dispatch(deleteMessage(conversationId,messagesId[id]));
+        dispatch(deleteMessage(conversationId, messagesId[id]));
     }
 }
 
-export const messageSelected = (messageId,state=false) => {
+export const messageSelected = (messageId, state = false) => {
     return {
         type: SELECT_MESSAGE,
         payload: messageId,

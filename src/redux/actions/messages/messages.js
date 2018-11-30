@@ -3,15 +3,21 @@ import { createAction } from 'redux-actions'
 import { db } from '../../../index';
 import { Database } from '../../../config/config';
 
+export const fetchMessages = createAction(ActionTypes.FETCH_MESSAGES, () => {
+    // db.storage.add(Database.tables.messages, { id: message.id, data: message, message: message.message });
+    }
+);
+
+
 export const addMessages = createAction(ActionTypes.ADD_MESSAGES, (messages) => {
     // db.storage.add(Database.tables.messages, { id: message.id, data: message, message: message.message });
     return { messages };
 }
 );
 
-export const addMessage = createAction(ActionTypes.FETCH_CONVERSATION_ADD, (conversationId, message) => {
+export const addMessage = createAction(ActionTypes.ADD_MESSAGE, (message) => {
     // db.storage.add(Database.tables.messages, { id: message.id, data: message, message: message.message });
-    return { conversationId, message };
+    return { message };
 }
 );
 

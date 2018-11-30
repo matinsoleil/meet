@@ -128,19 +128,18 @@ const defaultState = {
 };
 // const defaultState = null;
 const actionHandlersMap = new Map([
-    // [ConversationActionTypes.SET_CONVERSATION, (state, action) => ({ ...state, ...action.payload })],
+    [ActionTypes.FETCH_MESSAGES, (state, action) => ({
+        ...state, ...action.payload
+    })
+    ],
     [
         ActionTypes.ADD_MESSAGES, (state, action) => { return action.payload.messages }
     ],
     [
-        ActionTypes.FETCH_CONVERSATION_ADD,
+        ActionTypes.ADD_MESSAGE,
         (state, action) => {
-            for (let index in state) {
-                if (state[index].id === action.payload.conversationId) {
-                    state[index].conversation = [...state[index].conversation, action.payload.message];
-                    return [...state];
-                }
-            }
+            state.messages.push(action.payload.message);
+            return state;
         },
     ],
     [

@@ -100,6 +100,10 @@ export const ActionTypes = {
     'ADD_CONVERSATION': 'ADD_CONVERSATION',
 
     'ADD_MESSAGES': 'ADD_MESSAGES',
+    'ADD_MESSAGE': 'ADD_MESSAGE',
+
+    'FETCH_MESSAGES': 'FETCH_MESSAGES'
+
 };
 
 export const UserActionTypes = {

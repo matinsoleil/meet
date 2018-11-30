@@ -21,15 +21,3 @@ export const addConversation = createAction(ActionTypes.ADD_CONVERSATION, (conve
     return { conversation };
     }
 );
-
-// export const addMessage = createAction(ActionTypes.FETCH_CONVERSATION_ADD, (conversationId, message) => {
-//     // db.storage.add(Database.tables.messages, { id: message.id, data: message, message: message.message });
-//     return { conversationId, message };
-// }
-// );
-
-// export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (conversationId, messageId) => {
-//     db.storage.findKeyAndRemove(Database.tables.messages, messageId);
-//     return { conversationId, messageId };
-// }
-// );

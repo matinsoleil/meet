@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addMessage } from './../../../../redux/actions/messages/messages';
+import { addMessage, fetchMessages } from './../../../../redux/actions/messages/messages';
 import { multiSelectState, messageSelected } from '../../../../redux/actions/messagesOptions/messagesOptions';
 import RecorderContent from './recorderContent/recorderContent';
 import OptionSelection from './optionsSelection/optionsSelection';
@@ -114,17 +114,14 @@ class FooterMessagesSection extends Component {
             hour: `${date.getHours()}:${date.getMinutes()}`,
             status: "1",
         }
+        this.props.addMessage(msg);
+        this.props.fetchMessages();
+        message = '';
+        this.inputText.value = '';
+        this.setState({ inputText: false });
+        this.props.cancelReply('', true);
+        this.scrollDown();
 
-        // console.log(" 1 1 1 ");
-        // console.log(msg);
-        // console.log(this.props.conversation.id);
-        // console.log(" 2 2 2 ");
-        this.props.addMessage(this.props.conversation.id, msg);
-        // message = '';
-        // this.inputText.value = '';
-        // this.setState({ inputText: false });
-        // this.props.cancelReply('', true);
-        // this.scrollDown();
     }
 
     scrollDown = () => {
@@ -211,6 +208,9 @@ const mapDispatchToProps = dispatch => {
         },
         cancelReply: (messageId, state) => {
             dispatch(messageSelected(messageId, state));
+        },
+        fetchMessages: () => {
+            dispatch(fetchMessages());
         }
     }
 }

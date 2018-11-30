@@ -64,7 +64,7 @@ class DotsMenu extends Component {
                         <a onClick={this.multiSelection} >{'Seleccionar varios'}</a>
                         <a onClick={() => {
                             this.props.showModal(
-                                this.modalModel.title, 
+                                this.modalModel.title,
                                 this.modalModel.buttons,
                                 this.modalModel.viewPath)
                         }} >{'Eliminar'}</a>
