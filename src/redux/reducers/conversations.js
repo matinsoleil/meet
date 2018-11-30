@@ -43,6 +43,7 @@ let mapActions = new Map([
 export const conversationsReducer = handleActions(mapActions, [
     {
         id: 1,
+        idUser: 1,
         name: "Viejo Lesbiano",
         label: "label contact 69",
         lastMessageDate: 1543447426077,//"dayLastMessage": "8 min",
@@ -59,6 +60,7 @@ export const conversationsReducer = handleActions(mapActions, [
     },
     {
         id: 2,
+        idUser: 2,
         name: "El Chapo",
         label: "label contact 69",
         lastMessageDate: 1543442023520,//"dayLastMessage": "8 min",
@@ -74,6 +76,7 @@ export const conversationsReducer = handleActions(mapActions, [
     },
     {
         id: 3,
+        idUser: 3,
         name: "Emma Watson",
         label: "label contact 69",
         lastMessageDate: 1543436983354,//"dayLastMessage": "8 min",
@@ -89,6 +92,7 @@ export const conversationsReducer = handleActions(mapActions, [
     },
     {
         id: 4,
+        idUser: 4,
         name: "El percebe feo",
         label: "label contact 69",
         lastMessageDate: 1543440602612,//"dayLastMessage": "8 min",
@@ -104,6 +108,7 @@ export const conversationsReducer = handleActions(mapActions, [
     },
     {
         id: 5,
+        idUser: 5,
         name: "La cocina del pirata",
         label: "label contact 69",
         lastMessageDate: 1543436983354,//"dayLastMessage": "8 min",

@@ -2,10 +2,11 @@ import { handleActions } from 'redux-actions';
 import { ActionTypes } from '../actionstypes';
 
 const defaultState = {
-    id: 2,
+    id: 1,
+    idUser: 1,
     name: "Viejo Lesbiano",
     label: "label contact 69",
-    members: [{ id: 1, name: 'Jose' }, { id: 2, name: 'Juan' }],
+    members: [{ id: 3, name: 'Emma Watson' }, { id: 2, name: 'El Chapo' }],
     conversation: [],
     type: "basic",
 };

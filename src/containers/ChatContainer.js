@@ -11,8 +11,8 @@ import ControlSectionContainer from '../components/chat/chatsSection/ControlSect
 class ChatContainer extends Component {
 
     componentWillMount() {
-        this.props.fetchContacts();
-        this.props.fetchUser();
+        // this.props.fetchContacts();
+        // this.props.fetchUser();
     }
 
     render() {

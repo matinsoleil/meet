@@ -1,8 +1,10 @@
 import { handleActions } from 'redux-actions';
 import { ActionTypes } from '../actionstypes';
 
+
 const defaultState = {
     id: 99,
+    owner: 1,
     conversation: [
         {
             "id": "1",
@@ -124,7 +126,7 @@ const defaultState = {
         }
     ],
 };
-
+// const defaultState = null;
 const actionHandlersMap = new Map([
     // [ConversationActionTypes.SET_CONVERSATION, (state, action) => ({ ...state, ...action.payload })],
     [
