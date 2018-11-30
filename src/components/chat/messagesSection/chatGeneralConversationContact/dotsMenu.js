@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { multiSelectState, messageSelected } from './../../../../redux/actions/messagesOptions/messagesOptions';
-import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
+import { deleteMessage } from '../../../../redux/actions/messages/messages';
 import { showModal } from '../../../../redux/actions/modalBox/modalBox';
 
 class DotsMenu extends Component {

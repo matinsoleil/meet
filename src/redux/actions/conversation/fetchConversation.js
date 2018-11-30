@@ -16,26 +16,20 @@ export const fetchConversation = createAction(ActionTypes.FETCH_CONVERSATION, (c
     }
 );
 
-
 export const addConversation = createAction(ActionTypes.ADD_CONVERSATION, (conversation) => {
     // db.storage.findKeyAndRemove(Database.tables.messages, messageId);
     return { conversation };
     }
 );
 
+// export const addMessage = createAction(ActionTypes.FETCH_CONVERSATION_ADD, (conversationId, message) => {
+//     // db.storage.add(Database.tables.messages, { id: message.id, data: message, message: message.message });
+//     return { conversationId, message };
+// }
+// );
 
-
-export const addMessage = createAction(ActionTypes.FETCH_CONVERSATION_ADD, (conversationId, message) => {
-    db.storage.add(Database.tables.messages, { id: message.id, data: message, message: message.message });
-    return { conversationId, message };
-}
-);
-
-export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (conversationId, messageId) => {
-    db.storage.findKeyAndRemove(Database.tables.messages, messageId);
-    return { conversationId, messageId };
-}
-);
-
-
-
+// export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (conversationId, messageId) => {
+//     db.storage.findKeyAndRemove(Database.tables.messages, messageId);
+//     return { conversationId, messageId };
+// }
+// );

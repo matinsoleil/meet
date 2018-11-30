@@ -50,7 +50,8 @@ class MessagesSectionContainer extends Component {
           "hour": "10:04",
           "status": "1",
           "sender": "2"
-        }]
+        }
+      ]
     }
     this.props.addConversation(conversationTest);
     this.props.addMessages(messagesTest);
@@ -64,7 +65,7 @@ class MessagesSectionContainer extends Component {
           <React.Fragment>
             <HeaderMessagesSection />
             <ChatGeneralConversationContact />
-            {/* <FooterMessagesSection /> */}
+            <FooterMessagesSection />
           </React.Fragment>
 
           // <ActiveChat

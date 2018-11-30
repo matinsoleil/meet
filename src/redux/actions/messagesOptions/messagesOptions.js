@@ -1,5 +1,5 @@
 import { SHOW_MULTI_SELECT_MESSAGES, ADD_MESSAGE, SELECT_MESSAGE, REMOVE_MESSAGE, MESSAGE_SELECTED, CANCEL_MULTI_SELECT } from "../../actionstypes";
-import { deleteMessage } from "../conversation/fetchConversation";
+import { deleteMessage } from "../messages/messages";
 
 export const multiSelectState = state => dispatch => {
     dispatch({

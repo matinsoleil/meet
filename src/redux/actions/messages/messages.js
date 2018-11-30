@@ -10,7 +10,7 @@ export const addMessages = createAction(ActionTypes.ADD_MESSAGES, (messages) => 
 );
 
 export const addMessage = createAction(ActionTypes.FETCH_CONVERSATION_ADD, (conversationId, message) => {
-    db.storage.add(Database.tables.messages, { id: message.id, data: message, message: message.message });
+    // db.storage.add(Database.tables.messages, { id: message.id, data: message, message: message.message });
     return { conversationId, message };
 }
 );

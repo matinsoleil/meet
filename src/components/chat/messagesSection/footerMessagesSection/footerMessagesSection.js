@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addMessage } from './../../../../redux/actions/conversation/fetchConversation';
+import { addMessage } from './../../../../redux/actions/messages/messages';
 import { multiSelectState, messageSelected } from '../../../../redux/actions/messagesOptions/messagesOptions';
 import RecorderContent from './recorderContent/recorderContent';
 import OptionSelection from './optionsSelection/optionsSelection';
@@ -13,7 +13,7 @@ import './footerMessagesSection.scss';
 var oneSocket = undefined;
 
 class FooterMessagesSection extends Component {
-    constructor(props) {    
+    constructor(props) {
         super(props);
         this.state = {
             emojiState: true,
@@ -32,19 +32,18 @@ class FooterMessagesSection extends Component {
         (this.props.multiSelect || this.props.messageSelected) && document.addEventListener('keyup', this.cancelMultiSelection);
         (!this.props.multiSelect && !this.props.messageSelected) && document.removeEventListener('keyup', this.cancelMultiSelection);
         this.conversation = (this.props.conversation.length > 0) && MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations);
-        let cnv = this.conversation;
-        if(cnv!==undefined){    
-         if(oneSocket===undefined){  
-             try{ 
-            this.connection = new WebSocket('ws://'+this.props.serverChat.serverName+':'+this.props.serverChat.port+'/'+cnv.id);
-             oneSocket = 1;
-             }catch (e){
-             console.log('not connected');    
-             }
-             //console.log('one instance of socket ');
-            }
-        }
-        
+        // let cnv = this.conversation;
+        // if(cnv!==undefined){    
+        //  if(oneSocket===undefined){  
+        //      try{ 
+        //     this.connection = new WebSocket('ws://'+this.props.serverChat.serverName+':'+this.props.serverChat.port+'/'+cnv.id);
+        //      oneSocket = 1;
+        //      }catch (e){
+        //      console.log('not connected');    
+        //      }
+        //      //console.log('one instance of socket ');
+        //     }
+        // }
     }
 
     toggleOptions = () => {
@@ -86,36 +85,26 @@ class FooterMessagesSection extends Component {
 
     sendMessage = (message) => {
         this.idMessage = GenerateId.generate();
-
-        /*
-        this.connection.onmessage = function (event) {
-        this.idMessage = GenerateId.generate();    
-        console.log(event.data);
-        try{
-        this.props.addMessage(this.conversation.id,JSON.parse(event.data));
-        }
-        catch (e){
-        console.log('message not send because:');    
-        console.log(e);    
-        }
-
-       }.bind(this); 
-
-       
-       this.connection.onclose = function (event) {
-        this.idMessage='00000';
-        console.log(event.code);
-        console.log(event.reason);  
-
-       }.bind(this); 
-       */
-
-
+        // this.connection.onmessage = function (event) {
+        //     this.idMessage = GenerateId.generate();
+        //     console.log(event.data);
+        //     try {
+        //         this.props.addMessage(this.conversation.id, JSON.parse(event.data));
+        //     }
+        //     catch (e) {
+        //         console.log('message not send because:');
+        //         console.log(e);
+        //     }
+        // }.bind(this);
+        // this.connection.onclose = function (event) {
+        //     this.idMessage = '00000';
+        //     console.log(event.code);
+        //     console.log(event.reason);
+        // }.bind(this);
         let date = new Date();
-
         let msg = {
             id: this.idMessage,
-            sender: this.props.user.id,
+            sender: this.props.user.idUser,
             message: (this.props.messageSelected && !this.props.multiSelect) ? {
                 toWhoReply: this.state.senderId,
                 type: "4",
@@ -125,22 +114,17 @@ class FooterMessagesSection extends Component {
             hour: `${date.getHours()}:${date.getMinutes()}`,
             status: "1",
         }
-        
-        //this.connection.send(JSON.stringify(msg));
 
-        console.log(" 111 ");
-        console.log(this.conversation);
-        console.log(" 222 ");
-        // this.props.addMessage(this.conversation.id, msg );
-
-
-        // message='';
-
+        // console.log(" 1 1 1 ");
+        // console.log(msg);
+        // console.log(this.props.conversation.id);
+        // console.log(" 2 2 2 ");
+        this.props.addMessage(this.props.conversation.id, msg);
+        // message = '';
         // this.inputText.value = '';
         // this.setState({ inputText: false });
         // this.props.cancelReply('', true);
         // this.scrollDown();
-        
     }
 
     scrollDown = () => {
@@ -212,7 +196,7 @@ const mapStateToProps = state => {
         multiSelect: state.messagesOptions.multiSelect,
         send_icon: state.customizing.Images.send_icon,
         contact: state.contact,
-        user: state.users,
+        user: state.user,
         server: state.server,
     }
 }
