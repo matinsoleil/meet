@@ -6,13 +6,19 @@ import Message from './Message';
 import { Images } from "../../../../redux/states/images";
 
 class ChatGeneralConversationContact extends Component {
-    render() {
+    render() {        
+        // console.log(" [A] ");
+        // console.log(this.props.messages);
+        // console.log(" [Z] ");
+
+        this.props.messages
+        // debugger
         return (
             <div id='#main-chat-feed' style={{ backgroundImage: `url(${this.props.background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
                 {
-                    (this.props.messages.messages) ?
-                        this.props.messages.messages.map(c => {
+                    (this.props.messages) ?
+                        this.props.messages.map(c => {
                             const TypeMessageControl = c.sender.toString() === this.props.user.idUser.toString() ? 'message-in' : 'message-out';
                             const tailType = c.sender.toString() === this.props.user.idUser.toString() ? 'tail-out' : 'tail-in';
                             const tail = (c.sender.toString() === this.props.user.idUser.toString()) ? this.props.out_tail : this.props.in_tail;

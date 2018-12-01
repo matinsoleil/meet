@@ -17,12 +17,11 @@ class MessagesSectionContainer extends Component {
       label: "label grupo stylopm 99999",
       members: [{ id: 1, name: 'Jose' }, { id: 2, name: 'Juan' }],
       type: "basic",
-    };
-
-    const messagesTest = {
       conversationID: 3,
       owner: 1,
-      messages: [
+    };
+
+    const messagesTest = [
         {
           "id": "1",
           "message": "Hi Jack. What are you doing?",
@@ -51,8 +50,7 @@ class MessagesSectionContainer extends Component {
           "status": "1",
           "sender": "2"
         }
-      ]
-    }
+      ];
     this.props.addConversation(conversationTest);
     this.props.addMessages(messagesTest);
 
