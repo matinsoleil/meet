@@ -114,7 +114,8 @@ class RecorderContent extends Component {
                     <img onClick={
                         () => { this.audioRecorder.pause(); this.props.showModal(
                             `¿Seguro que desea eliminar este chat de voz?`,
-                            [{name:'Cancelar',action:this.audioRecorder.resume},{name:'Eliminar',action:()=>{this.stopRecording(false)}}],
+                            [{name:'Cancelar',action:this.audioRecorder.resume},
+                                {name:'Eliminar',action:()=>{this.stopRecording(false)}}],
                             View.CONFIRM
                         )}
                     } id="cancel_button" src={this.props.trash_red} alt="cancel" />

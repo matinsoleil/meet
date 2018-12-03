@@ -27,8 +27,8 @@ import { customizingReducer } from './customizing'
 import { messagesOptionsReducer } from './messagesOptions'
 import { alertGeneral } from './alertGeneral'
 import { modalBoxReducer } from './modalBox';
-import {userReducer} from "./user";
-import {viewsReducers} from "./views/";
+import { userReducer } from "./user";
+import { viewsReducers } from "./views/";
 import {conversationsReducer} from "./conversations";
 
 export const reducers = combineReducers({

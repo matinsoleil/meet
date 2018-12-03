@@ -1,0 +1,81 @@
+@media screen {
+  .selected-contacts{
+    width: calc(100% + 20px);
+    height: 80px;
+    position: absolute;
+    bottom: 10px;
+    left: -10px;
+    right: 0;
+    background-color: #111111;
+    border-radius: 10px;
+    z-index: 10;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px 0 5px;
+    button{
+      height: 40px;
+      width: 70px;
+      background-color: #5886c0;
+      color: white;
+      border-radius: 3px;
+      text-align: center;
+      padding-left: 7px;
+      border-style: none;
+    }
+    .list{
+      display: flex;
+      width: 80%;
+      height: 100%;
+      padding: 0 5px 0 5px;
+      overflow: scroll;
+      .contact-bubble{
+        min-width: 52px;
+        width: 52px;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        padding-top: 5px;
+        margin: 0 5px 0 5px;
+        .close-button{
+          position: absolute;
+          top:5px;
+          right: 0;
+          background-color: #e52b50;
+          width: 16px;
+          height: 16px;
+          border-radius: 16px;
+          padding: 3px;
+          text-align: center;
+          font-weight: 400;
+          font-size: 12px;
+          color: white;
+        }
+        img{
+          border-radius: 48px;
+          width: 48px;
+          height: 48px;
+        }
+        span{
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-top: 4px;
+          max-height: 20px;
+          font-size: 13px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.46;
+          letter-spacing: 0.4px;
+          text-align: center;
+          color: #fefefe;
+        }
+      }
+    }
+
+  }
+}
