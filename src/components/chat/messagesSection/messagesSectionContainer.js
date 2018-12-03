@@ -13,9 +13,10 @@ class MessagesSectionContainer extends Component {
     const conversationTest = {
       id: 1,
       idUser: 1,
-      name: "stylopm ",
-      label: "label grupo stylopm 99999",
-      members: [{ id: 1, name: 'Jose' }, { id: 2, name: 'Juan' }],
+      name: "Viejo Lesbiano",
+      label: "label contact 69",
+      // members: [{ id: 1, name: 'Jose' }, { id: 2, name: 'Juan' }],
+      members: [],
       type: "basic",
       conversationID: 3,
       owner: 1,

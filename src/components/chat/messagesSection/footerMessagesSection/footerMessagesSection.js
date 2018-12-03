@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addMessage, fetchMessages } from './../../../../redux/actions/messages/messages';
+import { addMessage } from './../../../../redux/actions/messages/messages';
 import { multiSelectState, messageSelected } from '../../../../redux/actions/messagesOptions/messagesOptions';
 import RecorderContent from './recorderContent/recorderContent';
 import OptionSelection from './optionsSelection/optionsSelection';
@@ -105,6 +105,7 @@ class FooterMessagesSection extends Component {
         let msg = {
             id: this.idMessage,
             sender: this.props.user.idUser,
+            conversationId: this.props.conversation.conversationID,
             message: (this.props.messageSelected && !this.props.multiSelect) ? {
                 toWhoReply: this.state.senderId,
                 type: "4",
@@ -115,7 +116,6 @@ class FooterMessagesSection extends Component {
             status: "1",
         }
         this.props.addMessage(msg);
-        this.props.fetchMessages();
         message = '';
         this.inputText.value = '';
         this.setState({ inputText: false });
@@ -195,6 +195,7 @@ const mapStateToProps = state => {
         contact: state.contact,
         user: state.user,
         server: state.server,
+        conversation: state.conversation
     }
 }
 
@@ -209,9 +210,6 @@ const mapDispatchToProps = dispatch => {
         cancelReply: (messageId, state) => {
             dispatch(messageSelected(messageId, state));
         },
-        fetchMessages: () => {
-            dispatch(fetchMessages());
-        }
     }
 }
 
