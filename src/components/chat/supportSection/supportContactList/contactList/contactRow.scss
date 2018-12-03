@@ -38,6 +38,12 @@
       border-style: solid;
       border-width: 1px;
     }
+    &.selected{
+      background-color: #d9e6f5;
+      .check-box{
+        background-color: #5C91F5;
+      }
+    }
   }
 }
 

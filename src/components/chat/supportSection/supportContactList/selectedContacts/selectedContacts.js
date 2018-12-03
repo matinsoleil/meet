@@ -56,7 +56,7 @@ const mapStateToProps = ({contacts,views}) => ({
 });
 
 const mapsDispatchToProps = dispatch =>({
-    removeSelectedContact: (id) => dispatch(removeSelectedContact(id)),
+    removeSelectedContact: (id) => dispatch(removeSelectedContact([id])),
 })
 
 export default connect(mapStateToProps,mapsDispatchToProps)(SelectedContacts);

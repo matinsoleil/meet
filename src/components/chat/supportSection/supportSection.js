@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {createNewGroupFlow, Type} from "../../../redux/actions/views/supportSection";
+import {Type} from "../../../redux/actions/views/supportSection";
+import {createNewGroupFlow} from "../../../redux/actions/conversations/conversations";
 import './supportSection.scss';
 
 class SupportSection extends Component {

@@ -27,15 +27,7 @@ export default class MessagesHelper {
     }
 
     static getContactById(contacts, id){
-        let owner = undefined;
-        for (let index in contacts) {
-            let contact = contacts[index];
-            if (contact.id === id) {
-                owner = contact;
-                break;
-            }
-        }
-        return owner;
+        return contacts.find(contact=>contact.id===id);
     }
     /**
      * @param {Object} conversations.

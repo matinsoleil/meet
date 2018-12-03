@@ -30,10 +30,12 @@ const mapActions = new Map([
     ],
     [
         REMOVE_SELECTED_CONTACT,
-        (state,action) => ({...state,selectedContacts:state.selectedContacts.filter(e=>{
-                return (e !== action.payload);
-            })})
+        (state,action) => ({...state,selectedContacts:state.selectedContacts.filter(contact=>!action.payload.includes(contact))})
     ]
 ]);
 
 export const supportSectionReducer= handleActions(mapActions,defaultValues) ;
+
+//({...state,selectedContacts:state.selectedContacts.filter(e=>{
+//                 return (e !== action.payload);
+//             })})

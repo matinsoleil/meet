@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import GeneralContactDataGroup from './GeneralContactDataGroup'
+import GeneralContactDataGroup from './contactRow'
 import './ContactList.scss';
 
 class ContactList extends Component {
@@ -17,7 +17,7 @@ class ContactList extends Component {
         })
     }
 
-    filterList = () => {
+    filterList(){
         let result = this.props.contacts.filter(e=>{
             return (e.name.toLowerCase().indexOf(this.props.filter.toLowerCase())>-1);
         });
@@ -35,21 +35,19 @@ class ContactList extends Component {
                 {
                     contacts.map(contact => {
 
-                        if (contact.typeChat === '1'){
-                            if (indexAlphabet.includes(contact.name.charAt(0)) === false) {
-                                indexAlphabet = contact.name.charAt(0)
-                                flagAlphabet = contact.name.charAt(0)
+                        if (indexAlphabet.includes(contact.name.charAt(0)) === false) {
+                            indexAlphabet = contact.name.charAt(0)
+                            flagAlphabet = contact.name.charAt(0)
 
-                            } else {
-                                flagAlphabet = ""
-                            }
-                            return <GeneralContactDataGroup
-                                className="contact-group"
-                                key={contact.id}
-                                contact={contact}
-                                flagAlphabet={flagAlphabet}
-                            />
+                        } else {
+                            flagAlphabet = ""
                         }
+                        return <GeneralContactDataGroup
+                            className="contact-group"
+                            key={contact.id}
+                            contact={contact}
+                            flagAlphabet={flagAlphabet}
+                        />
 
                     })
                 }
