@@ -1,5 +1,5 @@
-import {handleActions} from 'redux-actions';
-import {ActionTypes} from "../actionstypes/index";
+import { handleActions } from 'redux-actions';
+import { ActionTypes } from "../actionstypes/index";
 
 /**
  *

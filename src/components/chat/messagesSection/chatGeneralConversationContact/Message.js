@@ -57,6 +57,12 @@ class Message extends Component {
     }
 
     render() {
+
+        console.log(" (* [1] *) ");
+        console.log(this.props.messageObject);
+        console.log(" (* [9] *) ");
+
+
         let { id, message, hour } = this.props.messageObject;
         let { type, tail, tailType, user_icon } = this.props;
         if (message.type) message.hour = hour;
@@ -75,7 +81,14 @@ class Message extends Component {
                     </div>
                     {
                         (this.state.menuState) &&
-                        <DotsMenu conversationId={this.props.conversationId} blockView={this.blockView} contacts={this.props.contacts} showDots={this.showDots} display={this.state.menuState} id={id} type={type} selectable={this.state.selectable} />
+                        <DotsMenu conversationId={this.props.conversation.id} 
+                                  blockView={this.blockView} 
+                                  contacts={this.props.contacts} 
+                                  showDots={this.showDots} 
+                                  display={this.state.menuState} 
+                                  id={id} 
+                                  type={type} 
+                                  selectable={this.state.selectable} />
                     }
                 </div>
                 {(this.props.multiSelect)
@@ -129,12 +142,13 @@ class Message extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ customizing, messagesOptions, conversation }) => {
     return {
-        file_icon: state.customizing.Images.file_icon,
-        multiSelect: state.messagesOptions.multiSelect,
-        messageSelected: state.messagesOptions.messageSelected,
-        download_icon: state.customizing.Images.download_icon,
+        file_icon: customizing.Images.file_icon,
+        download_icon: customizing.Images.download_icon,
+        multiSelect: messagesOptions.multiSelect,
+        messageSelected: messagesOptions.messageSelected,
+        conversation: conversation
     }
 }
 

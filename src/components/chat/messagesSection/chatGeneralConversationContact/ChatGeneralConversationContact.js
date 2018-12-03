@@ -7,12 +7,6 @@ import { Images } from "../../../../redux/states/images";
 
 class ChatGeneralConversationContact extends Component {
     render() {
-        // console.log(" [A] ");
-        // console.log(this.props.messages);
-        // console.log(" [Z] ");
-
-        this.props.messages
-        // debugger
         return (
             <div id='#main-chat-feed' style={{ backgroundImage: `url(${this.props.background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
@@ -44,12 +38,12 @@ class ChatGeneralConversationContact extends Component {
 
 const mapStateToProps = ({ customizing, conversation, messages, user }) => {
     return {
-        background: customizing.Images.chat_background,
-        in_tail: customizing.Images.in_tail,
-        out_tail: customizing.Images.out_tail,
         conversation: conversation,
         messages: messages,
         user: user,
+        background: customizing.Images.chat_background,
+        in_tail: customizing.Images.in_tail,
+        out_tail: customizing.Images.out_tail,
     }
 }
 

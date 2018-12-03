@@ -49,6 +49,9 @@ class DotsMenu extends Component {
 
     accept = () => {
         this.props.showDots();
+        
+        
+        debugger
         this.props.deleteMessage(this.props.conversationId, this.props.id);
     }
 
@@ -75,10 +78,10 @@ class DotsMenu extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ customizing, messagesOptions }) => {
     return {
-        dots_menu: state.customizing.Images.dots_menu,
-        multiSelect: state.messagesOptions.multiSelect
+        dots_menu: customizing.Images.dots_menu,
+        multiSelect: messagesOptions.multiSelect
     }
 }
 

@@ -109,7 +109,7 @@ class FooterMessagesSection extends Component {
         let msg = {
             id: this.idMessage,
             sender: this.props.user.idUser,
-            conversationId: this.props.conversation.conversationID,
+            conversationId: this.props.conversation.id,
             message: (this.props.messageSelected && !this.props.multiSelect) ? {
                 toWhoReply: this.state.senderId,
                 type: "4",

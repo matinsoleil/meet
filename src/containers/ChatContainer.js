@@ -16,9 +16,6 @@ class ChatContainer extends Component {
     }
 
     render() {
-        let listContact = this.props.contacts.filter(function (contact) {
-            return contact.conversations !== null;
-        });
         return (
             <div className="app-frame">
                 <div className="main-chat">
@@ -52,9 +49,6 @@ const mapDispatchToProps = dispatch => {
         fetchContacts: () => {
             dispatch(fetchContacts())
         },
-        // fetchConversation: () => {
-        //     dispatch(fetchConversation())
-        // },
         fetchUser: () => {
             dispatch(fetchUser("U1"))
         },

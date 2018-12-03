@@ -8,7 +8,6 @@ import InactiveChat from './inactiveChat/inactiveChat';
 import { connect } from 'react-redux'
 import './messagesSectionContainer.scss'
 class MessagesSectionContainer extends Component {
-
   componentDidMount() {
     const conversationTest = {
       id: 1,
@@ -26,7 +25,9 @@ class MessagesSectionContainer extends Component {
       type: "basic",
       stored: true,
     };
-
+   
+    const messagesTest = [];
+    /*
     const messagesTest = [
       {
         "id": "1",
@@ -65,6 +66,7 @@ class MessagesSectionContainer extends Component {
         "create": "1541528426"
       }
     ];
+    */
     this.props.addConversation(conversationTest);
     this.props.addMessages(messagesTest);
 
