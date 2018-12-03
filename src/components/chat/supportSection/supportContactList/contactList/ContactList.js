@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux'
 import GeneralContactDataGroup from './contactRow'
 import './ContactList.scss';
@@ -42,12 +42,19 @@ class ContactList extends Component {
                         } else {
                             flagAlphabet = ""
                         }
-                        return <GeneralContactDataGroup
-                            className="contact-group"
-                            key={contact.id}
-                            contact={contact}
-                            flagAlphabet={flagAlphabet}
-                        />
+                        return (
+                            <Fragment>
+                                {(flagAlphabet!=='')&&
+                                <div className={"flag"}>
+                                    <span>{flagAlphabet}</span>
+                                </div>}
+                                <GeneralContactDataGroup
+                                    className="contact-group"
+                                    key={contact.id}
+                                    contact={contact}
+                                    flagAlphabet={flagAlphabet}
+                                />
+                            </Fragment>)
 
                     })
                 }

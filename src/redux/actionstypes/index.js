@@ -81,6 +81,7 @@ export const ViewsActions = {
 
 export const searchActions = {
     'SUPPORT_SECTION_FILTER':'SUPPORT_SECTION_FILTER',
+    'CONVERSATIONS_FILTER':'CONVERSATIONS_FILTER'
 }
 export const ActionTypes = {
     'GENERAL_SET_REGION_CONFIG': 'GENERAL_SET_REGION_CONFIG',

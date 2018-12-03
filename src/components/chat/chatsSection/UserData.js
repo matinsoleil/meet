@@ -2,10 +2,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Images} from "../../../redux/states/images";
 import './UserData.scss'
+import assignFilterAction from "../searchBar/assignFilterAction";
+import searchBar from "../searchBar/searchBar";
+import {setFilter} from "../../../redux/actions/views/controlSection";
 
 //TODO: Fetch user info
 class UserData extends Component {
     render() {
+        const SearchBarWithFilter = assignFilterAction(searchBar,setFilter);
         return (
             <div className="user-data">
                 <div className="user-info">
@@ -23,12 +27,7 @@ class UserData extends Component {
                         <img className="dots-main" src={Images.dots_menu} alt="dots-main"/>
                     </div>
                 </div>
-                <div className="contact-search">
-                    <img className="img-icon-search" src={Images.search_icon}
-                         alt={this.props.translator.t('Buscar')}/>
-                    <input type="text" className="input-search-main" placeholder={this.props.translator.t('Buscar')}
-                           onChange={this.props.filterList}/>
-                </div>
+                <SearchBarWithFilter/>
             </div>
         )
     }
