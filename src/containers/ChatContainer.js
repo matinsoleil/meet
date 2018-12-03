@@ -22,8 +22,8 @@ class ChatContainer extends Component {
         return (
             <div className="app-frame">
                 <div className="main-chat">
-                    <ControlSectionContainer/>
-                    <MessageSectionContainer/>
+                    <ControlSectionContainer />
+                    <MessageSectionContainer />
                     {/* <MessageSectionContainer contacts={listContact} chat={this.props.conversation} contact={this.props.contact} server={this.props.server} /> */}
                     {/*this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null*/}
                 </div>
@@ -32,17 +32,17 @@ class ChatContainer extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ contacts, users, contact, conversation, searchContacts, groupsSection, alertGeneral, rightSection, contactSection }) => {
     return {
-        contacts: state.contacts,
-        user: state.users,
-        contact: state.contact,
-        conversation: state.conversation,
-        searchContacts: state.searchContacts,
-        groupsSection: state.groupsSection,
-        alertGeneral: state.alertGeneral,
-        rightSection: state.rightSection,
-        contactSection: state.contactSection,
+        contacts: contacts,
+        user: users,
+        contact: contact,
+        conversation: conversation,
+        searchContacts: searchContacts,
+        groupsSection: groupsSection,
+        alertGeneral: alertGeneral,
+        rightSection: rightSection,
+        contactSection: contactSection,
         server: { serverName: '192.168.21.150', port: '8888' },
     }
 }

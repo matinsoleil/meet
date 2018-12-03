@@ -77,6 +77,7 @@ class FooterMessagesSection extends Component {
                     size: file.size
                 },
                 hour: `${date.getHours()}:${date.getMinutes()}`,
+                created: new Date(),
                 status: "1"
             });
         }
@@ -182,20 +183,19 @@ class FooterMessagesSection extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ customizing, conversation, messagesOptions, contact, user, server }) => {
     return {
-        clip: state.customizing.Images.clip,
-        emoji: state.customizing.Images.emoji,
-        mic: state.customizing.Images.mic,
-        plus: state.customizing.Images.plus,
-        conversation: state.conversation,
-        messageSelected: state.messagesOptions.messageSelected,
-        multiSelect: state.messagesOptions.multiSelect,
-        send_icon: state.customizing.Images.send_icon,
-        contact: state.contact,
-        user: state.user,
-        server: state.server,
-        conversation: state.conversation
+        clip: customizing.Images.clip,
+        emoji: customizing.Images.emoji,
+        mic: customizing.Images.mic,
+        plus: customizing.Images.plus,
+        conversation: conversation,
+        messageSelected: messagesOptions.messageSelected,
+        multiSelect: messagesOptions.multiSelect,
+        send_icon: customizing.Images.send_icon,
+        contact: contact,
+        user: user,
+        server: server,
     }
 }
 

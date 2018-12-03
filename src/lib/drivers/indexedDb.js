@@ -108,6 +108,18 @@ class IndexedDbDriver {
         return this._db[table].add(data);
     }
 
+
+    /**
+     * Add multiple news objects in a specified table
+     *
+     * @param table
+     * @param data
+     * @returns {*}
+     */
+    addRows(table, datas) {
+        datas.map(row => { return this.add(table, row) })
+    }
+
     /**
      * Adds new or replaces existing object in the object store.
      *

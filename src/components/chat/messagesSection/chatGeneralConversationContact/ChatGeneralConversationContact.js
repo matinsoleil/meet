@@ -6,7 +6,7 @@ import Message from './Message';
 import { Images } from "../../../../redux/states/images";
 
 class ChatGeneralConversationContact extends Component {
-    render() {        
+    render() {
         // console.log(" [A] ");
         // console.log(this.props.messages);
         // console.log(" [Z] ");
@@ -42,14 +42,14 @@ class ChatGeneralConversationContact extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ customizing, conversation, messages, user }) => {
     return {
-        background: state.customizing.Images.chat_background,
-        in_tail: state.customizing.Images.in_tail,
-        out_tail: state.customizing.Images.out_tail,
-        conversation: state.conversation,
-        messages: state.messages,
-        user: state.user,
+        background: customizing.Images.chat_background,
+        in_tail: customizing.Images.in_tail,
+        out_tail: customizing.Images.out_tail,
+        conversation: conversation,
+        messages: messages,
+        user: user,
     }
 }
 

@@ -135,7 +135,7 @@ const actionHandlersMap = new Map([
         ActionTypes.ADD_MESSAGE,
         (state, action) => {
             state.push(action.payload.message)
-            return [ ...state];
+            return [...state];
         },
     ],
     [

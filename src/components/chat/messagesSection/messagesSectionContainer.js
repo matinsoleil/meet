@@ -23,35 +23,43 @@ class MessagesSectionContainer extends Component {
     };
 
     const messagesTest = [
-        {
-          "id": "1",
-          "message": "Hi Jack. What are you doing?",
-          "hour": "10:01",
-          "status": "1",
-          "sender": "50"
-        },
-        {
-          "id": "2",
-          "message": "Hi Mary. I'm filling out a job application.",
-          "hour": "10:02",
-          "status": "1",
-          "sender": "2"
-        },
-        {
-          "id": "3",
-          "message": "Are you finished with school already?",
-          "hour": "10:03",
-          "status": "1",
-          "sender": "50"
-        },
-        {
-          "id": "4",
-          "message": "No. I have one more semester, but it would be great to have a job lined up.",
-          "hour": "10:04",
-          "status": "1",
-          "sender": "2"
-        }
-      ];
+      {
+        "id": "1",
+        "conversationId": 3,
+        "message": "Hi Jack. What are you doing?",
+        "hour": "10:01",
+        "status": "1",
+        "sender": "50",
+        "create": "1541269226"
+      },
+      {
+        "id": "2",
+        "conversationId": 3,
+        "message": "Hi Mary. I'm filling out a job application.",
+        "hour": "10:02",
+        "status": "1",
+        "sender": "2",
+        "create": "1541355626"
+      },
+      {
+        "id": "3",
+        "conversationId": 3,
+        "message": "Are you finished with school already?",
+        "hour": "10:03",
+        "status": "1",
+        "sender": "50",
+        "create": "1541442026"
+      },
+      {
+        "id": "4",
+        "conversationId": 3,
+        "message": "No. I have one more semester, but it would be great to have a job lined up.",
+        "hour": "10:04",
+        "status": "1",
+        "sender": "2",
+        "create": "1541528426"
+      }
+    ];
     this.props.addConversation(conversationTest);
     this.props.addMessages(messagesTest);
 
@@ -66,21 +74,6 @@ class MessagesSectionContainer extends Component {
             <ChatGeneralConversationContact />
             <FooterMessagesSection />
           </React.Fragment>
-
-          // <ActiveChat
-          //     label={this.props.conversation.label}
-          //     members= { this.props.conversation.members }
-          //     chatName={this.props.conversation.name}
-          //     chat={[]}
-          //     contacts={[]}
-          //     contact={this.props.conversation}
-          //     server={this.props.server}
-          // />
-
-          // <ChatGeneralConversationContact contact={props.conversation} contacts={props.contacts} chat=[{props.chat}] />
-          // <FooterMessagesSection serverChat={props.server} /> 
-
-
         ) : (
             <InactiveChat />
           )}
