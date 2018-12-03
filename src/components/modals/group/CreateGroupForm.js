@@ -11,7 +11,7 @@ const validate = values => {
     errors.nameGroup = 'Debe colocar un nombre al grupo'
   } else if (values.nameGroup.length < 3) {
     errors.nameGroup = 'El nombre del grupo debe ser mayor a 3 caracteres'
-  } else if (values.nameGroup.length > 15) {
+  } else if (values.nameGroup.length > 32) {
     errors.nameGroup = 'El nombre del grupo debe ser menor a 15 caracteres'
   }
   return errors

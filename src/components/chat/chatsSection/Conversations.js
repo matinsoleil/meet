@@ -18,11 +18,20 @@ class Conversations extends Component {
         clearInterval(this.autoUpdateConversationsInterval);
     }
 
+    filterList(){
+        let result = this.props.conversations.filter(e=>{
+            return (e.name.toLowerCase().indexOf(this.props.filter.toLowerCase())>-1);
+        });
+        result = this.getSortedConversations(result);
+        return result;
+    }
+
     render() {
+        const conversation = (this.props.filter)?this.filterList():this.getSortedConversations(this.props.conversations);
         this.autoUpdateConversationsDate();
         return (
             <div className="main-chat-general-list-contact">
-                {this.getSortedConversations().map(
+                {conversation.map(
                     conversation => <ConversationItem conversation={conversation} key={conversation.id}/>)}
             </div>
         );
@@ -31,9 +40,9 @@ class Conversations extends Component {
     /**
      * Retrieve the ConversationItems array sorted by the UX conditions
      */
-    getSortedConversations() {
+    getSortedConversations(conversations) {
         let pinned = [], unpinned = [];
-        this.props.conversations.forEach(o => o.pinned ? pinned.push(o) : unpinned.push(o));
+        conversations.forEach(o => o.pinned ? pinned.push(o) : unpinned.push(o));
         return this.sortConversationsByTime(pinned).concat(this.sortConversationsByTime(unpinned));
     }
 
@@ -55,9 +64,10 @@ class Conversations extends Component {
     }
 }
 
-const mapStateToProps = ({conversations}) => {
+const mapStateToProps = ({conversations,views}) => {
     return {
         conversations,
+        filter:views.controlSection.filter
     };
 };
 
