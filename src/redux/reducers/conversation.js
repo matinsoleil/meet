@@ -6,9 +6,16 @@ const defaultState = {
     idUser: 1,
     name: "Viejo Lesbiano",
     label: "label contact 69",
-    members: [{ id: 3, name: 'Emma Watson' }, { id: 2, name: 'El Chapo' }],
-    conversation: [],
+    lastMessageDate: 1543447426077,//"dayLastMessage": "8 min",
+    lastMessage: "Hello, how are you?",//"lastMessage": "Last Message",
+    unreadMessages: { status: true, messages: null },//"countMessage": "1",
+    mutted: false,//"silence": "0",
+    file: false,//"file": "0",
+    pinned: true,//"pinner": "0",
+    members: [],//"contactsIds": null,
+    //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
     type: "basic",
+    stored: true,
 };
 
 const actionHandlersMap = new Map([

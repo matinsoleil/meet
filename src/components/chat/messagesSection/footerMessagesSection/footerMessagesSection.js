@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addMessage } from './../../../../redux/actions/messages/messages';
 import { multiSelectState, messageSelected } from '../../../../redux/actions/messagesOptions/messagesOptions';
+
+import { updateConversations } from "../../../../redux/actions/conversations/conversations";
+
 import RecorderContent from './recorderContent/recorderContent';
 import OptionSelection from './optionsSelection/optionsSelection';
 import MessagesHelper from '../../../../lib/helper/messagesHelper';
@@ -77,7 +80,7 @@ class FooterMessagesSection extends Component {
                     size: file.size
                 },
                 hour: `${date.getHours()}:${date.getMinutes()}`,
-                created: new Date(),
+                created: date,
                 status: "1"
             });
         }
@@ -115,14 +118,16 @@ class FooterMessagesSection extends Component {
             } : message,
             hour: `${date.getHours()}:${date.getMinutes()}`,
             status: "1",
+            create: date
         }
+        let valor = [{ ...this.props.conversation, lastMessageDate: Date.now(), lastMessage: message }]
         this.props.addMessage(msg);
+        this.props.updateConversations(valor);
         message = '';
         this.inputText.value = '';
         this.setState({ inputText: false });
         this.props.cancelReply('', true);
         this.scrollDown();
-
     }
 
     scrollDown = () => {
@@ -210,6 +215,7 @@ const mapDispatchToProps = dispatch => {
         cancelReply: (messageId, state) => {
             dispatch(messageSelected(messageId, state));
         },
+        updateConversations: payload => dispatch(updateConversations(payload)),
     }
 }
 

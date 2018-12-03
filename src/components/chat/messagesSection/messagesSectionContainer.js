@@ -15,11 +15,16 @@ class MessagesSectionContainer extends Component {
       idUser: 1,
       name: "Viejo Lesbiano",
       label: "label contact 69",
-      // members: [{ id: 1, name: 'Jose' }, { id: 2, name: 'Juan' }],
-      members: [],
+      lastMessageDate: 1543447426077,//"dayLastMessage": "8 min",
+      lastMessage: "Hello, how are you?",//"lastMessage": "Last Message",
+      unreadMessages: { status: true, messages: null },//"countMessage": "1",
+      mutted: false,//"silence": "0",
+      file: false,//"file": "0",
+      pinned: true,//"pinner": "0",
+      members: [],//"contactsIds": null,
+      //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       type: "basic",
-      conversationID: 3,
-      owner: 1,
+      stored: true,
     };
 
     const messagesTest = [
