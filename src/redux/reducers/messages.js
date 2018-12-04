@@ -142,35 +142,10 @@ const actionHandlersMap = new Map([
         ActionTypes.DELETE_CONVERSATION,
         (state, action) => [...action.payload]
     ],
-    // [
-    //     ActionTypes.DELETE_MESSAGE,
-    //     (state, action) => {
-            
-    //         console.log(" 1 1 1 ");
-    //         console.log(state);
-    //         console.log(" 2 2 2 ");
-    //         console.log(action);
-    //         console.log(" 3 3 3 ");
-
-    //         return [...state]
-
-    //         // for (let index in state) {
-    //         //     if (state[index].id === action.payload.conversationId) {
-    //         //         state[index].conversation = state[index].conversation.filter(message => (message.id === action.payload.messageId) ? false : true);
-    //         //         return [...state]
-    //         //     }
-    //         // }
-    //     }
-    // ],
-    
     [
         ActionTypes.DELETE_MESSAGE,
         (state, action) => {
-
-            debugger
-
-            console.log(action.payload.messageId);
-            return state.filter( messages=>( (messages.id===action.payload.conversationId) ? false:true) )
+            return state.filter(messages => ((messages.id !== action.payload.messageId)))
         }
     ],
 
