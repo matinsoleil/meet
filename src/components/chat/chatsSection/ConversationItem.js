@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import TimeFromNow from './TimeFromNow';
 import {connect} from 'react-redux';
 import {Images} from "../../../redux/states/images";
+import DropMenu from "../../utils/dropMenu";
 import {updateConversations, removeConversations} from "../../../redux/actions/conversations/conversations";
 import './ConversationItem.scss';
 
@@ -9,7 +10,6 @@ const conversationTypes = {
     basic: 'basic',
     group: 'group'
 };
-
 class ConversationItem extends Component {
 
     constructor(props) {
@@ -25,13 +25,8 @@ class ConversationItem extends Component {
     }
 
     render() {
-        const OptionsMenu = this.optionsMenu.map(
-            (option, key) => (
-                <a key={key} onClick={option.clickHandler}>{option.text}</a>
-            )
-        );
         return (
-            <li className='conversation-item' onMouseLeave={() => this.toggleMenu(false)}>
+            <li ref={li=>{this.row=li}} className='conversation-item' onMouseLeave={() => this.toggleMenu(false)}>
 
                 <div className="image">
                     <img src={this.props.conversation.image || Images.avatar} alt="Conversation Image"/>
@@ -64,15 +59,17 @@ class ConversationItem extends Component {
 
                 </div>
 
-                <div className="options" onClick={() => this.toggleMenu(!this.state.isMenuOpened)}>
+                <div className="options" onClick={() => this.toggleMenu(!this.state.isMenuOpened,true)}>
                     <img src={Images.dots_menu} alt="Options"/>
                 </div>
 
                 {
                     this.state.isMenuOpened &&
-                    <div className="dropdown-content" onClick={() => this.toggleMenu(!this.state.isMenuOpened)}>
-                        {OptionsMenu}
-                    </div>
+                    <DropMenu
+                        onClick={() => this.toggleMenu(!this.state.isMenuOpened)}
+                        container={this.row}
+                        optionsMenu={this.optionsMenu}
+                    />
                 }
 
             </li>
@@ -130,7 +127,7 @@ class ConversationItem extends Component {
                     [{...this.props.conversation, unreadMessages: {
                             status: !this.props.conversation.unreadMessages.status,
                             messages: null
-                    }}]
+                        }}]
                 )
             }
         ];

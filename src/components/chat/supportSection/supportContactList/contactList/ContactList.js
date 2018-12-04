@@ -43,7 +43,7 @@ class ContactList extends Component {
                             flagAlphabet = ""
                         }
                         return (
-                            <Fragment>
+                            <Fragment key={contact.id}>
                                 {(flagAlphabet!=='')&&
                                 <div className={"flag"}>
                                     <span>{flagAlphabet}</span>
