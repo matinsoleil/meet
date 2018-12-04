@@ -13,18 +13,11 @@ class headerMessagesSection extends Component {
 }
 
 const SectionTitle = (props) => {
-    var cdn = ""
-    var flag = ""
     if (props.conversation.type === "basic") {
         return <span className='subtitle' >{props.conversation.label}</span>;
     } else {
         return props.conversation.members.map(
-            member => {
-                flag == "" ? cdn = "" : cdn = ","
-                flag = ","
-                return <span className='subtitle' key={member.id}>  {cdn}  {member.name}</span>
-            }
-        );
+            member => { return member.name; }).join(", ");
     }
 }
 

@@ -20,7 +20,7 @@ class MessagesSectionContainer extends Component {
       mutted: false,//"silence": "0",
       file: false,//"file": "0",
       pinned: true,//"pinner": "0",
-      members: [],//"contactsIds": null,
+      members: [{id: 1, name:"User 1"}, {id: 2, name:"User 2"}],//"contactsIds": null,
       //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
       type: "basic",
       stored: true,

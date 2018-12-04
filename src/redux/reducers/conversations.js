@@ -54,7 +54,7 @@ export const conversationsReducer = handleActions(mapActions, [
         pinned: true,//"pinner": "0",
         members: [],//"contactsIds": null,
         //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
-        type: "basic",
+        type: "group",
         stored: true,
     },
     {
