@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import HeaderGroupSection from './contactListHeader/contactListHeader';
-import ContactList from './contactList/ContactList';
+import HeaderGroupSection from './ContactListHeader/contactListHeader';
+import ContactList from './ContactList/ContactList';
 import SelectedContacts from './selectedContacts/selectedContacts';
 import { getGroupsSection } from '../../../../redux/selectors/groupsSection';
 import { getContacts } from '../../../../redux/selectors/contacts';
@@ -20,10 +20,12 @@ class SupportContactList extends Component {
         )
     }
 }
+
 const mapStateToProps = (state) => {
     return {
         groupsSection: getGroupsSection(state),
         contacts: getContacts(state)
     }
 }
+
 export default connect(mapStateToProps)(SupportContactList);
