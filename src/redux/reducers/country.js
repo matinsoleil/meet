@@ -1,11 +1,15 @@
 import {ActionTypes} from './../../redux/actionstypes';
 import DatabaseManage from '../../lib/databaseManager';
+import CountriesHelper from '../../lib/helper/countries';
+import Translate from '../../lib/translation/translate';
+
+//TODO: pass DEFAULT_COUNTRY to a config file.
+const DEFAULT_COUNTRY = 'mexico';
+const DefaultCountryConfig = CountriesHelper.getCountry(DEFAULT_COUNTRY);
 
 const portalCountryConfig = {
-    name: null,
-    dialect: null,
-    region: null,
-    translator: null
+    ...DefaultCountryConfig,
+    translator: new Translate(DefaultCountryConfig.dialect)
 };
 
 let reducer  = (state = {...portalCountryConfig}, action) => {

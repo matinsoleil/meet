@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ConversationItem from './ConversationItem'
 import {connect} from 'react-redux';
 import {updateTimeFromNow} from "../../../redux/actions/views/timeFromNow";
+import {ModalContainer} from "../../modals/ModalContainer";
 
 class Conversations extends Component {
 
@@ -21,10 +22,13 @@ class Conversations extends Component {
     render() {
         this.autoUpdateConversationsDate();
         return (
-            <div className="main-chat-general-list-contact">
-                {this.getSortedConversations().map(
-                    conversation => <ConversationItem conversation={conversation} key={conversation.id}/>)}
-            </div>
+            <React.Fragment>
+                <div className="main-chat-general-list-contact">
+                    {this.getSortedConversations().map(
+                        conversation => <ConversationItem conversation={conversation} key={conversation.id}/>)}
+                </div>
+                <ModalContainer/>
+            </React.Fragment>
         );
     }
 //TODO: Separate logic part
@@ -48,6 +52,9 @@ class Conversations extends Component {
         });
     }
 
+    /**
+     * Fires a dispatch to update elements on the list without rerender all components inside it
+     */
     autoUpdateConversationsDate() {
         this.autoUpdateConversationsInterval = setInterval(() => {
             this.props.updateTimeFromNow();
@@ -66,4 +73,5 @@ const mapDispatchToProps = dispatch => {
         updateTimeFromNow: (payload = {shouldUpdate: true}) => dispatch(updateTimeFromNow(payload))
     }
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Conversations);
