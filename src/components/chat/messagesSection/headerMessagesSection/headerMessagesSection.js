@@ -1,33 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import './headerMessagesSection.scss';
 class headerMessagesSection extends Component {
     render() {
-
-        console.log(this.props.contactsIds)
         return (
             <header className='header-messages-section'>
-                <span className='title' >{this.props.chatName}</span>
-                {this.props.contactsIds ?
-                    (<div>
-                        <Members members={this.props.contactsIds} />
-                    </div>) :
-                    (<span className='subtitle' >{this.props.label}</span>)
-                }
+                <span className='title' >{this.props.conversation.name}</span>
+                <SectionTitle conversation={this.props.conversation} />
             </header>
         );
     }
 }
 
-const Members = (props) => {
-    var cdn = ""
-    var flag = ""
-     return props.members.map(
-        member => {
-            flag == "" ? cdn = "" : cdn = "," 
-            flag = ","
-            return <span key= { member.id }>  {cdn}  { member.name}</span>
-        }
-    );
+const SectionTitle = (props) => {
+    if (props.conversation.type === "basic") {
+        return <span className='subtitle' >{props.conversation.label}</span>;
+    } else {
+        return props.conversation.members.map(
+            member => { return member.name; }).join(", ");
+    }
 }
 
-export default headerMessagesSection;
+const mapStateToProps = ({ conversation }) => {
+    return {
+        conversation: conversation,
+    }
+}
+
+export default connect(mapStateToProps, null)(headerMessagesSection)

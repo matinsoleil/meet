@@ -1,13 +1,30 @@
 import { handleActions } from 'redux-actions';
-import { FETCH_CONVERSATION, DELETE_MESSAGE, DELETE_CONVERSATION, ADD_CONVERSATION } from '../actionstypes';
-import DatabaseManage from '../../lib/databaseManager';
-let mapActions = new Map([
+import { ActionTypes } from '../actionstypes';
+
+const defaultState = {
+    id: 1,
+    idUser: 1,
+    name: "Viejo Lesbiano",
+    label: "label contact 69",
+    lastMessageDate: 1543447426077,//"dayLastMessage": "8 min",
+    lastMessage: "Hello, how are you?",//"lastMessage": "Last Message",
+    unreadMessages: { status: true, messages: null },//"countMessage": "1",
+    mutted: false,//"silence": "0",
+    file: false,//"file": "0",
+    pinned: true,//"pinner": "0",
+    members: [{id: 1, name:"User 1"}, {id: 2, name:"User 2"}],//"contactsIds": null,
+    //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
+    type: "basic",
+    stored: true,
+};
+
+const actionHandlersMap = new Map([
+    // [ConversationActionTypes.SET_CONVERSATION, (state, action) => ({ ...state, ...action.payload })],
     [
-        FETCH_CONVERSATION + '_FULFILLED',
-        (state, action) => [...action.payload],
+        ActionTypes.ADD_CONVERSATION, (state, action) => { return action.payload.conversation }
     ],
     [
-        FETCH_CONVERSATION + '_ADD',
+        ActionTypes.FETCH_CONVERSATION_ADD,
         (state, action) => {
             for (let index in state) {
                 if (state[index].id === action.payload.conversationId) {
@@ -18,34 +35,9 @@ let mapActions = new Map([
         },
     ],
     [
-        ADD_CONVERSATION,
-        (state, action) => {
-            state.push(action.payload)
-            return [...state]
-        },
-    ],
-    [
-        DELETE_CONVERSATION,
+        ActionTypes.DELETE_CONVERSATION,
         (state, action) => [...action.payload]
     ],
-    [
-        DELETE_MESSAGE,
-        (state, action) => {
-            //[...state].filter(message => (message.id === action.payload) ? false : true)
-            for (let index in state) {
-                if (state[index].id === action.payload.conversationId) {
-                    state[index].conversation = state[index].conversation.filter(message => (message.id === action.payload.messageId) ? false : true);
-                    return [...state]
-                }
-            }
-        }
-    ],
 ]);
-export const restoreKey = FETCH_CONVERSATION + '_FULFILLED';
-export const defaultValue = [];
-DatabaseManage.mapping('conversation', [
-    FETCH_CONVERSATION + '_ADD',
-    DELETE_MESSAGE,
-    ADD_CONVERSATION
-], mapActions, 'local');
-export const conversation = handleActions(mapActions, defaultValue);
+
+export const conversationReducer = handleActions(actionHandlersMap, defaultState);

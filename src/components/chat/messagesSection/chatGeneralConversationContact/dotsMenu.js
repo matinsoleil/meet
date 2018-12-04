@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { multiSelectState, messageSelected } from './../../../../redux/actions/messagesOptions/messagesOptions';
-import { deleteMessage } from '../../../../redux/actions/conversation/fetchConversation';
+import { deleteMessage } from '../../../../redux/actions/messages/messages';
 import { showModal } from '../../../../redux/actions/modalBox/modalBox';
-
+import { Images } from "../../../../redux/states/images";
 class DotsMenu extends Component {
 
     constructor(props) {
@@ -55,7 +55,7 @@ class DotsMenu extends Component {
     render() {
         return (
             <div ref={div => { this.wrapper_menu_dots = div }} className="menu-wrapper-message">
-                <img onClick={this.toggleMenu} ref={img => { this.dots = img }} className="dots-menu-message" src={this.props.dots_menu} alt="" />
+                <img onClick={this.toggleMenu} ref={img => { this.dots = img }} className="dots-menu-message" src={Images.dots_menu} alt="" />
                 {
                     (this.state.showMenu) &&
                     <div style={this.state.menuFillStyle} id={`dots_dropmenu_${this.props.id}`} ref={div => { this.menu_dots = div }} className="dots-dropmenu">
@@ -64,7 +64,7 @@ class DotsMenu extends Component {
                         <a onClick={this.multiSelection} >{'Seleccionar varios'}</a>
                         <a onClick={() => {
                             this.props.showModal(
-                                this.modalModel.title, 
+                                this.modalModel.title,
                                 this.modalModel.buttons,
                                 this.modalModel.viewPath)
                         }} >{'Eliminar'}</a>
@@ -75,10 +75,9 @@ class DotsMenu extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ messagesOptions }) => {
     return {
-        dots_menu: state.customizing.Images.dots_menu,
-        multiSelect: state.messagesOptions.multiSelect
+        multiSelect: messagesOptions.multiSelect
     }
 }
 
