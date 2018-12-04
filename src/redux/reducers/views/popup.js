@@ -4,7 +4,6 @@ const defaultValues = {
     show:false,
     autoClose:true,
     message:undefined,
-    timeToHide:1500,
 }
 let mapActions = new Map([
     [

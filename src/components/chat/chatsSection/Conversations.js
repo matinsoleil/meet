@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ConversationItem from './ConversationItem'
 import {connect} from 'react-redux';
 import {updateTimeFromNow} from "../../../redux/actions/views/timeFromNow";
+import {ModalContainer} from "../../modals/ModalContainer";
 
 class Conversations extends Component {
 
@@ -18,22 +19,34 @@ class Conversations extends Component {
         clearInterval(this.autoUpdateConversationsInterval);
     }
 
+    filterList(){
+        let result = this.props.conversations.filter(e=>{
+            return (e.name.toLowerCase().indexOf(this.props.filter.toLowerCase())>-1);
+        });
+        result = this.getSortedConversations(result);
+        return result;
+    }
+
     render() {
+        const filteredConversations = (this.props.filter)?this.filterList():this.getSortedConversations(this.props.conversations);
         this.autoUpdateConversationsDate();
         return (
-            <div className="main-chat-general-list-contact">
-                {this.getSortedConversations().map(
-                    conversation => <ConversationItem conversation={conversation} key={conversation.id}/>)}
-            </div>
+            <React.Fragment>
+                <div className="main-chat-general-list-contact">
+                    {filteredConversations.map(
+                        conversation => <ConversationItem conversation={conversation} key={conversation.id}/>)}
+                </div>
+                <ModalContainer/>
+            </React.Fragment>
         );
     }
 //TODO: Separate logic part
     /**
      * Retrieve the ConversationItems array sorted by the UX conditions
      */
-    getSortedConversations() {
+    getSortedConversations(conversations) {
         let pinned = [], unpinned = [];
-        this.props.conversations.forEach(o => o.pinned ? pinned.push(o) : unpinned.push(o));
+        conversations.forEach(o => o.pinned ? pinned.push(o) : unpinned.push(o));
         return this.sortConversationsByTime(pinned).concat(this.sortConversationsByTime(unpinned));
     }
 
@@ -48,6 +61,9 @@ class Conversations extends Component {
         });
     }
 
+    /**
+     * Fires a dispatch to update elements on the list without rerender all components inside it
+     */
     autoUpdateConversationsDate() {
         this.autoUpdateConversationsInterval = setInterval(() => {
             this.props.updateTimeFromNow();
@@ -55,9 +71,10 @@ class Conversations extends Component {
     }
 }
 
-const mapStateToProps = ({conversations}) => {
+const mapStateToProps = ({conversations,views}) => {
     return {
         conversations,
+        filter:views.controlSection.filter
     };
 };
 
@@ -66,4 +83,5 @@ const mapDispatchToProps = dispatch => {
         updateTimeFromNow: (payload = {shouldUpdate: true}) => dispatch(updateTimeFromNow(payload))
     }
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(Conversations);

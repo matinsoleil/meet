@@ -1,5 +1,5 @@
-import { handleActions } from 'redux-actions';
-import { ActionTypes } from "../actionstypes/index";
+import {handleActions} from 'redux-actions';
+import {ActionTypes} from "../actionstypes";
 
 /**
  *
@@ -49,14 +49,13 @@ export const conversationsReducer = handleActions(mapActions, [
         lastMessageDate: 1543447426077,//"dayLastMessage": "8 min",
         lastMessage: "Hello, how are you?",//"lastMessage": "Last Message",
         unreadMessages: { status: true, messages: null },//"countMessage": "1",
-        mutted: false,//"silence": "0",
+        mutted: { status: false , expiration: 10001000100 },//"silence": "0",
         file: false,//"file": "0",
         pinned: true,//"pinner": "0",
         members: [],//"contactsIds": null,
         //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
         type: "basic",
         stored: true,
-
     },
     {
         id: 2,
@@ -66,7 +65,7 @@ export const conversationsReducer = handleActions(mapActions, [
         lastMessageDate: 1543442023520,//"dayLastMessage": "8 min",
         lastMessage: "Hello, how are you?",//"lastMessage": "Last Message",
         unreadMessages: { status: true, messages: 8 },//"countMessage": "1",
-        mutted: false,//"silence": "0",
+        mutted: { status: false, expiration: 10001000100 },//"silence": "0",
         pinned: false,//"pinner": "0",
         members: [],//"contactsIds": null,
         //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
@@ -82,7 +81,7 @@ export const conversationsReducer = handleActions(mapActions, [
         lastMessageDate: 1543436983354,//"dayLastMessage": "8 min",
         lastMessage: "Hello, how are you?",//"lastMessage": "Last Message",
         unreadMessages: { status: false, messages: null },//"countMessage": "1",
-        mutted: false,//"silence": "0",
+        mutted: { status: false, expiration: 10001000100 },//"silence": "0",
         pinned: true,//"pinner": "0",
         members: [],//"contactsIds": null,
         //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
@@ -98,7 +97,7 @@ export const conversationsReducer = handleActions(mapActions, [
         lastMessageDate: 1543440602612,//"dayLastMessage": "8 min",
         lastMessage: "Roberto: Hello, how are you?",//"lastMessage": "Last Message",
         unreadMessages: { status: false, messages: null },//"countMessage": "1",
-        mutted: false,//"silence": "0",
+        mutted: { status: true, expiration: 10001000100 },//"silence": "0",
         pinned: false,//"pinner": "0",
         members: [],//"contactsIds": null,
         //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",
@@ -114,7 +113,7 @@ export const conversationsReducer = handleActions(mapActions, [
         lastMessageDate: 1543436983354,//"dayLastMessage": "8 min",
         lastMessage: "Roberto: Hello, how are you?",//"lastMessage": "Last Message",
         unreadMessages: { status: false, messages: null },//"countMessage": "1",
-        mutted: false,//"silence": "0",
+        mutted: { status: false, expiration: 10001000100 },//"silence": "0",
         pinned: true,//"pinner": "0",
         members: [],//"contactsIds": null,
         //image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhzKrqK-LRQQs35JauQ9mlYG-ZFvH773TRbWcWpjyQ0HKTKznH",

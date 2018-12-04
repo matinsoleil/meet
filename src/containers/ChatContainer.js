@@ -6,8 +6,9 @@ import fetchContacts from '../redux/actions/contacts/fetchContacts'
 import { fetchUser } from '../redux/actions/users/fetchUser'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
+import SupportSection from '../components/chat/supportSection/supportSection'
 import ControlSectionContainer from '../components/chat/chatsSection/ControlSectionContainer';
-
+import {toggleSupportSection,Type} from "../redux/actions/views/supportSection";
 class ChatContainer extends Component {
 
     componentWillMount() {
@@ -19,10 +20,9 @@ class ChatContainer extends Component {
         return (
             <div className="app-frame">
                 <div className="main-chat">
-                    <ControlSectionContainer />
-                    <MessageSectionContainer />
-                    {/* <MessageSectionContainer contacts={listContact} chat={this.props.conversation} contact={this.props.contact} server={this.props.server} /> */}
-                    {/*this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null*/}
+                    <ControlSectionContainer/>
+                    <MessageSectionContainer/>
+                    <SupportSection />
                 </div>
             </div>
         )
@@ -66,6 +66,9 @@ const mapDispatchToProps = dispatch => {
         },
         hideAlertGeneral: () => {
             dispatch(hideAlertGeneral())
+        },
+        toggleSupportSection: (title,type) => {
+            dispatch(toggleSupportSection(title,type));
         }
     }
 }

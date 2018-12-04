@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-//import {togglePopup} from "../../redux/actions/popup/popup";
+import {togglePopup} from "../../redux/actions/views/popup";
 class Popup extends Component{
 
     componentDidUpdate(){
@@ -34,9 +34,9 @@ const mapStateToProps = state =>({
     timeToHide: state.views.popup.timeToHide
 });
 const mapDispatchToProps = dispatch => ({
-    /*togglePopup: () => {
+    togglePopup: () => {
         dispatch(togglePopup());
-    }*/
+    }
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(Popup);

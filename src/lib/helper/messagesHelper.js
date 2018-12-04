@@ -25,6 +25,10 @@ export default class MessagesHelper {
         }
         return owner;
     }
+
+    static getContactById(contacts, id){
+        return contacts.find(contact=>contact.id===id);
+    }
     /**
      * @param {Object} conversations.
      * @param {String} conversation Id.
@@ -41,8 +45,8 @@ export default class MessagesHelper {
     }
 
     /**
-     * 
-     * @param {String} blobUrl 
+     *
+     * @param {String} blobUrl
      */
     static async getBlobObject(blobUrl) {
         let response = await new Promise((resolve, reject) => {
@@ -63,7 +67,7 @@ export default class MessagesHelper {
     }
 
     /**
-     * 
+     *
      * @param {Object[]} files
      *      @param {String} files[].fileName
      *      @param {String} files[].blobData

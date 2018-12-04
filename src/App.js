@@ -5,7 +5,8 @@ import {setRegionConfig} from './../src/redux/actions/general/country';
 import {LoaderScreen} from "./components/utils/loaderScreen";
 import ErrorHandler from './ErrorHandler';
 import ChatContainer from './containers/ChatContainer';
-import ModalBox from './components/modals/ModalBox';
+import ModalConfirm from './components/modals/ModalConfirm';
+import ModalRadioOptions from './components/modals/ModalRadioOptions';
 import Popup from "./components/modals/popup";
 
 import './App.css';
@@ -36,7 +37,8 @@ class App extends Component {
                             </Router> :
                             <LoaderScreen/>
                     }
-                    <ModalBox />
+                    <ModalRadioOptions/>
+                    <ModalConfirm/>
                     <Popup/>
                 </ErrorHandler>
 
