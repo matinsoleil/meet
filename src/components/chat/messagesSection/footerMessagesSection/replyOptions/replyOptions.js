@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import MessagesHelper from '../../../../../lib/helper/messagesHelper';
 import { messageSelected } from '../../../../../redux/actions/messagesOptions/messagesOptions';
+import { Images } from "../../../../../redux/states/images";
 import './replyOptions.scss';
-
 class ReplyOptions extends Component {
 
     componentDidMount() {
@@ -24,10 +24,9 @@ class ReplyOptions extends Component {
 
     render() {
         let { sender, message } = this.props.messageObject;
-        let { reply_icon, close_icon } = this.props;
         return (
             <div className="reply-options">
-                <img src={reply_icon} alt={'reply'} />
+                <img src={Images.reply_icon} alt={'reply'} />
                 <div className='reply'>
                     <span className="ellipsis-text">{
                         (sender === this.props.userId) ? 'tu' :
@@ -35,16 +34,14 @@ class ReplyOptions extends Component {
                     }</span>
                     <div className="ellipsis-text">{(!message.type) ? message : (message.type === '4') && message.message}</div>
                 </div>
-                <img onClick={this.cancelReply} src={close_icon} alt={'close'} />
+                <img onClick={this.cancelReply} src={Images.close_icon} alt={'close'} />
             </div>
         );
     }
 }
 
-const mapStateToProps = ({ customizing, users, contacts }) => {
+const mapStateToProps = ({ users, contacts }) => {
     return {
-        close_icon: customizing.Images.close_icon,
-        reply_icon: customizing.Images.reply_icon,
         userId: users.id,
         contacts: contacts
     }

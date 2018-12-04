@@ -8,9 +8,9 @@ import OptionSelection from './optionsSelection/optionsSelection';
 import MessagesHelper from '../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../lib/helper/generateId';
 import ReplyOptions from './replyOptions/replyOptions';
+import { Images } from "../../../../redux/states/images";
 import $ from 'jquery'
 import './footerMessagesSection.scss';
-// var oneSocket = undefined;
 class FooterMessagesSection extends Component {
     constructor(props) {
         super(props);
@@ -157,24 +157,24 @@ class FooterMessagesSection extends Component {
                             } /> : (!this.state.showRecording) ?
                             <div className='data-input'>
                                 <div role="button" className="icon">
-                                    <img src={this.props.plus} alt="" />
+                                    <img src={Images.plus} alt="" />
                                 </div>
                                 <div role="button" onClick={() => { (this.state.clipState) && $(this.fileChooser).trigger('click'); }} className="icon">
-                                    <img src={this.props.clip} alt="" />
+                                    <img src={Images.clip} alt="" />
                                     <input onChange={this.selectFiles} ref={(input) => { this.fileChooser = input }} type="file" style={{ display: "none" }} multiple />
                                 </div>
                                 <div className="text-message">
                                     <input ref={input => { this.inputText = input }} onChange={e => { this.setState({ inputText: (e.target.value.length > 0) }) }} disabled={!this.state.textInputState} type="text" placeholder="chat" name="" id="" />
                                     <div className="icon emoji">
-                                        <img src={this.props.emoji} alt="" />
+                                        <img src={Images.emoji} alt="" />
                                     </div>
                                 </div>
                                 {(this.state.inputText) ?
                                     <div onClick={() => { this.sendMessage(this.inputText.value) }} role="button" className="icon">
-                                        <img src={this.props.send_icon} alt="" />
+                                        <img src={Images.send_icon} alt="" />
                                     </div> :
                                     <div className="icon">
-                                        <img onClick={() => (this.setState({ showRecording: true }))} src={this.props.mic} alt="" />
+                                        <img onClick={() => (this.setState({ showRecording: true }))} src={Images.mic} alt="" />
                                     </div>
                                 }
                             </div> :
@@ -185,16 +185,11 @@ class FooterMessagesSection extends Component {
     }
 }
 
-const mapStateToProps = ({ customizing, conversation, messagesOptions, contact, user, server }) => {
+const mapStateToProps = ({ conversation, messagesOptions, contact, user, server }) => {
     return {
-        clip: customizing.Images.clip,
-        emoji: customizing.Images.emoji,
-        mic: customizing.Images.mic,
-        plus: customizing.Images.plus,
         conversation: conversation,
         messageSelected: messagesOptions.messageSelected,
         multiSelect: messagesOptions.multiSelect,
-        send_icon: customizing.Images.send_icon,
         contact: contact,
         user: user,
         server: server,
