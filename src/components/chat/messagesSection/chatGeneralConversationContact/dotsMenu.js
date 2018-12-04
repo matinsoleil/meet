@@ -49,9 +49,6 @@ class DotsMenu extends Component {
 
     accept = () => {
         this.props.showDots();
-        
-        
-        debugger
         this.props.deleteMessage(this.props.conversationId, this.props.id);
     }
 

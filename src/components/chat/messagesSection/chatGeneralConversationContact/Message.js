@@ -57,12 +57,6 @@ class Message extends Component {
     }
 
     render() {
-
-        console.log(" (* [1] *) ");
-        console.log(this.props.messageObject);
-        console.log(" (* [9] *) ");
-
-
         let { id, message, hour } = this.props.messageObject;
         let { type, tail, tailType, user_icon } = this.props;
         if (message.type) message.hour = hour;

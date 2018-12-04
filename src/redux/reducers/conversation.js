@@ -38,18 +38,6 @@ const actionHandlersMap = new Map([
         ActionTypes.DELETE_CONVERSATION,
         (state, action) => [...action.payload]
     ],
-    [
-        ActionTypes.DELETE_MESSAGE,
-        (state, action) => {
-            //[...state].filter(message => (message.id === action.payload) ? false : true)
-            for (let index in state) {
-                if (state[index].id === action.payload.conversationId) {
-                    state[index].conversation = state[index].conversation.filter(message => (message.id === action.payload.messageId) ? false : true);
-                    return [...state]
-                }
-            }
-        }
-    ],
 ]);
 
 export const conversationReducer = handleActions(actionHandlersMap, defaultState);
