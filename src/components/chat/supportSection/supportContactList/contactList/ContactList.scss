@@ -1,0 +1,19 @@
+@media screen {
+  .contact-list{
+    overflow: scroll;
+    height: 100%;
+    .flag{
+      margin: 12px 5px 12px 5px;
+      padding: 0 2px 0 2px;
+      span{
+        font-size: 13px;
+        font-weight: 900;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.23;
+        letter-spacing: -0.2px;
+        color: #a1a1a1;
+      }
+    }
+  }
+}

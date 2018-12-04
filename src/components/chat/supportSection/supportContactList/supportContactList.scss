@@ -1,4 +1,10 @@
-.group-title-chat {
-  font-size: 18px;
-  font-weight: bold;
+@media screen {
+  .support-section-container{
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 10px 0;
+    display: flex;
+    position: relative;
+    flex-flow: column;
+  }
 }

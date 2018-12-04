@@ -1,7 +1,9 @@
 
 @media screen{
   .right-section-container {
-    width: 408px;
+    min-width: 410px;
+    width: 410px;
+    height: 100%;
     float: left;
     display: table-cell;
     vertical-align: middle;

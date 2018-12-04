@@ -1,0 +1,37 @@
+@media screen {
+  .dropdown-content{
+    position: absolute;
+    min-width: 210px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+    background-color: #f2f2f2;
+    right: 10px;
+    top: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+    z-index: 1;
+    a{
+      height: 27px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      font-size: 16px;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.44;
+      letter-spacing: 0.2px;
+      color: #323232;
+      user-select: none;
+      &:hover{
+        font-weight: 500;
+      }
+    }
+    &.up{
+      top:unset;
+      bottom: 90%;
+    }
+  }
+}

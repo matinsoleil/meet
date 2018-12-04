@@ -1,0 +1,44 @@
+@media screen {
+    div.contact-list-header{
+        height: 120px;
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        .top{
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .title{
+                font-size: 20px;
+                font-weight: bold;
+                line-height: 1.4;
+                letter-spacing: -0.4px;
+                color: #181818;
+            }
+            img{
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .bottom{
+            height: 56px;
+            display: flex;
+            flex-flow: row;
+            .search-box{
+                display: flex;
+                height: 56px;
+                width: 100%;
+                align-items: center;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                input{
+                    flex-grow: 1;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

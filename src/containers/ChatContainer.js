@@ -6,13 +6,19 @@ import { fetchConversation } from '../redux/actions/conversation/fetchConversati
 import { fetchUser } from '../redux/actions/users/fetchUser'
 import { initApi, getToken, login, logout } from '../redux/actions/messageCenter/messageCenter'
 import hideAlertGeneral from '../redux/actions/alertGeneral/hideAlertGeneral'
+import SupportSection from '../components/chat/supportSection/supportSection'
 import ControlSectionContainer from '../components/chat/chatsSection/ControlSectionContainer';
-
+import {toggleSupportSection,Type} from "../redux/actions/views/supportSection";
 class ChatContainer extends Component {
 
     componentWillMount() {
         this.props.fetchContacts();
         this.props.fetchUser();
+
+    }
+
+    componentDidMount(){
+        this.props.toggleSupportSection('Agregar a',Type.CREATE_GROUP);
     }
 
     render() {
@@ -24,7 +30,7 @@ class ChatContainer extends Component {
                 <div className="main-chat">
                     <ControlSectionContainer/>
                     <MessageSectionContainer contacts={listContact} chat={this.props.conversation} contact={this.props.contact} server={this.props.server} />
-                    {/*this.props.rightSection.show ? <RightSection showSection={this.props.rightSection.showSectionSpecific} /> : null*/}
+                    <SupportSection />
                 </div>
             </div>
         )
@@ -71,6 +77,9 @@ const mapDispatchToProps = dispatch => {
         },
         hideAlertGeneral: () => {
             dispatch(hideAlertGeneral())
+        },
+        toggleSupportSection: (title,type) => {
+            dispatch(toggleSupportSection(title,type));
         }
     }
 }
