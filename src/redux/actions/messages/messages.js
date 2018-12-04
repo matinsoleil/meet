@@ -21,7 +21,9 @@ export const addMessage = createAction(ActionTypes.ADD_MESSAGE, (message) => {
 );
 
 export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (conversationId, messageId) => {
-    // db.storage.findKeyAndRemove(Database.tables.messages, messageId);
+    
+    
+    db.storage.findKeyAndRemove(Database.tables.messages, messageId);
     return { conversationId, messageId };
 }
 );
