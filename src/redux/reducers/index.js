@@ -7,12 +7,17 @@ import {
 } from './contacts'
 
 import { users } from './users'
-import { contact } from './contact'
-import {
-    conversation,
-    restoreKey as restoreKeyConversation,
-    defaultValue as defaultValueConversation
-} from './conversation'
+
+// import {
+//     conversation,
+//     restoreKey as restoreKeyConversation,
+//     defaultValue as defaultValueConversation
+// } from './conversation'
+
+import { conversationReducer } from './conversation'
+
+
+
 import { searchContacts } from './searchContacts'
 import { groupsSection } from './groupsSection'
 import {
@@ -25,6 +30,9 @@ import { countriesReducer } from './countries'
 import { messageCenterReducer } from './messageCenter'
 import { customizingReducer } from './customizing'
 import { messagesOptionsReducer } from './messagesOptions'
+
+import { messagesReducer } from './messages'
+
 import { alertGeneral } from './alertGeneral'
 import { modalBoxReducer } from './modalBox';
 import { userReducer } from "./user";
@@ -34,8 +42,8 @@ import {conversationsReducer} from "./conversations";
 export const reducers = combineReducers({
   contacts,
   users,
-  contact,
-  conversation,
+  
+  
   searchContacts,
   groupsSection,
   contactSection,
@@ -50,7 +58,9 @@ export const reducers = combineReducers({
   alertGeneral,
     user: userReducer,
     views: viewsReducers,
-    conversations: conversationsReducer
+    conversations: conversationsReducer,
+    conversation: conversationReducer,
+    messages: messagesReducer
 });
 
 export const keyToRestore = {
@@ -58,10 +68,10 @@ export const keyToRestore = {
         restoreKey: restoreKeyContacts,
         defaultValue: defaultValueContacts,
     },
-    'conversation': {
-        restoreKey: restoreKeyConversation,
-        defaultValue: defaultValueConversation,
-    },
+    // 'conversation': {
+    //     restoreKey: restoreKeyConversation,
+    //     defaultValue: defaultValueConversation,
+    // },
     'country': {
         restoreKey: restoreKeyCountry,
         defaultValue: null

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addMessage } from './../../../../../redux/actions/conversation/fetchConversation';
+import { addMessage } from './../../../../../redux/actions/messages/messages';
 import AudioRecorder from './../../../../../lib/helper/audioRecorder';
 import './recorderContent.scss';
 import GenerateId from '../../../../../lib/helper/generateId';
