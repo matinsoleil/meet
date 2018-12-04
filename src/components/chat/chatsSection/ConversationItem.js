@@ -59,7 +59,7 @@ class ConversationItem extends Component {
 
                 </div>
 
-                <div className="options" onClick={() => this.toggleMenu(!this.state.isMenuOpened,true)}>
+                <div className="options" onClick={() => this.toggleMenu(!this.state.isMenuOpened)}>
                     <img src={Images.dots_menu} alt="Options"/>
                 </div>
 

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './dropMenu.scss'
 export default class DropMenu extends Component {
 
     constructor(props){
