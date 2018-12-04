@@ -15,7 +15,7 @@ class ReplyOptions extends Component {
     }
 
     componentWillUnmount() {
-        this.props.setMessage('','');
+        this.props.setMessage('', '');
     }
 
     cancelReply = () => {
@@ -41,12 +41,12 @@ class ReplyOptions extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ customizing, users, contacts }) => {
     return {
-        close_icon: state.customizing.Images.close_icon,
-        reply_icon: state.customizing.Images.reply_icon,
-        userId: state.users.id,
-        contacts: state.contacts
+        close_icon: customizing.Images.close_icon,
+        reply_icon: customizing.Images.reply_icon,
+        userId: users.id,
+        contacts: contacts
     }
 }
 

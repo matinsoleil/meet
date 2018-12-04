@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addMessage } from './../../../../redux/actions/messages/messages';
 import { multiSelectState, messageSelected } from '../../../../redux/actions/messagesOptions/messagesOptions';
-
 import { updateConversations } from "../../../../redux/actions/conversations/conversations";
-
 import RecorderContent from './recorderContent/recorderContent';
 import OptionSelection from './optionsSelection/optionsSelection';
 import MessagesHelper from '../../../../lib/helper/messagesHelper';
@@ -12,9 +10,7 @@ import GenerateId from '../../../../lib/helper/generateId';
 import ReplyOptions from './replyOptions/replyOptions';
 import $ from 'jquery'
 import './footerMessagesSection.scss';
-
-var oneSocket = undefined;
-
+// var oneSocket = undefined;
 class FooterMessagesSection extends Component {
     constructor(props) {
         super(props);
@@ -105,6 +101,7 @@ class FooterMessagesSection extends Component {
         //     console.log(event.code);
         //     console.log(event.reason);
         // }.bind(this);
+
         let date = new Date();
         let msg = {
             id: this.idMessage,
