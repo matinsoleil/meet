@@ -7,7 +7,7 @@ import FileHelper from './../../../../lib/helper/fileHelper';
 import FileMessage from './messagesTypes/fileMessage';
 import MapPosition from './../../../../lib/helper/mapPosition';
 import { filterMessages } from '../../../../redux/actions/messagesOptions/messagesOptions';
-
+import { Images } from "../../../../redux/states/images";
 class Message extends Component {
 
     constructor(props) {
@@ -115,10 +115,10 @@ class Message extends Component {
             case "3":
                 return (
                     // <div className="file">
-                    //     <img src={this.props.file_icon} alt="file-icon" />
+                    //     <img src={Images.file_icon} alt="file-icon" />
                     //     <div className="file-info">
                     //         <a href={message.blobURL} download={message.fileName} className="download-icon">
-                    //             <img src={this.props.download_icon} alt="" />
+                    //             <img src={Images.download_icon} alt="" />
                     //         </a>
                     //         <span>{FileHelper.humanFileSize(message.size, true)}</span>
                     //         <span>{message.fileName.split('.')[0]}</span>
@@ -136,10 +136,8 @@ class Message extends Component {
     }
 }
 
-const mapStateToProps = ({ customizing, messagesOptions, conversation }) => {
+const mapStateToProps = ({ messagesOptions, conversation }) => {
     return {
-        file_icon: customizing.Images.file_icon,
-        download_icon: customizing.Images.download_icon,
         multiSelect: messagesOptions.multiSelect,
         messageSelected: messagesOptions.messageSelected,
         conversation: conversation
