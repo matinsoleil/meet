@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {togglePopup} from "../../redux/actions/views/popup";
+import './popup.scss';
 class Popup extends Component{
 
     componentDidUpdate(){

@@ -1,0 +1,28 @@
+@media screen {
+  .message-popup {
+    border-radius: 10px;
+    background-color: #323232;
+    width: 245px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    bottom: 5px;
+    top: 40%;
+    left: 100px;
+    z-index: 100;
+    .text-message-popup {
+      width: 100%;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import {store} from '../../redux/store/index';
 import {configureModalConfirm} from '../../redux/actions/views/modalConfirm';
 import {configureModalRadioOptions} from '../../redux/actions/views/modalRadioOptions';
 import {removeConversations, updateConversations} from '../../redux/actions/conversations/conversations';
-
+import {togglePopup} from './../../redux/actions/views/popup';
 const conversationTypes = {
     basic: 'basic',
     group: 'group'
@@ -36,7 +36,10 @@ class ControlMenuHelper {
                 buttons: [
                     {
                         text: store.getState().country.translator.t('GENERAL_DELETE'),
-                        handler: () => store.dispatch(removeConversations([conversation]))
+                        handler: () => {
+                            store.dispatch(removeConversations([conversation]));
+                            store.dispatch(togglePopup(store.getState().country.translator.t('YOU_DELETED_THE_CHAT_WITH',{name:conversation.name}),5000000));
+                        }
                     }
                 ],
                 cancelButton: true,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import HeaderGroupSection from './ContactListHeader/contactListHeader';
-import ContactList from './ContactList/ContactList';
+import HeaderGroupSection from './contactListHeader/contactListHeader';
+import ContactList from './contactList/ContactList';
 import SelectedContacts from './selectedContacts/selectedContacts';
 import { getGroupsSection } from '../../../../redux/selectors/groupsSection';
 import { getContacts } from '../../../../redux/selectors/contacts';
