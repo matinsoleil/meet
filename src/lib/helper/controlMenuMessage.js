@@ -1,55 +1,45 @@
-import {store} from '../../redux/store/index';
-import {configureModalConfirm} from '../../redux/actions/views/modalConfirm';
-import {configureModalRadioOptions} from '../../redux/actions/views/modalRadioOptions';
-import {removeConversations, updateConversations} from '../../redux/actions/conversations/conversations';
+import { store } from '../../redux/store/index';
+import { configureModalConfirm } from '../../redux/actions/views/modalConfirm';
 import { deleteMessage } from '../../redux/actions/messages/messages';
 
 class ControlMenuMessageHelper {
-    
-    static toggleReplyMessage (conversation, message) {
+
+    static toggleReplyMessage(conversation, message) {
         return {
             text: store.getState().country.translator.t('REPLY'),
-            clickHandler: () => store.dispatch(updateConversations(
-                [{...conversation, stored: !conversation.stored}]
-            ))
+            clickHandler: () => null
         }
     }
 
-    static toggleResendMessage (conversation, message) {
+    static toggleResendMessage(conversation, message) {
         return {
             text: store.getState().country.translator.t('RESEND'),
-            clickHandler: () => store.dispatch(updateConversations(
-                [{...conversation, stored: !conversation.stored}]
-            ))
+            clickHandler: () => null
         }
     }
 
-    static toggleSelectSeveralMessage (conversation, message) {
+    static toggleSelectSeveralMessage(conversation, message) {
         return {
             text: store.getState().country.translator.t('SELECT_SEVERAL'),
-            clickHandler: () => store.dispatch(updateConversations(
-                [{...conversation, stored: !conversation.stored}]
-            ))
+            clickHandler: () => null
         }
     }
 
-    static toggleRemoveMessage (conversation, message) {
+    static toggleRemoveMessage(conversation, message) {
         return {
             text: store.getState().country.translator.t('REMOVE'),
             clickHandler: () => store.dispatch(configureModalConfirm({
-                title: store.getState().country.translator.t('ARE_YOU_SURE_TO_DELETE_THE_CHAT_HISTORY'),
+                title: store.getState().country.translator.t('ARE_YOU_SURE_YOU_WANT_TO_DELETE_THIS_CHAT'),
                 buttons: [
                     {
                         text: store.getState().country.translator.t('GENERAL_DELETE'),
-                        //TODO: add remove history handler
-                        // handler: () => { console.log(" a a a a "); console.log(conversation.id); console.log(message.id); console.log(" z z z z "); }
-                        handler: () => { 
+                        handler: () => {
                             store.dispatch(deleteMessage(conversation.id, message.id));
-                         }
+                        }
                     }
                 ],
                 cancelButton: true,
-                visible: true 
+                visible: true
             }))
         }
     }
