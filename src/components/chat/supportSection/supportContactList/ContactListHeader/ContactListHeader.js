@@ -4,7 +4,7 @@ import assignFilterAction from "../../../searchBar/assignFilterAction";
 import {onChangelFilter} from "../../../../../redux/actions/views/supportSection";
 import {Images} from "../../../../../redux/states/images";
 import {toggleSupportSection} from "../../../../../redux/actions/views/supportSection";
-import './contactListHeader.scss';
+import './ContactListHeader.scss';
 import {connect} from "react-redux";
 
 class ContactListHeader extends Component {

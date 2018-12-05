@@ -1,8 +1,5 @@
-// import { FETCH_CONVERSATION, DELETE_MESSAGE, FETCH_CONVERSATION_ADD } from '../../actionstypes'
 import { ActionTypes } from '../../actionstypes'
 import { createAction } from 'redux-actions'
-import { apiGet } from '../../../api/index'
-import { urlConversation } from '../../../api/urls'
 import { db } from '../../../index';
 import { Database } from '../../../config/config';
 
@@ -15,9 +12,7 @@ export const fetchConversation = createAction(ActionTypes.FETCH_CONVERSATION, (c
     return { conversation };
     }
 );
-
 export const addConversation = createAction(ActionTypes.ADD_CONVERSATION, (conversation) => {
-    // db.storage.findKeyAndRemove(Database.tables.messages, messageId);
     return { conversation };
     }
 );

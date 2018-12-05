@@ -93,7 +93,6 @@ class ConversationItem extends Component {
             ControlMenuHelper.togglePinConversation(this.props.conversation),
             ControlMenuHelper.toggleReadConversationStatus(this.props.conversation)
         ];
-
         //TODO: verify if this conversation is selected
         switch (this.props.conversation.type) {
             case conversationTypes.group:
