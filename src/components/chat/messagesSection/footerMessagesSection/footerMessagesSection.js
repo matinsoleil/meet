@@ -9,7 +9,6 @@ import MessagesHelper from '../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../lib/helper/generateId';
 import ReplyOptions from './replyOptions/replyOptions';
 import { Images } from "../../../../redux/states/images";
-import $ from 'jquery'
 import './footerMessagesSection.scss';
 class FooterMessagesSection extends Component {
     constructor(props) {
@@ -159,7 +158,7 @@ class FooterMessagesSection extends Component {
                                 <div role="button" className="icon">
                                     <img src={Images.plus} alt="" />
                                 </div>
-                                <div role="button" onClick={() => { (this.state.clipState) && $(this.fileChooser).trigger('click'); }} className="icon">
+                                <div role="button" onClick={() => { (this.state.clipState) && this.fileChooser.click() }} className="icon">
                                     <img src={Images.clip} alt="" />
                                     <input onChange={this.selectFiles} ref={(input) => { this.fileChooser = input }} type="file" style={{ display: "none" }} multiple />
                                 </div>

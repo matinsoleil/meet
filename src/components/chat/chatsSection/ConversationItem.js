@@ -3,7 +3,6 @@ import TimeFromNow from './TimeFromNow';
 import {connect} from 'react-redux';
 import {Images} from "../../../redux/states/images";
 import DropMenu from "../../utils/dropMenu";
-import {updateConversations, removeConversations} from "../../../redux/actions/conversations/conversations";
 import './ConversationItem.scss';
 import ControlMenuHelper from '../../../lib/helper/controlMenu';
 
@@ -28,7 +27,7 @@ class ConversationItem extends Component {
 
     render() {
         return (
-            <li ref={li => this.row = li} className='conversation-item' onMouseLeave={() => this.toggleMenu(false)}>
+            <li ref={li => this.row = li} className='conversation-item' onClick={this.props.clickItemHandler} onMouseLeave={() => this.toggleMenu(false)}>
 
                 <div className="image">
                     <img src={this.props.conversation.image || Images.avatar} alt="Conversation Image"/>
@@ -67,7 +66,7 @@ class ConversationItem extends Component {
                {
                     this.state.isMenuOpened &&
                     <DropMenu
-                        onClick={() => this.toggleMenu(!this.state.isMenuOpened)}
+                        clickHandler={() => this.toggleMenu(!this.state.isMenuOpened)}
                         container={this.row}
                         optionsMenu={this.optionsMenu}
                     />

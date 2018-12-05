@@ -12,7 +12,4 @@ export const fetchConversation = createAction(ActionTypes.FETCH_CONVERSATION, (c
     return { conversation };
     }
 );
-export const addConversation = createAction(ActionTypes.ADD_CONVERSATION, (conversation) => {
-    return { conversation };
-    }
-);
+export const addConversation = createAction(ActionTypes.ADD_CONVERSATION);
