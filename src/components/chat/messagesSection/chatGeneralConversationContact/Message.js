@@ -15,18 +15,19 @@ class Message extends Component {
         this.state = {
             menuState: false,
             blockedMenu: false,
+            isMenuOpened: false
         }
     }
 
-    componentDidMount() {
-        this.bubble.addEventListener('mouseenter', this.showDots);
-        this.bubble.addEventListener('mouseleave', this.showDots);
-    }
+    // componentDidMount() {
+    //     this.bubble.addEventListener('mouseenter', this.toggleMenu(!this.state.isMenuOpened));
+    //     this.bubble.addEventListener('mouseleave', this.toggleMenu(!this.state.isMenuOpened));
+    // }
 
-    componentWillUnmount() {
-        this.bubble.removeEventListener('mouseenter', this.showDots);
-        this.bubble.removeEventListener('mouseleave', this.showDots);
-    }
+    // componentWillUnmount() {
+    //     this.bubble.removeEventListener('mouseenter', this.toggleMenu(!this.state.isMenuOpened));
+    //     this.bubble.removeEventListener('mouseleave', this.toggleMenu(!this.state.isMenuOpened));
+    // }
 
     showDots = () => {
         (!this.props.multiSelect && !this.props.messageSelected) ?
@@ -61,7 +62,7 @@ class Message extends Component {
         let { type, tail, tailType, user_icon } = this.props;
         if (message.type) message.hour = hour;
         return (
-            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row">
+            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row" onClick={() => this.toggleMenu(!this.state.isMenuOpened)} >
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
                     <div className={`message-wrapper ${(message.type) ? (message.type === '3') ? 'file-message' : 'no-text' : ''}`}>
@@ -73,8 +74,13 @@ class Message extends Component {
                             <span className="time">{hour}</span>
                         </div>
                     </div>
+
+
+                    {/* <div className="dots-menu-message" onClick={() => this.toggleMenu(!this.state.isMenuOpened)}>
+                        <img src={Images.dots_menu} alt="Options"/>
+                    </div> */}
                     {
-                        (this.state.menuState) &&
+                        this.state.isMenuOpened && 
                         <DotsMenu conversationId={this.props.conversation.id} 
                                   blockView={this.blockView} 
                                   contacts={this.props.contacts} 
@@ -133,6 +139,10 @@ class Message extends Component {
             default:
                 return <div></div>;
         }
+    }
+
+    toggleMenu(status) {
+        this.setState({isMenuOpened: status});
     }
 }
 
