@@ -67,7 +67,7 @@ class ConversationItem extends Component {
                 {
                     this.state.isMenuOpened &&
                     <DropMenu
-                        onClick={() => this.toggleMenu(!this.state.isMenuOpened)}
+                        clickHandler={() => this.toggleMenu(!this.state.isMenuOpened)}
                         container={this.row}
                         optionsMenu={this.optionsMenu}
                     />

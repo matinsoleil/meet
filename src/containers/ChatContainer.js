@@ -12,7 +12,7 @@ import {toggleSupportSection,Type} from "../redux/actions/views/supportSection";
 class ChatContainer extends Component {
 
     componentWillMount() {
-        // this.props.fetchContacts();
+        this.props.fetchContacts();
         // this.props.fetchUser();
     }
 

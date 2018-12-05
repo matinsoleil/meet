@@ -2,6 +2,7 @@ import {store} from '../../redux/store/index';
 import {configureModalConfirm} from '../../redux/actions/views/modalConfirm';
 import {configureModalRadioOptions} from '../../redux/actions/views/modalRadioOptions';
 import {removeConversations, updateConversations} from '../../redux/actions/conversations/conversations';
+import {toggleSupportSection, Type} from "../../redux/actions/views/supportSection";
 import {togglePopup} from './../../redux/actions/views/popup';
 const conversationTypes = {
     basic: 'basic',
@@ -197,6 +198,36 @@ class ControlMenuHelper {
             ))
         }
     }
+
+    static createNewChat(){
+        return{
+            text: store.getState().country.translator.t('NEW_CHAT'),
+            clickHandler: () => store.dispatch(toggleSupportSection(
+                store.getState().country.translator.t('NEW_CHAT'),
+                Type.CREATE_GROUP
+            )) ,
+        }
+    }
+
+    static createNewGroupalChat(){
+        return {
+            text: store.getState().country.translator.t('NEW_GROUPAL_CHAT'),
+            clickHandler: () => {
+                return store.dispatch(toggleSupportSection(
+                    store.getState().country.translator.t('NEW_GROUPAL_CHAT'),
+                    Type.CREATE_GROUP
+                ))
+            },
+        }
+    }
+
+    static createNewDiffusionChat(){
+        return{
+            text: store.getState().country.translator.t('NEW_DIFFUSION_CHAT'),
+            clickHandler:null,
+        }
+    }
+
 }
 
 export default ControlMenuHelper;
