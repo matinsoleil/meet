@@ -56,7 +56,12 @@ class ControlMenuHelper {
                 buttons: [
                     {
                         text: store.getState().country.translator.t('GENERAL_GO_OUT'),
-                        handler: () => store.dispatch(updateConversations([{...conversation, banned: true}]))
+                        handler: () => {
+                            store.dispatch(updateConversations([{...conversation, banned: true}]));
+                            store.dispatch(togglePopup(
+                                store.getState().country.translator.t('GROUP_OUT')
+                            ))
+                        }
                     }
                 ],
                 cancelButton: true,
@@ -86,9 +91,8 @@ class ControlMenuHelper {
 
     static toggleStoreConversation(conversation) {
         return {
-            text: conversation.stored ?
-                store.getState().country.translator.t('REMOVE_CHAT_FROM_STORE') :
-                store.getState().country.translator.t('STORE_CHAT'),
+            text:store.getState().country.translator.t(
+                conversation.stored ?'REMOVE_CHAT_FROM_STORE':'STORE_CHAT'),
             clickHandler: () => {
                 store.dispatch(updateConversations(
                     [{...conversation, stored: !conversation.stored}]
@@ -102,23 +106,26 @@ class ControlMenuHelper {
 
     static toggleSilenceConversation(conversation) {
         return {
-            text: conversation.mutted.status ?
-                store.getState().country.translator.t('REMOVE_CHAT_SILENCE') :
-                store.getState().country.translator.t('SILENCE_CHAT'),
+            text: store.getState().country.translator.t(
+                conversation.mutted.status ?'REMOVE_CHAT_SILENCE':'SILENCE_CHAT'),
             clickHandler: () => {
                 if (conversation.mutted.status) {
                     store.dispatch(updateConversations([{...conversation, mutted: {status: false, expiration: 0}}]));
+                    store.dispatch(togglePopup(store.getState().country.translator.t('CHAT_SILENCE_REMOVED')))
                 } else {
                     let buttons = [
                         {
                             text: store.getState().country.translator.t('GENERAL_MUTE'),
-                            handler: () => store.dispatch(updateConversations([{
-                                ...conversation,
-                                mutted: {
-                                    status: true,
-                                    expiration: +new Date() + parseInt(store.getState().views.modalRadioOptions.selectedRadioValue)
-                                }
-                            }]))
+                            handler: () => {
+                                store.dispatch(updateConversations([{
+                                    ...conversation,
+                                    mutted: {
+                                        status: true,
+                                        expiration: +new Date() + parseInt(store.getState().views.modalRadioOptions.selectedRadioValue)
+                                    }
+                                }]));
+                                store.dispatch(togglePopup(store.getState().country.translator.t('CHAT_SILENCED')));
+                            }
                         }
                     ];
                     let options = [
@@ -162,20 +169,24 @@ class ControlMenuHelper {
 
     static togglePinConversation(conversation) {
         return {
-            text: conversation.pinned ?
-                store.getState().country.translator.t('REMOVE_CHAT_PIN') :
-                store.getState().country.translator.t('ADD_CHAT_PIN'),
-            clickHandler: () => store.dispatch(updateConversations(
-                [{...conversation, pinned: !conversation.pinned}]
-            ))
+            text: store.getState().country.translator.t(
+                conversation.pinned ? 'REMOVE_CHAT_PIN':'ADD_CHAT_PIN'),
+            clickHandler: () => {
+                store.dispatch(updateConversations(
+                    [{...conversation, pinned: !conversation.pinned}]
+                ));
+                store.dispatch(
+                    togglePopup(store.getState().country.translator.t(
+                        conversation.pinned ? 'CHAT_PIN_REMOVED':'CHAT_PIN_ADDED'))
+                );
+            }
         }
     }
 
     static toggleReadConversationStatus(conversation) {
         return {
-            text: !conversation.unreadMessages.status ?
-                store.getState().country.translator.t('MARK_AS_UNREADED') :
-                store.getState().country.translator.t('MARK_AS_READED'),
+            text: store.getState().country.translator.t(
+                !conversation.unreadMessages.status ?'MARK_AS_UNREADED':'MARK_AS_READED'),
             clickHandler: () => store.dispatch(updateConversations(
                 [{
                     ...conversation, unreadMessages: {
