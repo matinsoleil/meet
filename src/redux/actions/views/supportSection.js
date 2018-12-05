@@ -17,7 +17,7 @@ export const addSelectContact = createAction(ADD_SELELECTED_CONTACT);
 export const removeSelectedContact = createAction(REMOVE_SELECTED_CONTACT);
 
 export const Type = {
-    CREATE_GROUP: 'supportContactList/supportContactList.js',
-    FORWARD_MESSAGE: '',
-    CREATE_DIFFUSION_GROUP: ''
+    CREATE_GROUP: 'CREATE_GROUP',
+    FORWARD_MESSAGE: 'FORWARD_MESSAGE',
+    CREATE_DIFFUSION_GROUP: 'CREATE_DIFFUSION_GROUP'
 }

@@ -22,10 +22,15 @@ export default class DropMenu extends Component {
 
     render(){
         return(
-            <div ref={div=>{this.dropMenu=div}} className={`dropdown-content ${this.state.fixed}`} onClick={this.props.onClick}>
-                {this.props.optionsMenu.map((option,key)=>{
-                    return <a key={key} onClick={option.clickHandler}>{option.text}</a>
-                })}
+            <div ref={div=>{this.dropMenu=div}} className={`dropdown-content ${this.state.fixed}`} onClick={() => this.props.clickHandler()}>
+                {
+                    this.props.optionsMenu.map(
+                        (option, key) =>
+                            <a key={key} onClick={() => option.clickHandler()}>
+                                {option.text}
+                            </a>
+                    )
+                }
             </div>
         );
     }

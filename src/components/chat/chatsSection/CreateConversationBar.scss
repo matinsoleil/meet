@@ -55,23 +55,6 @@
       justify-content: space-between;
       padding: 10px 0 10px 0;
       z-index: 1;
-      a{
-        height: 27px;
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-        font-size: 16px;
-        font-weight: 400;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.44;
-        letter-spacing: 0.2px;
-        color: #323232;
-        user-select: none;
-        &:hover{
-          font-weight: 500;
-        }
-      }
     }
   }
 }

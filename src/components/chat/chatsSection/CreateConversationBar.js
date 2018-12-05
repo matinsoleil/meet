@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {toggleMenu} from '../../../redux/actions/views/createConversationBar';
+import DropMenu from "../../utils/dropMenu";
+import ControlMenuHelper from "../../../lib/helper/controlMenu";
 import './CreateConversationBar.scss';
 
 
@@ -8,27 +10,11 @@ class CreateConversationBar extends Component {
 
     constructor(props) {
         super(props);
-
-        this.optionsMenu = [
-            {
-                text: this.props.translator.t('NEW_CHAT'),
-                clickHandler: null
-            },
-            {
-                text: this.props.translator.t('NEW_GROUPAL_CHAT'),
-                clickHandler: null
-            },
-            {
-                text: this.props.translator.t('NEW_DIFFUSION_CHAT'),
-                clickHandler: null
-            }
-        ];
-
     }
 
     render() {
         return (
-            <div className="create-conversation-bar" onMouseLeave={() => this.props.toggleMenu(false)}>
+            <div ref={div=>{this.container=div}} className="create-conversation-bar" onMouseLeave={() => this.props.toggleMenu(false)}>
                 <div className="title">{this.props.translator.t('CHATS')}</div>
                 <div className="dropdown">
                     <button className="button" onClick={() => this.props.toggleMenu()}>
@@ -36,17 +22,23 @@ class CreateConversationBar extends Component {
                         <img alt="plus" className="plus" src={this.props.plus}/>
                     </button>
                     {this.props.isMenuOpened &&
-                        <div className="dropdown-content" onClick={() => this.props.toggleMenu()}>
-                            {
-                                this.optionsMenu.map(
-                                    (option, key) => <a key={key}  onClick={option.clickHandler}>{option.text}</a>
-                                )
-                            }
-                        </div>
+                        <DropMenu
+                            clickHandler={this.props.toggleMenu}
+                            container={this.container}
+                            optionsMenu={ this.makeOptionsMenu() }
+                        />
                     }
                 </div>
             </div>
         );
+    }
+
+    makeOptionsMenu () {
+        return [
+            ControlMenuHelper.createNewChat(),
+            ControlMenuHelper.createNewGroupalChat(),
+            ControlMenuHelper.createNewDiffusionChat()
+        ]
     }
 
 }
