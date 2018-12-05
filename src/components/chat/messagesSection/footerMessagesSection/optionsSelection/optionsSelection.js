@@ -5,6 +5,7 @@ import { deleteMessagesSelected } from '../../../../../redux/actions/messagesOpt
 import MessagesHelper from '../../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../../lib/helper/generateId';
 import { showModal,View } from '../../../../../redux/actions/modalBox/modalBox';
+import {Images} from "../../../../../redux/states/images";
 
 class OptionsSelection extends Component {
 
@@ -63,16 +64,16 @@ class OptionsSelection extends Component {
                     <IconButton
                         ref={iconButton => { this.link = iconButton }}
                         type={this.props.type} onClick={this.downloadFiles}
-                        className="download-icon" image={this.props.forward}
+                        className="download-icon" image={Images.forward}
                         name='Descargar' />
                 }
-                <IconButton onClick={() => { }} image={this.props.forward} name='Reenviar' />
+                <IconButton onClick={() => { }} image={Images.forward} name='Reenviar' />
                 <IconButton onClick={() => {
                     this.props.showModal(
                         this.modalModel.title, 
                         this.modalModel.buttons,
                         this.modalModel.viewPath);
-                }} image={this.props.trash} name='Eliminar' />
+                }} image={Images.trash} name='Eliminar' />
             </div>
         );
     }
@@ -93,8 +94,6 @@ const IconButton = React.forwardRef((props, ref) => {
 
 const mapStateToProps = state => {
     return {
-        forward: state.customizing.Images.forward,
-        trash: state.customizing.Images.trash,
         messages: state.messagesOptions.messages,
         contacts: state.contacts,
     }
