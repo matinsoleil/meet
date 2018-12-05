@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './ChatGeneralConversationContact.scss';
 import { connect } from 'react-redux';
 import Message from './Message';
-// import MessagesHelper from '../../../../lib/helper/messagesHelper';
 import { Images } from "../../../../redux/states/images";
 
 class ChatGeneralConversationContact extends Component {
@@ -23,7 +22,6 @@ class ChatGeneralConversationContact extends Component {
                             tailType={tailType}
                             user_icon={Images.image || Images.avatar}
                             contacts={[]}
-                            // contacts={props.contacts}
                             conversationId={this.props.messages.conversationID}
                         />
                     })
