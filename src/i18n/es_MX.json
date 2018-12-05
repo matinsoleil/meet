@@ -48,6 +48,12 @@
   "REMOVE_CHAT": "Eliminar chat",
   "STORE_CHAT": "Archivar chat",
   "REMOVE_CHAT_FROM_STORE": "Dejar de archivar chat",
+  "REPLY": "Responder",
+  "RESEND": "Reenviar",
+  "SELECT_SEVERAL": "Seleccionar mensajes",
+  "REMOVE": "Eliminar",
+
+  
   "REMOVE_CHAT_HISTORY": "Eliminar historial del chat",
   "GO_OUT_OF_GROUP": "Salir del grupo",
   "GENERAL_CANCEL": "Cancelar",

@@ -113,18 +113,17 @@ class Message extends Component {
     setOptionsMenu(options = null) {
         if (options) return this.optionsMenu = options;
 
-        const extraOptions = {
-            removeChatHistory: ControlMenuMessageHelper.removeChatHistory(this.props.conversation),
-            goOutOfGroup: ControlMenuMessageHelper.goOutOfGroup(this.props.conversation),
-            // removeChat: ControlMenuMessageHelper.removeChat(this.props.conversation)
-        };
+        // const extraOptions = {
+        //     removeChatHistory: ControlMenuMessageHelper.removeChatHistory(this.props.conversation),
+        //     goOutOfGroup: ControlMenuMessageHelper.goOutOfGroup(this.props.conversation),
+        //     // removeChat: ControlMenuMessageHelper.removeChat(this.props.conversation)
+        // };
 
         this.optionsMenu = [
-            ControlMenuMessageHelper.toggleStoreConversation(this.props.conversation),
-            ControlMenuMessageHelper.toggleSilenceConversation(this.props.conversation),
-            ControlMenuMessageHelper.togglePinConversation(this.props.conversation),
-            ControlMenuMessageHelper.toggleReadConversationStatus(this.props.conversation)
-
+            ControlMenuMessageHelper.toggleReplyMessage(this.props.conversation, this.props.messageObject ),
+            ControlMenuMessageHelper.toggleResendMessage(this.props.conversation, this.props.messageObject),
+            ControlMenuMessageHelper.toggleSelectSeveralMessage(this.props.conversation, this.props.messageObject),
+            ControlMenuMessageHelper.toggleRemoveMessage(this.props.conversation, this.props.messageObject),
         ];
     }
 
