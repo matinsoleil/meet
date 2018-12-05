@@ -47,6 +47,8 @@
   "REMOVE_CHAT_PIN": "Dejar de fijar chat",
   "REMOVE_CHAT": "Eliminar chat",
   "STORE_CHAT": "Archivar chat",
+  "CHAT_STORED": "Archivaste el chat",
+  "CHAT_REMOVED": "Desarchivaste el chat",
   "REMOVE_CHAT_FROM_STORE": "Dejar de archivar chat",
   "REMOVE_CHAT_HISTORY": "Eliminar historial del chat",
   "GO_OUT_OF_GROUP": "Salir del grupo",

@@ -38,7 +38,7 @@ class ControlMenuHelper {
                         text: store.getState().country.translator.t('GENERAL_DELETE'),
                         handler: () => {
                             store.dispatch(removeConversations([conversation]));
-                            store.dispatch(togglePopup(store.getState().country.translator.t('YOU_DELETED_THE_CHAT_WITH',{name:conversation.name}),5000000));
+                            store.dispatch(togglePopup(store.getState().country.translator.t('YOU_DELETED_THE_CHAT_WITH',{name:conversation.name})));
                         }
                     }
                 ],
@@ -86,11 +86,16 @@ class ControlMenuHelper {
     static toggleStoreConversation (conversation) {
         return {
             text: conversation.stored ?
-                store.getState().country.translator.t('REMOVE_CHAT_FROM_STORE') : 
+                store.getState().country.translator.t('REMOVE_CHAT_FROM_STORE') :
                 store.getState().country.translator.t('STORE_CHAT'),
-            clickHandler: () => store.dispatch(updateConversations(
-                [{...conversation, stored: !conversation.stored}]
-            ))
+            clickHandler: () => {
+                store.dispatch(updateConversations(
+                    [{...conversation, stored: !conversation.stored}]
+                ));
+                store.dispatch(togglePopup(store.getState().country.translator.t(
+                    (!conversation.stored) ? 'CHAT_STORED':'CHAT_REMOVED'
+                )));
+            }
         }
     }
 
