@@ -26,6 +26,6 @@ const mapStateToProps = (state) => {
         groupsSection: getGroupsSection(state),
         contacts: getContacts(state)
     }
-}
+};
 
 export default connect(mapStateToProps)(SupportContactList);

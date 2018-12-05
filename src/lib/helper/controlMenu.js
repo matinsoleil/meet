@@ -25,8 +25,8 @@ const timesToMuteInMillis = {
 };
 
 class ControlMenuHelper {
-    
-    static removeChat (conversation) {
+
+    static removeChat(conversation) {
         return {
             text: store.getState().country.translator.t('REMOVE_CHAT'),
             clickHandler: () => store.dispatch(configureModalConfirm({
@@ -40,12 +40,12 @@ class ControlMenuHelper {
                     }
                 ],
                 cancelButton: true,
-                visible: true 
+                visible: true
             }))
         }
     }
 
-    static goOutOfGroup (conversation) {
+    static goOutOfGroup(conversation) {
         return {
             text: store.getState().country.translator.t('GO_OUT_OF_GROUP'),
             clickHandler: () => store.dispatch(configureModalConfirm({
@@ -57,12 +57,12 @@ class ControlMenuHelper {
                     }
                 ],
                 cancelButton: true,
-                visible: true 
+                visible: true
             }))
         }
     }
 
-    static removeChatHistory (conversation) {
+    static removeChatHistory(conversation) {
         return {
             text: store.getState().country.translator.t('REMOVE_CHAT_HISTORY'),
             clickHandler: () => store.dispatch(configureModalConfirm({
@@ -71,19 +71,20 @@ class ControlMenuHelper {
                     {
                         text: store.getState().country.translator.t('GENERAL_DELETE'),
                         //TODO: add remove history handler
-                        handler: () => {}
+                        handler: () => {
+                        }
                     }
                 ],
                 cancelButton: true,
-                visible: true 
+                visible: true
             }))
         }
     }
 
-    static toggleStoreConversation (conversation) {
+    static toggleStoreConversation(conversation) {
         return {
             text: conversation.stored ?
-                store.getState().country.translator.t('REMOVE_CHAT_FROM_STORE') : 
+                store.getState().country.translator.t('REMOVE_CHAT_FROM_STORE') :
                 store.getState().country.translator.t('STORE_CHAT'),
             clickHandler: () => store.dispatch(updateConversations(
                 [{...conversation, stored: !conversation.stored}]
@@ -91,61 +92,70 @@ class ControlMenuHelper {
         }
     }
 
-    static toggleSilenceConversation (conversation) {
+    static toggleSilenceConversation(conversation) {
         return {
             text: conversation.mutted.status ?
-                store.getState().country.translator.t('REMOVE_CHAT_SILENCE') : 
+                store.getState().country.translator.t('REMOVE_CHAT_SILENCE') :
                 store.getState().country.translator.t('SILENCE_CHAT'),
             clickHandler: () => {
-                conversation.mutted.status ? 
-                    null : 
+                if (conversation.mutted.status) {
+                    store.dispatch(updateConversations([{...conversation, mutted: {status: false, expiration: 0}}]));
+                } else {
+                    let buttons = [
+                        {
+                            text: store.getState().country.translator.t('GENERAL_MUTE'),
+                            handler: () => store.dispatch(updateConversations([{
+                                ...conversation,
+                                mutted: {
+                                    status: true,
+                                    expiration: +new Date() + parseInt(store.getState().views.modalRadioOptions.selectedRadioValue)
+                                }
+                            }]))
+                        }
+                    ];
+                    let options = [
+                        {
+                            text: store.getState().country.translator.t('GENERAL_MINUTES', {
+                                minutes: timesToMute.minutes
+                            }),
+                            value: timesToMuteInMillis.minutes,
+                            default: true,
+                        },
+                        {
+                            text: store.getState().country.translator.t('GENERAL_HOUR'),
+                            value: timesToMuteInMillis.hour,
+                        },
+                        {
+                            text: store.getState().country.translator.t('GENERAL_HOURS', {hours: timesToMute.hours}),
+                            value: timesToMuteInMillis.hours,
+                        },
+                        {
+                            text: store.getState().country.translator.t('GENERAL_WEEK'),
+                            value: timesToMuteInMillis.week,
+                        },
+                        {
+                            text: store.getState().country.translator.t('GENERAL_YEAR'),
+                            value: timesToMuteInMillis.year,
+                        }
+                    ];
+
                     store.dispatch(configureModalRadioOptions({
                         title: store.getState().country.translator.t('MUTE_WHILE'),
-                        buttons: [
-                            {
-                                text: store.getState().country.translator.t('GENERAL_MUTE'),
-                                handler: (options) => {
-                                    console.log(options)
-                                }
-                            }
-                        ],
-                        options: [
-                            {
-                                text: store.getState().country.translator.t('GENERAL_MINUTES', { minutes: timesToMute.minutes }),
-                                value: timesToMuteInMillis.minutes,
-                                default: true,
-                            },
-                            {
-                                text: store.getState().country.translator.t('GENERAL_HOUR'),
-                                value: timesToMuteInMillis.hour,
-                            },
-                            {
-                                text: store.getState().country.translator.t('GENERAL_HOURS', {hours: timesToMute.hours}),
-                                value: timesToMuteInMillis.hours,
-                            },
-                            {
-                                text: store.getState().country.translator.t('GENERAL_WEEK'),
-                                value: timesToMuteInMillis.week,
-                            },
-                            {
-                                text: store.getState().country.translator.t('GENERAL_YEAR'),
-                                value: timesToMuteInMillis.year,
-                            }
-                        ],
+                        buttons: buttons,
+                        options: options,
                         cancelButton: true,
-                        visible: true 
-                    }))
+                        visible: true,
+                        selectedRadioValue: options.filter(option => option.default)[0].value
+                    }));
+                }
             }
-            /*() => this.props.updateConversations(
-                [{...this.props.conversation, mutted: !this.props.conversation.mutted}]
-            )*/
         }
     }
 
-    static togglePinConversation (conversation) {
+    static togglePinConversation(conversation) {
         return {
             text: conversation.pinned ?
-                store.getState().country.translator.t('REMOVE_CHAT_PIN') : 
+                store.getState().country.translator.t('REMOVE_CHAT_PIN') :
                 store.getState().country.translator.t('ADD_CHAT_PIN'),
             clickHandler: () => store.dispatch(updateConversations(
                 [{...conversation, pinned: !conversation.pinned}]
@@ -153,16 +163,18 @@ class ControlMenuHelper {
         }
     }
 
-    static toggleReadConversationStatus (conversation) {
+    static toggleReadConversationStatus(conversation) {
         return {
             text: !conversation.unreadMessages.status ?
-                store.getState().country.translator.t('MARK_AS_UNREADED') : 
+                store.getState().country.translator.t('MARK_AS_UNREADED') :
                 store.getState().country.translator.t('MARK_AS_READED'),
             clickHandler: () => store.dispatch(updateConversations(
-                [{...conversation, unreadMessages: {
+                [{
+                    ...conversation, unreadMessages: {
                         status: !conversation.unreadMessages.status,
                         messages: null
-                }}]
+                    }
+                }]
             ))
         }
     }

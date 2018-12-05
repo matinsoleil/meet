@@ -15,7 +15,6 @@ export const View = {
     SILENCE_CONVERSATION: 'contact/SilenceConversation',
 }
 
-
 const setButtons = (buttons) => {
     return {
         type: modalActions.SET_BUTTONS,

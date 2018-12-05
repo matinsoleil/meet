@@ -3,6 +3,7 @@ import Modal from './Modal';
 import { ModalContainer } from './ModalContainer';
 import { connect } from 'react-redux';
 import { configureModalRadioOptions } from '../../redux/actions/views/modalRadioOptions';
+import { defaultValues as modalDataReset } from '../../redux/reducers/views/modalRadioOptions';
 
 import './Modal.scss';
 
@@ -27,18 +28,18 @@ class ModalRadioOptions extends Modal {
     }
 
     closeModal(){
-        this.props.configureModalRadioOptions({...this.props.modalRadioOptions, visible: false})
+        this.props.configureModalRadioOptions(modalDataReset);
     }
 
-    handleRadioChange(event){
-        this.setState({ selectedRadio: event.target.value }, () => { console.log(this.state) })
+    handleRadioChange(radio){
+        this.props.configureModalRadioOptions({...this.props.modalRadioOptions, selectedRadioValue: radio.value });
     }
 
     buildRadioOptions (configuration) {
         return configuration.options.map((option, id) => 
             <label key={id} className={'radio-container'}>
                 {option.text}
-                <input type="radio" onChange={this.handleRadioChange} defaultChecked={option.default} name={'radio-option'} value={option.value} />
+                <input type="radio" onChange={() => this.handleRadioChange(option)} defaultChecked={option.default} name={'radio-option'} value={option.value} />
                 <span className={'checkmark'}></span>
             </label>
         );
