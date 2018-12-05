@@ -8,7 +8,7 @@ class Modal extends Component {
 
     buildOptionButtons (configuration) {
         let specifiedOptions =  configuration.buttons.map((button, id) => 
-            <a key={id} onClick={() => {button.handler(this.state); this.closeModal()}}>
+            <a key={id} onClick={() => {button.handler(); this.closeModal()}}>
                 {button.text}
             </a>
         );

@@ -3,6 +3,7 @@ import Modal from './Modal';
 import { ModalContainer } from './ModalContainer';
 import { connect } from 'react-redux';
 import { configureModalConfirm } from '../../redux/actions/views/modalConfirm';
+import { defaultValues as modalDataReset } from "../../redux/reducers/views/modalConfirm";
 
 import './Modal.scss'
 
@@ -24,7 +25,7 @@ class ModalConfirm extends Modal {
     }
 
     closeModal(){
-        this.props.configureModalConfirm({...this.props.modalConfirm, visible: false})
+        this.props.configureModalConfirm(modalDataReset);
     }
 
 }
