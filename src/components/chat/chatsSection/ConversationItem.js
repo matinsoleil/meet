@@ -3,7 +3,6 @@ import TimeFromNow from './TimeFromNow';
 import {connect} from 'react-redux';
 import {Images} from "../../../redux/states/images";
 import DropMenu from "../../utils/dropMenu";
-import {updateConversations, removeConversations} from "../../../redux/actions/conversations/conversations";
 import './ConversationItem.scss';
 import ControlMenuHelper from '../../../lib/helper/controlMenu';
 

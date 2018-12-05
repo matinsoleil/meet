@@ -1,7 +1,7 @@
 import {handleActions} from 'redux-actions';
 import {ActionTypes} from "../../actionstypes/index";
 
-const defaultValues = {
+export const defaultValues = {
     title: null,
     buttons: [],
     cancelButton: false,
