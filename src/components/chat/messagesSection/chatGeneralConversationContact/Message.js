@@ -8,6 +8,10 @@ import FileMessage from './messagesTypes/fileMessage';
 import MapPosition from './../../../../lib/helper/mapPosition';
 import { filterMessages } from '../../../../redux/actions/messagesOptions/messagesOptions';
 import { Images } from "../../../../redux/states/images";
+import DropMenu from "../../../utils/dropMenu";
+import ControlMenuMessageHelper from '../../../../lib/helper/controlMenuMessage';
+
+
 class Message extends Component {
 
     constructor(props) {
@@ -17,6 +21,7 @@ class Message extends Component {
             blockedMenu: false,
             isMenuOpened: false
         }
+        this.setOptionsMenu();
     }
 
     // componentDidMount() {
@@ -28,6 +33,10 @@ class Message extends Component {
     //     this.bubble.removeEventListener('mouseenter', this.toggleMenu(!this.state.isMenuOpened));
     //     this.bubble.removeEventListener('mouseleave', this.toggleMenu(!this.state.isMenuOpened));
     // }
+
+    componentDidUpdate() {
+        this.setOptionsMenu();
+    }
 
     showDots = () => {
         (!this.props.multiSelect && !this.props.messageSelected) ?
@@ -62,7 +71,7 @@ class Message extends Component {
         let { type, tail, tailType, user_icon } = this.props;
         if (message.type) message.hour = hour;
         return (
-            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row" onClick={() => this.toggleMenu(!this.state.isMenuOpened)} >
+            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row" >
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
                     <div className={`message-wrapper ${(message.type) ? (message.type === '3') ? 'file-message' : 'no-text' : ''}`}>
@@ -75,21 +84,19 @@ class Message extends Component {
                         </div>
                     </div>
 
+                    <div className="menu-wrapper-message">
+                        <img onClick={() => this.toggleMenu(!this.state.isMenuOpened)} ref={img => { this.dots = img }} className="dots-menu-message" src={Images.dots_menu} alt="" />
+                    </div>
 
-                    {/* <div className="dots-menu-message" onClick={() => this.toggleMenu(!this.state.isMenuOpened)}>
-                        <img src={Images.dots_menu} alt="Options"/>
-                    </div> */}
                     {
-                        this.state.isMenuOpened && 
-                        <DotsMenu conversationId={this.props.conversation.id} 
-                                  blockView={this.blockView} 
-                                  contacts={this.props.contacts} 
-                                  showDots={this.showDots} 
-                                  display={this.state.menuState} 
-                                  id={id} 
-                                  type={type} 
-                                  selectable={this.state.selectable} />
+                        this.state.isMenuOpened &&
+                        <DropMenu
+                            onClick={() => this.toggleMenu(!this.state.isMenuOpened)}
+                            container={this.row}
+                            optionsMenu={this.optionsMenu}
+                        />
                     }
+
                 </div>
                 {(this.props.multiSelect)
                     &&
@@ -100,6 +107,25 @@ class Message extends Component {
 
             </div>
         );
+    }
+
+
+    setOptionsMenu(options = null) {
+        if (options) return this.optionsMenu = options;
+
+        const extraOptions = {
+            removeChatHistory: ControlMenuMessageHelper.removeChatHistory(this.props.conversation),
+            goOutOfGroup: ControlMenuMessageHelper.goOutOfGroup(this.props.conversation),
+            // removeChat: ControlMenuMessageHelper.removeChat(this.props.conversation)
+        };
+
+        this.optionsMenu = [
+            ControlMenuMessageHelper.toggleStoreConversation(this.props.conversation),
+            ControlMenuMessageHelper.toggleSilenceConversation(this.props.conversation),
+            ControlMenuMessageHelper.togglePinConversation(this.props.conversation),
+            ControlMenuMessageHelper.toggleReadConversationStatus(this.props.conversation)
+
+        ];
     }
 
     MessageContent = (message, id, contacts) => {
@@ -142,7 +168,7 @@ class Message extends Component {
     }
 
     toggleMenu(status) {
-        this.setState({isMenuOpened: status});
+        this.setState({ isMenuOpened: status });
     }
 }
 

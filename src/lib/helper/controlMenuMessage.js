@@ -82,12 +82,12 @@ class ControlMenuMessageHelper {
 
     static toggleStoreConversation (conversation) {
         return {
-            text: store.getState().country.translator.t('STORE_CHAT'),
-            // clickHandler: () => store.dispatch(updateConversations(
-            //     [{...conversation, stored: !conversation.stored}]
-            // )
-
-            clickHandler: () => null
+            text: conversation.stored ?
+                store.getState().country.translator.t('REMOVE_CHAT_FROM_STORE') : 
+                store.getState().country.translator.t('STORE_CHAT'),
+            clickHandler: () => store.dispatch(updateConversations(
+                [{...conversation, stored: !conversation.stored}]
+            ))
         }
     }
 
