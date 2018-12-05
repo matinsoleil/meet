@@ -27,7 +27,7 @@ class ConversationItem extends Component {
 
     render() {
         return (
-            <li ref={li => this.row = li} className='conversation-item' onMouseLeave={() => this.toggleMenu(false)}>
+            <li ref={li => this.row = li} className='conversation-item' onClick={this.props.clickItemHandler} onMouseLeave={() => this.toggleMenu(false)}>
 
                 <div className="image">
                     <img src={this.props.conversation.image || Images.avatar} alt="Conversation Image"/>
