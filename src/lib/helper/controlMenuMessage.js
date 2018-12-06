@@ -1,6 +1,6 @@
 import { store } from '../../redux/store/index';
 import { configureModalConfirm } from '../../redux/actions/views/modalConfirm';
-import { deleteMessage } from '../../redux/actions/messages/messages';
+import { updateMessage } from '../../redux/actions/messages/messages';
 
 class ControlMenuMessageHelper {
 
@@ -35,7 +35,7 @@ class ControlMenuMessageHelper {
                         text: store.getState().country.translator.t('GENERAL_DELETE'),
                         handler: () => {
                             message.message= store.getState().country.translator.t('YOU_DELETED_THIS_CHAT');
-                            store.dispatch(deleteMessage(message));
+                            store.dispatch(updateMessage(message));
                         }
                     }
                 ],

@@ -24,16 +24,14 @@ const actionHandlersMap = new Map([
     [
         ActionTypes.DELETE_MESSAGE,
         (state, action) => {
-            return state.filter(messages => ((messages.id !== action.payload.messageId)))
+            return state.filter(messages => !action.payload.includes(messages))
         },
-
+    ],
+    [
         ActionTypes.UPDATE_MESSAGE,
         (state, action) => {
-            // conversation => action.payload.filter(updated => conversation.id === updated.id)[0] || conversation
-            // return state.filter(messages => ((messages.id !== action.payload.messageId)))
-            return [...state];
+            return state.filter(messages => ((messages.id !== action.payload.messageId)))
         }
-
     ],
 
 ]);

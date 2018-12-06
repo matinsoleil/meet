@@ -21,9 +21,11 @@ export const addMessage = createAction(ActionTypes.ADD_MESSAGE, (message) => {
 );
 
 export const updateMessage = createAction(ActionTypes.UPDATE_MESSAGE, (message) => {
-    // db.storage.add(Database.tables.messages, message);
+    let key = message.id
+    let param = { message: message.message }
+    db.storage.findOneAndRemove(Database.tables.messages, key, param);
     return { message };
-    }
+}
 );
 
 export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (message) => {
