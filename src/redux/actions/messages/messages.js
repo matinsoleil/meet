@@ -8,11 +8,7 @@ export const fetchMessages = createAction(ActionTypes.FETCH_MESSAGES, () => {
 }
 );
 
-export const addMessages = createAction(ActionTypes.ADD_MESSAGES, (messages) => {
-    // db.storage.addRows(Database.tables.messages, messages);
-    return { messages };
-}
-);
+export const addMessages = createAction(ActionTypes.ADD_MESSAGES);
 
 export const addMessage = createAction(ActionTypes.ADD_MESSAGE, (message) => {
     db.storage.add(Database.tables.messages, message);
