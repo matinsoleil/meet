@@ -1,13 +1,16 @@
 import { store } from '../../redux/store/index';
 import { configureModalConfirm } from '../../redux/actions/views/modalConfirm';
-import { deleteMessage } from '../../redux/actions/messages/messages';
+import { updateMessage } from '../../redux/actions/messages/messages';
+import { messageSelected } from '../../redux/actions/messagesOptions/messagesOptions';
+
 
 class ControlMenuMessageHelper {
 
     static toggleReplyMessage(conversation, message) {
         return {
             text: store.getState().country.translator.t('REPLY'),
-            clickHandler: () => null
+            // clickHandler: () => alert(" ideas ")
+            clickHandler: () => store.dispatch(messageSelected(message.id, true))
         }
     }
 
@@ -25,7 +28,7 @@ class ControlMenuMessageHelper {
         }
     }
 
-    static toggleRemoveMessage(conversation, message) {
+    static toggleRemoveMessage(message) {
         return {
             text: store.getState().country.translator.t('REMOVE'),
             clickHandler: () => store.dispatch(configureModalConfirm({
@@ -34,7 +37,8 @@ class ControlMenuMessageHelper {
                     {
                         text: store.getState().country.translator.t('GENERAL_DELETE'),
                         handler: () => {
-                            store.dispatch(deleteMessage(conversation.id, message.id));
+                            message.message= store.getState().country.translator.t('YOU_DELETED_THIS_CHAT');
+                            store.dispatch(updateMessage(message));
                         }
                     }
                 ],

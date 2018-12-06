@@ -16,8 +16,16 @@ export const addMessage = createAction(ActionTypes.ADD_MESSAGE, (message) => {
 }
 );
 
-export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (conversationId, messageId) => {
-    db.storage.findKeyAndRemove(Database.tables.messages, messageId);
-    return { conversationId, messageId };
+export const updateMessage = createAction(ActionTypes.UPDATE_MESSAGE, (message) => {
+    let key = message.id
+    let param = { message: message.message }
+    db.storage.findOneAndRemove(Database.tables.messages, key, param);
+    return { message };
+}
+);
+
+export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (message) => {
+    // db.storage.findKeyAndRemove(Database.tables.messages, messageId);
+    return { message };
 }
 );

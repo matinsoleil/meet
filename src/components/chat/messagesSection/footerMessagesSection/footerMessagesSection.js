@@ -140,11 +140,12 @@ class FooterMessagesSection extends Component {
     }
 
     render() {
+
         return (
             <footer className='footer-messages-section'>
                 {(this.props.messageSelected && !this.props.multiSelect) &&
                     <div className='hideable-holder'>
-                        <ReplyOptions setMessage={this.setMessageToReply} messageObject={MessagesHelper.getMessageById(this.conversation.conversation, this.props.messageSelected)} />
+                        <ReplyOptions setMessage={this.setMessageToReply} messageObject={MessagesHelper.getMessageById(this.props.messages, this.props.messageSelected)} />
                     </div>
                 }
                 {
@@ -184,7 +185,7 @@ class FooterMessagesSection extends Component {
     }
 }
 
-const mapStateToProps = ({ conversation, messagesOptions, contact, user, server }) => {
+const mapStateToProps = ({ conversation, messagesOptions, contact, user, server, messages }) => {
     return {
         conversation: conversation,
         messageSelected: messagesOptions.messageSelected,
@@ -192,6 +193,7 @@ const mapStateToProps = ({ conversation, messagesOptions, contact, user, server 
         contact: contact,
         user: user,
         server: server,
+        messages: messages,
     }
 }
 

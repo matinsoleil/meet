@@ -107,7 +107,7 @@ class Message extends Component {
             ControlMenuMessageHelper.toggleReplyMessage(this.props.conversation, this.props.messageObject),
             ControlMenuMessageHelper.toggleResendMessage(this.props.conversation, this.props.messageObject),
             ControlMenuMessageHelper.toggleSelectSeveralMessage(this.props.conversation, this.props.messageObject),
-            ControlMenuMessageHelper.toggleRemoveMessage(this.props.conversation, this.props.messageObject),
+            ControlMenuMessageHelper.toggleRemoveMessage(this.props.messageObject),
         ];
     }
 
@@ -142,9 +142,7 @@ class Message extends Component {
                     <FileMessage id={id} message={message} />
                 );
             case "4":
-                return (
-                    <ReplyMessage contacts={contacts} message={message} senderId={message.toWhoReply} />
-                );
+                return (<ReplyMessage contacts={contacts} message={message} senderId={message.toWhoReply} />);
             default:
                 return <div></div>;
         }

@@ -92,10 +92,12 @@ class IndexedDbDriver {
      */
     // findOneAndRemove(table, condition){
 
-    findOneAndRemove(table, condition) {
-        // return this.findWhere(table, condition).delete();
-        return this.findOne(table, condition).delete();;
+    findOneAndRemove(table, key, param) {
+        return this._db[table].where(":id").equals(key).modify(param);
     }
+
+
+    
 
     /**
      * Create a new object in a specified table
