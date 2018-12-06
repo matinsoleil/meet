@@ -25,7 +25,7 @@ class IndexedDbDriver {
      * @returns {Promise}
      */
     find(table, condition) {
-        return this._db[table].get(condition).toArray();
+        return this._db[table].where(condition).toArray();
     }
 
     /**
