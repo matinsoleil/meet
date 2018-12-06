@@ -1,4 +1,4 @@
-import { SHOW_MULTI_SELECT_MESSAGES, ADD_MESSAGE, SELECT_MESSAGE, REMOVE_MESSAGE, MESSAGE_SELECTED, CANCEL_MULTI_SELECT } from "../../actionstypes";
+import { SHOW_MULTI_SELECT_MESSAGES, ADD_MESSAGE, SELECT_MESSAGE, REMOVE_MESSAGE, MESSAGE_SELECTED, CANCEL_MULTI_SELECT, SET_IMAGE_DASH_BOARD, GET_IMAGE_DASH_BOARD } from "../../actionstypes";
 import { deleteMessage } from "../conversation/fetchConversation";
 
 export const multiSelectState = state => dispatch => {
@@ -31,6 +31,21 @@ export const messageSelected = (messageId,state=false) => {
         state: state
     }
 }
+
+export const imageDashBoard = (srcImage)=> dispatch => {
+    dispatch( {
+         type: SET_IMAGE_DASH_BOARD,
+         payload: srcImage
+        })
+}
+
+export const getImageDashBoard = (pass)=> dispatch => {
+    dispatch( {
+         type: GET_IMAGE_DASH_BOARD,
+         payload: pass
+        })
+}
+
 
 const addMessage = messageId => {
     return {

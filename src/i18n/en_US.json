@@ -475,5 +475,7 @@
   "PLAN_PAYMENT_METHOD": "Método de pago: <strong>$1</strong>",
   "PLAN_WELCOME_WITH_FAMILY": "Tu Plan $1GB + Plan familiar gratis ya está activo",
   "ADD_FAMILY": "AGREGAR FAMILIARES",
-  "START_ENJOY": "EMPIEZA A DISFRUTAR"
+  "START_ENJOY": "EMPIEZA A DISFRUTAR",
+  "Close":"Close",
+  "END":"TERMINATE"
 }

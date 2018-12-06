@@ -1,0 +1,36 @@
+.moreOptions{
+     position: absolute;
+     bottom: 50px;
+     width: 250px;
+     height: auto;
+     float:right;
+     color: #353535;
+     z-index: 500 !important;
+     padding-right:20px;
+     padding-left:20px;
+     padding-top:8px;
+     padding-bottom: 8px;
+     border-radius: 10px 10px 10px 10px;
+     -moz-border-radius: 10px 10px 10px 10px;
+     -webkit-border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+     border: solid 1px #d2d2d2;
+     background-color: #f2f2f2;
+     margin-right: 6px;
+}
+
+.moreOption{
+    height: 23px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.44;
+    letter-spacing: 0.2px;
+    color: #323232;
+    margin-bottom: 4px;
+    margin-right: 15px;
+    top:0px;
+    bottom:0px;
+}

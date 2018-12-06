@@ -32,4 +32,8 @@ export const Images = {
     'check_mark_uncheck':require('./../../img/check-mark-uncheck.svg'),
     'play_icon':require('./../../img/play-icon.svg'),
     'pause_icon':require('./../../img/pause-icon.svg'),
+    'reply_icon':require('./../../img/ic-reply-message.png'),
+    'canvas_icon':require('./../../img/image-a.png'),
+    'erase_icon':require('./../../img/erase-gum.png'),
+    'pen_icon':require('./../../img/ic-pen-tool.png'),
 }

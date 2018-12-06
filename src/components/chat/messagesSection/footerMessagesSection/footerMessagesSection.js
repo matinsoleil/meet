@@ -7,6 +7,7 @@ import OptionSelection from './optionsSelection/optionsSelection';
 import MessagesHelper from '../../../../lib/helper/messagesHelper';
 import GenerateId from '../../../../lib/helper/generateId';
 import ReplyOptions from './replyOptions/replyOptions';
+import MoreOptions from './moreOptions/moreOptions';
 import $ from 'jquery'
 import './footerMessagesSection.scss';
 
@@ -22,8 +23,15 @@ class FooterMessagesSection extends Component {
             plusState: true,
             messageToReply: "",
             showRecording: false,
+            showOptions: false
         }
         this.idMessage = "00000";
+        this.conversationId = (this.props.conversation.length > 0) && MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations).id;
+        this.userId = this.props.user.id;
+        this.messageId = GenerateId.generate();
+        this.contact = this.props.contact;
+      
+       
     }
 
     componentDidUpdate() {
@@ -32,6 +40,7 @@ class FooterMessagesSection extends Component {
         (this.props.multiSelect || this.props.messageSelected) && document.addEventListener('keyup', this.cancelMultiSelection);
         (!this.props.multiSelect && !this.props.messageSelected) && document.removeEventListener('keyup', this.cancelMultiSelection);
         this.conversation = (this.props.conversation.length > 0) && MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations);
+        this.conversationId = this.conversation.id;
         let cnv = this.conversation;
         if(cnv!==undefined){    
          if(oneSocket===undefined){  
@@ -82,6 +91,11 @@ class FooterMessagesSection extends Component {
             });
         }
         this.scrollDown();
+    }
+
+    getConversationId = () =>{
+        this.conversation = (this.props.conversation.length > 0) && MessagesHelper.getConversation(this.props.conversation, this.props.contact.conversations);
+        return this.conversation.id;
     }
 
     sendMessage = (message) => {
@@ -147,6 +161,30 @@ class FooterMessagesSection extends Component {
         });
     }
 
+    showMoreOptions =() =>{
+
+       
+
+       if(this.state.showOptions){
+        this.setState(
+            {showOptions : false
+           
+       
+            }
+          )
+       }else{
+        this.setState(
+            {
+            showOptions : true
+          
+            }
+          )
+       }
+       
+    }
+
+
+
     render() {
         return (
             <footer className='footer-messages-section'>
@@ -163,8 +201,9 @@ class FooterMessagesSection extends Component {
                                 MessagesHelper.getMessageById(this.conversation.conversation, this.props.messageSelected).message.type
                             } /> : (!this.state.showRecording) ?
                             <div className='data-input'>
-                                <div role="button" className="icon">
-                                    <img src={this.props.plus} alt="" />
+                                <div role="button" className="icon" >
+                                    <img src={this.props.plus} alt="" onClick={this.showMoreOptions} />
+                                     <MoreOptions onClick={this.showMoreOptions} showMore={this.state.showOptions} contact={this.contact} message={this.messageId}  conversation = {this.conversationId} user={this.userId} />
                                 </div>
                                 <div role="button" onClick={() => { (this.state.clipState) && $(this.fileChooser).trigger('click'); }} className="icon">
                                     <img src={this.props.clip} alt="" />
@@ -205,6 +244,7 @@ const mapStateToProps = state => {
         contact: state.contact,
         user: state.users,
         server: state.server,
+        showOptions: state.showOptions
     }
 }
 

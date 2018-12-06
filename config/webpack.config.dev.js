@@ -28,7 +28,8 @@ const env = getClientEnvironment(publicUrl);
 module.exports = {
   externals:{
     'ICenterSDK':'ICenterSDK',
-    'Recorder':'Recorder'
+    'Recorder':'Recorder',
+    'ColorPicker':'ColorPicker'
   },
   // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
   // See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.

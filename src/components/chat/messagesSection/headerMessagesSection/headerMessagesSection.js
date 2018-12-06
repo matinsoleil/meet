@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './headerMessagesSection.scss';
 class headerMessagesSection extends Component {
     render() {
-
-        console.log(this.props.contactsIds)
         return (
             <header className='header-messages-section'>
                 <span className='title' >{this.props.chatName}</span>
@@ -23,7 +21,7 @@ const Members = (props) => {
     var flag = ""
      return props.members.map(
         member => {
-            flag == "" ? cdn = "" : cdn = "," 
+            flag === "" ? cdn = "" : cdn = "," 
             flag = ","
             return <span key= { member.id }>  {cdn}  { member.name}</span>
         }

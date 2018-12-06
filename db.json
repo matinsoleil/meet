@@ -216,6 +216,307 @@
       "message": "TypeError: Cannot read property 'bind' of undefined",
       "detail": "\n    in HeaderGroupSection (created by Connect(HeaderGroupSection))\n    in Connect(HeaderGroupSection) (at GroupSectionContainer.js:17)\n    in div (at GroupSectionContainer.js:16)\n    in GroupSectionContainer (created by Connect(GroupSectionContainer))\n    in Connect(GroupSectionContainer) (at RightSection.js:11)\n    in div (at RightSection.js:10)\n    in RightSection (at ChatContainer.js:52)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
       "id": 4
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542392579,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 5
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542392655,
+      "message": "ReferenceError: props is not defined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 6
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542392748,
+      "message": "ReferenceError: props is not defined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 7
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542394750,
+      "message": "TypeError: console.logs is not a function",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 8
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542394964,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 9
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542395011,
+      "message": "ReferenceError: props is not defined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 10
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542405300,
+      "message": "ReferenceError: color is not defined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 11
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542409578,
+      "message": "TypeError: this.lineWeight.map is not a function",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 12
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542410155,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 13
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542410343,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 14
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542412709,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 15
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542416061,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 16
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542728047,
+      "message": "Invariant Violation: MoreOptions(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.",
+      "detail": "\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:176)\n    in div (at footerMessagesSection.js:174)\n    in div (at footerMessagesSection.js:173)\n    in footer (at footerMessagesSection.js:160)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 17
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542732968,
+      "message": "TypeError: Cannot read property 'onShowMore' of undefined",
+      "detail": "\n    in Connect(MoreOptions) (at footerMessagesSection.js:185)\n    in div (at footerMessagesSection.js:183)\n    in div (at footerMessagesSection.js:182)\n    in footer (at footerMessagesSection.js:169)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 18
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542744247,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 19
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542751383,
+      "message": "TypeError: Cannot read property 'id' of undefined",
+      "detail": "\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 20
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542756624,
+      "message": "TypeError: _this.props.getConversationId is not a function",
+      "detail": "\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:202)\n    in div (at footerMessagesSection.js:200)\n    in div (at footerMessagesSection.js:199)\n    in footer (at footerMessagesSection.js:186)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 21
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1542997894,
+      "message": "TypeError: Cannot read property 'close_icon' of undefined",
+      "detail": "\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 22
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1543257092,
+      "message": "TypeError: Cannot set property 'innerHTML' of null",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 23
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1543261524,
+      "message": "TypeError: this.ColorPicker is not a function",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 24
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1543276248,
+      "message": "ReferenceError: color is not defined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 25
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1543337407,
+      "message": "TypeError: this.onHold.bind is not a function",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 26
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1543966949,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in DashColors (created by Connect(DashColors))\n    in Connect(DashColors) (at DashBoard.js:504)\n    in div (at DashBoard.js:503)\n    in div (at DashBoard.js:502)\n    in div (at DashBoard.js:491)\n    in div (at DashBoard.js:490)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 27
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1543968795,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 28
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1543968854,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 29
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1543968887,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 30
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544025290,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in DashColors (at DashBoard.js:515)\n    in div (at DashBoard.js:514)\n    in div (at DashBoard.js:513)\n    in div (at DashBoard.js:502)\n    in div (at DashBoard.js:501)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 31
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544026462,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in DashColors (at DashBoard.js:504)\n    in div (at DashBoard.js:503)\n    in div (at DashBoard.js:502)\n    in div (at DashBoard.js:491)\n    in div (at DashBoard.js:490)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 32
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544030695,
+      "message": "TypeError: Cannot set property 'innerHTML' of undefined",
+      "detail": "\n    in DashColors (at DashBoard.js:326)\n    in div (at DashBoard.js:325)\n    in div (at DashBoard.js:322)\n    in div (at DashBoard.js:321)\n    in div (at DashBoard.js:310)\n    in div (at DashBoard.js:309)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 33
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544032816,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 34
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544034227,
+      "message": "TypeError: Cannot read property 'map' of undefined",
+      "detail": "\n    in DashLine (at DashBoard.js:322)\n    in div (at DashBoard.js:321)\n    in div (at DashBoard.js:308)\n    in div (at DashBoard.js:307)\n    in div (at DashBoard.js:296)\n    in div (at DashBoard.js:295)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at ModalBox.js:33)\n    in div (at ModalBox.js:32)\n    in ModalBox (created by Connect(ModalBox))\n    in Connect(ModalBox) (at ChatContainer.js:59)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 35
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544050203,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:31)\n    in div (at moreOptions.js:29)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 36
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544050340,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:35)\n    in div (at moreOptions.js:33)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 37
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544050461,
+      "message": "TypeError: Cannot read property 'display' of null",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:33)\n    in div (at moreOptions.js:31)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 38
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544053461,
+      "message": "TypeError: this.props.show is not a function",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:32)\n    in div (at moreOptions.js:30)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 39
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544053587,
+      "message": "TypeError: this.props.show is not a function",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:33)\n    in div (at moreOptions.js:31)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 40
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544054847,
+      "message": "TypeError: _this.props.showDashBoard is not a function",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:36)\n    in div (at moreOptions.js:34)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 41
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544054876,
+      "message": "Invariant Violation: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:36)\n    in div (at moreOptions.js:34)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:11)\n    in Provider (at src/index.js:10)",
+      "id": 42
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544116076,
+      "message": "TypeError: Cannot read property 'offsetTop' of null",
+      "detail": "\n    in DashText (at DashBoard.js:319)\n    in div (at DashBoard.js:318)\n    in div (at DashBoard.js:312)\n    in div (at DashBoard.js:311)\n    in div (at DashBoard.js:300)\n    in div (at DashBoard.js:299)\n    in div (at DashBoard.js:298)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:35)\n    in div (at moreOptions.js:33)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:12)\n    in Provider (at src/index.js:11)",
+      "id": 43
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544116118,
+      "message": "TypeError: Cannot read property 'offsetTop' of null",
+      "detail": "\n    in DashText (at DashBoard.js:319)\n    in div (at DashBoard.js:318)\n    in div (at DashBoard.js:312)\n    in div (at DashBoard.js:311)\n    in div (at DashBoard.js:300)\n    in div (at DashBoard.js:299)\n    in div (at DashBoard.js:298)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:35)\n    in div (at moreOptions.js:33)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:12)\n    in Provider (at src/index.js:11)",
+      "id": 44
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544116232,
+      "message": "TypeError: Cannot read property 'offsetTop' of null",
+      "detail": "\n    in DashText (at DashBoard.js:319)\n    in div (at DashBoard.js:318)\n    in div (at DashBoard.js:312)\n    in div (at DashBoard.js:311)\n    in div (at DashBoard.js:300)\n    in div (at DashBoard.js:299)\n    in div (at DashBoard.js:298)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:35)\n    in div (at moreOptions.js:33)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:12)\n    in Provider (at src/index.js:11)",
+      "id": 45
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544116847,
+      "message": "TypeError: Cannot read property 'bind' of undefined",
+      "detail": "\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:35)\n    in div (at moreOptions.js:33)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:12)\n    in Provider (at src/index.js:11)",
+      "id": 46
+    },
+    {
+      "user": "[anonymous]",
+      "timestamp": 1544116878,
+      "message": "TypeError: Cannot read property 'offsetTop' of null",
+      "detail": "\n    in DashText (at DashBoard.js:314)\n    in div (at DashBoard.js:313)\n    in div (at DashBoard.js:307)\n    in div (at DashBoard.js:306)\n    in div (at DashBoard.js:295)\n    in div (at DashBoard.js:294)\n    in div (at DashBoard.js:293)\n    in DashBoard (created by Connect(DashBoard))\n    in Connect(DashBoard) (at moreOptions.js:35)\n    in div (at moreOptions.js:33)\n    in MoreOptions (created by Connect(MoreOptions))\n    in Connect(MoreOptions) (at footerMessagesSection.js:206)\n    in div (at footerMessagesSection.js:204)\n    in div (at footerMessagesSection.js:203)\n    in footer (at footerMessagesSection.js:190)\n    in FooterMessagesSection (created by Connect(FooterMessagesSection))\n    in Connect(FooterMessagesSection) (at messagesSectionContainer.js:34)\n    in ActiveChat (at messagesSectionContainer.js:12)\n    in div (at messagesSectionContainer.js:10)\n    in MessagesSectionContainer (at ChatContainer.js:51)\n    in div (at ChatContainer.js:49)\n    in div (at AppFrame.js:7)\n    in AppFrame (at ChatContainer.js:69)\n    in ChatContainer (created by Connect(ChatContainer))\n    in Connect(ChatContainer) (created by Route)\n    in Route (at App.js:38)\n    in Router (created by BrowserRouter)\n    in BrowserRouter (at App.js:35)\n    in App (created by Connect(App))\n    in Connect(App) (at src/index.js:12)\n    in Provider (at src/index.js:11)",
+      "id": 47
     }
   ],
   "contacts": [

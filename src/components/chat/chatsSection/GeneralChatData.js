@@ -76,10 +76,10 @@ class GeneralContactData extends Component {
     }
 
     actionDeleteElementChat = () => {
-        var listContacts = this.props.contacts
-        var idContact = this.props.chat.id
+ 
+        let idContact = this.props.chat.id
         this.props.chat["conversations"] = null
-        var filter_contacts = this.props.contactSection.filter_contacts
+        let filter_contacts = this.props.contactSection.filter_contacts
         if (filter_contacts !== null) {
             var index_filter_contacts = filter_contacts.findIndex(item => item.id === idContact)
             filter_contacts.splice(index_filter_contacts, 1)
