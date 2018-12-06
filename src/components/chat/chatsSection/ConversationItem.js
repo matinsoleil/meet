@@ -12,14 +12,15 @@ const conversationTypes = {
     group: 'group'
 };
 
+const selectors = {
+    itemExceptDropdown: 'div:not(.options)'
+};
+
 class ConversationItem extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            isMenuOpened: false
-        };
-        this.setOptionsMenu();
+        this.state = { isMenuOpened: false };
     }
 
     componentDidMount () {
@@ -28,10 +29,6 @@ class ConversationItem extends Component {
 
     componentWillUnmount () {
         this.removeClickOnItemHandler();
-    }
-
-    componentDidUpdate() {
-        this.setOptionsMenu();
     }
 
     render() {
@@ -77,7 +74,7 @@ class ConversationItem extends Component {
                     <DropMenu
                         clickHandler={() => this.toggleMenu(!this.state.isMenuOpened)}
                         container={this.row}
-                        optionsMenu={this.optionsMenu}
+                        optionsMenu={this.makeOptionsMenu()}
                     />
                 }
 
@@ -85,9 +82,8 @@ class ConversationItem extends Component {
         );
     }
 
-    //TODO: move this to a helper
-    setOptionsMenu(options = null){
-        if(options) return this.optionsMenu = options;
+    makeOptionsMenu(options = null){
+        if(options) return options;
 
         const extraOptions = {
             removeChatHistory: ControlMenuHelper.removeChatHistory(this.props.conversation),
@@ -95,24 +91,29 @@ class ConversationItem extends Component {
             removeChat: ControlMenuHelper.removeChat(this.props.conversation)
         };
 
-        this.optionsMenu = [
+        let optionsMenu = [
             ControlMenuHelper.toggleStoreConversation(this.props.conversation),
             ControlMenuHelper.toggleSilenceConversation(this.props.conversation),
             ControlMenuHelper.togglePinConversation(this.props.conversation),
             ControlMenuHelper.toggleReadConversationStatus(this.props.conversation)
         ];
-        //TODO: verify if this conversation is selected
+
+        if(this.props.conversation.id === (this.props.openedConversation || {}).id){
+            optionsMenu = [ ...optionsMenu, extraOptions.removeChatHistory ];
+        }
+
         switch (this.props.conversation.type) {
             case conversationTypes.group:
-                if(this.props.conversation.banned){
-                    this.optionsMenu = [ ...this.optionsMenu, extraOptions.removeChat ];
-                }else{
-                    this.optionsMenu = [ ...this.optionsMenu, extraOptions.goOutOfGroup ];
-                }
+                optionsMenu = [
+                    ...optionsMenu,
+                    this.props.conversation.banned ? extraOptions.removeChat : extraOptions.goOutOfGroup
+                ];
                 break;
             default: // basic
-                this.optionsMenu = [ ...this.optionsMenu, extraOptions.removeChat ];
+                optionsMenu = [ ...optionsMenu, extraOptions.removeChat ];
         }
+
+        return optionsMenu;
     }
 
     toggleMenu(status) {
@@ -120,22 +121,23 @@ class ConversationItem extends Component {
     }
 
     addClickOnItemHandler () {
-        this.row.querySelectorAll('div:not(.options)').forEach(elem => elem.addEventListener(
+        this.row.querySelectorAll(selectors.itemExceptDropdown).forEach(elem => elem.addEventListener(
             'click', () => this.props.openConversation(this.props.conversation)
         ));
     }
 
     removeClickOnItemHandler () {
-        this.row.querySelectorAll('div:not(.options)').forEach(elem => elem.removeEventListener(
+        this.row.querySelectorAll(selectors.itemExceptDropdown).forEach(elem => elem.removeEventListener(
             'click', () => this.props.openConversation(this.props.conversation)
         ));
     }
 
 }
 
-const mapStateToProps = ({country}) => {
+const mapStateToProps = ({country, conversation}) => {
     return {
-        translator: country.translator
+        translator: country.translator,
+        openedConversation: conversation
     };
 };
 
