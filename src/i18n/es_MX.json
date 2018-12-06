@@ -75,7 +75,9 @@
   "ARE_YOU_SURE_TO_DELETE_THE_GROUP": "¿Seguro que deseas eliminar el grupo?",
   "ARE_YOU_SURE_TO_DELETE_THE_CHAT_HISTORY": "¿Seguro que deseas eliminar el historial del chat?",
 
+  
   "ARE_YOU_SURE_YOU_WANT_TO_DELETE_THIS_CHAT": "¿Seguro que deseas eliminar este chat?",
+  "YOU_DELETED_THIS_CHAT": "Eliminaste este chat",
   "ARE_YOU_SURE_TO_GO_OUT_OF_THE_GROUP": "¿Seguro que deseas salir del grupo?",
   "YOU_DELETED_THE_CHAT_WITH": "Borraste el chat con %{name}"
 }

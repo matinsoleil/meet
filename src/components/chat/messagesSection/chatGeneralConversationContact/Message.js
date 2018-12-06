@@ -107,7 +107,7 @@ class Message extends Component {
             ControlMenuMessageHelper.toggleReplyMessage(this.props.conversation, this.props.messageObject),
             ControlMenuMessageHelper.toggleResendMessage(this.props.conversation, this.props.messageObject),
             ControlMenuMessageHelper.toggleSelectSeveralMessage(this.props.conversation, this.props.messageObject),
-            ControlMenuMessageHelper.toggleRemoveMessage(this.props.conversation, this.props.messageObject),
+            ControlMenuMessageHelper.toggleRemoveMessage(this.props.messageObject),
         ];
     }
 

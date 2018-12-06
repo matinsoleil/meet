@@ -20,8 +20,14 @@ export const addMessage = createAction(ActionTypes.ADD_MESSAGE, (message) => {
 }
 );
 
-export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (conversationId, messageId) => {
-    db.storage.findKeyAndRemove(Database.tables.messages, messageId);
-    return { conversationId, messageId };
+export const updateMessage = createAction(ActionTypes.UPDATE_MESSAGE, (message) => {
+    // db.storage.add(Database.tables.messages, message);
+    return { message };
+    }
+);
+
+export const deleteMessage = createAction(ActionTypes.DELETE_MESSAGE, (message) => {
+    // db.storage.findKeyAndRemove(Database.tables.messages, messageId);
+    return { message };
 }
 );

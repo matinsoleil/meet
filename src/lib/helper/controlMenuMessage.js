@@ -25,7 +25,7 @@ class ControlMenuMessageHelper {
         }
     }
 
-    static toggleRemoveMessage(conversation, message) {
+    static toggleRemoveMessage(message) {
         return {
             text: store.getState().country.translator.t('REMOVE'),
             clickHandler: () => store.dispatch(configureModalConfirm({
@@ -34,7 +34,8 @@ class ControlMenuMessageHelper {
                     {
                         text: store.getState().country.translator.t('GENERAL_DELETE'),
                         handler: () => {
-                            store.dispatch(deleteMessage(conversation.id, message.id));
+                            message.message= store.getState().country.translator.t('YOU_DELETED_THIS_CHAT');
+                            store.dispatch(deleteMessage(message));
                         }
                     }
                 ],
