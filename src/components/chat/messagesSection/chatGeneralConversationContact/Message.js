@@ -8,6 +8,10 @@ import FileMessage from './messagesTypes/fileMessage';
 import MapPosition from './../../../../lib/helper/mapPosition';
 import { filterMessages } from '../../../../redux/actions/messagesOptions/messagesOptions';
 import { Images } from "../../../../redux/states/images";
+import DropMenu from "../../../utils/dropMenu";
+import ControlMenuMessageHelper from '../../../../lib/helper/controlMenuMessage';
+
+
 class Message extends Component {
 
     constructor(props) {
@@ -15,17 +19,13 @@ class Message extends Component {
         this.state = {
             menuState: false,
             blockedMenu: false,
+            isMenuOpened: false
         }
+        this.setOptionsMenu();
     }
 
-    componentDidMount() {
-        this.bubble.addEventListener('mouseenter', this.showDots);
-        this.bubble.addEventListener('mouseleave', this.showDots);
-    }
-
-    componentWillUnmount() {
-        this.bubble.removeEventListener('mouseenter', this.showDots);
-        this.bubble.removeEventListener('mouseleave', this.showDots);
+    componentDidUpdate() {
+        this.setOptionsMenu();
     }
 
     showDots = () => {
@@ -37,7 +37,7 @@ class Message extends Component {
 
     blockView = (state) => {
         this.setState({
-            blockedMenu: !this.state.blockedMenu,
+            blockedMenu: state,
         });
     }
 
@@ -61,7 +61,7 @@ class Message extends Component {
         let { type, tail, tailType, user_icon } = this.props;
         if (message.type) message.hour = hour;
         return (
-            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row">
+            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row" onMouseLeave={() => this.blockView(false)} onMouseEnter={() => this.blockView(true)} >
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
                     <div className={`message-wrapper ${(message.type) ? (message.type === '3') ? 'file-message' : 'no-text' : ''}`}>
@@ -74,15 +74,19 @@ class Message extends Component {
                         </div>
                     </div>
                     {
-                        (this.state.menuState) &&
-                        <DotsMenu conversationId={this.props.conversation.id} 
-                                  blockView={this.blockView} 
-                                  contacts={this.props.contacts} 
-                                  showDots={this.showDots} 
-                                  display={this.state.menuState} 
-                                  id={id} 
-                                  type={type} 
-                                  selectable={this.state.selectable} />
+                        this.state.blockedMenu &&
+                        <div className="menu-wrapper-message">
+                            <img onClick={() => this.toggleMenu(!this.state.isMenuOpened)} ref={img => { this.dots = img }} className="dots-menu-message" src={Images.dots_menu} alt="" />
+                        </div>
+                    }
+
+                    {
+                        this.state.isMenuOpened &&
+                        <DropMenu
+                            clickHandler={() => this.toggleMenu(!this.state.isMenuOpened)}
+                            container={this.row}
+                            optionsMenu={this.optionsMenu}
+                        />
                     }
                 </div>
                 {(this.props.multiSelect)
@@ -94,6 +98,17 @@ class Message extends Component {
 
             </div>
         );
+    }
+
+
+    setOptionsMenu(options = null) {
+        if (options) return this.optionsMenu = options;
+        this.optionsMenu = [
+            ControlMenuMessageHelper.toggleReplyMessage(this.props.conversation, this.props.messageObject),
+            ControlMenuMessageHelper.toggleResendMessage(this.props.conversation, this.props.messageObject),
+            ControlMenuMessageHelper.toggleSelectSeveralMessage(this.props.conversation, this.props.messageObject),
+            ControlMenuMessageHelper.toggleRemoveMessage(this.props.conversation, this.props.messageObject),
+        ];
     }
 
     MessageContent = (message, id, contacts) => {
@@ -133,6 +148,10 @@ class Message extends Component {
             default:
                 return <div></div>;
         }
+    }
+
+    toggleMenu(status) {
+        this.setState({ isMenuOpened: status });
     }
 }
 

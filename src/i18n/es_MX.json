@@ -54,6 +54,10 @@
   "CHAT_STORED": "Archivaste el chat",
   "CHAT_REMOVED": "Desarchivaste el chat",
   "REMOVE_CHAT_FROM_STORE": "Dejar de archivar chat",
+  "REPLY": "Responder",
+  "RESEND": "Reenviar",
+  "SELECT_SEVERAL": "Seleccionar mensajes",
+  "REMOVE": "Eliminar",
   "REMOVE_CHAT_HISTORY": "Eliminar historial del chat",
   "GO_OUT_OF_GROUP": "Salir del grupo",
   "GROUP_OUT":"Saliste del grupo",
@@ -70,6 +74,8 @@
   "ARE_YOU_SURE_TO_DELETE_THE_CHAT_WITH": "¿Seguro que deseas eliminar el chat con %{chatName}?",
   "ARE_YOU_SURE_TO_DELETE_THE_GROUP": "¿Seguro que deseas eliminar el grupo?",
   "ARE_YOU_SURE_TO_DELETE_THE_CHAT_HISTORY": "¿Seguro que deseas eliminar el historial del chat?",
+
+  "ARE_YOU_SURE_YOU_WANT_TO_DELETE_THIS_CHAT": "¿Seguro que deseas eliminar este chat?",
   "ARE_YOU_SURE_TO_GO_OUT_OF_THE_GROUP": "¿Seguro que deseas salir del grupo?",
   "YOU_DELETED_THE_CHAT_WITH": "Borraste el chat con %{name}"
 }
