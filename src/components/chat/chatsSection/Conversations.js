@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ConversationItem from './ConversationItem'
 import {connect} from 'react-redux';
 import {updateTimeFromNow} from "../../../redux/actions/views/timeFromNow";
-import {addConversation} from "../../../redux/actions/conversation/conversation";
 import {ModalContainer} from "../../modals/ModalContainer";
 
 class Conversations extends Component {
@@ -35,7 +34,7 @@ class Conversations extends Component {
             <React.Fragment>
                 <div className="main-chat-general-list-contact">
                     {filteredConversations.map(
-                        conversation => <ConversationItem conversation={conversation} key={conversation.id} clickItemHandler={() => this.props.openConversation(conversation)}/>)}
+                        conversation => <ConversationItem conversation={conversation} key={conversation.id} />)}
                 </div>
                 <ModalContainer/>
             </React.Fragment>
@@ -81,8 +80,7 @@ const mapStateToProps = ({conversations,views}) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateTimeFromNow: (payload = {shouldUpdate: true}) => dispatch(updateTimeFromNow(payload)),
-        openConversation: payload => dispatch(addConversation(payload))
+        updateTimeFromNow: (payload = {shouldUpdate: true}) => dispatch(updateTimeFromNow(payload))
     }
 };
 
