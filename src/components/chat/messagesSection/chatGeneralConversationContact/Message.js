@@ -142,9 +142,7 @@ class Message extends Component {
                     <FileMessage id={id} message={message} />
                 );
             case "4":
-                return (
-                    <ReplyMessage contacts={contacts} message={message} senderId={message.toWhoReply} />
-                );
+                return (<ReplyMessage contacts={contacts} message={message} senderId={message.toWhoReply} />);
             default:
                 return <div></div>;
         }
