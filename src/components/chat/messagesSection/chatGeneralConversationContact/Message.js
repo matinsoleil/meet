@@ -61,7 +61,7 @@ class Message extends Component {
         let { type, tail, tailType, user_icon } = this.props;
         if (message.type) message.hour = hour;
         return (
-            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row" onMouseLeave={() => this.blockView(!this.state.blockedMenu)} onMouseEnter={() => this.blockView(!this.state.blockedMenu)} >
+            <div ref={div => { this.row = div }} id={`message_row_${id}`} className="message-row" onMouseLeave={() => this.blockView(false)} onMouseEnter={() => this.blockView(true)} >
                 {(type === "message-out") && <img className="img-icon-user chat-icon" src={user_icon} alt="" />}
                 <div id={`message_${id}`} ref={div => { this.bubble = div }} className={`message-bubble ${type}`}>
                     <div className={`message-wrapper ${(message.type) ? (message.type === '3') ? 'file-message' : 'no-text' : ''}`}>
@@ -73,7 +73,6 @@ class Message extends Component {
                             <span className="time">{hour}</span>
                         </div>
                     </div>
-
                     {
                         this.state.blockedMenu &&
                         <div className="menu-wrapper-message">
@@ -84,12 +83,11 @@ class Message extends Component {
                     {
                         this.state.isMenuOpened &&
                         <DropMenu
-                            onClick={() => this.toggleMenu(!this.state.isMenuOpened)}
+                            clickHandler={() => this.toggleMenu(!this.state.isMenuOpened)}
                             container={this.row}
                             optionsMenu={this.optionsMenu}
                         />
                     }
-
                 </div>
                 {(this.props.multiSelect)
                     &&
