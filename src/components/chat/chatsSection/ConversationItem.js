@@ -5,6 +5,7 @@ import {Images} from "../../../redux/states/images";
 import DropMenu from "../../utils/dropMenu";
 import './ConversationItem.scss';
 import ControlMenuHelper from '../../../lib/helper/controlMenu';
+import {addConversation} from "../../../redux/actions/conversation/conversation";
 
 const conversationTypes = {
     basic: 'basic',
@@ -21,13 +22,21 @@ class ConversationItem extends Component {
         this.setOptionsMenu();
     }
 
+    componentDidMount () {
+        this.addClickOnItemHandler();
+    }
+
+    componentWillUnmount () {
+        this.removeClickOnItemHandler();
+    }
+
     componentDidUpdate() {
         this.setOptionsMenu();
     }
 
     render() {
         return (
-            <li ref={li => this.row = li} className='conversation-item' onClick={this.props.clickItemHandler} onMouseLeave={() => this.toggleMenu(false)}>
+            <li ref={li => this.row = li} className='conversation-item' onMouseLeave={() => this.toggleMenu(false)}>
 
                 <div className="image">
                     <img src={this.props.conversation.image || Images.avatar} alt="Conversation Image"/>
@@ -111,6 +120,18 @@ class ConversationItem extends Component {
         this.setState({isMenuOpened: status});
     }
 
+    addClickOnItemHandler () {
+        this.row.querySelectorAll('div:not(.options)').forEach(elem => elem.addEventListener(
+            'click', () => this.props.openConversation(this.props.conversation)
+        ));
+    }
+
+    removeClickOnItemHandler () {
+        this.row.querySelectorAll('div:not(.options)').forEach(elem => elem.removeEventListener(
+            'click', () => this.props.openConversation(this.props.conversation)
+        ));
+    }
+
 }
 
 const mapStateToProps = ({country}) => {
@@ -119,4 +140,10 @@ const mapStateToProps = ({country}) => {
     };
 };
 
-export default connect(mapStateToProps, null)(ConversationItem);
+const mapDispatchToProps = dispatch => {
+    return {
+        openConversation: payload => dispatch(addConversation(payload))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConversationItem);
