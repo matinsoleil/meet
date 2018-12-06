@@ -6,10 +6,6 @@ import { Images } from "../../../../redux/states/images";
 
 class ChatGeneralConversationContact extends Component {
     render() {
-
-        console.log(this.props.messages);
-
-
         return (
             <div id='#main-chat-feed' style={{ backgroundImage: `url(${Images.chat_background})` }} className="main-chat-history-conversation-contact">
                 <div className="initial"></div>
