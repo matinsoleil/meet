@@ -12,7 +12,8 @@ const actionHandlersMap = new Map([
     })
     ],
     [
-        ActionTypes.ADD_MESSAGES, (state, action) => { return action.payload.messages }
+        ActionTypes.ADD_MESSAGES,
+        (state, action) => action.payload
     ],
     [
         ActionTypes.ADD_MESSAGE,

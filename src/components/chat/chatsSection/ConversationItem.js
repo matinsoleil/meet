@@ -6,14 +6,11 @@ import DropMenu from "../../utils/dropMenu";
 import './ConversationItem.scss';
 import ControlMenuHelper from '../../../lib/helper/controlMenu';
 import {addConversation} from "../../../redux/actions/conversation/conversation";
+import {updateConversations} from "../../../redux/actions/conversations/conversations";
 
 const conversationTypes = {
     basic: 'basic',
     group: 'group'
-};
-
-const selectors = {
-    itemExceptDropdown: 'div:not(.options)'
 };
 
 class ConversationItem extends Component {
@@ -23,18 +20,10 @@ class ConversationItem extends Component {
         this.state = { isMenuOpened: false };
     }
 
-    componentDidMount () {
-        this.addClickOnItemHandler();
-    }
-
-    componentWillUnmount () {
-        this.removeClickOnItemHandler();
-    }
-
     render() {
         return (
             <li ref={li => this.row = li} className='conversation-item' onMouseLeave={() => this.toggleMenu(false)}>
-
+                <div className="click-area" onClick={() => this.openConversation(this.props.conversation)}></div>
                 <div className="image">
                     <img src={this.props.conversation.image || Images.avatar} alt="Conversation Image"/>
                     {true && <div className="connection-status"></div>}
@@ -120,16 +109,11 @@ class ConversationItem extends Component {
         this.setState({isMenuOpened: status});
     }
 
-    addClickOnItemHandler () {
-        this.row.querySelectorAll(selectors.itemExceptDropdown).forEach(elem => elem.addEventListener(
-            'click', () => this.props.openConversation(this.props.conversation)
-        ));
-    }
-
-    removeClickOnItemHandler () {
-        this.row.querySelectorAll(selectors.itemExceptDropdown).forEach(elem => elem.removeEventListener(
-            'click', () => this.props.openConversation(this.props.conversation)
-        ));
+    openConversation (conversation) {
+        this.props.addConversation(conversation);
+        if(conversation.unreadMessages.status){
+            this.props.updateConversations([{...conversation, unreadMessages: { status: false, messages: null }}]);
+        }
     }
 
 }
@@ -143,7 +127,8 @@ const mapStateToProps = ({country, conversation}) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        openConversation: payload => dispatch(addConversation(payload))
+        addConversation: payload => dispatch(addConversation(payload)),
+        updateConversations: payload => dispatch(updateConversations(payload))
     }
 };
 

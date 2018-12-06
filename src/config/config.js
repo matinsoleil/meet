@@ -5,9 +5,9 @@ export const Database = {
     table_schemas: {
         cn_messages: [
             'id',
-            'messageid',
-            'conversationid',
-            'propertyid',
+            'messageId',
+            'conversationId',
+            'propertyId',
             'data'
         ].join(','),
         cn_status: [
