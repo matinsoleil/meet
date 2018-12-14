@@ -10,11 +10,14 @@ import GenerateId from '../../../../lib/helper/generateId';
 import ReplyOptions from './replyOptions/replyOptions';
 import { Images } from "../../../../redux/states/images";
 import './footerMessagesSection.scss';
+import 'emoji-mart/css/emoji-mart.css';
+import { Picker } from 'emoji-mart';
+
 class FooterMessagesSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            emojiState: true,
+            emojiState: 'none',
             textInputState: true,
             clipState: true,
             plusState: true,
@@ -22,6 +25,9 @@ class FooterMessagesSection extends Component {
             showRecording: false,
         }
         this.idMessage = "00000";
+        this.currentMessage = "";
+        this.showEmoji = this.showEmoji.bind(this);
+        this.addEmoji = this.addEmoji.bind(this);
     }
 
     componentDidUpdate() {
@@ -46,7 +52,6 @@ class FooterMessagesSection extends Component {
 
     toggleOptions = () => {
         this.setState({
-            emojiState: !this.state.emojiState,
             textInputState: !this.state.textInputState,
             clipState: !this.state.clipState,
             plusState: !this.state.plusState,
@@ -59,6 +64,9 @@ class FooterMessagesSection extends Component {
     }
 
     keyUpSendMessage = (e) => {
+        if(this.state.emojiState==='block'){
+        this.setState({emojiState:'none'})
+        }
         (e.key === 'Enter') && this.sendMessage(this.inputText.value);
     }
 
@@ -139,6 +147,25 @@ class FooterMessagesSection extends Component {
         });
     }
 
+    addEmoji =(emojiCode) => {
+
+        let inputChat = document.getElementById('messageText');
+
+        console.log(emojiCode.native);
+        this.currentMessage=inputChat.value;
+        inputChat.value = this.currentMessage+emojiCode.native;
+    }
+
+    showEmoji =()=>{
+
+         console.log('show emoji');
+         if(this.state.emojiState==='none'){
+         this.setState({emojiState:'block'});
+         }else{
+         this.setState({emojiState:'none'});   
+         }
+    }
+
     render() {
 
         return (
@@ -164,9 +191,10 @@ class FooterMessagesSection extends Component {
                                     <input onChange={this.selectFiles} ref={(input) => { this.fileChooser = input }} type="file" style={{ display: "none" }} multiple />
                                 </div>
                                 <div className="text-message">
-                                    <input ref={input => { this.inputText = input }} onChange={e => { this.setState({ inputText: (e.target.value.length > 0) }) }} disabled={!this.state.textInputState} type="text" placeholder="chat" name="" id="" />
-                                    <div className="icon emoji">
-                                        <img src={Images.emoji} alt="" />
+                                    <input ref={input => { this.inputText = input }} onChange={e => { this.setState({ inputText: (e.target.value.length > 0) }) }} disabled={!this.state.textInputState} type="text" placeholder="chat" name="" id="messageText"  />
+                                    <div className="icon emoji"  >
+                                        <img src={Images.emoji} alt="" onClick={()=>this.showEmoji()} />
+                                        <Picker title='Pick your emoji…' emoji='point_up'  set='emojione' style={{ position: 'fixed', bottom: '65px', right: '30px',display:this.state.emojiState}}  onSelect={this.addEmoji}  i18n={{ search: 'Buscar', categories: { search: 'Resultados de la busqueda', recent: 'Recientes',flags:'banderas',people:'emociones y gente',nature:'naturaleza',foods:'alimentos',activity:'actividades',places:'lugares',objects:'objetos',symbols:'simbolos',custom:'personales' } }} />
                                     </div>
                                 </div>
                                 {(this.state.inputText) ?
